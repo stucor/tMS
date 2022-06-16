@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang=en-GB>
+<head> 
+	<meta name="theme-color" content="#fff" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/reader.css" />
+	<link rel="shortcut icon" type="image/x-icon"  href="../_resources/images/icons/logo.png">
+	<title>MSTitle - MSAuthor</title>
+
+	<meta property="og:title" content="MSTitle by MSAuthor.">
+	<meta property="og:description" content="MSogDescription">
+	<meta property="og:image" content="https://wiswo.org/boo../_resources/images/bookcovers/MSBookShortcode.jpg">
+	<meta property="og:url" content="https://wiswo.org/books/MSBookShortcode/index.html">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:site_name" content="Wisdom & Wonders Books">
+	<meta name="twitter:image:alt" content="Book Cover">
+</head>
+
+
+<body id="thebody">
+
+	<div id="tocnav" class="sidenav"  >
+		<div id="tocbtn2" class="tocbtn, no-print" onclick="closeFromTocbtn2 ()">&#10094; Contents</div>
+		<ul id="TOC">
+			<li id="TOC0">Cover</li>
+			<li id="TOC01">Preface</li>
+			<li id="TOC1">Example of Section</li>
+			<li id="TOC11" class="sub">MSExample of Sub</li>
+			<li id="TOC111" class="subsub">MSExample of SubSub</li>
+		</ul>	
+	</div>
+	  
+	<div class="no-print" id="topbar">
+		<div class="topnav" id="myTopnav">
+			<div class="topnav-left">
+				<a id="homebutton"><img class="bookshelfbtn" src="../_resources/images/icons/bookshelf.svg" alt="The Library" title="The Library"><p>Library</p></a>
+			</div>
+			<div class="topnav-right">
+				<a id="searchBtn"><img src="../_resources/images/icons/search.svg" alt="Search"><p>Search</p></a>
+				<a id="detailsBtn"><img src="../_resources/images/icons/info.svg" alt="Info"><p>Info</p></a>
+				<a id="settingsBtn"><img src="../_resources/images/icons/settings.svg" alt="Settings"><p>Settings</p></a> 
+				<a id="downloadBtn"><img src="../_resources/images/icons/download.svg" alt="Download"><p>Download</p></a>
+			</div>
+		</div>
+		<div class="topnav2">
+			<!-- <div class="progress-container" id="prog-cont"><div class="progress-bar" id="progressBar"></div></div> --> 
+			<div id="tocBtn" class="tocbtn">&#10095; Contents</div>
+			<div class="booktitle">MSTitle<br>MSAuthor</div>
+		</div>
+	</div>
+
+	<div id="SearchBar" class ="searchbar">
+		<input type="search" id="SearchInput" placeholder="Search in book ...">
+		<button class="sbbutton closesearch" data-search="clear">&#10006;</button>
+		<span class="resultcounter">
+			<span id="searchcount"></span>
+			<span id="currentresult"></span> 
+			<span id="totalresults"></span>
+		</span>
+		<button class="sbbutton" data-search="next">&#9660;</button>
+		<button class="sbbutton" data-search="prev">&#9650;</button>
+		<button class="sbbutton" data-search="revert">&#8634;</button>
+	</div>
+	
+	<div id="Modal" class="modal hide">
+		<div id="ModalContent" class="modal-content">
+			<div id="ModalHeader" class="modal-header"><span id="modalCloseBtn" class="close">&times;</span>
+				<div id="ModalHeaderText">
+				</div>
+			</div>
+			<div id="ModalBody" class="modal-body">
+				<div id="ModalDetails">
+					<h1>MSTitle by MSAuthor</h1>
+					<div class="detail-grid">
+						<div>
+							<img src="../_resources/images/bookcovers/MSBookShortcode.jpg" alt="MSTitle Cover" >
+						</div>
+						<div>
+							<figure>
+							<img src="../_resources/images/authors/MSPictureAuthor.jpg" alt="MSAuthor">
+							<figcaption><strong>MSFullAuthor:</strong> MSShortBio </figcaption>
+							</figure>
+						</div>
+					</div>
+					<div class="bookcopyright">
+						<p>Originally published in MSPubYear.<br>This edition published in MSEdPubYear.<br>MSPrintedPagespp (in pdf format).</p>
+					</div>
+					<div class="bookcopyright">
+						<h2>Bookend:</h2>
+						<h3>Example Bookend Material header</h3>
+						<p>Example Bookend Material</p>
+					</div>
+				</div>
+				<div id="ModalNotes">
+					<h2>Notes for MSTitle</h2>
+					<div class="booknote" data-note="1">Example Note</div>
+				</div>
+	  
+				<div id="ModalSettings">
+					<div class="settingsbox">
+						<span class ="settingsheadersleft">Font size:</span>
+						<span class="settingsheadersright">
+							<button class="decrease" id ="decfont"></button>
+							<span class="level" id="flvalue"></span>
+							<button class="increase" id ="incfont"></button>
+						</span>
+					</div>
+		
+					<div class="settingsbox">
+					<span class ="settingsheadersleft">Line spacing:</span>
+					<span class="settingsheadersright">
+						<button class="decrease" id ="declh"></button>
+						<span class="level" id="lhvalue"></span>
+						<button class="increase" id ="inclh"></button>
+					</span>
+					</div>
+					<div class="settingsbox">
+						<span class ="settingsheadersleft">Serif Font:</span>
+						<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="serifFont"><span class="slider round"></span></label></span>
+					</div>
+
+					<div class="settingsbox">			
+						<p class ="settingsheaders">Colour:</p>
+						<div class="radio-toolbar">
+							<input type="radio" id="radioSimple" name="themeRadio" value="simple">
+							<label for="radioSimple">Bright</label>
+						
+							<input type="radio" id="radioSimpleDark" name="themeRadio" value="simpledark">
+							<label for="radioSimpleDark">Dark</label>
+						
+							<input type="radio" id="radioSepia" name="themeRadio" value="sepia">
+							<label for="radioSepia">Mellow</label> 
+						</div>
+					</div>
+
+					<div class="settingsbox">
+						<span class ="settingsheadersleft">Show book pages:</span>
+						<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showPageCheck"><span class="slider round"></span></label></span>
+					</div>
+
+					<p id="SettingsAdv" class="modal-header modal-adv" >Advanced</p> 
+					<div class="settingsbox">
+						<p class ="settingsheaders">Margins:</p>
+						<div class="radio-toolbar">
+							<input type="radio" id="radioMargNarrow" name="marginRadio" value="narrowmargin">
+							<label for="radioMargNarrow">
+								<img class = "marginicons" src="../_resources/images/icons/marginwide.svg" alt="Wide Margins">
+							</label>
+						
+							<input type="radio" id="radioMargMid" name="marginRadio" value="midmargin">
+							<label for="radioMargMid">
+								<img class = "marginicons" src="../_resources/images/icons/marginmid.svg" alt="Normal Margins">
+							</label>
+						
+							<input type="radio" id="radioMargWide" name="marginRadio" value="widemargin">
+							<label for="radioMargWide">
+								<img class = "marginicons" src="../_resources/images/icons/marginnarrow.svg" alt="Narrow Margins">
+							</label> 
+						</div>
+					</div>
+					<div class="settingsbox">
+						<span class ="settingsheadersleft">Justification:</span>
+						<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="justifyCheck"><span class="slider round"></span></label></span>
+					</div>
+					<div class="settingsbox">
+						<span class ="settingsheadersleft">Hyphenation:</span>
+						<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="hyphenCheck"><span class="slider round"></span></label></span>
+					</div>
+					<div class="settingsbox">
+						<span class ="settingsheadersleft">Show Paragraph numbers:</span>
+						<select class = "select-css" id = "showParaNosList">
+							<option> do not show numbers </option>
+							<option> count by whole book </option>
+							<option> count by section </option>
+							<option> count by subsection </option>
+						</select>
+					</div>
+					<div class="settingsbox">
+						<span class ="settingsheadersleft">Full Screen Mode:</span>
+						<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="mobileUIAlwaysOnCheck"><span class="slider round"></span></label></span>
+					</div>
+				</div>
+	  
+				<div id="ModalDownload">
+					<div>
+						<img src="../_resources/images/bookcovers/MSBookShortcode.jpg" alt="MSTitle Cover" >
+						<h3>available for download in the following formats:</h3>
+						<div class="downloads">
+							<a href="../_resources/book-downloads/MSBookShortcode/MSBookShortcode.pdf" download > <img alt="MSTitle pdf download" src="../_resources/images/icons/PDF_file_icon.svg" ></a>
+							<a class="unavailable" href="../_resources/book-downloads/MSBookShortcode/MSBookShortcode.epub" download > <img alt="Unavailable epub download" src="../_resources/images/icons/epub_file_icon.svg" ></a>
+							<a class="unavailable" href="../_resources/book-downloads/MSBookShortcode/MSBookShortcode.azw3" download > <img alt="Unavailable azw3 download" src="../_resources/images/icons/azw3_file_icon.svg" ></a>
+						</div>
+					</div>
+				</div>
+	  
+				<div id="ModalSutta"><div id="sutta"></div></div><div id="ModalDownloadAlert"></div>
+			</div>
+		</div>
+	</div>
+
+<div id="spinbox"><div id="spintext"></div></div>
+
+	<div class="wrapper" id="bookwrap">
+	<div></div>
+	<div class="content" id="thecontent">
+		<h1 class="engrave center" id="coverengraving">MSTitle</h1>
+	<div class="book" id="thebook" data-shortcode="MSBookShortcode">
+		<div class="cover" id="TOCTarget0">
+			<div class="cover-grid">
+				<div></div>
+				<div>
+					<img src="../_resources/images/bookcovers/MSBookShortcode.jpg" alt="MSTitle" >
+				</div>
+				<div></div>
+			</div>
+		</div>
+	
+
+		<span class="pageno" data-page=""></span>
+
+		<h1  class="preface" id="TOCTarget01">Preface</h1>
+	
+		<span class="pageno" data-page="1"></span>
+
+		<h1 id="TOCTarget1">Section</h1>
+
+		<span class="pageno" data-page=""></span>
+		<h2 id="TOCTarget11">SubSection</h2>
+		<p>Sub Section paragraph text</p>
+
+		<h3 id="TOCTarget111">SubSubSection</h3>
+		<p>Sub Sub Section paragraph text</p>
+
+		<div class="eob">-- END OF BOOK --</div>
+
+		<div class="eob">-- END OF BOOK --<br>
+			<a href="../..">
+				<img src="../_resources/images/icons/logo.png" alt="Wiswo Logo"> 
+				<span>Wisdom & Wonders</span>
+			</a>
+		</div>
+		<h1 id="TOCTarget999999999"></h1>
+
+		<span class="pageno" data-page=""></span>
+	</div>	
+	</div>
+	<div></div>
+	</div> 
+
+	<script src="../js/jquery-3.6.0.min.js"></script>
+	<script src="../js/jquery.mark.min.js"></script>
+	<script src="../js/reader.js"></script>
+</body>
+</html>

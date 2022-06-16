@@ -1,0 +1,458 @@
+:root {
+	--asctext: "A ► Z";
+	--desctext: 'Z ► A';
+}
+  
+.shelflogo {
+	min-width: 150px;
+	width: 150px;
+	height: auto;
+}
+
+/* BOOKSHELF */
+
+.shelf {
+	overflow: scroll;
+}
+
+#thebook {
+	padding: 4% !important;
+}
+
+
+#gridlistBtn {
+	background: url("../_resources/images/icons/grid.svg");
+	width:54px; 
+	height:29px;
+}
+
+
+.bookshelf {
+	margin: 0;
+}	
+
+.booklist {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 100%);
+	grid-gap: 0.5rem;
+	justify-content:space-evenly;
+	align-content: flex-start;
+	list-style-type:none;
+	padding:0;
+	margin: 0;
+}
+
+.booklist > li {
+	min-height: 100px;
+	padding: 0;
+	border: 1px solid var(--primarycolor);
+}
+
+.booklist > li > a {
+	display:flex;
+	width: auto;
+	overflow: hidden; 
+	justify-content: left;
+	text-decoration: none;
+	color: unset;
+	padding:5px;
+	box-shadow: 1px 3px 6px -1px rgba(0,0,0,0.57);
+}
+
+
+
+.booklist > li > a > img {
+	border-radius: .2rem;
+	box-shadow: 1px 3px 6px -1px rgba(0,0,0,0.57);
+	margin: 10px;
+	height: 100px;
+	width: auto;
+	transition: 0.4s;
+}
+
+.booklist > li > a > div > h3 {
+	margin: 5px 0 5px 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1.2em !important;
+	font-style: normal; 
+	font-weight: 400;
+	font-variant: small-caps;
+	transition: 0.4s;
+}
+
+.booklist > li > a > div > p {
+	text-indent: unset; 
+	margin: 0 20px 0 0;
+	transition: 0.4s;
+}
+
+/* Author */
+.bookshelfauthor {
+	font-weight: 700;
+}
+
+/* Publication Date */
+.bookshelfpubdate {
+	font-weight: 400;
+}
+.bookshelfpubdate::before {
+	content: '[';
+}
+.bookshelfpubdate::after {
+	content: ']';
+}
+
+.pagination li {
+  display:inline-block;
+  padding:5px;
+}
+
+.audiobooktag {
+	position: relative;
+}
+.audiobooktag:before {
+content: '🔊';
+color: #00333f;
+background-color: #d1f4ff;
+font-variant: small-caps;
+font-family: Helvetica, Arial, sans-serif;
+font-size: 14px !important;
+font-weight: 400;
+border: 1px solid lightblue;
+padding:4px 3px 2px 3px;
+border-radius: 30px;
+height: 20px;
+min-width: 20px;
+position: absolute;
+left: 6px;
+top: 6px;
+z-index:99;
+box-shadow: 1px 3px 2px -1px rgba(0, 0, 0, 0.363);
+}
+
+  
+
+
+
+/* FILTERS SEARCH & SORT*/
+
+
+.sidenav li:hover {
+	cursor: unset;
+	background-color: #ffffff00 !important;
+	border-color: #ffffff00 !important;
+}
+
+/*
+.notTOC:hover {
+	background-color: #ffffff00 !important;
+	border-color: #ffffff00 !important;
+}
+*/
+.booklistcount {
+	font-weight: 400;
+	font-size: 0.8em;
+	padding:0 8px !important;
+	position: fixed !important;
+	background:rgba(211, 211, 211, 0);
+	top:-100px;
+	right:20px;
+	z-index:1;
+}
+#filterCount {
+	font-weight: 700;
+	color: crimson;
+}
+
+.sort.asc, .sort.desc {
+	font-weight: 700;
+	color: var(--pickedtext);
+	background-color: var(--buttonbackground);
+	border-color: var(--primarycolor);
+}
+
+/*"▲"; "▼";*/
+
+.sort.asc::after {
+	content: var(--asctext) ;
+	letter-spacing: 0.1em;
+	font-size: 0.8em;
+	font-weight: 700;
+}
+.sort.desc::after {
+	content: var(--desctext);
+	letter-spacing: 0.1em;
+	font-size: 0.8em;
+	font-weight: 700;
+}
+
+
+.greytext {
+	color:#cfcfcf !important;
+}
+
+
+/*###################*/
+/*##### SEARCH #####*/
+/*###################*/
+
+.booksearchBtn.selected {
+	font-weight: 700;
+	color: var(--pickedtext);
+	background-color: var(--buttonbackground);
+	border-color: var(--primarycolor);
+}
+
+.sbbutton {
+	padding-left: 0;
+	margin-left: -2px;
+	font-size: 0.9em !important;
+	}
+	
+#exactSearch {
+margin: 0;
+font-size: 0.8em;
+min-height: 1.5em;
+font-weight: 400;
+}
+
+.infobutton {
+	margin: 15px 0 0 0;
+	padding: 0px 10px 30px 10px;
+	font-size: 0.7em !important;
+	font-weight: 400;
+	outline:none;
+	border:1px solid grey;
+	user-select: none;
+ 	background-color: #ffffff00;
+	border-radius: 20px;
+	min-height: 1em;
+	height: 1em;
+	line-height: 0;
+}
+
+.infobutton > img {
+	position:relative; 
+	top:5px;
+}
+
+.showinfobutton {
+	border-radius: 20px;
+	user-select: auto;
+}
+
+.infobutton:hover {
+	background: var(--listlinkhover);
+	cursor: pointer;
+}
+
+.searchbycontrols {
+	margin:10px 0;
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.tocsearchfield {
+	margin: 0 !important;
+	display:flex;
+	flex-wrap: wrap;
+}
+
+
+#bookSearchInput {
+	margin: 0;
+	font-size: 1em;
+	width:80%;
+	max-width: 80%;
+	color:var(--pickedtext);
+	background-color: rgba(255, 255, 255, 0);
+	border-color: rgba(150, 150, 150, 0.507);
+}
+
+
+#bookSearchInput:focus {
+outline: none;
+}
+
+#bookSearchInput:not(:placeholder-shown) {
+	background-color: var(--buttonbackground);
+}
+
+
+.tocbuttons {
+	/*
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 120px);
+	grid-gap: 0.5rem;
+	*/
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 100px;
+
+}
+.tocbuttons > button {
+	margin: 5px 5px;
+	font-weight: 400;
+	color: var(--buttontext);
+	background-color: #00000000;
+	border: 2px solid rgb(150, 150, 150, 0.5);
+	font-size: 0.9em !important;
+	border-radius: 10px;
+	min-height: 3em;
+	min-width: 6em;
+	cursor: pointer;
+}
+
+.tocbuttons > button:active{
+	background-color:var(--primarycolor)
+}
+
+.afcbuttons {
+	margin-bottom: 10px;
+}
+
+.afcbuttons > button {
+	display: inline;
+	min-width:80px;
+	width: 6em;
+	margin-bottom: 1em;
+	min-height:2em;
+	height:2em;
+
+}
+
+
+/*###################*/
+/*##### FILTERS #####*/
+/*###################*/
+
+.authorfiltercontrols {
+	margin: 1 0;
+}
+
+.authorfiltercontrols > label {
+	display:block;
+}
+
+
+
+.shelfinfoheadcont {
+	margin: 10px 0;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.shelfinfoheadcont > div {
+	margin: 10px;
+}
+
+.shelfinfoheadcont > div > p {
+	display: block;
+	margin: 25% 0 10px 0;
+}
+
+.shelfinfoheadcont > div > a {
+	display: block;
+	margin: 0 0 30px 0;
+}
+
+.shelfinfoheadcont > div > a > p{
+	display: block;
+	margin-top: -0.3em;
+}
+
+#shelffooter {
+	text-align: center;
+	hyphens: none;
+}
+
+#shelffooter p {
+	text-align: justify;
+	text-justify: inter-word;
+	margin: 2em;
+}
+
+
+@media (hover: hover) {
+	.booklist > li > a:hover { 
+		background-color: var(--listlinkhover);
+	}
+	.audiobooktag:hover::before {
+		content: '🔊 AudioBook';
+		padding-right:5px;
+	}
+
+	.tocbuttons > button:hover {
+		border: 3px solid var(--primarycolor);
+		box-shadow: 0 0 5px 1px var(--primarycolor);
+	}
+	.booklist > li > a > img:hover {
+		opacity: 0.7;
+
+	}
+}
+
+@media (hover: none) {
+	.booklist > li > a:hover { 
+		background-color: var(--invisiblecolor);
+	}
+	.audiobooktag:hover::before {
+		content: '🔊';
+	}
+	.tocbuttons > button:hover {
+		border: 3px solid var(--primarycolor);
+		box-shadow: none;
+	}
+	.booklist > li > a > img:hover {
+		opacity:1;
+	}
+}
+
+
+@media screen and (max-width: 666px) {
+
+
+	.radio-toolbar input[name="searchChoice"] + label{
+		display:block;
+	}
+
+	.tocbuttons > button {
+		max-width: 150px;
+	}
+
+	.lihead {
+		text-align: left;
+	}
+
+	#bookSearchInput {
+		max-width: 70%;
+		margin-bottom: 20px;;
+	}
+
+	.tocbuttons {
+		min-width: 82px;
+		width:auto;
+	}
+
+	.afcbuttons > button {
+		min-height: 3em;
+		height:3em;
+	}
+
+	.infobutton {
+		border:none;
+	}
+
+	.infobutton > span {
+		display:none;
+	}
+
+	#exactSearch {
+		display: none;
+	}
+
+}

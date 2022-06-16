@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang=en-GB>
+<head> 
+	<meta name="theme-color" content="#fff" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/reader.css" />
+	<link rel="stylesheet" type="text/css" href="../css/bookshelf.css" />
+	<link rel="shortcut icon" type="image/x-icon"  href="../_resources/images/icons/logo.png">
+	<title>theMettāShelf Library</title>
+	<meta property="og:title" content="theMettāShelf Library">
+	<meta property="og:description" content="A Library of Buddhist books inclined towards teachings by contemporary teachers on Early Buddhist Texts">
+	<meta property="og:image" content="https://wiswo.org/boo../_resources/images/themes/tmslogo.svg ">
+	<meta property="og:url" content="https://wiswo.org/books/shelf/index.html">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:site_name" content="Wisdom & Wonders Books">
+	<meta name="twitter:image:alt" content="The Mettā Shelf Logo">
+</head>
+
+<body id="thebody" class="shelf">
+	<div id="tocnav" class="sidenav">
+		<div id="tocbtn2" class="tocbtn, no-print" onclick="closeFromTocbtn2 ()">&#10094; Find </div>
+		<ul id="TOC">
+			<li class="tocpart notTOC" id="TOC0">SEARCH, SORT & FILTER</li>
+			<li id="bookListCount" class= "booklistcount notTOC center">found <span id="filterCount"></span> / <span id="filterTotal"></span> books</li>
+
+			<!-- SEARCH -->
+			<li class="lihead">Search on</li>
+			<li class="notTOC center">
+				<input type="text" id="bookSearchInput" placeholder="Title or Author ...">
+				<button class="sbbutton closesearch" id="clearBookSearchInput">&#10006;</button>
+				<div id = "exactSearch"></div>
+				<div class="tocbuttons">
+					<button class="booksearchBtn selected" id="searchbyTitleAuthor">Title or<br>Author</button>
+					<button class="booksearchBtn" id="searchbySuttaNumber">Sutta<br>Number</button>
+				</div>
+				<button class="infobutton" id="suttanumberinfo"><img src="../_resources/images/icons/help.svg" alt="sutta search help"><span> Sutta Search</span></button>
+			</li>
+
+			<!-- SORT -->
+			<li class="lihead">Sort by</li>
+			<li class="notTOC">
+				<div class="tocbuttons">
+					<button class="sort" id="sortbyAuthor">Author<br> </button>
+					<button class="sort" id="sortbyTitle">Title<br> </button>
+					<button class="sort" id="sortbyPubdate">Pub. Date<br> </button>
+					<button class="sort" id="sortbyLatest">Added<br> </button>
+				</div>
+			</li>
+
+			<!-- FILTER -->
+			<li class="lihead">Filter by Author</li>
+			<li class="notTOC">
+				<div class="authorfiltercontrols">
+					<div class ="tocbuttons afcbuttons">
+						<button id="selectAllAuthors">Select All</button>
+						<button id="clearAllAuthors">Clear All</button>
+					</div>
+					<label class="checkcontainer" for="BrahmCheck"><span class="checktext">BRAHM<span class="checktextFull">, Ajahn</span></span>
+						<input type="checkbox" name="BrahmCheck" id="BrahmCheck" checked >
+						<span class="checkmark"></span>
+					</label> 
+					<label class="checkcontainer" for="BrahmaliCheck"><span class="checktext">BRAHMALI<span class="checktextFull">, Ajahn</span></span>
+						<input type="checkbox" name="BrahmaliCheck" id="BrahmaliCheck" checked >
+						<span class="checkmark"></span>
+					</label> 
+					<label class="checkcontainer" for="ChatchaiCheck"><span class="checktext">CHATCHAI<span class="checktextFull">, Ajahn</span></span>
+						<input type="checkbox" name="ChatchaiCheck" id="ChatchaiCheck" checked >
+						<span class="checkmark"></span>
+					</label> 
+					<label class="checkcontainer" for="SDhammikaCheck"><span class="checktext">DHAMMIKA<span class="checktextFull">, Bhante S.</span></span>
+						<input type="checkbox" name="SDhammikaCheck" id="SDhammikaCheck" checked >
+						<span class="checkmark"></span>
+					</label> 
+					<label class="checkcontainer" for="SujatoCheck"><span class="checktext">SUJATO<span class="checktextFull">, Bhikkhu</span></span>
+						<input type="checkbox" name="SujatoCheck" id="SujatoCheck" checked >
+						<span class="checkmark"></span>
+					</label> 
+					<label class="checkcontainer" for="SunyoCheck"><span class="checktext">SUNYO<span class="checktextFull">, Bhikkhu</span></span>
+						<input type="checkbox" name="SunyoCheck" id="SunyoCheck" checked >
+						<span class="checkmark"></span>
+					</label> 
+				</div>
+			</li>
+			<li class="lihead noshow">THE NUCLEAR OPTION</li>
+			<li class="notTOC noshow">
+				<div class ="tocbuttons">
+					<button id="resetallsettings">RESET ALL SETTINGS</button>
+				</div>
+			</li>
+		</ul>	
+	</div>
+
+	<div class="no-print" id="topbar">
+		<div class="topnav" id="myTopnav">
+			<div class="topnav-left">
+				<a id="homebutton"><img class="bookshelfbtn" src="../_resources/images/icons/bookshelf.svg" alt="The Library" title="The Library"><p>Library</p></a>
+			</div>
+			<div class="topnav-right">
+				<a class = "noshow" id="searchBtn"><img src="../_resources/images/icons/search.svg" alt="Search"><p>Search</p></a>
+				<a id="detailsBtn"><img src="../_resources/images/icons/info.svg" alt="info"><p>Info</p></a>
+				<a id="settingsBtn"><img src="../_resources/images/icons/settings.svg" alt="Settings"><p>Settings</p></a> 
+				<a id="downloadBtn"><img src="../_resources/images/icons/downloads.svg" alt="Download"><p>Downloads</p></a>
+			</div>
+		</div>
+		<div class="topnav2">
+			<!-- <div class="progress-container" id="prog-cont"><div class="progress-bar" id="progressBar"></div></div> --> 
+			<div id="tocBtn" class="tocbtn">&#10095; Find</div>
+			<div class="booktitle">TheMettāShelf<br>Library</div>
+			<div class="topnav2buttons"><button id="gridlistBtn"></button></div>
+		</div>
+	</div>
+
+	<div id="SearchBar" class ="searchbar">
+		<input type="search" id="SearchInput" placeholder="Search in page ...">
+		<button class="sbbutton closesearch" data-search="clear">&#10006;</button>
+		<span class="resultcounter">
+			<span id="searchcount"></span>
+			<span id="currentresult"></span> 
+			<span id="totalresults"></span>
+		</span>
+		<button class="sbbutton" data-search="next">&#9660;</button>
+		<button class="sbbutton" data-search="prev">&#9650;</button>
+		<button class="sbbutton" data-search="revert">&#8634;</button>
+	</div>
+
+	<div id="Modal" class="modal hide">
+		<div id="ModalContent" class="modal-content">
+		<div id="ModalHeader" class="modal-header">
+		<span id="modalCloseBtn" class="close">&times;</span>
+		<div id="ModalHeaderText"></div>
+		 </div>
+		
+		 <div id="ModalBody" class="modal-body">
+		  
+			<div id="ModalDetails">
+
+				<div class="shelfinfoheadcont">
+					<div>
+						<img class= "shelflogo" src="../_resources/images/themes/tmslogo.svg"  title="theMettaShelf Logo" alt="Metta Shelf Logo">
+						<div>Version 0.6.220428.0</div>
+					</div>
+					<div>
+						<p>Made with love by:</p>
+						<a href="https://wiswo.org">
+							<div><img src="../_resources/images/icons/logo.png"  title="Wisdom & Wonders Main Site" alt="Wiswo Logo"></div>
+							<p class="wiswologodetails">Wisdom & Wonders</p>
+						</a>
+
+						<a href="https://wiswo.org/donate">
+							<div><img src="../_resources/images/icons/donate.svg" width="100" title="Donations Page" alt="Donations Page"></div>
+						</a>
+					</div>
+				</div>
+
+				<div class="bookcopyright">
+					<h2>Welcome</h2>
+					<p><strong>theMettāShelf</strong> is a repository for Buddhist Books, with a built in app for reading ebooks and listening to AudioBooks.</p>
+					<p><span style="color:crimson; font-weight: 700;">Currently this app is still in it's infancy and we consider it a prototype.</span> There will be many design changes over the coming years as we try out functionality. If you have any ideas, please feel free to contact us, either via the contact form on the main site (see below) or you can message the librarian <strong><a href="https://discourse.suttacentral.net/u/stu/summary">@stu</a></strong> on the SuttaCentral forum.</p>
+				</div>
+				<div class="bookcopyright">
+					<h2>Instructions</h2>
+					<p>To read a book, simply click on it.</p>
+					<p>To get back to this, the library page, click on the Library logo in the top left hand corner of any book.</p>
+					<p>For settings click the cog wheel in the top right. Once you are in a book, there are additional settings available.</p>
+					<p>All settings and your place in each book is stored on the device that you are using. No information is sent to Wisdom & Wonders.</p>
+					<p>You can search for a book on this page using the 'FIND' menu on the left hand side of this page.</p>
+				</div>
+				<div class="bookcopyright">
+					<h2>Resources</h2>
+					<p>There is a complete list of <strong><a href="https://wiswo.org/bookdownloads/">all ebook downloads</a></strong> on our main site, including non-English language books, not in this app.</p>
+					<p>If you have any problems, comments or suggestions for future versions, please visit our <strong><a href="https://wiswo.org/contact/">contacts page</a></strong> on our main site.</p>
+				</div>
+				<div class="bookcopyright">
+					<h2>Help</h2>
+					<div id="snsInfo" class="info" style="margin-bottom: 50vh;"><strong>Sutta Search Help: </strong>
+						<ul>
+							<li>Searches on the <strong>Sutta Number</strong> will return books that reference that sutta in their pages.</li> 
+							<li>We use SuttaCentral style numbering. e.g. try <strong>an4.170</strong> or <strong>mn66</strong></li> 
+							<li>We are currently indexing the books in the library where they reference sutta's. <span style="color:crimson;">Only the shorter booklets have been indexed so far.</span></li> 
+							<li><strong>Hint:</strong> To see which books have currently been indexed, press the Sutta Number button and leave the search field blank. </li>
+							<li>As soon as you start your search, all books will disappear beacuse <strong>you must enter the exact number of the sutta</strong> that you are looking for. For example, <strong>an4.17</strong> will not return a book where only <strong>an4.170</strong> is referenced.</li>
+						</ul>
+					</div>
+				</div>	
+			</div>
+
+			<div id="ModalNotes">
+				<h2>There are no Notes for the Library</h2>
+			</div>	  
+
+			<div id="ModalSettings">
+				<div class="settingsbox">
+					<span class ="settingsheadersleft">Font size:</span>
+					<span class="settingsheadersright">
+						<button class="decrease" id ="decfont"></button>
+						<span class="level" id="flvalue"></span>
+						<button class="increase" id ="incfont"></button>
+					</span>
+				</div>
+				<div class="settingsbox">
+				<span class ="settingsheadersleft">Line spacing:</span>
+				<span class="settingsheadersright">
+					<button class="decrease" id ="declh"></button>
+					<span class="level" id="lhvalue"></span>
+					<button class="increase" id ="inclh"></button>
+				</span>
+				</div>
+				<div class="settingsbox">
+					<span class ="settingsheadersleft">Serif Font:</span>
+					<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="serifFont"><span class="slider round"></span></label></span>
+				</div>
+				  <div class="settingsbox">			
+					  <p class ="settingsheaders">Colour:</p>
+					  <div class="radio-toolbar">
+						  <input type="radio" id="radioSimple" name="themeRadio" value="simple">
+						  <label for="radioSimple">Bright</label>
+					  
+						  <input type="radio" id="radioSimpleDark" name="themeRadio" value="simpledark">
+						  <label for="radioSimpleDark">Dark</label>
+					  
+						  <input type="radio" id="radioSepia" name="themeRadio" value="sepia">
+						  <label for="radioSepia">Mellow</label> 
+					  </div>
+				  </div>
+				<div class="settingsbox noshow">
+					<span class ="settingsheadersleft">Show book pages:</span>
+					<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showPageCheck"><span class="slider round"></span></label></span>
+				</div>
+				<div class="modal-header modal-adv"><div id="SettingsAdv" >Advanced</div></div>
+				<div class="settingsbox noshow">
+					<p class ="settingsheaders">Margins:</p>
+					<div class="radio-toolbar">
+						<input type="radio" id="radioMargNarrow" name="marginRadio" value="narrowmargin">
+						<label for="radioMargNarrow">
+							<img class = "marginicons" src="../_resources/images/icons/marginwide.svg" alt="Wide Margins">
+						</label>
+						<input type="radio" id="radioMargMid" name="marginRadio" value="midmargin">
+						<label for="radioMargMid">
+							<img class = "marginicons" src="../_resources/images/icons/marginmid.svg" alt="Normal Margins">
+						</label>
+						<input type="radio" id="radioMargWide" name="marginRadio" value="widemargin">
+						<label for="radioMargWide">
+							<img class = "marginicons" src="../_resources/images/icons/marginnarrow.svg" alt="Narrow Margins">
+						</label> 
+					</div>
+				</div>
+				<div class="settingsbox noshow">
+					<span class ="settingsheadersleft">Justification:</span>
+					<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="justifyCheck"><span class="slider round"></span></label></span>
+				</div>
+				<div class="settingsbox noshow">
+					<span class ="settingsheadersleft">Hyphenation:</span>
+					<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="hyphenCheck"><span class="slider round"></span></label></span>
+				</div>
+				<div class="settingsbox noshow">
+					<span class ="settingsheadersleft">Show Paragraph numbers:</span>
+					<select class = "select-css" id = "showParaNosList">
+						<option value="" > do not show numbers </option>
+						<option> count by whole book </option>
+						<option> count by section </option>
+						<option> count by subsection </option>
+					</select>
+				</div>
+				<div class="settingsbox">
+					<span class ="settingsheadersleft">Full Screen Mode:</span>
+					<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="mobileUIAlwaysOnCheck"><span class="slider round"></span></label></span>
+				</div>
+			  </div>
+			  <div id="ModalDownload">
+			  </div>
+			  <div id="ModalSutta"><div id="sutta"></div></div><div id="ModalDownloadAlert"></div>
+		  </div>
+		</div>
+	</div>
+
+	<div id="spinbox">
+		<div id="spintext"></div>
+	</div>
+
+	<div class="wrapper" id="bookwrap">
+	<div></div>
+
+	<div class="content" id="thecontent">
+		<h1 class="engrave center" id="coverengraving">The<br>Library</h1>
+		<div class="book" id="thebook" data-shortcode="shelf">
+		<div class="cover noshow">
+			<div class="cover-grid">
+				<div></div>
+				<div>
+					<img src="../_resources/images/themes/tmslogo.svg" alt="theMettāShelf Library" > 
+				</div>
+				<div></div>
+			</div>
+		</div>
+	
+	<section class="bookshelf" id="bookshelf">
+		<div id="TOCTarget0"></div>
+		<div id="filterMessage" class="info"></div>
+		<ul class="booklist">
+			<li>
+				<a href="../sitm/">
+					<img src="../_resources/images/bookcovers/shelfpics/sitm.jpg" alt="Simply This Moment">
+					<div class="suttalist liblist" data-suttalist="" data-liblist="16">
+						<h3 class="bookshelftitle">Simply This Moment</h3>
+						<p>A collection of edited talks by <span class="bookshelfauthor">Ajahn Brahm</span>, in the main given to monks and vistors on Rains Retreat. Ajahn inspires and offers practical advice to attain the beautuful, deeper meditation states. 440pp. <span class="bookshelfpubdate">2005</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../auth/">
+					<img src="../_resources/images/bookcovers/shelfpics/auth.jpg" alt="The Authenticity of the Early Buddhist Texts">
+					<div class="suttalist liblist" data-suttalist="" data-liblist="15">
+						<h3 class="bookshelftitle">The Authenticity of the Early Buddhist Texts</h3>
+						<p><span class="bookshelfauthor">Bhikkhu Sujato and Bhikkhu Brahmali</span> articulates and defends a single thesis: that the Early Buddhist Texts originated in the lifetime of the Buddha or a little later, because they were, in the main, spoken by the Buddha and his contemporary disciples.<span class="bookshelfpubdate">2014</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../vasy/">
+					<img src="../_resources/images/bookcovers/shelfpics/vasy.jpg" alt="Viññāṇa Anidassana">
+					<div class="suttalist liblist" data-suttalist="" data-liblist="14">
+						<h3 class="bookshelftitle">Viññāṇa Anidassana</h3>
+						<p><span class="bookshelfauthor">Bhikkhu Sunyo</span> discusses why Viññāṇa Anidassana is not nibbāna, but rather it is the state of boundless consciousness, the second “formless” meditation state. 30pp. <span class="bookshelfpubdate">2021</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../ssbl/">
+					<img src="../_resources/images/bookcovers/shelfpics/ssbl.jpg" alt="Satipaṭṭhāna and Samādhi">
+					<div class="suttalist liblist" data-suttalist="AN2_31@ AN4_14@ AN4_41@ AN8_63@ AN9_64@ AN10_3@ DN18@ DN22@ MN10@ MN118@ MN125@ MN44@ SN45_1@ SN45_8@ SN47:4@ SN47_17@ SN47_8@ SN48_50@ SN48_8@ SN54_10@" data-liblist="13">
+						<h3 class="bookshelftitle">Satipaṭṭhāna and Samādhi</h3>
+						<p><span class="bookshelfauthor">Ajahn Brahmali</span> investigates the relationship between mindfulness and stillness. 19pp. <span class="bookshelfpubdate">2016</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../gkbk/">
+					<img src="../_resources/images/bookcovers/shelfpics/gkbk.jpg" alt="Good Kamma! Bad Kamma! Cover" >
+					<div class="suttalist liblist" data-suttalist="" data-liblist="12">
+						<h3 class="bookshelftitle">Good Kamma! Bad Kamma! What Exactly is Kamma?</h3>
+						<p><span class="bookshelfauthor">Bhante S. Dhammika</span> deals with kamma and rebirth as they were explained by the Buddha 56pp. <span class="bookshelfpubdate">2015</span></p>
+					</div>
+				</a>
+			</li>
+			<li class="audiobooktag"> 
+				<a href="../audiospom/">
+					<img src="../_resources/images/bookcovers/shelfpics/spom.jpg" alt="A Swift Pair of Messengers">
+					<div class="suttalist liblist" data-suttalist="" data-liblist="11">
+						<h3 class="bookshelftitle">A Swift Pair of Messengers</h3>
+						<p><span class="bookshelfauthor">Bhikkhu Sujato</span> clarifies the meaning and function of calm and insight in Buddhist meditation. 🔊 AudioBook running time: 7:08:08 <span class="bookshelfpubdate">2012</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../spom/">
+					<img src="../_resources/images/bookcovers/shelfpics/spom.jpg" alt="A Swift Pair of Messengers">
+					<div class="suttalist liblist" data-suttalist="" data-liblist="10">
+						<h3 class="bookshelftitle">A Swift Pair of Messengers</h3>
+						<p><span class="bookshelfauthor">Bhikkhu Sujato</span> clarifies the meaning and function of calm and insight in Buddhist meditation. 175pp. <span class="bookshelfpubdate">2012 </span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../wosb/">
+					<img src="../_resources/images/bookcovers/shelfpics/wosb.jpg" alt="Wisdom of Silence">
+					<div class="suttalist liblist" data-suttalist="" data-liblist="9">
+						<h3 class="bookshelftitle">Wisdom of Silence</h3>
+						<p><span class="bookshelfauthor">Ajahn Brahm</span> discusses the key aspects of Buddhist practice. <q>The truth is always silent. The lie is always with words.</q> 23pp. <span class="bookshelfpubdate">2018</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../bcbl/">
+					<img src="../_resources/images/bookcovers/shelfpics/bcbl.jpg" alt="Buddhist Cosmology">
+					<div class="suttalist liblist" data-suttalist="AN3_80@ AN7_66@ AN10_29@ MN4@ MN93@ SN15_1@ SN56_31@ SN56_46@ " data-liblist="8">
+						<h3 class="bookshelftitle">Buddhist Cosmology</h3>
+						<p><span class="bookshelfauthor">Ajahn Brahmali</span> talks about Buddhist Cosmology and it's relationship to modern scientific cosmology  34pp. <span class="bookshelfpubdate">2015</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../bmom/">
+					<img src="../_resources/images/bookcovers/shelfpics/bmom.jpg" alt="The Basic Method of Meditation">
+					<div class="suttalist liblist" data-suttalist="DN29@ MN66@" data-liblist="7">
+						<h3 class="bookshelftitle">The Basic Method of Meditation</h3>
+						<p><span class="bookshelfauthor">Ajahn Brahm</span>, in this now classic booklet, gives an overview of the process and precise instructions for medition. 28pp. <span class="bookshelfpubdate">2002</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../doab/" >
+					<img src="../_resources/images/bookcovers/shelfpics/doab.jpg" alt="Dependent Origination">
+					<div class="suttalist liblist" data-suttalist="AN1_328@ AN3_61@ AN3_76@ AN4_170@ AN5_25@ AN10_65@ AN10_92@ DN15@ MN2@ MN12@ MN13@ MN28@ MN38@ MN43@ MN70@ MN101@ MN117@ MN120@ SN1_20@ SN4_21@ SN5_10@ SN12_1@ SN12_2@ SN12_10@ SN12_15@ SN12_21@ SN12_25@ SN12_27@ SN12_39@ SN12_43@ SN12_51@ SN12_68@ SN36_6@ Thag_17_2@ " data-liblist="6">
+						<h3 class="bookshelftitle">Dependent Origination</h3>
+						<p><span class="bookshelfauthor">Ajahn Brahm</span> discusses this important Early Buddhist concept, referencing details from the Pali Canon. 43pp. <span class="bookshelfpubdate">2002</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../outk/">
+					<img src="../_resources/images/bookcovers/shelfpics/outk.jpg" alt="Opening Up to Kindfulness">
+					<div class="suttalist liblist" data-suttalist="" data-liblist="5">
+						<h3 class="bookshelftitle">Opening Up to Kindfulness</h3>
+						<p><span class="bookshelfauthor">Ajahn Brahm</span> helps us to discover the basic elements of Buddhism. 174pp. <span class="bookshelfpubdate">2021</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../dobl/">
+					<img src="../_resources/images/bookcovers/shelfpics/dobl.jpg" alt="Dependent Origination">
+					<div  class="suttalist liblist" data-suttalist="DN15@ SN22_59@" data-liblist="4">
+						<h3 class="bookshelftitle">Dependent Origination</h3>
+						<p><span class="bookshelfauthor">Ajahn Brahmali</span> draws out the most important aspects of this Early Buddhist concept. 19pp. <span class="bookshelfpubdate">2013</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../dlbl/">
+					<img src="../_resources/images/bookcovers/shelfpics/dlbl.jpg" alt="Dependent Liberation">
+					<div class="suttalist liblist" data-suttalist="SN12_23@ AN8_6@ MN39@ AN6_10@ AN11_3@ MN118@ MN10@ AN3_68@ MN19@ SN50_1@ MN68@ MN53@ MN36@ " data-liblist="3">
+						<h3 class="bookshelftitle">Dependent Liberation</h3>
+						<p><span class="bookshelfauthor">Ajahn Brahmali</span> on how to cultivate joy and mindfulness that leads to liberation. 19pp. <span class="bookshelfpubdate">2013</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../ahom/">
+					<img src="../_resources/images/bookcovers/shelfpics/ahom.jpg" alt="A History of Mindfulness">
+					<div class="suttalist liblist" data-suttalist="" data-liblist="2">
+						<h3 class="bookshelftitle">A History of Mindfulness</h3>
+						<p><span class="bookshelfauthor">Bhikkhu Sujato</span> on "How tranquillity worsted insight in the Satipatthana Sutta". 383pp. <span class="bookshelfpubdate">2012</span></p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../afcm/">
+					<img src="../_resources/images/bookcovers/shelfpics/afcm.jpg" alt="A Flower Called Metta Cover" >
+					<div class="suttalist liblist" data-suttalist="" data-liblist="1">
+						<h3 class="bookshelftitle">A Flower Called Mettā</h3>
+						<p><span class="bookshelfauthor">Ajahn Chatchai</span> gives precise instructions on the cultivation of loving-kindness. 47pp. <span class="bookshelfpubdate">2017</span></p>
+					</div>
+				</a>
+			</li>
+
+		</ul>
+		<ul class="pagination"></ul>
+	</section>	
+
+	<br>
+	<div class="noshow" id="shelffooter">
+		<div class="verse"><br><br>The gift of the Dhamma excels all gifts; <br>the taste of the Dhamma excels all tastes; <br>delight in the Dhamma excels all delights. <br>The eradication of craving overcomes all suffering.<br><br><br></div>
+		<div class="cite">— The Buddha, Dhammapada 354</div>
+		<p>All books on the MettāShelf exist here because of the kind offerings of the authors, their editors, designers, first readers and the many kind people who support the authors efforts. Their gift to us is immersurable, and we wish to thank them all. May the merits from their offerings continue to reverberate around saṁsāra.<br></p>
+		<a href="https://wiswo.org/donate">
+			<img src="../_resources/images/icons/donate.svg" width="100" title="Donations Page" alt="Donations Page">
+		</a>
+	</div>
+
+	</div>
+	</div>
+	<div></div>
+	</div> 
+
+	<script src="../js/jquery-3.6.0.min.js"></script>
+	<script src="../js/jquery.mark.min.js"></script>
+	<script src="../js/reader.js"></script>
+	<script src="../js/list.js.2.3.1/list.min.js"></script>
+	<script src="../js/bookshelf.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+MSTitle - e.g. Dependent Origination
+MSAuthor - e.g Ajahn Brahm
+MSFullAuthor - e.g. Ajahn Brahmavamso Mahathera
+MSBookShortcode	- e.g. doab
+MSPictureAuthor - e.g. AjahnBrahmAuth
+
+MSShortBio - e.g. Ajahn Brahm was born in London in 1951. After graduating from Cambridge he taught in a school for one year before travelling to Thailand to train with Ajahn Chah. After practising for nine years as a monk in Thailand, he was sent to Perth, Australia by Ajahn Chah in 1983. He is Abbot of Bodhinyana monastery, Spiritual Director of the BSWA and a number of other Buddhist Societies and projects world-wide.
+
+MSPubYear - e.g. 2016
+MSEdPubYear - e.g. 2021
+MSPrintedPages - e.g. 43
+
+
+MSogDescription - e.g. - One of the rarely discussed yet astonishing facts about the suttas is that they contain very modern ideas of cosmology. These are specific and direct descriptions of the universe. Much of what the Buddha has to say about this has been borne out by modern research. 
+
+Viññāṇa Anidassana is translated variously, as ‘consciousness that is without feature / signless / invisible / non-manifesting / makes no showing / can not be characterized’ etc.. Some interpreters see this as a kind of consciousness equal to nibbāna. Here we investigate the problems surrounding this claim.
+
+This work articulates and defends a single thesis: that the Early Buddhist Texts originated in the lifetime of the Buddha or a little later, because they were, in the main, spoken by the Buddha and his contemporary disciples. This is the most simple, natural, and reasonable explanation for the evidence.

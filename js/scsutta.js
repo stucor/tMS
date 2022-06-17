@@ -36,6 +36,7 @@ function showBD(linktext ) {
   function getMultiSuttaJSONFileName (slug) {
     const multiSuttaJSONFilesArr = [
       ['an1.328','an1.316-332'],
+      ['an2.31','an2.21-31'],
       ['dhp372','dhp360-382'],
       ['dhp387','dhp383-423'],
       ['dhp409','dhp383-423']

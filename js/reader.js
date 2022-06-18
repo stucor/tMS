@@ -1988,7 +1988,7 @@ function setModalStyle (heading) {
 			break;
 		case 'Sutta':
 			modalbody.style.height = "auto";
-			modalbody.style.maxHeight = "85vh";
+			modalbody.style.maxHeight = "80vh";
 			modalbody.style.padding = "0";
 			modalcontent.style.width = "95%";
 			modalcontent.style.maxWidth = "55em";

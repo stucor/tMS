@@ -211,9 +211,13 @@ header li .segno {
 
 
 .sc-mark {
-  background-color: var(--listlinkhover) !important;
+  background-color:  var(--bdtexthighlighter);
 }
 
+.sc-mark::after {
+  content:' ';
+  background-color: var(--bdtexthighlighter);
+}
 /*
 .segno2 {
   display:none;

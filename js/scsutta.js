@@ -321,7 +321,7 @@ function checkForHiddenHighlights () {
   const paliCheck = document.getElementById('PaliCheck');
   for (let i = 1; i < elArr.length; i=i+2) {
     if ((elArr[i].innerHTML=='') && (!paliCheck.checked)) {
-      message('There are hidden highlights. Select ‘Pali’ in the top bar to show all.');
+      message('There are hidden highlights. Select ‘Pali’ to show all.');
     }
   }
 }

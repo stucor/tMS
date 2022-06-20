@@ -218,20 +218,6 @@ header li .segno {
   content:' ';
   background-color: var(--bdtexthighlighter);
 }
-/*
-.segno2 {
-  display:none;
-  font-size: 0.7em;
-  font-weight: 600;
-  color: var(--scsegmentnumbercolor);
-  position:relative;
-  top: 0;
-}
-*/
-
-
-
-
 
 .segno {
   font-size: 0.7em;

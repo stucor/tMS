@@ -36,7 +36,7 @@
 }
 
 :root {
-	--notused: #5a5a81;
+	--notused: #e0f4fb;
 
 	--fontsize: 1rem;
 	--textalign: justify;
@@ -75,7 +75,6 @@
 	--tableborder: #80808080;
 
 	--scsegmentnumbercolor: #9e2815;
-	--scsuttahighlightcolor: #f1ff5836; /*#f1ff5850;*/
   }
 
 body {

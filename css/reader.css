@@ -150,21 +150,6 @@ body {
 }
 
 
-/*
-.linkbutton {
-	border: none;
-	padding: 0;
-	border-radius: 5px;
-	background-color: var(--invisiblecolor);
-	font-size: 1em;
-	color:cornflowerblue;
-	cursor: pointer;
-
-} 
-*/
-
-
-
 /********** Page Breaks **********/
 
 .pagebreak {
@@ -754,7 +739,7 @@ table.borderlessTable {
 
 .booknote a {
 	color:cornflowerblue;
-	font-weight: 600;
+
 	text-decoration: none;
 }
 
@@ -932,7 +917,41 @@ z-index:9999;
 	color:cornflowerblue;
 }
 
+/*
+#referencelist {
+display: grid;
+grid-template-columns: repeat(auto-fit, 200px);
+grid-gap: 0.5rem;
+justify-content:space-evenly;
+align-content: flex-start;
+list-style-type:none;
+padding:0;
+margin: 0;
+}
+*/
 
+
+#reflist {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 30%);
+	grid-gap: 0.6rem 0.5rem;
+	justify-content:space-evenly;
+	padding:0;
+	margin-left: 1rem;
+}
+
+.reflistitem {
+	text-align: left;
+	line-height: 1em;
+	background-color: rgba(100, 148, 237, 0.043);
+}
+
+/*
+#referencelist > li {
+    display: block;
+    vertical-align: top;
+}
+*/
 
 /******************************************/
 
@@ -1808,6 +1827,11 @@ font-variant: small-caps;
 	font-size: 24px;
 	font-weight: normal;
 	margin-top: -1em;
+}
+
+#ModalDetails  h3 {
+	margin-left : 1em;
+	text-align: left;
 }
 
 /* The Close Button */

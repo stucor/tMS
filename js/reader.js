@@ -85,7 +85,48 @@ document.getElementById('thebook').style.display='block';
 		document.getElementById('coverengraving').style.display='none';
 	}
 
+	if (!(isBookShelf()) && !(isAudioBook())) { // normal book
+		buildInfo();
+	}
+
+}
+
+function buildInfo () {
+
 	/* Adds the element id= referencelist to the details modal */
+
+	let parentDiv = document.getElementById('ModalDetails');
+
+	let BookTitle = document.querySelector('meta[property="og:title"]').content
+	if (BookTitle != '') {
+		let title = document.createElement("h1");
+		title.innerHTML= BookTitle;
+		parentDiv.appendChild(title);
+	}
+
+
+	let suttarefArr = document.getElementsByClassName('sclinktext');
+	if (suttarefArr.length  > 0) {
+		let html = '';
+		let suttaRefs = document.createElement("section");
+		suttaRefs.classList.add("bookcopyright");
+		parentDiv.appendChild(suttaRefs);
+
+		html += `<h3>Sutta References in this book:</h3>`;
+
+		html += `<div id="reflist">	`
+
+		for (let i = 0; i < suttarefArr.length; i++) {
+			suttarefArr[i].setAttribute("id", "slt_"+ i);
+			let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
+			html += `<div class='reflistitem'>${linktext} </div>`;
+		}
+		html += `</div>`;
+		suttaRefs.innerHTML = html;
+	}
+
+
+/*	
 	let parentdiv = document.getElementById('ModalDetails');
 	let detailgrid = document.getElementsByClassName('detail-grid')[0];
 
@@ -110,10 +151,8 @@ document.getElementById('thebook').style.display='block';
 	parentdiv.insertBefore(authordetails,detailgrid);
 	authorHTML = `<hr><h3>Author:<h3>`;
 	authordetails.innerHTML=authorHTML;
-
-
-
-}	
+*/
+}
 
 //ONLOAD
 window.onload = function () {
@@ -1570,11 +1609,14 @@ function scrollToID (id) {
 	}
 	var elmnt = document.getElementById(id);
 	elmnt.scrollIntoView();
+	window.scrollBy(0,-100);
 	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
 	window.scrollBy(0, tbHeight); // scroll the toctarget below the topnav bar so you can see it
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
-
+	//bodge for the highlight - needs a better mechanism for highlighting
+	savedsup = elmnt;
+	clearhighlightnote();
 }
 
 function goToTOCTarget (toctarget) {
@@ -2165,6 +2207,7 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 
 	if (e.target.className == "sclinkref") {
 		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","")
+		console.log(gotoID);
 		scrollToID(gotoID);
 	}
 

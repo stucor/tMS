@@ -917,19 +917,6 @@ z-index:9999;
 	color:cornflowerblue;
 }
 
-/*
-#referencelist {
-display: grid;
-grid-template-columns: repeat(auto-fit, 200px);
-grid-gap: 0.5rem;
-justify-content:space-evenly;
-align-content: flex-start;
-list-style-type:none;
-padding:0;
-margin: 0;
-}
-*/
-
 
 #reflist {
 	display: grid;
@@ -945,13 +932,6 @@ margin: 0;
 	line-height: 1em;
 	background-color: rgba(100, 148, 237, 0.043);
 }
-
-/*
-#referencelist > li {
-    display: block;
-    vertical-align: top;
-}
-*/
 
 /******************************************/
 

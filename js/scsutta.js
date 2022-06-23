@@ -2,7 +2,7 @@ const suttaArea = document.getElementById("sutta");
 
 
 
-function showBD(linktext ) {
+function showBD(linktext) {
 
   function decodeBDLinkText (linkText) {
     let [slug, verses] = linkText.split(":");
@@ -33,39 +33,63 @@ function showBD(linktext ) {
     return output;
   }
 
-  function getMultiSuttaJSONFileName (slug) {
-    const multiSuttaJSONFilesArr = [
-      ['an1.328','an1.316-332'],
-      ['dhp372','dhp360-382'],
-      ['dhp387','dhp383-423'],
-      ['dhp409','dhp383-423']
+  function getMultiSuttaJSONFileName (suttaNumber) {//suttanumber(slug), file, slug
+    const multiSuttaArr = [
+      ['an1.328','an1.316-332',''],
+      ['an2.31','an2.21-31',''],
+      ['an2.172','an2.163-179',''],
+      ['an2.310','an2.310-479','an2.310-319'],
+      ['dhp273','dhp273-289',''],
+      ['dhp274','dhp273-289',''],
+      ['dhp372','dhp360-382',''],
+      ['dhp387','dhp383-423',''],
+      ['dhp409','dhp383-423',''],
+      ['an2.11','an2.11-20','']
     ];
-    let multiFileSlug = '';
-    for (let i=0; i < multiSuttaJSONFilesArr.length; i++) {
-      if (slug == multiSuttaJSONFilesArr[i][0]) {
-        multiFileSlug = multiSuttaJSONFilesArr[i][1];
+    let fileSlug = '';
+    let suttaNo = '';
+    for (let i=0; i < multiSuttaArr.length; i++) {
+      if (suttaNumber == multiSuttaArr[i][0]) {
+        fileSlug = multiSuttaArr[i][1];
+        suttaNo = multiSuttaArr[i][2];
         break;
       }
     }
-      return multiFileSlug;
+    if (suttaNo == '') {
+      suttaNo = suttaNumber;
+    }
+    if (fileSlug) {
+      return [fileSlug, suttaNo];
+    } else {
+      return [suttaNo, suttaNo]
+    }
   }
 
-  let [slug, highlight] = decodeBDLinkText (linktext);
-  let versesToHighlightArr = BDSegmentRange(highlight);
+  let [scprintText, highlight] = decodeBDLinkText (linktext);
+  let sclinkText = slugStrip(scprintText);
+
+  let highlightArr = BDSegmentRange(highlight);
   suttaArea.innerHTML ='';
+
+  let [JSONFile, slug] = getMultiSuttaJSONFileName(slugStrip(scprintText));
 
   if (typeof showSpinner === "function") { 
 	  showSpinner();
   }
 
-  let multiSuttaFile = getMultiSuttaJSONFileName(slugStrip(slug));
 
+  buildSutta (JSONFile, slug, highlightArr, sclinkText, scprintText);
+
+  /*
   if (multiSuttaFile != '') {
+    if (multiSuttaNumber != '') {
+      slug = multiSuttaNumber;
+    }
     buildSutta(multiSuttaFile, versesToHighlightArr, slug);
   } else {
     buildSutta(slug, versesToHighlightArr);
   }
-
+*/
 
 	const observer = new MutationObserver(function(mutations_list) {
 		mutations_list.forEach(function(mutation) {
@@ -90,55 +114,49 @@ function slugStrip(slug) {
   return slug;
 }
 
-function buildSutta(slug, highlightArr =[], multiFileSuttaNumber ='') {
-
-  if (multiFileSuttaNumber) {
-    printSlug = multiFileSuttaNumber;
-  } else {
-    printSlug = slug;
-  }
-
-  slug = slugStrip(slug);
-  multiFileSuttaNumber = slugStrip(multiFileSuttaNumber);
-
-  if (multiFileSuttaNumber) {
-    sclinkslug = multiFileSuttaNumber;
-  } else {
-    sclinkslug = slug;
-  }
-
+function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
+/*
+  console.log('file: '+ file); //file
+  console.log('slug: '+ slug); //slug
+  console.log('highlightArr: '+ highlightArr); //highlight array
+  console.log('sclink: '+ sclink);
+  console.log('scdisplayText: '+ scdisplayText); //printtext
+*/
   let html = '';
 
   html += `<div class="button-area">
   <label class="checkcontainer" for="PaliCheck"><span class="checktext">Pali</span>
   <input type="checkbox" name="PaliCheck" id="PaliCheck" checked >
   <span class="checkmark"></span></label>
-  <span class="sc-link"><a href="https://suttacentral.net/${sclinkslug}/"><img>` + printSlug + `<span class="nomobile"> on SuttaCentral</span></a></span>
+  <span class="sc-link"><a href="https://suttacentral.net/${sclink}/"><img>` + scdisplayText + `<span class="nomobile"> on SuttaCentral</span></a></span>
   <button id="next-highlight" class="greyedout">Next Highlight</button></div>
   <div id="messagecontainer"><span id="messagetext"></span></div>`
 
   const rootResponse = fetch(
     `../_resources/bilara-data/published/root/pli/ms/sutta/${parseSlug(
-      slug
+      file
     )}_root-pli-ms.json`
   )
     .then(response => response.json())
     .catch(error => {
-      suttaArea.innerHTML = `Sorry, "${decodeURIComponent(slug)}" is not a valid sutta citation`;
+      suttaArea.innerHTML = `Sorry, "${decodeURIComponent(file)}" is not a valid sutta citation`;
     });
 
   const translationResponse = fetch(
     `../_resources/bilara-data/published/translation/en/sujato/sutta/${parseSlug(
-      slug
+      file
     )}_translation-en-sujato.json`
   ).then(response => response.json());
 
   const htmlResponse = fetch(
     `../_resources/bilara-data/published/html/pli/ms/sutta/${parseSlug(
-      slug
+      file
     )}_html.json`
   ).then(response => response.json());
 
+  function hasNumber(myString) {
+    return /\d/.test(myString);
+  }
 
   Promise.all([rootResponse, translationResponse, htmlResponse]).then(responses => {
     const [paliData, transData, htmlData] = responses;
@@ -156,8 +174,7 @@ function buildSutta(slug, highlightArr =[], multiFileSuttaNumber ='') {
       transData[segment] = parseMarkdown(transData[segment]); 
 
       /* Highlight ranges specified in highlightArr */
-
-      var marker = removePliHead = "";
+      var marker = removeHead = "";
       const [segSuttaNo, segSegmentNo] = segment.split(":");
 
       if (segSegmentNo == highlightArr[highlightArrCounter]) {
@@ -175,18 +192,11 @@ function buildSutta(slug, highlightArr =[], multiFileSuttaNumber ='') {
 
       /* Extract a sutta within a multi sutta JSON file */
       let printThis = true;
-
-      if (multiFileSuttaNumber != '') {
+      if (file != slug) {
         printThis=false;
-
-        if ((multiFileSuttaNumber == segSuttaNo ) && (segSegmentNo !== '1.0') && (segSegmentNo !== '0')) {
-          printThis = true;
-        }
-
         if (transData[segment] == paliData[segment]) { //remove duplicate if pali and eng are the same
-          removePliHead = "noshow";
+          removeHead = "noshow";
         }
-
         if (keyCount == 1) {
           html += `<header><ul><li class='division'><span class="pli-lang" lang="pi">${paliData[segment]}</span><span class="eng-lang" lang="en">${transData[segment]}</span></li>`;
         }
@@ -194,25 +204,30 @@ function buildSutta(slug, highlightArr =[], multiFileSuttaNumber ='') {
           html += `<li class='subdivision'><span class="pli-lang" lang="pi">${paliData[segment]}</span><span class="eng-lang" lang="en">${transData[segment]}</span></li></ul>`;
         }
         if (keyCount == 3) {
-          html += `<h1 class='range-title'><span class="pli-lang ${removePliHead}" lang="pi">${paliData[segment]}</span><span class="eng-lang" lang="en">${transData[segment]}</span></h1></header><h4>${printSlug}</h4>`;
+          html += `<h1 class='range-title'><span class="pli-lang ${removeHead}" lang="pi">${paliData[segment]}</span><span class="eng-lang" lang="en">${transData[segment]}</span></h1><h4>${scdisplayText}</h4></header>`;
+        }
+        if ((slug == segSuttaNo ) && (segSegmentNo !== '1.0') && (segSegmentNo !== '0') && (segSegmentNo !== '0.1') && (segSegmentNo !== '0.2') && (segSegmentNo !== '0.3')) {
+          printThis = true;
         }
       }
 
       const [openHtml, closeHtml] = htmlData[segment].split(/{}/);
       if (printThis) {
-        html += `${openHtml}<span class="pli-lang ${marker} ${removePliHead}" lang="pi"><span class="segno">${segSegmentNo} <br /></span>${paliData[segment]}</span><span class="eng-lang ${marker}" lang="en">${transData[segment]}</span>${closeHtml}\n\n`;
+        html += `${openHtml}<span class="pli-lang ${marker} ${removeHead}" lang="pi"><span class="segno">${segSegmentNo} <br /></span>${paliData[segment]}</span><span class="eng-lang ${marker}" lang="en">${transData[segment]}</span>${closeHtml}\n\n`;
       }
+
     });
 
     const sctranslator = `<p id="sc-translator">&#8212; transl. Bhikkhu Sujato</p>`;
-
     html += sctranslator;
-
     suttaArea.innerHTML = html;
-
     toggleThePali();
   });
+
+
 }
+
+
 
 function parseMarkdown(markdownText) {
 	const htmlText = markdownText
@@ -246,7 +261,6 @@ function toggleThePali() {
   }
   
   paliCheck.addEventListener("change", () => {
-    console.log('here');
     const modalBody = document.getElementById ('ModalBody');
     const eles = suttaArea.querySelectorAll(".eng-lang");
     var matchedElement = eles[0];
@@ -309,7 +323,7 @@ function checkForHiddenHighlights () {
   const paliCheck = document.getElementById('PaliCheck');
   for (let i = 1; i < elArr.length; i=i+2) {
     if ((elArr[i].innerHTML=='') && (!paliCheck.checked)) {
-      message('There are hidden highlights. Select ‘Pali’ in the top bar to show all.');
+      message('There are hidden highlights. Select ‘Pali’ to show all.');
     }
   }
 }

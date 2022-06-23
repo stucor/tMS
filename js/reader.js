@@ -85,7 +85,75 @@ document.getElementById('thebook').style.display='block';
 		document.getElementById('coverengraving').style.display='none';
 	}
 
-}	
+	if (!(isBookShelf()) && !(isAudioBook())) { // normal book
+		buildInfo();
+	}
+
+}
+
+function buildInfo () {
+
+	/* Adds the element id= referencelist to the details modal */
+
+	let parentDiv = document.getElementById('ModalDetails');
+
+	/*
+	let BookTitle = document.querySelector('meta[property="og:title"]').content
+	if (BookTitle != '') {
+		let title = document.createElement("h1");
+		title.innerHTML= BookTitle;
+		parentDiv.appendChild(title);
+	}
+*/
+
+	let suttarefArr = document.getElementsByClassName('sclinktext');
+	if (suttarefArr.length  > 0) {
+		let html = '';
+		let suttaRefs = document.createElement("section");
+		suttaRefs.classList.add("bookcopyright");
+		parentDiv.appendChild(suttaRefs);
+
+		html += `<h3>Sutta References in this book:</h3>`;
+
+		html += `<div id="reflist">	`
+
+		for (let i = 0; i < suttarefArr.length; i++) {
+			suttarefArr[i].setAttribute("id", "slt_"+ i);
+			let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
+			html += `<div class='reflistitem'>${linktext} </div>`;
+		}
+		html += `</div>`;
+		suttaRefs.innerHTML = html;
+	}
+
+
+/*	
+	let parentdiv = document.getElementById('ModalDetails');
+	let detailgrid = document.getElementsByClassName('detail-grid')[0];
+
+	let refListHead = document.createElement("h3");
+	parentdiv.insertBefore(refListHead,detailgrid);
+	refListHead.innerHTML=`Sutta References in this book:`;
+
+	let referencelist = document.createElement("div");
+	referencelist.setAttribute("id", "reflist");
+	parentdiv.insertBefore(referencelist,detailgrid);
+	let suttarefArr = document.getElementsByClassName('sclinktext');
+	for (let i = 0; i < suttarefArr.length; i++) {
+		suttarefArr[i].setAttribute("id", "slt_"+ i);
+		let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
+		referencelist.innerHTML += `<div class='reflistitem'>${linktext} </div>`;
+	}
+	if (!referencelist.innerHTML) {
+		refListHead.innerHTML = 'There are no Suttas referenced in this book';
+	}
+
+	let authordetails = document.createElement("section");
+	parentdiv.insertBefore(authordetails,detailgrid);
+	authorHTML = `<hr><h3>Author:<h3>`;
+	authordetails.innerHTML=authorHTML;
+*/
+}
 
 //ONLOAD
 window.onload = function () {
@@ -1058,6 +1126,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#c9d5fc');
 			r.style.setProperty('--primarycolor', '#06036ea0');
 			r.style.setProperty('--listlinkhover', '#d5dcfd60');
+			r.style.setProperty('--bdtexthighlighter', '#e0f4fb');//'#eef0fb');
 
 			r.style.setProperty('--tablecaption', '#dadada');
 			r.style.setProperty('--tablehead', '#c9c9c9');
@@ -1066,7 +1135,6 @@ function setTheme(){
 			r.style.setProperty('--tablefoot', '#ececec');
 
 			r.style.setProperty('--scsegmentnumbercolor', '#9e2815');
-			r.style.setProperty('--scsuttahighlightcolor', '#faebd7c0');
 
 			var engrave = document.getElementById('coverengraving');
 			engrave.style.color ='#bdbdbd';
@@ -1187,6 +1255,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#475f7a');
 			r.style.setProperty('--primarycolor', '#667b9e');
 			r.style.setProperty('--listlinkhover', '#9db4ff40');
+			r.style.setProperty('--bdtexthighlighter', '#484c5e');
 
 			r.style.setProperty('--tablecaption', '#252525');
 			r.style.setProperty('--tablehead', '#363636');
@@ -1195,7 +1264,6 @@ function setTheme(){
 			r.style.setProperty('--tablefoot', '#131313');
 
 			r.style.setProperty('--scsegmentnumbercolor', '#d39990');
-			r.style.setProperty('--scsuttahighlightcolor', '#faebd730');
 
 			var engrave = document.getElementById('coverengraving');
 			engrave.style.color ='#7c7c7c';
@@ -1329,6 +1397,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#ecd38d');
 			r.style.setProperty('--primarycolor', '#cea140');
 			r.style.setProperty('--listlinkhover', '#cea14030');
+			r.style.setProperty('--bdtexthighlighter', '#ffed79') //'#eee5c2');
 
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');
@@ -1337,7 +1406,6 @@ function setTheme(){
 			r.style.setProperty('--tablefoot', '#f9f9df');
 
 			r.style.setProperty('--scsegmentnumbercolor', '#9e2815');
-			r.style.setProperty('--scsuttahighlightcolor', '#faebd7ff');
 
 			var engrave = document.getElementById('coverengraving');
 			engrave.style.color ='#bdbdbd';
@@ -1534,8 +1602,34 @@ window.onpopstate = function (event) {
 
 // NAVIGATION FUNCTIONS
 
+function scrollToID (id) {
+	exitStaticModal();
+	var scroller = Math.floor(window.scrollY);
+	if ( history.state.scrollState != scroller) { 
+		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
+	}
+	var elmnt = document.getElementById(id);
+	let parentElmnt = elmnt.parentElement;
+	if (parentElmnt.classList.contains('booknote')) {
+		setModalStyle ("Notes");
+		showModal("Notes");
+		savedsup = elmnt;
+		clearhighlightnote();
+		highlightnote(parentElmnt.dataset.note); 
+		stopBookScroll ();
+
+	} else {
+		elmnt.scrollIntoView({block: 'start', behavior: 'auto',});
+		window.scrollBy(0, -150);
+		//bodge for the highlight - needs a better mechanism for highlighting
+		savedsup = elmnt;
+		clearhighlightnote();
+	}
+	scroller = Math.floor(window.scrollY);
+	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
+}
+
 function goToTOCTarget (toctarget) {
-	
 	var scroller = Math.floor(window.scrollY);
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
@@ -2121,6 +2215,10 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 		goToTOCTarget(toctarget);
 	}
 
+	if (e.target.className == "sclinkref") {
+		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","")
+		scrollToID(gotoID);
+	}
 
 });
 

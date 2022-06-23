@@ -118,9 +118,9 @@ h3 span.pli-lang .segno {
   position:absolute;
   min-height: 20px;
   width:96%;
-  bottom:-35px;
+  top: 25px;
   left:-1px;
-  background-color: rgb(180, 16, 49);
+  background-color: #c68b01;/* rgb(180, 16, 49);*/
   color:whitesmoke;
   border:1px solid lightgrey;
   padding:0 2%;
@@ -192,7 +192,7 @@ header li .segno {
   display:none;
 }
 
-.sclinktext {
+.sclinktext, .sclinkref {
   color: cornflowerblue;
   text-decoration: none;
   font-weight: 500;
@@ -211,23 +211,13 @@ header li .segno {
 
 
 .sc-mark {
-  background-color: var(--listlinkhover) !important;
+  background-color:  var(--bdtexthighlighter);
 }
 
-/*
-.segno2 {
-  display:none;
-  font-size: 0.7em;
-  font-weight: 600;
-  color: var(--scsegmentnumbercolor);
-  position:relative;
-  top: 0;
+.sc-mark::after {
+  content:' ';
+  background-color: var(--bdtexthighlighter);
 }
-*/
-
-
-
-
 
 .segno {
   font-size: 0.7em;
@@ -288,9 +278,7 @@ header li .segno {
 
 
   #messagecontainer {
-    bottom: -50px;
-    font-size: 0.9em;
-
+    font-size: 0.8em;
   } 
 
 }

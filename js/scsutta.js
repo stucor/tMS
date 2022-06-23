@@ -80,17 +80,6 @@ function showBD(linktext) {
 
   buildSutta (JSONFile, slug, highlightArr, sclinkText, scprintText);
 
-  /*
-  if (multiSuttaFile != '') {
-    if (multiSuttaNumber != '') {
-      slug = multiSuttaNumber;
-    }
-    buildSutta(multiSuttaFile, versesToHighlightArr, slug);
-  } else {
-    buildSutta(slug, versesToHighlightArr);
-  }
-*/
-
 	const observer = new MutationObserver(function(mutations_list) {
 		mutations_list.forEach(function(mutation) {
 			mutation.addedNodes.forEach(function(added_node) {
@@ -154,9 +143,11 @@ function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
     )}_html.json`
   ).then(response => response.json());
 
+  /*
   function hasNumber(myString) {
     return /\d/.test(myString);
   }
+  */
 
   Promise.all([rootResponse, translationResponse, htmlResponse]).then(responses => {
     const [paliData, transData, htmlData] = responses;
@@ -170,7 +161,6 @@ function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
       if (transData[segment] === undefined) {
         transData[segment] = "";
       }
-
       transData[segment] = parseMarkdown(transData[segment]); 
 
       /* Highlight ranges specified in highlightArr */

@@ -97,15 +97,15 @@ function buildInfo () {
 
 	let parentDiv = document.getElementById('ModalDetails');
 
-	/*
+// Info Title
 	let BookTitle = document.querySelector('meta[property="og:title"]').content
 	if (BookTitle != '') {
 		let title = document.createElement("h1");
 		title.innerHTML= BookTitle;
 		parentDiv.appendChild(title);
 	}
-*/
 
+// Suttalist
 	let suttarefArr = document.getElementsByClassName('sclinktext');
 	if (suttarefArr.length  > 0) {
 		let html = '';
@@ -120,11 +120,35 @@ function buildInfo () {
 		for (let i = 0; i < suttarefArr.length; i++) {
 			suttarefArr[i].setAttribute("id", "slt_"+ i);
 			let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
-			html += `<div class='reflistitem'>${linktext} </div>`;
+			html += `<div class='reflistitem'>${linktext}</div>`;
 		}
 		html += `</div>`;
 		suttaRefs.innerHTML = html;
 	}
+
+
+	
+	const scAuthResponse = fetch(`../_resources/book-data/shortcode-author.json`)
+		.then(response => response.json())
+		.catch(error => {
+		  console.log('something went wrong');
+		});
+
+		Promise.all([scAuthResponse]).then(responses => {
+			const [shortcodeAuthors] = responses;
+			//console.log(shortcodeAuthors);
+
+			Object.keys(shortcodeAuthors).forEach(segment => {
+				if (shortcode() == segment) {
+					console.log(shortcodeAuthors[segment]);
+				}
+			});
+
+
+		});
+
+
+
 
 
 /*	

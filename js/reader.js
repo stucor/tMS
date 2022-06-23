@@ -97,13 +97,14 @@ function buildInfo () {
 
 	let parentDiv = document.getElementById('ModalDetails');
 
+	/*
 	let BookTitle = document.querySelector('meta[property="og:title"]').content
 	if (BookTitle != '') {
 		let title = document.createElement("h1");
 		title.innerHTML= BookTitle;
 		parentDiv.appendChild(title);
 	}
-
+*/
 
 	let suttarefArr = document.getElementsByClassName('sclinktext');
 	if (suttarefArr.length  > 0) {
@@ -1608,15 +1609,24 @@ function scrollToID (id) {
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
 	var elmnt = document.getElementById(id);
-	elmnt.scrollIntoView();
-	window.scrollBy(0,-100);
-	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
-	window.scrollBy(0, tbHeight); // scroll the toctarget below the topnav bar so you can see it
+	let parentElmnt = elmnt.parentElement;
+	if (parentElmnt.classList.contains('booknote')) {
+		setModalStyle ("Notes");
+		showModal("Notes");
+		savedsup = elmnt;
+		clearhighlightnote();
+		highlightnote(parentElmnt.dataset.note); 
+		stopBookScroll ();
+
+	} else {
+		elmnt.scrollIntoView({block: 'start', behavior: 'auto',});
+		window.scrollBy(0, -150);
+		//bodge for the highlight - needs a better mechanism for highlighting
+		savedsup = elmnt;
+		clearhighlightnote();
+	}
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
-	//bodge for the highlight - needs a better mechanism for highlighting
-	savedsup = elmnt;
-	clearhighlightnote();
 }
 
 function goToTOCTarget (toctarget) {
@@ -2207,7 +2217,6 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 
 	if (e.target.className == "sclinkref") {
 		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","")
-		console.log(gotoID);
 		scrollToID(gotoID);
 	}
 

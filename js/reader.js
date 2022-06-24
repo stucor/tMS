@@ -96,52 +96,89 @@ function buildInfo () {
 	/* Adds the element id= referencelist to the details modal */
 
 	let parentDiv = document.getElementById('ModalDetails');
+	let shortCode = shortcode();
 
-// Info Title
-	let BookTitle = document.querySelector('meta[property="og:title"]').content
-	if (BookTitle != '') {
-		let title = document.createElement("h1");
-		title.innerHTML= BookTitle;
-		parentDiv.appendChild(title);
-	}
 
 // Suttalist
-	let suttarefArr = document.getElementsByClassName('sclinktext');
-	if (suttarefArr.length  > 0) {
-		let html = '';
-		let suttaRefs = document.createElement("section");
-		suttaRefs.classList.add("bookcopyright");
-		parentDiv.appendChild(suttaRefs);
-
-		html += `<h3>Sutta References in this book:</h3>`;
-
-		html += `<div id="reflist">	`
-
-		for (let i = 0; i < suttarefArr.length; i++) {
-			suttarefArr[i].setAttribute("id", "slt_"+ i);
-			let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
-			html += `<div class='reflistitem'>${linktext}</div>`;
+	function suttalist () {
+		let suttarefArr = document.getElementsByClassName('sclinktext');
+		let html = "";
+		if (suttarefArr.length  > 0) {
+			html = `<section class="infocontainer">`;
+			html += `<h3>Sutta References in this book:</h3>`;
+			html += `<div id="reflist">	`
+			for (let i = 0; i < suttarefArr.length; i++) {
+				suttarefArr[i].setAttribute("id", "slt_"+ i);
+				let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
+				html += `<div class='reflistitem'>${linktext}</div>`;
+			}
+			html += `</div></section>`;
+			return html;
 		}
-		html += `</div>`;
-		suttaRefs.innerHTML = html;
 	}
 
 
-	
-	const scAuthResponse = fetch(`../_resources/book-data/shortcode-author.json`)
+	const bookinfo = fetch(`../_resources/book-data/book-info.json`)
 		.then(response => response.json())
 		.catch(error => {
 		  console.log('something went wrong');
 		});
 
-		Promise.all([scAuthResponse]).then(responses => {
-			const [shortcodeAuthors] = responses;
-			//console.log(shortcodeAuthors);
+		Promise.all([bookinfo]).then(responses => {
+			var bookTitle, bookauthorID, bookauthorFullName, bookTitleAuthor;
 
-			Object.keys(shortcodeAuthors).forEach(segment => {
-				if (shortcode() == segment) {
-					console.log(shortcodeAuthors[segment]);
+			const [bookinfoData] = responses;
+
+			Object.keys(bookinfoData).forEach(segment => {
+				if (shortCode == segment) {
+					[bookTitle, bookauthorID] = bookinfoData[segment].split(':');
 				}
+			});
+
+			const bookauthorBio = fetch(`../_resources/author-data/bios/${bookauthorID}-bio.json`)
+			.then(response => response.json())
+			.catch(error => {
+			  console.log('something went wrong');
+			});
+
+			Promise.all([bookauthorBio]). then (responses => {
+				const [bookauthorBioData] = responses;
+				//console.log(bookauthorBioData);
+			
+				Object.keys(bookauthorBioData).forEach(segment => {
+					//console.log(segment);
+					[left, right] = segment.split(':');
+					if (segment == '0:0') {
+						bookauthorFullName = bookauthorBioData[segment];
+						bookTitleAuthor = bookTitle + ' by ' + bookauthorFullName
+						//console.log(bookauthorFullName);
+						html = '';
+						html += `<h1>${bookTitleAuthor}</h1>`;
+						html += suttalist();
+						html += `
+							<div class="detail-grid">
+								<div>
+									<img src="../_resources/images/bookcovers/${shortCode}.jpg" alt="${bookTitle} Cover" >
+								</div>
+								<div>
+									<figure>
+									<img src="../_resources/author-data/images/${bookauthorID}.jpg" alt="${bookauthorFullName}">
+									<figcaption><strong>${bookauthorFullName}: </strong>`
+					}
+
+					if (left == 1) {
+						html += `<span>${bookauthorBioData[segment]}</span>`
+					}
+					if (segment == "shortbio:end") {
+					html += `</figcaption>
+					</figure></div></div>`
+					
+					}
+					//console.log(html);
+					parentDiv.innerHTML = html;
+
+					
+				});
 			});
 
 
@@ -1096,7 +1133,7 @@ function setTheme(){
 
 			searchBar.style.background = "#fff";
 			searchBar.style.color = "#000";
-			searchBar.style.borderColor = "#000";
+//			searchBar.style.borderColor = "#000";
 
 			searchInput.style.background = "#fff";
 			searchInput.style.color = "#000";
@@ -1227,7 +1264,7 @@ function setTheme(){
 
 			searchBar.style.background = "#121212";
 			searchBar.style.color = "#cfcfcf";
-			searchBar.style.borderColor = "#cfcfcf";
+//			searchBar.style.borderColor = "#cfcfcf";
 
 			searchInput.style.background = "#121212";
 			searchInput.style.color = "#cfcfcf";
@@ -1363,7 +1400,7 @@ function setTheme(){
 
 			searchBar.style.background = "#f5efd0";
 			searchBar.style.color = "#00008b";
-			searchBar.style.borderColor = "#00008b";
+//			searchBar.style.borderColor = "#00008b";
 
 			searchInput.style.background = "#f5efd0";
 			searchInput.style.color = "#00008b";

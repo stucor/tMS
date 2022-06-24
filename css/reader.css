@@ -253,6 +253,12 @@ strong {
 	color:whitesmoke;
 }	
 
+.infocontainer {
+	border-top: 2px solid darkgrey;
+	border-bottom: 2px solid darkgrey;
+	padding-bottom: 1em;
+}
+
 .bookcopyright {
 	border-top: #808080 5px solid;
 	text-align:left;
@@ -1369,10 +1375,10 @@ span.level {
 .searchbar {
 	display: none;
 	position:fixed;
-	top:4px;
+	top:2px;
 	float: right;
 	right: 220px;
-	border: 1px black solid;
+	border: 1px solid darkgrey;
 	background-color: #ffffff;
 	min-width: 310px;
 	max-width: 310px;
@@ -1742,7 +1748,7 @@ font-variant: small-caps;
     position: relative;
     margin: auto;
     padding: 0;
-    border: 1px solid lightgrey;
+    border: 1px solid darkgrey;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -1752,7 +1758,7 @@ font-variant: small-caps;
 	font-size: 14px;
 	font-weight: 700;
     text-align:center;
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 1px solid darkgrey;
 	user-select: none;
 	max-height: 20px;
 

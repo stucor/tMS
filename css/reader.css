@@ -255,8 +255,8 @@ strong {
 
 .infocontainer {
 	border-top: 2px solid darkgrey;
-	border-bottom: 2px solid darkgrey;
 	padding-bottom: 1em;
+	margin: 1em 0;
 }
 
 .bookcopyright {

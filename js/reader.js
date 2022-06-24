@@ -86,7 +86,7 @@ document.getElementById('thebook').style.display='block';
 	}
 
 	if (!(isBookShelf()) && !(isAudioBook())) { // normal book
-		buildInfo();
+		//buildInfo();
 	}
 
 }
@@ -99,7 +99,7 @@ function buildInfo () {
 	let shortCode = shortcode();
 
 
-// Suttalist
+	// Suttalist
 	function suttalist () {
 		let suttarefArr = document.getElementsByClassName('sclinktext');
 		let html = "";
@@ -117,7 +117,99 @@ function buildInfo () {
 		}
 	}
 
+	const bookinfo = fetch(`../_resources/book-data/${shortCode}-info.json`)
+		.then(response => response.json())
+		.catch(error => {
+		  console.log('something went wrong');
+		});
 
+		Promise.all([bookinfo]).then(responses => {
+			var bookTitle, bookauthorID, bookauthorFullName, bookTitleAuthor, infoAddOnArr =[], bookCopyright;
+
+			const [bookinfoData] = responses;
+
+			Object.keys(bookinfoData).forEach(segment => {
+				if (segment == "AuthorID") {
+					bookauthorID = bookinfoData[segment];
+				}
+				if (segment == "BookTitle") {
+					bookTitle = bookinfoData[segment];
+				}
+				[left, right] = segment.split(':');
+				if ( left == "AddOn") {
+					infoAddOnArr.push(bookinfoData[segment]);
+				}
+				if (segment == "Copyright") {
+					bookCopyright = bookinfoData[segment];
+				}
+			});
+
+			function makeAddOns() {
+				let html = '';
+				html = `<section class="infocontainer">`;
+				if (infoAddOnArr.length > 0) {
+					html += `<h3>Additional Info:</h3>`;
+				}
+				for (let i = 0; i < infoAddOnArr.length; i++) {
+					html += `<div class="detail-addon">${infoAddOnArr[i]}</div>`
+				}
+				html += `</section>`;
+				return html;
+			}
+
+			function makeCopyright() {
+				return `<section class="infocontainer"><h3>Copyright:</h3><div class="detail-addon">${bookCopyright}</div></section>`;
+			}
+
+			const bookauthorBio = fetch(`../_resources/author-data/bios/${bookauthorID}-bio.json`)
+			.then(response => response.json())
+			.catch(error => {
+			  console.log('something went wrong');
+			});
+
+			Promise.all([bookauthorBio]). then (responses => {
+				const [bookauthorBioData] = responses;
+				//console.log(bookauthorBioData);
+			
+				Object.keys(bookauthorBioData).forEach(segment => {
+					//console.log(segment);
+					[left, right] = segment.split(':');
+					if (segment == '0:0') {
+						bookauthorFullName = bookauthorBioData[segment];
+						bookTitleAuthor = bookTitle + ' by ' + bookauthorFullName
+						//console.log(bookauthorFullName);
+						html = ``;
+						html += `<h1>${bookTitleAuthor}</h1>`;
+						html += suttalist();
+						html += makeAddOns();
+
+						
+						html += `<section class="infocontainer"><h3>Author:</h3><div class="detail-grid">
+								<div>
+									<img src="../_resources/images/bookcovers/${shortCode}.jpg" alt="${bookTitle} Cover" >
+								</div>
+								<div>
+									<figure>
+									<img src="../_resources/author-data/images/${bookauthorID}.jpg" alt="${bookauthorFullName}">
+									<figcaption><strong>${bookauthorFullName}: </strong>`
+					}
+
+					if (left == 1) {
+						html += `<span>${bookauthorBioData[segment]}</span>`
+					}
+					if (segment == "shortbio:end") {
+						html += `</figcaption></figure></div></div></section>`
+						html += makeCopyright();
+					}
+					//console.log(html);
+					parentDiv.innerHTML = html;
+
+					
+				});
+			});
+
+		});
+/*
 	const bookinfo = fetch(`../_resources/book-data/book-info.json`)
 		.then(response => response.json())
 		.catch(error => {
@@ -184,7 +276,7 @@ function buildInfo () {
 
 		});
 
-
+*/
 
 
 
@@ -1974,6 +2066,7 @@ function hideElement (elem) {
 detailsbtn.onclick = function() {
 	setModalStyle ("Info");
 	showModal ("Info");
+	buildInfo();
 	stopBookScroll();
 	modalbody.scrollTop = 0;
 }

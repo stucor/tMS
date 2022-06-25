@@ -84,44 +84,37 @@ document.getElementById('thebook').style.display='block';
 		initialiseBookShelfSettings ();
 		document.getElementById('coverengraving').style.display='none';
 	}
-
-	if (!(isBookShelf()) && !(isAudioBook())) { // normal book
-		//buildInfo();
-	}
-
 }
 
-function buildInfo () {
-
-	/* Adds the element id= referencelist to the details modal */
-
+function buildInfo () { // Adds the element id= referencelist to the details modal 
 	let parentDiv = document.getElementById('ModalDetails');
-	let shortCode = shortcode();
 
+	if (parentDiv.innerHTML == '') {
+		let shortCode = shortcode();
 
-	// Suttalist
-	function suttalist () {
-		let suttarefArr = document.getElementsByClassName('sclinktext');
-		let html = "";
-		if (suttarefArr.length  > 0) {
-			html = `<section class="infocontainer">`;
-			html += `<h3>Sutta References in this book:</h3>`;
-			html += `<div id="reflist">	`
-			for (let i = 0; i < suttarefArr.length; i++) {
-				suttarefArr[i].setAttribute("id", "slt_"+ i);
-				let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
-				html += `<div class='reflistitem'>${linktext}</div>`;
+		function suttalist () {
+			let suttarefArr = document.getElementsByClassName('sclinktext');
+			let html = "";
+			if (suttarefArr.length  > 0) {
+				html = `<section class="infocontainer">`;
+				html += `<h3>Sutta References in this book:</h3>`;
+				html += `<div id="reflist">	`
+				for (let i = 0; i < suttarefArr.length; i++) {
+					suttarefArr[i].setAttribute("id", "slt_"+ i);
+					let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
+					html += `<div class='reflistitem'>${linktext}</div>`;
+				}
+				html += `</div></section>`;
+				return html;
 			}
-			html += `</div></section>`;
-			return html;
 		}
-	}
 
-	const bookinfo = fetch(`../_resources/book-data/${shortCode}-info.json`)
-		.then(response => response.json())
-		.catch(error => {
-		  console.log('something went wrong');
-		});
+		const bookinfo = fetch(`../_resources/book-data/${shortCode}-info.json`)
+			.then(response => response.json())
+			.catch(error => {
+			console.log('something went wrong');
+			}
+		);
 
 		Promise.all([bookinfo]).then(responses => {
 			var bookTitle, bookauthorID, bookauthorFullName, bookTitleAuthor, infoAddOnArr =[], bookCopyright;
@@ -164,7 +157,7 @@ function buildInfo () {
 			const bookauthorBio = fetch(`../_resources/author-data/bios/${bookauthorID}-bio.json`)
 			.then(response => response.json())
 			.catch(error => {
-			  console.log('something went wrong');
+				console.log('something went wrong');
 			});
 
 			Promise.all([bookauthorBio]). then (responses => {
@@ -207,105 +200,8 @@ function buildInfo () {
 					
 				});
 			});
-
 		});
-/*
-	const bookinfo = fetch(`../_resources/book-data/book-info.json`)
-		.then(response => response.json())
-		.catch(error => {
-		  console.log('something went wrong');
-		});
-
-		Promise.all([bookinfo]).then(responses => {
-			var bookTitle, bookauthorID, bookauthorFullName, bookTitleAuthor;
-
-			const [bookinfoData] = responses;
-
-			Object.keys(bookinfoData).forEach(segment => {
-				if (shortCode == segment) {
-					[bookTitle, bookauthorID] = bookinfoData[segment].split(':');
-				}
-			});
-
-			const bookauthorBio = fetch(`../_resources/author-data/bios/${bookauthorID}-bio.json`)
-			.then(response => response.json())
-			.catch(error => {
-			  console.log('something went wrong');
-			});
-
-			Promise.all([bookauthorBio]). then (responses => {
-				const [bookauthorBioData] = responses;
-				//console.log(bookauthorBioData);
-			
-				Object.keys(bookauthorBioData).forEach(segment => {
-					//console.log(segment);
-					[left, right] = segment.split(':');
-					if (segment == '0:0') {
-						bookauthorFullName = bookauthorBioData[segment];
-						bookTitleAuthor = bookTitle + ' by ' + bookauthorFullName
-						//console.log(bookauthorFullName);
-						html = '';
-						html += `<h1>${bookTitleAuthor}</h1>`;
-						html += suttalist();
-						html += `
-							<div class="detail-grid">
-								<div>
-									<img src="../_resources/images/bookcovers/${shortCode}.jpg" alt="${bookTitle} Cover" >
-								</div>
-								<div>
-									<figure>
-									<img src="../_resources/author-data/images/${bookauthorID}.jpg" alt="${bookauthorFullName}">
-									<figcaption><strong>${bookauthorFullName}: </strong>`
-					}
-
-					if (left == 1) {
-						html += `<span>${bookauthorBioData[segment]}</span>`
-					}
-					if (segment == "shortbio:end") {
-					html += `</figcaption>
-					</figure></div></div>`
-					
-					}
-					//console.log(html);
-					parentDiv.innerHTML = html;
-
-					
-				});
-			});
-
-
-		});
-
-*/
-
-
-
-/*	
-	let parentdiv = document.getElementById('ModalDetails');
-	let detailgrid = document.getElementsByClassName('detail-grid')[0];
-
-	let refListHead = document.createElement("h3");
-	parentdiv.insertBefore(refListHead,detailgrid);
-	refListHead.innerHTML=`Sutta References in this book:`;
-
-	let referencelist = document.createElement("div");
-	referencelist.setAttribute("id", "reflist");
-	parentdiv.insertBefore(referencelist,detailgrid);
-	let suttarefArr = document.getElementsByClassName('sclinktext');
-	for (let i = 0; i < suttarefArr.length; i++) {
-		suttarefArr[i].setAttribute("id", "slt_"+ i);
-		let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
-		referencelist.innerHTML += `<div class='reflistitem'>${linktext} </div>`;
 	}
-	if (!referencelist.innerHTML) {
-		refListHead.innerHTML = 'There are no Suttas referenced in this book';
-	}
-
-	let authordetails = document.createElement("section");
-	parentdiv.insertBefore(authordetails,detailgrid);
-	authorHTML = `<hr><h3>Author:<h3>`;
-	authordetails.innerHTML=authorHTML;
-*/
 }
 
 //ONLOAD

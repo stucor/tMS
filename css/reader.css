@@ -931,11 +931,15 @@ z-index:9999;
 	justify-content:space-evenly;
 	padding:0;
 	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
 .reflistitem {
 	text-align: left;
 	line-height: 1em;
+	padding-left: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 	background-color: rgba(100, 148, 237, 0.043);
 }
 

@@ -109,10 +109,10 @@ function buildInfo () { // Adds the element id= referencelist to the details mod
 			}
 		}
 
-		const bookinfo = fetch(`../_resources/book-data/${shortCode}-info.json`)
+		const bookinfo = fetch(`../_resources/book-data/${shortCode}/info.json`)
 			.then(response => response.json())
 			.catch(error => {
-			console.log('something went wrong');
+			html += (`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
 			}
 		);
 
@@ -154,10 +154,10 @@ function buildInfo () { // Adds the element id= referencelist to the details mod
 				return `<section class="infocontainer"><h3>Copyright:</h3><div class="detail-addon">${bookCopyright}</div></section>`;
 			}
 
-			const bookauthorBio = fetch(`../_resources/author-data/bios/${bookauthorID}-bio.json`)
+			const bookauthorBio = fetch(`../_resources/author-data/${bookauthorID}/bio.json`)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('something went wrong');
+				html += (`ERROR: Can't fetch ../_resources/author-data/${bookauthorID}/bio.json` );
 			});
 
 			Promise.all([bookauthorBio]). then (responses => {
@@ -171,22 +171,19 @@ function buildInfo () { // Adds the element id= referencelist to the details mod
 						bookauthorFullName = bookauthorBioData[segment];
 						bookTitleAuthor = bookTitle + ' by ' + bookauthorFullName
 						//console.log(bookauthorFullName);
-						html = ``;
-						html += `<h1>${bookTitleAuthor}</h1>`;
+						html = `<h1>${bookTitleAuthor}</h1>`;
 						html += suttalist();
 						html += makeAddOns();
-
 						
 						html += `<section class="infocontainer"><h3>Author:</h3><div class="detail-grid">
 								<div>
-									<img src="../_resources/images/bookcovers/${shortCode}.jpg" alt="${bookTitle} Cover" >
+									<img src="../_resources/book-data/${shortCode}/large.jpg" alt="${bookTitle} Cover" >
 								</div>
 								<div>
 									<figure>
-									<img src="../_resources/author-data/images/${bookauthorID}.jpg" alt="${bookauthorFullName}">
-									<figcaption><strong>${bookauthorFullName}: </strong>`
+									<img src="../_resources/author-data/${bookauthorID}/info.jpg" alt="${bookauthorFullName}">
+									<figcaption><strong>${bookauthorFullName}: </strong>`;
 					}
-
 					if (left == 1) {
 						html += `<span>${bookauthorBioData[segment]}</span>`
 					}
@@ -196,8 +193,6 @@ function buildInfo () { // Adds the element id= referencelist to the details mod
 					}
 					//console.log(html);
 					parentDiv.innerHTML = html;
-
-					
 				});
 			});
 		});

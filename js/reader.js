@@ -86,7 +86,24 @@ document.getElementById('thebook').style.display='block';
 	}
 }
 
-function buildInfo () { // Adds the element id= referencelist to the details modal 
+/* Modal Builders */
+
+function parseMarkdown(markdownText) {
+	const htmlText = markdownText
+//		.replace(/^### (.*$)/gim, '<h3>$1</h3>')
+//		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
+//		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
+//		.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
+		.replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
+		.replace(/\*(.*)\*/gim, '<i>$1</i>')
+//		.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
+		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
+		.replace(/\n/gim, '<br />')
+	return htmlText.trim()
+}
+
+// Populates the Info Modal
+function buildInfo () {  
 	let parentDiv = document.getElementById('ModalDetails');
 
 	if (parentDiv.innerHTML == '') {
@@ -94,6 +111,7 @@ function buildInfo () { // Adds the element id= referencelist to the details mod
 
 		function suttalist () {
 			let suttarefArr = document.getElementsByClassName('sclinktext');
+			if (suttarefArr.length == 0) { return '';}
 			let html = "";
 			if (suttarefArr.length  > 0) {
 				html = `<section class="infocontainer">`;
@@ -117,36 +135,55 @@ function buildInfo () { // Adds the element id= referencelist to the details mod
 		);
 
 		Promise.all([bookinfo]).then(responses => {
-			var bookTitle, bookauthorID, bookauthorFullName, bookTitleAuthor, infoAddOnArr =[], bookCopyright;
+			var bookTitle, bookauthorID, bookauthorFullName, bookTitleAuthor, infoAddOnArr =[], bookCopyright ='' ;
 
 			const [bookinfoData] = responses;
 
+			let previousBlockNo = 0;
+
 			Object.keys(bookinfoData).forEach(segment => {
-				if (segment == "AuthorID") {
+
+				bookinfoData[segment] = parseMarkdown(bookinfoData[segment]);
+
+				[left, right] = segment.split(':');
+				let currentBlockNo = right.split('.')[0];
+
+
+				if (left == "AuthorID") {
 					bookauthorID = bookinfoData[segment];
 				}
-				if (segment == "BookTitle") {
+				if (left == "BookTitle") {
 					bookTitle = bookinfoData[segment];
 				}
-				[left, right] = segment.split(':');
+
 				if ( left == "AddOn") {
-					infoAddOnArr.push(bookinfoData[segment]);
+
+					if (previousBlockNo == currentBlockNo ) {
+						infoAddOnArr[infoAddOnArr.length-1] += `<p> ${bookinfoData[segment]} </p>`;
+					} else {
+						infoAddOnArr.push(`<p> ${bookinfoData[segment]} </p>`);
+						previousBlockNo = currentBlockNo;
+					}
 				}
-				if (segment == "Copyright") {
-					bookCopyright = bookinfoData[segment];
+
+				if (left == "Copyright") {
+					bookCopyright += `<p> ${bookinfoData[segment]} </p>`;
 				}
 			});
 
 			function makeAddOns() {
-				let html = '';
-				html = `<section class="infocontainer">`;
+				let html = endhtml = '';
+
 				if (infoAddOnArr.length > 0) {
+					html = `<section class="infocontainer">`;
 					html += `<h3>Additional Info:</h3>`;
+					endhtml += `</section>`
 				}
+
 				for (let i = 0; i < infoAddOnArr.length; i++) {
 					html += `<div class="detail-addon">${infoAddOnArr[i]}</div>`
 				}
-				html += `</section>`;
+				html += endhtml;
 				return html;
 			}
 
@@ -165,12 +202,12 @@ function buildInfo () { // Adds the element id= referencelist to the details mod
 				//console.log(bookauthorBioData);
 			
 				Object.keys(bookauthorBioData).forEach(segment => {
-					//console.log(segment);
+
 					[left, right] = segment.split(':');
 					if (segment == '0:0') {
 						bookauthorFullName = bookauthorBioData[segment];
 						bookTitleAuthor = bookTitle + ' by ' + bookauthorFullName
-						//console.log(bookauthorFullName);
+
 						html = `<h1>${bookTitleAuthor}</h1>`;
 						html += suttalist();
 						html += makeAddOns();
@@ -191,7 +228,6 @@ function buildInfo () { // Adds the element id= referencelist to the details mod
 						html += `</figcaption></figure></div></div></section>`
 						html += makeCopyright();
 					}
-					//console.log(html);
 					parentDiv.innerHTML = html;
 				});
 			});

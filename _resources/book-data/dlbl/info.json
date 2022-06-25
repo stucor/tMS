@@ -1,7 +1,10 @@
 {
-"AuthorID" : "brahmali",
-"BookTitle" : "Dependent Liberation",
-"AddOn:1" : "<p>This is the second of two booklets in a series by Ajahn Brahmali.<br>Part 1 is: <a class='booklink' href='../dobl'>Dependent Origination</a></p>",
-"AddOn:2" : "<p><strong>DEPENDENT LIBERATION<br><em>(lokuttara-paticcasamuppada)</em></strong></p><p>suffering (<em>dukkha</em>) ➔<br>faith/confidence (<em>saddhā</em>) ➔<br>gladness (<em>pāmojja</em>) ➔<br>joy (<em>pīti</em>) ➔<br>tranquillity (<em>passaddhi</em>) ➔<br>happiness (<em>sukha</em>) ➔<br>unification of mind (<em>samādhi</em>) ➔<br>knowledge and vision according to reality (<em>yathā-bhūta-&ntilde;āṇa-dassana</em>) ➔<br>repulsion (<em>nibbidā</em>) ➔<br>dispassion (<em>virāga</em>) ➔<br>liberation (<em>vimutti</em>) ➔<br>knowledge that you are liberated (<em>khaye &ntilde;āṇaṁ</em>)</p>",
-"Copyright" :"<p>Published in 2013.<br>19pp (in pdf format).</p><p>This work is released under CC0 1.0 Universal (CC0 1.0)<br>Public Domain Dedication. No rights reserved.</p><p>Transcribed from a talk by Ajahn Brahmali, Dhammaloka, 23 March 2012.<br>The online edition prepared for theMettāShelf by Stu</p>"
+"AuthorID:1.0" : "brahmali",
+"BookTitle:1.0" : "Dependent Liberation",
+"AddOn:1.0" : "This is the second of two booklets in a series by Ajahn Brahmali.\n Part 1 is: [Dependent Origination](../dobl)",
+"AddOn:2.0" : "**DEPENDENT LIBERATION** \n***(lokuttara-paticcasamuppada)***",
+"AddOn:2.1" : "suffering (<em>dukkha</em>) ➔\nfaith/confidence (<em>saddhā</em>) ➔\ngladness (<em>pāmojja</em>) ➔\njoy (<em>pīti</em>) ➔\ntranquillity (<em>passaddhi</em>) ➔\nhappiness (<em>sukha</em>) ➔\nunification of mind (<em>samādhi</em>) ➔\nknowledge and vision according to reality (<em>yathā-bhūta-&ntilde;āṇa-dassana</em>) ➔\nrepulsion (<em>nibbidā</em>) ➔\ndispassion (<em>virāga</em>) ➔\nliberation (<em>vimutti</em>) ➔\nknowledge that you are liberated (<em>khaye &ntilde;āṇaṁ</em>)",
+"Copyright:1.0" :"Published in **2013**.\n19pp (in pdf format).",
+"Copyright:1.1" :"This work is released under CC0 1.0 Universal (CC0 1.0)\nPublic Domain Dedication. No rights reserved.",
+"Copyright:1.2" :"Transcribed from a talk by Ajahn Brahmali, Dhammaloka, 23 March 2012."
 }

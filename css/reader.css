@@ -253,23 +253,6 @@ strong {
 	color:whitesmoke;
 }	
 
-.infocontainer {
-	border-top: 2px solid darkgrey;
-	padding-bottom: 1em;
-	margin: 1em 0;
-}
-
-.bookcopyright {
-	border-top: #808080 5px solid;
-	text-align:left;
-	margin: 20px;
-	font-size: 16px;
-}
-
-.bookcopyright a {
-	color:cornflowerblue;
-	text-decoration: none;
-}	
 
 
 .bibliography {
@@ -855,6 +838,27 @@ z-index:9999;
 
 /* Details Modal */
 
+
+.infocontainer {
+	border-top: 1px solid darkgrey;
+	padding-bottom: 1em;
+	margin: 1em 0;
+
+}
+
+.bookcopyright {
+	border-top: #808080 5px solid;
+	text-align:left;
+	margin: 20px;
+	font-size: 16px;
+}
+
+.bookcopyright a {
+	color:cornflowerblue;
+	text-decoration: none;
+}	
+
+
 .fifty-fifty-grid {
 	display: grid;
     grid-template-columns: 50% 50%;
@@ -862,13 +866,24 @@ z-index:9999;
 	text-align: center;
 }
 
+
 .fifty-fifty-grid img {
 	width: 90%;
 	height: auto;
 	border-radius: .2rem;
 	box-shadow: 1px 3px 6px -1px rgba(0, 0, 2, 0.329);
-
 }
+
+
+.fifty-fifty-grid p {
+	margin: 0 4em 1em 2em;
+	text-align: justify;
+}
+
+.fifty-fifty-grid h3 {
+	margin-left: 0 !important;
+}
+
 
 .detail-grid {
 	display: grid;
@@ -2073,6 +2088,17 @@ font-variant: small-caps;
 		display: block;
 		margin: 20px 0;
 	}
+
+	.fifty-fifty-grid p {
+		margin: 1em;
+		text-align: justify;
+	}
+	
+	.fifty-fifty-grid h3 {
+		margin-left: 1em !important;
+	}
+	
+	
 
 	.detail-grid {
 		display: block;

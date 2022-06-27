@@ -1,8 +1,8 @@
 {
-    "0:0": "Ajahn Chatchai",
-    "1:0": "Phra Mahā Chatchai Rakkhitacitto was born in Udon Thani in 1957 and ordained at Wat Jetiyabhumi in Khon Khaen in 1977. ",
-    "1:1": "He is an advanced level dhamma scholar. ",
-    "1:2": "Currently, Phra Mahā Chatchai is the assistant abbot at Wat Phleng, Soi Charansanitwong 75, Bangkok, Thailand. ",
-    "1:3": "He teaches mettā meditation every Sunday.",
-    "shortbio:end":""
+"ShortName" : "Ajahn Chatchai",
+"ShortBio": ["Phra Mahā Chatchai Rakkhitacitto was born in Udon Thani in 1957 and ordained at Wat Jetiyabhumi in Khon Khaen in 1977. ",
+    "He is an advanced level dhamma scholar. ",
+    "Currently, Phra Mahā Chatchai is the assistant abbot at Wat Phleng, Soi Charansanitwong 75, Bangkok, Thailand. ",
+    "He teaches mettā meditation every Sunday."
+]
 }

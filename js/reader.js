@@ -77,12 +77,12 @@ document.getElementById('thebook').style.display='block';
 	if (isAudioBook()) { 
 		initialiseAudioBookSettings();
 		initplayer();
-		document.getElementById('coverengraving').style.display='none';
+		document.getElementById('TOCTarget0').style.display='none';
 	}
 
 	if (isBookShelf()) {
 		initialiseBookShelfSettings ();
-		document.getElementById('coverengraving').style.display='none';
+		document.getElementById('TOCTarget0').style.display='none';
 	}
 }
 
@@ -128,8 +128,8 @@ function buildInfo () {
 			}
 		}
 
+
 		function populateInfo (bookInfoData) {
-			console.log(bookInfoData);
 
 			const bookAuthorID = bookInfoData.AuthorID;
 
@@ -139,26 +139,63 @@ function buildInfo () {
 				//console.log(data); 
 
 				html+= `<h1>${bookInfoData.BookTitle} by ${data.ShortName}</h1>`;
-
+//Sutta List
 				html += suttalist();
-
-				for (i in bookInfoData.AddInfo) {
-					for (j in bookInfoData.AddInfo[i]) {
-						console.log(i);
-						if (j == 0) {
-							x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
-						} else if (j == 1) {
-							html += `<div class="detail-addon">`;
-							x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
-						} else {
-							x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
+//Add Ons
+				if (bookInfoData.AddInfo.length > 0) {
+					html += `<section class="infocontainer">`;
+					for (i in bookInfoData.AddInfo) {
+						for (j in bookInfoData.AddInfo[i]) {
+							console.log(i);
+							if (j == 0) {
+								x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
+							} else if (j == 1) {
+								html += `<div class="detail-addon">`;
+								x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
+							} else {
+								x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
+							}
+							html += x;
 						}
-						html += x;
+						html += `</div>`;
 					}
-					html += `</div>`;
+					html += `</section>`
 				}
-			
-			
+//Author
+				html += 
+					`<section class="infocontainer">
+						<h3>Author:</h3>
+						<div class="fifty-fifty-grid">
+							<div>
+							<img src="../_resources/author-data/${bookAuthorID}/info.jpg" alt="${data.ShortName}">
+							</div>
+							<div>
+								<p><strong>${data.ShortName}: </strong>`;
+				for (i in data.ShortBio) {
+					html += `${data.ShortBio[i]}`;
+				}
+				html += 
+							`</p></div>
+						</div>
+					</section>`
+//Book Cover and Copyright
+				html += 
+				`<section class="infocontainer">
+					<div class="fifty-fifty-grid">
+					<div>
+					<h3>Cover:</h3>
+					<img src="../_resources/book-data/${shortCode}/large.jpg" alt="${bookInfoData.bookTitle} Cover" >
+					</div>
+					<div> 
+					<h3>Copyright:</h3>`;
+				for (i in bookInfoData.Copyright) {
+				html += `<p>${bookInfoData.Copyright[i]}</p>`;
+				}
+				html += 
+						`</div>
+					</div>
+				</section>`
+
 				parentDiv.innerHTML = html;
 			
 			})
@@ -166,9 +203,19 @@ function buildInfo () {
 				html += (`ERROR: Can't fetch ../_resources/author-data/${bookAuthorID}/bio.json` );
 			});
 
+
+
+
+
 			//console.log(bookInfoData);
 
-
+				/*		
+			<div>
+			<h3>Front Cover:</h3>
+			<img src="../_resources/book-data/${shortCode}/large.jpg" alt="${bookInfoData.bookTitle} Cover" >
+		</div>
+	
+*/
 
 		}
 
@@ -1280,7 +1327,7 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#9e2815');
 
-			var engrave = document.getElementById('coverengraving');
+			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
 
@@ -1409,7 +1456,7 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#d39990');
 
-			var engrave = document.getElementById('coverengraving');
+			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#7c7c7c';
 			engrave.style.textShadow ='0px 1px 0px #ffffff';
 
@@ -1551,7 +1598,7 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#9e2815');
 
-			var engrave = document.getElementById('coverengraving');
+			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
 			

@@ -1,10 +1,8 @@
 {
-"AuthorID:1.0" : "brahmali",
-"BookTitle:1.0" : "Dependent Liberation",
-"AddOn:1.0" : "This is the second of two booklets in a series by Ajahn Brahmali.\n Part 1 is: [Dependent Origination](../dobl)",
-"AddOn:2.0" : "**DEPENDENT LIBERATION** \n***(lokuttara-paticcasamuppada)***",
-"AddOn:2.1" : "suffering (<em>dukkha</em>) ➔\nfaith/confidence (<em>saddhā</em>) ➔\ngladness (<em>pāmojja</em>) ➔\njoy (<em>pīti</em>) ➔\ntranquillity (<em>passaddhi</em>) ➔\nhappiness (<em>sukha</em>) ➔\nunification of mind (<em>samādhi</em>) ➔\nknowledge and vision according to reality (<em>yathā-bhūta-&ntilde;āṇa-dassana</em>) ➔\nrepulsion (<em>nibbidā</em>) ➔\ndispassion (<em>virāga</em>) ➔\nliberation (<em>vimutti</em>) ➔\nknowledge that you are liberated (<em>khaye &ntilde;āṇaṁ</em>)",
-"Copyright:1.0" :"Published in **2013**.\n19pp (in pdf format).",
-"Copyright:1.1" :"This work is released under CC0 1.0 Universal (CC0 1.0)\nPublic Domain Dedication. No rights reserved.",
-"Copyright:1.2" :"Transcribed from a talk by Ajahn Brahmali, Dhammaloka, 23 March 2012."
+"AuthorID"  : "brahmali",
+"BookTitle" : "Dependent Liberation",
+"AddInfo"   : [ ["Series:","This is the second of two booklets in a series by Ajahn Brahmali.\n Part 1 is: [Dependent Origination](../dobl)"], 
+                ["Abstract:","**DEPENDENT LIBERATION:** \n***(lokuttara-paticcasamuppada)***","suffering (<em>dukkha</em>) ➔\nfaith/confidence (<em>saddhā</em>) ➔\ngladness (<em>pāmojja</em>) ➔\njoy (<em>pīti</em>) ➔\ntranquillity (<em>passaddhi</em>) ➔\nhappiness (<em>sukha</em>) ➔\nunification of mind (<em>samādhi</em>) ➔\nknowledge and vision according to reality (<em>yathā-bhūta-&ntilde;āṇa-dassana</em>) ➔\nrepulsion (<em>nibbidā</em>) ➔\ndispassion (<em>virāga</em>) ➔\nliberation (<em>vimutti</em>) ➔\nknowledge that you are liberated (<em>khaye &ntilde;āṇaṁ</em>)"]
+              ],
+"Copyright" : ["Published in **2013**.\n19pp (in pdf format).","This work is released under CC0 1.0 Universal (CC0 1.0)\nPublic Domain Dedication. No rights reserved.","Transcribed from a talk by Ajahn Brahmali, Dhammaloka, 23 March 2012."]
 }

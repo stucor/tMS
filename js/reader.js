@@ -94,7 +94,7 @@ function parseMarkdown(markdownText) {
 //		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
 //		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
 //		.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
-		.replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
+		.replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
 		.replace(/\*(.*)\*/gim, '<i>$1</i>')
 //		.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
 		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
@@ -108,6 +108,7 @@ function buildInfo () {
 
 	if (parentDiv.innerHTML == '') {
 		let shortCode = shortcode();
+		let html ='';
 
 		function suttalist () {
 			let suttarefArr = document.getElementsByClassName('sclinktext');
@@ -127,6 +128,63 @@ function buildInfo () {
 			}
 		}
 
+		function populateInfo (bookInfoData) {
+			console.log(bookInfoData);
+
+			const bookAuthorID = bookInfoData.AuthorID;
+
+			const bookAuthorBio = fetch(`../_resources/author-data/${bookAuthorID}/bio.json`)
+			.then(response => response.json())
+			.then (data => {
+				//console.log(data); 
+
+				html+= `<h1>${bookInfoData.BookTitle} by ${data.ShortName}</h1>`;
+
+				html += suttalist();
+
+				for (i in bookInfoData.AddInfo) {
+					for (j in bookInfoData.AddInfo[i]) {
+						console.log(i);
+						if (j == 0) {
+							x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
+						} else if (j == 1) {
+							html += `<div class="detail-addon">`;
+							x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
+						} else {
+							x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
+						}
+						html += x;
+					}
+					html += `</div>`;
+				}
+			
+			
+				parentDiv.innerHTML = html;
+			
+			})
+			.catch(error => {
+				html += (`ERROR: Can't fetch ../_resources/author-data/${bookAuthorID}/bio.json` );
+			});
+
+			//console.log(bookInfoData);
+
+
+
+		}
+
+
+		const bookinfo = fetch(`../_resources/book-data/${shortCode}/info.json`)
+			.then(response => response.json())
+			.then (data => populateInfo(data))
+			.catch(error => {
+			console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
+			}
+		);
+
+
+
+
+		/*
 		const bookinfo = fetch(`../_resources/book-data/${shortCode}/info.json`)
 			.then(response => response.json())
 			.catch(error => {
@@ -212,17 +270,19 @@ function buildInfo () {
 						html += suttalist();
 						html += makeAddOns();
 						
-						html += `<section class="infocontainer"><h3>Author:</h3><div class="detail-grid">
+						html += `<section class="infocontainer"><div class="detail-grid">
 								<div>
+									<h3>Front Cover:</h3>
 									<img src="../_resources/book-data/${shortCode}/large.jpg" alt="${bookTitle} Cover" >
 								</div>
 								<div>
+									<h3>Author:</h3>
 									<figure>
 									<img src="../_resources/author-data/${bookauthorID}/info.jpg" alt="${bookauthorFullName}">
 									<figcaption><strong>${bookauthorFullName}: </strong>`;
 					}
 					if (left == 1) {
-						html += `<span>${bookauthorBioData[segment]}</span>`
+						html += `${bookauthorBioData[segment]}`
 					}
 					if (segment == "shortbio:end") {
 						html += `</figcaption></figure></div></div></section>`
@@ -232,6 +292,10 @@ function buildInfo () {
 				});
 			});
 		});
+
+
+
+		*/
 	}
 }
 

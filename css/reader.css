@@ -1846,8 +1846,17 @@ font-variant: small-caps;
 	max-height: 75vh;
     overflow-y:auto;
 	background-color: #fff; 
-    text-align:center;
 }
+
+.modal-body h1, h2 {
+	text-align: center;
+}
+
+#ModalSettings, #ModalDownload {
+	text-align: center;
+}
+
+
 
 .settingsheaders {
 	margin-top:0;

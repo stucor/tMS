@@ -128,19 +128,39 @@ function buildInfo () {
 			}
 		}
 
-
 		function populateInfo (bookInfoData) {
 
 			const bookAuthorID = bookInfoData.AuthorID;
 
-			const bookAuthorBio = fetch(`../_resources/author-data/${bookAuthorID}/bio.json`)
-			.then(response => response.json())
-			.then (data => {
-				//console.log(data); 
 
-				html+= `<h1>${bookInfoData.BookTitle} by ${data.ShortName}</h1>`;
+			fetch(`../_resources/author-data/${bookAuthorID[0]}/bio.json`)
+			.then(response => response.json())
+			.then (Authordata => {
+//Title
+				html+= `<h1>${bookInfoData.BookTitle} by ${Authordata.ShortName}</h1>`;
+
+//Author
+				html += 
+				`<section class="infocontainer">
+					<h3>Author:</h3>
+					<div class="fifty-fifty-grid">
+						<div>
+						<img src="${Authordata.InfoImage}" alt="${Authordata.ShortName}">
+						</div>
+						<div>
+							<p><strong>${Authordata.ShortName}: </strong>`;
+				for (i in Authordata.ShortBio) {
+				html += `${Authordata.ShortBio[i]}`;
+				}
+				html += 
+						`</p></div>
+					</div>
+				</section>`;
+			
+
 //Sutta List
 				html += suttalist();
+
 //Add Ons
 				if (bookInfoData.AddInfo.length > 0) {
 					html += `<section class="infocontainer">`;
@@ -161,66 +181,55 @@ function buildInfo () {
 					}
 					html += `</section>`
 				}
-//Author
-				html += 
-					`<section class="infocontainer">
-						<h3>Author:</h3>
-						<div class="fifty-fifty-grid">
-							<div>
-							<img src="../_resources/author-data/${bookAuthorID}/info.jpg" alt="${data.ShortName}">
-							</div>
-							<div>
-								<p><strong>${data.ShortName}: </strong>`;
-				for (i in data.ShortBio) {
-					html += `${data.ShortBio[i]}`;
-				}
-				html += 
-							`</p></div>
-						</div>
-					</section>`
+
 //Book Cover and Copyright
 				html += 
 				`<section class="infocontainer">
 					<div class="fifty-fifty-grid">
 					<div>
 					<h3>Cover:</h3>
-					<img src="../_resources/book-data/${shortCode}/large.jpg" alt="${bookInfoData.bookTitle} Cover" >
+					<img src="${bookInfoData.FrontCover}" alt="${bookInfoData.BookTitle} Cover" >
 					</div>
 					<div> 
 					<h3>Copyright:</h3>`;
-				for (i in bookInfoData.Copyright) {
-				html += `<p>${bookInfoData.Copyright[i]}</p>`;
-				}
-				html += 
-						`</div>
-					</div>
-				</section>`
+					for (i in bookInfoData.Copyright) {
+					html += `<p>${parseMarkdown(bookInfoData.Copyright[i])}</p>`;
+					}
+					html += `</div></div></section>`;
 
+// BackCover and Back Matter
+			if (bookInfoData.BackCover != "") {
+				html += 
+				`<section class="infocontainer">
+					<div class="fifty-fifty-grid">
+					<div>`;
+				
+					html +=
+					`<h3>Back Cover:</h3>
+					<img src="${bookInfoData.BackCover}" alt="${bookInfoData.BookTitle} Cover" >
+					</div>
+					<div>`;
+					if (bookInfoData.BackMatter != "") {
+						html +=
+						`<h3>Back Matter:</h3>`;
+						for (i in bookInfoData.BackMatter) {
+						html += `<p>${bookInfoData.BackMatter[i]}</p>`;
+						};
+					}
+
+					html += `</div></div></section>`;
+			}
 				parentDiv.innerHTML = html;
 			
 			})
+
 			.catch(error => {
 				html += (`ERROR: Can't fetch ../_resources/author-data/${bookAuthorID}/bio.json` );
 			});
 
-
-
-
-
-			//console.log(bookInfoData);
-
-				/*		
-			<div>
-			<h3>Front Cover:</h3>
-			<img src="../_resources/book-data/${shortCode}/large.jpg" alt="${bookInfoData.bookTitle} Cover" >
-		</div>
-	
-*/
-
 		}
 
-
-		const bookinfo = fetch(`../_resources/book-data/${shortCode}/info.json`)
+		fetch(`../_resources/book-data/${shortCode}/info.json`)
 			.then(response => response.json())
 			.then (data => populateInfo(data))
 			.catch(error => {
@@ -228,121 +237,6 @@ function buildInfo () {
 			}
 		);
 
-
-
-
-		/*
-		const bookinfo = fetch(`../_resources/book-data/${shortCode}/info.json`)
-			.then(response => response.json())
-			.catch(error => {
-			html += (`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
-			}
-		);
-
-		Promise.all([bookinfo]).then(responses => {
-			var bookTitle, bookauthorID, bookauthorFullName, bookTitleAuthor, infoAddOnArr =[], bookCopyright ='' ;
-
-			const [bookinfoData] = responses;
-
-			let previousBlockNo = 0;
-
-			Object.keys(bookinfoData).forEach(segment => {
-
-				bookinfoData[segment] = parseMarkdown(bookinfoData[segment]);
-
-				[left, right] = segment.split(':');
-				let currentBlockNo = right.split('.')[0];
-
-
-				if (left == "AuthorID") {
-					bookauthorID = bookinfoData[segment];
-				}
-				if (left == "BookTitle") {
-					bookTitle = bookinfoData[segment];
-				}
-
-				if ( left == "AddOn") {
-
-					if (previousBlockNo == currentBlockNo ) {
-						infoAddOnArr[infoAddOnArr.length-1] += `<p> ${bookinfoData[segment]} </p>`;
-					} else {
-						infoAddOnArr.push(`<p> ${bookinfoData[segment]} </p>`);
-						previousBlockNo = currentBlockNo;
-					}
-				}
-
-				if (left == "Copyright") {
-					bookCopyright += `<p> ${bookinfoData[segment]} </p>`;
-				}
-			});
-
-			function makeAddOns() {
-				let html = endhtml = '';
-
-				if (infoAddOnArr.length > 0) {
-					html = `<section class="infocontainer">`;
-					html += `<h3>Additional Info:</h3>`;
-					endhtml += `</section>`
-				}
-
-				for (let i = 0; i < infoAddOnArr.length; i++) {
-					html += `<div class="detail-addon">${infoAddOnArr[i]}</div>`
-				}
-				html += endhtml;
-				return html;
-			}
-
-			function makeCopyright() {
-				return `<section class="infocontainer"><h3>Copyright:</h3><div class="detail-addon">${bookCopyright}</div></section>`;
-			}
-
-			const bookauthorBio = fetch(`../_resources/author-data/${bookauthorID}/bio.json`)
-			.then(response => response.json())
-			.catch(error => {
-				html += (`ERROR: Can't fetch ../_resources/author-data/${bookauthorID}/bio.json` );
-			});
-
-			Promise.all([bookauthorBio]). then (responses => {
-				const [bookauthorBioData] = responses;
-				//console.log(bookauthorBioData);
-			
-				Object.keys(bookauthorBioData).forEach(segment => {
-
-					[left, right] = segment.split(':');
-					if (segment == '0:0') {
-						bookauthorFullName = bookauthorBioData[segment];
-						bookTitleAuthor = bookTitle + ' by ' + bookauthorFullName
-
-						html = `<h1>${bookTitleAuthor}</h1>`;
-						html += suttalist();
-						html += makeAddOns();
-						
-						html += `<section class="infocontainer"><div class="detail-grid">
-								<div>
-									<h3>Front Cover:</h3>
-									<img src="../_resources/book-data/${shortCode}/large.jpg" alt="${bookTitle} Cover" >
-								</div>
-								<div>
-									<h3>Author:</h3>
-									<figure>
-									<img src="../_resources/author-data/${bookauthorID}/info.jpg" alt="${bookauthorFullName}">
-									<figcaption><strong>${bookauthorFullName}: </strong>`;
-					}
-					if (left == 1) {
-						html += `${bookauthorBioData[segment]}`
-					}
-					if (segment == "shortbio:end") {
-						html += `</figcaption></figure></div></div></section>`
-						html += makeCopyright();
-					}
-					parentDiv.innerHTML = html;
-				});
-			});
-		});
-
-
-
-		*/
 	}
 }
 

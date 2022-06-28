@@ -142,7 +142,7 @@ function buildInfo () {
 //Title
 				title += `<h1>${bookInfoData.BookTitle}<br>${Authordata.ShortName}`;
 
-//Author
+//Authors
 				authors += 
 				`<section class="infocontainer">
 					<h3>Author:</h3>
@@ -160,7 +160,6 @@ function buildInfo () {
 					</div>
 				</section>`;
 			})
-
 
 			fetch(`../_resources/author-data/${bookAuthor2ID}/bio.json`)
 			.then(response => response.json())
@@ -189,12 +188,8 @@ function buildInfo () {
 			} else {
 				title += `</h1>`;
 			}
-
-
-
 			})
-
-
+			
 			.then (z => {
 				html = title;
 				html += authors;

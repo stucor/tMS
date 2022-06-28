@@ -130,17 +130,20 @@ function buildInfo () {
 
 		function populateInfo (bookInfoData) {
 
-			const bookAuthorID = bookInfoData.AuthorID;
+			const bookAuthor1ID = bookInfoData.Author1ID;
+			const bookAuthor2ID = bookInfoData.Author2ID;
 
+			let title = '';
+			let authors = '';
 
-			fetch(`../_resources/author-data/${bookAuthorID[0]}/bio.json`)
+			fetch(`../_resources/author-data/${bookAuthor1ID}/bio.json`)
 			.then(response => response.json())
 			.then (Authordata => {
 //Title
-				html+= `<h1>${bookInfoData.BookTitle} by ${Authordata.ShortName}</h1>`;
+				title += `<h1>${bookInfoData.BookTitle} by ${Authordata.ShortName}</h1>`;
 
 //Author
-				html += 
+				authors += 
 				`<section class="infocontainer">
 					<h3>Author:</h3>
 					<div class="fifty-fifty-grid">
@@ -150,13 +153,48 @@ function buildInfo () {
 						<div>
 							<p><strong>${Authordata.ShortName}: </strong>`;
 				for (i in Authordata.ShortBio) {
-				html += `${Authordata.ShortBio[i]}`;
+				authors += `${Authordata.ShortBio[i]}`;
 				}
-				html += 
+				authors += 
 						`</p></div>
 					</div>
 				</section>`;
-			
+			})
+
+
+			fetch(`../_resources/author-data/${bookAuthor2ID}/bio.json`)
+			.then(response => response.json())
+			.then (Authordata => {
+
+				if (Authordata.ShortName != 'default') {
+
+				authors += 
+				`<section class="infocontainer">
+					<h3>Author:</h3>
+					<div class="fifty-fifty-grid">
+						<div>
+						<img src="${Authordata.InfoImage}" alt="${Authordata.ShortName}">
+						</div>
+						<div>
+							<p><strong>${Authordata.ShortName}: </strong>`;
+				for (i in Authordata.ShortBio) {
+				authors += `${Authordata.ShortBio[i]}`;
+				}
+				authors += 
+						`</p></div>
+					</div>
+				</section>`;
+
+			}
+
+
+
+			})
+
+
+			.then (z => {
+				html = title;
+				html += authors;
 
 //Sutta List
 				html += suttalist();
@@ -166,7 +204,6 @@ function buildInfo () {
 					html += `<section class="infocontainer">`;
 					for (i in bookInfoData.AddInfo) {
 						for (j in bookInfoData.AddInfo[i]) {
-							console.log(i);
 							if (j == 0) {
 								x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
 							} else if (j == 1) {
@@ -224,7 +261,7 @@ function buildInfo () {
 			})
 
 			.catch(error => {
-				html += (`ERROR: Can't fetch ../_resources/author-data/${bookAuthorID}/bio.json` );
+				html += (`ERROR: Can't fetch bio.json` );
 			});
 
 		}

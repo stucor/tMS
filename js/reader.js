@@ -140,7 +140,7 @@ function buildInfo () {
 			.then(response => response.json())
 			.then (Authordata => {
 //Title
-				title += `<h1>${bookInfoData.BookTitle} by ${Authordata.ShortName}</h1>`;
+				title += `<h1>${bookInfoData.BookTitle}<br>${Authordata.ShortName}`;
 
 //Author
 				authors += 
@@ -166,8 +166,7 @@ function buildInfo () {
 			.then(response => response.json())
 			.then (Authordata => {
 
-				if (Authordata.ShortName != 'default') {
-
+			if (Authordata.ShortName != '') {
 				authors += 
 				`<section class="infocontainer">
 					<h3>Author:</h3>
@@ -185,6 +184,10 @@ function buildInfo () {
 					</div>
 				</section>`;
 
+				title += ` & ${Authordata.ShortName}</h1>`;
+
+			} else {
+				title += `</h1>`;
 			}
 
 

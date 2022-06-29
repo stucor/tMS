@@ -839,13 +839,7 @@ z-index:9999;
 /* Details Modal */
 
 
-.infocontainer {
-	border-top: 1px solid darkgrey;
-	padding-bottom: 1em;
-	margin: 1em 0;
-
-}
-
+/*
 .bookcopyright {
 	border-top: #808080 5px solid;
 	text-align:left;
@@ -857,18 +851,34 @@ z-index:9999;
 	color:cornflowerblue;
 	text-decoration: none;
 }	
+*/
+.infocontainer {
+	border-top: 1px solid darkgrey;
+	padding: 2em;
+	margin: 0;
+}
 
+.infocontainer h3 {
+	margin-top:0;
+	text-align: left;
+}
+
+.infocontainer a {
+	text-decoration: none;
+	color:cornflowerblue;
+}
 
 .fifty-fifty-grid {
 	display: grid;
     grid-template-columns: 50% 50%;
-	margin:20px;
+	column-gap: 2em;
+	margin:0;
 	text-align: center;
 }
 
 
 .fifty-fifty-grid img {
-	width: 90%;
+	width: 100%;
 	height: auto;
 	border-radius: .2rem;
 	box-shadow: 1px 3px 6px -1px rgba(0, 0, 2, 0.329);
@@ -876,15 +886,29 @@ z-index:9999;
 
 
 .fifty-fifty-grid p {
-	margin: 0 4em 1em 2em;
+	margin: 0 2em 1em 0;
 	text-align: justify;
 }
 
-.fifty-fifty-grid h3 {
-	margin-left: 0 !important;
+
+.info-addon {
+	margin: 1em 2em; 
+	text-align: left; 
+	background-color: #8080800c; 
+	padding: 1rem 1rem 0.1rem 1rem;
+	border-radius: .5rem;
 }
 
+.info-addon > p {
+	margin:0 0 1rem 0;
+}
 
+.copyright p, ul {
+	text-align: left;
+	font-size: 0.95em;
+}
+
+/*
 .detail-grid {
 	display: grid;
     grid-template-columns: 40% 60%;
@@ -919,24 +943,8 @@ z-index:9999;
 	margin:0 10% 1em 10%;
 	text-align: justify;
 }
+*/
 
-.detail-addon {
-	margin: 10px 20px; 
-	text-align: left; 
-	background-color: #8080801f; 
-	padding: 0 20px;
-	border-radius: .2rem;
-}
-
-.detail-addon > p {
-	padding: 10px;
-	margin:0;
-}
-
-.detail-addon > p > a {
-	text-decoration: none;
-	color:cornflowerblue;
-}
 
 
 #reflist {
@@ -952,9 +960,7 @@ z-index:9999;
 .reflistitem {
 	text-align: left;
 	line-height: 1em;
-	padding-left: 10px;
-	padding-top: 3px;
-	padding-bottom: 3px;
+	padding: 3px 10px;
 	background-color: rgba(100, 148, 237, 0.043);
 }
 
@@ -1834,10 +1840,7 @@ font-variant: small-caps;
 	margin-top: -1em;
 }
 
-#ModalDetails  h3 {
-	margin-left : 1em;
-	text-align: left;
-}
+
 
 /* The Close Button */
 
@@ -2084,13 +2087,21 @@ font-variant: small-caps;
 		display: block;	
 	}
 
+	.infocontainer{
+		padding: 0.5em;
+	}
+
+	.infocontainer h3{
+		margin: 0;
+	}
+
 	.fifty-fifty-grid {
 		display: block;
 		margin: 20px 0;
 	}
 
 	.fifty-fifty-grid p {
-		margin: 1em;
+		margin: 1em 0;
 		text-align: justify;
 	}
 	
@@ -2098,12 +2109,21 @@ font-variant: small-caps;
 		margin-left: 1em !important;
 	}
 	
-	
+	#reflist {
+		margin: 1em 0;
+		grid-template-columns: repeat(auto-fit, 45%);
+	}
 
+	.info-addon {
+		margin: 0 0 1em 0;
+	}
+	
+/*
 	.detail-grid {
 		display: block;
 		margin: 20px 0;
 	}
+*/
 
 	.modal-body > div > h2 {
 		margin: 10px;

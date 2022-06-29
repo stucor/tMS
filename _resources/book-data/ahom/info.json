@@ -1,0 +1,27 @@
+{
+"Author1ID" : "sujato",
+"Author2ID" : "_default",
+"BookTitle" : "A History of Mindfulness",
+"AddInfo"   : [],
+"Copyright" : [
+    "Originally published by The Corporate Body of the Buddha Education Foundation, Taiwan, 2007.<br>The revised edition (pdf) published in 2012 by Santipada.",
+    "Copyright © Bhikkhu Sujato 2012.<br>396pp (in pdf format).",
+    "CREATIVE COMMONS ATTRIBUTION-NO DERIVATIVE WORKS 2.5 AUSTRALIA",
+    "You are free to:",
+    "**Share**— to copy, distribute and transmit the work",
+    "Under the following terms:",
+    "**Attribution**— You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).",
+    "**No Derivative Works**—You may not alter, transform, or build upon this work.",
+    "**Waiver**— Any of the above conditions can be waived if you get permission from the copyright holder.",
+    "**Other Rights**— In no way are any of the following rights affected by the license:",
+    "<ul><li>Your fair dealing or fair use rights;</li><li>The author’s moral rights;</li><li>Rights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.</li></ul>",
+    "**Notice**— For any reuse or distribution, you must make clear to others the license terms of this work.",
+    "ISBN: 978-1-921842-13-9 "
+],
+"FrontCover": "../_resources/book-data/ahom/FrontLarge.jpg",
+"BackCover": "../_resources/book-data/ahom/BackLarge.jpg",
+"BackMatter": [
+    "The Satipaṭṭhāna Sutta is the most influential scripture in Buddhist meditaion. It is the foundation text for the modern schools of ‘vipassanā’ or ‘insight’ meditation. The well-known Pali discourse is, however, only one of many early Buddhist texts that deal with mindfulness. This is the first full-scale study to encompass all extant versions of the Satipaṭṭhāna Sutta, taking into account the dynamic evolution of the Buddhist scriptures and the broader Indian meditative culture. A new vision emerges from this groundbreaking study: mindfulness is not a system of ‘dry insight’ but is the ‘way to convergence’ leading the mind to deep states of peace.",
+    "Bhikkhu Sujato is a Buddhist monk. Since taking higher ordination in Thailand in 1994 he has lived in monasteries and hermitages devloping meditation and studying the Buddha’s teachings. In 2003 he established Santi Forest Monastery near Sydney, Australia."
+]
+}

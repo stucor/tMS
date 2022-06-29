@@ -109,6 +109,7 @@ function buildInfo () {
 	if (parentDiv.innerHTML == '') {
 		let shortCode = shortcode();
 		let html ='';
+		tablelist(); // XXX
 
 		function suttalist () {
 			let suttarefArr = document.getElementsByClassName('sclinktext');
@@ -116,7 +117,7 @@ function buildInfo () {
 			let html = "";
 			if (suttarefArr.length  > 0) {
 				html = `<section class="infocontainer">`;
-				html += `<h3>Sutta References in this book:</h3>`;
+				html += `<h3>Sutta References:</h3>`;
 				html += `<div id="reflist">	`
 				for (let i = 0; i < suttarefArr.length; i++) {
 					suttarefArr[i].setAttribute("id", "slt_"+ i);
@@ -127,6 +128,13 @@ function buildInfo () {
 				return html;
 			}
 		}
+
+		
+		function tablelist () {
+			let tabrefArr = document.getElementsByClassName('tablewrap');
+			console.log (tabrefArr);
+		}
+
 
 		function populateInfo (bookInfoData) {
 
@@ -140,12 +148,12 @@ function buildInfo () {
 			.then(response => response.json())
 			.then (Authordata => {
 //Title
-				title += `<h1>${bookInfoData.BookTitle}<br>${Authordata.ShortName}`;
+				title += `<h1>${bookInfoData.BookTitle}</h1>
+							<h2>${Authordata.ShortName}`;
 
 //Authors
 				authors += 
 				`<section class="infocontainer">
-					<h3>Author:</h3>
 					<div class="fifty-fifty-grid">
 						<div>
 						<img src="${Authordata.InfoImage}" alt="${Authordata.ShortName}">
@@ -168,7 +176,6 @@ function buildInfo () {
 			if (Authordata.ShortName != '') {
 				authors += 
 				`<section class="infocontainer">
-					<h3>Author:</h3>
 					<div class="fifty-fifty-grid">
 						<div>
 						<img src="${Authordata.InfoImage}" alt="${Authordata.ShortName}">
@@ -183,10 +190,10 @@ function buildInfo () {
 					</div>
 				</section>`;
 
-				title += ` & ${Authordata.ShortName}</h1>`;
+				title += ` & ${Authordata.ShortName}</h2>`;
 
 			} else {
-				title += `</h1>`;
+				title += `</h2>`;
 			}
 			})
 			
@@ -205,7 +212,7 @@ function buildInfo () {
 							if (j == 0) {
 								x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
 							} else if (j == 1) {
-								html += `<div class="detail-addon">`;
+								html += `<div class="info-addon">`;
 								x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
 							} else {
 								x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
@@ -222,11 +229,9 @@ function buildInfo () {
 				`<section class="infocontainer">
 					<div class="fifty-fifty-grid">
 					<div>
-					<h3>Cover:</h3>
 					<img src="${bookInfoData.FrontCover}" alt="${bookInfoData.BookTitle} Cover" >
 					</div>
-					<div> 
-					<h3>Copyright:</h3>`;
+					<div class="copyright">`;
 					for (i in bookInfoData.Copyright) {
 					html += `<p>${parseMarkdown(bookInfoData.Copyright[i])}</p>`;
 					}
@@ -240,7 +245,7 @@ function buildInfo () {
 					<div>`;
 				
 					html +=
-					`<h3>Back Cover:</h3>
+					`
 					<img src="${bookInfoData.BackCover}" alt="${bookInfoData.BookTitle} Cover" >
 					</div>
 					<div>`;

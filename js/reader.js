@@ -102,39 +102,74 @@ function parseMarkdown(markdownText) {
 	return htmlText.trim()
 }
 
+
 // Populates the Info Modal
 function buildInfo () {  
 	let parentDiv = document.getElementById('ModalDetails');
-
 	if (parentDiv.innerHTML == '') {
 		let shortCode = shortcode();
 		let html ='';
-		tablelist(); // XXX
 
 		function suttalist () {
+
 			let suttarefArr = document.getElementsByClassName('sclinktext');
 			if (suttarefArr.length == 0) { return '';}
 			let html = "";
 			if (suttarefArr.length  > 0) {
-				html = `<section class="infocontainer">`;
+				html = `<section id="sutta-list" class="infocontainer">`;
 				html += `<h3>Sutta References:</h3>`;
-				html += `<div id="reflist">	`
+				html += `<ul id="reflist">	`
 				for (let i = 0; i < suttarefArr.length; i++) {
 					suttarefArr[i].setAttribute("id", "slt_"+ i);
-					let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
-					html += `<div class='reflistitem'>${linktext}</div>`;
+					let linktext = `<span class = "reflistOrderNo" >${i+1}. </span><span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML} </span>`;
+					html += `<li class='reflistitem'>${linktext}</li>`;
+				}
+				html += `</ul></section>`;
+				return html;
+
+			}
+		}
+/*
+		function suttalist () {
+
+			let suttarefArr = document.getElementsByClassName('sclinktext');
+			if (suttarefArr.length == 0) { return '';}
+			let html = "";
+			if (suttarefArr.length  > 0) {
+				html = `<section id="sutta-list" class="infocontainer">`;
+				html += `<h3>Sutta References:</h3>`;
+				html += `<ul id="reflist">	`
+				for (let i = 0; i < suttarefArr.length; i++) {
+					suttarefArr[i].setAttribute("id", "slt_"+ i);
+					let linktext = `<span class = "reflistOrderNo" >${i+1}. </span><span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML} </span>`;
+					html += `<li class='reflistitem'>${linktext}</li>`;
+				}
+				html += `</ul></section>`;
+				return html;
+
+			}
+		}
+*/
+		function tablelist () {
+			let tabrefArr = document.querySelectorAll('table');
+			if (tabrefArr.length == 0) { return '';}
+
+			let html = "";
+			if (tabrefArr.length  > 0) {
+				html = `<section class="infocontainer">`;
+				html += `<h3>List of Tables:</h3>`;
+				html += `<div id="lotlist">	`
+				for (let i = 0; i < tabrefArr.length; i++) {
+					if (tabrefArr[i].caption) {
+						tabrefArr[i].setAttribute("id", "lot_"+ i);
+						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${i}'>${tabrefArr[i].caption.innerHTML}</span>`;
+						html += `<div class='lotlistitem'>${linktext}</div>`;
+					}
 				}
 				html += `</div></section>`;
 				return html;
 			}
 		}
-
-		
-		function tablelist () {
-			let tabrefArr = document.getElementsByClassName('tablewrap');
-			console.log (tabrefArr);
-		}
-
 
 		function populateInfo (bookInfoData) {
 
@@ -151,29 +186,7 @@ function buildInfo () {
 				title += `<h1>${bookInfoData.BookTitle}</h1>
 							<h2>${Authordata.ShortName}`;
 
-//Authors
-				authors += 
-				`<section class="infocontainer">
-					<div class="fifty-fifty-grid">
-						<div>
-						<img src="${Authordata.InfoImage}" alt="${Authordata.ShortName}">
-						</div>
-						<div>
-							<p><strong>${Authordata.ShortName}: </strong>`;
-				for (i in Authordata.ShortBio) {
-				authors += `${Authordata.ShortBio[i]}`;
-				}
-				authors += 
-						`</p></div>
-					</div>
-				</section>`;
-			})
-
-			fetch(`../_resources/author-data/${bookAuthor2ID}/bio.json`)
-			.then(response => response.json())
-			.then (Authordata => {
-
-			if (Authordata.ShortName != '') {
+//create authors
 				authors += 
 				`<section class="infocontainer">
 					<div class="fifty-fifty-grid">
@@ -190,77 +203,98 @@ function buildInfo () {
 					</div>
 				</section>`;
 
-				title += ` & ${Authordata.ShortName}</h2>`;
+				fetch(`../_resources/author-data/${bookAuthor2ID}/bio.json`)
+				.then(response => response.json())
+				.then (Authordata2 => {
 
-			} else {
-				title += `</h2>`;
-			}
-			})
-			
-			.then (z => {
-				html = title;
-				html += authors;
+				if (Authordata2.ShortName != '') {
+					authors += 
+					`<section class="infocontainer">
+						<div class="fifty-fifty-grid">
+							<div>
+							<img src="${Authordata2.InfoImage}" alt="${Authordata2.ShortName}">
+							</div>
+							<div>
+								<p><strong>${Authordata2.ShortName}: </strong>`;
+					for (i in Authordata2.ShortBio) {
+					authors += `${Authordata2.ShortBio[i]}`;
+					}
+					authors += 
+							`</p></div>
+						</div>
+					</section>`;
 
-//Sutta List
-				html += suttalist();
+					title += ` & ${Authordata2.ShortName}</h2>`;
 
-//Add Ons
-				if (bookInfoData.AddInfo.length > 0) {
-					html += `<section class="infocontainer">`;
-					for (i in bookInfoData.AddInfo) {
-						for (j in bookInfoData.AddInfo[i]) {
-							if (j == 0) {
-								x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
-							} else if (j == 1) {
-								html += `<div class="info-addon">`;
-								x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
-							} else {
-								x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
+				} else {
+					title += `</h2>`;
+				}
+
+					html = title;
+
+	//Sutta List
+					html += suttalist();
+					html += tablelist();
+
+	//Add Ons
+					if (bookInfoData.AddInfo.length > 0) {
+						html += `<section class="infocontainer">`;
+						for (i in bookInfoData.AddInfo) {
+							for (j in bookInfoData.AddInfo[i]) {
+								if (j == 0) {
+									x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
+								} else if (j == 1) {
+									html += `<div class="info-addon">`;
+									x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
+								} else {
+									x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
+								}
+								html += x;
 							}
-							html += x;
+							html += `</div>`;
 						}
-						html += `</div>`;
+						html += `</section>`
 					}
-					html += `</section>`
-				}
+	// add authors
+					html += authors;
 
-//Book Cover and Copyright
-				html += 
-				`<section class="infocontainer">
-					<div class="fifty-fifty-grid">
-					<div>
-					<img src="${bookInfoData.FrontCover}" alt="${bookInfoData.BookTitle} Cover" >
-					</div>
-					<div class="copyright">`;
-					for (i in bookInfoData.Copyright) {
-					html += `<p>${parseMarkdown(bookInfoData.Copyright[i])}</p>`;
-					}
-					html += `</div></div></section>`;
+	//Book Cover and Copyright
+					html += 
+					`<section class="infocontainer">
+						<div class="fifty-fifty-grid">
+						<div>
+						<img src="${bookInfoData.FrontCover}" alt="${bookInfoData.BookTitle} Cover" >
+						</div>
+						<div class="copyright">`;
+						for (i in bookInfoData.Copyright) {
+						html += `<p>${parseMarkdown(bookInfoData.Copyright[i])}</p>`;
+						}
+						html += `</div></div></section>`;
 
-// BackCover and Back Matter
-			if (bookInfoData.BackCover != "") {
-				html += 
-				`<section class="infocontainer">
-					<div class="fifty-fifty-grid">
-					<div>`;
-				
-					html +=
-					`
-					<img src="${bookInfoData.BackCover}" alt="${bookInfoData.BookTitle} Cover" >
-					</div>
-					<div>`;
-					if (bookInfoData.BackMatter != "") {
+	// BackCover and Back Matter
+				if (bookInfoData.BackCover != "") {
+					html += 
+					`<section class="infocontainer">
+						<div class="fifty-fifty-grid">
+						<div>`;
+					
 						html +=
-						`<h3>Back Matter:</h3>`;
-						for (i in bookInfoData.BackMatter) {
-						html += `<p>${bookInfoData.BackMatter[i]}</p>`;
-						};
-					}
-
+						`
+						<img src="${bookInfoData.BackCover}" alt="${bookInfoData.BookTitle} Cover" >
+						</div>
+						<div>`;
+						if (bookInfoData.BackMatter != "") {
+							html +=
+							`<h3>Back Matter:</h3>`;
+							for (i in bookInfoData.BackMatter) {
+							html += `<p>${bookInfoData.BackMatter[i]}</p>`;
+							};
+						}
 					html += `</div></div></section>`;
-			}
+				}
+				
 				parentDiv.innerHTML = html;
-			
+				})
 			})
 
 			.catch(error => {
@@ -277,6 +311,7 @@ function buildInfo () {
 			}
 		);
 
+		
 	}
 }
 
@@ -2040,7 +2075,7 @@ detailsbtn.onclick = function() {
 	showModal ("Info");
 	buildInfo();
 	stopBookScroll();
-	modalbody.scrollTop = 0;
+	//modalbody.scrollTop = 0;
 }
 
 settingsbtn.onclick = function() {
@@ -2343,6 +2378,10 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 
 	if (e.target.className == "sclinkref") {
 		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","")
+		scrollToID(gotoID);
+	}
+	if (e.target.className == "lotlinkref") {
+		var gotoID = 'lot_' + e.target.id.replace("lotlinkfrom_","")
 		scrollToID(gotoID);
 	}
 

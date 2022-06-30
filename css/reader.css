@@ -517,7 +517,7 @@ blockquote {
 	color:cornflowerblue;
 	cursor:pointer;
 	user-select: none;
-	font-weight: 600;
+
 }	
 
 blockquote p {
@@ -728,7 +728,6 @@ table.borderlessTable {
 
 .booknote a {
 	color:cornflowerblue;
-
 	text-decoration: none;
 }
 
@@ -863,9 +862,12 @@ z-index:9999;
 	text-align: left;
 }
 
-.infocontainer a {
+.infocontainer a, .lotlinkref {
 	text-decoration: none;
 	color:cornflowerblue;
+	font-weight: 500;
+	cursor: pointer;
+	user-select: none;
 }
 
 .fifty-fifty-grid {
@@ -955,6 +957,7 @@ z-index:9999;
 	padding:0;
 	margin-left: 1rem;
 	margin-right: 1rem;
+	list-style-type: none;
 }
 
 .reflistitem {
@@ -964,6 +967,20 @@ z-index:9999;
 	background-color: rgba(100, 148, 237, 0.043);
 }
 
+.reflistOrderNo {
+	display: inline-block;
+	width: 1.5em;
+	text-align: left;
+}
+#lotlist {
+	padding:0;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.lotlistitem {
+	text-align: left;
+}
 /******************************************/
 
 
@@ -1697,6 +1714,7 @@ font-variant: small-caps;
 	padding-top: 20px;
 }
 
+/*
 #LOT {
 	list-style-type: none;
 }
@@ -1705,7 +1723,7 @@ font-variant: small-caps;
 	color: cornflowerblue;
 	cursor:pointer;
 }
-
+*/
 /* SPINNERS */
 
 #spinbox {

@@ -1,0 +1,15 @@
+{
+"Author1ID" : "brahm",
+"Author2ID" : "_default",
+"BookTitle" : "The Basic Method of Meditation",
+"BookSubtitle"  : "",
+"AddInfo"   : [],
+"Copyright" : [
+  "Published in **2002**.",
+  "This edition published in **2021**",
+  "28pp (in pdf format).",
+  "This latest online edition includes the suttas referenced with translations by Bhikkhu Sujato."],
+"FrontCover": "../_resources/book-data/bmom/FrontLarge.jpg",
+"BackCover": "",
+"BackMatter": []
+}

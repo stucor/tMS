@@ -106,6 +106,7 @@ function parseMarkdown(markdownText) {
 // Populates the Info Modal
 function buildInfo () {  
 	let parentDiv = document.getElementById('ModalDetails');
+	let containsSuttaList = false;
 	if (parentDiv.innerHTML == '') {
 		let shortCode = shortcode();
 		let html ='';
@@ -118,38 +119,21 @@ function buildInfo () {
 			if (suttarefArr.length  > 0) {
 				html = `<section id="sutta-list" class="infocontainer">`;
 				html += `<h3>Sutta References:</h3>`;
-				html += `<ul id="reflist">	`
+				html += `<div class="suttasortbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="reflistOrderNo">Book Position</button>`
+				html += `  <button class="sort" data-sort="sclinkref">Sutta Number</button></div>`
+				html += `<ul id="reflist" class="list">	`
 				for (let i = 0; i < suttarefArr.length; i++) {
 					suttarefArr[i].setAttribute("id", "slt_"+ i);
 					let linktext = `<span class = "reflistOrderNo" >${i+1}. </span><span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML} </span>`;
 					html += `<li class='reflistitem'>${linktext}</li>`;
 				}
 				html += `</ul></section>`;
+				containsSuttaList = true;
 				return html;
 
 			}
 		}
-/*
-		function suttalist () {
 
-			let suttarefArr = document.getElementsByClassName('sclinktext');
-			if (suttarefArr.length == 0) { return '';}
-			let html = "";
-			if (suttarefArr.length  > 0) {
-				html = `<section id="sutta-list" class="infocontainer">`;
-				html += `<h3>Sutta References:</h3>`;
-				html += `<ul id="reflist">	`
-				for (let i = 0; i < suttarefArr.length; i++) {
-					suttarefArr[i].setAttribute("id", "slt_"+ i);
-					let linktext = `<span class = "reflistOrderNo" >${i+1}. </span><span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML} </span>`;
-					html += `<li class='reflistitem'>${linktext}</li>`;
-				}
-				html += `</ul></section>`;
-				return html;
-
-			}
-		}
-*/
 		function tablelist () {
 			let tabrefArr = document.querySelectorAll('table');
 			if (tabrefArr.length == 0) { return '';}
@@ -184,6 +168,7 @@ function buildInfo () {
 			.then (Authordata => {
 //Title
 				title += `<h1>${bookInfoData.BookTitle}</h1>
+							<h3>${bookInfoData.BookSubtitle}</h3>
 							<h2>${Authordata.ShortName}`;
 
 //create authors
@@ -272,31 +257,37 @@ function buildInfo () {
 						html += `</div></div></section>`;
 
 	// BackCover and Back Matter
-				if (bookInfoData.BackCover != "") {
-					html += 
-					`<section class="infocontainer">
-						<div class="fifty-fifty-grid">
-						<div>`;
-					
-						html +=
-						`
-						<img src="${bookInfoData.BackCover}" alt="${bookInfoData.BookTitle} Cover" >
-						</div>
-						<div>`;
-						if (bookInfoData.BackMatter != "") {
+					if (bookInfoData.BackCover != "") {
+						html += 
+						`<section class="infocontainer">
+							<div class="fifty-fifty-grid">
+							<div>`;
+						
 							html +=
-							`<h3>Back Matter:</h3>`;
-							for (i in bookInfoData.BackMatter) {
-							html += `<p>${bookInfoData.BackMatter[i]}</p>`;
-							};
-						}
-					html += `</div></div></section>`;
-				}
-				
-				parentDiv.innerHTML = html;
-				})
-			})
+							`
+							<img src="${bookInfoData.BackCover}" alt="${bookInfoData.BookTitle} Cover" >
+							</div>
+							<div>`;
+							if (bookInfoData.BackMatter != "") {
+								html +=
+								`<h3>Back Matter:</h3>`;
+								for (i in bookInfoData.BackMatter) {
+								html += `<p>${parseMarkdown(bookInfoData.BackMatter[i])}</p>`;
+								};
+							}
+						html += `</div></div></section>`;
+					}
 
+					parentDiv.innerHTML = html;
+					if (containsSuttaList) {
+						var options = {
+							valueNames: [ 'reflistOrderNo', 'sclinkref' ]
+						};
+						var suttaList = new List('sutta-list', options);
+					}
+				})
+
+			})
 			.catch(error => {
 				html += (`ERROR: Can't fetch bio.json` );
 			});
@@ -306,14 +297,16 @@ function buildInfo () {
 		fetch(`../_resources/book-data/${shortCode}/info.json`)
 			.then(response => response.json())
 			.then (data => populateInfo(data))
+
 			.catch(error => {
 			console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
 			}
 		);
-
-		
 	}
 }
+
+
+
 
 //ONLOAD
 window.onload = function () {

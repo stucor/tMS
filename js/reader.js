@@ -102,7 +102,7 @@ function parseMarkdown(markdownText) {
 	return htmlText.trim()
 }
 
-
+//NEEDS TO BE RE-WRITTEN USING ASYNC/AWAIT
 // Populates the Info Modal
 function buildInfo () {  
 	let parentDiv = document.getElementById('ModalDetails');

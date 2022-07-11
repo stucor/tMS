@@ -391,7 +391,6 @@ strong {
 
 .content a {
 	color:cornflowerblue;
-	font-weight: 500;
 	text-decoration: none;
 }
 
@@ -726,16 +725,20 @@ table.borderlessTable {
 	border-radius: 10px;
 }
 
+/*
 .booknote a {
 	color:cornflowerblue;
 	text-decoration: none;
 }
+*/
 
 .extlink {
 	color:cornflowerblue;
-	font-weight: 600;
 	font-family: Source Sans Pro;
 	text-decoration: none;
+	border-radius: 1em;
+	padding: 0.3em;
+	margin: -0.3em;
 }
 
 dt {
@@ -764,8 +767,11 @@ dd > ol > li {
 
 
 
+/*
+.booknote a::after, #references a::after, 
+*/
 
-.booknote a::after, #references a::after, .extlink::after {
+.extlink::after {
 	content: url('../_resources/images/icons/leave-app.svg');
 }
 
@@ -792,7 +798,6 @@ sup {
 /*	transition: outline 0.3s linear;*/
 	border-radius: 1em;
 	cursor: pointer;
-	font-weight: 700;
 	font-style: normal;
 	user-select: none;
 }
@@ -818,39 +823,6 @@ sup {
 	height: auto;
 }
 
-/*
-.startup {
-padding:0;
-position: absolute;
-left:0;
-top:0;
-z-index:9999;
-}
-.startup > div {
-	display:block;
-}
-.startup > div > div > img {
-	width: 100vw;
-	filter: opacity(50%) blur(10px);
-}
-*/
-
-/* Details Modal */
-
-
-/*
-.bookcopyright {
-	border-top: #808080 5px solid;
-	text-align:left;
-	margin: 20px;
-	font-size: 16px;
-}
-
-.bookcopyright a {
-	color:cornflowerblue;
-	text-decoration: none;
-}	
-*/
 .infocontainer {
 	border-top: 1px solid darkgrey;
 	padding: 2em;
@@ -865,7 +837,6 @@ z-index:9999;
 .infocontainer a, .lotlinkref {
 	text-decoration: none;
 	color:cornflowerblue;
-	font-weight: 500;
 	cursor: pointer;
 	user-select: none;
 }
@@ -1756,16 +1727,7 @@ font-variant: small-caps;
 	padding-top: 20px;
 }
 
-/*
-#LOT {
-	list-style-type: none;
-}
 
-#LOT li {
-	color: cornflowerblue;
-	cursor:pointer;
-}
-*/
 /* SPINNERS */
 
 #spinbox {
@@ -2411,6 +2373,15 @@ font-variant: small-caps;
 		border: 3px solid var(--primarycolor); 
 		box-shadow: 0 0 5px 1px var(--primarycolor);
 	  }
+
+	.extlink:hover {
+		/*box-shadow: 0 0 5px 1px rgb(168, 15, 46);*/
+		text-decoration: underline;
+		color: #AA0000;
+	}
+	.extlink:hover:after {
+		content: url('../_resources/images/icons/leave-app-red.svg');
+	}
 }
 
 @media (hover: none) {

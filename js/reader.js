@@ -88,23 +88,26 @@ document.getElementById('thebook').style.display='block';
 
 /* Modal Builders */
 
-function parseMarkdown(markdownText) {
-	const htmlText = markdownText
+function parseInfoText(infoText) {
+	const htmlText = infoText
 //		.replace(/^### (.*$)/gim, '<h3>$1</h3>')
 //		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
 //		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
 //		.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
-		.replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-		.replace(/\*(.*)\*/gim, '<i>$1</i>')
+		.replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>') // markdown style bold
+		.replace(/\*(.*)\*/gim, '<i>$1</i>') // markdown style italics
 //		.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-		.replace(/\n/gim, '<br />')
+		.replace(/\[(.*?)\]\X\((.*?)\)/gim, "<a class='extlink' href='$2'>$1</a>") //like markdown but and X inbetween like this: [text]X(link) - to denote an external link
+		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>") // markdown style link
+		.replace(/\n/gim, '<br />') //markdown style linebreaks
 	return htmlText.trim()
 }
 
 //NEEDS TO BE RE-WRITTEN USING ASYNC/AWAIT
 // Populates the Info Modal
-function buildInfo () {  
+
+
+function buildInfo () {
 	let parentDiv = document.getElementById('ModalDetails');
 	let containsSuttaList = false;
 	if (parentDiv.innerHTML == '') {
@@ -112,7 +115,6 @@ function buildInfo () {
 		let html ='';
 
 		function suttalist () {
-
 			let suttarefArr = document.getElementsByClassName('sclinktext');
 			if (suttarefArr.length == 0) { return '';}
 			let html = "";
@@ -130,14 +132,13 @@ function buildInfo () {
 				html += `</ul></section>`;
 				containsSuttaList = true;
 				return html;
-
 			}
 		}
-
+	
 		function tablelist () {
 			let tabrefArr = document.querySelectorAll('table');
 			if (tabrefArr.length == 0) { return '';}
-
+	
 			let html = "";
 			if (tabrefArr.length  > 0) {
 				html = `<section class="infocontainer">`;
@@ -157,156 +158,109 @@ function buildInfo () {
 
 		function populateInfo (bookInfoData) {
 
-			const bookAuthor1ID = bookInfoData.Author1ID;
-			const bookAuthor2ID = bookInfoData.Author2ID;
+			html += `<h1>${bookInfoData.BookTitle}</h1>
+			<h3>${bookInfoData.BookSubtitle}</h3>
+			<h2>${bookInfoData.Authors}</h2>`;
 
-			let title = '';
+			html += suttalist();
+			html += tablelist();
+
+			//Add Ons
+			if (bookInfoData.AddInfo.length > 0) {
+				html += `<section class="infocontainer">`;
+				for (i in bookInfoData.AddInfo) {
+					for (j in bookInfoData.AddInfo[i]) {
+						if (j == 0) {
+							x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
+						} else if (j == 1) {
+							html += `<div class="info-addon">`;
+							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
+						} else {
+							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
+						}
+						html += x;
+					}
+					html += `</div>`;
+				}
+				html += `</section>`
+			}	
+			
+			//Author(s)
 			let authors = '';
-
-			fetch(`../_resources/author-data/${bookAuthor1ID}/bio.json`)
-			.then(response => response.json())
-			.then (Authordata => {
-//Title
-				title += `<h1>${bookInfoData.BookTitle}</h1>
-							<h3>${bookInfoData.BookSubtitle}</h3>
-							<h2>${Authordata.ShortName}`;
-
-//create authors
+			let authorCount = 0;
+			while (authorCount < bookInfoData.AuthorsData.length) {
 				authors += 
 				`<section class="infocontainer">
 					<div class="fifty-fifty-grid">
 						<div>
-						<img src="${Authordata.InfoImage}" alt="${Authordata.ShortName}">
+						<img src="${bookInfoData.AuthorsData[authorCount].InfoImage}" alt="${bookInfoData.AuthorsData[authorCount].ShortName}">
 						</div>
 						<div>
-							<p><strong>${Authordata.ShortName}: </strong>`;
-				for (i in Authordata.ShortBio) {
-				authors += `${Authordata.ShortBio[i]}`;
+							<p><strong>${bookInfoData.AuthorsData[authorCount].ShortName}: </strong>`;
+				for (i in bookInfoData.AuthorsData[authorCount].ShortBio) {
+					authors += `${bookInfoData.AuthorsData[authorCount].ShortBio[i]}`;
 				}
 				authors += 
 						`</p></div>
 					</div>
 				</section>`;
+				authorCount++;
+			}
+			html += authors;
 
-				fetch(`../_resources/author-data/${bookAuthor2ID}/bio.json`)
-				.then(response => response.json())
-				.then (Authordata2 => {
-
-				if (Authordata2.ShortName != '') {
-					authors += 
-					`<section class="infocontainer">
-						<div class="fifty-fifty-grid">
-							<div>
-							<img src="${Authordata2.InfoImage}" alt="${Authordata2.ShortName}">
-							</div>
-							<div>
-								<p><strong>${Authordata2.ShortName}: </strong>`;
-					for (i in Authordata2.ShortBio) {
-					authors += `${Authordata2.ShortBio[i]}`;
-					}
-					authors += 
-							`</p></div>
-						</div>
-					</section>`;
-
-					title += ` & ${Authordata2.ShortName}</h2>`;
-
-				} else {
-					title += `</h2>`;
+			//Book Cover and Copyright
+			html += 
+			`<section class="infocontainer">
+				<div class="fifty-fifty-grid">
+				<div>
+				<img src="${bookInfoData.FrontCover}" alt="${bookInfoData.BookTitle} Cover" >
+				</div>
+				<div class="copyright">`;
+				for (i in bookInfoData.Copyright) {
+				html += `<p>${parseInfoText(bookInfoData.Copyright[i])}</p>`;
 				}
+				html += `</div></div></section>`;
 
-					html = title;
-
-	//Sutta List
-					html += suttalist();
-					html += tablelist();
-
-	//Add Ons
-					if (bookInfoData.AddInfo.length > 0) {
-						html += `<section class="infocontainer">`;
-						for (i in bookInfoData.AddInfo) {
-							for (j in bookInfoData.AddInfo[i]) {
-								if (j == 0) {
-									x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
-								} else if (j == 1) {
-									html += `<div class="info-addon">`;
-									x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
-								} else {
-									x = `<p>${parseMarkdown(bookInfoData.AddInfo[i][j])}</p>`;
-								}
-								html += x;
-							}
-							html += `</div>`;
-						}
-						html += `</section>`
-					}
-	// add authors
-					html += authors;
-
-	//Book Cover and Copyright
-					html += 
-					`<section class="infocontainer">
-						<div class="fifty-fifty-grid">
-						<div>
-						<img src="${bookInfoData.FrontCover}" alt="${bookInfoData.BookTitle} Cover" >
-						</div>
-						<div class="copyright">`;
-						for (i in bookInfoData.Copyright) {
-						html += `<p>${parseMarkdown(bookInfoData.Copyright[i])}</p>`;
-						}
-						html += `</div></div></section>`;
-
-	// BackCover and Back Matter
-					if (bookInfoData.BackCover != "") {
-						html += 
-						`<section class="infocontainer">
-							<div class="fifty-fifty-grid">
-							<div>`;
-						
-							html +=
-							`
-							<img src="${bookInfoData.BackCover}" alt="${bookInfoData.BookTitle} Cover" >
-							</div>
-							<div>`;
-							if (bookInfoData.BackMatter != "") {
-								html +=
-								`<h3>Back Matter:</h3>`;
-								for (i in bookInfoData.BackMatter) {
-								html += `<p>${parseMarkdown(bookInfoData.BackMatter[i])}</p>`;
-								};
-							}
-						html += `</div></div></section>`;
-					}
-
-					parentDiv.innerHTML = html;
-					if (containsSuttaList) {
-						var options = {
-							valueNames: [ 'reflistOrderNo', 'sclinkref' ]
+			// BackCover and Back Matter
+			if (bookInfoData.BackCover != "") {
+				html += 
+				`<section class="infocontainer">
+					<div class="fifty-fifty-grid">
+					<div>`;
+				
+					html +=
+					`
+					<img src="${bookInfoData.BackCover}" alt="${bookInfoData.BookTitle} Cover" >
+					</div>
+					<div>`;
+					if (bookInfoData.BackMatter != "") {
+						html +=
+						`<h3>Back Matter:</h3>`;
+						for (i in bookInfoData.BackMatter) {
+						html += `<p>${parseInfoText(bookInfoData.BackMatter[i])}</p>`;
 						};
-						var suttaList = new List('sutta-list', options);
 					}
-				})
-
-			})
-			.catch(error => {
-				html += (`ERROR: Can't fetch bio.json` );
-			});
-
+				html += `</div></div></section>`;
+			}
+			
+			parentDiv.innerHTML = html;
+			if (containsSuttaList) {
+				var options = {
+					valueNames: [ 'reflistOrderNo', 'sclinkref' ]
+				};
+				var suttaList = new List('sutta-list', options);
+			}
 		}
 
-		fetch(`../_resources/book-data/${shortCode}/info.json`)
+		fetch(`../_resources/built-info-data/${shortCode}/info.json`)
 			.then(response => response.json())
 			.then (data => populateInfo(data))
-
 			.catch(error => {
-			console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
+			console.log(`ERROR: Can't fetch ../_resources/built-info-data/${shortCode}/info.json`);
 			}
 		);
 	}
 }
-
-
-
 
 //ONLOAD
 window.onload = function () {
@@ -318,7 +272,7 @@ window.onload = function () {
 	});
 };
 
-var savedBookElements = thebook.querySelectorAll("*");
+var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
 var savedNotesElements = ModalNotes.querySelectorAll('h2, div');
@@ -653,6 +607,7 @@ function savePlaceInBook () {
 	lsTETEname = 'ms' + shortcode() + 'TETE';
 	localStorage.setItem(lsTEname, String(theTopElement));
 	localStorage.setItem(lsTETEname, String(theTopElementTopEdge));
+	//alert(lsTEname + '::' +theTopElement);
 }
 
 document.addEventListener('visibilitychange', function () {

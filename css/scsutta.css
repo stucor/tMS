@@ -196,7 +196,6 @@ header li .segno {
 .sclinktext, .sclinkref {
   color: cornflowerblue;
   text-decoration: none;
-  font-weight: 500;
   cursor: pointer;
   outline: double 0 var(--notehighlighter); 
   border-radius: 1em;

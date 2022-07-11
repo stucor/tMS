@@ -1859,6 +1859,7 @@ font-variant: small-caps;
 #ModalDetails > h2 {
 	font-size: 1.5em;
 	font-weight: normal;
+	margin: 0 0 1.5em 0;
 }
 
 #ModalDetails > h3 {

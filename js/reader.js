@@ -103,10 +103,7 @@ function parseInfoText(infoText) {
 	return htmlText.trim()
 }
 
-//NEEDS TO BE RE-WRITTEN USING ASYNC/AWAIT
 // Populates the Info Modal
-
-
 function buildInfo () {
 	let parentDiv = document.getElementById('ModalDetails');
 	let containsSuttaList = false;
@@ -158,9 +155,11 @@ function buildInfo () {
 
 		function populateInfo (bookInfoData) {
 
-			html += `<h1>${bookInfoData.BookTitle}</h1>
-			<h3>${bookInfoData.BookSubtitle}</h3>
-			<h2>${bookInfoData.Authors}</h2>`;
+			html += `<h1>${bookInfoData.BookTitle}</h1>`;
+			if (bookInfoData.BookSubtitle) {
+				html += `<h3>${bookInfoData.BookSubtitle}</h3>`;
+			}
+			html += `<h2>${bookInfoData.Authors}</h2>`;
 
 			html += suttalist();
 			html += tablelist();

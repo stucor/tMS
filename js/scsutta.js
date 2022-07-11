@@ -219,7 +219,7 @@ function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
 
 
 
-function XXXXXXXXXXparseMarkdown(markdownText) {
+function parseMarkdown(markdownText) {
 	const htmlText = markdownText
 //		.replace(/^### (.*$)/gim, '<h3>$1</h3>')
 //		.replace(/^## (.*$)/gim, '<h2>$1</h2>')

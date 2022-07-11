@@ -216,9 +216,18 @@ function buildInfo () {
 				<img src="${bookInfoData.FrontCover}" alt="${bookInfoData.BookTitle} Cover" >
 				</div>
 				<div class="copyright">`;
+				
+				let copyrightParaCount = 0
+				while (copyrightParaCount < bookInfoData.Copyright.length) {
+					html += `<p>${parseInfoText(bookInfoData.Copyright[copyrightParaCount])}</p>`;
+					copyrightParaCount++;
+				}
+				
+				/*
 				for (i in bookInfoData.Copyright) {
 				html += `<p>${parseInfoText(bookInfoData.Copyright[i])}</p>`;
 				}
+				*/
 				html += `</div></div></section>`;
 
 			// BackCover and Back Matter
@@ -244,12 +253,14 @@ function buildInfo () {
 			}
 			
 			parentDiv.innerHTML = html;
+			
 			if (containsSuttaList) {
 				var options = {
 					valueNames: [ 'reflistOrderNo', 'sclinkref' ]
 				};
 				var suttaList = new List('sutta-list', options);
 			}
+			
 		}
 
 		fetch(`../_resources/built-info-data/${shortCode}/info.json`)

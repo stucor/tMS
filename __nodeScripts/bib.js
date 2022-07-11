@@ -1,3 +1,9 @@
+/*  bib.js
+    Build Book Info (bib) node script
+    Builds the info modal json for all books
+*/
+
+
 const path = require('path');
 const fs = require('fs');
 
@@ -10,7 +16,7 @@ function buildBookInfo (bookID) {
     
     jsonStr += `"AuthorsData": [`;
     for (i in authors) {
-        let author = require(`./author-data/${authors[i]}/bio.json`);
+        let author = require(path.join(__dirname, '..', '_resources', 'author-data', authors[i], 'bio.json'));
         jsonStr += `${JSON.stringify(author, null, '\t')},`;
     }
     jsonStr = jsonStr.substring(0, jsonStr.length - 1);

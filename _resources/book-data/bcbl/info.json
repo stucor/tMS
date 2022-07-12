@@ -3,7 +3,11 @@
     "BookTitle" : "Buddhist Cosmology",
     "BookSubtitle"  :"",
     "AddInfo"   : [],
-    "Copyright" : ["Originally published in **2015**.\nThis edition published in 2021.\n34pp (in pdf format).","This work is released under CC0 1.0 Universal (CC0 1.0)","Public Domain Dedication. No rights reserved.","Edited version of talk given at Dhammaloka Buddhist Centre on 27th November 2015.\nSourced from bswa.org"],
+    "Copyright" : ["Originally published in **2015**.\nThis edition published in **2021**.\n34pp (in pdf format).",
+        "This work is released under CC0 1.0 Universal (CC0 1.0)",
+        "Public Domain Dedication. No rights reserved.",
+        "Edited version of talk given at Dhammaloka Buddhist Centre on 27th November 2015.",
+        "Sourced from bswa.org"],
     "FrontCover": "../_resources/book-data/bcbl/FrontLarge.jpg",
     "BackCover": "",
     "BackMatter": []

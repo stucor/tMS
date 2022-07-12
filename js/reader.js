@@ -164,6 +164,36 @@ function buildInfo () {
 			html += suttalist();
 			html += tablelist();
 
+			if (isAudioBook()) {
+				html += `
+				<section class="infocontainer">
+					<h3>Audio Controls</h3>
+					<div class="info-addon">
+						<p>The <strong>MettāShelf AudioPlayer</strong> allows you to:</p> 
+						<ul>
+							<li>Jump backwards and forwards through chapter using the CHAPTER keys.</li>
+							<li>Jump backwards and forwards through paragraphs using the PARAGRAPH keys.</li>
+							<li>You can toggle through the speed using the speed button which is marked as X1 by default.</li>
+							<li>On those devices which permit it, volume can be changed using the slider.</li>
+						</ul>
+						<p>The following keyboard shortcuts are available:</p>
+						<table class="borderlessTable">
+							<tbody>
+								<tr><td>Arrow Right:</td><td>Next Chapter</td></tr>
+								<tr><td>Arrow Left:</td><td>Previous Chapter</td></tr>
+								<tr><td>Arrow Down:</td><td>Next Paragraph</td></tr>
+								<tr><td>Arrow Up:</td><td>Previous Paragraph</td></tr>
+								<tr><td>Space Bar:</td><td>Play/Pause</td></tr>
+								<tr><td>Uppercase V:</td><td>Volume Up</td></tr>
+								<tr><td>Lowercase v:</td><td>Volume Down</td></tr>
+							</tbody>
+						</table>
+						<br>
+					</div>
+				</section>
+				`;
+			}
+
 			//Add Ons
 			if (bookInfoData.AddInfo.length > 0) {
 				html += `<section class="infocontainer">`;

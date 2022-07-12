@@ -1868,8 +1868,6 @@ font-variant: small-caps;
 	margin-top: 0;
 }
 
-
-
 /* The Close Button */
 
 .modal-header .close {
@@ -2120,7 +2118,7 @@ font-variant: small-caps;
 	}
 
 	.infocontainer h3{
-		margin: 0;
+		margin: 1em 0 0 0;
 	}
 
 	.fifty-fifty-grid {
@@ -2129,13 +2127,10 @@ font-variant: small-caps;
 	}
 
 	.fifty-fifty-grid p {
-		margin: 1em 0;
+		margin: 0.7em 0;
 		text-align: justify;
 	}
 	
-	.fifty-fifty-grid h3 {
-		margin-left: 1em !important;
-	}
 	
 	#reflist {
 		margin: 1em 0;

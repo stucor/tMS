@@ -383,6 +383,13 @@ strong {
 	margin-top: -3em;
 }
 
+.content h4.titlepage {
+	text-align: center;
+	font-style: italic;
+	font-weight: 400;
+	margin-top: -3.9em;
+}
+
 
 .content h2.part {
 	text-align: center;

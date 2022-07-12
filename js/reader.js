@@ -985,7 +985,7 @@ function setFontLevel (level, start, end) {
 				if (savedBookElements[i].className == 'chapnum') {savedBookElements[i].style.fontSize = (level*1.3)+'px';}
 				break;
 			case 'H1' :
-				savedBookElements[i].style.fontSize = (level*2)+'px';
+				savedBookElements[i].style.fontSize = (level*1.9)+'px';
 				break;
 			case 'H2' :
 				savedBookElements[i].style.fontSize = (level*1.3)+'px';

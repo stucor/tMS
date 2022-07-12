@@ -970,7 +970,6 @@ function setFontLevel (level, start, end) {
 		switch (savedBookElements[i].tagName) {
 			case 'P':
 			case 'DIV':
-			case 'H3':
 			case 'H4':
 			case 'H5':
 			case 'LI':
@@ -989,6 +988,9 @@ function setFontLevel (level, start, end) {
 				savedBookElements[i].style.fontSize = (level*2)+'px';
 				break;
 			case 'H2' :
+				savedBookElements[i].style.fontSize = (level*1.3)+'px';
+				break;
+			case 'H3' :
 				savedBookElements[i].style.fontSize = (level*1.2)+'px';
 				break;
 			case 'IMG':

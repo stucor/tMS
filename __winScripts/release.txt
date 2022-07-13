@@ -1,0 +1,15 @@
+ren C:\Data\tMS\staging\js\bookshelf.js bookshelf_220713.js
+ren C:\Data\tMS\staging\js\player.js player_220713.js
+ren C:\Data\tMS\staging\js\reader.js reader_220713.js
+ren C:\Data\tMS\staging\js\scsutta.js scsutta_220713.js
+
+ren C:\Data\tMS\staging\css\bookshelf.css bookshelf_220713.css
+ren C:\Data\tMS\staging\css\player.css player_220713.css
+ren C:\Data\tMS\staging\css\reader.css reader_220713.css
+ren C:\Data\tMS\staging\css\scsutta.css scsutta_220713.css
+
+
+(bookshelf.js)|(player.js)|(reader.js)|(scsutta.js)|(bookshelf.css)|(player.css)|(reader.css)|(scsutta.css)
+
+
+(?1bookshelf_220713.js)(?2player_220713.js)(?3reader_220713.js)(?4scsutta_220713.js)(?5bookshelf_220713.css)(?6player_220713.css)(?7reader_220713.css)(?8scsutta_220713.css)

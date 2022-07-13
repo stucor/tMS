@@ -75,7 +75,10 @@
 	--tableborder: #80808080;
 
 	--scsegmentnumbercolor: #9e2815;
-  }
+
+	--ascsutta: ">>";
+	--descsutta: "<<";
+}
 
 body {
 	margin: 0;
@@ -984,11 +987,14 @@ sup {
 	font-weight: 400;
 	font-size: 0.9em;
 	display: inline;
-	min-width:135px;
-	width: 135px;
-	min-height:20px;
+	min-width:11em;
+	width: 11em;
+	min-height:1.7em;
+	height:1.7em;
 	border: 2px solid darkgray;
 	border-radius: 10px;
+	line-height: 0;
+	padding-top: 0.2em;
 }
 
 .sort.asc, .sort.desc {
@@ -1001,20 +1007,16 @@ sup {
 
 .sort.asc::after {
 	position: relative;
-	top:1px;
-	left: 2px;
-	content: "⯈" ;
+	left: 0.6em;
+	content: var(--ascsutta) ;
 	line-height: 0;
 }
 .sort.desc::after {
 	position: relative;
-	top:1px;
-	left: 2px;
-	content: "⯇";
+	left: 0.6em;
+	content: var(--descsutta);
 	line-height: 0;
 }
-
-
 
 #lotlist {
 	padding:0;

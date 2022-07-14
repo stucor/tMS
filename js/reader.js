@@ -77,106 +77,229 @@ document.getElementById('thebook').style.display='block';
 	if (isAudioBook()) { 
 		initialiseAudioBookSettings();
 		initplayer();
-		document.getElementById('coverengraving').style.display='none';
+		document.getElementById('TOCTarget0').style.display='none';
 	}
 
 	if (isBookShelf()) {
 		initialiseBookShelfSettings ();
-		document.getElementById('coverengraving').style.display='none';
+		document.getElementById('TOCTarget0').style.display='none';
 	}
-
-	if (!(isBookShelf()) && !(isAudioBook())) { // normal book
-		buildInfo();
-	}
-
 }
 
+/* Modal Builders */
+
+function parseInfoText(infoText) {
+	const htmlText = infoText
+//		.replace(/^### (.*$)/gim, '<h3>$1</h3>')
+//		.replace(/^## (.*$)/gim, '<h2>$1</h2>')
+//		.replace(/^# (.*$)/gim, '<h1>$1</h1>')
+//		.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
+		.replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>') // markdown style bold
+		.replace(/\*(.*)\*/gim, '<i>$1</i>') // markdown style italics
+//		.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
+		.replace(/\[(.*?)\]\X\((.*?)\)/gim, "<a class='extlink' href='$2'>$1</a>") //like markdown but and X inbetween like this: [text]X(link) - to denote an external link
+		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>") // markdown style link
+		.replace(/\n/gim, '<br />') //markdown style linebreaks
+	return htmlText.trim()
+}
+
+// Populates the Info Modal
 function buildInfo () {
-
-	/* Adds the element id= referencelist to the details modal */
-
 	let parentDiv = document.getElementById('ModalDetails');
+	let containsSuttaList = false;
+	if (parentDiv.innerHTML == '') {
+		let shortCode = shortcode();
+		let html ='';
 
-// Info Title
-	let BookTitle = document.querySelector('meta[property="og:title"]').content
-	if (BookTitle != '') {
-		let title = document.createElement("h1");
-		title.innerHTML= BookTitle;
-		parentDiv.appendChild(title);
-	}
-
-// Suttalist
-	let suttarefArr = document.getElementsByClassName('sclinktext');
-	if (suttarefArr.length  > 0) {
-		let html = '';
-		let suttaRefs = document.createElement("section");
-		suttaRefs.classList.add("bookcopyright");
-		parentDiv.appendChild(suttaRefs);
-
-		html += `<h3>Sutta References in this book:</h3>`;
-
-		html += `<div id="reflist">	`
-
-		for (let i = 0; i < suttarefArr.length; i++) {
-			suttarefArr[i].setAttribute("id", "slt_"+ i);
-			let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
-			html += `<div class='reflistitem'>${linktext}</div>`;
-		}
-		html += `</div>`;
-		suttaRefs.innerHTML = html;
-	}
-
-
-	
-	const scAuthResponse = fetch(`../_resources/book-data/shortcode-author.json`)
-		.then(response => response.json())
-		.catch(error => {
-		  console.log('something went wrong');
-		});
-
-		Promise.all([scAuthResponse]).then(responses => {
-			const [shortcodeAuthors] = responses;
-			//console.log(shortcodeAuthors);
-
-			Object.keys(shortcodeAuthors).forEach(segment => {
-				if (shortcode() == segment) {
-					console.log(shortcodeAuthors[segment]);
+		function suttalist () {
+			let suttarefArr = document.getElementsByClassName('sclinktext');
+			if (suttarefArr.length == 0) { return '';}
+			let html = "";
+			if (suttarefArr.length  > 0) {
+				html = `<section id="sutta-list" class="infocontainer">`;
+				html += `<h3>Sutta References:</h3>`;
+				html += `<div class="suttasortbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="reflistOrderNo">Book Position</button>`
+				html += `  <button class="sort" data-sort="sclinkref">Sutta Number</button></div>`
+				html += `<ul id="reflist" class="list">	`
+				for (let i = 0; i < suttarefArr.length; i++) {
+					suttarefArr[i].setAttribute("id", "slt_"+ i);
+					let linktext = `<span class = "reflistOrderNo" >${i+1}. </span><span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML} </span>`;
+					html += `<li class='reflistitem'>${linktext}</li>`;
 				}
-			});
+				html += `</ul></section>`;
+				containsSuttaList = true;
+				return html;
+			}
+		}
+	
+		function tablelist () {
+			let tabrefArr = document.querySelectorAll('table');
+			if (tabrefArr.length == 0) { return '';}
+	
+			let html = "";
+			if (tabrefArr.length  > 0) {
+				html = `<section class="infocontainer">`;
+				html += `<h3>List of Tables:</h3>`;
+				html += `<div id="lotlist">	`
+				for (let i = 0; i < tabrefArr.length; i++) {
+					if (tabrefArr[i].caption) {
+						tabrefArr[i].setAttribute("id", "lot_"+ i);
+						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${i}'>${tabrefArr[i].caption.innerHTML}</span>`;
+						html += `<div class='lotlistitem'>${linktext}</div>`;
+					}
+				}
+				html += `</div></section>`;
+				return html;
+			}
+		}
 
+		function populateInfo (bookInfoData) {
 
-		});
+			html += `<h1>${bookInfoData.BookTitle}</h1>`;
+			if (bookInfoData.BookSubtitle) {
+				html += `<h3>${bookInfoData.BookSubtitle}</h3>`;
+			}
+			html += `<h2>${bookInfoData.Authors}</h2>`;
 
+			html += suttalist();
+			html += tablelist();
 
+			if (isAudioBook()) {
+				html += `
+				<section class="infocontainer">
+					<h3>Audio Controls</h3>
+					<div class="info-addon">
+						<p>The <strong>MettāShelf AudioPlayer</strong> allows you to:</p> 
+						<ul>
+							<li>Jump backwards and forwards through chapter using the CHAPTER keys.</li>
+							<li>Jump backwards and forwards through paragraphs using the PARAGRAPH keys.</li>
+							<li>You can toggle through the speed using the speed button which is marked as X1 by default.</li>
+							<li>On those devices which permit it, volume can be changed using the slider.</li>
+						</ul>
+						<p>The following keyboard shortcuts are available:</p>
+						<table class="borderlessTable">
+							<tbody>
+								<tr><td>Arrow Right:</td><td>Next Chapter</td></tr>
+								<tr><td>Arrow Left:</td><td>Previous Chapter</td></tr>
+								<tr><td>Arrow Down:</td><td>Next Paragraph</td></tr>
+								<tr><td>Arrow Up:</td><td>Previous Paragraph</td></tr>
+								<tr><td>Space Bar:</td><td>Play/Pause</td></tr>
+								<tr><td>Uppercase V:</td><td>Volume Up</td></tr>
+								<tr><td>Lowercase v:</td><td>Volume Down</td></tr>
+							</tbody>
+						</table>
+						<br>
+					</div>
+				</section>
+				`;
+			}
 
+			//Add Ons
+			if (bookInfoData.AddInfo.length > 0) {
+				html += `<section class="infocontainer">`;
+				for (i in bookInfoData.AddInfo) {
+					for (j in bookInfoData.AddInfo[i]) {
+						if (j == 0) {
+							x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
+						} else if (j == 1) {
+							html += `<div class="info-addon">`;
+							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
+						} else {
+							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
+						}
+						html += x;
+					}
+					html += `</div>`;
+				}
+				html += `</section>`
+			}	
+			
+			//Author(s)
+			let authors = '';
+			let authorCount = 0;
+			while (authorCount < bookInfoData.AuthorsData.length) {
+				authors += 
+				`<section class="infocontainer">
+					<div class="fifty-fifty-grid">
+						<div>
+						<img src="${bookInfoData.AuthorsData[authorCount].InfoImage}" alt="${bookInfoData.AuthorsData[authorCount].ShortName}">
+						</div>
+						<div>
+							<p><strong>${bookInfoData.AuthorsData[authorCount].ShortName}: </strong>`;
+				for (i in bookInfoData.AuthorsData[authorCount].ShortBio) {
+					authors += `${bookInfoData.AuthorsData[authorCount].ShortBio[i]}`;
+				}
+				authors += 
+						`</p></div>
+					</div>
+				</section>`;
+				authorCount++;
+			}
+			html += authors;
 
+			//Book Cover and Copyright
+			html += 
+			`<section class="infocontainer">
+				<div class="fifty-fifty-grid">
+				<div>
+				<img src="${bookInfoData.FrontCover}" alt="${bookInfoData.BookTitle} Cover" >
+				</div>
+				<div class="copyright">`;
+				
+				let copyrightParaCount = 0
+				while (copyrightParaCount < bookInfoData.Copyright.length) {
+					html += `<p>${parseInfoText(bookInfoData.Copyright[copyrightParaCount])}</p>`;
+					copyrightParaCount++;
+				}
+				
+				/*
+				for (i in bookInfoData.Copyright) {
+				html += `<p>${parseInfoText(bookInfoData.Copyright[i])}</p>`;
+				}
+				*/
+				html += `</div></div></section>`;
 
-/*	
-	let parentdiv = document.getElementById('ModalDetails');
-	let detailgrid = document.getElementsByClassName('detail-grid')[0];
+			// BackCover and Back Matter
+			if (bookInfoData.BackCover != "") {
+				html += 
+				`<section class="infocontainer">
+					<div class="fifty-fifty-grid">
+					<div>`;
+				
+					html +=
+					`
+					<img src="${bookInfoData.BackCover}" alt="${bookInfoData.BookTitle} Cover" >
+					</div>
+					<div>`;
+					if (bookInfoData.BackMatter != "") {
+						html +=
+						`<h3>Back Matter:</h3>`;
+						for (i in bookInfoData.BackMatter) {
+						html += `<p>${parseInfoText(bookInfoData.BackMatter[i])}</p>`;
+						};
+					}
+				html += `</div></div></section>`;
+			}
+			
+			parentDiv.innerHTML = html;
+			
+			if (containsSuttaList) {
+				var options = {
+					valueNames: [ 'reflistOrderNo', 'sclinkref' ]
+				};
+				var suttaList = new List('sutta-list', options);
+			}
+			
+		}
 
-	let refListHead = document.createElement("h3");
-	parentdiv.insertBefore(refListHead,detailgrid);
-	refListHead.innerHTML=`Sutta References in this book:`;
-
-	let referencelist = document.createElement("div");
-	referencelist.setAttribute("id", "reflist");
-	parentdiv.insertBefore(referencelist,detailgrid);
-	let suttarefArr = document.getElementsByClassName('sclinktext');
-	for (let i = 0; i < suttarefArr.length; i++) {
-		suttarefArr[i].setAttribute("id", "slt_"+ i);
-		let linktext = `<span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML}</span>`;
-		referencelist.innerHTML += `<div class='reflistitem'>${linktext} </div>`;
+		fetch(`../_resources/built-info-data/${shortCode}/info.json`)
+			.then(response => response.json())
+			.then (data => populateInfo(data))
+			.catch(error => {
+			console.log(`ERROR: Can't fetch ../_resources/built-info-data/${shortCode}/info.json`);
+			}
+		);
 	}
-	if (!referencelist.innerHTML) {
-		refListHead.innerHTML = 'There are no Suttas referenced in this book';
-	}
-
-	let authordetails = document.createElement("section");
-	parentdiv.insertBefore(authordetails,detailgrid);
-	authorHTML = `<hr><h3>Author:<h3>`;
-	authordetails.innerHTML=authorHTML;
-*/
 }
 
 //ONLOAD
@@ -189,7 +312,7 @@ window.onload = function () {
 	});
 };
 
-var savedBookElements = thebook.querySelectorAll("*");
+var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
 var savedNotesElements = ModalNotes.querySelectorAll('h2, div');
@@ -524,6 +647,7 @@ function savePlaceInBook () {
 	lsTETEname = 'ms' + shortcode() + 'TETE';
 	localStorage.setItem(lsTEname, String(theTopElement));
 	localStorage.setItem(lsTETEname, String(theTopElementTopEdge));
+	//alert(lsTEname + '::' +theTopElement);
 }
 
 document.addEventListener('visibilitychange', function () {
@@ -846,7 +970,6 @@ function setFontLevel (level, start, end) {
 		switch (savedBookElements[i].tagName) {
 			case 'P':
 			case 'DIV':
-			case 'H3':
 			case 'H4':
 			case 'H5':
 			case 'LI':
@@ -862,9 +985,12 @@ function setFontLevel (level, start, end) {
 				if (savedBookElements[i].className == 'chapnum') {savedBookElements[i].style.fontSize = (level*1.3)+'px';}
 				break;
 			case 'H1' :
-				savedBookElements[i].style.fontSize = (level*2)+'px';
+				savedBookElements[i].style.fontSize = (level*1.9)+'px';
 				break;
 			case 'H2' :
+				savedBookElements[i].style.fontSize = (level*1.3)+'px';
+				break;
+			case 'H3' :
 				savedBookElements[i].style.fontSize = (level*1.2)+'px';
 				break;
 			case 'IMG':
@@ -1096,7 +1222,7 @@ function setTheme(){
 
 			searchBar.style.background = "#fff";
 			searchBar.style.color = "#000";
-			searchBar.style.borderColor = "#000";
+//			searchBar.style.borderColor = "#000";
 
 			searchInput.style.background = "#fff";
 			searchInput.style.color = "#000";
@@ -1160,7 +1286,7 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#9e2815');
 
-			var engrave = document.getElementById('coverengraving');
+			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
 
@@ -1227,7 +1353,7 @@ function setTheme(){
 
 			searchBar.style.background = "#121212";
 			searchBar.style.color = "#cfcfcf";
-			searchBar.style.borderColor = "#cfcfcf";
+//			searchBar.style.borderColor = "#cfcfcf";
 
 			searchInput.style.background = "#121212";
 			searchInput.style.color = "#cfcfcf";
@@ -1289,7 +1415,7 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#d39990');
 
-			var engrave = document.getElementById('coverengraving');
+			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#7c7c7c';
 			engrave.style.textShadow ='0px 1px 0px #ffffff';
 
@@ -1363,7 +1489,7 @@ function setTheme(){
 
 			searchBar.style.background = "#f5efd0";
 			searchBar.style.color = "#00008b";
-			searchBar.style.borderColor = "#00008b";
+//			searchBar.style.borderColor = "#00008b";
 
 			searchInput.style.background = "#f5efd0";
 			searchInput.style.color = "#00008b";
@@ -1431,7 +1557,7 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#9e2815');
 
-			var engrave = document.getElementById('coverengraving');
+			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
 			
@@ -1937,8 +2063,9 @@ function hideElement (elem) {
 detailsbtn.onclick = function() {
 	setModalStyle ("Info");
 	showModal ("Info");
+	buildInfo();
 	stopBookScroll();
-	modalbody.scrollTop = 0;
+	//modalbody.scrollTop = 0;
 }
 
 settingsbtn.onclick = function() {
@@ -2241,6 +2368,10 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 
 	if (e.target.className == "sclinkref") {
 		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","")
+		scrollToID(gotoID);
+	}
+	if (e.target.className == "lotlinkref") {
+		var gotoID = 'lot_' + e.target.id.replace("lotlinkfrom_","")
 		scrollToID(gotoID);
 	}
 

@@ -178,12 +178,14 @@ box-shadow: 1px 3px 2px -1px rgba(0, 0, 0, 0.363);
 	letter-spacing: 0.1em;
 	font-size: 0.8em;
 	font-weight: 700;
+	left:0;
 }
 .sort.desc::after {
 	content: var(--desctext);
 	letter-spacing: 0.1em;
 	font-size: 0.8em;
 	font-weight: 700;
+	left:0;
 }
 
 
@@ -321,7 +323,6 @@ outline: none;
 	margin-bottom: 1em;
 	min-height:2em;
 	height:2em;
-
 }
 
 
@@ -348,6 +349,7 @@ outline: none;
 
 .shelfinfoheadcont > div {
 	margin: 10px;
+	text-align: center;
 }
 
 .shelfinfoheadcont > div > p {

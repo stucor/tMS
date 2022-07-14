@@ -24,7 +24,7 @@
 	<div id="tocnav" class="sidenav"  >
 		<div id="tocbtn2" class="tocbtn, no-print" onclick="closeFromTocbtn2 ()">&#10094; Contents</div>
 		<ul id="TOC">
-			<li id="TOC0">Cover</li>
+			<li id="TOC0" class="noshow">Title Page</li>
 			<li id="TOC01">Preface</li>
 			<li id="TOC1">Part 1</li>
 			<li id="TOC11" class="sub">1. Sustained attention on the present moment</li>
@@ -79,23 +79,7 @@
 				</div>
 			</div>
 			<div id="ModalBody" class="modal-body">
-				<div id="ModalDetails">
-					<h1>The Basic Method of Meditation by Ajahn Brahm</h1>
-					<div class="detail-grid">
-						<div>
-							<img src="../_resources/images/bookcovers/bmom.jpg" alt="The Basic Method of Meditation Cover" >
-						</div>
-						<div>
-							<figure>
-							<img src="../_resources/images/authors/AjahnBrahmAuth.jpg" alt="Ajahn Brahm">
-							<figcaption><strong>Ajahn Brahmavamso Mahathera:</strong> Ajahn Brahm was born in London in 1951. After graduating from Cambridge he taught in a school for one year before travelling to Thailand to train with Ajahn Chah. After practising for nine years as a monk in Thailand, he was sent to Perth, Australia by Ajahn Chah in 1983. He is Abbot of Bodhinyana monastery, Spiritual Director of the BSWA and a number of other Buddhist Societies and projects world-wide. </figcaption>
-							</figure>
-						</div>
-					</div>
-					<div class="bookcopyright">
-						<p>Originally published in 2002.<br>This edition published in 2021.<br>28pp (in pdf format).</p>
-					</div>
-				</div>
+				<div id="ModalDetails"></div>
 				<div id="ModalNotes">
 					<h2>Notes for The Basic Method of Meditation</h2>
 					<div class="booknote" data-note="1">Example Note</div>
@@ -205,24 +189,15 @@
 	<div class="wrapper" id="bookwrap">
 	<div></div>
 	<div class="content" id="thecontent">
-	<h1 class="engrave center" id="coverengraving">The Basic Method of Meditation</h1>
+	<h1 class="engrave center" id="TOCTarget0">The Basic Method of Meditation</h1>
 	<div class="book" id="thebook" data-shortcode="bmom">
-		<div class="cover" id="TOCTarget0">
-			<div class="cover-grid">
-				<div></div>
-				<div>
-					<img src="../_resources/images/bookcovers/bmom.jpg" alt="The Basic Method of Meditation" >
-				</div>
-				<div></div>
-			</div>
-		</div>
-		<span class="pageno" data-page=""></span>
 		<h1  class="preface" id="TOCTarget01">Preface</h1>
 		<p>This revised edition is produced not only in print but also in an electronic format in order that this valuable insight will be more readily available and accessible, reaching a wider audience.</p>
 		<hr class="spacer">
-		<p><strong>Acronyms:</strong> The following acronyms are used in this book. Each one refers to a book in the Pali version of the Sutta Piṭaka (Basket of Discourses) from the Buddhist Canon. For more information see suttacentral.net</p>
+		<p>The following acronyms are used in this book. Each one refers to a book in the Pali version of the Sutta Piṭaka (Basket of Discourses) from the Buddhist Canon. For more information see suttacentral.net</p>
 		<div class="tablewrap">
 		<table>
+			<caption>Acronyms</caption>
 			<tbody>
 			<tr>
 			<td>DN</td>
@@ -342,6 +317,7 @@
 
 	<script src="../js/jquery-3.6.0.min.js"></script>
 	<script src="../js/jquery.mark.min.js"></script>
+	<script src="../js/list.js.2.3.1/list.min.js"></script>
 	<script src="../js/reader.js"></script>
 	<script src="../js/scsutta.js"></script>
 </body>

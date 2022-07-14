@@ -369,7 +369,6 @@ function scrollToFirstSuttaHighlight () {
         }
         const lastMarkOb = new IntersectionObserver(lmoCallback)
         lastMarkOb.observe(lastMark);
-
       });
   }
 }

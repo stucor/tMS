@@ -75,7 +75,10 @@
 	--tableborder: #80808080;
 
 	--scsegmentnumbercolor: #9e2815;
-  }
+
+	--ascsutta: ">>";
+	--descsutta: "<<";
+}
 
 body {
 	margin: 0;
@@ -253,17 +256,6 @@ strong {
 	color:whitesmoke;
 }	
 
-.bookcopyright {
-	border-top: #808080 5px solid;
-	text-align:left;
-	margin: 20px;
-	font-size: 16px;
-}
-
-.bookcopyright a {
-	color:cornflowerblue;
-	text-decoration: none;
-}	
 
 
 .bibliography {
@@ -281,6 +273,7 @@ strong {
 	min-height: 100vh;
 }
 
+/*
 .content h1 {
     font-style: italic;
     font-weight:300;
@@ -290,7 +283,22 @@ strong {
     padding-bottom:20px;
 	hyphens: manual;
 }
+*/
+.content h1 {
+	text-align: center;
+	font-size: 2.5em;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: small-caps;
+	padding-bottom: 0;
+	padding-top:3em;
+}
 
+.content h1 > em {
+	font-style: normal;
+}
+
+/*
 .content h1.preface {
 	text-align: left;
 	font-style: italic;
@@ -300,6 +308,16 @@ strong {
 	padding-bottom: unset;
 	hyphens: manual;
 }
+*/
+.content h1.preface {
+	text-align: center;
+	font-size: 2.5em;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: small-caps;
+	padding-bottom: 0;
+	padding-top:3em;
+}
 
 .prefacewriter {
 	margin-top: 1em;
@@ -307,7 +325,7 @@ strong {
 }	
 
 .content h2 {
-    font-weight: 700;
+    font-weight: 500;
 	text-align: left;
     font-size: 18px;
     padding-top: 40px;
@@ -315,7 +333,8 @@ strong {
 }
 
 .content h3 {
-    font-weight: 700;
+	text-align: left;
+    font-weight: 500;
 	font-size: 16px;
 	margin-bottom: -.5em;
 }
@@ -330,20 +349,19 @@ strong {
 	font-size: 16px;
 }
 
-
+/*
 .content h1.bigbook {
 	text-align: center;
-	font-size: 2.7em;
+	font-size: 2.5em;
 	font-style: normal;
 	font-weight: 400;
 	font-variant: small-caps;
 	padding-bottom: 0;
 }
-
+*/
 
 .content h1.titlepage {
 	text-align: center;
-	font-size: 2.7em;
 	font-style: normal;
 	font-weight: 400;
 	font-variant: small-caps;
@@ -355,21 +373,26 @@ strong {
 .content h2.titlepage {
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 2em;
 	font-style: normal;
 	font-weight: 400;
 	margin-top: 4em;
 	margin-bottom: 5em;
 }
 
-
 .content h3.titlepage {
 	text-align: center;
-	font-size: 1.2em;
 	font-style: italic;
 	font-weight: 400;
-	margin-top: -4em;
+	margin-top: -3em;
 }
+
+.content h4.titlepage {
+	text-align: center;
+	font-style: italic;
+	font-weight: 400;
+	margin-top: -3.9em;
+}
+
 
 .content h2.part {
 	text-align: center;
@@ -402,7 +425,6 @@ strong {
 
 .content a {
 	color:cornflowerblue;
-	font-weight: 500;
 	text-decoration: none;
 }
 
@@ -528,7 +550,7 @@ blockquote {
 	color:cornflowerblue;
 	cursor:pointer;
 	user-select: none;
-	font-weight: 600;
+
 }	
 
 blockquote p {
@@ -737,17 +759,20 @@ table.borderlessTable {
 	border-radius: 10px;
 }
 
+/*
 .booknote a {
 	color:cornflowerblue;
-
 	text-decoration: none;
 }
+*/
 
 .extlink {
 	color:cornflowerblue;
-	font-weight: 600;
 	font-family: Source Sans Pro;
 	text-decoration: none;
+	border-radius: 1em;
+	padding: 0.3em;
+	margin: -0.3em;
 }
 
 dt {
@@ -776,8 +801,11 @@ dd > ol > li {
 
 
 
+/*
+.booknote a::after, #references a::after, 
+*/
 
-.booknote a::after, #references a::after, .extlink::after {
+.extlink::after {
 	content: url('../_resources/images/icons/leave-app.svg');
 }
 
@@ -804,7 +832,6 @@ sup {
 /*	transition: outline 0.3s linear;*/
 	border-radius: 1em;
 	cursor: pointer;
-	font-weight: 700;
 	font-style: normal;
 	user-select: none;
 }
@@ -830,40 +857,65 @@ sup {
 	height: auto;
 }
 
-/*
-.startup {
-padding:0;
-position: absolute;
-left:0;
-top:0;
-z-index:9999;
+.infocontainer {
+	border-top: 1px solid darkgrey;
+	padding: 2em;
+	margin: 0;
 }
-.startup > div {
-	display:block;
-}
-.startup > div > div > img {
-	width: 100vw;
-	filter: opacity(50%) blur(10px);
-}
-*/
 
-/* Details Modal */
+.infocontainer h3 {
+	margin-top:0;
+	text-align: left;
+}
+
+.infocontainer a, .lotlinkref {
+	text-decoration: none;
+	color:cornflowerblue;
+	cursor: pointer;
+	user-select: none;
+}
 
 .fifty-fifty-grid {
 	display: grid;
     grid-template-columns: 50% 50%;
-	margin:20px;
+	column-gap: 2em;
+	margin:0;
 	text-align: center;
 }
 
+
 .fifty-fifty-grid img {
-	width: 90%;
+	width: 100%;
 	height: auto;
 	border-radius: .2rem;
 	box-shadow: 1px 3px 6px -1px rgba(0, 0, 2, 0.329);
-
 }
 
+
+.fifty-fifty-grid p {
+	margin: 0 2em 1em 0;
+	text-align: justify;
+}
+
+
+.info-addon {
+	margin: 1em 2em; 
+	text-align: left; 
+	background-color: #8080800c; 
+	padding: 1rem 1rem 0.1rem 1rem;
+	border-radius: .5rem;
+}
+
+.info-addon > p {
+	margin:0 0 1rem 0;
+}
+
+.copyright p, ul {
+	text-align: left;
+	font-size: 0.95em;
+}
+
+/*
 .detail-grid {
 	display: grid;
     grid-template-columns: 40% 60%;
@@ -898,24 +950,8 @@ z-index:9999;
 	margin:0 10% 1em 10%;
 	text-align: justify;
 }
+*/
 
-.detail-addon {
-	margin: 10px 20px; 
-	text-align: left; 
-	background-color: #8080801f; 
-	padding: 0 20px;
-	border-radius: .2rem;
-}
-
-.detail-addon > p {
-	padding: 10px;
-	margin:0;
-}
-
-.detail-addon > p > a {
-	text-decoration: none;
-	color:cornflowerblue;
-}
 
 
 #reflist {
@@ -925,14 +961,72 @@ z-index:9999;
 	justify-content:space-evenly;
 	padding:0;
 	margin-left: 1rem;
+	margin-right: 1rem;
+	list-style-type: none;
 }
 
 .reflistitem {
 	text-align: left;
 	line-height: 1em;
+	padding: 3px 10px;
 	background-color: rgba(100, 148, 237, 0.043);
 }
 
+.reflistOrderNo {
+	display: inline-block;
+	width: 1.5em;
+	text-align: left;
+}
+
+
+.suttasortbuttons {
+	margin: 0 0 2em 20px;
+}
+
+.suttasortbuttons > button {
+	font-weight: 400;
+	font-size: 0.9em;
+	display: inline;
+	min-width:11em;
+	width: 11em;
+	min-height:1.7em;
+	height:1.7em;
+	border: 2px solid darkgray;
+	border-radius: 10px;
+	line-height: 0;
+	padding-top: 0.2em;
+}
+
+.sort.asc, .sort.desc {
+	font-weight: 700;
+	color: var(--pickedtext);
+	background-color: var(--buttonbackground);
+	border-color: var(--primarycolor);
+
+}
+
+.sort.asc::after {
+	position: relative;
+	left: 0.6em;
+	content: var(--ascsutta) ;
+	line-height: 0;
+}
+.sort.desc::after {
+	position: relative;
+	left: 0.6em;
+	content: var(--descsutta);
+	line-height: 0;
+}
+
+#lotlist {
+	padding:0;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.lotlistitem {
+	text-align: left;
+}
 /******************************************/
 
 
@@ -1369,10 +1463,10 @@ span.level {
 .searchbar {
 	display: none;
 	position:fixed;
-	top:4px;
+	top:2px;
 	float: right;
 	right: 220px;
-	border: 1px black solid;
+	border: 1px solid darkgrey;
 	background-color: #ffffff;
 	min-width: 310px;
 	max-width: 310px;
@@ -1666,14 +1760,6 @@ font-variant: small-caps;
 	padding-top: 20px;
 }
 
-#LOT {
-	list-style-type: none;
-}
-
-#LOT li {
-	color: cornflowerblue;
-	cursor:pointer;
-}
 
 /* SPINNERS */
 
@@ -1742,7 +1828,7 @@ font-variant: small-caps;
     position: relative;
     margin: auto;
     padding: 0;
-    border: 1px solid lightgrey;
+    border: 1px solid darkgrey;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -1752,7 +1838,7 @@ font-variant: small-caps;
 	font-size: 14px;
 	font-weight: 700;
     text-align:center;
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 1px solid darkgrey;
 	user-select: none;
 	max-height: 20px;
 
@@ -1798,20 +1884,21 @@ font-variant: small-caps;
 }
 
 #ModalDetails > h1 {
-	font-size: 32px;
+	font-size: 2em;
 	font-weight: normal;
-	margin: 1em;
+	margin: 1em 1em 0 1em;
 }
 
 #ModalDetails > h2 {
-	font-size: 24px;
+	font-size: 1.5em;
 	font-weight: normal;
-	margin-top: -1em;
+	margin: 0 1em 1.5em 1em;
 }
 
-#ModalDetails  h3 {
-	margin-left : 1em;
-	text-align: left;
+#ModalDetails > h3 {
+	font-size: 1.3em;
+	font-weight: normal;
+	margin: 0 1em 1em 1em;
 }
 
 /* The Close Button */
@@ -1836,8 +1923,17 @@ font-variant: small-caps;
 	max-height: 75vh;
     overflow-y:auto;
 	background-color: #fff; 
-    text-align:center;
 }
+
+.modal-body h1, h2, h3, h4 {
+	text-align: center;
+}
+
+#ModalSettings, #ModalDownload {
+	text-align: center;
+}
+
+
 
 .settingsheaders {
 	margin-top:0;
@@ -2050,15 +2146,45 @@ font-variant: small-caps;
 		display: block;	
 	}
 
+	.infocontainer{
+		padding: 0.5em;
+	}
+
+	.infocontainer h3{
+		margin: 1em 0 0 0;
+	}
+
 	.fifty-fifty-grid {
 		display: block;
 		margin: 20px 0;
 	}
 
+	.fifty-fifty-grid p {
+		margin: 0.7em 0;
+		text-align: justify;
+	}
+	
+	
+	#reflist {
+		margin: 1em 0;
+		grid-template-columns: repeat(auto-fit, 45%);
+	}
+
+	.suttasortbuttons > button {
+		display: block;
+		margin: 10px;
+	}
+
+	.info-addon {
+		margin: 0 0 1em 0;
+	}
+	
+/*
 	.detail-grid {
 		display: block;
 		margin: 20px 0;
 	}
+*/
 
 	.modal-body > div > h2 {
 		margin: 10px;
@@ -2276,6 +2402,15 @@ font-variant: small-caps;
 		border: 3px solid var(--primarycolor); 
 		box-shadow: 0 0 5px 1px var(--primarycolor);
 	  }
+
+	.extlink:hover {
+		/*box-shadow: 0 0 5px 1px rgb(168, 15, 46);*/
+		text-decoration: underline;
+		color: #AA0000;
+	}
+	.extlink:hover:after {
+		content: url('../_resources/images/icons/leave-app-red.svg');
+	}
 }
 
 @media (hover: none) {

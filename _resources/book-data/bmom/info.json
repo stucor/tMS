@@ -4,10 +4,11 @@
   "BookSubtitle"  : "",
   "AddInfo"   : [],
   "Copyright" : [
-    "Published in **2002**.",
+    "Originally published in **2002**.",
     "This edition published in **2021**",
     "28pp (in pdf format).",
-    "This latest online edition includes the suttas referenced with translations by Bhikkhu Sujato."],
+    "Copyright © 2002, 2021 Ajahn Brahm"],
+  "CCLicense": "BY-NC-ND 4.0",
   "FrontCover": "../_resources/book-data/bmom/FrontLarge.jpg",
   "BackCover": "",
   "BackMatter": []

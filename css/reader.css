@@ -910,48 +910,31 @@ sup {
 	margin:0 0 1rem 0;
 }
 
-.copyright p, ul {
+.cclicense {
 	text-align: left;
-	font-size: 0.95em;
+	margin-right: 2em;
 }
 
-/*
-.detail-grid {
-	display: grid;
-    grid-template-columns: 40% 60%;
-	margin:20px;
+.cclicense h3 {
+	font-size: 1em;
 }
 
-.detail-grid img {
-	width: 80%;
-	height: auto;
-	border-radius: .2rem;
-	box-shadow: 1px 3px 6px -1px rgba(0, 0, 2, 0.329);
+.cclicense p {
+	margin: 0.5em 0 0 0;
+	font-weight: 400;
+	font-size: 1em;
 }
 
-.detail-grid > div {
+.cclicense ul {
 	margin:0;
+	text-indent: 0;
+	list-style:none;
+	padding:0;
 }
 
-.detail-grid > div > figure {
-	margin:0;
+.cclicense span {
+	white-space: nowrap;
 }
-
-.detail-grid > div > figure > figcaption {
-	margin-top:20px;
-	margin-left: 10%;
-	margin-right: 10%;
-	text-align: justify;
-	font-style: italic;
-	font-size: 16px;
-}
-
-.detail-grid > div > p {
-	margin:0 10% 1em 10%;
-	text-align: justify;
-}
-*/
-
 
 
 #reflist {
@@ -1616,24 +1599,6 @@ mark.current {
 	cursor:pointer;
 	background:#ffffff00;
 }
-
-
-/*
-.booktitle {
- 	height: 40px;
-    float: right;
-	padding:5px;
-	font-size: 0.9em;
-	line-height: 1.1em;
-	font-variant: small-caps;
-	text-align:right;
-    box-sizing: border-box; 
-	color: gray;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-*/
 
 
 /********** Top bars **********/

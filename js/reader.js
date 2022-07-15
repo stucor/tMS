@@ -252,12 +252,9 @@ function buildInfo () {
 					copyrightParaCount++;
 				}
 				
-				/*
-				for (i in bookInfoData.Copyright) {
-				html += `<p>${parseInfoText(bookInfoData.Copyright[i])}</p>`;
-				}
-				*/
-				html += `</div></div></section>`;
+			html += bookInfoData.CCLicense;
+
+			html += `</div></div></section>`;
 
 			// BackCover and Back Matter
 			if (bookInfoData.BackCover != "") {
@@ -2370,9 +2367,25 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","")
 		scrollToID(gotoID);
 	}
+
 	if (e.target.className == "lotlinkref") {
 		var gotoID = 'lot_' + e.target.id.replace("lotlinkfrom_","")
 		scrollToID(gotoID);
+	}
+
+	if (e.target.classList.contains ('expander')) {
+		var ccDetail = document.getElementById('ccDetail');
+		if (e.target.classList.contains('expanded')) {
+			e.target.innerHTML = '►';
+			e.target.classList.remove('expanded');
+			ccDetail.classList.add('noshow');
+
+		} else {
+			e.target.innerHTML = '◄ '; 
+			e.target.classList.add('expanded');
+			ccDetail.classList.remove('noshow');
+
+		}
 	}
 
 });

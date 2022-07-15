@@ -1,1 +1,27 @@
-{"Authors":"Ajahn Brahm","BookTitle":"The Basic Method of Meditation","BookSubtitle":"","AddInfo":[],"Copyright":["Published in **2002**.","This edition published in **2021**","28pp (in pdf format).","This latest online edition includes the suttas referenced with translations by Bhikkhu Sujato."],"FrontCover":"../_resources/book-data/bmom/FrontLarge.jpg","BackCover":"","BackMatter":[],"AuthorsData":[{"ShortName":"Ajahn Brahm","InfoImage":"../_resources/author-data/brahm/info.jpg","ShortBio":["Ajahn Brahmavamso Mahathera was born in London in 1951. ","After graduating from Cambridge he taught in a school for one year before travelling to Thailand to train with Ajahn Chah. ","After practising for nine years as a monk in Thailand, he was sent to Perth, Australia by Ajahn Chah in 1983. ","He is Abbot of Bodhinyana monastery, Spiritual Director of the BSWA and a number of other Buddhist Societies and projects world-wide."]}]}
+{
+	"Authors": "Ajahn Brahm",
+	"BookTitle": "The Basic Method of Meditation",
+	"BookSubtitle": "",
+	"AddInfo": [],
+	"Copyright": [
+		"Published in **2002**.",
+		"This edition published in **2021**",
+		"28pp (in pdf format).",
+		"This latest online edition includes the suttas referenced with translations by Bhikkhu Sujato."
+	],
+	"FrontCover": "../_resources/book-data/bmom/FrontLarge.jpg",
+	"BackCover": "",
+	"BackMatter": [],
+	"AuthorsData": [
+		{
+			"ShortName": "Ajahn Brahm",
+			"InfoImage": "../_resources/author-data/brahm/info.jpg",
+			"ShortBio": [
+				"Ajahn Brahmavamso Mahathera was born in London in 1951. ",
+				"After graduating from Cambridge he taught in a school for one year before travelling to Thailand to train with Ajahn Chah. ",
+				"After practising for nine years as a monk in Thailand, he was sent to Perth, Australia by Ajahn Chah in 1983. ",
+				"He is Abbot of Bodhinyana monastery, Spiritual Director of the BSWA and a number of other Buddhist Societies and projects world-wide."
+			]
+		}
+	]
+}

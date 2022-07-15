@@ -1,1 +1,38 @@
-{"Authors":"Bhikkhu Brahmāli","BookTitle":"Dependent Liberation","BookSubtitle":"","AddInfo":[["Series:","This is the second of two booklets in a series by Ajahn Brahmali.\n Part 1 is: [Dependent Origination](../dobl)"],["Abstract:","**DEPENDENT LIBERATION:** \n***(lokuttara-paticcasamuppada)***","suffering (*dukkha*) ➔\nfaith/confidence (*saddhā*) ➔\ngladness (*pāmojja*) ➔\njoy (*pīti*) ➔\ntranquillity (*passaddhi*) ➔\nhappiness (*sukha*) ➔\nunification of mind (*samādhi*) ➔\nknowledge and vision according to reality (*yathā-bhūta-&ntilde;āṇa-dassana*) ➔\nrepulsion (*nibbidā*) ➔\ndispassion (*virāga*) ➔\nliberation (*vimutti*) ➔\nknowledge that you are liberated (*khaye &ntilde;āṇaṁ*)"]],"Copyright":["Published in **2013**.\n19pp (in pdf format).","This work is released under CC0 1.0 Universal (CC0 1.0)","Public Domain Dedication. No rights reserved.","Transcribed from a talk by Ajahn Brahmali, Dhammaloka, \n23 March 2012."],"FrontCover":"../_resources/book-data/dlbl/FrontLarge.jpg","BackCover":"","BackMatter":[],"AuthorsData":[{"ShortName":"Bhikkhu Brahmāli","InfoImage":"../_resources/author-data/brahmali/info.jpg","ShortBio":["Bhikkhu Brahmāli was born in Norway in 1964. ","He began his monastic training as an anagarika in England at Amaravati and Cittaviveka. ","After hearing teachings from Ajahn Brahm in 1994 he decided to travel to Australia to train at Bodhinyana Monastery. ","He was ordained as a Bhikkhu, with Ajahn Brahm as his preceptor, in 1996. ","In 2015 he entered his 20th Rains Retreat as a fully ordained monastic and received the title Maha Thera (Great Elder)."]}]}
+{
+	"Authors": "Bhikkhu Brahmāli",
+	"BookTitle": "Dependent Liberation",
+	"BookSubtitle": "",
+	"AddInfo": [
+		[
+			"Series:",
+			"This is the second of two booklets in a series by Ajahn Brahmali.\n Part 1 is: [Dependent Origination](../dobl)"
+		],
+		[
+			"Abstract:",
+			"**DEPENDENT LIBERATION:** \n***(lokuttara-paticcasamuppada)***",
+			"suffering (*dukkha*) ➔\nfaith/confidence (*saddhā*) ➔\ngladness (*pāmojja*) ➔\njoy (*pīti*) ➔\ntranquillity (*passaddhi*) ➔\nhappiness (*sukha*) ➔\nunification of mind (*samādhi*) ➔\nknowledge and vision according to reality (*yathā-bhūta-&ntilde;āṇa-dassana*) ➔\nrepulsion (*nibbidā*) ➔\ndispassion (*virāga*) ➔\nliberation (*vimutti*) ➔\nknowledge that you are liberated (*khaye &ntilde;āṇaṁ*)"
+		]
+	],
+	"Copyright": [
+		"Published in **2013**.\n19pp (in pdf format).",
+		"This work is released under CC0 1.0 Universal (CC0 1.0)",
+		"Public Domain Dedication. No rights reserved.",
+		"Transcribed from a talk by Ajahn Brahmali, Dhammaloka, \n23 March 2012."
+	],
+	"FrontCover": "../_resources/book-data/dlbl/FrontLarge.jpg",
+	"BackCover": "",
+	"BackMatter": [],
+	"AuthorsData": [
+		{
+			"ShortName": "Bhikkhu Brahmāli",
+			"InfoImage": "../_resources/author-data/brahmali/info.jpg",
+			"ShortBio": [
+				"Bhikkhu Brahmāli was born in Norway in 1964. ",
+				"He began his monastic training as an anagarika in England at Amaravati and Cittaviveka. ",
+				"After hearing teachings from Ajahn Brahm in 1994 he decided to travel to Australia to train at Bodhinyana Monastery. ",
+				"He was ordained as a Bhikkhu, with Ajahn Brahm as his preceptor, in 1996. ",
+				"In 2015 he entered his 20th Rains Retreat as a fully ordained monastic and received the title Maha Thera (Great Elder)."
+			]
+		}
+	]
+}

@@ -40,8 +40,25 @@ function buildBookInfo (bookID) {
     } else {
         newjson.Authors = newjson.AuthorsData[0].ShortName;
     }
+
+
+    let CCLongLicenses = require(path.join(__dirname, '..', '_resources', 'copyright-data', 'cclicence.json'));
+  //  console.log (Object.keys(CCLongLicenses));
+
+
+
+            console.log(newjson.CCLicense);
+            for (let i = 0; i< Object.keys(CCLongLicenses).length; i++) {
+                if (newjson.CCLicense == Object.keys(CCLongLicenses)[i]) {
+                    newjson.CCLicense = Object.values(CCLongLicenses)[i];
+                }
+            }
+
+            //console.log(Object.keys(CCLongLicenses)[0]);
+
+        //newjson.CCLicense = CCLongLicense;
         
-    jsonStr = JSON.stringify(newjson);
+    jsonStr = JSON.stringify(newjson, null, '\t');
 
     fs.mkdirSync(path.join(__dirname, '..', '_resources', 'built-info-data', bookID), { recursive: true }, (err) => {
         if (err) throw err;

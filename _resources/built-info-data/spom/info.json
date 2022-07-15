@@ -1,1 +1,38 @@
-{"Authors":"Bhikkhu Sujato","BookTitle":"A Swift Pair of Messengers","BookSubtitle":"calm with insight in the Buddha’s words","AddInfo":[["AudioBook","This ebook is also available as an [audiobook](../audiospom)."]],"Copyright":["Originally published by Inward Path Publishers in **2001**.","Revised edition published in **2012** by Santipada.<br>ISBN 978-1-921842-00-9<br>Printed and distributed by Lulu.com","This electronic edition published by Wisdom & Wonders Books is based on the 2012 Santipada edition with minor typographical and formatting corrections","Copyright © Bhikkhu Sujato 2000, 2010, 2012, 2021<br>Creative Commons Attribution-NonCommercial-ShareAlike 4.0","175pp (in pdf format)."],"FrontCover":"../_resources/book-data/spom/FrontLarge.jpg","BackCover":"../_resources/book-data/spom/BackLarge.jpg","BackMatter":["Serenity and insight are the two great wings of Buddhist meditation. They each have a special role to play in the path to Awakening. While some modern approaches seek to marginalize serenity in favor of dry insight, the Buddha’s own discourses place serenity right at the heart of the path. This book collects virtually all the significant passages on this topic that are found in the early discourses, carefully explained for the modern reader.","Bhikkhu Sujato is a Buddhist monk. Since receiving full ordination in 1994 he has lived in forest monasteries and hermitages developing meditation and studying the Buddha’s teachings. In 2003 he established Santi Forest Monastery near Sydney, Australia."],"AuthorsData":[{"ShortName":"Bhikkhu Sujato","InfoImage":"../_resources/author-data/sujato/info.jpg","ShortBio":["Bhante Sujato was born in Perth and raised in a liberal Catholic family. ","After dropping out of University he became a musician. ","In 1992 he travelled to Thailand in search of a new direction. ","He entered an intensive meditation retreat at Wat Ram Poeng in Chieng Mai. ","A year later, he ended up at Wat Nanachat, where he took novice ordination and, on May 5, 1994, full ordination as a bhikkhu in the forest lineage of Ajahn Chah. ","In 2005, he co-founded the Buddhist website SuttaCentral along with Rod Bucknell and John Kelly, to provide access to early Buddhist texts in their original language and make translations available in modern languages"]}]}
+{
+	"Authors": "Bhikkhu Sujato",
+	"BookTitle": "A Swift Pair of Messengers",
+	"BookSubtitle": "calm with insight in the Buddha’s words",
+	"AddInfo": [
+		[
+			"AudioBook",
+			"This ebook is also available as an [audiobook](../audiospom)."
+		]
+	],
+	"Copyright": [
+		"Originally published by Inward Path Publishers in **2001**.",
+		"Revised edition published in **2012** by Santipada.<br>ISBN 978-1-921842-00-9<br>Printed and distributed by Lulu.com",
+		"This electronic edition published by Wisdom & Wonders Books is based on the 2012 Santipada edition with minor typographical and formatting corrections",
+		"Copyright © Bhikkhu Sujato 2000, 2010, 2012, 2021<br>Creative Commons Attribution-NonCommercial-ShareAlike 4.0",
+		"175pp (in pdf format)."
+	],
+	"FrontCover": "../_resources/book-data/spom/FrontLarge.jpg",
+	"BackCover": "../_resources/book-data/spom/BackLarge.jpg",
+	"BackMatter": [
+		"Serenity and insight are the two great wings of Buddhist meditation. They each have a special role to play in the path to Awakening. While some modern approaches seek to marginalize serenity in favor of dry insight, the Buddha’s own discourses place serenity right at the heart of the path. This book collects virtually all the significant passages on this topic that are found in the early discourses, carefully explained for the modern reader.",
+		"Bhikkhu Sujato is a Buddhist monk. Since receiving full ordination in 1994 he has lived in forest monasteries and hermitages developing meditation and studying the Buddha’s teachings. In 2003 he established Santi Forest Monastery near Sydney, Australia."
+	],
+	"AuthorsData": [
+		{
+			"ShortName": "Bhikkhu Sujato",
+			"InfoImage": "../_resources/author-data/sujato/info.jpg",
+			"ShortBio": [
+				"Bhante Sujato was born in Perth and raised in a liberal Catholic family. ",
+				"After dropping out of University he became a musician. ",
+				"In 1992 he travelled to Thailand in search of a new direction. ",
+				"He entered an intensive meditation retreat at Wat Ram Poeng in Chieng Mai. ",
+				"A year later, he ended up at Wat Nanachat, where he took novice ordination and, on May 5, 1994, full ordination as a bhikkhu in the forest lineage of Ajahn Chah. ",
+				"In 2005, he co-founded the Buddhist website SuttaCentral along with Rod Bucknell and John Kelly, to provide access to early Buddhist texts in their original language and make translations available in modern languages"
+			]
+		}
+	]
+}

@@ -7,7 +7,8 @@
                     "**DEPENDENT ORIGINATION:** \n***(paṭiccasamuppāda)***",
                     "ignorance/delusion (*avijjā*) ➔\nwilled acts/activities (*saṅkhāra*) ➔\nconsciousness (*viññāṇa*) ➔\nname and form (*nāmarūpa*) ➔\nthe six senses (*saḷāyatana*) ➔\ncontact/sense impressions (*phassa*) ➔\nsensations/feelings (*vedanā*) ➔\ndesire/craving (*taṇhā*) ➔\ntaking up (*upādāna*) ➔\nlife/existence (*bhava*) ➔\nrebirth (*jāti*) ➔\nold age and death (*jarāmaraṇa*)"]
                 ],
-  "Copyright" : ["Published in **2002**.","This edition published in **2021** \nwith minor reference and punctuation changes.","43pp (in pdf format).","This work is released under CC0 1.0 Universal (CC0 1.0)","Public Domain Dedication. No rights reserved.","This latest online edition includes the suttas referenced with translations by Bhikkhu Sujato."],
+  "Copyright" : ["Published in **2002**.","This edition published in **2021** \nwith minor reference and punctuation changes.","43pp (in pdf format)."],
+  "CCLicense": "CC0 1.0",
   "FrontCover": "../_resources/book-data/doab/FrontLarge.jpg",
   "BackCover": "",
   "BackMatter": []

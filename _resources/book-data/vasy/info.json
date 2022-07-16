@@ -4,6 +4,7 @@
     "BookSubtitle" : "",
     "AddInfo"   : [],
     "Copyright" : ["Originally published in **2021**.\nThis edition published in **2022**.\n30pp (in pdf format)."],
+    "CCLicense": "CC0 1.0",
     "FrontCover": "../_resources/book-data/vasy/FrontLarge.jpg",
     "BackCover": "",
     "BackMatter": []

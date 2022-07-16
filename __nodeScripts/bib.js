@@ -47,7 +47,7 @@ function buildBookInfo (bookID) {
 
 
 
-            console.log(newjson.CCLicense);
+            //console.log(newjson.CCLicense);
             for (let i = 0; i< Object.keys(CCLongLicenses).length; i++) {
                 if (newjson.CCLicense == Object.keys(CCLongLicenses)[i]) {
                     newjson.CCLicense = Object.values(CCLongLicenses)[i];

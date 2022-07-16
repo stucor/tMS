@@ -106,7 +106,7 @@ function parseInfoText(infoText) {
 // Populates the Info Modal
 function buildInfo () {
 	let parentDiv = document.getElementById('ModalDetails');
-	let containsSuttaList = false;
+	let longSuttaList = false; // add sort buttons if the list of suttas is long
 	if (parentDiv.innerHTML == '') {
 		let shortCode = shortcode();
 		let html ='';
@@ -118,8 +118,11 @@ function buildInfo () {
 			if (suttarefArr.length  > 0) {
 				html = `<section id="sutta-list" class="infocontainer">`;
 				html += `<h3>Sutta References:</h3>`;
-				html += `<div class="suttasortbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="reflistOrderNo">Book Position</button>`
-				html += `  <button class="sort" data-sort="sclinkref">Sutta Number</button></div>`
+				if (suttarefArr.length  > 7) {
+					longSuttaList = true;
+					html += `<div class="suttasortbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="reflistOrderNo">Book Position</button>`
+					html += `  <button class="sort" data-sort="sclinkref">Sutta Number</button></div>`
+				}
 				html += `<ul id="reflist" class="list">	`
 				for (let i = 0; i < suttarefArr.length; i++) {
 					suttarefArr[i].setAttribute("id", "slt_"+ i);
@@ -127,7 +130,6 @@ function buildInfo () {
 					html += `<li class='reflistitem'>${linktext}</li>`;
 				}
 				html += `</ul></section>`;
-				containsSuttaList = true;
 				return html;
 			}
 		}
@@ -280,7 +282,7 @@ function buildInfo () {
 			
 			parentDiv.innerHTML = html;
 			
-			if (containsSuttaList) {
+			if (longSuttaList) {
 				var options = {
 					valueNames: [ 'reflistOrderNo', 'sclinkref' ]
 				};

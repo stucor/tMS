@@ -288,7 +288,9 @@ function buildInfo () {
 				};
 				var suttaList = new List('sutta-list', options);
 			}
-			
+
+			setTheme();
+		
 		}
 
 		fetch(`../_resources/built-info-data/${shortCode}/info.json`)
@@ -298,6 +300,7 @@ function buildInfo () {
 			console.log(`ERROR: Can't fetch ../_resources/built-info-data/${shortCode}/info.json`);
 			}
 		);
+
 	}
 }
 
@@ -1294,7 +1297,7 @@ function setTheme(){
 
 		case "simpledark":
 			for( var i = 0; i < imgs.length; i++ ) {
-				imgs[i].style.filter="brightness(.8) contrast(1.2) grayscale(60%)";
+				imgs[i].style.filter="brightness(.8) contrast(1.2) grayscale(10%)";
 			}
 			for( var i = 0; i < righticons.length; i++ ) {
 				righticons[i].style.filter="invert(75%)";
@@ -1422,7 +1425,6 @@ function setTheme(){
 		  	break;
 
 		case "sepia":
-
 
 			for( var i = 0; i < imgs.length; i++ ) {
 				imgs[i].style.filter="brightness(1) contrast(1) sepia(40%) grayscale(10%)";

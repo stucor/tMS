@@ -51,39 +51,249 @@ function shortcode() {
 	return thebook.getAttribute("data-shortcode");
 }
 
-function startup () {
+function buildSettings (_callback) {
+	let parentDiv = document.getElementById('ModalSettings');
+	if (parentDiv.innerHTML == '') {
+		let html = 
+		`
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Font size:</span>
+				<span class="settingsheadersright">
+					<button class="decrease" id ="decfont"></button>
+					<span class="level" id="flvalue"></span>
+					<button class="increase" id ="incfont"></button>
+				</span>
+			</div>
+			<div class="settingsbox">
+			<span class ="settingsheadersleft">Line spacing:</span>
+			<span class="settingsheadersright">
+				<button class="decrease" id ="declh"></button>
+				<span class="level" id="lhvalue"></span>
+				<button class="increase" id ="inclh"></button>
+			</span>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Serif Font:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="serifFont"><span class="slider round"></span></label></span>
+			</div>
+			<div class="settingsbox">			
+				<p class ="settingsheaders">Colour:</p>
+				<div class="radio-toolbar">
+					<input type="radio" id="radioSimple" name="themeRadio" value="simple">
+					<label for="radioSimple">Bright</label>
+				
+					<input type="radio" id="radioSimpleDark" name="themeRadio" value="simpledark">
+					<label for="radioSimpleDark">Dark</label>
+				
+					<input type="radio" id="radioSepia" name="themeRadio" value="sepia">
+					<label for="radioSepia">Mellow</label> 
+				</div>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Show book pages:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showPageCheck"><span class="slider round"></span></label></span>
+			</div>
+			<div class="settingsbox">
+				<p class ="settingsheaders">Margins:</p>
+				<div class="radio-toolbar">
+					<input type="radio" id="radioMargNarrow" name="marginRadio" value="narrowmargin">
+					<label for="radioMargNarrow">
+						<img class = "marginicons" src="../_resources/images/icons/marginwide.svg" alt="Wide Margins">
+					</label>
+					<input type="radio" id="radioMargMid" name="marginRadio" value="midmargin">
+					<label for="radioMargMid">
+						<img class = "marginicons" src="../_resources/images/icons/marginmid.svg" alt="Normal Margins">
+					</label>
+					<input type="radio" id="radioMargWide" name="marginRadio" value="widemargin">
+					<label for="radioMargWide">
+						<img class = "marginicons" src="../_resources/images/icons/marginnarrow.svg" alt="Narrow Margins">
+					</label> 
+				</div>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Justification:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="justifyCheck"><span class="slider round"></span></label></span>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Hyphenation:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="hyphenCheck"><span class="slider round"></span></label></span>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Show Paragraph numbers:</span>
+				<select class = "select-css" id = "showParaNosList">
+					<option> do not show numbers </option>
+					<option> count by whole book </option>
+					<option> count by section </option>
+					<option> count by subsection </option>
+				</select>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Full Screen Mode:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="mobileUIAlwaysOnCheck"><span class="slider round"></span></label></span>
+			</div>
+		`;
 
+		parentDiv.innerHTML = html;
+	}
+	_callback();
+
+}
+
+function startup () {
 /*
 	console.log("local storage:");
 	for (var i = 0; i < localStorage.length; i++)   {
 		console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
 	}
 */
-document.getElementById('topbar').style.display='block';
-document.getElementById('thebook').style.display='block';
+	buildSettings(function(){
+		//the following is done after buildSettings completes:
+		document.getElementById('topbar').style.display='block';
+		document.getElementById('thebook').style.display='block';
+		hideAllLibNotes();
+		initialiseCommonSettings();
+		if (!isAudioBook()) {
+			initialiseBookSettings ();
+		} 
+		formatbooknotes();
+		var scroller = Math.floor(window.scrollY);
+		history.replaceState({scrollState: scroller},'',''); 
+		history.scrollRestoration = 'manual';
+		if (isAudioBook()) { 
+			initialiseAudioBookSettings();
+			initplayer();
+			document.getElementById('TOCTarget0').style.display='none';
+		}
+		if (isBookShelf()) {
+			initialiseBookShelfSettings ();
+			document.getElementById('TOCTarget0').style.display='none';
+		}
+		mobileUIAlwaysOnCheck.onclick = function () {
+			var wasSidebarOpen = sidebarIsOpen; //check if the sidebar was open as we have to close it and reopen it in mobile mode
+			setFFS();
+			hideSideNav();
+			if (wasSidebarOpen){
+				showElement(theTopBar);
+				theTopBar.style.top = "0";
+				showSideNav();
+			}
+			shadowSearchBar ();
+		}
+		showPageCheck.onclick = function () {
+			settingTouched = true;
+			setPageBreak(true);
+			setPageBreakSize(true);
+			restorePlaceInBook();
+			//fillProgressBar();
+		}
+		justifyCheck.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doJustifyCheck) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
+		hyphenCheck.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doHyphenCheck) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
 
-	hideAllLibNotes();
-	initialiseCommonSettings();
+		document.getElementById("decfont").onclick = function () { // minus button
+			var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
+			if (fontlevel > 9) {
+				fontlevel = fontlevel -1;
+				settingTouched = true;
+				document.getElementById("flvalue").innerHTML = fontlevel;
+				setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
+				setTOCLevel (fontlevel);
+				restorePlaceInBook();
+			}
+		}
+		
+		document.getElementById("incfont").onclick = function () { //plus button
+			var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
+			if (fontlevel < 32) {
+				fontlevel = fontlevel +1;
+				settingTouched = true;
+				document.getElementById("flvalue").innerHTML = fontlevel;
+				setTOCLevel (fontlevel);
+				setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
+				restorePlaceInBook();
+			}
+		}
 
-	if (!isAudioBook()) {
-		initialiseBookSettings ();
-	} 
-	formatbooknotes();
+		declh.onclick = function () {
+			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
+			if (lhlevel > 1) {
+				lhlevel = lhlevel -0.1;
+				settingTouched = true;
+				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
+				setLH (lhlevel, theTopElement-5, theTopElement+150);
+				restorePlaceInBook();
+			}	
+		}
+		
+		inclh.onclick = function () {
+			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
+			if (lhlevel < 3) {
+				lhlevel = lhlevel + 0.1;
+				settingTouched = true;
+				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
+				setLH (lhlevel, theTopElement-5, theTopElement+150);
+				restorePlaceInBook();
+			}
+		} 
+		
+		radioSimple.onclick = function () {
+			setTheme ();
+		}
+		radioSimpleDark.onclick = function () {
+			setTheme ();
+		}
+		radioSepia.onclick = function () {
+			setTheme ();
+		}
 
-	var scroller = Math.floor(window.scrollY);
-	history.replaceState({scrollState: scroller},'',''); 
-	history.scrollRestoration = 'manual';
+		radioMargNarrow.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doSetMargin) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
+		radioMargMid.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doSetMargin) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
+		radioMargWide.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doSetMargin) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
+		
+		serifFont.onclick = function () {
+			settingTouched = true;
+			setSerif(theTopElement-2, theTopElement+150);
+			//restorePlaceInBook ();
+		}
+		
+		showParaNosList.onchange = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doParaNosList) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
 
-	if (isAudioBook()) { 
-		initialiseAudioBookSettings();
-		initplayer();
-		document.getElementById('TOCTarget0').style.display='none';
-	}
-
-	if (isBookShelf()) {
-		initialiseBookShelfSettings ();
-		document.getElementById('TOCTarget0').style.display='none';
-	}
+	});
 }
 
 /* Modal Builders */
@@ -799,17 +1009,7 @@ if (!nuclearOption) {
 
 // SETTINGS FUNCTIONS
 
-mobileUIAlwaysOnCheck.onclick = function () {
-	var wasSidebarOpen = sidebarIsOpen; //check if the sidebar was open as we have to close it and reopen it in mobile mode
-	setFFS();
-	hideSideNav();
-	if (wasSidebarOpen){
-		showElement(theTopBar);
-		theTopBar.style.top = "0";
-		showSideNav();
-	}
-	shadowSearchBar ();
-}
+
 
 function setFFS () {
 	var ffsCheck = document.getElementById("mobileUIAlwaysOnCheck");
@@ -820,13 +1020,7 @@ function setFFS () {
     }	
 }
 
-showPageCheck.onclick = function () {
-	settingTouched = true;
-	setPageBreak(true);
-	setPageBreakSize(true);
-	restorePlaceInBook();
-	//fillProgressBar();
-}
+
 
 function buildpageBreak(e) {
 	var thepagenumber = e.getAttribute("data-page");
@@ -926,13 +1120,7 @@ function doJustifyCheck () {
 	//fillProgressBar();
 }
 
-justifyCheck.onclick = function () {
-	showSpinner(); // show spinner
-	promiseToRunAsync(doJustifyCheck) // execute anync
-	.then(() => {
-		hideSpinner();
-	});
-}
+
 
 // HYPHENATION
 
@@ -952,13 +1140,7 @@ function setHyphenation () {
     }	
 }
 
-hyphenCheck.onclick = function () {
-	showSpinner(); // show spinner
-	promiseToRunAsync(doHyphenCheck) // execute anync
-	.then(() => {
-		hideSpinner();
-	});
-}
+
 
 
 
@@ -1047,29 +1229,7 @@ function setNotesLevel (level) {
 	}
 }	
 
-document.getElementById("decfont").onclick = function () { // minus button
-	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-	if (fontlevel > 9) {
-		fontlevel = fontlevel -1;
-		settingTouched = true;
-		document.getElementById("flvalue").innerHTML = fontlevel;
-		setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
-		setTOCLevel (fontlevel);
-		restorePlaceInBook();
-	}
-}
 
-document.getElementById("incfont").onclick = function () { //plus button
-	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-	if (fontlevel < 32) {
-		fontlevel = fontlevel +1;
-		settingTouched = true;
-		document.getElementById("flvalue").innerHTML = fontlevel;
-		setTOCLevel (fontlevel);
-		setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
-		restorePlaceInBook();
-	}
-}
 
 // LINE SPACING
 
@@ -1089,41 +1249,13 @@ function setLH (level, start, end) {
 	}	
 }
 
-declh.onclick = function () {
-	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-	if (lhlevel > 1) {
-		lhlevel = lhlevel -0.1;
-		settingTouched = true;
-		document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-		setLH (lhlevel, theTopElement-5, theTopElement+150);
-		restorePlaceInBook();
-	}	
-}
 
-inclh.onclick = function () {
-	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-	if (lhlevel < 3) {
-		lhlevel = lhlevel + 0.1;
-		settingTouched = true;
-		document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-		setLH (lhlevel, theTopElement-5, theTopElement+150);
-		restorePlaceInBook();
-	}
-} 
 
   
 
 //THEMES
 
-radioSimple.onclick = function () {
-	setTheme ();
-}
-radioSimpleDark.onclick = function () {
-	setTheme ();
-}
-radioSepia.onclick = function () {
-	setTheme ();
-}
+
 function setTheme(){
 
 	var whatIsPressed = document.querySelector('input[name="themeRadio"]:checked').value;
@@ -1580,28 +1712,6 @@ function doSetMargin () {
 	setPageBreakSize(true);
 }	
 
-radioMargNarrow.onclick = function () {
-    showSpinner(); // show spinner
-    promiseToRunAsync(doSetMargin) // execute anync
-    .then(() => {
-        hideSpinner();
-	});
-}
-radioMargMid.onclick = function () {
-    showSpinner(); // show spinner
-    promiseToRunAsync(doSetMargin) // execute anync
-    .then(() => {
-        hideSpinner();
-	});
-}
-radioMargWide.onclick = function () {
-    showSpinner(); // show spinner
-    promiseToRunAsync(doSetMargin) // execute anync
-    .then(() => {
-        hideSpinner();
-	});
-}
-
 function setMargin() {
 	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
 	var thebook = document.getElementById("thebook");
@@ -1624,11 +1734,6 @@ function setMargin() {
 		}
 }
 
-serifFont.onclick = function () {
-	settingTouched = true;
-	setSerif(theTopElement-2, theTopElement+150);
-	//restorePlaceInBook ();
-}
 
 function setSerif (start, end) {
 	if (start < 0) {start = 0}
@@ -1654,14 +1759,6 @@ function doParaNosList () {
 	setParaNumbers();
 	//fillProgressBar();
 }	
-
-showParaNosList.onchange = function () {
-    showSpinner(); // show spinner
-    promiseToRunAsync(doParaNosList) // execute anync
-    .then(() => {
-        hideSpinner();
-	});
-}
 
 function setParaNumbers () {
 	var ParaNosList = document.getElementById("showParaNosList");
@@ -2110,8 +2207,8 @@ function setModalTheme (theme) {
 			modalbody.style.background = "#fcfcfc";
 			modalbody.style.backgroundImage = 'unset';
 			modalbody.style.color = "#000";
-			settingsadv.style.background = "white";
-			settingsadv.style.borderTopColor ="#000";
+			//settingsadv.style.background = "white";
+			//settingsadv.style.borderTopColor ="#000";
 			modalbody.classList.add('bright-scroll');
 			modalbody.classList.add('bright-scroll-track');
 			modalbody.classList.add('bright-scroll-thumb');
@@ -2130,8 +2227,8 @@ function setModalTheme (theme) {
 			modalbody.style.background = "#292929";
 			modalbody.style.backgroundImage = 'unset';
 			modalbody.style.color = "#f7f7f7";
-			settingsadv.style.background = "#121212";
-			settingsadv.style.borderTopColor ="#f7f7f7";
+			//settingsadv.style.background = "#121212";
+			//settingsadv.style.borderTopColor ="#f7f7f7";
 			modalbody.classList.remove('bright-scroll');
 			modalbody.classList.remove('bright-scroll-track');
 			modalbody.classList.remove('bright-scroll-thumb');
@@ -2150,8 +2247,8 @@ function setModalTheme (theme) {
 			modalbody.style.background = "#f5efd0";
 			modalbody.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';
 			modalbody.style.color = "#00008b";
-			settingsadv.style.background = "#f5efd0";
-			settingsadv.style.borderTopColor ="#00008b";
+			//settingsadv.style.background = "#f5efd0";
+			//settingsadv.style.borderTopColor ="#00008b";
 			modalbody.classList.remove('bright-scroll');
 			modalbody.classList.remove('bright-scroll-track');
 			modalbody.classList.remove('bright-scroll-thumb');

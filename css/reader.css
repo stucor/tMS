@@ -423,7 +423,7 @@ strong {
 	margin-top: 0 
 }
 
-.content a {
+a {
 	color:cornflowerblue;
 	text-decoration: none;
 }
@@ -757,6 +757,12 @@ table.borderlessTable {
 	padding:10px;
 	text-align: left;
 	border-radius: 10px;
+}
+
+.booknote  p {
+	text-indent: 2em;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 /*

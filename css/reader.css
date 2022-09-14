@@ -545,6 +545,16 @@ blockquote {
 	margin: 2em 0;
 }
 
+.noindent p {
+	padding:0;
+}
+
+.noindent p {
+	display:block;
+	padding:0;
+	margin:0;
+	text-indent: unset;
+}
 
 .suttaref, .TOCref {
 	color:cornflowerblue;

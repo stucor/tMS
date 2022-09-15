@@ -545,15 +545,12 @@ blockquote {
 	margin: 2em 0;
 }
 
-.noindent p {
-	padding:0;
-}
 
-.noindent p {
+.noindent {
 	display:block;
 	padding:0;
 	margin:0;
-	text-indent: unset;
+	text-indent: 0 !important;
 }
 
 .suttaref, .TOCref {

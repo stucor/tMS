@@ -48,7 +48,8 @@ function showBD(linktext) {
       ['dhp372','dhp360-382',''],
       ['dhp387','dhp383-423',''],
       ['dhp409','dhp383-423',''],
-      ['sn43.20','sn43.14-43','']
+      ['sn43.20','sn43.14-43',''],
+      ['sn43.22','sn43.14-43','']
     ];
     let fileSlug = '';
     let suttaNo = '';

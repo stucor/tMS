@@ -788,6 +788,11 @@ table.borderlessTable {
 	margin: -0.3em;
 }
 
+.tipref {
+	word-spacing: -0.1em;
+	white-space: nowrap;
+}
+
 dt {
 	font-weight: 700;
 }

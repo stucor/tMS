@@ -201,6 +201,8 @@ header li .segno {
   border-radius: 1em;
   padding: 0.3em;
 	margin: -0.3em;
+  word-spacing: -0.1em;
+  white-space: nowrap;
 }
 
 #sc-translator {

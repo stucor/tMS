@@ -546,12 +546,7 @@ blockquote {
 }
 
 
-.noindent {
-	display:block;
-	padding:0;
-	margin:0;
-	text-indent: 0 !important;
-}
+
 
 .suttaref, .TOCref {
 	color:cornflowerblue;
@@ -560,6 +555,7 @@ blockquote {
 
 }	
 
+/*
 blockquote p {
 	display: inline;
 	margin-left: 20px;
@@ -568,8 +564,8 @@ blockquote p {
 blockquote p::after {
 	content: '\a'; 
 	white-space:pre;
-
 }
+*/
 
 .citeBQ {
 	text-align:right;
@@ -781,7 +777,6 @@ table.borderlessTable {
 
 .extlink {
 	color:cornflowerblue;
-	font-family: Source Sans Pro;
 	text-decoration: none;
 	border-radius: 1em;
 	padding: 0.3em;
@@ -791,6 +786,7 @@ table.borderlessTable {
 .tipref {
 	word-spacing: -0.1em;
 	white-space: nowrap;
+	font-variant: normal;
 }
 
 dt {

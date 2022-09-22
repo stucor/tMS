@@ -418,7 +418,7 @@ strong {
 	margin-bottom: 0;
 }
 
-.content p + p {
+p + p {
 	text-indent: 40px;
 	margin-top: 0 
 }
@@ -538,15 +538,11 @@ a {
 }
 
 
-
 blockquote {
 	border-left: 2px solid #cccccc7c;
 	padding:0 1em; 
 	margin: 2em 0;
 }
-
-
-
 
 .suttaref, .TOCref {
 	color:cornflowerblue;
@@ -554,6 +550,10 @@ blockquote {
 	user-select: none;
 
 }	
+
+#ModalNotes blockquote {
+	margin: 1em 0;
+}
 
 /*
 blockquote p {
@@ -575,6 +575,11 @@ blockquote p::after {
 
 .citeBQ > span {
 	font-variant: normal;
+}
+
+#ModalNotes .citeBQ {
+	margin-top: -1em; 
+	margin-bottom: 0.5em;
 }
 
 ol {
@@ -762,12 +767,15 @@ table.borderlessTable {
 	border-radius: 10px;
 }
 
-.booknote  p {
-	text-indent: 2em;
+.booknote p {
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
+.booknotesNumbers {
+	display:inline;
+	font-weight: bold;
+}
 /*
 .booknote a {
 	color:cornflowerblue;

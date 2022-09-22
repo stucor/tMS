@@ -2505,7 +2505,7 @@ function showAlert(HTMLToShow) {
 var savedsup = '';
 function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
 	for (var i = 1; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].innerHTML = "<span style='font-weight: bold;'>" + (i) + ": </span> " + savedNotesElements[i].innerHTML;
+		savedNotesElements[i].innerHTML = "<span class='booknotesNumbers'>" + (i) + ": </span> " + savedNotesElements[i].innerHTML;
 	}
 }
 var highlightedNote = 0;

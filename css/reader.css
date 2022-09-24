@@ -578,7 +578,8 @@ blockquote p::after {
 }
 
 #ModalNotes .citeBQ {
-	margin-top: -1em; 
+	margin-top: auto; 
+	margin-right: 0;
 	margin-bottom: 0.5em;
 }
 

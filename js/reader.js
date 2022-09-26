@@ -1857,15 +1857,19 @@ function scrollToID (id) {
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
 	var elmnt = document.getElementById(id);
-	let parentElmnt = elmnt.parentElement;
-	if (parentElmnt.classList.contains('booknote')) {
+	let noteElmnt = '';
+	if (elmnt.parentElement.classList.contains('booknote')){
+		noteElmnt = elmnt.parentElement;
+	} else if (elmnt.parentElement.parentElement.classList.contains('booknote')) {
+		noteElmnt = elmnt.parentElement.parentElement;
+	}
+	if (noteElmnt) {
 		setModalStyle ("Notes");
 		showModal("Notes");
 		savedsup = elmnt;
 		clearhighlightnote();
-		highlightnote(parentElmnt.dataset.note); 
+		highlightnote(noteElmnt.dataset.note); 
 		stopBookScroll ();
-
 	} else {
 		elmnt.scrollIntoView({block: 'start', behavior: 'auto',});
 		window.scrollBy(0, -150);
@@ -2465,12 +2469,12 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	}
 
 	if (e.target.className == "sclinkref") {
-		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","")
+		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","");
 		scrollToID(gotoID);
 	}
 
 	if (e.target.className == "lotlinkref") {
-		var gotoID = 'lot_' + e.target.id.replace("lotlinkfrom_","")
+		var gotoID = 'lot_' + e.target.id.replace("lotlinkfrom_","");
 		scrollToID(gotoID);
 	}
 

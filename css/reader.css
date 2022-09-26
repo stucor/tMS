@@ -972,15 +972,17 @@ sup {
 }
 
 .reflistitem {
+	display: grid;
+	grid-template-columns: 2em auto;
 	text-align: left;
-	line-height: 1em;
+	line-height: 1.2em;
 	padding: 3px 10px;
 	background-color: rgba(100, 148, 237, 0.043);
 }
 
 .reflistOrderNo {
 	display: inline-block;
-	width: 1.5em;
+	width: 1.9em;
 	text-align: left;
 }
 

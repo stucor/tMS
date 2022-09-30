@@ -833,15 +833,19 @@ dd > ol > li {
 }
 
 .expander {
-	background: var(--listlinkhover);
-	padding: 0 5px;
-	margin: 0 0 0 5px;
-	border-radius: 5px;
+	/*background: var(--listlinkhover);*/
+	color: cornflowerblue;
+/*	padding: 0 5px; */
+	margin: 0 0 0 1px;
+/*	border-radius: 5px;*/
 	cursor: pointer;
 	user-select: none;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .expansion {
+	color:var(--primarytextcolor);
+	background: var(--listlinkhover);
 	cursor:auto;
 	user-select:text;
 }
@@ -852,7 +856,6 @@ sup {
 	margin: -5px;
 	color:cornflowerblue;
 	outline: double 0 var(--notehighlighter); 
-/*	transition: outline 0.3s linear;*/
 	border-radius: 1em;
 	cursor: pointer;
 	font-style: normal;
@@ -1358,14 +1361,12 @@ span.level {
 	padding:2px 10px;
     height: 100px;
     position: absolute;
-	/*
-    transform: rotate(-45deg);
-    left: 30px;
-	bottom: -20px;
-	*/
 	z-index: 1;
 }
 
+.refpdf:after {
+	content: ' pdf';
+}
 
 /********** Top navigation bar **********/
 
@@ -1386,20 +1387,11 @@ span.level {
 .topnav-left {
 	padding-left: 5px;
 }	
-/*
-.topnav-left a {
-	float: left;
-	padding: 0 9px;
-	text-align: center;
-	height:67px;
-	max-height: 67px;
-}
-*/
-.topnav-left a {
-	float: left;
-	padding: 0 9px;
-	text-align: center;
 
+.topnav-left a {
+	float: left;
+	padding: 0 9px;
+	text-align: center;
 	text-decoration: none;
 	user-select: none;
 }
@@ -1467,6 +1459,7 @@ span.level {
 	width: 25px;
 	height: 25px;
 }
+
 
 .searchbar {
 	display: none;

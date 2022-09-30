@@ -1527,7 +1527,7 @@ function setTheme(){
 				sni.style.filter="invert(75%)";
 			}
 
-			r.style.setProperty('--primarytextcolor', 'darkblue');
+			r.style.setProperty('--primarytextcolor', '#d7d7d7');
 			r.style.setProperty('--secondarytextcolor', '#c4cdda');
 			r.style.setProperty('--primarybackground', '#121212');
 
@@ -2437,6 +2437,19 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		}	
 	}
 
+	if (e.target.classList.contains ('expander')) {
+		var fullReference = getFullReference(e.target.dataset.reference);
+		if (e.target.classList.contains('expanded')) {
+			e.target.innerHTML = '▷';
+			e.target.classList.remove('expanded');
+
+		} else {
+			e.target.innerHTML = '◁ ' + '<span class="expansion">' + fullReference + '</span>';
+			e.target.classList.add('expanded');
+
+		}
+	}
+
 	if (e.target.classList.contains('sclinktext')) {
 		displaySutta(e.target.innerHTML);
 		savedsup = e.target;
@@ -2449,6 +2462,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				if (true) {e.preventDefault();}
 		}
 	}
+
 });
 
 
@@ -2481,12 +2495,11 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var ccDetail = document.getElementById('ccDetail');
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '►';
+			e.target.innerHTML = '▷';
 			e.target.classList.remove('expanded');
 			ccDetail.classList.add('noshow');
-
 		} else {
-			e.target.innerHTML = '◄ '; 
+			e.target.innerHTML = '◁ '; 
 			e.target.classList.add('expanded');
 			ccDetail.classList.remove('noshow');
 
@@ -2733,11 +2746,11 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '►';
+			e.target.innerHTML = '▷';
 			e.target.classList.remove('expanded');
 
 		} else {
-			e.target.innerHTML = '◄ ' + '<span class="expansion">' + fullReference + '</span>';
+			e.target.innerHTML = '◁ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
 
 		}

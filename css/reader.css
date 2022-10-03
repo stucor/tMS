@@ -788,8 +788,10 @@ table.borderlessTable {
 	color:cornflowerblue;
 	text-decoration: none;
 	border-radius: 1em;
-	padding: 0.3em;
-	margin: -0.3em;
+}
+
+.extlink::after {
+	content: url('../_resources/images/icons/leave-app.svg');
 }
 
 .tipref {
@@ -828,9 +830,7 @@ dd > ol > li {
 .booknote a::after, #references a::after, 
 */
 
-.extlink::after {
-	content: url('../_resources/images/icons/leave-app.svg');
-}
+
 
 .expander {
 	/*background: var(--listlinkhover);*/
@@ -2394,6 +2394,7 @@ font-variant: small-caps;
 	.extlink:hover:after {
 		content: url('../_resources/images/icons/leave-app-red.svg');
 	}
+	
 }
 
 @media (hover: none) {

@@ -140,12 +140,13 @@ function buildSettings (_callback) {
 }
 
 function startup () {
-/*
+	/*
 	console.log("local storage:");
 	for (var i = 0; i < localStorage.length; i++)   {
 		console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
 	}
-*/
+	*/
+	
 	buildSettings(function(){
 		//the following is done after buildSettings completes:
 		document.getElementById('topbar').style.display='block';

@@ -529,7 +529,7 @@ a {
 	margin-bottom: 1em;
 }
 
-.versecouplet p + p {
+.versecouplet, .infocontainer p + p {
 	text-indent: unset;
 }
 

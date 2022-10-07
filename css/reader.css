@@ -202,7 +202,6 @@ strong {
 	padding-top: 1em;
 }
 
-
 .eob {
 	border-radius: .2em;
 	background-color: #adadadb0;
@@ -273,17 +272,6 @@ strong {
 	min-height: 100vh;
 }
 
-/*
-.content h1 {
-    font-style: italic;
-    font-weight:300;
-    text-align: right;
-    font-size: 32px;
-    padding-top:70px;
-    padding-bottom:20px;
-	hyphens: manual;
-}
-*/
 .content h1 {
 	text-align: center;
 	font-size: 2.5em;
@@ -298,17 +286,6 @@ strong {
 	font-style: normal;
 }
 
-/*
-.content h1.preface {
-	text-align: left;
-	font-style: italic;
-	font-weight: 300;
-	font-size: 32px;
-	padding-top: unset;
-	padding-bottom: unset;
-	hyphens: manual;
-}
-*/
 .content h1.preface {
 	text-align: center;
 	font-size: 2.5em;
@@ -349,17 +326,6 @@ strong {
 	font-size: 16px;
 }
 
-/*
-.content h1.bigbook {
-	text-align: center;
-	font-size: 2.5em;
-	font-style: normal;
-	font-weight: 400;
-	font-variant: small-caps;
-	padding-bottom: 0;
-}
-*/
-
 .content h1.titlepage {
 	text-align: center;
 	font-style: normal;
@@ -368,7 +334,6 @@ strong {
 	padding-bottom: 0;
 	margin-bottom: 2em;
 }
-
 
 .content h2.titlepage {
 	text-align: center;

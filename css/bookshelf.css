@@ -42,6 +42,9 @@
 	margin: 0;
 }
 
+.booklist p {
+	padding-bottom: 1rem;
+}
 .booklist > li {
 	min-height: 100px;
 	padding: 0;
@@ -68,6 +71,10 @@
 	height: 100px;
 	width: auto;
 	transition: 0.4s;
+}
+
+.booklist > li > a > div {
+	margin-left: 0.5rem;
 }
 
 .booklist > li > a > div > h3 {

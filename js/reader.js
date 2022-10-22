@@ -89,10 +89,12 @@ function buildSettings (_callback) {
 					<label for="radioSepia">Mellow</label> 
 				</div>
 			</div>
+			<!--
 			<div class="settingsbox">
 				<span class ="settingsheadersleft">Show book pages:</span>
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showPageCheck"><span class="slider round"></span></label></span>
 			</div>
+			-->
 			<div class="settingsbox">
 				<p class ="settingsheaders">Margins:</p>
 				<div class="radio-toolbar">
@@ -180,13 +182,14 @@ function startup () {
 			}
 			shadowSearchBar ();
 		}
+		/* SPC Go 
 		showPageCheck.onclick = function () {
 			settingTouched = true;
 			setPageBreak(true);
 			setPageBreakSize(true);
 			restorePlaceInBook();
-			//fillProgressBar();
 		}
+		*/
 		justifyCheck.onclick = function () {
 			showSpinner(); // show spinner
 			promiseToRunAsync(doJustifyCheck) // execute anync
@@ -652,6 +655,7 @@ function initialiseBookSettings () {
 	}
 	setSerif(0, savedBookElements.length);
 	//SHOW-PAGES
+	/* SPC Go
 	var local_wiswobooks_showpages = getCookie("wiswobooks_showpages");
 	switch (local_wiswobooks_showpages) {
 		case 'true' :
@@ -667,6 +671,7 @@ function initialiseBookSettings () {
 	}
 	setPageBreak(false);
 	setPageBreakSize();
+	*/
 	//JUSTIFICATION
 	var local_wiswobooks_justification = getCookie("wiswobooks_justification");
 	switch (local_wiswobooks_justification) {
@@ -907,8 +912,10 @@ if (!nuclearOption) {
 		var local_wiswobooks_serif = document.getElementById("serifFont").checked;
 		setCookie('wiswobooks_serif',local_wiswobooks_serif,365);
 		//SHOW-PAGES
+		/* SPC Go
 		var local_wiswobooks_showpages = document.getElementById("showPageCheck").checked;
 		setCookie('wiswobooks_showpages',local_wiswobooks_showpages,365);
+		*/
 		//JUSTIFICATION
 		var local_wiswobooks_justification = document.getElementById("justifyCheck").checked;
 		setCookie('wiswobooks_justification',local_wiswobooks_justification,365);
@@ -1032,6 +1039,7 @@ function buildpageBreak(e) {
 	e.innerHTML = wordcut + "<div class=pagenumber>"+affect+" " + thepagenumber + " "+affect+"</div><hr class='pagebreak'>";
 }
 
+/* SPC Go
 function setPageBreak (islocal) {
 		var elems = document.getElementsByClassName("pageno");
 		var pageCheck = document.getElementById("showPageCheck");
@@ -1099,7 +1107,7 @@ function setPageBreakSize(islocal = false) {
 	}
 }
 
-
+*/
 
 // JUSTIFICATION
 
@@ -1166,7 +1174,9 @@ function setFontLevel (level, start, end) {
 			};
 				break;
 			case 'SPAN':
+				/* SPC Go
 				if (savedBookElements[i].className == 'pageno') {savedBookElements[i].style.fontSize = (level)+'px';}
+				*/
 				if (savedBookElements[i].className == 'chapnum') {savedBookElements[i].style.fontSize = (level*1.3)+'px';}
 				break;
 			case 'H1' :
@@ -1709,8 +1719,10 @@ function setTheme(){
 function doSetMargin () {
 	setMargin();
 	restorePlaceInBook();
+	/*
 	setPageBreak(true);
 	setPageBreakSize(true);
+	*/
 }	
 
 function setMargin() {
@@ -1953,18 +1965,20 @@ window.onscroll = function() {
 	//savePlaceInBook();
 }
 
-
+/* SPC Go
 function afterResize() {
 	setPageBreak(false);
 	setPageBreakSize();
 }
 
 var doit;
-
+*/
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
+	/* SPC Go
 	clearTimeout(doit);
 	doit = setTimeout(afterResize, 100);
+	*/
 });
 
 var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");
@@ -2566,9 +2580,10 @@ function reformatBook () {
 	setLH (lhlevel, 0, savedBookElements.length);
 
 	setSerif (0, savedBookElements.length);
-
+	/* SPC Go
 	setPageBreak(false); 
 	setPageBreakSize();
+	*/
 }
 
 

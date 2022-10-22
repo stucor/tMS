@@ -98,6 +98,10 @@
 	margin: 1rem;
 }
 
+.booklist > li > a > div > ul {
+	list-style-type: disc;
+}
+
 /* Author */
 .bookshelfauthor {
 	font-weight: 700;

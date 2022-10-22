@@ -494,7 +494,7 @@ a {
 	margin-bottom: 1em;
 }
 
-.versecouplet, .infocontainer p + p {
+.versecouplet p + p, .infocontainer p + p {
 	text-indent: unset;
 }
 
@@ -2268,7 +2268,7 @@ font-variant: small-caps;
 	}
 
 	blockquote .versecouplet p {
-	margin-left: 0;
+	margin-left: 0 !important;
 	}
 
 	.checkcontainer {

@@ -1686,6 +1686,8 @@ font-variant: small-caps;
 	font-weight: 400;
 	font-style: italic;
 	font-variant: normal;
+	padding-top:0;
+
 }
 /*
 .sidenav li.subsub::before {

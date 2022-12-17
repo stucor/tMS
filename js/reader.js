@@ -2455,11 +2455,11 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '▷';
+			e.target.innerHTML = '⟹';
 			e.target.classList.remove('expanded');
 
 		} else {
-			e.target.innerHTML = '◁ ' + '<span class="expansion">' + fullReference + '</span>';
+			e.target.innerHTML = '⟸ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
 
 		}
@@ -2510,11 +2510,11 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var ccDetail = document.getElementById('ccDetail');
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '▷';
+			e.target.innerHTML = '⟹';
 			e.target.classList.remove('expanded');
 			ccDetail.classList.add('noshow');
 		} else {
-			e.target.innerHTML = '◁ '; 
+			e.target.innerHTML = '⟸ '; 
 			e.target.classList.add('expanded');
 			ccDetail.classList.remove('noshow');
 
@@ -2762,11 +2762,11 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '▷';
+			e.target.innerHTML = '⟹';
 			e.target.classList.remove('expanded');
 
 		} else {
-			e.target.innerHTML = '◁ ' + '<span class="expansion">' + fullReference + '</span>';
+			e.target.innerHTML = '⟸ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
 
 		}

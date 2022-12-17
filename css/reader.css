@@ -798,18 +798,16 @@ dd > ol > li {
 
 
 .expander {
-	/*background: var(--listlinkhover);*/
 	color: cornflowerblue;
-/*	padding: 0 5px; */
 	margin: 0 0 0 1px;
-/*	border-radius: 5px;*/
 	cursor: pointer;
 	user-select: none;
-	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	/*font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
 }
 
 .expansion {
-	color:var(--primarytextcolor);
+	font-family: 'Source Sans Pro';
+	color: var(--primarytextcolor);
 	background: var(--listlinkhover);
 	cursor:auto;
 	user-select:text;
@@ -825,7 +823,6 @@ sup {
 	cursor: pointer;
 	font-style: normal;
 	user-select: none;
-	font-size: 2.4em;
 }
 
 

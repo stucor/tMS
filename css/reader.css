@@ -112,6 +112,19 @@ body {
 	hyphens: none;
 }
 
+.smallEngrave {
+	padding: 0 1vh;
+	color:#7c7c7c;
+	background-color: #5d8d8900;
+	text-shadow: 0px 2px 0px #ffffff;
+	font-size: 2em !important;
+	font-variant: small-caps;
+	font-style: normal !important;
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	opacity: 0.4;
+	hyphens: none;
+}
+
 .noshow {
 	display:none !important;
 }

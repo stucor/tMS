@@ -1,1 +1,40 @@
-{"Authors":"Bhikkhu Sujato","BookTitle":"A Swift Pair of Messengers","BookSubtitle":"calm with insight in the Buddha’s words","AddInfo":[["AudioBook","This audiobook is also available as an [e-book](../spom)."]],"Copyright":["Originally published by Inward Path Publishers in **2001**.","Revised edition published in **2012** by Santipada.<br>ISBN 978-1-921842-00-9<br>Printed and distributed by Lulu.com","This electronic edition published by Wisdom & Wonders Books is based on the 2012 Santipada edition with minor typographical and formatting corrections","Copyright © Bhikkhu Sujato 2000, 2010, 2012, 2021<br>Creative Commons Attribution-NonCommercial-ShareAlike 4.0","175pp (in pdf format)."],"FrontCover":"../_resources/book-data/spom/FrontLarge.jpg","BackCover":"../_resources/book-data/spom/BackLarge.jpg","BackMatter":["Serenity and insight are the two great wings of Buddhist meditation. They each have a special role to play in the path to Awakening. While some modern approaches seek to marginalize serenity in favor of dry insight, the Buddha’s own discourses place serenity right at the heart of the path. This book collects virtually all the significant passages on this topic that are found in the early discourses, carefully explained for the modern reader.","Bhikkhu Sujato is a Buddhist monk. Since receiving full ordination in 1994 he has lived in forest monasteries and hermitages developing meditation and studying the Buddha’s teachings. In 2003 he established Santi Forest Monastery near Sydney, Australia."],"AuthorsData":[{"ShortName":"Bhikkhu Sujato","InfoImage":"../_resources/author-data/sujato/info.jpg","ShortBio":["Bhante Sujato was born in Perth and raised in a liberal Catholic family. ","After dropping out of University he became a musician. ","In 1992 he travelled to Thailand in search of a new direction. ","He entered an intensive meditation retreat at Wat Ram Poeng in Chieng Mai. ","A year later, he ended up at Wat Nanachat, where he took novice ordination and, on May 5, 1994, full ordination as a bhikkhu in the forest lineage of Ajahn Chah. ","In 2005, he co-founded the Buddhist website SuttaCentral along with Rod Bucknell and John Kelly, to provide access to early Buddhist texts in their original language and make translations available in modern languages"]}]}
+{
+	"Authors": "Bhikkhu Sujato",
+	"BookTitle": "A Swift Pair of Messengers",
+	"BookSubtitle": "calm with insight in the Buddha’s words",
+	"AddInfo": [
+		[
+			"Alternate Media",
+			"This audiobook is also available as an [e-book](../spom).",
+			"You can print this book on demand at [lulu.com]X(https://www.lulu.com/shop/bhikkhu-sujato/a-swift-pair-of-messengers/paperback/product-16qy99kr.html?page=1&pageSize=4)"
+		]
+	],
+	"Copyright": [
+		"Originally published by Inward Path Publishers in **2001**.",
+		"Revised edition published in **2012** by Santipada.<br>ISBN 978-1-921842-00-9",
+		"This electronic edition published by Wisdom & Wonders Books is based on the 2012 Santipada edition with minor typographical and formatting corrections",
+		"Copyright © Bhikkhu Sujato 2000, 2010, 2012, 2021",
+		"175pp (in pdf format)."
+	],
+	"CCLicense": "<div class='cclicense'><h3>Attribution-NonCommercial-ShareAlike 4.0 International <span>(CC BY-NC-SA 4.0)</span><span class='expander'>⟹</span></h3><div id = 'ccDetail' class ='noshow'><p>You are free to:</p><ul><li><strong>Share</strong> — copy and redistribute the material in any medium or format</li><li><strong>Adapt</strong> — remix, transform, and build upon the material</li></ul><p>Under the following terms:</p><ul><li><strong>Attribution</strong> — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li><li><strong>NonCommercial</strong> — You may not use the material for commercial purposes.</li><li><strong>ShareAlike</strong> — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</li><li><strong>No additional restrictions</strong> — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</li></ul><p><strong>Notices:</strong></p><p>You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.</p><p>No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.</p></div></div>",
+	"FrontCover": "../_resources/book-data/spom/FrontLarge.jpg",
+	"BackCover": "../_resources/book-data/spom/BackLarge.jpg",
+	"BackMatter": [
+		"Serenity and insight are the two great wings of Buddhist meditation. They each have a special role to play in the path to Awakening. While some modern approaches seek to marginalize serenity in favor of dry insight, the Buddha’s own discourses place serenity right at the heart of the path. This book collects virtually all the significant passages on this topic that are found in the early discourses, carefully explained for the modern reader.",
+		"Bhikkhu Sujato is a Buddhist monk. Since receiving full ordination in 1994 he has lived in forest monasteries and hermitages developing meditation and studying the Buddha’s teachings. In 2003 he established Santi Forest Monastery near Sydney, Australia."
+	],
+	"AuthorsData": [
+		{
+			"ShortName": "Bhikkhu Sujato",
+			"InfoImage": "../_resources/author-data/sujato/info.jpg",
+			"ShortBio": [
+				"Bhante Sujato was born in Perth and raised in a liberal Catholic family. ",
+				"After dropping out of University he became a musician. ",
+				"In 1992 he travelled to Thailand in search of a new direction. ",
+				"He entered an intensive meditation retreat at Wat Ram Poeng in Chieng Mai. ",
+				"A year later, he ended up at Wat Nanachat, where he took novice ordination and, on May 5, 1994, full ordination as a bhikkhu in the forest lineage of Ajahn Chah. ",
+				"In 2005, he co-founded the Buddhist website SuttaCentral along with Rod Bucknell and John Kelly, to provide access to early Buddhist texts in their original language and make translations available in modern languages"
+			]
+		}
+	]
+}

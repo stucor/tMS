@@ -4,8 +4,8 @@
     "BookSubtitle"  :"",
     "AddInfo"   : [],
     "Copyright" : ["This book is Copyright © Phra Mahā Chatchai Rakkhitacitto 2017",
-        "Graphics credits: iStock.com / WhiteBarbie / Stiggdriver / rasslava / YuriBBS / number1411 / Olarty / Vadmary",
-        "You are free to: \n **Share—** copy and redistribute the material in any medium or format \n **Adapt—** remix, transform, and build upon the material","Under the following terms: \n **Attribution—** You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. \n **Non-Commercial—** You may not use the material for commercial purposes. \n **ShareAlike—** If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original. \n **No additional restrictions—** You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."],
+        "Graphics credits: iStock.com / WhiteBarbie / Stiggdriver / rasslava / YuriBBS / number1411 / Olarty / Vadmary"],
+    "CCLicense": "BY-NC-SA 4.0",
     "FrontCover": "../_resources/book-data/afcm/afcmLarge.jpg",
     "BackCover": "../_resources/book-data/afcm/mettabunny.jpg",
     "BackMatter": []

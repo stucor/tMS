@@ -36,15 +36,23 @@ function showBD(linktext) {
   function getMultiSuttaJSONFileName (suttaNumber) {//suttanumber(slug), file, slug
     const multiSuttaArr = [
       ['an1.328','an1.316-332',''],
+      ['an1.49','an1.41-50',''],
       ['an2.31','an2.21-31',''],
       ['an2.172','an2.163-179',''],
       ['an2.310','an2.310-479','an2.310-319'],
+      ['an2.11','an2.11-20',''],
+      ['dhp204','dhp197-208',''],
       ['dhp273','dhp273-289',''],
       ['dhp274','dhp273-289',''],
+      ['dhp277','dhp273-289',''],
+      ['dhp278','dhp273-289',''],
+      ['dhp279','dhp273-289',''],
+      ['dhp348','dhp334-359',''],
       ['dhp372','dhp360-382',''],
       ['dhp387','dhp383-423',''],
       ['dhp409','dhp383-423',''],
-      ['an2.11','an2.11-20','']
+      ['sn43.20','sn43.14-43',''],
+      ['sn43.22','sn43.14-43','']
     ];
     let fileSlug = '';
     let suttaNo = '';

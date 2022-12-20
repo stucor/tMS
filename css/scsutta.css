@@ -159,6 +159,9 @@ h3 span.pli-lang .segno {
   margin-bottom: 1em;
 }
 
+#sutta p + p {
+  text-indent: 0;
+}
 
 #sutta.hide-pali p span.eng-lang {
   display: inline !important;

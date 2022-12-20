@@ -10,17 +10,9 @@
         "This edition published in **2022** by Wisdom & Wonders is based on the 2018 edition with typographic corrections and sutta reference links to SuttaCentral",
         "54pp (in pdf format).",
         "Copyright © Ajahn Brahmavamso 2018, 2022",
-        "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-SA 4.0)",
-        "You are free to:",
-        "**Share—** copy and redistribute the material in any medium or format",
-        "**Adapt—** remix, transform, and build upon the material",
-        "Under the following terms:",
-        "**Attribution—** You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.",
-        "**NonCommercial—** You may not use the material for commercial purposes.", 
-        "**ShareAlike—** If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.",
-        "**No additional restrictions—** You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.",
-        "For enquiry about the book or Ajahn Brahm, please contact bswa.org"
+        "For enquiry about the book or Ajahn Brahm, please contact [bswa.org]X(https://bswa.org)"
         ],
+    "CCLicense": "BY-NC-SA 4.0",
     "FrontCover": "../_resources/book-data/wosb/FrontLarge.jpg",
     "BackCover": "",
     "BackMatter": []

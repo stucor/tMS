@@ -51,39 +51,253 @@ function shortcode() {
 	return thebook.getAttribute("data-shortcode");
 }
 
-function startup () {
+function buildSettings (_callback) {
+	let parentDiv = document.getElementById('ModalSettings');
+	if (parentDiv.innerHTML == '') {
+		let html = 
+		`
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Font size:</span>
+				<span class="settingsheadersright">
+					<button class="decrease" id ="decfont"></button>
+					<span class="level" id="flvalue"></span>
+					<button class="increase" id ="incfont"></button>
+				</span>
+			</div>
+			<div class="settingsbox">
+			<span class ="settingsheadersleft">Line spacing:</span>
+			<span class="settingsheadersright">
+				<button class="decrease" id ="declh"></button>
+				<span class="level" id="lhvalue"></span>
+				<button class="increase" id ="inclh"></button>
+			</span>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Serif Font:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="serifFont"><span class="slider round"></span></label></span>
+			</div>
+			<div class="settingsbox">			
+				<p class ="settingsheaders">Colour:</p>
+				<div class="radio-toolbar">
+					<input type="radio" id="radioSimple" name="themeRadio" value="simple">
+					<label for="radioSimple">Bright</label>
+				
+					<input type="radio" id="radioSimpleDark" name="themeRadio" value="simpledark">
+					<label for="radioSimpleDark">Dark</label>
+				
+					<input type="radio" id="radioSepia" name="themeRadio" value="sepia">
+					<label for="radioSepia">Mellow</label> 
+				</div>
+			</div>
+			<!--
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Show book pages:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showPageCheck"><span class="slider round"></span></label></span>
+			</div>
+			-->
+			<div class="settingsbox">
+				<p class ="settingsheaders">Margins:</p>
+				<div class="radio-toolbar">
+					<input type="radio" id="radioMargNarrow" name="marginRadio" value="narrowmargin">
+					<label for="radioMargNarrow">
+						<img class = "marginicons" src="../_resources/images/icons/marginwide.svg" alt="Wide Margins">
+					</label>
+					<input type="radio" id="radioMargMid" name="marginRadio" value="midmargin">
+					<label for="radioMargMid">
+						<img class = "marginicons" src="../_resources/images/icons/marginmid.svg" alt="Normal Margins">
+					</label>
+					<input type="radio" id="radioMargWide" name="marginRadio" value="widemargin">
+					<label for="radioMargWide">
+						<img class = "marginicons" src="../_resources/images/icons/marginnarrow.svg" alt="Narrow Margins">
+					</label> 
+				</div>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Justification:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="justifyCheck"><span class="slider round"></span></label></span>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Hyphenation:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="hyphenCheck"><span class="slider round"></span></label></span>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Show Paragraph numbers:</span>
+				<select class = "select-css" id = "showParaNosList">
+					<option> do not show numbers </option>
+					<option> count by whole book </option>
+					<option> count by section </option>
+					<option> count by subsection </option>
+				</select>
+			</div>
+			<div class="settingsbox">
+				<span class ="settingsheadersleft">Full Screen Mode:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="mobileUIAlwaysOnCheck"><span class="slider round"></span></label></span>
+			</div>
+		`;
 
-/*
+		parentDiv.innerHTML = html;
+	}
+	_callback();
+
+}
+
+function startup () {
+	/*
 	console.log("local storage:");
 	for (var i = 0; i < localStorage.length; i++)   {
 		console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
 	}
-*/
-document.getElementById('topbar').style.display='block';
-document.getElementById('thebook').style.display='block';
+	*/
+	
+	buildSettings(function(){
+		//the following is done after buildSettings completes:
+		document.getElementById('topbar').style.display='block';
+		document.getElementById('thebook').style.display='block';
+		hideAllLibNotes();
+		initialiseCommonSettings();
+		if (!isAudioBook()) {
+			initialiseBookSettings ();
+		} 
+		formatbooknotes();
+		var scroller = Math.floor(window.scrollY);
+		history.replaceState({scrollState: scroller},'',''); 
+		history.scrollRestoration = 'manual';
+		if (isAudioBook()) { 
+			initialiseAudioBookSettings();
+			initplayer();
+			document.getElementById('TOCTarget0').style.display='none';
+		}
+		if (isBookShelf()) {
+			initialiseBookShelfSettings ();
+			document.getElementById('TOCTarget0').style.display='none';
+		}
+		mobileUIAlwaysOnCheck.onclick = function () {
+			var wasSidebarOpen = sidebarIsOpen; //check if the sidebar was open as we have to close it and reopen it in mobile mode
+			setFFS();
+			hideSideNav();
+			if (wasSidebarOpen){
+				showElement(theTopBar);
+				theTopBar.style.top = "0";
+				showSideNav();
+			}
+			shadowSearchBar ();
+		}
+		/* SPC Go 
+		showPageCheck.onclick = function () {
+			settingTouched = true;
+			setPageBreak(true);
+			setPageBreakSize(true);
+			restorePlaceInBook();
+		}
+		*/
+		justifyCheck.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doJustifyCheck) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
+		hyphenCheck.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doHyphenCheck) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
 
-	hideAllLibNotes();
-	initialiseCommonSettings();
+		document.getElementById("decfont").onclick = function () { // minus button
+			var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
+			if (fontlevel > 9) {
+				fontlevel = fontlevel -1;
+				settingTouched = true;
+				document.getElementById("flvalue").innerHTML = fontlevel;
+				setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
+				setTOCLevel (fontlevel);
+				restorePlaceInBook();
+			}
+		}
+		
+		document.getElementById("incfont").onclick = function () { //plus button
+			var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
+			if (fontlevel < 32) {
+				fontlevel = fontlevel +1;
+				settingTouched = true;
+				document.getElementById("flvalue").innerHTML = fontlevel;
+				setTOCLevel (fontlevel);
+				setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
+				restorePlaceInBook();
+			}
+		}
 
-	if (!isAudioBook()) {
-		initialiseBookSettings ();
-	} 
-	formatbooknotes();
+		declh.onclick = function () {
+			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
+			if (lhlevel > 1) {
+				lhlevel = lhlevel -0.1;
+				settingTouched = true;
+				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
+				setLH (lhlevel, theTopElement-5, theTopElement+150);
+				restorePlaceInBook();
+			}	
+		}
+		
+		inclh.onclick = function () {
+			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
+			if (lhlevel < 3) {
+				lhlevel = lhlevel + 0.1;
+				settingTouched = true;
+				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
+				setLH (lhlevel, theTopElement-5, theTopElement+150);
+				restorePlaceInBook();
+			}
+		} 
+		
+		radioSimple.onclick = function () {
+			setTheme ();
+		}
+		radioSimpleDark.onclick = function () {
+			setTheme ();
+		}
+		radioSepia.onclick = function () {
+			setTheme ();
+		}
 
-	var scroller = Math.floor(window.scrollY);
-	history.replaceState({scrollState: scroller},'',''); 
-	history.scrollRestoration = 'manual';
+		radioMargNarrow.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doSetMargin) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
+		radioMargMid.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doSetMargin) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
+		radioMargWide.onclick = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doSetMargin) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
+		
+		serifFont.onclick = function () {
+			settingTouched = true;
+			setSerif(theTopElement-2, theTopElement+150);
+			//restorePlaceInBook ();
+		}
+		
+		showParaNosList.onchange = function () {
+			showSpinner(); // show spinner
+			promiseToRunAsync(doParaNosList) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
+		}
 
-	if (isAudioBook()) { 
-		initialiseAudioBookSettings();
-		initplayer();
-		document.getElementById('TOCTarget0').style.display='none';
-	}
-
-	if (isBookShelf()) {
-		initialiseBookShelfSettings ();
-		document.getElementById('TOCTarget0').style.display='none';
-	}
+	});
 }
 
 /* Modal Builders */
@@ -106,7 +320,7 @@ function parseInfoText(infoText) {
 // Populates the Info Modal
 function buildInfo () {
 	let parentDiv = document.getElementById('ModalDetails');
-	let containsSuttaList = false;
+	let longSuttaList = false; // add sort buttons if the list of suttas is long
 	if (parentDiv.innerHTML == '') {
 		let shortCode = shortcode();
 		let html ='';
@@ -118,8 +332,11 @@ function buildInfo () {
 			if (suttarefArr.length  > 0) {
 				html = `<section id="sutta-list" class="infocontainer">`;
 				html += `<h3>Sutta References:</h3>`;
-				html += `<div class="suttasortbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="reflistOrderNo">Book Position</button>`
-				html += `  <button class="sort" data-sort="sclinkref">Sutta Number</button></div>`
+				if (suttarefArr.length  > 7) {
+					longSuttaList = true;
+					html += `<div class="suttasortbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="reflistOrderNo">Book Position</button>`
+					html += `  <button class="sort" data-sort="sclinkref">Sutta Number</button></div>`
+				}
 				html += `<ul id="reflist" class="list">	`
 				for (let i = 0; i < suttarefArr.length; i++) {
 					suttarefArr[i].setAttribute("id", "slt_"+ i);
@@ -127,7 +344,6 @@ function buildInfo () {
 					html += `<li class='reflistitem'>${linktext}</li>`;
 				}
 				html += `</ul></section>`;
-				containsSuttaList = true;
 				return html;
 			}
 		}
@@ -252,12 +468,9 @@ function buildInfo () {
 					copyrightParaCount++;
 				}
 				
-				/*
-				for (i in bookInfoData.Copyright) {
-				html += `<p>${parseInfoText(bookInfoData.Copyright[i])}</p>`;
-				}
-				*/
-				html += `</div></div></section>`;
+			html += bookInfoData.CCLicense;
+
+			html += `</div></div></section>`;
 
 			// BackCover and Back Matter
 			if (bookInfoData.BackCover != "") {
@@ -283,13 +496,15 @@ function buildInfo () {
 			
 			parentDiv.innerHTML = html;
 			
-			if (containsSuttaList) {
+			if (longSuttaList) {
 				var options = {
 					valueNames: [ 'reflistOrderNo', 'sclinkref' ]
 				};
 				var suttaList = new List('sutta-list', options);
 			}
-			
+
+			setTheme();
+		
 		}
 
 		fetch(`../_resources/built-info-data/${shortCode}/info.json`)
@@ -299,6 +514,7 @@ function buildInfo () {
 			console.log(`ERROR: Can't fetch ../_resources/built-info-data/${shortCode}/info.json`);
 			}
 		);
+
 	}
 }
 
@@ -439,6 +655,7 @@ function initialiseBookSettings () {
 	}
 	setSerif(0, savedBookElements.length);
 	//SHOW-PAGES
+	/* SPC Go
 	var local_wiswobooks_showpages = getCookie("wiswobooks_showpages");
 	switch (local_wiswobooks_showpages) {
 		case 'true' :
@@ -454,6 +671,7 @@ function initialiseBookSettings () {
 	}
 	setPageBreak(false);
 	setPageBreakSize();
+	*/
 	//JUSTIFICATION
 	var local_wiswobooks_justification = getCookie("wiswobooks_justification");
 	switch (local_wiswobooks_justification) {
@@ -694,8 +912,10 @@ if (!nuclearOption) {
 		var local_wiswobooks_serif = document.getElementById("serifFont").checked;
 		setCookie('wiswobooks_serif',local_wiswobooks_serif,365);
 		//SHOW-PAGES
+		/* SPC Go
 		var local_wiswobooks_showpages = document.getElementById("showPageCheck").checked;
 		setCookie('wiswobooks_showpages',local_wiswobooks_showpages,365);
+		*/
 		//JUSTIFICATION
 		var local_wiswobooks_justification = document.getElementById("justifyCheck").checked;
 		setCookie('wiswobooks_justification',local_wiswobooks_justification,365);
@@ -797,17 +1017,7 @@ if (!nuclearOption) {
 
 // SETTINGS FUNCTIONS
 
-mobileUIAlwaysOnCheck.onclick = function () {
-	var wasSidebarOpen = sidebarIsOpen; //check if the sidebar was open as we have to close it and reopen it in mobile mode
-	setFFS();
-	hideSideNav();
-	if (wasSidebarOpen){
-		showElement(theTopBar);
-		theTopBar.style.top = "0";
-		showSideNav();
-	}
-	shadowSearchBar ();
-}
+
 
 function setFFS () {
 	var ffsCheck = document.getElementById("mobileUIAlwaysOnCheck");
@@ -818,13 +1028,7 @@ function setFFS () {
     }	
 }
 
-showPageCheck.onclick = function () {
-	settingTouched = true;
-	setPageBreak(true);
-	setPageBreakSize(true);
-	restorePlaceInBook();
-	//fillProgressBar();
-}
+
 
 function buildpageBreak(e) {
 	var thepagenumber = e.getAttribute("data-page");
@@ -835,6 +1039,7 @@ function buildpageBreak(e) {
 	e.innerHTML = wordcut + "<div class=pagenumber>"+affect+" " + thepagenumber + " "+affect+"</div><hr class='pagebreak'>";
 }
 
+/* SPC Go
 function setPageBreak (islocal) {
 		var elems = document.getElementsByClassName("pageno");
 		var pageCheck = document.getElementById("showPageCheck");
@@ -902,7 +1107,7 @@ function setPageBreakSize(islocal = false) {
 	}
 }
 
-
+*/
 
 // JUSTIFICATION
 
@@ -924,13 +1129,7 @@ function doJustifyCheck () {
 	//fillProgressBar();
 }
 
-justifyCheck.onclick = function () {
-	showSpinner(); // show spinner
-	promiseToRunAsync(doJustifyCheck) // execute anync
-	.then(() => {
-		hideSpinner();
-	});
-}
+
 
 // HYPHENATION
 
@@ -950,13 +1149,7 @@ function setHyphenation () {
     }	
 }
 
-hyphenCheck.onclick = function () {
-	showSpinner(); // show spinner
-	promiseToRunAsync(doHyphenCheck) // execute anync
-	.then(() => {
-		hideSpinner();
-	});
-}
+
 
 
 
@@ -981,7 +1174,9 @@ function setFontLevel (level, start, end) {
 			};
 				break;
 			case 'SPAN':
+				/* SPC Go
 				if (savedBookElements[i].className == 'pageno') {savedBookElements[i].style.fontSize = (level)+'px';}
+				*/
 				if (savedBookElements[i].className == 'chapnum') {savedBookElements[i].style.fontSize = (level*1.3)+'px';}
 				break;
 			case 'H1' :
@@ -1045,29 +1240,7 @@ function setNotesLevel (level) {
 	}
 }	
 
-document.getElementById("decfont").onclick = function () { // minus button
-	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-	if (fontlevel > 9) {
-		fontlevel = fontlevel -1;
-		settingTouched = true;
-		document.getElementById("flvalue").innerHTML = fontlevel;
-		setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
-		setTOCLevel (fontlevel);
-		restorePlaceInBook();
-	}
-}
 
-document.getElementById("incfont").onclick = function () { //plus button
-	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-	if (fontlevel < 32) {
-		fontlevel = fontlevel +1;
-		settingTouched = true;
-		document.getElementById("flvalue").innerHTML = fontlevel;
-		setTOCLevel (fontlevel);
-		setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
-		restorePlaceInBook();
-	}
-}
 
 // LINE SPACING
 
@@ -1087,41 +1260,13 @@ function setLH (level, start, end) {
 	}	
 }
 
-declh.onclick = function () {
-	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-	if (lhlevel > 1) {
-		lhlevel = lhlevel -0.1;
-		settingTouched = true;
-		document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-		setLH (lhlevel, theTopElement-5, theTopElement+150);
-		restorePlaceInBook();
-	}	
-}
 
-inclh.onclick = function () {
-	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-	if (lhlevel < 3) {
-		lhlevel = lhlevel + 0.1;
-		settingTouched = true;
-		document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-		setLH (lhlevel, theTopElement-5, theTopElement+150);
-		restorePlaceInBook();
-	}
-} 
 
   
 
 //THEMES
 
-radioSimple.onclick = function () {
-	setTheme ();
-}
-radioSimpleDark.onclick = function () {
-	setTheme ();
-}
-radioSepia.onclick = function () {
-	setTheme ();
-}
+
 function setTheme(){
 
 	var whatIsPressed = document.querySelector('input[name="themeRadio"]:checked').value;
@@ -1295,7 +1440,7 @@ function setTheme(){
 
 		case "simpledark":
 			for( var i = 0; i < imgs.length; i++ ) {
-				imgs[i].style.filter="brightness(.8) contrast(1.2) grayscale(60%)";
+				imgs[i].style.filter="brightness(.8) contrast(1.2) grayscale(10%)";
 			}
 			for( var i = 0; i < righticons.length; i++ ) {
 				righticons[i].style.filter="invert(75%)";
@@ -1393,7 +1538,7 @@ function setTheme(){
 				sni.style.filter="invert(75%)";
 			}
 
-			r.style.setProperty('--primarytextcolor', 'darkblue');
+			r.style.setProperty('--primarytextcolor', '#d7d7d7');
 			r.style.setProperty('--secondarytextcolor', '#c4cdda');
 			r.style.setProperty('--primarybackground', '#121212');
 
@@ -1423,7 +1568,6 @@ function setTheme(){
 		  	break;
 
 		case "sepia":
-
 
 			for( var i = 0; i < imgs.length; i++ ) {
 				imgs[i].style.filter="brightness(1) contrast(1) sepia(40%) grayscale(10%)";
@@ -1575,31 +1719,11 @@ function setTheme(){
 function doSetMargin () {
 	setMargin();
 	restorePlaceInBook();
+	/*
 	setPageBreak(true);
 	setPageBreakSize(true);
+	*/
 }	
-
-radioMargNarrow.onclick = function () {
-    showSpinner(); // show spinner
-    promiseToRunAsync(doSetMargin) // execute anync
-    .then(() => {
-        hideSpinner();
-	});
-}
-radioMargMid.onclick = function () {
-    showSpinner(); // show spinner
-    promiseToRunAsync(doSetMargin) // execute anync
-    .then(() => {
-        hideSpinner();
-	});
-}
-radioMargWide.onclick = function () {
-    showSpinner(); // show spinner
-    promiseToRunAsync(doSetMargin) // execute anync
-    .then(() => {
-        hideSpinner();
-	});
-}
 
 function setMargin() {
 	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
@@ -1623,11 +1747,6 @@ function setMargin() {
 		}
 }
 
-serifFont.onclick = function () {
-	settingTouched = true;
-	setSerif(theTopElement-2, theTopElement+150);
-	//restorePlaceInBook ();
-}
 
 function setSerif (start, end) {
 	if (start < 0) {start = 0}
@@ -1653,14 +1772,6 @@ function doParaNosList () {
 	setParaNumbers();
 	//fillProgressBar();
 }	
-
-showParaNosList.onchange = function () {
-    showSpinner(); // show spinner
-    promiseToRunAsync(doParaNosList) // execute anync
-    .then(() => {
-        hideSpinner();
-	});
-}
 
 function setParaNumbers () {
 	var ParaNosList = document.getElementById("showParaNosList");
@@ -1759,15 +1870,19 @@ function scrollToID (id) {
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
 	var elmnt = document.getElementById(id);
-	let parentElmnt = elmnt.parentElement;
-	if (parentElmnt.classList.contains('booknote')) {
+	let noteElmnt = '';
+	if (elmnt.parentElement.classList.contains('booknote')){
+		noteElmnt = elmnt.parentElement;
+	} else if (elmnt.parentElement.parentElement.classList.contains('booknote')) {
+		noteElmnt = elmnt.parentElement.parentElement;
+	}
+	if (noteElmnt) {
 		setModalStyle ("Notes");
 		showModal("Notes");
 		savedsup = elmnt;
 		clearhighlightnote();
-		highlightnote(parentElmnt.dataset.note); 
+		highlightnote(noteElmnt.dataset.note); 
 		stopBookScroll ();
-
 	} else {
 		elmnt.scrollIntoView({block: 'start', behavior: 'auto',});
 		window.scrollBy(0, -150);
@@ -1850,18 +1965,20 @@ window.onscroll = function() {
 	//savePlaceInBook();
 }
 
-
+/* SPC Go
 function afterResize() {
 	setPageBreak(false);
 	setPageBreakSize();
 }
 
 var doit;
-
+*/
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
+	/* SPC Go
 	clearTimeout(doit);
 	doit = setTimeout(afterResize, 100);
+	*/
 });
 
 var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");
@@ -2109,8 +2226,8 @@ function setModalTheme (theme) {
 			modalbody.style.background = "#fcfcfc";
 			modalbody.style.backgroundImage = 'unset';
 			modalbody.style.color = "#000";
-			settingsadv.style.background = "white";
-			settingsadv.style.borderTopColor ="#000";
+			//settingsadv.style.background = "white";
+			//settingsadv.style.borderTopColor ="#000";
 			modalbody.classList.add('bright-scroll');
 			modalbody.classList.add('bright-scroll-track');
 			modalbody.classList.add('bright-scroll-thumb');
@@ -2129,8 +2246,8 @@ function setModalTheme (theme) {
 			modalbody.style.background = "#292929";
 			modalbody.style.backgroundImage = 'unset';
 			modalbody.style.color = "#f7f7f7";
-			settingsadv.style.background = "#121212";
-			settingsadv.style.borderTopColor ="#f7f7f7";
+			//settingsadv.style.background = "#121212";
+			//settingsadv.style.borderTopColor ="#f7f7f7";
 			modalbody.classList.remove('bright-scroll');
 			modalbody.classList.remove('bright-scroll-track');
 			modalbody.classList.remove('bright-scroll-thumb');
@@ -2149,8 +2266,8 @@ function setModalTheme (theme) {
 			modalbody.style.background = "#f5efd0";
 			modalbody.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';
 			modalbody.style.color = "#00008b";
-			settingsadv.style.background = "#f5efd0";
-			settingsadv.style.borderTopColor ="#00008b";
+			//settingsadv.style.background = "#f5efd0";
+			//settingsadv.style.borderTopColor ="#00008b";
 			modalbody.classList.remove('bright-scroll');
 			modalbody.classList.remove('bright-scroll-track');
 			modalbody.classList.remove('bright-scroll-thumb');
@@ -2335,6 +2452,19 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		}	
 	}
 
+	if (e.target.classList.contains ('expander')) {
+		var fullReference = getFullReference(e.target.dataset.reference);
+		if (e.target.classList.contains('expanded')) {
+			e.target.innerHTML = '⟹';
+			e.target.classList.remove('expanded');
+
+		} else {
+			e.target.innerHTML = '⟸ ' + '<span class="expansion">' + fullReference + '</span>';
+			e.target.classList.add('expanded');
+
+		}
+	}
+
 	if (e.target.classList.contains('sclinktext')) {
 		displaySutta(e.target.innerHTML);
 		savedsup = e.target;
@@ -2347,6 +2477,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				if (true) {e.preventDefault();}
 		}
 	}
+
 });
 
 
@@ -2367,12 +2498,27 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	}
 
 	if (e.target.className == "sclinkref") {
-		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","")
+		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","");
 		scrollToID(gotoID);
 	}
+
 	if (e.target.className == "lotlinkref") {
-		var gotoID = 'lot_' + e.target.id.replace("lotlinkfrom_","")
+		var gotoID = 'lot_' + e.target.id.replace("lotlinkfrom_","");
 		scrollToID(gotoID);
+	}
+
+	if (e.target.classList.contains ('expander')) {
+		var ccDetail = document.getElementById('ccDetail');
+		if (e.target.classList.contains('expanded')) {
+			e.target.innerHTML = '⟹';
+			e.target.classList.remove('expanded');
+			ccDetail.classList.add('noshow');
+		} else {
+			e.target.innerHTML = '⟸ '; 
+			e.target.classList.add('expanded');
+			ccDetail.classList.remove('noshow');
+
+		}
 	}
 
 });
@@ -2391,7 +2537,7 @@ function showAlert(HTMLToShow) {
 var savedsup = '';
 function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
 	for (var i = 1; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].innerHTML = "<span style='font-weight: bold;'>" + (i) + ": </span> " + savedNotesElements[i].innerHTML;
+		savedNotesElements[i].innerHTML = "<span class='booknotesNumbers'>" + (i) + ": </span> " + savedNotesElements[i].innerHTML;
 	}
 }
 var highlightedNote = 0;
@@ -2434,9 +2580,10 @@ function reformatBook () {
 	setLH (lhlevel, 0, savedBookElements.length);
 
 	setSerif (0, savedBookElements.length);
-
+	/* SPC Go
 	setPageBreak(false); 
 	setPageBreakSize();
+	*/
 }
 
 
@@ -2615,11 +2762,11 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '►';
+			e.target.innerHTML = '⟹';
 			e.target.classList.remove('expanded');
 
 		} else {
-			e.target.innerHTML = '◄ ' + '<span class="expansion">' + fullReference + '</span>';
+			e.target.innerHTML = '⟸ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
 
 		}

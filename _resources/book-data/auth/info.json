@@ -4,11 +4,10 @@
     "BookSubtitle"  :"",
     "AddInfo"   : [],
     "Copyright" : ["Originally published in **2014**. \nThis edition published in **2022**.\n158pp (in pdf format).",
-        "First BPS edition: 2014 \nCopyright (©) 2014, Bhikkhu Sujāto and Bhikkhu Brahmāli \nCreative Commons Zero (CC0 1.0 Universal)",
-        "The authors have dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.",
-        "You can copy, modify, distribute and perform the work without asking permission.",
+        "First BPS edition: 2014 \nCopyright (©) 2014, Bhikkhu Sujāto and Bhikkhu Brahmāli",
         "This edition is based on the 2014 BPS edition with minor reference changes and link updates."
         ],
+    "CCLicense": "CC0 1.0",
     "FrontCover": "../_resources/book-data/auth/FrontLarge.jpg",
     "BackCover": "",
     "BackMatter": []

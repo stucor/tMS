@@ -396,9 +396,12 @@ outline: none;
 
 
 @media (hover: hover) {
+	/*
 	.booklist > li > a:hover { 
 		background-color: var(--listlinkhover);
 	}
+	*/
+
 	.audiobooktag:hover::before {
 		content: '🔊 AudioBook';
 		padding-right:5px;
@@ -421,9 +424,12 @@ outline: none;
 }
 
 @media (hover: none) {
+	/*
 	.booklist > li > a:hover { 
 		background-color: var(--invisiblecolor);
 	}
+	*/
+	
 	.audiobooktag:hover::before {
 		content: '🔊';
 	}

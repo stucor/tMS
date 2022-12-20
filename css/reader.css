@@ -1010,7 +1010,7 @@ sup {
 
 .downloads img {
 	background-color: #f1f1f1;
-	width: 60px; 
+	width: 30px; 
 	height: auto;
 	padding:10px;
 	margin:5px;
@@ -1310,13 +1310,13 @@ span.level {
 
 
 .unavailable {
-    background: rgba(255, 255, 255, 0);
+    background: rgba(0, 0, 0, 0);
 	pointer-events: none;
     position: relative;
 	filter: grayscale(100%) opacity(20%);
 }
 
-
+/*
 .unavailable:before {
     content: 'Unavailable';
 	font-weight: 700;
@@ -1326,6 +1326,7 @@ span.level {
     position: absolute;
 	z-index: 1;
 }
+*/
 
 .refpdf:after {
 	content: ' pdf';

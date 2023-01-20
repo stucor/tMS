@@ -206,6 +206,10 @@ header li .segno {
 	margin: -0.3em;
 }
 
+.citeBQ > .sclinktext {
+  font-size: smaller;
+}
+
 #sc-translator {
   text-align: right;
   font-style: italic;

@@ -1367,7 +1367,7 @@ function setTheme(){
 
 			searchBar.style.background = "#fff";
 			searchBar.style.color = "#000";
-//			searchBar.style.borderColor = "#000";
+			searchBar.style.borderColor = "#000";
 
 			searchInput.style.background = "#fff";
 			searchInput.style.color = "#000";
@@ -1498,7 +1498,7 @@ function setTheme(){
 
 			searchBar.style.background = "#121212";
 			searchBar.style.color = "#cfcfcf";
-//			searchBar.style.borderColor = "#cfcfcf";
+			searchBar.style.borderColor = "#cfcfcf";
 
 			searchInput.style.background = "#121212";
 			searchInput.style.color = "#cfcfcf";
@@ -1633,7 +1633,7 @@ function setTheme(){
 
 			searchBar.style.background = "#f5efd0";
 			searchBar.style.color = "#00008b";
-//			searchBar.style.borderColor = "#00008b";
+			searchBar.style.borderColor = "#00008b";
 
 			searchInput.style.background = "#f5efd0";
 			searchInput.style.color = "#00008b";
@@ -1681,7 +1681,7 @@ function setTheme(){
 
 			r.style.setProperty('--TOCprogress', '#eadbbf');
 			r.style.setProperty('--TOChighlighter', '#eadbbf');
-			r.style.setProperty('--primarytextcolor', '#000');
+			r.style.setProperty('--primarytextcolor', '#382500');
 			r.style.setProperty('--secondarytextcolor', '#5c0909');
 			r.style.setProperty('--primarybackground', '#f8f4da');
 
@@ -2222,12 +2222,7 @@ function setModalTheme (theme) {
 			modalheader.style.background = "white";
 			modalheader.style.color = "black";
 			closebtn.style.color = "black";
-			//modalheadertext.innerHTML = heading;
-			modalbody.style.background = "#fcfcfc";
 			modalbody.style.backgroundImage = 'unset';
-			modalbody.style.color = "#000";
-			//settingsadv.style.background = "white";
-			//settingsadv.style.borderTopColor ="#000";
 			modalbody.classList.add('bright-scroll');
 			modalbody.classList.add('bright-scroll-track');
 			modalbody.classList.add('bright-scroll-thumb');
@@ -2242,12 +2237,7 @@ function setModalTheme (theme) {
 			modalheader.style.background = "#121212";
 			modalheader.style.color = "#f7f7f7";
 			closebtn.style.color = "#f7f7f7";
-			//modalheadertext.innerHTML = heading;
-			modalbody.style.background = "#292929";
 			modalbody.style.backgroundImage = 'unset';
-			modalbody.style.color = "#f7f7f7";
-			//settingsadv.style.background = "#121212";
-			//settingsadv.style.borderTopColor ="#f7f7f7";
 			modalbody.classList.remove('bright-scroll');
 			modalbody.classList.remove('bright-scroll-track');
 			modalbody.classList.remove('bright-scroll-thumb');
@@ -2262,12 +2252,7 @@ function setModalTheme (theme) {
 			modalheader.style.background = "#f5efd0";
 			modalheader.style.color = "#00008b";
 			closebtn.style.color = "#00008b";
-			//modalheadertext.innerHTML = heading;
-			modalbody.style.background = "#f5efd0";
 			modalbody.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';
-			modalbody.style.color = "#00008b";
-			//settingsadv.style.background = "#f5efd0";
-			//settingsadv.style.borderTopColor ="#00008b";
 			modalbody.classList.remove('bright-scroll');
 			modalbody.classList.remove('bright-scroll-track');
 			modalbody.classList.remove('bright-scroll-thumb');
@@ -2455,11 +2440,11 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⟹';
+			e.target.innerHTML = '⊕';
 			e.target.classList.remove('expanded');
 
 		} else {
-			e.target.innerHTML = '⟸ ' + '<span class="expansion">' + fullReference + '</span>';
+			e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
 
 		}
@@ -2510,11 +2495,11 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var ccDetail = document.getElementById('ccDetail');
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⟹';
+			e.target.innerHTML = '⊕';
 			e.target.classList.remove('expanded');
 			ccDetail.classList.add('noshow');
 		} else {
-			e.target.innerHTML = '⟸ '; 
+			e.target.innerHTML = '⊗ '; 
 			e.target.classList.add('expanded');
 			ccDetail.classList.remove('noshow');
 
@@ -2762,11 +2747,11 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⟹';
+			e.target.innerHTML = '⊕';
 			e.target.classList.remove('expanded');
 
 		} else {
-			e.target.innerHTML = '⟸ ' + '<span class="expansion">' + fullReference + '</span>';
+			e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
 
 		}

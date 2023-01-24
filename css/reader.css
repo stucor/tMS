@@ -522,6 +522,10 @@ blockquote {
 	margin: 2em 0;
 }
 
+.hangleft {
+	text-indent: -0.5em;
+}
+
 .suttaref, .TOCref {
 	color:cornflowerblue;
 	cursor:pointer;

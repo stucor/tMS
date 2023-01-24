@@ -2450,9 +2450,13 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		}
 	}
 
-	if (e.target.classList.contains('sclinktext')) {
-		displaySutta(e.target.innerHTML);
-		savedsup = e.target;
+	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
+		let linkNode = e.target;
+		if (e.target.classList.contains('scsegments')) {
+			linkNode = e.target.parentNode;
+		}
+		displaySutta(linkNode.innerText);
+		savedsup = linkNode;
 		if (true) {e.preventDefault();}
 	}
 
@@ -2763,9 +2767,13 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		goToTOCTarget(toctarget);
 	}
 
-	if (e.target.classList.contains('sclinktext')) {
+	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
 		calledFromNotes = true;
-		displaySutta( e.target.innerHTML);
+		let linkNode = e.target;
+		if (e.target.classList.contains('scsegments')) {
+			linkNode = e.target.parentNode;
+		}
+		displaySutta(linkNode.innerText);
 		restorePlaceInBook();
 		if (true) {e.preventDefault();}
 	}

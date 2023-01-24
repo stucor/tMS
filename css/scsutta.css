@@ -206,8 +206,16 @@ header li .segno {
 	margin: -0.3em;
 }
 
+
+/*
 .citeBQ > .sclinktext {
   font-size: smaller;
+}
+*/
+
+.scsegments {
+  font-size: smaller;
+
 }
 
 #sc-translator {

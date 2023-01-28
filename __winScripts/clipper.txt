@@ -1,0 +1,12 @@
+SUTTA
+ (<span class="sclinktext">DN&#8239;NUM:FROM –TO</span>)
+
+EXTERNAL
+ (<a class="extlink tipref" href="XXX">BOOK&#8239;NUM</a>)
+
+
+BIBLIO EXPANDER
+<span class="expander" data-reference="XXX">⊕</span>
+
+BIBLIO BOOK
+<a class="refpdf" href="../_resources/book-reference-pdfs/XXX.pdf"></a>

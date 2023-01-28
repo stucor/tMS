@@ -207,11 +207,12 @@ header li .segno {
 }
 
 
-/*
-.citeBQ > .sclinktext {
+
+
+.citeBQ > .sclinktext, .citeBQ > .tipref, .cite > .sclinktext {
   font-size: smaller;
 }
-*/
+
 
 .scsegments {
   font-size: smaller;

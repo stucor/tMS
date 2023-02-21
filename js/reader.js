@@ -2526,14 +2526,14 @@ function showAlert(HTMLToShow) {
 var savedsup = '';
 function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
 	for (var i = 1; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].innerHTML = "<span class='booknotesNumbers'>" + (i) + ": </span> " + savedNotesElements[i].innerHTML;
+		savedNotesElements[i].innerHTML = "<div class='booknotesNumber'>" + (i) + "</div> <div class='booknotesText'>" + savedNotesElements[i].innerHTML +"</div>";
 	}
 }
 var highlightedNote = 0;
 function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
-	savedNotesElements[highlightedNote].style.border = "3px solid grey";
-	savedNotesElements[highlightedNote].style.background = "#c0c0c030";
+	savedNotesElements[highlightedNote].style.border = "thin solid grey";
+	savedNotesElements[highlightedNote].style.background = "#c0c0c020";
 	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
 	ModalBody.scrollBy(0,-40);
 }

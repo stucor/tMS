@@ -755,10 +755,26 @@ table.borderlessTable {
 	margin-bottom: 0;
 }
 
+/*
 .booknotesNumbers {
-	display:inline;
 	font-weight: bold;
 }
+*/
+.booknotesNumber {
+    float: left;
+	clear:left;
+    width: 2rem;
+    text-align: left;
+    font-weight: bold;
+	margin: 0;
+	padding:0;
+}
+
+.booknotesText {
+	margin: 0 0 0 3rem;
+}
+
+
 /*
 .booknote a {
 	color:cornflowerblue;
@@ -2309,6 +2325,22 @@ font-variant: small-caps;
 	.booknote {
 		margin: 10px 1%;
 	}
+
+	.booknotesNumber {
+		display:inline;
+		float: unset;
+		clear:unset;
+
+	}
+	.booknotesNumber::after {
+		content:':';
+	}
+	
+	.booknotesText {
+		display:inline;
+		margin: 0;
+	}
+
 
 
 }

@@ -618,20 +618,7 @@ th {
 	text-align: center;
 	background-color: var(--tablehead);
 }
-/*
-table sup {
-	color: unset;
-	font-weight: unset;
-	line-height: unset;
-	padding: unset;
-	margin: unset;
-	cursor: unset;
-}
-td sup:hover {
-	border-radius: unset;
-	box-shadow: unset;
-}
-*/
+
 tfoot tr td {
 	border: 0;
 	background-color: var(--tablefoot);

@@ -994,6 +994,8 @@ sup {
 	min-height:1.7em;
 	height:1.7em;
 	border: 2px solid darkgray;
+	background-color: rgba(169, 169, 169, 0.250);
+	color: var(--buttontext);
 	border-radius: 10px;
 	line-height: 0;
 	padding-top: 0.2em;

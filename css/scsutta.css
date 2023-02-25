@@ -208,15 +208,15 @@ header li .segno {
 
 
 
-
+/*
 .citeBQ > .sclinktext, .citeBQ > .tipref, .cite > .sclinktext {
   font-size: smaller;
 }
+*/
 
-
-.scsegments {
+.scsegments, .tipsegments {
   font-size: smaller;
-
+  color: var(--scsegmentnumbercolor);
 }
 
 #sc-translator {

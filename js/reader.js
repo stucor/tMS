@@ -141,6 +141,24 @@ function buildSettings (_callback) {
 
 }
 
+function formatSCLinktext () {
+	allSCLinktexts = document.querySelectorAll('.sclinktext, .tipref');
+
+	for (var i = 0; i < allSCLinktexts.length; i++) {
+		let [before,after] = allSCLinktexts[i].innerHTML.split(":");
+		if (typeof after !== "undefined") {
+			if (allSCLinktexts[i].classList.contains('tipref')) {
+				allSCLinktexts[i].innerHTML = before + "<span class='tipsegments'>:" + after +"</span>"
+			} else {
+				allSCLinktexts[i].innerHTML = before + "<span class='scsegments'>:" + after +"</span>"
+			}
+		}
+	}
+
+
+}
+
+
 function startup () {
 	/*
 	console.log("local storage:");
@@ -159,6 +177,7 @@ function startup () {
 			initialiseBookSettings ();
 		} 
 		formatbooknotes();
+		formatSCLinktext();
 		var scroller = Math.floor(window.scrollY);
 		history.replaceState({scrollState: scroller},'',''); 
 		history.scrollRestoration = 'manual';
@@ -2486,8 +2505,12 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 		goToTOCTarget(toctarget);
 	}
 
-	if (e.target.className == "sclinkref") {
-		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","");
+	if ((e.target.className == "sclinkref") || (e.target.className == "scsegments")) {
+		let linkNode = e.target;
+		if (e.target.classList.contains('scsegments')) {
+			linkNode = e.target.parentNode;
+		}
+		var gotoID = 'slt_' + linkNode.id.replace("screflinkfrom_","");
 		scrollToID(gotoID);
 	}
 
@@ -2723,14 +2746,14 @@ function isElementPartiallyInViewport(el)
 
 
 function getFullReference (shortReference = '') {
-
-	var references = document.getElementById('references');
-	var referenceChildren = references.children;
-
-	for (let i = 0; i < references.children.length; i++) {
-		if (references.children[i].tagName == 'DT') {
-			if (references.children[i].innerHTML == shortReference) {
-				return references.children[i].nextElementSibling.innerHTML;
+	var references = document.querySelectorAll('.references');
+	for( let i=0; i < references.length; i++) {
+		referenceLists = references[i].childNodes
+		for (let j = 0; j < referenceLists.length; j++) {
+			if (referenceLists[j].tagName == 'DT') {
+				if (referenceLists[j].innerHTML == shortReference) {
+					return referenceLists[j].nextElementSibling.innerHTML;
+				}
 			}
 		}
 	}

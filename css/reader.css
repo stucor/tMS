@@ -1681,8 +1681,8 @@ mark.current {
 	text-decoration: none;
     display: block;
 	cursor: pointer;
-font-weight: 400;
-font-variant: small-caps;
+	font-weight: 400;
+	font-variant: small-caps;
 }
 
 
@@ -1716,7 +1716,6 @@ font-variant: small-caps;
 	font-style: italic;
 	font-variant: normal;
 	padding-top:0;
-
 }
 /*
 .sidenav li.subsub::before {
@@ -1733,6 +1732,7 @@ font-variant: small-caps;
 .tocno {
 	font-variant: small-caps;
 	font-weight: 600 !important;
+	color:green !important;
 }
 
 #TOC {

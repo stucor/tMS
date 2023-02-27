@@ -552,6 +552,7 @@ var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
 var savedNotesElements = ModalNotes.querySelectorAll('h2, div');
 
+
 var theTopBar = document.getElementById("topbar");
 
 function hideAllLibNotes () {
@@ -1932,15 +1933,20 @@ function scrollToID (id) {
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
 
-function goToTOCTarget (toctarget) {
+function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given either an ID or an Element
 	var scroller = Math.floor(window.scrollY);
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
-	var elmnt = document.getElementById(toctarget);
+	var elmnt;
+	if (IDOrElement == 'ID') {
+		elmnt = document.getElementById(target);
+	} else if (IDOrElement == 'ELEMENT'){
+		elmnt = target;
+	}
 	elmnt.scrollIntoView();
 	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
-	window.scrollBy(0, tbHeight); // scroll the toctarget below the topnav bar so you can see it
+	window.scrollBy(0, tbHeight); // scroll the target below the topnav bar so you can see it
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
@@ -1970,7 +1976,7 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 			if (!(e.target.classList.contains('notTOC'))) { // if there isn't a class notTOC on the li
 				var tocNumber = e.target.id.replace("TOC", "");
 				var toctarget = "TOCTarget" + tocNumber;
-				goToTOCTarget(toctarget);
+				goToTarget(toctarget);
 			}
 		}
 	}
@@ -2463,7 +2469,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				var tocNumber = e.target.id.substring(3);
 				toctarget = "TOCTarget" + tocNumber;
 			}
-			goToTOCTarget(toctarget);
+			goToTarget(toctarget);
 			if (true) {e.preventDefault();}
 		} else {	
 			savedsup = e.target;
@@ -2521,7 +2527,7 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 		var tocNumber = e.target.id.replace("TOC", "");
 		var toctarget = "TOCTarget" + tocNumber;
 		doCloseModal();
-		goToTOCTarget(toctarget);
+		goToTarget(toctarget);
 	}
 
 	if ((e.target.className == "sclinkref") || (e.target.className == "scsegments")) {
@@ -2789,6 +2795,9 @@ function doOutAppHREF (href) {
 		}
 }
 
+
+var savedSUPElements = thebook.querySelectorAll('sup');
+
 document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
@@ -2806,7 +2815,7 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('TOCref')) {
 		var toctarget = e.target.getAttribute("data-TOCref");
 		closebtn.click();
-		goToTOCTarget(toctarget);
+		goToTarget(toctarget);
 	}
 
 	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
@@ -2818,6 +2827,18 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		displaySutta(linkNode.innerText);
 		restorePlaceInBook();
 		if (true) {e.preventDefault();}
+	}
+
+	if (e.target.classList.contains ('booknotesNumber')) {
+		var supnumber = e.target.innerHTML;
+		for (let i=0; i < savedSUPElements.length; i++) {
+			if (supnumber == savedSUPElements[i].innerHTML) {
+				console.log(savedSUPElements[i].innerHTML);
+				savedsup = savedSUPElements[i];
+				closebtn.click();
+			}
+		}
+		goToTarget(savedsup, 'ELEMENT');
 	}
 
 	if (e.target.nodeName == 'A') {

@@ -742,17 +742,15 @@ table.borderlessTable {
 	margin-bottom: 0;
 }
 
-/*
-.booknotesNumbers {
-	font-weight: bold;
-}
-*/
+
 .booknotesNumber {
     float: left;
 	clear:left;
     width: 2rem;
     text-align: left;
     font-weight: bold;
+	color:cornflowerblue;
+	cursor: pointer;
 	margin: 0;
 	padding:0;
 }

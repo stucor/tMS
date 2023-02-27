@@ -2831,14 +2831,17 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 
 	if (e.target.classList.contains ('booknotesNumber')) {
 		var supnumber = e.target.innerHTML;
-		for (let i=0; i < savedSUPElements.length; i++) {
-			if (supnumber == savedSUPElements[i].innerHTML) {
-				console.log(savedSUPElements[i].innerHTML);
-				savedsup = savedSUPElements[i];
-				closebtn.click();
+		if (supnumber == savedsup.innerHTML) {
+			closebtn.click();
+		} else {
+			for (let i=0; i < savedSUPElements.length; i++) {
+				if (supnumber == savedSUPElements[i].innerHTML) {
+					savedsup = savedSUPElements[i];
+					closebtn.click();
+				}
 			}
+			goToTarget(savedsup, 'ELEMENT');
 		}
-		goToTarget(savedsup, 'ELEMENT');
 	}
 
 	if (e.target.nodeName == 'A') {

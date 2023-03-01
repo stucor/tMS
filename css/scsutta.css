@@ -215,7 +215,7 @@ header li .segno {
 */
 
 .scsegments, .tipsegments {
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-weight: 600;
   color: var(--scsegmentnumbercolor);
 }
@@ -241,7 +241,7 @@ header li .segno {
   font-weight: 600;
   color: var(--scsegmentnumbercolor);
   position:relative;
-  top: 0.5em;
+  top: 0.2em;
 }
 
 #sutta .gatha, .uddanagatha {

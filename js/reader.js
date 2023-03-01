@@ -1460,7 +1460,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#c9d5fc');
 			r.style.setProperty('--primarycolor', '#06036ea0');
 			r.style.setProperty('--listlinkhover', '#d5dcfd60');
-			r.style.setProperty('--bdtexthighlighter', '#e0f4fb');//'#eef0fb');
+			r.style.setProperty('--bdtexthighlighter', '#e0f4fb80');//'#eef0fb');
 
 			r.style.setProperty('--tablecaption', '#dadada');
 			r.style.setProperty('--tablehead', '#c9c9c9');
@@ -1468,7 +1468,7 @@ function setTheme(){
 			r.style.setProperty('--tableeven', '#e1e1e1');
 			r.style.setProperty('--tablefoot', '#ececec');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#000000e0');
+			r.style.setProperty('--scsegmentnumbercolor', '#a5670a');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
@@ -1589,7 +1589,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#475f7a');
 			r.style.setProperty('--primarycolor', '#667b9e');
 			r.style.setProperty('--listlinkhover', '#9db4ff40');
-			r.style.setProperty('--bdtexthighlighter', '#484c5e');
+			r.style.setProperty('--bdtexthighlighter', '#484c5ee0');
 
 			r.style.setProperty('--tablecaption', '#252525');
 			r.style.setProperty('--tablehead', '#363636');
@@ -1597,7 +1597,7 @@ function setTheme(){
 			r.style.setProperty('--tableeven', '#1e1e1e');
 			r.style.setProperty('--tablefoot', '#131313');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#d7d7d7e0');
+			r.style.setProperty('--scsegmentnumbercolor', '#a5670ae0');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#7c7c7c';
@@ -1738,7 +1738,7 @@ function setTheme(){
 			r.style.setProperty('--tableeven', '#f9f4d5');
 			r.style.setProperty('--tablefoot', '#f9f9df');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#382500e0');
+			r.style.setProperty('--scsegmentnumbercolor', '#a5670a');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';

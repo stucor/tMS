@@ -795,6 +795,7 @@ dd > p {
 }
 */
 
+
 dd {
 	margin-top: 0;
 	margin-bottom: 1em;
@@ -813,11 +814,14 @@ dd > ol > li {
 	margin-bottom: 0 !important;
 }
 
-
-
-
 /*
-.booknote a::after, #references a::after, 
+.references > dt {
+	display: none;
+}
+
+.references > dd {
+	margin-left: 0;
+}
 */
 
 
@@ -1594,7 +1598,6 @@ mark.current {
 	white-space: nowrap;
 	width: calc(100vw - 246px);
 }
-
 
 
 .topnav2buttons {

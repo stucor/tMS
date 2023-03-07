@@ -1460,7 +1460,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#c9d5fc');
 			r.style.setProperty('--primarycolor', '#06036ea0');
 			r.style.setProperty('--listlinkhover', '#d5dcfd60');
-			r.style.setProperty('--bdtexthighlighter', '#e0f4fb80');//'#eef0fb');
+			r.style.setProperty('--bdtexthighlighter', '#e0f4fbb0');//'#eef0fb');
 
 			r.style.setProperty('--tablecaption', '#dadada');
 			r.style.setProperty('--tablehead', '#c9c9c9');
@@ -1730,7 +1730,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#ecd38d');
 			r.style.setProperty('--primarycolor', '#cea140');
 			r.style.setProperty('--listlinkhover', '#cea14030');
-			r.style.setProperty('--bdtexthighlighter', '#f9edce'); //'#ffed79') //'#eee5c2');
+			r.style.setProperty('--bdtexthighlighter', '#fffff6ef'); 
 
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');

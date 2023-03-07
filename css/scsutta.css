@@ -228,7 +228,7 @@ header li .segno {
 
 
 .sc-mark {
-  background-color:  var(--bdtexthighlighter);
+  background-color: var(--bdtexthighlighter);
 }
 
 .sc-mark::after {

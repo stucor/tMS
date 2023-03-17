@@ -315,7 +315,7 @@ function startup () {
 				hideSpinner();
 			});
 		}
-
+buildRef();
 	});
 }
 
@@ -536,6 +536,81 @@ function buildInfo () {
 
 	}
 }
+
+
+function buildRef () {
+
+	let sectionHolder = document.getElementById('reference-holder');
+	if (sectionHolder.innerHTML == '') {
+		let shortCode = shortcode();
+		let html =`<h1>New References</h1>`;
+
+		function populateReferences(referencesData) {
+			console.log(referencesData);
+
+			html += `<dl class="references">`
+			for (i in referencesData) {
+				html += `<dt>${referencesData[i].id}</dt>`
+
+				html += `<dd>`;
+
+				let authorAfter ='& ';
+				for (j in referencesData[i].author) {
+					if (j == referencesData[i].author.length-1) {
+						authorAfter ='&mdash;'
+					}
+					html += `${referencesData[i].author[j].family}, ${referencesData[i].author[j].given} ${authorAfter}`;
+				}
+
+				let translatorAfter ='& ';
+				for (j in referencesData[i].translator) {
+					if (j == referencesData[i].translator.length-1) {
+						translatorAfter ='<em>(tr.)</em>&mdash;'
+					}
+					html += `${referencesData[i].translator[j].family}, ${referencesData[i].translator[j].given} ${translatorAfter}`;
+				}
+
+				html += ` <em>${referencesData[i].title}</em>`;
+
+				if (referencesData[i].hasOwnProperty('container-title')) {
+					html += `. ${referencesData[i]["container-title"]}`;
+				}
+				if (referencesData[i].hasOwnProperty('volume')) {
+					html += `, Vol. ${referencesData[i]["volume"]} `;
+				}
+
+				if (referencesData[i].hasOwnProperty('number-of-volumes')) {
+					html += ` of ${referencesData[i]["number-of-volumes"]}`;
+				}
+
+
+				html += `.`;
+
+				html += `</dd>`;
+
+			}
+
+			html += `</dl>`
+			sectionHolder.innerHTML = html;
+		}
+
+
+
+		fetch(`../_resources/book-data/${shortCode}/reference.json`)
+			.then(response => response.json())
+			.then (data => populateReferences(data))
+			/*
+			.catch(error => {
+				console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/reference.json`);
+			}
+
+		)			*/;
+	}
+}
+
+
+
+
 
 //ONLOAD
 window.onload = function () {

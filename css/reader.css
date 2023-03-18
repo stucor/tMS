@@ -78,6 +78,8 @@
 
 	--ascsutta: ">>";
 	--descsutta: "<<";
+
+
 }
 
 body {
@@ -104,7 +106,7 @@ body {
 	color:#7c7c7c;
 	background-color: #5d8d8900;
 	text-shadow: 0px 1px 0px #ffffff;
-	font-size: 3em !important;
+	font-size: 48px !important;
 	font-variant: small-caps;
 	font-style: normal !important;
 	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -117,7 +119,7 @@ body {
 	color:#7c7c7c;
 	background-color: #5d8d8900;
 	text-shadow: 0px 2px 0px #ffffff;
-	font-size: 2em !important;
+	font-size: 32px !important;
 	font-variant: small-caps;
 	font-style: normal !important;
 	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -159,10 +161,6 @@ body {
 .wrapper {
  	display: grid;
     grid-template-columns: 7% 86% 7%;
-}
-
-.wrapper p {
-	font-size:16px;
 }
 
 
@@ -279,7 +277,7 @@ strong {
 	text-align: justify;
 	width: 100%;
 	hyphens: auto;
-	font-size: 1em;
+	font-size: var(--fontsize);
 	line-height: 1.3;
 	overflow-x: scroll;
 	min-height: 100vh;
@@ -287,7 +285,7 @@ strong {
 
 .content h1 {
 	text-align: center;
-	font-size: 2.5em;
+	font-size: calc(var(--fontsize)*1.9);
 	font-style: normal;
 	font-weight: 400;
 	font-variant: small-caps;
@@ -299,15 +297,17 @@ strong {
 	font-style: normal;
 }
 
+/*
 .content h1.preface {
 	text-align: center;
-	font-size: 2.5em;
+	font-size: calc(var(--fontsize)*1.9);
 	font-style: normal;
 	font-weight: 400;
 	font-variant: small-caps;
 	padding-bottom: 0;
 	padding-top:3em;
 }
+*/
 
 .prefacewriter {
 	margin-top: 1em;
@@ -317,7 +317,7 @@ strong {
 .content h2 {
     font-weight: 500;
 	text-align: left;
-    font-size: 18px;
+	font-size: calc(var(--fontsize)*1.3);
     padding-top: 40px;
 	hyphens: manual;
 }
@@ -325,7 +325,7 @@ strong {
 .content h3 {
 	text-align: left;
     font-weight: 500;
-	font-size: 16px;
+	font-size: calc(var(--fontsize)*1.2);
 	margin-bottom: -.5em;
 }
 
@@ -336,7 +336,6 @@ strong {
 
 .content h5 {
 	text-align: center;
-	font-size: 16px;
 }
 
 .content h1.titlepage {
@@ -392,6 +391,11 @@ strong {
 	margin-top: 0;	
 }
 
+.chapnum {
+ font-size: calc(var(--fontsize)*1.3);
+}
+
+
 .content p {
 	margin-bottom: 0;
 }
@@ -434,6 +438,7 @@ a {
 	margin-bottom: .5em;
 	text-align: left;
 }	
+
 
 .addendumtitle {
 	font-size: 1em;
@@ -814,15 +819,16 @@ dd > ol > li {
 	margin-bottom: 0 !important;
 }
 
-/*
+
 .references > dt {
 	display: none;
 }
 
 .references > dd {
 	margin-left: 0;
+	font-size: var(--fontsize);
 }
-*/
+
 
 
 
@@ -2283,6 +2289,7 @@ mark.current {
 		grid-template-columns: 0 100% 0;
 	}
 
+
 	.content div.quote {
 		width: 85%;
 	}
@@ -2407,10 +2414,15 @@ mark.current {
 	.extlink:hover {
 		/*box-shadow: 0 0 5px 1px rgb(168, 15, 46);*/
 		text-decoration: underline;
-		color: #AA0000;
+		color: var(--buttoncolor); 
 	}
 	.extlink:hover:after {
 		content: url('../_resources/images/icons/leave-app-red.svg');
+	}
+
+	.refpdf:hover {
+		text-decoration: underline;
+		color: var(--buttoncolor); 
 	}
 	
 }

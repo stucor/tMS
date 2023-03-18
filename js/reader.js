@@ -136,9 +136,9 @@ function buildSettings (_callback) {
 		`;
 
 		parentDiv.innerHTML = html;
+
 	}
 	_callback();
-
 }
 
 function formatSCLinktext () {
@@ -166,7 +166,8 @@ function startup () {
 		console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
 	}
 	*/
-	
+	buildRef();
+
 	buildSettings(function(){
 		//the following is done after buildSettings completes:
 		document.getElementById('topbar').style.display='block';
@@ -235,6 +236,8 @@ function startup () {
 				restorePlaceInBook();
 			}
 		}
+		
+
 		
 		document.getElementById("incfont").onclick = function () { //plus button
 			var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
@@ -315,7 +318,7 @@ function startup () {
 				hideSpinner();
 			});
 		}
-buildRef();
+
 	});
 }
 
@@ -541,70 +544,126 @@ function buildInfo () {
 function buildRef () {
 
 	let sectionHolder = document.getElementById('reference-holder');
-	if (sectionHolder.innerHTML == '') {
-		let shortCode = shortcode();
-		let html =`<h1>New References</h1>`;
+	if (sectionHolder != null) {
+		if (sectionHolder.innerHTML == ''){
+			let shortCode = shortcode();
+			let html =``;
 
-		function populateReferences(referencesData) {
-			console.log(referencesData);
+			function populateReferences(referencesData) {
+				let urlLabel ='';
 
-			html += `<dl class="references">`
-			for (i in referencesData) {
-				html += `<dt>${referencesData[i].id}</dt>`
+				html += `<dl class="references">`
+				for (i in referencesData) {
 
-				html += `<dd>`;
-
-				let authorAfter ='& ';
-				for (j in referencesData[i].author) {
-					if (j == referencesData[i].author.length-1) {
-						authorAfter ='&mdash;'
+					switch (referencesData[i].type) {
+						case "book":
+							urlLabel ='Publishers Page';
+							break;
+						case "article-journal":
+							urlLabel ='Publishers Page';
+							break;
+						case "document":
+							break;
+						case "post-weblog":
+							urlLabel ='Blog Post';
+							break;
+						case "webpage":
+							urlLabel ='Webpage';
+							break;
 					}
-					html += `${referencesData[i].author[j].family}, ${referencesData[i].author[j].given} ${authorAfter}`;
-				}
 
-				let translatorAfter ='& ';
-				for (j in referencesData[i].translator) {
-					if (j == referencesData[i].translator.length-1) {
-						translatorAfter ='<em>(tr.)</em>&mdash;'
+					html += `<dt>${referencesData[i].id}</dt>`
+
+					html += `<dd>`;
+
+					let authorAfter ='& ';
+					for (j in referencesData[i].author) {
+						if (j == referencesData[i].author.length-1) {
+							authorAfter ='&mdash;'
+						}
+						html += `${referencesData[i].author[j].family}, ${referencesData[i].author[j].given} ${authorAfter}`;
 					}
-					html += `${referencesData[i].translator[j].family}, ${referencesData[i].translator[j].given} ${translatorAfter}`;
+
+					let translatorAfter ='& ';
+					for (j in referencesData[i].translator) {
+						if (j == referencesData[i].translator.length-1) {
+							translatorAfter ='<em>(tr.) </em>&mdash;'
+						}
+						html += `${referencesData[i].translator[j].family}, ${referencesData[i].translator[j].given} ${translatorAfter}`;
+					}
+
+					html += ` <em>${referencesData[i].title}</em>`;
+
+					if (referencesData[i].hasOwnProperty('container-title')) {
+						html += `. ${referencesData[i]["container-title"]}`;
+					}
+					if (referencesData[i].hasOwnProperty('volume')) {
+						html += `, Vol. ${referencesData[i]["volume"]}`;
+					}
+
+					if (referencesData[i].hasOwnProperty('number-of-volumes')) {
+						html += ` of ${referencesData[i]["number-of-volumes"]}`;
+					}
+
+					html += `.`;
+
+					if (referencesData[i].hasOwnProperty('publisher')) {
+						html += ` ${referencesData[i]["publisher"]}`;
+
+						if (referencesData[i].hasOwnProperty('publisher-place')) {
+							html += `, ${referencesData[i]["publisher-place"]}`;
+						}
+		
+						html += `.`;
+					}
+
+					if (referencesData[i].hasOwnProperty('issued')) {
+						html += ` ${referencesData[i]["issued"]["date-parts"][0][0]}.`;
+					}
+
+					let linkSeparator = ' | ';
+					if (referencesData[i].hasOwnProperty('URL')) {
+						html += `${linkSeparator} <a class="extlink" style="font-size:smaller; font-variant:small-caps" href="${referencesData[i].URL}">${urlLabel}</a> `;
+					}
+
+					if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
+							if (referencesData[i].hasOwnProperty('call-number')) {
+								let callNumberArray = referencesData[i]["call-number"].split(';');
+								if (callNumberArray.length > 1) {
+									let fileArray = referencesData[i].file.split(';');
+								for (k in callNumberArray) {
+										html += `${linkSeparator} <a class="refpdf" style="font-size:smaller; font-variant:small-caps" href="../_resources/zotero-attach/${fileArray[k]}">${callNumberArray[k]}</a> `;
+									}
+								} else {
+									html += `${linkSeparator} <a class="refpdf" style="font-size:smaller; font-variant:small-caps" href="../_resources/zotero-attach/${referencesData[i].file}">${referencesData[i]["call-number"]}</a> `;
+								}
+							} else {
+								html += `${linkSeparator} <a class="refpdf" style="font-size:smaller; font-variant:small-caps" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+							}
+					
+					}
+
+
+					html += `</dd>`;
+
 				}
 
-				html += ` <em>${referencesData[i].title}</em>`;
-
-				if (referencesData[i].hasOwnProperty('container-title')) {
-					html += `. ${referencesData[i]["container-title"]}`;
-				}
-				if (referencesData[i].hasOwnProperty('volume')) {
-					html += `, Vol. ${referencesData[i]["volume"]} `;
-				}
-
-				if (referencesData[i].hasOwnProperty('number-of-volumes')) {
-					html += ` of ${referencesData[i]["number-of-volumes"]}`;
-				}
-
-
-				html += `.`;
-
-				html += `</dd>`;
+				html += `</dl>`
+				sectionHolder.innerHTML = html;
 
 			}
 
-			html += `</dl>`
-			sectionHolder.innerHTML = html;
+
+
+			fetch(`../_resources/book-data/${shortCode}/reference.json`)
+				.then(response => response.json())
+				.then (data => populateReferences(data))
+				.catch(error => {
+					console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/reference.json`);
+				}
+
+			);
 		}
-
-
-
-		fetch(`../_resources/book-data/${shortCode}/reference.json`)
-			.then(response => response.json())
-			.then (data => populateReferences(data))
-			/*
-			.catch(error => {
-				console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/reference.json`);
-			}
-
-		)			*/;
 	}
 }
 
@@ -1251,11 +1310,24 @@ function setHyphenation () {
 // FONT SIZE
 
 function setFontLevel (level, start, end) {
+	if (!isAudioBook()) {
+		document.querySelector(':root').style.setProperty('--fontsize', level+'px');
+	};
+
+	let bookImagesArray = document.querySelectorAll('img');
+	for (i in bookImagesArray) {
+		if (bookImagesArray[i].className == 'emojify') {
+			bookImagesArray[i].style.width = (parseInt(level)+parseInt(level/3))+'px';
+		} else if (bookImagesArray[i].className == 'fleuron') {
+			bookImagesArray[i].style.width = (parseInt(level)*3)+'px';
+		}
+	}
+
+	/*
 	if (start < 0) {start = 0}
 	if (end > savedBookElements.length) { end = savedBookElements.length }
-	//if (start < 0) { start = 0}
+	if (start < 0) { start = 0}
 	for (var i = start; i < end; i++) {
-		switch (savedBookElements[i].tagName) {
 			case 'P':
 			case 'DIV':
 			case 'H4':
@@ -1265,18 +1337,17 @@ function setFontLevel (level, start, end) {
 			case 'DD':
 				if (!isAudioBook()) {
 					savedBookElements[i].style.fontSize = level+'px';
-					document.querySelector(':root').style.setProperty('--fontsize', level+'px');
-			};
+					//document.querySelector(':root').style.setProperty('--fontsize', level+'px');
+				};
 				break;
+
 			case 'SPAN':
-				/* SPC Go
-				if (savedBookElements[i].className == 'pageno') {savedBookElements[i].style.fontSize = (level)+'px';}
-				*/
 				if (savedBookElements[i].className == 'chapnum') {savedBookElements[i].style.fontSize = (level*1.3)+'px';}
 				break;
 			case 'H1' :
 				savedBookElements[i].style.fontSize = (level*1.9)+'px';
 				break;
+
 			case 'H2' :
 				savedBookElements[i].style.fontSize = (level*1.3)+'px';
 				break;
@@ -1286,10 +1357,13 @@ function setFontLevel (level, start, end) {
 			case 'IMG':
 				if (savedBookElements[i].className == 'emojify') {
 					savedBookElements[i].style.width = (parseInt(level)+parseInt(level/3))+'px';
+				} else if (savedBookElements[i].className == 'fleuron') {
+					savedBookElements[i].style.width = (parseInt(level)*3)+'px';
 				}
 				break;	
 			}
 	}	
+	*/
 }
 
 function setTOCLevel (level) { // if level is between 16 and 24 set it to that otherwise set it to either 16 or 24
@@ -2841,7 +2915,7 @@ function isElementPartiallyInViewport(el)
     var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
     var vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
     var horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
-    return (vertInView && horInView);
+    return (vertInView && horInViexpanderew);
 }
 
 

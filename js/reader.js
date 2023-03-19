@@ -1230,6 +1230,7 @@ function doIncFont () {
 function setFontLevel (level) {
 	if (!isAudioBook()) {
 		document.querySelector(':root').style.setProperty('--fontsize', level+'px');
+		console.log('here');
 	};
 
 	let bookImagesArray = document.querySelectorAll('img');
@@ -2640,7 +2641,7 @@ function reformatBook () {
 
 }
 
-
+/*
 var settingTouched = false;
 
 function exitSettingsModal () {
@@ -2650,7 +2651,7 @@ function exitSettingsModal () {
 	saveCookies();
 	return true;
 }
-
+*/
 function exitStaticModal () {
 	if (calledFromNotes) {
 		setModalStyle ("Notes");
@@ -2707,6 +2708,7 @@ function promiseToRunAsync(executor, ...params) {
     });
 }
 
+/*
 function spinnerExitSettingsModal() {
     showSpinner(); // show spinner
     promiseToRunAsync(exitSettingsModal) // execute anync
@@ -2717,6 +2719,7 @@ function spinnerExitSettingsModal() {
 	hideElement(modal);
 	hideElement(modalcontent);
 }
+*/
 
 function shadowSearchBar () {
 	var searchBar = document.getElementById("SearchBar");

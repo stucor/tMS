@@ -7,8 +7,6 @@ var marginName = "";
 
 var prevScrollpos = window.pageYOffset;
 
-/* COOKIES */
-
 // generic cookie functions
 
 function setCookie(cname, cvalue, exdays) {
@@ -32,6 +30,8 @@ function getCookie(cname) {
     }
     return "";
 }
+
+// generic useful functions
 
 function hasClass(elementtocheck, className) {
 	element = document.getElementById(elementtocheck);
@@ -159,6 +159,10 @@ function formatSCLinktext () {
 }
 
 
+
+
+
+
 function startup () {
 	/*
 	console.log("local storage:");
@@ -202,14 +206,7 @@ function startup () {
 			}
 			shadowSearchBar ();
 		}
-		/* SPC Go 
-		showPageCheck.onclick = function () {
-			settingTouched = true;
-			setPageBreak(true);
-			setPageBreakSize(true);
-			restorePlaceInBook();
-		}
-		*/
+		
 		justifyCheck.onclick = function () {
 			showSpinner(); // show spinner
 			promiseToRunAsync(doJustifyCheck) // execute anync
@@ -225,39 +222,31 @@ function startup () {
 			});
 		}
 
+
+		
 		document.getElementById("decfont").onclick = function () { // minus button
-			var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-			if (fontlevel > 9) {
-				fontlevel = fontlevel -1;
-				settingTouched = true;
-				document.getElementById("flvalue").innerHTML = fontlevel;
-				setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
-				setTOCLevel (fontlevel);
-				restorePlaceInBook();
-			}
+				showSpinner(); // show spinner
+				promiseToRunAsync(doDecFont) // execute anync
+				.then(() => {
+					hideSpinner();
+				});
 		}
 		
 
-		
 		document.getElementById("incfont").onclick = function () { //plus button
-			var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-			if (fontlevel < 32) {
-				fontlevel = fontlevel +1;
-				settingTouched = true;
-				document.getElementById("flvalue").innerHTML = fontlevel;
-				setTOCLevel (fontlevel);
-				setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
-				restorePlaceInBook();
-			}
+			showSpinner(); // show spinner
+			promiseToRunAsync(doIncFont) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
 		}
 
 		declh.onclick = function () {
 			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
 			if (lhlevel > 1) {
 				lhlevel = lhlevel -0.1;
-				settingTouched = true;
 				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-				setLH (lhlevel, theTopElement-5, theTopElement+150);
+				setLH (lhlevel);
 				restorePlaceInBook();
 			}	
 		}
@@ -266,9 +255,8 @@ function startup () {
 			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
 			if (lhlevel < 3) {
 				lhlevel = lhlevel + 0.1;
-				settingTouched = true;
 				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-				setLH (lhlevel, theTopElement-5, theTopElement+150);
+				setLH (lhlevel);
 				restorePlaceInBook();
 			}
 		} 
@@ -308,7 +296,6 @@ function startup () {
 		serifFont.onclick = function () {
 			settingTouched = true;
 			setSerif(theTopElement-2, theTopElement+150);
-			//restorePlaceInBook ();
 		}
 		
 		showParaNosList.onchange = function () {
@@ -540,7 +527,7 @@ function buildInfo () {
 	}
 }
 
-
+// Populate References/Bibliography
 function buildRef () {
 
 	let sectionHolder = document.getElementById('reference-holder');
@@ -755,7 +742,7 @@ function initialiseCommonSettings () {
 		setCookie ('wiswobooks_font_size', local_wiswobooks_font_size,365);
 	} else { 
 		document.getElementById("flvalue").innerHTML = local_wiswobooks_font_size;
-		setFontLevel(local_wiswobooks_font_size, 0, savedBookElements.length);
+		setFontLevel(local_wiswobooks_font_size);
 		setTOCLevel(local_wiswobooks_font_size);
 		setDetailsLevel(local_wiswobooks_font_size);
 		setNotesLevel(local_wiswobooks_font_size);
@@ -771,7 +758,7 @@ function initialiseBookSettings () {
 		setCookie ('wiswobooks_line_spacing',local_wiswobooks_line_spacing,365);
 	} else {
 		document.getElementById("lhvalue").innerHTML = local_wiswobooks_line_spacing;
-		setLH (local_wiswobooks_line_spacing, 0, savedBookElements.length);
+		setLH (local_wiswobooks_line_spacing);
 	}	
 	//MARGINS
 	var local_wiswobooks_margins = getCookie("wiswobooks_margins");
@@ -1193,77 +1180,12 @@ function buildpageBreak(e) {
 	e.innerHTML = wordcut + "<div class=pagenumber>"+affect+" " + thepagenumber + " "+affect+"</div><hr class='pagebreak'>";
 }
 
-/* SPC Go
-function setPageBreak (islocal) {
-		var elems = document.getElementsByClassName("pageno");
-		var pageCheck = document.getElementById("showPageCheck");
-		if (pageCheck.checked){
-			if (islocal) {
-				for (var i = 0; i < elems.length; i++) {
-					if (isElementInViewport (elems[i])) {
-						buildpageBreak(elems[i]);
-					}
-				}
-				settingTouched = true;
-			} else {
-				for (var i = 0; i < elems.length; i++) {
-					buildpageBreak(elems[i]);
-				}
-			}
-
-		} else {
-			if (islocal) {
-				for (var i = 0; i < elems.length; i++) {
-					if (isElementInViewport (elems[i])) {
-						elems[i].innerHTML = "";
-					}
-				}
-			} else {
-				for (var i = 0; i < elems.length; i++) {
-					elems[i].innerHTML = "";
-				}
-			}
-		}	
-}
-
-function setPageBreakSize(islocal = false) {
-	var pageCheck = document.getElementById("showPageCheck");
-	if (pageCheck.checked) {
-		var pagebreaks = document.getElementsByClassName("pagebreak");
-		var book = document.getElementById("thebook");
-		var bookleft = book.getBoundingClientRect().left;
-		var bookright = book.getBoundingClientRect().right;
-		if (islocal) {
-			for(i=0;i<pagebreaks.length;i++){
-				if (isElementInViewport (pagebreaks[i])) {
-					var newleftmargin = parseInt(bookleft - pagebreaks[i].getBoundingClientRect().left);
-					var newrightmargin = parseInt(pagebreaks[i].getBoundingClientRect().right - bookright);
-					pagebreaks[i].style.marginLeft = newleftmargin + 'px';
-					pagebreaks[i].style.marginRight = newrightmargin + 'px';
-					var pagenumbershunt = newrightmargin - newleftmargin;
-					if (pagenumbershunt !== 0) {
-						pagebreaks[i].previousElementSibling.style.paddingRight = pagenumbershunt + 'px';
-					}
-				}
-			}
-		} else {
-			for(i=0;i<pagebreaks.length;i++){
-				var newleftmargin = parseInt(bookleft - pagebreaks[i].getBoundingClientRect().left);
-				var newrightmargin = parseInt(pagebreaks[i].getBoundingClientRect().right - bookright);
-				pagebreaks[i].style.marginLeft = newleftmargin + 'px';
-				pagebreaks[i].style.marginRight = newrightmargin + 'px';
-				var pagenumbershunt = newrightmargin - newleftmargin;
-				if (pagenumbershunt !== 0) {
-					pagebreaks[i].previousElementSibling.style.paddingRight = pagenumbershunt + 'px';
-				}
-			}
-		}
-	}
-}
-
-*/
 
 // JUSTIFICATION
+
+function doJustifyCheck () {
+	setJustify();
+}
 
 function setJustify () {
 	var bookPages = document.getElementById("thebook");
@@ -1277,20 +1199,12 @@ function setJustify () {
     }	
 }
 
-function doJustifyCheck () {
-	setJustify();
-	//restorePlaceInBook();
-	//fillProgressBar();
-}
-
 
 
 // HYPHENATION
 
 function doHyphenCheck () {
 	setHyphenation();
-	//restorePlaceInBook();
-	//fillProgressBar();
 }	
 
 function setHyphenation () {
@@ -1305,11 +1219,30 @@ function setHyphenation () {
 
 
 
-
-
 // FONT SIZE
+function doDecFont () {
+	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
+	if (fontlevel > 9) {
+		fontlevel = fontlevel -1;
+		document.getElementById("flvalue").innerHTML = fontlevel;
+		setFontLevel(fontlevel);
+		setTOCLevel (fontlevel);
+		restorePlaceInBook();
+	}
+}
 
-function setFontLevel (level, start, end) {
+function doIncFont () {
+	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
+	if (fontlevel < 32) {
+		fontlevel = fontlevel +1;
+		document.getElementById("flvalue").innerHTML = fontlevel;
+		setTOCLevel (fontlevel);
+		setFontLevel(fontlevel);
+		restorePlaceInBook();
+	}
+}
+
+function setFontLevel (level) {
 	if (!isAudioBook()) {
 		document.querySelector(':root').style.setProperty('--fontsize', level+'px');
 	};
@@ -1322,48 +1255,6 @@ function setFontLevel (level, start, end) {
 			bookImagesArray[i].style.width = (parseInt(level)*3)+'px';
 		}
 	}
-
-	/*
-	if (start < 0) {start = 0}
-	if (end > savedBookElements.length) { end = savedBookElements.length }
-	if (start < 0) { start = 0}
-	for (var i = start; i < end; i++) {
-			case 'P':
-			case 'DIV':
-			case 'H4':
-			case 'H5':
-			case 'LI':
-			case 'DT':
-			case 'DD':
-				if (!isAudioBook()) {
-					savedBookElements[i].style.fontSize = level+'px';
-					//document.querySelector(':root').style.setProperty('--fontsize', level+'px');
-				};
-				break;
-
-			case 'SPAN':
-				if (savedBookElements[i].className == 'chapnum') {savedBookElements[i].style.fontSize = (level*1.3)+'px';}
-				break;
-			case 'H1' :
-				savedBookElements[i].style.fontSize = (level*1.9)+'px';
-				break;
-
-			case 'H2' :
-				savedBookElements[i].style.fontSize = (level*1.3)+'px';
-				break;
-			case 'H3' :
-				savedBookElements[i].style.fontSize = (level*1.2)+'px';
-				break;
-			case 'IMG':
-				if (savedBookElements[i].className == 'emojify') {
-					savedBookElements[i].style.width = (parseInt(level)+parseInt(level/3))+'px';
-				} else if (savedBookElements[i].className == 'fleuron') {
-					savedBookElements[i].style.width = (parseInt(level)*3)+'px';
-				}
-				break;	
-			}
-	}	
-	*/
 }
 
 function setTOCLevel (level) { // if level is between 16 and 24 set it to that otherwise set it to either 16 or 24
@@ -1432,20 +1323,10 @@ function setNotesLevel (level) {
 
 // LINE SPACING
 
-function setLH (level, start, end) {
-	if (start < 0) {start = 0}
-	if (end > savedBookElements.length) { end = savedBookElements.length }
-	for (var i = start; i < end; i++) {
-		switch (savedBookElements[i].tagName) {
-			case 'P':
-			case 'DIV':
-			case 'LI':
-			case 'DT':
-			case 'DD':				
-				savedBookElements[i].style.lineHeight = level;
-				break;
-			}
-	}	
+function setLH (level) {
+	if (!isAudioBook()) {
+		document.querySelector(':root').style.setProperty('--lineheight', level);
+	};
 }
 
 
@@ -2758,12 +2639,12 @@ function getFontLevel() {
 function reformatBook () {
 
 	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-	setFontLevel(fontlevel, 0, savedBookElements.length);
+	setFontLevel(fontlevel);
 	setDetailsLevel(fontlevel);
 	setNotesLevel(fontlevel);
 
 	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-	setLH (lhlevel, 0, savedBookElements.length);
+	setLH (lhlevel);
 
 	setSerif (0, savedBookElements.length);
 	/* SPC Go

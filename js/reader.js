@@ -241,24 +241,21 @@ function startup () {
 			});
 		}
 
+
 		declh.onclick = function () {
-			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-			if (lhlevel > 1) {
-				lhlevel = lhlevel -0.1;
-				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-				setLH (lhlevel);
-				restorePlaceInBook();
-			}	
+			showSpinner(); // show spinner
+			promiseToRunAsync(doDecLH) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
 		}
 		
 		inclh.onclick = function () {
-			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-			if (lhlevel < 3) {
-				lhlevel = lhlevel + 0.1;
-				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-				setLH (lhlevel);
-				restorePlaceInBook();
-			}
+			showSpinner(); // show spinner
+			promiseToRunAsync(doIncLH) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
 		} 
 		
 		radioSimple.onclick = function () {
@@ -293,9 +290,14 @@ function startup () {
 			});
 		}
 		
+
+
 		serifFont.onclick = function () {
-			settingTouched = true;
-			setSerif(theTopElement-2, theTopElement+150);
+			showSpinner(); // show spinner
+			promiseToRunAsync(doSetSerif) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
 		}
 		
 		showParaNosList.onchange = function () {
@@ -752,9 +754,9 @@ function initialiseCommonSettings () {
 function initialiseBookSettings () {
 	//LINE-SPACING
 	var local_wiswobooks_line_spacing = getCookie("wiswobooks_line_spacing");
-	document.getElementById("lhvalue").innerHTML = 1.3;
+	document.getElementById("lhvalue").innerHTML = 1.5;
 	if (local_wiswobooks_line_spacing == '') {
-		local_wiswobooks_line_spacing = '1.3';
+		local_wiswobooks_line_spacing = '1.5';
 		setCookie ('wiswobooks_line_spacing',local_wiswobooks_line_spacing,365);
 	} else {
 		document.getElementById("lhvalue").innerHTML = local_wiswobooks_line_spacing;
@@ -794,25 +796,8 @@ function initialiseBookSettings () {
 			local_wiswobooks_serif = 'false';
 			setCookie('wiswobooks_serif',local_wiswobooks_serif,365);
 	}
-	setSerif(0, savedBookElements.length);
-	//SHOW-PAGES
-	/* SPC Go
-	var local_wiswobooks_showpages = getCookie("wiswobooks_showpages");
-	switch (local_wiswobooks_showpages) {
-		case 'true' :
-			document.getElementById("showPageCheck").checked = true;
-			break;
-		case 'false' :
-			document.getElementById("showPageCheck").checked = false;
-			break;	
-		default :
-			document.getElementById("showPageCheck").checked = false;
-			local_wiswobooks_showpages = 'false';
-			setCookie('wiswobooks_showpages',local_wiswobooks_showpages,365);
-	}
-	setPageBreak(false);
-	setPageBreakSize();
-	*/
+	setSerif();
+
 	//JUSTIFICATION
 	var local_wiswobooks_justification = getCookie("wiswobooks_justification");
 	switch (local_wiswobooks_justification) {
@@ -1188,13 +1173,13 @@ function doJustifyCheck () {
 }
 
 function setJustify () {
-	var bookPages = document.getElementById("thebook");
+	//var bookPages = document.getElementById("thebook");
 	var justificationCheck = document.getElementById("justifyCheck")
 	if (justificationCheck.checked){
-		bookPages.style.textAlign = "justify";
+		//bookPages.style.textAlign = "justify";
 		document.querySelector(':root').style.setProperty('--textalign', 'justify');
     } else {
-		bookPages.style.textAlign = "left";
+		//bookPages.style.textAlign = "left";
 		document.querySelector(':root').style.setProperty('--textalign', 'left');
     }	
 }
@@ -1329,7 +1314,25 @@ function setLH (level) {
 	};
 }
 
+function doDecLH () {
+	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
+	if (lhlevel > 1) {
+		lhlevel = lhlevel -0.1;
+		document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
+		setLH (lhlevel);
+		restorePlaceInBook();
+	}	
+} 
 
+function doIncLH () {
+	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
+	if (lhlevel < 3) {
+		lhlevel = lhlevel + 0.1;
+		document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
+		setLH (lhlevel);
+		restorePlaceInBook();
+	}
+}
 
   
 
@@ -1788,10 +1791,6 @@ function setTheme(){
 function doSetMargin () {
 	setMargin();
 	restorePlaceInBook();
-	/*
-	setPageBreak(true);
-	setPageBreakSize(true);
-	*/
 }	
 
 function setMargin() {
@@ -1817,29 +1816,30 @@ function setMargin() {
 }
 
 
-function setSerif (start, end) {
-	if (start < 0) {start = 0}
-	if (end > savedBookElements.length) { end = savedBookElements.length }
+function doSetSerif () {
+	setSerif();
+	startBookScroll();
+	scrollToNavTarget();
+	stopBookScroll();
+}
+
+function setSerif () {
 
 	if (document.getElementById('serifFont').checked) {
-			for (var i = start; i < end; i++) {	
-				if ((savedBookElements[i].tagName == 'P') || (savedBookElements[i].tagName == 'DIV') || (savedBookElements[i].tagName == 'LI') || (savedBookElements[i].tagName == 'DT') || (savedBookElements[i].tagName == 'DL')) {
-					savedBookElements[i].style.fontFamily = 'Source Serif Pro';
-				}
-			}
+		if (!isAudioBook()) {
+			document.querySelector(':root').style.setProperty('--fontfamily', 'Source Serif Pro');
+		};
 	} else {
-		for (var i = start; i < end; i++) {	
-			if ((savedBookElements[i].tagName == 'P') || (savedBookElements[i].tagName == 'DIV') || (savedBookElements[i].tagName == 'LI') || (savedBookElements[i].tagName == 'DT') || (savedBookElements[i].tagName == 'DL')) {
-				savedBookElements[i].style.fontFamily = 'Source Sans Pro';
-			}
-		}
+		if (!isAudioBook()) {
+			document.querySelector(':root').style.setProperty('--fontfamily', 'Source Sans Pro');
+		};
 	}
+	
 }	
 
 
 function doParaNosList () {
 	setParaNumbers();
-	//fillProgressBar();
 }	
 
 function setParaNumbers () {
@@ -2039,20 +2039,9 @@ window.onscroll = function() {
 	//savePlaceInBook();
 }
 
-/* SPC Go
-function afterResize() {
-	setPageBreak(false);
-	setPageBreakSize();
-}
 
-var doit;
-*/
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
-	/* SPC Go
-	clearTimeout(doit);
-	doit = setTimeout(afterResize, 100);
-	*/
 });
 
 var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");
@@ -2631,10 +2620,11 @@ function clearhighlightnote() {
 	}
 }
 
-/* for setting sutta font size */
+/* for setting sutta font size 
 function getFontLevel() {
 	return document.getElementById("flvalue").innerHTML +'px';
 }
+*/
 
 function reformatBook () {
 
@@ -2646,11 +2636,8 @@ function reformatBook () {
 	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
 	setLH (lhlevel);
 
-	setSerif (0, savedBookElements.length);
-	/* SPC Go
-	setPageBreak(false); 
-	setPageBreakSize();
-	*/
+	setSerif ();
+
 }
 
 
@@ -2686,12 +2673,15 @@ closebtn.onclick = function () {
 */
 
 function doCloseModal () {
+	/*
 	if (settingTouched) {
 		spinnerExitSettingsModal();
 		settingTouched = false;
 	} else {
 		exitStaticModal	();
 	}	
+	*/
+	exitStaticModal();
 }
 
 closebtn.addEventListener('click',doCloseModal);

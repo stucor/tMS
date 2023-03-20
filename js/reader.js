@@ -51,6 +51,8 @@ function shortcode() {
 	return thebook.getAttribute("data-shortcode");
 }
 
+// build sections
+
 function buildSettings (_callback) {
 	let parentDiv = document.getElementById('ModalSettings');
 	if (parentDiv.innerHTML == '') {
@@ -157,11 +159,6 @@ function formatSCLinktext () {
 
 
 }
-
-
-
-
-
 
 function startup () {
 	/*
@@ -310,8 +307,6 @@ function startup () {
 
 	});
 }
-
-/* Modal Builders */
 
 function parseInfoText(infoText) {
 	const htmlText = infoText
@@ -539,17 +534,35 @@ function buildRef () {
 			let html =``;
 
 			function populateReferences(referencesData) {
-				let urlLabel ='';
+
 
 				html += `<dl class="references">`
 				for (i in referencesData) {
+					let urlLabel ='';
+					let attachmentLabel = '';
+					let tMSShortcode ='';
+					
+					// get special values from the notes field 
+					if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
+						noteArray = referencesData[i]["note"].split('\n');	
+						for (j in noteArray) {
+							[noteKey, noteValue] = noteArray[j].split(':');
+							switch (noteKey) {
+								case "attachment-label":
+									attachmentLabel = noteValue;
+									break;
+								case "tMS":
+									tMSShortcode = noteValue;
+							}
+						}
+					}
 
 					switch (referencesData[i].type) {
 						case "book":
 							urlLabel ='Publishers Page';
 							break;
 						case "article-journal":
-							urlLabel ='Publishers Page';
+							urlLabel ='Journal Page';
 							break;
 						case "document":
 							break;
@@ -570,7 +583,7 @@ function buildRef () {
 						if (j == referencesData[i].author.length-1) {
 							authorAfter ='&mdash;'
 						}
-						html += `${referencesData[i].author[j].family}, ${referencesData[i].author[j].given} ${authorAfter}`;
+						html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given} ${authorAfter}`;
 					}
 
 					let translatorAfter ='& ';
@@ -578,7 +591,11 @@ function buildRef () {
 						if (j == referencesData[i].translator.length-1) {
 							translatorAfter ='<em>(tr.) </em>&mdash;'
 						}
-						html += `${referencesData[i].translator[j].family}, ${referencesData[i].translator[j].given} ${translatorAfter}`;
+						html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
+					}
+
+					if (referencesData[i].hasOwnProperty('issued')) {
+						html += ` ${referencesData[i]["issued"]["date-parts"][0][0]}.`;
 					}
 
 					html += ` <em>${referencesData[i].title}</em>`;
@@ -594,6 +611,14 @@ function buildRef () {
 						html += ` of ${referencesData[i]["number-of-volumes"]}`;
 					}
 
+					if (referencesData[i].hasOwnProperty('page')) {
+						if (referencesData[i].page.includes("-")) { //is a range of pages
+							html += `. pp. ${referencesData[i].page}`;
+						} else {
+							html += `. p. ${referencesData[i].page}`;
+						}
+					}
+
 					html += `.`;
 
 					if (referencesData[i].hasOwnProperty('publisher')) {
@@ -606,33 +631,65 @@ function buildRef () {
 						html += `.`;
 					}
 
-					if (referencesData[i].hasOwnProperty('issued')) {
-						html += ` ${referencesData[i]["issued"]["date-parts"][0][0]}.`;
-					}
-
 					let linkSeparator = ' | ';
 					if (referencesData[i].hasOwnProperty('URL')) {
-						html += `${linkSeparator} <a class="extlink" style="font-size:smaller; font-variant:small-caps" href="${referencesData[i].URL}">${urlLabel}</a> `;
+						html += `${linkSeparator} <a class="extlink reflink"  href="${referencesData[i].URL}">${urlLabel}</a> `;
 					}
 
 					if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
-							if (referencesData[i].hasOwnProperty('call-number')) {
-								let callNumberArray = referencesData[i]["call-number"].split(';');
-								if (callNumberArray.length > 1) {
-									let fileArray = referencesData[i].file.split(';');
-								for (k in callNumberArray) {
-										html += `${linkSeparator} <a class="refpdf" style="font-size:smaller; font-variant:small-caps" href="../_resources/zotero-attach/${fileArray[k]}">${callNumberArray[k]}</a> `;
-									}
-								} else {
-									html += `${linkSeparator} <a class="refpdf" style="font-size:smaller; font-variant:small-caps" href="../_resources/zotero-attach/${referencesData[i].file}">${referencesData[i]["call-number"]}</a> `;
+						if (attachmentLabel !== '') {
+							let attachmentLabelArray = attachmentLabel.split(';');
+							if (attachmentLabelArray.length > 1) {
+								let fileArray = referencesData[i].file.split(';');
+								for (k in attachmentLabelArray) {
+									html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${fileArray[k]}">${attachmentLabelArray[k]}</a> `;
 								}
 							} else {
-								html += `${linkSeparator} <a class="refpdf" style="font-size:smaller; font-variant:small-caps" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+								html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}">${attachmentLabel}</a> `;
 							}
-					
+						} else {
+							html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+						}
+					}
+
+					if (tMSShortcode !=='') {
+						html += `${linkSeparator} <a class="reflink" href="../${tMSShortcode}">online</a>`
 					}
 
 
+
+
+/*
+					if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
+						let noteArray = referencesData[i]["note"].split('\n');
+						for (j in noteArray) {
+							[noteKey, noteValue] = noteArray[j].split(':');
+							console.log(noteKey +' >>> ' +noteValue);
+
+							switch (noteKey) {
+								case "attachment-label":
+									if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
+											let attachmentLabelArray = referencesData[i]["call-number"].split(';');
+											if (attachmentLabelArray.length > 1) {
+												let fileArray = referencesData[i].file.split(';');
+											for (k in attachmentLabelArray) {
+													html += `${linkSeparator} <a class="refpdf" style="font-size:smaller; font-variant:small-caps" href="../_resources/zotero-attach/${fileArray[k]}">${callNumberArray[k]}</a> `;
+												}
+											} else {
+												html += `${linkSeparator} <a class="refpdf" style="font-size:smaller; font-variant:small-caps" href="../_resources/zotero-attach/${referencesData[i].file}">${referencesData[i]["call-number"]}</a> `;
+											}
+										} else {
+											html += `${linkSeparator} <a class="refpdf" style="font-size:smaller; font-variant:small-caps" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+									}
+									break;
+
+								case "tms":
+									console.log(`in tMS >>> ${noteValue}`);
+							}
+						}
+					}
+
+*/
 					html += `</dd>`;
 
 				}
@@ -655,10 +712,6 @@ function buildRef () {
 		}
 	}
 }
-
-
-
-
 
 //ONLOAD
 window.onload = function () {
@@ -1230,7 +1283,6 @@ function doIncFont () {
 function setFontLevel (level) {
 	if (!isAudioBook()) {
 		document.querySelector(':root').style.setProperty('--fontsize', level+'px');
-		console.log('here');
 	};
 
 	let bookImagesArray = document.querySelectorAll('img');

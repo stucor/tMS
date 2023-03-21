@@ -111,7 +111,7 @@ body {
 	font-size: 48px !important;
 	font-variant: small-caps;
 	font-style: normal !important;
-	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
 	opacity: 0.4;
 	hyphens: none;
 }
@@ -124,7 +124,7 @@ body {
 	font-size: 32px !important;
 	font-variant: small-caps;
 	font-style: normal !important;
-	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
 	opacity: 0.4;
 	hyphens: none;
 }
@@ -789,8 +789,6 @@ table.borderlessTable {
 	color:cornflowerblue;
 	text-decoration: none;
 	border-radius: 1em;
-	display: inline;
-	white-space: nowrap;
 }
 
 .extlink::after {

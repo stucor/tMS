@@ -161,6 +161,13 @@ function formatSCLinktext () {
 
 }
 
+Split({
+    columnGutters: [{
+        track: 1,
+        element: document.querySelector('.gutter-col-1'),
+    }],
+})
+
 function startup () {
 	/*
 	console.log("local storage:");
@@ -1378,8 +1385,6 @@ function setTheme(){
 
 			theTopBar.style.background = '#fff';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
-			//theProgCont.style.background = '#eee';
-			//theProgCont.style.filter = 'brightness(1)';
 
 			theTocBtn.style.color = '#000';
 			theTocBtn2.style.color = '#000';
@@ -1387,16 +1392,6 @@ function setTheme(){
 
 			theTocNav.style.background = '#fff';
 			theTocNav.style.color = '#000';
-
-			theTocNav.classList.add('bright-scroll');
-			theTocNav.classList.add('bright-scroll-track');
-			theTocNav.classList.add('bright-scroll-thumb');
-			theTocNav.classList.remove('dark-scroll'); 
-			theTocNav.classList.remove('dark-scroll-track');
-			theTocNav.classList.remove('dark-scroll-thumb');
-			theTocNav.classList.remove('mellow-scroll'); 
-			theTocNav.classList.remove('mellow-scroll-track');
-			theTocNav.classList.remove('mellow-scroll-thumb');
 
 			theTocNav.style.boxShadow = '6px 0 6px -3px #888';
 
@@ -1464,6 +1459,7 @@ function setTheme(){
 				sni.style.filter="invert(0)";
 			}
 
+			r.style.setProperty('--bookmargincolor', '#f7f7f7');
 			r.style.setProperty('--TOCprogress', '#0000001f'); //'#f0f2fd80');
 			r.style.setProperty('--TOChighlighter', '#00000037'); //'#e3e7fdc0');
 			r.style.setProperty('--primarytextcolor', '#000');
@@ -1512,8 +1508,6 @@ function setTheme(){
 
 			theTopBar.style.background = '#121212';
 			theTopBar.style.boxShadow = '0 1px 0 1px #595959';
-			//theProgCont.style.background = '#414141';
-			//theProgCont.style.filter = 'brightness(.8)';
 
 			theTocBtn.style.color = '#cfcfcf';
 			theTocBtn2.style.color = '#cfcfcf';
@@ -1521,15 +1515,6 @@ function setTheme(){
 
 			theTocNav.style.background = '#121212';
 			theTocNav.style.color = '#cfcfcf';
-			theTocNav.classList.remove('mellow-scroll'); 
-			theTocNav.classList.remove('mellow-scroll-track');
-			theTocNav.classList.remove('mellow-scroll-thumb');
-			theTocNav.classList.remove('bright-scroll'); 
-			theTocNav.classList.remove('bright-scroll-track');
-			theTocNav.classList.remove('bright-scroll-thumb');
-			theTocNav.classList.add('dark-scroll'); // the test
-			theTocNav.classList.add('dark-scroll-track'); // the test
-			theTocNav.classList.add('dark-scroll-thumb'); // the test
 			theTocNav.style.boxShadow = '2px 0 2px 1px #595959';
 			
 			document.getElementsByTagName('meta')["theme-color"].content = "#121212";
@@ -1593,6 +1578,7 @@ function setTheme(){
 				sni.style.filter="invert(75%)";
 			}
 
+			r.style.setProperty('--bookmargincolor', '#000000');
 			r.style.setProperty('--primarytextcolor', '#d7d7d7');
 			r.style.setProperty('--secondarytextcolor', '#c4cdda');
 			r.style.setProperty('--primarybackground', '#121212');
@@ -1644,8 +1630,6 @@ function setTheme(){
 
 			theTopBar.style.background = '#f5efd0';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
-			//theProgCont.style.background = '#ccc';
-			//theProgCont.style.filter = 'brightness(1)';
 
 			theTocBtn.style.color = '#00008b';
 
@@ -1654,16 +1638,6 @@ function setTheme(){
 	
 			theTocNav.style.background = '#f5efd0';
 			theTocNav.style.color = '#382500'; //'#5e4102';
-
-			theTocNav.classList.remove('bright-scroll');
-			theTocNav.classList.remove('bright-scroll-track');
-			theTocNav.classList.remove('bright-scroll-thumb');
-			theTocNav.classList.remove('dark-scroll'); 
-			theTocNav.classList.remove('dark-scroll-track');
-			theTocNav.classList.remove('dark-scroll-thumb'); 
-			theTocNav.classList.add('mellow-scroll'); 
-			theTocNav.classList.add('mellow-scroll-track');
-			theTocNav.classList.add('mellow-scroll-thumb');
 			theTocNav.style.boxShadow = '6px 0 6px -3px #888';
 
 			document.getElementsByTagName('meta')["theme-color"].content = "#f5efd0";
@@ -1733,6 +1707,8 @@ function setTheme(){
 				var sni = document.getElementById('suttanumberinfo');
 				sni.style.filter="invert(0)";
 			}
+
+			r.style.setProperty('--bookmargincolor', '#f1e8bb');
 
 			r.style.setProperty('--TOCprogress', '#eadbbf');
 			r.style.setProperty('--TOChighlighter', '#eadbbf');
@@ -2013,11 +1989,8 @@ window.onscroll = function() {
 		theTopBar.style.top = "0";
 	}
 	prevScrollpos = currentScrollPos;
-	//populate progress bar
 	fillProgressBar();
-	// save position
 	getNavTarget();
-	//savePlaceInBook();
 }
 
 
@@ -2028,7 +2001,7 @@ window.addEventListener('resize', function () {
 var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");
 
 function fillProgressBar() {
-
+/*
 	var tbHeight = Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
 	var currentTOCTarget = '';
 	for (var i = 0; i < savedHeadingsElements.length; i++) {
@@ -2062,7 +2035,7 @@ function fillProgressBar() {
 			}
 		}
 	}
-	
+*/	
 }
 
 //Open and close the TOC (Table of Contents) side navigation bar
@@ -2079,6 +2052,7 @@ tocbtn.onclick = function() {
 var fsTOCTopElement = 0; // fix for errant scrolling of main window in ffs mode  
 
 function showSideNav() {
+	/*
 	var elem = document.getElementById("tocnav");
 	sidebarIsOpen = true;
 	var tb = document.getElementById("tocbtn2"); // the fullscreen mobile TOC '<Contents' btn
@@ -2124,17 +2098,16 @@ function showSideNav() {
 		tocbtn.innerHTML = "&#10094; Contents";
 	}
 
-	//setTimeout(() => { tocnav.scrollTo({top:TOCscrollpos,}) }, 100);
 	setTimeout(() => {
 		fillProgressBar();
 	}, 500);
+	*/
 }
 
 
-//var TOCscrollpos = 0; // TOC position used when hiding and showing the TOC, initialised from local storage 
 
 function hideSideNav() {
-	//TOCscrollpos = tocnav.scrollTop;
+/*
 	if (forceMobileUI) {
 		showElement(theTopBar);
 		document.getElementById("tocbtn2").style.display = "none";
@@ -2156,6 +2129,7 @@ function hideSideNav() {
 		var blc = document.getElementById('bookListCount');
 		blc.style.top='-100px';
 	}
+	*/
 }
 
 function closeFromTocbtn2 () { 
@@ -2668,25 +2642,30 @@ function shadowSearchBar () {
 }
 
 function stopBookScroll () {
+	/*
 	document.getElementById("tocnav").style.top = "0"; // make sure the tocnav doesn't wander off
 	var thebody = document.getElementById("thebody");
 	var y = window.scrollY;
 	thebody.style.overflowY ='scroll';
 	thebody.style.top =  "-"+y+"px";
 	thebody.style.position = 'fixed';
+	*/
 }
 
 function startBookScroll () {
+	/*
 	const scrollY = document.body.style.top;
 	document.body.style.position = '';
 	document.body.style.top = '';
 	window.scrollTo(0, parseInt(scrollY || '0') * -1);
+	*/
 }
 
 var theTopElement = 0;
 var theTopElementTopEdge = 0;
 
 function getNavTarget () {
+	/*
 	for (var i = 0; i < savedBookElements.length; i++) {
 		if (isElementInViewport (savedBookElements[i])) {
 			theTopElement = i;
@@ -2695,6 +2674,7 @@ function getNavTarget () {
 			break;
 		}
 	}
+	*/
 }	
 
 function scrollToNavTarget () {

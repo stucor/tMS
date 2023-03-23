@@ -161,16 +161,7 @@ function formatSCLinktext () {
 
 }
 
-
-
-function startup () {
-	/*
-	console.log("local storage:");
-	for (var i = 0; i < localStorage.length; i++)   {
-		console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
-	}
-	*/
-
+function initPanes () {
 	Split({
 		columnGutters: [{
 			track: 1,
@@ -181,9 +172,17 @@ function startup () {
 			element: document.querySelector('.gutter-row-1'),
 		}]
 	})
+}
 
+function startup () {
+	/*
+	console.log("local storage:");
+	for (var i = 0; i < localStorage.length; i++)   {
+		console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
+	}
+	*/
 
-
+	initPanes();
 
 	buildSettings(function(){
 		//the following is done after buildSettings completes:

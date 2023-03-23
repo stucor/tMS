@@ -161,12 +161,7 @@ function formatSCLinktext () {
 
 }
 
-Split({
-    columnGutters: [{
-        track: 1,
-        element: document.querySelector('.gutter-col-1'),
-    }],
-})
+
 
 function startup () {
 	/*
@@ -175,6 +170,19 @@ function startup () {
 		console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
 	}
 	*/
+
+	Split({
+		columnGutters: [{
+			track: 1,
+			element: document.querySelector('.gutter-col-1'),
+		}],
+		rowGutters: [{
+			track: 1,
+			element: document.querySelector('.gutter-row-1'),
+		}]
+	})
+
+
 
 
 	buildSettings(function(){
@@ -679,6 +687,8 @@ window.onload = function () {
     .then(() => {
         hideSpinner();
 		getPlaceInBook();
+		//var engrave = document.getElementById('TOCTarget0');
+		//engrave.style.display = 'none';
 	});
 };
 
@@ -1183,13 +1193,10 @@ function doJustifyCheck () {
 	setJustify();
 }
 function setJustify () {
-	//var bookPages = document.getElementById("thebook");
 	var justificationCheck = document.getElementById("justifyCheck")
 	if (justificationCheck.checked){
-		//bookPages.style.textAlign = "justify";
 		document.querySelector(':root').style.setProperty('--textalign', 'justify');
     } else {
-		//bookPages.style.textAlign = "left";
 		document.querySelector(':root').style.setProperty('--textalign', 'left');
     }	
 }
@@ -1340,13 +1347,13 @@ function setTheme(){
 	//var theProgBar = document.getElementById("progressBar");
 
 	var theTocBtn = document.getElementById("tocBtn");	
-	var theTocBtn2 = document.getElementById("tocbtn2");
+	//var theTocBtn2 = document.getElementById("tocbtn2");
 	var theTocNav = document.getElementById("tocnav");
 
 	var imgs = document.querySelectorAll("img");
-	var righticons = document.querySelectorAll(".topnav-right > a > img ");
-	var righticonstext = document.querySelectorAll(".topnav-right > a > p");
-	var lefticons = document.querySelectorAll(".topnav-left > a > img");
+	var righticons = document.querySelectorAll("#topnav-right > a > img ");
+	var righticonstext = document.querySelectorAll("#topnav-right > a > p");
+	var lefticons = document.querySelectorAll("#topnav-left > a > img");
 
 	var shbuttons = document.querySelectorAll(".settingsheadersright > button");
 
@@ -1386,14 +1393,10 @@ function setTheme(){
 			theTopBar.style.background = '#fff';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
 
-			theTocBtn.style.color = '#000';
-			theTocBtn2.style.color = '#000';
-			theTocBtn2.style.background = '#fff';	
-
 			theTocNav.style.background = '#fff';
 			theTocNav.style.color = '#000';
 
-			theTocNav.style.boxShadow = '6px 0 6px -3px #888';
+			//theTocNav.style.boxShadow = '6px 0 6px -3px #888';
 
 			document.getElementsByTagName('meta')["theme-color"].content = "#fff";
 
@@ -1482,9 +1485,9 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#a5670a');
 
-			var engrave = document.getElementById('TOCTarget0');
-			engrave.style.color ='#bdbdbd';
-			engrave.style.textShadow ='0px 1px 0px #000000';
+			//var engrave = document.getElementById('TOCTarget0');
+			//engrave.style.color ='#bdbdbd';
+			//engrave.style.textShadow ='0px 1px 0px #000000';
 
 			themeName = "Simple";
 			break;
@@ -1509,13 +1512,9 @@ function setTheme(){
 			theTopBar.style.background = '#121212';
 			theTopBar.style.boxShadow = '0 1px 0 1px #595959';
 
-			theTocBtn.style.color = '#cfcfcf';
-			theTocBtn2.style.color = '#cfcfcf';
-			theTocBtn2.style.background = '#121212';	
-
 			theTocNav.style.background = '#121212';
 			theTocNav.style.color = '#cfcfcf';
-			theTocNav.style.boxShadow = '2px 0 2px 1px #595959';
+			//theTocNav.style.boxShadow = '2px 0 2px 1px #595959';
 			
 			document.getElementsByTagName('meta')["theme-color"].content = "#121212";
 
@@ -1601,9 +1600,9 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#a5670ae0');
 
-			var engrave = document.getElementById('TOCTarget0');
-			engrave.style.color ='#7c7c7c';
-			engrave.style.textShadow ='0px 1px 0px #ffffff';
+			//var engrave = document.getElementById('TOCTarget0');
+			//engrave.style.color ='#7c7c7c';
+			//engrave.style.textShadow ='0px 1px 0px #ffffff';
 
 			themeName = "SimpleDark";
 		  	break;
@@ -1631,14 +1630,9 @@ function setTheme(){
 			theTopBar.style.background = '#f5efd0';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
 
-			theTocBtn.style.color = '#00008b';
-
-			theTocBtn2.style.color = '#00008b';
-			theTocBtn2.style.background =  '#f5efd0';	
-	
 			theTocNav.style.background = '#f5efd0';
 			theTocNav.style.color = '#382500'; //'#5e4102';
-			theTocNav.style.boxShadow = '6px 0 6px -3px #888';
+			//theTocNav.style.boxShadow = '6px 0 6px -3px #888';
 
 			document.getElementsByTagName('meta')["theme-color"].content = "#f5efd0";
 
@@ -1732,9 +1726,9 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#a5670a');
 
-			var engrave = document.getElementById('TOCTarget0');
-			engrave.style.color ='#bdbdbd';
-			engrave.style.textShadow ='0px 1px 0px #000000';
+			//var engrave = document.getElementById('TOCTarget0');
+			//engrave.style.color ='#bdbdbd';
+			//engrave.style.textShadow ='0px 1px 0px #000000';
 			
 			themeName = "Sepia";
 		  	break;
@@ -2036,17 +2030,6 @@ function fillProgressBar() {
 		}
 	}
 */	
-}
-
-//Open and close the TOC (Table of Contents) side navigation bar
-var tocbtn = document.getElementById("tocBtn");
-
-tocbtn.onclick = function() {
-	if (sidebarIsOpen == true) {
-		hideSideNav();
-	} else {
-		showSideNav();
-	}
 }
 
 var fsTOCTopElement = 0; // fix for errant scrolling of main window in ffs mode  

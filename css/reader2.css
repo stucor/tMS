@@ -107,7 +107,6 @@ body {
 	width: 100%;
 	min-width: 100%;
 	overflow: hidden;
-	z-index: -20;
 }
 
 
@@ -125,34 +124,18 @@ body {
     background: var(--scrollbarThumbHoverColor);
 }
 
+
+
 #outerwrap {
 	display: grid;
 	grid-template-areas:
 	'header'
-	'book';
+	'wholebook';
 	height: 100vh;
 	max-height: 100vh;
 	gap: 1px;
 	background-color: var(--bookmargincolor);
 	padding: 0;
-}
-
-
-#innerwrap {
-	grid-area: book;
-	width:100%;
-	max-height: calc(100vh -101px);
-    display: grid;
-    grid-template-columns: 1fr 10px 1fr;
-}
-
-.gutter-col {
-    grid-row: 1/-1;
-    cursor: col-resize;
-}
-
-.gutter-col-1 {
-    grid-column: 2;
 }
 
 /********** Top bars **********/
@@ -163,32 +146,143 @@ body {
 	height:100px;
 	max-height: 100px;
 	z-index: 2;
+}
 
-/*	top:0;
-	position: sticky;
-	transition: top 0.3s;
-	box-shadow: 0 2px 6px 0 #777; 
-	*/
+/********** Top navigation bar **********/
 
+#topnav {
+	overflow: hidden;
+	user-select: none;
+	border-bottom: 1px solid hsla(0, 0%, 50%, 0.5);
+}
+#topnav p {
+	margin:0;
+}
+#topnav a:active {
+	background-color: #aaa;
+}
+#topnav-left {
+	padding-left: 5px;
+}	
+#topnav-left a {
+	float: left;
+	padding: 0 9px;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+}
+#topnav-left p {
+	text-transform: uppercase;
+	color: cornflowerblue;
+	font-weight: 700;
+	margin-top: -10px;
+	font-size: 14px;
+}	
+.bookshelfbtn {
+	padding: 10px 0 5px 0;
+	width:55px;
+	height:30px;
+}
+#topnav-right {
+	float: right;
+	padding-right: 5px;
+}
+#topnav-right a {
+	float: left;
+	color: #000;
+	text-align: center;
+	padding: 10px 6px 4px 6px;
+	text-decoration: none;
+	font-size: 13px;
+	width: 56px;
+}
+#topnav-right img {
+	width: 25px;
+	height: 25px;
+}
+
+/* Lower bar */
+
+#topnav2 {
+	overflow: hidden;
+	user-select: none;
+}
+
+/* Potential Buttons Container
+
+#topnav2buttons {
+	display: inline;
+	float: right;
+
+}
+
+#topnav2buttons > button {
+	float:right;
+	margin:6px 10px 5px 10px;
+	padding:0;
+	outline:none;
+	border:none;
+	cursor:pointer;
+	background:#ffffff00;
+}
+
+*/
+
+
+
+#innerwrap {
+	grid-area: wholebook;
+	max-height: calc(100vh -101px);
+    display: grid;
+    grid-template-columns: 1fr 6px 4fr;
+}
+
+
+.gutter-col {
+    grid-row: 1/-1;
+    cursor: col-resize;
+}
+
+.gutter-handle {
+	position: relative;
+	top: calc((100vh - 210px)/2);
+	left:0;
+	min-width: 6px;
+	width: 6px;
+	min-height: 30px;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+	filter: invert(30%);
+}
+
+.gutter-col-1 {
+    grid-column: 2;
+	background-color: rgba(226, 226, 226, 0.479);
+}
+
+.gutter-row {
+    grid-column: 1/-1;
+    cursor: row-resize;
+}
+
+.gutter-row-1 {
+    grid-row: 2;
+	background-color: rgba(226, 226, 226, 0.479);
 }
 
 /********** Side Navigation - The Table of Contents **********/
 
+#leftpane {
+	overflow-x: hidden;
+}
 #tocnav {
 	height: calc(100vh - 100px);
 	max-height: calc(100vh - 100px);
     background-color: #fff;
-	z-index: 3;
-	/*
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 0;
-	box-shadow: 6px 0 6px -3px #888;
-	user-select: none;
+	overflow-x: hidden;
 	hyphens: auto;
-	overscroll-behavior: none;
-	*/
 }
+
+
 
 
 .lihead {
@@ -257,7 +351,7 @@ body {
 
 }
 
-.tocno { /* this to be used when tocs dinamically created - see ten1 */
+.tocno { /* this to be used when tocs dynamically created - see ten1 */
 	font-variant: small-caps;
 	font-weight: 600 !important;
 	color:green !important;
@@ -269,18 +363,12 @@ body {
 	overflow-y: auto;
 }
 
-
-
 #bookwrap {
 	max-height: calc(100vh - 101px);
 	display: grid;
     grid-template-columns: 7% 86% 7%;
 	z-index: 1;
 }
-
-
-
-
 
 
 
@@ -338,27 +426,6 @@ body {
 
 .center {
 	text-align: center !important;
-}
-
-
-
-
-/********** Page Breaks **********/
-
-.pagebreak {
-	height: 10px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8c8c inset;
-	margin-bottom: 3rem;
-	margin-left:0;
-	margin-right:0;
-}
-
-.pagenumber {
-	/*text-align: center;*/
-	text-indent:0;
-	padding-top: 20px;
-	padding-bottom: 10px;
 }
 
 
@@ -458,7 +525,10 @@ strong {
 	hyphens: auto;
 	font-size: var(--fontsize);
 	line-height: var(--lineheight);
-	overflow-y: scroll;
+	overflow-y: auto;
+
+	display: grid;
+    grid-template-rows: 1fr 10px 1fr;
 
 }
 
@@ -523,25 +593,31 @@ strong {
 	text-align: center;
 }
 
+
 .content h1.titlepage {
+	font-family: 'Source Serif Pro';
+	font-size: 3em;
 	text-align: center;
 	font-style: normal;
 	font-weight: 400;
 	font-variant: small-caps;
 	padding-bottom: 0;
-	margin-bottom: 2em;
+	margin-bottom: 1.5em;
 }
 
 .content h2.titlepage {
-	text-align: center;
-	text-transform: uppercase;
+	font-family: 'Source Serif Pro';
 	font-style: normal;
+	font-size: 1.5em;
+	text-align: center;
+	font-variant: small-caps;
 	font-weight: 400;
 	margin-top: 4em;
 	margin-bottom: 5em;
 }
 
 .content h3.titlepage {
+	font-size: 1.2em;
 	text-align: center;
 	font-style: italic;
 	font-weight: 400;
@@ -549,6 +625,7 @@ strong {
 }
 
 .content h4.titlepage {
+	font-size: 1em;
 	text-align: center;
 	font-style: italic;
 	font-weight: 400;
@@ -920,6 +997,7 @@ table.borderlessTable {
 	display:none;
 	text-align: var(--textalign);
 	font-family: var(--fontfamily);
+	overflow-y: auto;
 }
 
 .booknote {
@@ -1569,41 +1647,7 @@ span.level {
 	content: ' pdf';
 }
 
-/********** Top navigation bar **********/
 
-.topnav {
-	overflow: hidden;
-	user-select: none;
-	border-bottom: 1px solid hsla(0, 0%, 50%, 0.5);
-}
-
-.topnav p {
-	margin:0;
-}
-
-.topnav a:active {
-	background-color: #aaa;
-}
-
-.topnav-left {
-	padding-left: 5px;
-}	
-
-.topnav-left a {
-	float: left;
-	padding: 0 9px;
-	text-align: center;
-	text-decoration: none;
-	user-select: none;
-}
-
-.topnav-left p {
-	text-transform: uppercase;
-	color: cornflowerblue;
-	font-weight: 700;
-	margin-top: -10px;
-	font-size: 14px;
-}	
 .logo {
 	padding: 4px 0 2px 0;
 	float:left;
@@ -1618,20 +1662,6 @@ span.level {
 }
 
 
-/*
-.bookshelfbtn {
-	padding: 11px 0 5px 0;
-	width:53px;
-	height:42px;
-}
-*/
-.bookshelfbtn {
-	padding: 10px 0 5px 0;
-	width:55px;
-	height:30px;
-}
-
-
 .wiswologodetails {
 	display:inline;
 	padding: 0;
@@ -1641,26 +1671,9 @@ span.level {
 	font-family: Cambria, Georgia, serif; 
 }
 
-.topnav-right {
-	float: right;
-	padding-right: 5px;
-}
 
-.topnav-right a {
-	float: left;
-	color: #000;
-	text-align: center;
-	padding: 10px 6px 4px 6px;
-	text-decoration: none;
-	font-size: 13px;
-	width: 56px;
-}
 
-.topnav-right img {
-	width: 25px;
-	height: 25px;
-}
-
+/* SEARCH */
 
 .searchbar {
 	display: none;
@@ -1673,7 +1686,7 @@ span.level {
 	min-width: 310px;
 	max-width: 310px;
 	transition: .2s;
-	z-index: 1;
+	z-index: 10;
 }
 
 .searchbar.uplift {
@@ -1748,80 +1761,6 @@ mark.current {
 }
 
 /********** Contents & Book title **********/
-
-.topnav2 {
-	overflow: hidden;
-	user-select: none;
-	padding: 0;
-}
-
-.tocbtn {
-	font-size: 18px;
-	font-variant: small-caps;
-    width: 120px;
-	height:40px;
-    float: left;
-	padding-top: 7px;
-	padding-bottom: 3px;
-	padding-left: 10px;
-    box-sizing: border-box;
-	cursor:pointer;
-	font-weight: 400;
-}
-
-
-#tocbtn2 {
-	display:none;
-	font-size: 18px;
-	font-variant: small-caps;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	cursor:pointer;
-	font-weight: 400;
-	position: fixed;
-	width: 100%;
-	box-shadow: 0 2px 6px 0 #777; 
-	z-index: 1;
-}
-
-
-.booktitle {
-	display:inline-block;
-	height: 35px;
-	padding:5px 0 0 0;
-	font-size: 0.9em;
-	line-height: 1.1em;
-	font-variant: small-caps;
-	text-align:center;
-	box-sizing: border-box; 
-	color: gray;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	width: calc(100vw - 246px);
-}
-
-
-.topnav2buttons {
-	display: inline;
-	float: right;
-
-}
-
-.topnav2buttons > button {
-	float:right;
-	margin:6px 10px 5px 10px;
-	padding:0;
-	outline:none;
-	border:none;
-	cursor:pointer;
-	background:#ffffff00;
-}
-
-
-
-
 
 
 
@@ -2153,7 +2092,7 @@ mark.current {
 		box-shadow: 0 0 5px 2px var(--primarycolor);
 	}
 
-	.topnav a:hover {
+	#topnav a:hover {
 		background-color: var(--listlinkhover);
 		cursor:pointer;
 	}

@@ -47,8 +47,8 @@ function isBookShelf () {
 }
 
 function shortcode() {
-	var thebook = document.getElementById("thebook");
-	return thebook.getAttribute("data-shortcode");
+	var book = document.getElementById("book");
+	return book.getAttribute("data-shortcode");
 }
 
 // build sections
@@ -187,15 +187,15 @@ function startup () {
 
 	buildSettings(function(){
 		//the following is done after buildSettings completes:
-		savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
+		savedBookElements = book.querySelectorAll("*:not(.noshow)");
 		document.getElementById('topbar').style.display='block';
-		document.getElementById('thebook').style.display='block';
+		document.getElementById('book').style.display='block';
 		hideAllLibNotes();
 		initialiseCommonSettings();
 		if (!isAudioBook()) {
 			initialiseBookSettings ();
 		} 
-		formatbooknotes();
+//		formatbooknotes();
 		formatSCLinktext();
 		var scroller = Math.floor(window.scrollY);
 		history.replaceState({scrollState: scroller},'',''); 
@@ -692,10 +692,10 @@ window.onload = function () {
 	});
 };
 
-var savedBookElements = [];//thebook.querySelectorAll("*:not(.noshow)");
+var savedBookElements = [];
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
-var savedNotesElements = ModalNotes.querySelectorAll('h2, div');
+var savedNotesElements = booknotes.querySelectorAll('div.booknote');
 
 
 var theTopBar = document.getElementById("topbar");
@@ -769,7 +769,7 @@ function initialiseCommonSettings () {
 		setFontLevel(local_wiswobooks_font_size);
 		setTOCLevel(local_wiswobooks_font_size);
 		setDetailsLevel(local_wiswobooks_font_size);
-		setNotesLevel(local_wiswobooks_font_size);
+		//setNotesLevel(local_wiswobooks_font_size);
 	}	
 }
 
@@ -1206,12 +1206,12 @@ function doHyphenCheck () {
 	setHyphenation();
 }	
 function setHyphenation () {
-	var bookPages = document.getElementById("thebook");
+	var book = document.getElementById("book");
 	var hyphenationCheck = document.getElementById("hyphenCheck")
 	if (hyphenationCheck.checked){
-		bookPages.style.hyphens = "auto";
+		book.style.hyphens = "auto";
     } else {
-		bookPages.style.hyphens = "none";
+		book.style.hyphens = "none";
     }	
 }
 
@@ -1304,11 +1304,13 @@ function setDetailsLevel (level) {
 			}
 	}
 }	
+/*
 function setNotesLevel (level) {
 	for (var i = 0; i < savedNotesElements.length; i++) {
 		savedNotesElements[i].style.fontSize = level+'px';
 	}
 }	
+*/
 
 // LINE SPACING
 function setLH (level) {
@@ -1748,22 +1750,22 @@ function doSetMargin () {
 
 function setMargin() {
 	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
-	var thebook = document.getElementById("thebook");
+	var book = document.getElementById("book");
 	switch (whatIsPressed) {
 
 		case "narrowmargin":	
-			thebook.style.paddingLeft = '2%';
-			thebook.style.paddingRight = '2%';
+			book.style.paddingLeft = '2%';
+			book.style.paddingRight = '2%';
 			marginName = "narrowmargin";
 			break;
 		case "midmargin":
-			thebook.style.paddingLeft = '10%';
-			thebook.style.paddingRight = '10%';
+			book.style.paddingLeft = '10%';
+			book.style.paddingRight = '10%';
 			marginName = "midmargin";
 			break;
 		case "widemargin":
-			thebook.style.paddingLeft = '20%';
-			thebook.style.paddingRight = '20%';
+			book.style.paddingLeft = '20%';
+			book.style.paddingRight = '20%';
 			marginName = "widemargin";
 		}
 }
@@ -1992,7 +1994,7 @@ window.addEventListener('resize', function () {
 	scrollToNavTarget();
 });
 
-var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");
+var savedHeadingsElements = book.querySelectorAll("h1[id], h2[id], h3[id]");
 
 function fillProgressBar() {
 /*
@@ -2415,7 +2417,7 @@ function showModal (theModal) {
 var calledFromNotes = false;
 
 // use event delagation on the book to show notes or move to internal links
-document.getElementById("thebook").addEventListener("click", function(e) {
+document.getElementById("book").addEventListener("click", function(e) {
 
 	if(e.target && (e.target.nodeName == "SUP" || e.target.className == "suttaref" || e.target.className == "TOCref")) { 
 		if (e.target.className == "suttaref" || e.target.className == "TOCref") {
@@ -2429,11 +2431,11 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 			goToTarget(toctarget);
 			if (true) {e.preventDefault();}
 		} else {	
-			savedsup = e.target;
-			setModalStyle ("Notes");
-			showModal("Notes");
+			//savedsup = e.target;
+			//setModalStyle ("Notes");
+			//showModal("Notes");
 			highlightnote(e.target.innerHTML); 
-			stopBookScroll ();
+			//stopBookScroll ();
 			if (true) {e.preventDefault();}
 		}	
 	}
@@ -2529,12 +2531,15 @@ function showAlert(HTMLToShow) {
 
 
 var savedsup = '';
+/*
 function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
 	for (var i = 1; i < savedNotesElements.length; i++) {
 		savedNotesElements[i].innerHTML = "<div class='booknotesNumber'>" + (i) + "</div> <div class='booknotesText'>" + savedNotesElements[i].innerHTML +"</div>";
 	}
 }
+*/
 var highlightedNote = 0;
+/*
 function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
 	savedNotesElements[highlightedNote].style.border = "thin solid grey";
@@ -2542,6 +2547,17 @@ function highlightnote (notetohighlight) {
 	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
 	ModalBody.scrollBy(0,-40);
 }
+*/
+
+function highlightnote (notetohighlight) {
+	clearhighlightnote();
+	highlightedNote = parseInt(notetohighlight-1);
+	savedNotesElements[highlightedNote].style.border = "thin solid grey";
+	savedNotesElements[highlightedNote].style.background = "#c0c0c020";
+	savedNotesElements[highlightedNote].scrollIntoView({block: "center",});
+
+}
+
 function clearhighlightnote() {
 	savedNotesElements[highlightedNote].style.border = "unset";
 	savedNotesElements[highlightedNote].style.background = "unset";
@@ -2569,7 +2585,7 @@ function reformatBook () {
 	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
 	setFontLevel(fontlevel);
 	setDetailsLevel(fontlevel);
-	setNotesLevel(fontlevel);
+	//setNotesLevel(fontlevel);
 
 	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
 	setLH (lhlevel);
@@ -2719,9 +2735,9 @@ function doOutAppHREF (href) {
 }
 
 
-var savedSUPElements = thebook.querySelectorAll('sup');
+var savedSUPElements = book.querySelectorAll('sup');
 
-document.getElementById("ModalNotes").addEventListener("click", function(e) {
+document.getElementById("booknotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
 		if (e.target.classList.contains('expanded')) {
@@ -2742,13 +2758,15 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	}
 
 	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
-		calledFromNotes = true;
-		let linkNode = e.target;
-		if (e.target.classList.contains('scsegments')) {
-			linkNode = e.target.parentNode;
+		//calledFromNotes = true;
+		var linkNode;
+		if (e.target.classList.contains('sclinktext')) {
+			linkNode = e.target;
+		} else {
+			linkNode = e.target.parentNode.parentNode;
 		}
 		displaySutta(linkNode.innerText);
-		restorePlaceInBook();
+		//restorePlaceInBook();
 		if (true) {e.preventDefault();}
 	}
 
@@ -2794,7 +2812,7 @@ $(function() {
 	  // revert button
 	  $revertBtn = $("button[data-search='revert']"),
 	  // the context where to search
-	  $content = $("#thebook"),
+	  $content = $("#book"),
 	  // jQuery object to save <mark> elements
 	  $results,
 	  // the class that will be appended to the current

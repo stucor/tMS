@@ -232,7 +232,6 @@ body {
 
 #innerwrap {
 	grid-area: wholebook;
-	max-height: calc(100vh -101px);
     display: grid;
     grid-template-columns: 1fr 6px 4fr;
 }
@@ -243,7 +242,7 @@ body {
     cursor: col-resize;
 }
 
-.gutter-handle {
+.gutter-col-handle {
 	position: relative;
 	top: calc((100vh - 210px)/2);
 	left:0;
@@ -264,6 +263,18 @@ body {
     cursor: row-resize;
 }
 
+.gutter-row-handle {
+	position: relative;
+	left: calc((100%/2) - 15px);
+	min-height: 6px;
+	height: 6px;
+	min-width: 30px;
+	width: 30px;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+	filter: invert(30%);
+}
+
+
 .gutter-row-1 {
     grid-row: 2;
 	background-color: rgba(226, 226, 226, 0.479);
@@ -281,9 +292,6 @@ body {
 	overflow-x: hidden;
 	hyphens: auto;
 }
-
-
-
 
 .lihead {
 	font-size: 20px;
@@ -363,7 +371,7 @@ body {
 	overflow-y: auto;
 }
 
-#bookwrap {
+#rightpane {
 	max-height: calc(100vh - 101px);
 	display: grid;
     grid-template-columns: 7% 86% 7%;
@@ -528,7 +536,7 @@ strong {
 	overflow-y: auto;
 
 	display: grid;
-    grid-template-rows: 1fr 10px 1fr;
+    grid-template-rows: 5fr 8px 1fr;
 
 }
 
@@ -991,7 +999,7 @@ table.borderlessTable {
 	font-style: normal;
 }
 
-.book {
+#book {
 	padding-left:40px;
 	padding-right:40px;
 	display:none;
@@ -1000,9 +1008,13 @@ table.borderlessTable {
 	overflow-y: auto;
 }
 
+#booknotes {
+	overflow-y: auto;
+}
+
 .booknote {
-	margin: 10px 10%;
-	padding:10px;
+	margin: 0 5%;
+	padding: 5px;
 	text-align: left;
 	border-radius: 10px;
 	display: grid;

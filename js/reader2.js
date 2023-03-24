@@ -1983,7 +1983,7 @@ function fillProgressBar() {
 		for (var i = 0; i < savedTOCElements.length; i++) {
 			savedTOCElements[i].style.background = 'unset';
 			savedTOCElements[i].style.opacity = '1';
-			savedTOCElements[i].setAttribute('data-progress', '');
+			//savedTOCElements[i].setAttribute('data-progress', '');
 		}
 		for (var i = 0; i < savedTOCElements.length; i++) {
 			if (savedTOCElements[i].id !== currentTOC) {
@@ -1995,7 +1995,8 @@ function fillProgressBar() {
 
 				var scrolled = Math.floor(((book.scrollTop / (book.scrollHeight - book.offsetHeight)) * 100)* 10) /10;
 				if (!isNaN(scrolled)) {
-					savedTOCElements[i-1].setAttribute('data-progress',scrolled.toFixed(1) + '%');
+					document.getElementById('bookread').innerHTML = scrolled.toFixed(1) + '%';
+					//savedTOCElements[i-1].setAttribute('data-progress',scrolled.toFixed(1) + '%');
 				} 
 				break;
 			}

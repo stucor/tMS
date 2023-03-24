@@ -49,6 +49,10 @@
     --scrollbarThumbColor: #d3d3d378;
     --scrollbarThumbHoverColor: #adadad;
 
+	/* Slit Frame Sizes */
+	--verticalHeight : 100vh - 101px;
+
+	/* Colours */
 	--bookmargincolor: '#f7f7f7';
 
 	--notehighlighter: #22963554;
@@ -244,7 +248,7 @@ body {
 
 .gutter-col-handle {
 	position: relative;
-	top: calc((100vh - 210px)/2);
+	top: calc((var(--verticalHeight))/2 - 15px);
 	left:0;
 	min-width: 6px;
 	width: 6px;
@@ -265,6 +269,7 @@ body {
 .gutter-row-1 {
     grid-row: 2;
 	background-color: #f1f1f1;
+	border-bottom: dotted black 1px;
 }
 
 .gutter-row-handle {
@@ -278,19 +283,21 @@ body {
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
 }
 .gutter-row-handle::after {
+	border-bottom: dotted black 1px;
+	border-left: dotted black 1px;
+	border-right: dotted black 1px;
 	position: relative;
-	top:3px;
-	left: -3px;
+	top: 3px;
+	left: -4px;
 	font-size: 0.8em;
 	font-variant: small-caps;
 	padding: 0 3px;
-	content: 'Notes';
+	content: 'notes';
 	background-image: unset;
 	border-bottom-left-radius: 30%;
 	border-bottom-right-radius: 30%;
 	background-color: #f1f1f1;
 	color: darkgray;
-
 }
 
 
@@ -300,8 +307,8 @@ body {
 	overflow-x: hidden;
 }
 #tocnav {
-	height: calc(100vh - 100px);
-	max-height: calc(100vh - 100px);
+	height: calc(var(--verticalHeight));
+	max-height: calc(var(--verticalHeight));
     background-color: #fff;
 	overflow-x: hidden;
 	hyphens: auto;
@@ -319,8 +326,8 @@ body {
 }
 
 #tocnav ul {
-	max-height: calc(100vh - 100px);
-	min-height: calc(100vh - 100px);
+	max-height: calc(var(--verticalHeight));
+	min-height: calc(var(--verticalHeight));
 	padding: 0 10px;
 }
 
@@ -381,12 +388,12 @@ body {
 
 #TOC {
 	margin: 0;
-	max-height: (calc 100vh - 101px);
+	max-height: (calc var(--verticalHeight));
 	overflow-y: auto;
 }
 
 #rightpane {
-	max-height: calc(100vh - 101px);
+	max-height: calc(var(--verticalHeight));
 	display: grid;
     grid-template-columns: 7% 86% 7%;
 	z-index: 1;
@@ -1713,7 +1720,7 @@ span.level {
 	min-width: 310px;
 	max-width: 310px;
 	transition: .2s;
-	z-index: 10;
+	z-index: 3;
 }
 
 .searchbar.uplift {

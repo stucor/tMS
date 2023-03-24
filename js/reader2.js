@@ -1,11 +1,10 @@
 var nuclearOption = false;
 // SETTINGS VARIABLES
-var sidebarIsOpen = false;
-var forceMobileUI;
+var fixedMenu;
 var themeName = "Simple";
 var marginName = "";
 
-var prevScrollpos = window.pageYOffset;
+
 
 // generic cookie functions
 
@@ -133,8 +132,8 @@ function buildSettings (_callback) {
 				</select>
 			</div>
 			<div class="settingsbox">
-				<span class ="settingsheadersleft">Full Screen Mode:</span>
-				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="mobileUIAlwaysOnCheck"><span class="slider round"></span></label></span>
+				<span class ="settingsheadersleft">Fixed Menu:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="fixedMenuCheck"><span class="slider round"></span></label></span>
 			</div>
 		`;
 
@@ -208,15 +207,14 @@ function startup () {
 			initialiseBookShelfSettings ();
 			document.getElementById('TOCTarget0').style.display='none';
 		}
-		mobileUIAlwaysOnCheck.onclick = function () {
-			var wasSidebarOpen = sidebarIsOpen; //check if the sidebar was open as we have to close it and reopen it in mobile mode
-			setFFS();
-			hideSideNav();
-			if (wasSidebarOpen){
+		fixedMenuCheck.onclick = function () {
+			setMenuVisability();
+			//hideSideNav();
+			/*if (wasSidebarOpen){
 				showElement(theTopBar);
 				theTopBar.style.top = "0";
 				showSideNav();
-			}
+			}*/
 			shadowSearchBar ();
 		}
 		justifyCheck.onclick = function () {
@@ -711,34 +709,23 @@ function initialiseCommonSettings () {
 	var local_wiswobooks_ffs = getCookie("wiswobooks_ffs");
 	switch (local_wiswobooks_ffs) {
 		case 'true' :
-			document.getElementById("mobileUIAlwaysOnCheck").checked = true;
+			document.getElementById("fixedMenuCheck").checked = true;
 			break;
 		case 'false' :
-			document.getElementById("mobileUIAlwaysOnCheck").checked = false;
+			document.getElementById("fixedMenuCheck").checked = false;
 			break;	
 		default :
-		if (window.innerWidth > 666) {
+		if (window.innerWidth <= 666) {
 			local_wiswobooks_ffs = false;
-			document.getElementById("mobileUIAlwaysOnCheck").checked = false;
+			document.getElementById("fixedMenuCheck").checked = false;
 		} else {
 			local_wiswobooks_ffs = true;
-			document.getElementById("mobileUIAlwaysOnCheck").checked = true;
+			document.getElementById("fixedMenuCheck").checked = true;
 		}
 		setCookie('wiswobooks_ffs',local_wiswobooks_ffs,365);
 	}
-	setFFS();
-	//SIDEBAR (TOCOPEN)
-	var local_wiswobooks_tocopen = getCookie("wiswobooks_tocopen");
-	if (local_wiswobooks_tocopen == '') {
-		local_wiswobooks_tocopen = 'false';
-		setCookie ("wiswobooks_tocopen", local_wiswobooks_tocopen,365);
-	} else {
-		if (local_wiswobooks_tocopen == 'true') {
-			showSideNav();
-		} else {
-			hideSideNav();
-		}
-	}
+	setMenuVisability();
+
 	//THEME
 	var local_wiswobooks_theme = getCookie("wiswobooks_theme");
 	switch (local_wiswobooks_theme) {
@@ -1037,11 +1024,8 @@ if (!nuclearOption) {
 	//THEME
 	var local_wiswobooks_theme = document.querySelector('input[name="themeRadio"]:checked').value;
 	setCookie ('wiswobooks_theme', local_wiswobooks_theme,365);
-	// is TOC open
-	var local_wiswobooks_tocopen = sidebarIsOpen;
-	setCookie("wiswobooks_tocopen", local_wiswobooks_tocopen,365);
 	//FORCE-FULL-SCREEN
-	var local_wiswobooks_ffs = document.getElementById("mobileUIAlwaysOnCheck").checked;
+	var local_wiswobooks_ffs = document.getElementById("fixedMenuCheck").checked;
 	setCookie('wiswobooks_ffs',local_wiswobooks_ffs,365);
 	//FONT-SIZE
 	var local_wiswobooks_font_size = document.getElementById("flvalue").innerHTML;
@@ -1166,12 +1150,12 @@ if (!nuclearOption) {
 
 
 
-function setFFS () {
-	var ffsCheck = document.getElementById("mobileUIAlwaysOnCheck");
-	if (ffsCheck.checked){
-		forceMobileUI = true;
+function setMenuVisability () {
+	var fmCheck = document.getElementById("fixedMenuCheck");
+	if (fmCheck.checked){
+		fixedMenu = true;
     } else {
-        forceMobileUI = false;
+        fixedMenu = false;
     }	
 }
 
@@ -1343,9 +1327,6 @@ function setTheme(){
 	var whatIsPressed = document.querySelector('input[name="themeRadio"]:checked').value;
 	var theBody = document.getElementById("thebody");
 	var bookPages = document.getElementById("thecontent"); 
-
-	//var theProgCont = document.getElementById("prog-cont"); 
-	//var theProgBar = document.getElementById("progressBar");
 
 	var theTocBtn = document.getElementById("tocBtn");	
 	//var theTocBtn2 = document.getElementById("tocbtn2");
@@ -1915,7 +1896,7 @@ function scrollToID (id) {
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
 
-function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given either an ID or an Element
+function goToTarget (target, IDOrElement ='ID', blockPosition = "start") { // scrolls to an element given either an ID or an Element
 	var scroller = Math.floor(window.scrollY);
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
@@ -1926,18 +1907,15 @@ function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given
 	} else if (IDOrElement == 'ELEMENT'){
 		elmnt = target;
 	}
-	elmnt.scrollIntoView();
-	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
-	window.scrollBy(0, tbHeight); // scroll the target below the topnav bar so you can see it
+	elmnt.scrollIntoView({ block: blockPosition, inline: "nearest" });
+	//var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
+	//window.scrollBy(0, tbHeight); // scroll the target below the topnav bar so you can see it
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
 
 // TOC Navigation - uses event delegation on UL LI
 document.getElementById("TOC").addEventListener("click", function(e) {
-	if ((forceMobileUI) && (!(isBookShelf()))) {
-		hideSideNav ();
-	}
 	// e.target is the clicked element!
 	// If it was a list item
 	if(e.target && e.target.nodeName == "LI") {
@@ -1964,24 +1942,21 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 	}
 });
 
-// hide and show the top and bottom bars by placing them off canvas when window is scrolled up (show) and down (hide) - 
-// this is a automatic setting mobileUI or the user-setting/cookie forceMobileUI. Then set progress bar
-
-window.onscroll = function() {
-	var currentScrollPos = window.pageYOffset;
-	if (forceMobileUI) {
-		if (sidebarIsOpen == false){
-			if ((prevScrollpos > currentScrollPos)) { // show top bar when scrolling up
-				theTopBar.style.top = "0";
-
-			} else {  // hide top bar when scrolling down
-				theTopBar.style.top = "-120px";
-			}
-		} else {
-			theTopBar.style.top = "-120px";
+//On Scrolling the book
+var prevScrollpos;
+book.onscroll = function() {
+	var currentScrollPos = document.getElementById('book').scrollTop;
+	if (!fixedMenu) {
+		var r = document.querySelector(':root');
+		if ((prevScrollpos > currentScrollPos)) { // show top bar when scrolling up
+			document.getElementById('outerwrap').style.gridTemplateAreas = "'header' 'wholebook'";	
+			r.style.setProperty('--verticalHeight', '100vh - 101px');		
+			document.getElementById('topbar').style.display ="block";
+		} else {  // hide top bar when scrolling down
+			document.getElementById('outerwrap').style.gridTemplateAreas = "'wholebook'";
+			r.style.setProperty('--verticalHeight', '100vh');		
+			document.getElementById('topbar').style.display ="none";
 		}
-	} else {
-		theTopBar.style.top = "0";
 	}
 	prevScrollpos = currentScrollPos;
 	fillProgressBar();
@@ -1996,17 +1971,14 @@ window.addEventListener('resize', function () {
 var savedHeadingsElements = book.querySelectorAll("h1[id], h2[id], h3[id]");
 
 function fillProgressBar() {
-/*
-	var tbHeight = Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
 	var currentTOCTarget = '';
-	for (var i = 0; i < savedHeadingsElements.length; i++) {
+	for (var i = 1; i < savedHeadingsElements.length; i++) {
 		currentTOCTarget = savedHeadingsElements[i].id;
-		if (savedHeadingsElements[i].getBoundingClientRect().top > tbHeight+5) {
+		if (savedHeadingsElements[i].getBoundingClientRect().top > book.getBoundingClientRect().top +5) {
 			break;
 		}
 	}
 	var currentTOC = currentTOCTarget.replace('Target', '');
-
 	if (currentTOC !== '') {
 		for (var i = 0; i < savedTOCElements.length; i++) {
 			savedTOCElements[i].style.background = 'unset';
@@ -2019,10 +1991,9 @@ function fillProgressBar() {
 				savedTOCElements[i].style.opacity = '0.4';
 			} else {
 				savedTOCElements[i-1].style.opacity = '1';
-				savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
-				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-				var scrolled = Math.floor(((winScroll / height) * 100)* 10) /10;
+				savedTOCElements[i-1].scrollIntoView({block: 'start', behavior: 'auto',});
+
+				var scrolled = Math.floor(((book.scrollTop / (book.scrollHeight - book.offsetHeight)) * 100)* 10) /10;
 				if (!isNaN(scrolled)) {
 					savedTOCElements[i-1].setAttribute('data-progress',scrolled.toFixed(1) + '%');
 				} 
@@ -2030,97 +2001,18 @@ function fillProgressBar() {
 			}
 		}
 	}
-*/	
+	
 }
 
 var fsTOCTopElement = 0; // fix for errant scrolling of main window in ffs mode  
 
-function showSideNav() {
-	/*
-	var elem = document.getElementById("tocnav");
-	sidebarIsOpen = true;
-	var tb = document.getElementById("tocbtn2"); // the fullscreen mobile TOC '<Contents' btn
-	getNavTarget();
-	if (forceMobileUI) {
-		fsTOCTopElement = theTopElement;
-		elem.style.top = "0";
-		elem.style.width = "100%";
-		showElement(tb);
-		document.getElementById("tocbtn2").style.display = "block";
-		hideElement(theTopBar);		
-		document.getElementById("TOC").style.paddingTop ="50px";
-		if(isBookShelf()) {
-			var blc = document.getElementById('bookListCount');
-			blc.style.top='5px';
-		}
-	} else {
-		var tocposition = document.getElementById("tocBtn").getBoundingClientRect().bottom;
-		elem.style.top = tocposition;
-		if (isBookShelf()) {
-			elem.style.width = "30%";	
-		} else {
-			elem.style.width = "25%";	
-		}
-		hideElement(tb)
-		if (isBookShelf()) {
-			document.getElementById("bookwrap").style.marginLeft = "30%";
-		} else {
-			document.getElementById("bookwrap").style.marginLeft = "25%";
-		}
 
-		document.getElementById("TOC").style.paddingTop ="100px";
-		scrollToNavTarget ();
-		
-		if(isBookShelf()) {
-			var blc = document.getElementById('bookListCount');
-			blc.style.top='-100px';
-		}
-	}
-	if (isBookShelf()) {
-		tocbtn.innerHTML = "&#10094; Find";
-	} else {
-		tocbtn.innerHTML = "&#10094; Contents";
-	}
-
-	setTimeout(() => {
-		fillProgressBar();
-	}, 500);
-	*/
-}
-
-
-
-function hideSideNav() {
 /*
-	if (forceMobileUI) {
-		showElement(theTopBar);
-		document.getElementById("tocbtn2").style.display = "none";
-		setTimeout (wiggle,300);
-	} else {
-		getNavTarget();
-	}
-	var elem = document.getElementById("tocnav");
-	elem.style.width = "0";
-	sidebarIsOpen = false;
-	document.getElementById("bookwrap").style.marginLeft = "0";	
-	if (isBookShelf()) {
-		tocbtn.innerHTML = "&#10095; Find"; 
-	} else {
-		tocbtn.innerHTML = "&#10095; Contents";
-	}
-	scrollToNavTarget();
-	if(isBookShelf()) {
-		var blc = document.getElementById('bookListCount');
-		blc.style.top='-100px';
-	}
-	*/
-}
-
 function closeFromTocbtn2 () { 
 	theTopElement = fsTOCTopElement;
 	hideSideNav();
 }
-
+*/
 function wiggle () { // to get the topbar to scroll into view after navigation
 	window.scrollBy(0, 1); 
 	window.scrollBy(0,-1);
@@ -2632,7 +2524,7 @@ function promiseToRunAsync(executor, ...params) {
 
 function shadowSearchBar () {
 	var searchBar = document.getElementById("SearchBar");
-	if (forceMobileUI) {
+	if (!fixedMenu) {
 		searchBar.classList.add('uplift');
 	} else {
 		searchBar.classList.remove('uplift');
@@ -2640,30 +2532,30 @@ function shadowSearchBar () {
 }
 
 function stopBookScroll () {
-	/*
+
 	document.getElementById("tocnav").style.top = "0"; // make sure the tocnav doesn't wander off
 	var thebody = document.getElementById("thebody");
 	var y = window.scrollY;
 	thebody.style.overflowY ='scroll';
 	thebody.style.top =  "-"+y+"px";
 	thebody.style.position = 'fixed';
-	*/
+
 }
 
 function startBookScroll () {
-	/*
+
 	const scrollY = document.body.style.top;
 	document.body.style.position = '';
 	document.body.style.top = '';
 	window.scrollTo(0, parseInt(scrollY || '0') * -1);
-	*/
+
 }
 
 var theTopElement = 0;
 var theTopElementTopEdge = 0;
 
 function getNavTarget () {
-	/*
+
 	for (var i = 0; i < savedBookElements.length; i++) {
 		if (isElementInViewport (savedBookElements[i])) {
 			theTopElement = i;
@@ -2672,7 +2564,7 @@ function getNavTarget () {
 			break;
 		}
 	}
-	*/
+
 }	
 
 function scrollToNavTarget () {
@@ -2780,7 +2672,7 @@ document.getElementById("booknotes").addEventListener("click", function(e) {
 					closebtn.click();
 				}
 			}
-			goToTarget(savedsup, 'ELEMENT');
+			goToTarget(savedsup, 'ELEMENT', 'center');
 		}
 	}
 

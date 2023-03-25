@@ -215,7 +215,7 @@ header li .segno {
 */
 
 .scsegments, .tipsegments {
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: 600;
   color: var(--scsegmentnumbercolor);
 }

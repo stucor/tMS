@@ -1871,20 +1871,24 @@ function scrollToID (id) {
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
+
 	var elmnt = document.getElementById(id);
+
+	elmnt.scrollIntoView({block: 'center', behavior: 'auto',});
+	savedsup = elmnt;
+	clearhighlightnote();
+
+	/*
 	let noteElmnt = '';
-	if (elmnt.parentElement.classList.contains('booknote')){
-		noteElmnt = elmnt.parentElement;
+	if (elmnt.parentElement.classList.contains('booknotesText')){
+		noteElmnt = elmnt.parentElement.parentElement;
 	} else if (elmnt.parentElement.parentElement.classList.contains('booknote')) {
 		noteElmnt = elmnt.parentElement.parentElement;
 	}
 	if (noteElmnt) {
-		setModalStyle ("Notes");
-		showModal("Notes");
+		elmnt.scrollIntoView({block: 'center', behavior: 'auto',});
 		savedsup = elmnt;
 		clearhighlightnote();
-		highlightnote(noteElmnt.dataset.note); 
-		stopBookScroll ();
 	} else {
 		elmnt.scrollIntoView({block: 'start', behavior: 'auto',});
 		window.scrollBy(0, -150);
@@ -1892,6 +1896,7 @@ function scrollToID (id) {
 		savedsup = elmnt;
 		clearhighlightnote();
 	}
+	*/
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
@@ -2431,15 +2436,6 @@ function formatbooknotes() { // adds the notes numbers to the booknotes - called
 }
 */
 var highlightedNote = 0;
-/*
-function highlightnote (notetohighlight) {
-	highlightedNote = parseInt(notetohighlight);
-	savedNotesElements[highlightedNote].style.border = "thin solid grey";
-	savedNotesElements[highlightedNote].style.background = "#c0c0c020";
-	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
-	ModalBody.scrollBy(0,-40);
-}
-*/
 
 function highlightnote (notetohighlight) {
 	clearhighlightnote();
@@ -2487,18 +2483,20 @@ function reformatBook () {
 }
 
 function exitStaticModal () {
+	
 	if (calledFromNotes) {
 		setModalStyle ("Notes");
 		showModal("Notes");
 		savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
 		ModalBody.scrollBy(0,-40);
-		calledFromNotes = false;
-	} else {
+		calledFromNotes = false;		
+	} else { 
 		startBookScroll();
-		clearhighlightnote();
+		//clearhighlightnote();
 		hideElement(modal);
 		hideElement(modalcontent);
 	}
+	
 }
 
 
@@ -2534,22 +2532,22 @@ function shadowSearchBar () {
 
 function stopBookScroll () {
 
-	document.getElementById("tocnav").style.top = "0"; // make sure the tocnav doesn't wander off
-	var thebody = document.getElementById("thebody");
-	var y = window.scrollY;
-	thebody.style.overflowY ='scroll';
-	thebody.style.top =  "-"+y+"px";
-	thebody.style.position = 'fixed';
+	//document.getElementById("tocnav").style.top = "0"; // make sure the tocnav doesn't wander off
+	//var thebody = document.getElementById("thebody");
+	//var y = window.scrollY;
+	//thebody.style.overflowY ='scroll';
+	//thebody.style.top =  "-"+y+"px";
+	//thebody.style.position = 'fixed';
 
 }
 
 function startBookScroll () {
-
+/*
 	const scrollY = document.body.style.top;
 	document.body.style.position = '';
 	document.body.style.top = '';
 	window.scrollTo(0, parseInt(scrollY || '0') * -1);
-
+*/
 }
 
 var theTopElement = 0;
@@ -2655,26 +2653,23 @@ document.getElementById("booknotes").addEventListener("click", function(e) {
 		if (e.target.classList.contains('sclinktext')) {
 			linkNode = e.target;
 		} else {
-			linkNode = e.target.parentNode.parentNode;
+			linkNode = e.target.parentNode;
 		}
 		displaySutta(linkNode.innerText);
 		//restorePlaceInBook();
 		if (true) {e.preventDefault();}
 	}
 
-	if (e.target.classList.contains ('booknotesNumber')) {
+	if (e.target.parentNode.classList.contains ('booknotesNumber') && e.target.nodeName == 'SPAN') {
 		var supnumber = e.target.innerHTML;
-		if (supnumber == savedsup.innerHTML) {
-			closebtn.click();
-		} else {
-			for (let i=0; i < savedSUPElements.length; i++) {
-				if (supnumber == savedSUPElements[i].innerHTML) {
-					savedsup = savedSUPElements[i];
-					closebtn.click();
-				}
+		for (let i=0; i < savedSUPElements.length; i++) {
+			if (supnumber == savedSUPElements[i].innerHTML) {
+				savedsup = savedSUPElements[i];
+				clearhighlightnote();
+				break;		
 			}
-			goToTarget(savedsup, 'ELEMENT', 'center');
 		}
+		goToTarget(savedsup, 'ELEMENT', 'center');
 	}
 
 	if (e.target.nodeName == 'A') {

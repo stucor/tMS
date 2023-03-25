@@ -52,7 +52,14 @@
 	/* Slit Frame Sizes */
 	--verticalHeight : 100vh - 101px;
 
-	/* Colours */
+	/* COLOURS */
+	/* Frames */
+	--frameGuttercolor : #d4e4d4;
+	--frameGutterTextcolor : darkgreen;
+	--frameGutterBorder : rgb(191, 212, 191);
+
+
+
 	--bookmargincolor: '#f7f7f7';
 
 	--notehighlighter: #22963554;
@@ -269,13 +276,34 @@ body {
 	min-width: 6px;
 	width: 6px;
 	min-height: 30px;
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
-	filter: invert(30%);
+	transform: rotate(-90deg);
+	/*background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+	filter: invert(30%);*/
+}
+
+.gutter-col-handle::after {
+	border-bottom: solid var(--frameGutterBorder) 1px;
+	border-top: solid var(--frameGutterBorder) 1px;
+	position: relative;
+	top: 2px;
+	left: -4px;
+	font-size: 0.8em;
+	font-variant: small-caps;
+	padding: 0 3px;
+	content: 'contents';
+	border-bottom-left-radius: 30%;
+	border-bottom-right-radius: 30%;
+	border-radius: 30%;
+	background-color: var(--frameGuttercolor);
+	color: var(--frameGutterTextcolor);
+	
 }
 
 .gutter-col-1 {
     grid-column: 2;
-	background-color: #d4e4d4;
+	background-color: var(--frameGuttercolor);
+	border-left: solid var(--frameGutterBorder) 1px;
+	border-right: solid var(--frameGutterBorder) 1px;
 }
 
 .gutter-row {
@@ -284,9 +312,9 @@ body {
 }
 .gutter-row-1 {
     grid-row: 2;
-	background-color: #d4e4d4;
-	border-bottom: solid lightgrey 1px;
-	border-top: solid lightgrey 1px;
+	background-color: var(--frameGuttercolor);
+	border-bottom: solid var(--frameGutterBorder) 1px;
+	border-top: solid var(--frameGutterBorder) 1px;
 }
 
 .gutter-row-handle {
@@ -300,9 +328,8 @@ body {
 	/*background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');*/
 }
 .gutter-row-handle::after {
-	border-bottom: solid lightgrey 1px;
-	border-top: solid lightgrey 1px;
-
+	border-bottom: solid var(--frameGutterBorder) 1px;
+	border-top: solid var(--frameGutterBorder) 1px;
 	position: relative;
 	top: -11px;
 	left: -4px;
@@ -314,8 +341,8 @@ body {
 	border-bottom-left-radius: 30%;
 	border-bottom-right-radius: 30%;
 	border-radius: 30%;
-	background-color: #d4e4d4;
-	color: darkgreen;
+	background-color: var(--frameGuttercolor);
+	color: var(--frameGutterTextcolor);
 }
 
 
@@ -1061,6 +1088,7 @@ table.borderlessTable {
 	align-items:first baseline;
 }
 
+
 .booknote p {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -1072,10 +1100,15 @@ table.borderlessTable {
 	font-size: 0.8em;
     font-weight: 600;
 	text-align: right;
-	padding-right: 10px;
+	margin-right: 10px;
+
+}
+
+.booknotesNumber > span {
 	color:cornflowerblue;
 	cursor: pointer;
-
+	border-radius: 1em;
+	padding: 0 1em;
 }
 
 .booknotesNumber::after {
@@ -1181,7 +1214,6 @@ sup {
 	padding: 5px;
 	margin: -5px;
 	color: cornflowerblue;
-	/*background-color: rgba(255, 255, 0, 0.20);*/
 	outline: double 0 var(--notehighlighter); 
 	border-radius: 1em;
 	cursor: pointer;
@@ -2151,6 +2183,14 @@ mark.current {
 	sup:hover {
 		box-shadow: 0 0 5px 1px var(--primarycolor);
 	}
+
+	.booknotesNumber > span:hover {
+		box-shadow: 0 0 5px 1px var(--primarycolor);
+	}
+
+	
+
+
 
 	.select-css:hover {
 		box-shadow: 0 0 5px 1px var(--primarycolor);

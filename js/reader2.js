@@ -1921,6 +1921,21 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 });
 
 //On Scrolling the book
+
+function autoScrollNotes () {
+    let supInNotesArray = document.getElementsByClassName('booknotesNumber');
+    let currentNote = '';
+	for (var i = 0; i < savedSUPElements.length; i++) {
+		console.log(savedSUPElements[i].innerText);
+        currentNote = savedSUPElements[i].innerHTML;
+        if (savedSUPElements[i].getBoundingClientRect().bottom > document.getElementById("book").getBoundingClientRect().top) {
+            break;
+        }
+    }
+	supInNotesArray[currentNote-1].scrollIntoView({block: "start"});
+	document.getElementById('booknotes').scrollBy (0,-5);
+}
+
 var prevScrollpos;
 book.onscroll = function() {
 	var currentScrollPos = document.getElementById('book').scrollTop;
@@ -1939,6 +1954,7 @@ book.onscroll = function() {
 	prevScrollpos = currentScrollPos;
 	fillProgressBar();
 	getNavTarget();
+	autoScrollNotes();
 }
 
 

@@ -4,8 +4,6 @@ var fixedMenu;
 var themeName = "Simple";
 var marginName = "";
 
-
-
 // generic cookie functions
 
 function setCookie(cname, cvalue, exdays) {
@@ -1871,32 +1869,11 @@ function scrollToID (id) {
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
-
 	var elmnt = document.getElementById(id);
-
 	elmnt.scrollIntoView({block: 'center', behavior: 'auto',});
 	savedsup = elmnt;
 	clearhighlightnote();
 
-	/*
-	let noteElmnt = '';
-	if (elmnt.parentElement.classList.contains('booknotesText')){
-		noteElmnt = elmnt.parentElement.parentElement;
-	} else if (elmnt.parentElement.parentElement.classList.contains('booknote')) {
-		noteElmnt = elmnt.parentElement.parentElement;
-	}
-	if (noteElmnt) {
-		elmnt.scrollIntoView({block: 'center', behavior: 'auto',});
-		savedsup = elmnt;
-		clearhighlightnote();
-	} else {
-		elmnt.scrollIntoView({block: 'start', behavior: 'auto',});
-		window.scrollBy(0, -150);
-		//bodge for the highlight - needs a better mechanism for highlighting
-		savedsup = elmnt;
-		clearhighlightnote();
-	}
-	*/
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
@@ -1913,18 +1890,14 @@ function goToTarget (target, IDOrElement ='ID', blockPosition = "start") { // sc
 		elmnt = target;
 	}
 	elmnt.scrollIntoView({ block: blockPosition, inline: "nearest" });
-	//var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
-	//window.scrollBy(0, tbHeight); // scroll the target below the topnav bar so you can see it
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
 
 // TOC Navigation - uses event delegation on UL LI
 document.getElementById("TOC").addEventListener("click", function(e) {
-	// e.target is the clicked element!
-	// If it was a list item
-	if(e.target && e.target.nodeName == "LI") {
 
+	if(e.target && e.target.nodeName == "LI") {
 		var loadaudio = 0;
 		var loadpara = 0;
 		if (isAudioBook()) {
@@ -2010,28 +1983,11 @@ function fillProgressBar() {
 	
 }
 
-var fsTOCTopElement = 0; // fix for errant scrolling of main window in ffs mode  
-
-
-/*
-function closeFromTocbtn2 () { 
-	theTopElement = fsTOCTopElement;
-	hideSideNav();
-}
-*/
-function wiggle () { // to get the topbar to scroll into view after navigation
-	window.scrollBy(0, 1); 
-	window.scrollBy(0,-1);
-}
-
-
 // theMettaShelf Button
 var homebtn = document.getElementById('homebutton');
 
 homebtn.onclick = function() {
-	stopBookScroll();
 	savePlaceInBook();
-	startBookScroll();
 	window.location.href = '../';
 }
 
@@ -2081,14 +2037,11 @@ detailsbtn.onclick = function() {
 	setModalStyle ("Info");
 	showModal ("Info");
 	buildInfo();
-	stopBookScroll();
-	//modalbody.scrollTop = 0;
 }
 
 settingsbtn.onclick = function() {
 	setModalStyle ("Settings");
 	showModal ("Settings");
-	stopBookScroll();
 }
 
 
@@ -2111,8 +2064,6 @@ downloadbtn.onclick = function() {
 		showAlert(alertHTML);	
 		return;
 	}	
-
-	stopBookScroll ();
 }
 
 function setModalTheme (theme) {
@@ -2213,16 +2164,6 @@ function setModalStyle (heading) {
 			modalcontent.style.padding = "0";
 			break;
 		case 'Notes':
-			/*
-			modalbody.style.maxHeight = "50vh";
-			modalbody.style.padding = "0";
-			modalcontent.style.maxWidth = "80%";
-			modalcontent.style.width = "80%";
-			modalcontent.style.position ="relative";
-			modalcontent.style.right = "0";
-			modalcontent.style.top = "0";	
-			modalcontent.style.padding = "0";
-			*/
 			modalbody.style.height = "65vh";
 			modalbody.style.maxHeight = "65vh";
 			modalbody.style.padding = "0";
@@ -2328,11 +2269,7 @@ document.getElementById("book").addEventListener("click", function(e) {
 			goToTarget(toctarget);
 			if (true) {e.preventDefault();}
 		} else {	
-			//savedsup = e.target;
-			//setModalStyle ("Notes");
-			//showModal("Notes");
 			highlightnote(e.target.innerHTML); 
-			//stopBookScroll ();
 			if (true) {e.preventDefault();}
 		}	
 	}
@@ -2368,8 +2305,6 @@ document.getElementById("book").addEventListener("click", function(e) {
 	}
 
 });
-
-
 
 document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	if (e.target.closest('A') !== null) {
@@ -2419,7 +2354,6 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 
 function showAlert(HTMLToShow) {
 	restorePlaceInBook();
-	//var mda = document.getElementById('ModalDownloadAlert');
 	modalalert.innerHTML = HTMLToShow;
 	setModalStyle ("Alert");
 	showModal ("Alert");
@@ -2428,27 +2362,16 @@ function showAlert(HTMLToShow) {
 
 
 var savedsup = '';
-/*
-function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
-	for (var i = 1; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].innerHTML = "<div class='booknotesNumber'>" + (i) + "</div> <div class='booknotesText'>" + savedNotesElements[i].innerHTML +"</div>";
-	}
-}
-*/
 var highlightedNote = 0;
 
 function highlightnote (notetohighlight) {
-	clearhighlightnote();
 	highlightedNote = parseInt(notetohighlight-1);
-	savedNotesElements[highlightedNote].style.border = "thin solid grey";
-	savedNotesElements[highlightedNote].style.background = "#c0c0c020";
+	savedsup = savedNotesElements[highlightedNote];
 	savedNotesElements[highlightedNote].scrollIntoView({block: "center",});
-
+	clearhighlightnote();
 }
 
 function clearhighlightnote() {
-	savedNotesElements[highlightedNote].style.border = "unset";
-	savedNotesElements[highlightedNote].style.background = "unset";
 	if (!(savedsup === '')) {
 		savedsup.style.outlineWidth="20px";
 		setTimeout(function() {
@@ -2462,18 +2385,11 @@ function clearhighlightnote() {
 	}
 }
 
-/* for setting sutta font size 
-function getFontLevel() {
-	return document.getElementById("flvalue").innerHTML +'px';
-}
-*/
-
 function reformatBook () {
 
 	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
 	setFontLevel(fontlevel);
 	setDetailsLevel(fontlevel);
-	//setNotesLevel(fontlevel);
 
 	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
 	setLH (lhlevel);
@@ -2483,20 +2399,8 @@ function reformatBook () {
 }
 
 function exitStaticModal () {
-	
-	if (calledFromNotes) {
-		setModalStyle ("Notes");
-		showModal("Notes");
-		savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
-		ModalBody.scrollBy(0,-40);
-		calledFromNotes = false;		
-	} else { 
-		startBookScroll();
-		//clearhighlightnote();
-		hideElement(modal);
-		hideElement(modalcontent);
-	}
-	
+	hideElement(modal);
+	hideElement(modalcontent);
 }
 
 
@@ -2530,26 +2434,6 @@ function shadowSearchBar () {
 	}
 }
 
-function stopBookScroll () {
-
-	//document.getElementById("tocnav").style.top = "0"; // make sure the tocnav doesn't wander off
-	//var thebody = document.getElementById("thebody");
-	//var y = window.scrollY;
-	//thebody.style.overflowY ='scroll';
-	//thebody.style.top =  "-"+y+"px";
-	//thebody.style.position = 'fixed';
-
-}
-
-function startBookScroll () {
-/*
-	const scrollY = document.body.style.top;
-	document.body.style.position = '';
-	document.body.style.top = '';
-	window.scrollTo(0, parseInt(scrollY || '0') * -1);
-*/
-}
-
 var theTopElement = 0;
 var theTopElementTopEdge = 0;
 
@@ -2572,9 +2456,7 @@ function scrollToNavTarget () {
 }
 
 function restorePlaceInBook () {
-	startBookScroll();
 	scrollToNavTarget ();
-	stopBookScroll();
 }
 	
 function isElementInViewport (el) {
@@ -2682,7 +2564,6 @@ function displaySutta (linkText) {
 	setModalStyle('Sutta');
 	showModal('Sutta');
 	modalbody.scrollTop = 0;
-	stopBookScroll ();
 	showBD(linkText);
 	document.getElementById('ModalHeaderText').innerHTML = linkText;
 }

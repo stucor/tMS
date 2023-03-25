@@ -1076,6 +1076,8 @@ table.borderlessTable {
 
 #booknotes {
 	overflow-y: auto;
+	font-size: 0.9em;
+
 }
 
 .booknote {
@@ -1086,6 +1088,9 @@ table.borderlessTable {
 	display: grid;
   	grid-template-columns: 10% 90%;	
 	align-items:first baseline;
+
+	outline: double 0 var(--notehighlighter); 
+	border-radius: 1em;
 }
 
 

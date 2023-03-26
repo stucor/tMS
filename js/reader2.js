@@ -1,8 +1,9 @@
 var nuclearOption = false;
+var r = document.querySelector(':root');
 // SETTINGS VARIABLES
 var fixedMenu;
 var themeName = "Simple";
-var marginName = "";
+//var marginName = "";
 
 // generic cookie functions
 
@@ -133,6 +134,10 @@ function buildSettings (_callback) {
 				<span class ="settingsheadersleft">Fixed Menu:</span>
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="fixedMenuCheck"><span class="slider round"></span></label></span>
 			</div>
+			<div class="settingsbox">
+			<span class ="settingsheadersleft">Sync Notes to Book:</span>
+			<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="syncNotesCheck"><span class="slider round"></span></label></span>
+		</div>
 		`;
 
 		parentDiv.innerHTML = html;
@@ -204,16 +209,6 @@ function startup () {
 		if (isBookShelf()) {
 			initialiseBookShelfSettings ();
 			document.getElementById('TOCTarget0').style.display='none';
-		}
-		fixedMenuCheck.onclick = function () {
-			setMenuVisability();
-			//hideSideNav();
-			/*if (wasSidebarOpen){
-				showElement(theTopBar);
-				theTopBar.style.top = "0";
-				showSideNav();
-			}*/
-			shadowSearchBar ();
 		}
 		justifyCheck.onclick = function () {
 			showSpinner(); // show spinner
@@ -301,6 +296,11 @@ function startup () {
 				hideSpinner();
 			});
 		}
+		fixedMenuCheck.onclick = function () {
+			setMenuVisability();
+			shadowSearchBar ();
+		}
+
 	});
 }
 
@@ -846,6 +846,20 @@ function initialiseBookSettings () {
 		setParaNumbers();
 	}
 
+	//SyncNotes To Book
+	var local_syncNotes = localStorage.getItem('tMSUI_syncNotesCheck');
+	switch (local_syncNotes) {
+		case 'true' :
+			document.getElementById("syncNotesCheck").checked = true;
+			break;
+		case 'false' :
+			document.getElementById("syncNotesCheck").checked = false;
+			break;	
+		default :
+			document.getElementById("syncNotesCheck").checked = true;
+			localStorage.setItem('tMSUI_syncNotesCheck', 'true');
+	}
+
 	//PLACE-IN-BOOK is done after the settings are complete in onload function;
 
 }
@@ -1030,6 +1044,9 @@ if (!nuclearOption) {
 	setCookie("wiswobooks_font_size", local_wiswobooks_font_size,365);
 
 	if (!isAudioBook()) {
+		//local storage (someday all cookies will be local storage)
+		localStorage.setItem('tMSUI_syncNotesCheck', document.getElementById('syncNotesCheck').checked);
+
 		//Book-only Cookies
 		//LINE-SPACING
 		var local_wiswobooks_line_spacing = document.getElementById("lhvalue").innerHTML;
@@ -1141,12 +1158,7 @@ if (!nuclearOption) {
 
 }
 
-
-
-
 // SETTINGS FUNCTIONS
-
-
 
 function setMenuVisability () {
 	var fmCheck = document.getElementById("fixedMenuCheck");
@@ -1157,18 +1169,6 @@ function setMenuVisability () {
     }	
 }
 
-
-
-function buildpageBreak(e) {
-	var thepagenumber = e.getAttribute("data-page");
-	var affect = '–';
-	if (thepagenumber == '') { affect ='';}
-	var wordcut = e.getAttribute("data-wordcut"); // is a word cut into two because of the page break, if so add a -
-	if (wordcut === null) {wordcut ='';} else {wordcut ='&#x02014;';}
-	e.innerHTML = wordcut + "<div class=pagenumber>"+affect+" " + thepagenumber + " "+affect+"</div><hr class='pagebreak'>";
-}
-
-
 // JUSTIFICATION
 function doJustifyCheck () {
 	setJustify();
@@ -1176,9 +1176,9 @@ function doJustifyCheck () {
 function setJustify () {
 	var justificationCheck = document.getElementById("justifyCheck")
 	if (justificationCheck.checked){
-		document.querySelector(':root').style.setProperty('--textalign', 'justify');
+		r.style.setProperty('--textalign', 'justify');
     } else {
-		document.querySelector(':root').style.setProperty('--textalign', 'left');
+		r.style.setProperty('--textalign', 'left');
     }	
 }
 
@@ -1187,13 +1187,13 @@ function doHyphenCheck () {
 	setHyphenation();
 }	
 function setHyphenation () {
-	var book = document.getElementById("book");
-	var hyphenationCheck = document.getElementById("hyphenCheck")
+	var hyphenationCheck = document.getElementById("hyphenCheck");
 	if (hyphenationCheck.checked){
-		book.style.hyphens = "auto";
+		r.style.setProperty ('--hyphenation', 'auto');
     } else {
-		book.style.hyphens = "none";
+		r.style.setProperty ('--hyphenation', 'none');
     }	
+	
 }
 
 // FONT SIZE
@@ -1219,7 +1219,7 @@ function doIncFont () {
 }
 function setFontLevel (level) {
 	if (!isAudioBook()) {
-		document.querySelector(':root').style.setProperty('--fontsize', level+'px');
+		r.style.setProperty('--fontsize', level+'px');
 	};
 
 	let bookImagesArray = document.querySelectorAll('img');
@@ -1296,7 +1296,7 @@ function setNotesLevel (level) {
 // LINE SPACING
 function setLH (level) {
 	if (!isAudioBook()) {
-		document.querySelector(':root').style.setProperty('--lineheight', level);
+		r.style.setProperty('--lineheight', level);
 	};
 }
 function doDecLH () {
@@ -1345,8 +1345,6 @@ function setTheme(){
 
 	var searchBar = document.getElementById("SearchBar");
 	var searchInput = document.getElementById("SearchInput");
-
-	var r = document.querySelector(':root');
 
 	switch (whatIsPressed) {
 
@@ -1728,23 +1726,19 @@ function doSetMargin () {
 
 function setMargin() {
 	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
-	var book = document.getElementById("book");
-	switch (whatIsPressed) {
 
+	switch (whatIsPressed) {
 		case "narrowmargin":	
-			book.style.paddingLeft = '2%';
-			book.style.paddingRight = '2%';
-			marginName = "narrowmargin";
+			r.style.setProperty ('--innerbookmargins', '2%');
+			//marginName = "narrowmargin";
 			break;
 		case "midmargin":
-			book.style.paddingLeft = '10%';
-			book.style.paddingRight = '10%';
-			marginName = "midmargin";
+			r.style.setProperty ('--innerbookmargins', '10%');
+			//marginName = "midmargin";
 			break;
 		case "widemargin":
-			book.style.paddingLeft = '20%';
-			book.style.paddingRight = '20%';
-			marginName = "widemargin";
+			r.style.setProperty ('--innerbookmargins', '20%');
+			//marginName = "widemargin";
 		}
 }
 
@@ -1758,11 +1752,11 @@ function setSerif () {
 
 	if (document.getElementById('serifFont').checked) {
 		if (!isAudioBook()) {
-			document.querySelector(':root').style.setProperty('--fontfamily', 'Source Serif Pro');
+			r.style.setProperty('--fontfamily', 'Source Serif Pro');
 		};
 	} else {
 		if (!isAudioBook()) {
-			document.querySelector(':root').style.setProperty('--fontfamily', 'Source Sans Pro');
+			r.style.setProperty('--fontfamily', 'Source Sans Pro');
 		};
 	}
 	
@@ -1926,7 +1920,6 @@ function autoScrollNotes () {
     let supInNotesArray = document.getElementsByClassName('booknotesNumber');
     let currentNote = '';
 	for (var i = 0; i < savedSUPElements.length; i++) {
-		console.log(savedSUPElements[i].innerText);
         currentNote = savedSUPElements[i].innerHTML;
         if (savedSUPElements[i].getBoundingClientRect().bottom > document.getElementById("book").getBoundingClientRect().top) {
             break;
@@ -1940,7 +1933,6 @@ var prevScrollpos;
 book.onscroll = function() {
 	var currentScrollPos = document.getElementById('book').scrollTop;
 	if (!fixedMenu) {
-		var r = document.querySelector(':root');
 		if ((prevScrollpos > currentScrollPos)) { // show top bar when scrolling up
 			document.getElementById('outerwrap').style.gridTemplateAreas = "'header' 'wholebook'";	
 			r.style.setProperty('--verticalHeight', '100vh - 101px');		
@@ -1954,7 +1946,9 @@ book.onscroll = function() {
 	prevScrollpos = currentScrollPos;
 	fillProgressBar();
 	getNavTarget();
-	autoScrollNotes();
+	if (document.getElementById('syncNotesCheck').checked) {
+		autoScrollNotes();
+	}
 }
 
 

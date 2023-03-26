@@ -43,6 +43,8 @@
 	--lineheight: 1.5;
 	--textalign: justify;
 	--fontfamily: 'Source Sans Pro', sans-serif;
+	--innerbookmargins: 10%;
+	--hyphenation: auto;
 
 	/* SCROLL BARS */
 	--scrollbarTrackColor: #dcdcdcc4;
@@ -54,9 +56,9 @@
 
 	/* COLOURS */
 	/* Frames */
-	--frameGuttercolor : #d4e4d4;
+	--frameGuttercolor : #c7d1c7;
 	--frameGutterTextcolor : darkgreen;
-	--frameGutterBorder : rgb(191, 212, 191);
+	--frameGutterBorder :  rgb(0, 0, 0);
 
 
 
@@ -260,15 +262,17 @@ body {
 #innerwrap {
 	grid-area: wholebook;
     display: grid;
-    grid-template-columns: 1fr 6px 4fr;
+    grid-template-columns: 1fr 10px 4fr;
 }
 
+
+/* Contents Gutter */
 
 .gutter-col {
     grid-row: 1/-1;
     cursor: col-resize;
+	margin-right: 3px;
 }
-
 .gutter-col-handle {
 	position: relative;
 	top: calc((var(--verticalHeight))/2 - 15px);
@@ -276,14 +280,12 @@ body {
 	min-width: 6px;
 	width: 6px;
 	min-height: 30px;
-	transform: rotate(-90deg);
-	/*background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
-	filter: invert(30%);*/
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+	filter: invert(50%);
 }
-
+/*
 .gutter-col-handle::after {
-	border-bottom: solid var(--frameGutterBorder) 1px;
-	border-top: solid var(--frameGutterBorder) 1px;
+	border:solid var(--frameGutterBorder) 1px;
 	position: relative;
 	top: 2px;
 	left: -4px;
@@ -298,7 +300,7 @@ body {
 	color: var(--frameGutterTextcolor);
 	
 }
-
+*/
 .gutter-col-1 {
     grid-column: 2;
 	background-color: var(--frameGuttercolor);
@@ -306,9 +308,12 @@ body {
 	border-right: solid var(--frameGutterBorder) 1px;
 }
 
+
+/* Notes Gutter */
 .gutter-row {
     grid-column: 1/-1;
     cursor: row-resize;
+
 }
 .gutter-row-1 {
     grid-row: 2;
@@ -318,15 +323,18 @@ body {
 }
 
 .gutter-row-handle {
+
 	position: relative;
-	top: 1px;
+	top: 0;
 	left: calc((100%/2) - 15px);
 	min-height: 6px;
 	height: 6px;
 	min-width: 30px;
 	width: 30px;
-	/*background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');*/
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+	filter: invert(50%);
 }
+/*
 .gutter-row-handle::after {
 	border-bottom: solid var(--frameGutterBorder) 1px;
 	border-top: solid var(--frameGutterBorder) 1px;
@@ -337,14 +345,11 @@ body {
 	font-variant: small-caps;
 	padding: 0 3px;
 	content: 'notes';
-	background-image: unset;
-	border-bottom-left-radius: 30%;
-	border-bottom-right-radius: 30%;
 	border-radius: 30%;
 	background-color: var(--frameGuttercolor);
 	color: var(--frameGutterTextcolor);
 }
-
+*/
 
 /********** Side Navigation - The Table of Contents **********/
 
@@ -594,15 +599,16 @@ strong {
 }
 
 .content{
-	/*text-align: justify;*/
-	width: 100%;
-	hyphens: auto;
+
+	hyphens: var(--hyphenation);
 	font-size: var(--fontsize);
 	line-height: var(--lineheight);
+	text-align: var(--textalign);
+	font-family: var(--fontfamily);
 	overflow-y: auto;
-
 	display: grid;
-    grid-template-rows: 5fr 8px 1fr;
+    grid-template-rows: 3fr 8px 1fr;
+
 
 }
 
@@ -1066,29 +1072,28 @@ table.borderlessTable {
 }
 
 #book {
-	padding-left:40px;
-	padding-right:40px;
+	padding-left: var(--innerbookmargins);
+	padding-right:var(--innerbookmargins);
 	display:none;
-	text-align: var(--textalign);
-	font-family: var(--fontfamily);
 	overflow-y: auto;
 }
 
 #booknotes {
 	overflow-y: auto;
-	font-size: 0.9em;
+	font-size: 0.8em;
+
+	padding-left: var(--innerbookmargins);
+	padding-right: var(--innerbookmargins);
 
 }
 
 .booknote {
-	margin: 0 5%;
-	padding: 5px;
-	text-align: left;
+	margin: 0;
+	padding: 2px 0;
 	border-radius: 10px;
 	display: grid;
-  	grid-template-columns: 10% 90%;	
+  	grid-template-columns: 8% 92%;	
 	align-items:first baseline;
-
 	outline: double 0 var(--notehighlighter); 
 	border-radius: 1em;
 }
@@ -1102,23 +1107,18 @@ table.borderlessTable {
 
 
 .booknotesNumber {
-	font-size: 0.8em;
-    font-weight: 600;
-	text-align: right;
-	margin-right: 10px;
-
+	font-size: 1em;
+    font-weight: 400;
+	text-align: left;
 }
 
 .booknotesNumber > span {
 	color:cornflowerblue;
 	cursor: pointer;
 	border-radius: 1em;
-	padding: 0 1em;
 }
 
-.booknotesNumber::after {
-	content:':';
-}
+
 
 
 

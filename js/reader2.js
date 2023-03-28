@@ -1931,9 +1931,10 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 const ro = new ResizeObserver(entries => {
     entries.forEach(entry => {
 		autoScrollNotes();
-        const TOCClosed = window.getComputedStyle(document.getElementById('leftpane')).getPropertyValue('width') == '0px';
-        const notesClosed = window.getComputedStyle(document.getElementById('booknotes')).getPropertyValue('height') == '0px';
-/*        if ((notesClosed) && (TOCClosed)) {
+        const TOCClosed = (document.querySelector('#innerwrap').style['grid-template-columns'].slice(0,3)) === '0fr';
+        const notesClosed = (document.querySelector('.content').style['grid-template-rows'].slice(-3) === '0fr');
+
+        if ((notesClosed) && (TOCClosed)) {
             console.log('1');
         } else if (notesClosed) {
             console.log('2a');
@@ -1942,7 +1943,7 @@ const ro = new ResizeObserver(entries => {
         } else {
             console.log('3');
         }   
-		*/     
+    
     })
 })
 
@@ -1981,8 +1982,6 @@ function autoScrollNotes () {
 			var firstVisibleNote = 0;
 				for (var i = 0; i < savedSUPElements.length; i++) {
 					if (isElementInBookport (savedSUPElements[i])) {
-						console.log('i: '+i);
-						console.log('fVN: '+firstVisibleNote);
 						if (firstVisibleNote == 0) {
 							firstVisibleNote = i;
 						}
@@ -2048,7 +2047,7 @@ function fillProgressBar() {
 
 				var scrolled = Math.floor(((book.scrollTop / (book.scrollHeight - book.offsetHeight)) * 100)* 10) /10;
 				if (!isNaN(scrolled)) {
-					document.getElementById('bookread').innerHTML = scrolled.toFixed(1) + '%';
+					document.getElementById('bookread').innerHTML = 'Read: ' +scrolled.toFixed(1) + '%';
 					//savedTOCElements[i-1].setAttribute('data-progress',scrolled.toFixed(1) + '%');
 				} 
 				break;

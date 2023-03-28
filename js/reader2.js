@@ -3,7 +3,7 @@ var r = document.querySelector(':root');
 // SETTINGS VARIABLES
 var fixedMenu;
 var themeName = "Simple";
-//var marginName = "";
+var UIISBuilt = false;
 
 // generic cookie functions
 
@@ -135,9 +135,9 @@ function buildSettings (_callback) {
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="fixedMenuCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
-			<span class ="settingsheadersleft">Sync Notes to Book:</span>
+			<span class ="settingsheadersleft">Sync Notes to Page:</span>
 			<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="syncNotesCheck"><span class="slider round"></span></label></span>
-		</div>
+			</div>
 		`;
 
 		parentDiv.innerHTML = html;
@@ -299,6 +299,16 @@ function startup () {
 		fixedMenuCheck.onclick = function () {
 			setMenuVisability();
 			shadowSearchBar ();
+		}
+
+		UIISBuilt = true;
+
+		syncNotesCheck.onclick = function () {
+			if (this.checked) {
+				autoScrollNotes();
+			} else {
+				showAllNotes();
+			}
 		}
 
 	});
@@ -1914,19 +1924,76 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 	}
 });
 
-//On Scrolling the book
 
+
+
+
+const ro = new ResizeObserver(entries => {
+    entries.forEach(entry => {
+		autoScrollNotes();
+        const TOCClosed = window.getComputedStyle(document.getElementById('leftpane')).getPropertyValue('width') == '0px';
+        const notesClosed = window.getComputedStyle(document.getElementById('booknotes')).getPropertyValue('height') == '0px';
+/*        if ((notesClosed) && (TOCClosed)) {
+            console.log('1');
+        } else if (notesClosed) {
+            console.log('2a');
+        } else if (TOCClosed) {
+            console.log('2b');
+        } else {
+            console.log('3');
+        }   
+		*/     
+    })
+})
+
+ro.observe(document.getElementById('thecontent'));
+ro.observe(document.getElementById('booknotes'));
+
+
+
+
+function isElementInBookport (el) {
+	var rectHeight = el.offsetHeight;
+	var rectWidth = el.offsetWidth;
+    var rect = el.getBoundingClientRect();
+	var bookPort = book.getBoundingClientRect();
+    return (
+        rect.top >= (bookPort.top - rectHeight) &&
+        rect.left >= (bookPort.left - rectWidth) &&
+        rect.bottom <= (bookPort.bottom + rectHeight) && 
+        rect.right <= (bookPort.right + rectWidth) 
+    );
+}
+
+function showAllNotes () {
+	let supInNotesArray = document.getElementsByClassName('booknote');
+	for (var i = 0; i < supInNotesArray.length; i++) {
+		supInNotesArray[i].style.display='grid';
+
+	}
+}
+
+//On Scrolling the book
 function autoScrollNotes () {
-    let supInNotesArray = document.getElementsByClassName('booknotesNumber');
-    let currentNote = '';
-	for (var i = 0; i < savedSUPElements.length; i++) {
-        currentNote = savedSUPElements[i].innerHTML;
-        if (savedSUPElements[i].getBoundingClientRect().bottom > document.getElementById("book").getBoundingClientRect().top) {
-            break;
-        }
-    }
-	supInNotesArray[currentNote-1].scrollIntoView({block: "start"});
-	document.getElementById('booknotes').scrollBy (0,-5);
+	if ((UIISBuilt) && (document.getElementById('booknotes').innerHTML != '')){
+		if (document.getElementById('syncNotesCheck').checked)  {
+			let supInNotesArray = document.getElementsByClassName('booknote');
+			var firstVisibleNote = 0;
+				for (var i = 0; i < savedSUPElements.length; i++) {
+					if (isElementInBookport (savedSUPElements[i])) {
+						console.log('i: '+i);
+						console.log('fVN: '+firstVisibleNote);
+						if (firstVisibleNote == 0) {
+							firstVisibleNote = i;
+						}
+						supInNotesArray[i].style.display='grid';
+					} else {
+						supInNotesArray[i].style.display='none';
+					}
+				}
+				supInNotesArray[firstVisibleNote].scrollIntoView({block: "start"});
+		}
+	}
 }
 
 var prevScrollpos;
@@ -1946,9 +2013,7 @@ book.onscroll = function() {
 	prevScrollpos = currentScrollPos;
 	fillProgressBar();
 	getNavTarget();
-	if (document.getElementById('syncNotesCheck').checked) {
-		autoScrollNotes();
-	}
+	autoScrollNotes();
 }
 
 
@@ -2487,7 +2552,7 @@ function isElementPartiallyInViewport(el)
     var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
     var vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
     var horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
-    return (vertInView && horInViexpanderew);
+    return (vertInView && horInView);
 }
 
 

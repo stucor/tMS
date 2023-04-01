@@ -163,18 +163,7 @@ function formatSCLinktext () {
 
 }
 
-function initPanes () {
-	Split({
-		columnGutters: [{
-			track: 1,
-			element: document.querySelector('.gutter-col-1'),
-		}],
-		rowGutters: [{
-			track: 1,
-			element: document.querySelector('.gutter-row-1'),
-		}]
-	})
-}
+
 
 function startup () {
 	/*
@@ -183,9 +172,7 @@ function startup () {
 		console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
 	}
 	*/
-
 	initPanes();
-
 	buildSettings(function(){
 		//the following is done after buildSettings completes:
 		savedBookElements = book.querySelectorAll("*:not(.noshow)");
@@ -532,7 +519,6 @@ function buildInfo () {
 
 // Populate References/Bibliography
 function buildRef () {
-
 	let sectionHolder = document.getElementById('reference-holder');
 	if (sectionHolder != null) {
 		if (sectionHolder.innerHTML == ''){
@@ -985,13 +971,6 @@ function initialiseBookShelfSettings () {
 	document.getElementById('shelffooter').classList.remove('noshow');
 }
 
-
-// Debug function for writing info in name of in first line of TOC
-function poptoc0 (xtext) {
-	var x = document.getElementById('TOC0');
-	x.innerHTML= xtext;
-}
-
 function getPlaceInBook () {
 		//PLACE-IN-BOOK - gets the top element and it's top edge
 		var lsTEname, lsTETEname;
@@ -1083,6 +1062,9 @@ if (!nuclearOption) {
 		setCookie ('wiswobooks_paranos_state',local_wiswobooks_paranos_state,365);
 		//Place In Book
 		savePlaceInBook();
+		//Panes
+		localStorage.setItem('tMSUI_innerwrapGTC', document.getElementById('innerwrap').style.gridTemplateColumns);
+		localStorage.setItem('tMSUI_contentGTR', document.getElementById('content').style.gridTemplateRows);
 
 	} else {
 		//Audiobook-only Cookies
@@ -1295,13 +1277,6 @@ function setDetailsLevel (level) {
 			}
 	}
 }	
-/*
-function setNotesLevel (level) {
-	for (var i = 0; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].style.fontSize = level+'px';
-	}
-}	
-*/
 
 // LINE SPACING
 function setLH (level) {
@@ -1334,7 +1309,7 @@ function doIncLH () {
 function setTheme(){
 	var whatIsPressed = document.querySelector('input[name="themeRadio"]:checked').value;
 	var theBody = document.getElementById("thebody");
-	var bookPages = document.getElementById("thecontent"); 
+	var bookPages = document.getElementById("content"); 
 
 	var theTocBtn = document.getElementById("tocBtn");	
 	//var theTocBtn2 = document.getElementById("tocbtn2");
@@ -1379,7 +1354,7 @@ function setTheme(){
 			bookPages.style.color = '#000'; 
 
 			theTopBar.style.background = '#fff';
-			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
+			//theTopBar.style.boxShadow = '0 2px 6px 0 #777';
 
 			theTocNav.style.background = '#fff';
 			theTocNav.style.color = '#000';
@@ -1498,7 +1473,7 @@ function setTheme(){
 			bookPages.style.color = '#d7d7d7';
 
 			theTopBar.style.background = '#121212';
-			theTopBar.style.boxShadow = '0 1px 0 1px #595959';
+			//theTopBar.style.boxShadow = '0 1px 0 1px #595959';
 
 			theTocNav.style.background = '#121212';
 			theTocNav.style.color = '#cfcfcf';
@@ -1616,7 +1591,7 @@ function setTheme(){
 			bookPages.style.color = '#382500'; 
 
 			theTopBar.style.background = '#f5efd0';
-			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
+			//theTopBar.style.boxShadow = '0 2px 6px 0 #777';
 
 			theTocNav.style.background = '#f5efd0';
 			theTocNav.style.color = '#382500'; //'#5e4102';
@@ -1781,9 +1756,9 @@ function setParaNumbers () {
 	var ParaNosList = document.getElementById("showParaNosList");
 	var parastate = ParaNosList.selectedIndex;
 
-	var wholebook = document.getElementById("thecontent");
-	var section  = document.querySelectorAll(".content h1");
-	var subsection  = document.querySelectorAll(".content h2");
+	var wholebook = document.getElementById("content");
+	var section  = document.querySelectorAll("#content h1");
+	var subsection  = document.querySelectorAll("#content h2");
 
 	/* THE parastate variable is ...
 			0 = Do not show numbers 
@@ -1834,26 +1809,18 @@ function setParaNumbers () {
 			break;
 		}
 	}
-	var allpara = document.querySelectorAll(".content p");
-	//var allquotes = document.querySelectorAll(".content div.quote");
+	var allpara = document.querySelectorAll("#content p");
+
 	if (parastate > 0) {
 		for( var i = 0; i < allpara.length; i++ ) {
 			allpara[i].classList.add('parashow');	
 		}
-		/*
-		for( var i = 0; i < allquotes.length; i++ ) {
-			allquotes[i].classList.add('parashow');	
-		}
-		*/
+
 	} else {
 		for( var i = 0; i < allpara.length; i++ ) {
 			allpara[i].classList.remove('parashow');	
 		}
-		/*
-		for( var i = 0; i < allquotes.length; i++ ) {
-			allquotes[i].classList.remove('parashow');	
-		}
-		*/	
+
 	}
 }
 
@@ -1925,33 +1892,148 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 });
 
 
+// PANES FUNCTIONALITY
+
+var innerwrapGTCDefault = '1fr 20px 3fr';
+var contentGTRDefault = '3fr 20px 1fr';
+var innerwrapGTC;
+var contentGTR;
+
+function initPanes () {
+	innerwrapGTC = localStorage.getItem('tMSUI_innerwrapGTC');
+	if (!innerwrapGTC) {
+		innerwrapGTC = innerwrapGTCDefault;
+	}
+	document.getElementById('innerwrap').style.gridTemplateColumns = innerwrapGTC;
+
+	contentGTR = localStorage.getItem('tMSUI_contentGTR');
+	if (!contentGTR) {
+		contentGTR = contentGTRDefault;
+	}
+	document.getElementById('content').style.gridTemplateRows = contentGTR;
+	
+	Split({
+		columnGutters: [{
+			track: 1,
+			element: document.querySelector('.gutter-col-1'),
+		}],
+		rowGutters: [{
+			track: 1,
+			element: document.querySelector('.gutter-row-1'),
+		}],
+		onDragEnd: function () {
+			localStorage.setItem('tMSUI_innerwrapGTC', document.getElementById('innerwrap').style.gridTemplateColumns);
+			localStorage.setItem('tMSUI_contentGTR', document.getElementById('content').style.gridTemplateRows);
+        }
+	})
+}
 
 
-
-const ro = new ResizeObserver(entries => {
+const panesRO = new ResizeObserver(entries => {
     entries.forEach(entry => {
 		autoScrollNotes();
-        const TOCClosed = (document.querySelector('#innerwrap').style['grid-template-columns'].slice(0,3)) === '0fr';
-        const notesClosed = (document.querySelector('.content').style['grid-template-rows'].slice(-3) === '0fr');
+		const innerwrapGTC = document.querySelector('#innerwrap').style['grid-template-columns'];
+		const contentGTR = document.querySelector('#content').style['grid-template-rows'];
+        const TOCClosed = (innerwrapGTC.slice(0,3)) === '0fr';
+        const notesClosed = (contentGTR.slice(-3) === '0fr');
 
-        if ((notesClosed) && (TOCClosed)) {
-            console.log('1');
+		if ((notesClosed) && (TOCClosed)) {
+            setPaneButtons('1');
         } else if (notesClosed) {
-            console.log('2a');
+            setPaneButtons('2a');
         } else if (TOCClosed) {
-            console.log('2b');
+            setPaneButtons('2b');
         } else {
-            console.log('3');
+            setPaneButtons('3');
         }   
     
     })
 })
 
-ro.observe(document.getElementById('thecontent'));
-ro.observe(document.getElementById('booknotes'));
+panesRO.observe(document.getElementById('content'));
+panesRO.observe(document.getElementById('booknotes'));
 
+function setPaneButtons (whichPaneBtnOn) {
+    let sp3 = document.getElementById('split3Pane');
+    let sp2a = document.getElementById('split2aPane');
+    let sp2b = document.getElementById('split2bPane');
+    let sp1 = document.getElementById('split1Pane');
+    switch (whichPaneBtnOn) {
+        case "3":
+            sp3.style.backgroundColor = 'var(--buttonBackgroundColorOn)'; 
+            sp2a.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            sp2b.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            sp1.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            break;
+        case "2a":
+            sp3.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            sp2a.style.backgroundColor = 'var(--buttonBackgroundColorOn)'; 
+            sp2b.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            sp1.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            break;
+        case "2b":
+            sp3.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            sp2a.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            sp2b.style.backgroundColor = 'var(--buttonBackgroundColorOn)'; 
+            sp1.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            break;
+        case "1":
+            sp3.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            sp2a.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            sp2b.style.backgroundColor = 'var(--buttonBackgroundColorOff)'; 
+            sp1.style.backgroundColor = 'var(--buttonBackgroundColorOn)'; 
+            break;
+    }
+}
 
+function resetPanes() {
+	document.getElementById('innerwrap').style.gridTemplateColumns = innerwrapGTCDefault;
+	document.getElementById('content').style.gridTemplateRows = contentGTRDefault;
+	localStorage.setItem('tMSUI_innerwrapGTC', document.getElementById('innerwrap').style.gridTemplateColumns);
+	localStorage.setItem('tMSUI_contentGTR', document.getElementById('content').style.gridTemplateRows);
+}
 
+// Event Delegation for Status Bar clicks 
+document.getElementById("status").addEventListener("click", function(e) {
+	var innerwrapGTC = localStorage.getItem('tMSUI_innerwrapGTC');
+	var contentGTR = localStorage.getItem('tMSUI_contentGTR');
+	var savedTOCClosed = innerwrapGTC.startsWith('0fr');
+	var savedNotesClosed = contentGTR.endsWith('0fr');
+
+    switch (e.target.id) {
+        case 'resetPanes':
+			resetPanes();
+            break;
+        case 'split3Pane':
+			if (savedTOCClosed) {
+				innerwrapGTC = innerwrapGTCDefault;
+			}
+			document.getElementById('innerwrap').style.gridTemplateColumns = innerwrapGTC;
+			if (savedNotesClosed) {
+				contentGTR = contentGTRDefault;
+			}
+			document.getElementById('content').style.gridTemplateRows = contentGTR;
+            break;
+        case 'split2aPane':
+			if (savedTOCClosed) {
+				innerwrapGTC = innerwrapGTCDefault;
+			}
+			document.getElementById('innerwrap').style.gridTemplateColumns = innerwrapGTC;
+			document.getElementById('content').style.gridTemplateRows = innerwrapGTCDefault.replace('3fr', '0fr');
+            break;
+        case 'split2bPane':
+			document.getElementById('innerwrap').style.gridTemplateColumns = contentGTRDefault.replace('3fr', '0fr');
+			if (savedNotesClosed) {
+				contentGTR = contentGTRDefault;
+			}
+			document.getElementById('content').style.gridTemplateRows = contentGTR;
+            break;       
+        case 'split1Pane':
+			document.getElementById('content').style.gridTemplateRows = innerwrapGTCDefault.replace('3fr', '0fr');
+			document.getElementById('innerwrap').style.gridTemplateColumns = contentGTRDefault.replace('3fr', '0fr');
+            break;         
+    }
+});
 
 function isElementInBookport (el) {
 	var rectHeight = el.offsetHeight;
@@ -2047,7 +2129,7 @@ function fillProgressBar() {
 
 				var scrolled = Math.floor(((book.scrollTop / (book.scrollHeight - book.offsetHeight)) * 100)* 10) /10;
 				if (!isNaN(scrolled)) {
-					document.getElementById('bookread').innerHTML = 'Read: ' +scrolled.toFixed(1) + '%';
+					document.getElementById('bookread').innerHTML = scrolled.toFixed(1) + '%';
 					//savedTOCElements[i-1].setAttribute('data-progress',scrolled.toFixed(1) + '%');
 				} 
 				break;

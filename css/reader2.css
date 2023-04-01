@@ -51,8 +51,8 @@
     --scrollbarThumbColor: #d3d3d378;
     --scrollbarThumbHoverColor: #adadad;
 
-	/* Slit Frame Sizes */
-	--verticalHeight : 100vh - 101px;
+	/* Split Frame Sizes */
+	--verticalHeight : 100vh - 99px;
 
 	/* COLOURS */
 	/* Frames */
@@ -60,6 +60,21 @@
 	--frameGutterBackgroundColor : #f0ddb600;
 	--frameGutterTextcolor : darkgreen;
 	--frameGutterBorder :  rgb(0, 0, 0);
+
+	/* Status Bar */
+	--statusBarBackgroundColor: #a1a1a10e;
+	--statusBarColor: #000000;
+	--statusBarBorder: rgba(183, 141, 110, 0.187);
+	
+	/* Status Buttons */
+	--buttonColorOn: rgb(0, 0, 0);
+	--buttonColorOff: rgb(0, 0, 0);
+	--buttonColorHover: white;
+
+	--buttonBackgroundColorOn: rgb(170, 231, 130);
+	--buttonBackgroundColorOff: #fefefe;
+	--buttonBackgroundColorHover: rgb(21, 9, 188);
+
 
 
 
@@ -146,7 +161,7 @@ body {
 	'statusbar';
 	height: 100vh;
 	max-height: 100vh;
-	gap: 1px;
+	gap:1px;
 	background-color: var(--bookmargincolor);
 	padding: 0;
 }
@@ -158,6 +173,7 @@ body {
 	width: 100%;
 	height: 63px;
 	max-height: 63px;
+	border-bottom: 2px solid lightgray;
 	z-index: 2;
 }
 
@@ -166,7 +182,7 @@ body {
 #topnav {
 	overflow: hidden;
 	user-select: none;
-	border-bottom: 1px solid #80808080;
+	/*border-bottom: 1px solid #80808080;*/
 }
 #topnav p {
 	margin:0;
@@ -220,15 +236,16 @@ body {
 
 
 #status {
-	position: sticky;
+	position: relative;
 	grid-area: statusbar;
     bottom:0;
 	width:100%;
-	min-height: 25px;
-    height: 25px;
+	min-height: 26px;
+    height: 26px;
     color: var(--statusBarSeporatorColor);
 	background-color: var(--statusBarBackgroundColor);
-    border-top: 1px solid #ababab;
+    border-top: 4px solid var(--statusBarBorder);
+	border-bottom: 4px solid var(--statusBarBorder);
 }
 #statusLeft {
     display:inline-flex;
@@ -237,40 +254,92 @@ body {
     background-color: var(--statusBarBackgroundColor);
 }
 
+
 #bookread {
-	background-color: var(--buttonbackground);
-	font-size: 1em;
-	font-variant: small-caps;
-	text-align: left;
 	padding: 0 5px;
-	min-width: 90px;
-	width: 110px;
+	min-width: 50px;
+	width: 50px;
 }
 
 
 #statusRight {
     display:inline-flex;
     float: right;
-    margin: 0 5px 0 0;
+    margin: 0;
     background-color: var(--statusBarBackgroundColor);
 }
 
 #status button {
     font-size: 10px;
-    padding:0 2px;
+    padding: 3px 2px;
     border:1px solid #979797;;
     border-radius: 3px;
     font-variant: small-caps;
     cursor: pointer;
     height:19px;
     max-height: 19px;
-    margin:3px 2px 0 0
+    margin: 3px 1px
 }
 
 #status button:hover {
 	background-color: var(--buttonBackgroundColorHover) !important;
     color: var(--buttonColorHover) !important;
 }
+
+
+.statusGap {
+    display:block;
+    min-width: 4px;
+    width: 4px;
+    margin: 0 3px;
+	min-height: 26px;
+    background-color: var(--statusBarBorder);
+}
+
+#resetPanes {
+    width: 34px;
+    min-width: 34px;
+	max-height: 19px;
+	margin:0;
+
+}
+
+.panes {
+    width:19px;
+}
+
+.panescontrol {
+	background-color: grey;
+}
+
+#split3Pane{
+    background:url(../_resources/images/icons/split3pane.svg) no-repeat;
+}
+
+#split3Pane:hover {
+    background:url(../_resources/images/icons/split3pane-white.svg) no-repeat;
+}
+
+#split2aPane{
+    background:url(../_resources/images/icons/split2apane.svg) no-repeat;
+}
+#split2aPane:hover {
+    background:url(../_resources/images/icons/split2apane-white.svg) no-repeat;
+}
+
+#split2bPane{
+    background:url(../_resources/images/icons/split2bpane.svg) no-repeat;
+}
+#split2bPane:hover {
+    background:url(../_resources/images/icons/split2bpane-white.svg) no-repeat;
+}
+
+
+
+
+
+
+/* The Book */
 
 #innerwrap {
 	grid-area: wholebook;
@@ -317,25 +386,6 @@ body {
 	
 }
 
-/*
-.gutter-col-handle::after {
-	position: relative;
-	top: 2px;
-	left: 7px;
-	font-size: 0.8em;
-	font-variant: small-caps;
-	padding: 0 3px;
-	content: 'contents';
-	border-bottom-left-radius: 30%;
-	border-bottom-right-radius: 30%;
-	border-radius: 30%;
-	background-color: var(--frameGutterColor);
-	color: var(--frameGutterTextcolor);
-	
-}
-
-*/
-
 /* Notes Gutter */
 .gutter-row {
     grid-column: 1/-1;
@@ -367,7 +417,7 @@ body {
 	text-align: center;
 	height:20px;
 	bottom: 7px;
-	left: calc((100%/2) - 15px);
+	left: calc((100%/2) - 30px);
 	font-size: 0.8em;
 	font-variant: small-caps;
 	content: 'notes';
@@ -375,26 +425,6 @@ body {
 	background-color: var(--frameGutterColor);
 	color: var(--frameGutterTextcolor);
 }
-
-/*
-.gutter-row-handle::after {
-	position: relative;
-	max-width: 100px;
-	max-height: 100px;
-
-	bottom:124px;
-	left: 50px;
-	border-bottom: solid var(--frameGutterBorder) 1px;
-	border-top: solid var(--frameGutterBorder) 1px;
-	font-size: 0.8em;
-	font-variant: small-caps;
-	padding: 0 3px;
-	content: 'notes';
-	border-radius: 30%;
-	background-color: var(--frameGutterColor);
-	color: var(--frameGutterTextcolor);
-}
-*/
 
 /********** Side Navigation - The Table of Contents **********/
 
@@ -643,7 +673,7 @@ strong {
     text-indent: -40px;
 }
 
-.content{
+#content{
 	hyphens: var(--hyphenation);
 	font-size: var(--fontsize);
 	line-height: var(--lineheight);
@@ -656,7 +686,7 @@ strong {
 
 }
 
-.content h1 {
+#content h1 {
 	font-family: 'Source Sans Pro';
 	text-align: center;
 	font-size: calc(var(--fontsize)*1.9);
@@ -667,28 +697,16 @@ strong {
 	padding-top:3em;
 }
 
-.content h1 > em {
+#content h1 > em {
 	font-style: normal;
 }
-
-/*
-.content h1.preface {
-	text-align: center;
-	font-size: calc(var(--fontsize)*1.9);
-	font-style: normal;
-	font-weight: 400;
-	font-variant: small-caps;
-	padding-bottom: 0;
-	padding-top:3em;
-}
-*/
 
 .prefacewriter {
 	margin-top: 1em;
 	margin-bottom: 1em;
 }	
 
-.content h2 {
+#content h2 {
 	font-family: 'Source Sans Pro';
     font-weight: 500;
 	text-align: left;
@@ -697,7 +715,7 @@ strong {
 	hyphens: manual;
 }
 
-.content h3 {
+#content h3 {
 	font-family: 'Source Sans Pro';
 	text-align: left;
     font-weight: 500;
@@ -705,20 +723,20 @@ strong {
 	margin-bottom: -.5em;
 }
 
-.content h4 {
+#content h4 {
 	font-family: 'Source Sans Pro';
 	margin-bottom: -1em;
 	font-style: italic;
 }
 
-.content h5 {
+#content h5 {
 	font-family: 'Source Sans Pro';
 
 	text-align: center;
 }
 
 
-.content h1.titlepage {
+#content h1.titlepage {
 	font-family: 'Source Serif Pro';
 	font-size: 3em;
 	text-align: center;
@@ -729,7 +747,7 @@ strong {
 	margin-bottom: 1.5em;
 }
 
-.content h2.titlepage {
+#content h2.titlepage {
 	font-family: 'Source Serif Pro';
 	font-style: normal;
 	font-size: 1.5em;
@@ -740,7 +758,7 @@ strong {
 	margin-bottom: 5em;
 }
 
-.content h3.titlepage {
+#content h3.titlepage {
 	font-size: 1.2em;
 	text-align: center;
 	font-style: italic;
@@ -748,7 +766,7 @@ strong {
 	margin-top: -3em;
 }
 
-.content h4.titlepage {
+#content h4.titlepage {
 	font-size: 1em;
 	text-align: center;
 	font-style: italic;
@@ -757,7 +775,7 @@ strong {
 }
 
 
-.content h2.part {
+#content h2.part {
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 1.5em;
@@ -767,7 +785,7 @@ strong {
 	margin-bottom: 1em;
 }
 
-.content h1.part {
+#content h1.part {
 	text-align: center;
 	font-size: 1.8em;
 	font-style: normal;
@@ -782,7 +800,7 @@ strong {
 }
 
 
-.content p {
+#content p {
 	margin-bottom: 0;
 }
 
@@ -816,11 +834,11 @@ a {
 	border-top:1px solid var(--primarycolor);
 }	
 
-.content q {
+#content q {
 	font-style: italic;
 }
 
-.content li {
+#content li {
 	margin-bottom: .5em;
 	text-align: left;
 }	
@@ -1068,14 +1086,14 @@ table.borderlessTable {
 	margin-right: 10px;
 }
 
-.content div.quote {
+#content div.quote {
     font-style: italic;
 	text-align: center;
 	width: 70%;
 	margin: 2em auto 2em auto;
 }
 
-.content div.cite {
+#content div.cite {
 	text-align: right;
 	margin-right: 15%;
 	padding-top: 0.25em;
@@ -1083,7 +1101,7 @@ table.borderlessTable {
 	margin-top: -2em;
 }	
 
-.content div.quotebigger {
+#content div.quotebigger {
     font-style: italic;
 	width: 85%;
 	text-align: justify;
@@ -1091,29 +1109,22 @@ table.borderlessTable {
 	margin:  1em auto 0 auto;
 }	
 
-.content div.quotebigger > div {
+#content div.quotebigger > div {
 	margin-top: 1em;
 }	
 
-.content div.quotebigger > p + p {
+#content div.quotebigger > p + p {
 	text-indent: 0;
 	margin-top: 1em;
 }	
 
-.content div.citebigger {
+#content div.citebigger {
 	text-align: right;
 	padding-top: 0.25em;
 	padding-bottom: 1.5em;
 	width: 100%;
 }	
 
-.content div.pagenumber {
-	position:relative;
-	margin: 2rem 0;
-	text-align: center;
-	text-transform: lowercase;
-	font-style: normal;
-}
 
 #book {
 	padding-left: var(--innerbookmargins);
@@ -1124,7 +1135,7 @@ table.borderlessTable {
 
 #booknotes {
 	overflow-y: auto;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	padding-left: var(--innerbookmargins);
 	padding-right: var(--innerbookmargins);
 

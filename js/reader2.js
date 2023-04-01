@@ -1,7 +1,8 @@
 var nuclearOption = false;
 var r = document.querySelector(':root');
+
 // SETTINGS VARIABLES
-var fixedMenu;
+var fixedMenu = true;
 var themeName = "Simple";
 var UIISBuilt = false;
 
@@ -286,9 +287,11 @@ function startup () {
 		fixedMenuCheck.onclick = function () {
 			setMenuVisability();
 			shadowSearchBar ();
+
 		}
 
 		UIISBuilt = true;
+		setBookHeight(true);
 
 		syncNotesCheck.onclick = function () {
 			if (this.checked) {
@@ -719,6 +722,7 @@ function initialiseCommonSettings () {
 		setCookie('wiswobooks_ffs',local_wiswobooks_ffs,365);
 	}
 	setMenuVisability();
+
 
 	//THEME
 	var local_wiswobooks_theme = getCookie("wiswobooks_theme");
@@ -1894,12 +1898,31 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 
 // PANES FUNCTIONALITY
 
+function setBookHeight (showmenu = true) {
+	let vh = window.innerHeight;
+
+	const topBar = document.getElementById('topbar');
+	let topbarHeight = parseInt(window.getComputedStyle(topBar).height) + parseInt(window.getComputedStyle(topBar).borderBottomWidth);
+	const statusBar =  document.getElementById('status');
+	let statusBarHeight = parseInt(window.getComputedStyle(statusBar).height) + parseInt(window.getComputedStyle(statusBar).borderBottomWidth) + parseInt(window.getComputedStyle(statusBar).borderTopWidth);
+	if (showmenu) {
+		document.documentElement.style.setProperty('--bookHeight', (vh - topbarHeight - statusBarHeight) + 'px');
+	} else {
+		document.documentElement.style.setProperty('--bookHeight', (vh - statusBarHeight) + 'px');
+	}
+}
+
+
+
 var innerwrapGTCDefault = '1fr 20px 3fr';
 var contentGTRDefault = '3fr 20px 1fr';
 var innerwrapGTC;
 var contentGTR;
 
 function initPanes () {
+	
+	// Setting up the panes
+
 	innerwrapGTC = localStorage.getItem('tMSUI_innerwrapGTC');
 	if (!innerwrapGTC) {
 		innerwrapGTC = innerwrapGTCDefault;
@@ -1911,7 +1934,7 @@ function initPanes () {
 		contentGTR = contentGTRDefault;
 	}
 	document.getElementById('content').style.gridTemplateRows = contentGTR;
-	
+
 	Split({
 		columnGutters: [{
 			track: 1,
@@ -2082,13 +2105,12 @@ book.onscroll = function() {
 	var currentScrollPos = document.getElementById('book').scrollTop;
 	if (!fixedMenu) {
 		if ((prevScrollpos > currentScrollPos)) { // show top bar when scrolling up
-			document.getElementById('outerwrap').style.gridTemplateAreas = "'header' 'wholebook'";	
-			r.style.setProperty('--verticalHeight', '100vh - 101px');		
+			document.getElementById('outerwrap').style.gridTemplateAreas = "'header' 'wholebook' 'statusbar'";	
 			document.getElementById('topbar').style.display ="block";
+			setBookHeight(true);
 		} else {  // hide top bar when scrolling down
-			document.getElementById('outerwrap').style.gridTemplateAreas = "'wholebook'";
-			r.style.setProperty('--verticalHeight', '100vh');		
 			document.getElementById('topbar').style.display ="none";
+			setBookHeight(false);	
 		}
 	}
 	prevScrollpos = currentScrollPos;
@@ -2097,9 +2119,13 @@ book.onscroll = function() {
 	autoScrollNotes();
 }
 
-
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
+	if (fixedMenu) {
+		setBookHeight(true);
+	} else {
+		setBookHeight(false);
+	}
 });
 
 var savedHeadingsElements = book.querySelectorAll("h1[id], h2[id], h3[id]");

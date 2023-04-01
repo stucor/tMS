@@ -52,7 +52,7 @@
     --scrollbarThumbHoverColor: #adadad;
 
 	/* Split Frame Sizes */
-	--verticalHeight : 100vh - 99px;
+	/*--verticalHeight : 100vh - 99px;*/
 	--bookHeight : 1px;
 
 	/* COLOURS */
@@ -433,8 +433,8 @@ body {
 	overflow-x: hidden;
 }
 #tocnav {
-	height: calc(var(--verticalHeight));
-	max-height: calc(var(--verticalHeight));
+	height: var(--bookHeight);
+	max-height: var(--bookHeight);
     background-color: #fff;
 	overflow-x: hidden;
 	hyphens: auto;
@@ -452,8 +452,8 @@ body {
 }
 
 #tocnav ul {
-	max-height: calc(var(--verticalHeight));
-	min-height: calc(var(--verticalHeight));
+	max-height: var(--bookHeight);
+	min-height: var(--bookHeight);
 	padding: 0 10px;
 }
 
@@ -514,12 +514,12 @@ body {
 
 #TOC {
 	margin: 0;
-	max-height: (calc var(--verticalHeight));
+	max-height: var(--bookHeight);
 	overflow-y: auto;
 }
 
 #rightpane {
-	max-height: calc(var(--verticalHeight));
+	max-height: var(--bookHeight);
 	display: grid;
     grid-template-columns: 7% 86% 7%;
 	z-index: 1;

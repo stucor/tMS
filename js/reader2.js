@@ -1900,7 +1900,6 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 
 function setBookHeight (showmenu = true) {
 	let vh = window.innerHeight;
-
 	const topBar = document.getElementById('topbar');
 	let topbarHeight = parseInt(window.getComputedStyle(topBar).height) + parseInt(window.getComputedStyle(topBar).borderBottomWidth);
 	const statusBar =  document.getElementById('status');
@@ -1955,11 +1954,19 @@ function initPanes () {
 const panesRO = new ResizeObserver(entries => {
     entries.forEach(entry => {
 		autoScrollNotes();
+
+		const rightPane = document.getElementById('rightpane');
+		const rightPaneWidth = parseInt(window.getComputedStyle(rightPane).getPropertyValue('width'));
+		if (rightPaneWidth < 766 ) {
+			rightPane.style.gridTemplateColumns = '0 100% 0';
+		} else {
+			rightPane.style.gridTemplateColumns = '7% 86% 7%';
+		}
+
 		const innerwrapGTC = document.querySelector('#innerwrap').style['grid-template-columns'];
 		const contentGTR = document.querySelector('#content').style['grid-template-rows'];
         const TOCClosed = (innerwrapGTC.slice(0,3)) === '0fr';
         const notesClosed = (contentGTR.slice(-3) === '0fr');
-
 		if ((notesClosed) && (TOCClosed)) {
             setPaneButtons('1');
         } else if (notesClosed) {
@@ -1969,12 +1976,11 @@ const panesRO = new ResizeObserver(entries => {
         } else {
             setPaneButtons('3');
         }   
-    
     })
 })
 
 panesRO.observe(document.getElementById('content'));
-panesRO.observe(document.getElementById('booknotes'));
+//panesRO.observe(document.getElementById('booknotes'));
 
 function setPaneButtons (whichPaneBtnOn) {
     let sp3 = document.getElementById('split3Pane');

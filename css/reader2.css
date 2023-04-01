@@ -52,7 +52,7 @@
     --scrollbarThumbHoverColor: #adadad;
 
 	/* Split Frame Sizes */
-	/*--verticalHeight : 100vh - 99px;*/
+	--verticalHeight : 1px; /* not actually set anywhere else at the moment */
 	--bookHeight : 1px;
 
 	/* COLOURS */
@@ -160,8 +160,8 @@ body {
 	'header'
 	'wholebook'
 	'statusbar';
-	height: 100vh;
-	max-height: 100vh;
+	height: var(--verticalHeight);
+	max-height: var(--verticalHeight);
 	gap:1px;
 	background-color: var(--bookmargincolor);
 	padding: 0;
@@ -374,11 +374,10 @@ body {
 	width: 60px;
 	max-width: 60px;
 	text-align: center;
-	bottom: calc(100vh/2 - 50px + 15px);
+	bottom: calc(var(--bookHeight)/2);
 	left: -19px;
 	font-size: 0.8em;
 	font-variant: small-caps;
-
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	transform: rotate(-90deg);

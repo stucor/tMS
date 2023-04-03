@@ -294,11 +294,11 @@ function startup () {
 		setBookHeight(true);
 
 		syncNotesCheck.onclick = function () {
-			if (this.checked) {
-				autoScrollNotes();
-			} else {
-				showAllNotes();
-			}
+			showSpinner(); // show spinner
+			promiseToRunAsync(doSyncNotes) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
 		}
 
 	});
@@ -1738,7 +1738,6 @@ function doSetSerif () {
 }
 
 function setSerif () {
-
 	if (document.getElementById('serifFont').checked) {
 		if (!isAudioBook()) {
 			r.style.setProperty('--fontfamily', 'Source Serif Pro');
@@ -1748,7 +1747,7 @@ function setSerif () {
 			r.style.setProperty('--fontfamily', 'Source Sans Pro');
 		};
 	}
-	
+
 }	
 
 
@@ -1828,7 +1827,13 @@ function setParaNumbers () {
 	}
 }
 
-
+function doSyncNotes () {
+	if (document.getElementById('syncNotesCheck').checked) {
+		autoScrollNotes();
+	} else {
+		showAllNotes();
+	}
+}
 
 window.onpopstate = function (event) {
 	var scroller = history.state.scrollState;
@@ -2081,7 +2086,6 @@ function showAllNotes () {
 	let supInNotesArray = document.getElementsByClassName('booknote');
 	for (var i = 0; i < supInNotesArray.length; i++) {
 		supInNotesArray[i].style.display='grid';
-
 	}
 }
 

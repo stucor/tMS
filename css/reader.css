@@ -837,9 +837,12 @@ dd > ol > li {
 	margin-bottom: 0 !important;
 }
 
-
+/* bodge because it's not being seen in savedBookElements */
 .references > dt {
-	display: none;
+	font-variant: small-caps;
+	color:#00000000;
+	max-width: 0;
+	max-height: 0;
 }
 
 .references > dd {

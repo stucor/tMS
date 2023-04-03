@@ -172,7 +172,6 @@ function startup () {
 
 	buildSettings(function(){
 		//the following is done after buildSettings completes:
-		savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
 		document.getElementById('topbar').style.display='block';
 		document.getElementById('thebook').style.display='block';
 		hideAllLibNotes();
@@ -675,7 +674,7 @@ window.onload = function () {
 	});
 };
 
-var savedBookElements = [];//thebook.querySelectorAll("*:not(.noshow)");
+var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
 var savedNotesElements = ModalNotes.querySelectorAll('h2, div');

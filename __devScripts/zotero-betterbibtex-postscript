@@ -1,3 +1,0 @@
-if (Translator.BetterCSLJSON) {
-	entry.file = item.attachments.map(a => a.localPath.replace("D:\\Data\\tMS\\dev\\books\\_resources\\zotero-attach\\","")).join(";");
-}

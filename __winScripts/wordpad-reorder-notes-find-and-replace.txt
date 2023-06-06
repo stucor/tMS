@@ -1,0 +1,15 @@
+Replace this:
+<div class="booknote" data-note="([1-9]|[1-9][0-9]|[1-9][0-9][0-9])">
+
+with this:
+<div class="booknote" data-note="\i">
+
+AND
+
+Replace this:
+<sup>([1-9]|[1-9][0-9]|[1-9][0-9][0-9])</sup>
+
+with this:
+<sup>\i</sup>
+
+

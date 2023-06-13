@@ -1483,7 +1483,7 @@ function setTheme(){
 			r.style.setProperty('--tableeven', '#e1e1e1');
 			r.style.setProperty('--tablefoot', '#ececec');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#a5670a');
+			r.style.setProperty('--scsegmentnumbercolor', '#5a5a81');//'#a5670a');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
@@ -1612,7 +1612,7 @@ function setTheme(){
 			r.style.setProperty('--tableeven', '#1e1e1e');
 			r.style.setProperty('--tablefoot', '#131313');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#a5670ae0');
+			r.style.setProperty('--scsegmentnumbercolor', '#c4cdda');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#7c7c7c';
@@ -1753,7 +1753,7 @@ function setTheme(){
 			r.style.setProperty('--tableeven', '#f9f4d5');
 			r.style.setProperty('--tablefoot', '#f9f9df');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#a5670a');
+			r.style.setProperty('--scsegmentnumbercolor', '#5c0909');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';

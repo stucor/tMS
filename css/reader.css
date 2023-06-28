@@ -2131,18 +2131,6 @@ mark.current {
 		grid-template-columns: 7% 86% 7%;
 	}
 
-	.bright-scroll::-webkit-scrollbar {
-		width:2px;
-	 }
-
-	 .dark-scroll::-webkit-scrollbar {
-		width:2px;
-	 }
-
-	.mellow-scroll::-webkit-scrollbar {
-		width:2px;
-	 }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -2203,6 +2191,18 @@ mark.current {
 	.shelf-grid {
 		display: block;
 	}
+
+	.bright-scroll::-webkit-scrollbar {
+		width:2px;
+	 }
+
+	 .dark-scroll::-webkit-scrollbar {
+		width:2px;
+	 }
+
+	.mellow-scroll::-webkit-scrollbar {
+		width:2px;
+	 }
 
 }
 

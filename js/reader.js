@@ -751,7 +751,7 @@ function initialiseCommonSettings () {
 		setFontLevel(local_wiswobooks_font_size);
 		setTOCLevel(local_wiswobooks_font_size);
 		setDetailsLevel(local_wiswobooks_font_size);
-		setNotesLevel(local_wiswobooks_font_size);
+		//setNotesLevel(local_wiswobooks_font_size);
 	}	
 }
 
@@ -1208,6 +1208,7 @@ function doDecFont () {
 		document.getElementById("flvalue").innerHTML = fontlevel;
 		setFontLevel(fontlevel);
 		setTOCLevel (fontlevel);
+		//setNotesLevel(fontlevel);
 		restorePlaceInBook();
 	}
 }
@@ -1218,6 +1219,7 @@ function doIncFont () {
 		document.getElementById("flvalue").innerHTML = fontlevel;
 		setTOCLevel (fontlevel);
 		setFontLevel(fontlevel);
+		//setNotesLevel(fontlevel);
 		restorePlaceInBook();
 	}
 }
@@ -1289,12 +1291,13 @@ function setDetailsLevel (level) {
 			}
 	}
 }	
+/*
 function setNotesLevel (level) {
 	for (var i = 0; i < savedNotesElements.length; i++) {
 		savedNotesElements[i].style.fontSize = level+'px';
 	}
 }	
-
+*/
 // LINE SPACING
 function setLH (level) {
 	if (!isAudioBook()) {
@@ -2605,13 +2608,13 @@ function getFontLevel() {
 	return document.getElementById("flvalue").innerHTML +'px';
 }
 */
-
+/*
 function reformatBook () {
 
 	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
 	setFontLevel(fontlevel);
 	setDetailsLevel(fontlevel);
-	setNotesLevel(fontlevel);
+	//setNotesLevel(fontlevel);
 
 	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
 	setLH (lhlevel);
@@ -2619,7 +2622,7 @@ function reformatBook () {
 	setSerif ();
 
 }
-
+*/
 function exitStaticModal () {
 	if (calledFromNotes) {
 		setModalStyle ("Notes");

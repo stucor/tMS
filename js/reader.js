@@ -1478,7 +1478,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#c9d5fc');
 			r.style.setProperty('--primarycolor', '#06036ea0');
 			r.style.setProperty('--listlinkhover', '#d5dcfd60');
-			r.style.setProperty('--bdtexthighlighter', '#e0f4fbb0');//'#eef0fb');
+			r.style.setProperty('--bdtexthighlighter', '#fc88320B');//'#e0f4fbb0');//'#eef0fb');
 
 			r.style.setProperty('--tablecaption', '#dadada');
 			r.style.setProperty('--tablehead', '#c9c9c9');
@@ -1748,7 +1748,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#ecd38d');
 			r.style.setProperty('--primarycolor', '#cea140');
 			r.style.setProperty('--listlinkhover', '#cea14030');
-			r.style.setProperty('--bdtexthighlighter', '#fffff6ef'); 
+			r.style.setProperty('--bdtexthighlighter', '#fc88320F');// '#fffff6ef'); 
 
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');
@@ -2582,8 +2582,8 @@ function formatbooknotes() { // adds the notes numbers to the booknotes - called
 var highlightedNote = 0;
 function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
-	savedNotesElements[highlightedNote].style.border = "thin solid grey";
-	savedNotesElements[highlightedNote].style.background = "#c0c0c020";
+	savedNotesElements[highlightedNote].style.border = "thin solid #d6630f8F"; //#229635";
+	savedNotesElements[highlightedNote].style.background = "#d6630f06"; //"#22963506"; //"#c0c0c020";
 	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
 	ModalBody.scrollBy(0,-40);
 }

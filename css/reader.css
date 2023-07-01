@@ -59,6 +59,7 @@
 	--secondarytextcolor: blue;
 
 	--listlinkhover: #cea14030;
+	--suphovercolor: #d6630f8F;
 
 	--buttontext: #000;
 	--buttonbackground: #cea1407e;
@@ -2400,7 +2401,7 @@ mark.current {
 	}
 
 	sup:hover {
-		box-shadow: 0 0 5px 1px var(--primarycolor);
+		box-shadow: 0 0 5px 1px var(--suphovercolor);
 	}
 
 	.select-css:hover {

@@ -229,12 +229,15 @@ header li .segno {
 
 .sc-mark {
   background-color: var(--bdtexthighlighter);
+  border-bottom: dotted grey thin;
 }
+
 
 .sc-mark::after {
   content:' ';
   background-color: var(--bdtexthighlighter);
 }
+
 
 .segno {
   font-size: 0.7em;

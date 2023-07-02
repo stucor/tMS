@@ -1466,8 +1466,8 @@ function setTheme(){
 				sni.style.filter="invert(0)";
 			}
 
-			r.style.setProperty('--TOCprogress', '#0000001f'); //'#f0f2fd80');
-			r.style.setProperty('--TOChighlighter', '#00000037'); //'#e3e7fdc0');
+			r.style.setProperty('--TOCprogress', '#d6630f09');  //'#d6630f08'); '#f0f2fd80');
+			r.style.setProperty('--TOChighlighter', '#00000037'); // '#00000037'); '#e3e7fdc0');
 			r.style.setProperty('--primarytextcolor', '#000');
 			r.style.setProperty('--secondarytextcolor', '#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
@@ -2045,14 +2045,18 @@ function fillProgressBar() {
 		for (var i = 0; i < savedTOCElements.length; i++) {
 			savedTOCElements[i].style.background = 'unset';
 			savedTOCElements[i].style.opacity = '1';
+			savedTOCElements[i].style.border = "none";
 			savedTOCElements[i].setAttribute('data-progress', '');
 		}
 		for (var i = 0; i < savedTOCElements.length; i++) {
 			if (savedTOCElements[i].id !== currentTOC) {
 				savedTOCElements[i].style.background = 'var(--TOCprogress)';
 				savedTOCElements[i].style.opacity = '0.4';
+
 			} else {
 				savedTOCElements[i-1].style.opacity = '1';
+				savedTOCElements[i-1].style.borderTop = "thin dotted #d6630f8F";
+				savedTOCElements[i-1].style.borderBottom = "thin dotted #d6630f8F";
 				savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
 				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;

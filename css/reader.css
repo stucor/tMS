@@ -1732,11 +1732,13 @@ mark.current {
 
 .sidenav li::after {
 	position:absolute;
-	right:0;
-	bottom: -3px;
+	right:2px;
+	bottom: 0;
 	content: attr(data-progress);
 	color: var(--pickedtext);
-	background-color: #ffffff00;
+	background-color: var(--primarybackground);
+	border-radius: 10%;
+	line-height: 0.8em;
 	font-size: 0.8em;
 }
 
@@ -2010,7 +2012,7 @@ mark.current {
 /************ THEMES ************/
 
 .bright-scroll::-webkit-scrollbar {
-	width:10px;
+	width:8px;
  }
 .bright-scroll-track::-webkit-scrollbar-track {
 	background: #fafafa; 
@@ -2020,7 +2022,7 @@ mark.current {
 }
 
 .dark-scroll::-webkit-scrollbar {
-	width:10px;
+	width:8px;
  }
 .dark-scroll-track::-webkit-scrollbar-track {
 	background: #000; 
@@ -2030,7 +2032,7 @@ mark.current {
 }
 
 .mellow-scroll::-webkit-scrollbar {
-	width:10px;
+	width:8px;
  }
 .mellow-scroll-track::-webkit-scrollbar-track {
 	background: rgb(233, 221, 175); 

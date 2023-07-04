@@ -36,7 +36,7 @@
 }
 
 :root {
-	--notused: #fa807267;
+	--notused: #fa8072;
 
 	--fontsize: 1rem;
 	--lineheight: 1.5;
@@ -45,6 +45,7 @@
 
 	--notehighlighter: #d6630f40; /*#22963554;*/
 	--bdtexthighlighter: #eef0fb;
+	--bdtexthighlightborder: green;
 
 	--TOCprogress: #f7f7f7;
 	--TOChighlighter: #f7f7f7;
@@ -544,8 +545,6 @@ blockquote {
 .suttaref, .TOCref {
 	color:cornflowerblue;
 	cursor:pointer;
-	user-select: none;
-
 }	
 
 #ModalNotes blockquote {

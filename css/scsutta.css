@@ -229,7 +229,7 @@ header li .segno {
 
 .sc-mark {
   background-color: var(--bdtexthighlighter);
-  border-bottom: dotted grey thin;
+  border-bottom: solid var(--bdtexthighlightborder) thin;
 }
 
 

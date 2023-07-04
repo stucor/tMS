@@ -1479,6 +1479,7 @@ function setTheme(){
 			r.style.setProperty('--primarycolor', '#06036ea0');
 			r.style.setProperty('--listlinkhover', '#d5dcfd60');
 			r.style.setProperty('--bdtexthighlighter', '#fc88320B');//'#e0f4fbb0');//'#eef0fb');
+			r.style.setProperty('--bdtexthighlightborder', '#fc8832C0');
 
 			r.style.setProperty('--tablecaption', '#dadada');
 			r.style.setProperty('--tablehead', '#c9c9c9');
@@ -1608,6 +1609,7 @@ function setTheme(){
 			r.style.setProperty('--primarycolor', '#667b9e');
 			r.style.setProperty('--listlinkhover', '#9db4ff40');
 			r.style.setProperty('--bdtexthighlighter', '#484c5ee0');
+			r.style.setProperty('--bdtexthighlightborder', 'grey');
 
 			r.style.setProperty('--tablecaption', '#252525');
 			r.style.setProperty('--tablehead', '#363636');
@@ -1748,7 +1750,8 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#ecd38d');
 			r.style.setProperty('--primarycolor', '#cea140');
 			r.style.setProperty('--listlinkhover', '#cea14030');
-			r.style.setProperty('--bdtexthighlighter', '#fc88320F');// '#fffff6ef'); 
+			r.style.setProperty('--bdtexthighlighter', '#fa80720F');// '#fffff6ef'); 
+			r.style.setProperty('--bdtexthighlightborder', '#fa8072C0');
 
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');
@@ -2586,8 +2589,8 @@ function formatbooknotes() { // adds the notes numbers to the booknotes - called
 var highlightedNote = 0;
 function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
-	savedNotesElements[highlightedNote].style.border = "thin solid #d6630f8F"; //#229635";
-	savedNotesElements[highlightedNote].style.background = "#d6630f06"; //"#22963506"; //"#c0c0c020";
+	savedNotesElements[highlightedNote].style.border = "thin solid var(--bdtexthighlightborder)"; //#229635";
+	savedNotesElements[highlightedNote].style.background = "var(--bdtexthighlighter)"; //"#22963506"; //"#c0c0c020";
 	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
 	ModalBody.scrollBy(0,-40);
 }

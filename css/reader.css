@@ -2101,7 +2101,7 @@ mark.current {
 /* When the checkbox is checked, add a background */
 .checkcontainer input:checked ~ .checkmark {
 	border: 3px solid var(--primarycolor); 
-	background-color: var(--buttonbackground);
+	background-color: var(--bdtexthighlighter);/*var(--buttonbackground);*/
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {

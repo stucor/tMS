@@ -7,13 +7,12 @@
   "ud1.4:1.4": "{}</p>",
   "ud1.4:2.1": "<p>{}",
   "ud1.4:2.2": "{}",
-  "ud1.4:2.3": "{}",
-  "ud1.4:2.4": "{}</p>",
+  "ud1.4:2.3": "{}</p>",
   "ud1.4:3.1": "<p>{}</p>",
   "ud1.4:4.1": "<blockquote class='gatha'><p><span class='verse-line'>{}</span>",
   "ud1.4:4.2": "<span class='verse-line'>{}</span>",
   "ud1.4:4.3": "<span class='verse-line'>{}</span>",
   "ud1.4:4.4": "<span class='verse-line'>{}</span>",
   "ud1.4:4.5": "<span class='verse-line'>{}</span></p></blockquote>",
-  "ud1.4:4.6": "<p class='endsection'>{}</p></article>"
+  "ud1.4:4.6": "<p class='endsutta'>{}</p></article>"
 }

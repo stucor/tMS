@@ -298,11 +298,6 @@ outline: none;
 
 
 .tocbuttons {
-	/*
-	display: grid;
-	grid-template-columns: repeat(auto-fit, 120px);
-	grid-gap: 0.5rem;
-	*/
 	display:flex;
 	flex-wrap: wrap;
 	justify-content: center;

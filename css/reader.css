@@ -2462,6 +2462,10 @@ mark.current {
 		color: var(--buttoncolor); 
 	}
 	
+	.suttasortbuttons > button:hover {
+		border: 3px solid var(--primarycolor);
+		box-shadow: 0 0 5px 1px var(--primarycolor);
+	}
 }
 
 @media (hover: none) {
@@ -2469,6 +2473,11 @@ mark.current {
 		border: 3px solid var(--primarycolor); 
 		box-shadow: none;
 	  }
+	  
+	 .suttasortbuttons > button:hover {
+		border: 3px solid var(--primarycolor);
+		box-shadow: none;
+	}
 }
 
 @media print

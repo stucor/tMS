@@ -183,7 +183,7 @@ box-shadow: 1px 3px 2px -1px rgba(0, 0, 0, 0.363);
 .sort.asc, .sort.desc {
 	font-weight: 700;
 	color: var(--pickedtext);
-	background-color: var(--bdtexthighlighter);/*var(--buttonbackground);*/
+	background-color: var(--buttonbackground);
 	border-color: var(--primarycolor);
 }
 
@@ -217,7 +217,7 @@ box-shadow: 1px 3px 2px -1px rgba(0, 0, 0, 0.363);
 .booksearchBtn.selected {
 	font-weight: 700;
 	color: var(--pickedtext);
-	background-color: var(--bdtexthighlighter); /*var(--buttonbackground);*/
+	background-color: var(--buttonbackground);
 	border-color: var(--primarycolor);
 }
 

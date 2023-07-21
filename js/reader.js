@@ -1467,17 +1467,17 @@ function setTheme(){
 			}
 
 			r.style.setProperty('--TOCprogress', '#d6630f09');  //'#d6630f08'); '#f0f2fd80');
-			r.style.setProperty('--TOChighlighter', '#00000037'); // '#00000037'); '#e3e7fdc0');
+			//r.style.setProperty('--TOChighlighter', '#00000000'); // '#00000037'); '#e3e7fdc0');
 			r.style.setProperty('--primarytextcolor', '#000');
 			r.style.setProperty('--secondarytextcolor', '#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
 
 			r.style.setProperty('--pickedtext', '#1c222b');
 			r.style.setProperty('--buttontext', '#000');
-			r.style.setProperty('--buttonbackground', '#f0f2fd');
-			r.style.setProperty('--sliderbackground', '#c9d5fc');
-			r.style.setProperty('--primarycolor', '#06036ea0');
-			r.style.setProperty('--listlinkhover', '#d5dcfd60');
+			r.style.setProperty('--buttonbackground', '#fc88320B');//'#f0f2fd');
+			r.style.setProperty('--sliderbackground', '#fc88320B');//'#c9d5fc');
+			r.style.setProperty('--primarycolor', '#217cbe');//'#06036ea0');
+			r.style.setProperty('--listlinkhover', '#217cbe1F');//'#d5dcfd60');
 			r.style.setProperty('--bdtexthighlighter', '#fc88320B');//'#e0f4fbb0');//'#eef0fb');
 			r.style.setProperty('--bdtexthighlightborder', '#fc8832C0');
 
@@ -1601,7 +1601,7 @@ function setTheme(){
 			r.style.setProperty('--primarybackground', '#121212');
 
 			r.style.setProperty('--TOCprogress', '#475f7a');
-			r.style.setProperty('--TOChighlighter', '#667b9ea0');
+			//r.style.setProperty('--TOChighlighter', '#667b9ea0');
 			r.style.setProperty('--pickedtext', '#cfcfcf');
 			r.style.setProperty('--buttontext', '#cfcfcf');
 			r.style.setProperty('--buttonbackground', '#475f7a');
@@ -1739,7 +1739,7 @@ function setTheme(){
 			}
 
 			r.style.setProperty('--TOCprogress', '#eadbbf');
-			r.style.setProperty('--TOChighlighter', '#eadbbf');
+			//r.style.setProperty('--TOChighlighter', '#eadbbf');
 			r.style.setProperty('--primarytextcolor', '#382500');
 			r.style.setProperty('--secondarytextcolor', '#5c0909');
 			r.style.setProperty('--primarybackground', '#f8f4da');
@@ -2054,13 +2054,13 @@ function fillProgressBar() {
 		for (var i = 0; i < savedTOCElements.length; i++) {
 			if (savedTOCElements[i].id !== currentTOC) {
 				savedTOCElements[i].style.background = 'var(--TOCprogress)';
-				savedTOCElements[i].style.opacity = '0.4';
+				savedTOCElements[i].style.opacity = '0.35';
 
 			} else {
 				savedTOCElements[i-1].style.opacity = '1';
-				savedTOCElements[i-1].style.borderTop = "thin dotted #d6630f8F";
-				savedTOCElements[i-1].style.borderBottom = "thin dotted #d6630f8F";
-				savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
+				savedTOCElements[i-1].style.borderTop = "thin dotted var(--primarycolor)";//#d6630f8F";
+				savedTOCElements[i-1].style.borderBottom = "thin dotted var(--primarycolor)";
+				//savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
 				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 				var scrolled = Math.floor(((winScroll / height) * 100)* 10) /10;

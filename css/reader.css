@@ -1242,7 +1242,7 @@ span.level {
 	background-color: rgba(173, 173, 173, 0.50);
 	-webkit-transition: .4s;
 	transition: .4s;
-	border: 1px solid rgba(255, 255, 255, 0);
+	border: 1px solid rgba(80, 80, 80, 0.459);
   }
 
 
@@ -1250,8 +1250,8 @@ span.level {
 .slider:before {
 	position: absolute;
 	content: "";
-	height: 18px;
-	width: 18px;
+	height: 19px;
+	width: 20px;
 	left: 0;
 	bottom: 0;
 	background-color:  rgb(170, 170, 170);
@@ -2101,7 +2101,7 @@ mark.current {
 /* When the checkbox is checked, add a background */
 .checkcontainer input:checked ~ .checkmark {
 	border: 3px solid var(--primarycolor); 
-	background-color: var(--bdtexthighlighter);/*var(--buttonbackground);*/
+	background-color: var(--buttonbackground);
 }
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {

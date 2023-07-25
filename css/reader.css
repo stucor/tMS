@@ -872,10 +872,9 @@ dd > ol > li {
 
 .expander {
 	color: cornflowerblue;
-	margin: 0 0 0 1px;
+	margin: 0 0 0 0.1em;
 	cursor: pointer;
 	user-select: none;
-	/*font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
 }
 
 .expansion {
@@ -886,7 +885,10 @@ dd > ol > li {
 }
 
 .expanded {
-	background: var(--listlinkhover);
+	background: var(--bdtexthighlighter);
+	border-bottom: 1px dotted var(--bdtexthighlightborder);
+	font-weight: 500;
+
 }
 
 sup {
@@ -894,7 +896,7 @@ sup {
 	padding: 5px;
 	margin: -5px;
 	color: cornflowerblue;
-	/*background-color: rgba(255, 255, 0, 0.20);*/
+	background-color: rgba(255, 255, 0, 0.50);
 	outline: double 0 var(--notehighlighter); 
 	border-radius: 1em;
 	cursor: pointer;
@@ -1409,6 +1411,7 @@ span.level {
 
 .refpdf:after {
 	content: ' pdf';
+	font-variant: small-caps;
 }
 
 /********** Top navigation bar **********/

@@ -856,6 +856,7 @@ dd > ol > li {
 .references > dt {
 	font-variant: small-caps;
 	color:#00000000;
+	user-select: none;
 	max-width: 0;
 	max-height: 0;
 }

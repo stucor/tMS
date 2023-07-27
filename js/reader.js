@@ -2600,7 +2600,7 @@ function clearhighlightnote() {
 	if (!(savedsup === '')) {
 		savedsup.style.outlineWidth="20px";
 		setTimeout(function() {
-			savedsup.style.transition = "0.3s linear";
+			savedsup.style.transition = "0.4s linear";
 			savedsup.style.outlineWidth ="0";
 		}, 300);
 		setTimeout(function() {

@@ -232,12 +232,12 @@ header li .segno {
   border-bottom: solid var(--bdtexthighlightborder) thin;
 }
 
-
+/*
 .sc-mark::after {
   content:' ';
   background-color: var(--bdtexthighlighter);
 }
-
+*/
 
 .segno {
   font-size: 0.7em;
@@ -259,11 +259,12 @@ header li .segno {
   margin-bottom: 1rem;
 }
 
+/*
 #sutta .gatha > p:after {
   content:unset;
   white-space: unset;
   }
-
+*/
 
 @media (hover: hover) {
   .button-area > button:hover {

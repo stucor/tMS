@@ -1,17 +1,15 @@
-ren C:\Users\Stuart\Desktop\staging\js\bookshelf.js bookshelf_230401b.js
-ren C:\Users\Stuart\Desktop\staging\js\player.js player_230401b.js
-ren C:\Users\Stuart\Desktop\staging\js\reader.js reader_230401b.js
-ren C:\Users\Stuart\Desktop\staging\js\reader2.js reader2_230401b.js
-ren C:\Users\Stuart\Desktop\staging\js\scsutta.js scsutta_230401b.js
+ren C:\Users\Stuart\Desktop\staging\js\bookshelf.js bookshelf_231016a.js
+ren C:\Users\Stuart\Desktop\staging\js\player.js player_231016a.js
+ren C:\Users\Stuart\Desktop\staging\js\reader.js reader_231016a.js
+ren C:\Users\Stuart\Desktop\staging\js\scsutta.js scsutta_231016a.js
 
-ren C:\Users\Stuart\Desktop\staging\css\bookshelf.css bookshelf_230401b.css
-ren C:\Users\Stuart\Desktop\staging\css\player.css player_230401b.css
-ren C:\Users\Stuart\Desktop\staging\css\reader.css reader_230401b.css
-ren C:\Users\Stuart\Desktop\staging\css\reader2.css reader2_230401b.css
-ren C:\Users\Stuart\Desktop\staging\css\scsutta.css scsutta_230401b.css
+ren C:\Users\Stuart\Desktop\staging\css\bookshelf.css bookshelf_231016a.css
+ren C:\Users\Stuart\Desktop\staging\css\player.css player_231016a.css
+ren C:\Users\Stuart\Desktop\staging\css\reader.css reader_231016a.css
+ren C:\Users\Stuart\Desktop\staging\css\scsutta.css scsutta_231016a.css
 
 
-(bookshelf.js)|(player.js)|(reader.js)|(scsutta.js)|(bookshelf.css)|(player.css)|(reader.css)|(scsutta.css)|(reader2.js)|(reader2.css)
+(bookshelf.js)|(player.js)|(reader.js)|(scsutta.js)|(bookshelf.css)|(player.css)|(reader.css)|(scsutta.css)
 
 
-(?1bookshelf_230401b.js)(?2player_230401b.js)(?3reader_230401b.js)(?4scsutta_230401b.js)(?5bookshelf_230401b.css)(?6player_230401b.css)(?7reader_230401b.css)(?8scsutta_230401b.css)(?9reader2_230401b.js)(?10reader2_230401b.css)
+(?1bookshelf_231016a.js)(?2player_231016a.js)(?3reader_231016a.js)(?4scsutta_231016a.js)(?5bookshelf_231016a.css)(?6player_231016a.css)(?7reader_231016a.css)(?8scsutta_231016a.css)

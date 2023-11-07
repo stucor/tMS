@@ -2767,6 +2767,14 @@ function doOutAppHREF (href) {
 
 var savedSUPElements = thebook.querySelectorAll('sup');
 
+function decodeBookSegment (anchortext) {
+	str = anchortext.replace ('Chapter ', 'c' );
+	str = str.replace (', ', '');
+	str = str.replace ('Paragraph ', 'p');
+	return str;
+	
+}
+
 document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
@@ -2813,10 +2821,26 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		}
 	}
 
+	if (e.target.classList.contains('bookSegment')){
+		var bookSeg = decodeBookSegment(e.target.innerText);
+		closebtn.click();
+		goToTarget(bookSeg);
+
+		// flash the segment gone to
+		anchorlink = document.getElementById(bookSeg);
+		anchorlink.style.background = 'var(--listlinkhover)';
+		setTimeout(function() {
+			anchorlink.style.background = 'var(--primarybackground)';
+		}, 400);
+		
+	}
+
 	if (e.target.nodeName == 'A') {
 		doOutAppHREF (e.target.getAttribute('href'));
 		if (true) {e.preventDefault();}
 	}
+
+
 });
 
 function displaySutta (linkText) {

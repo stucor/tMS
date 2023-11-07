@@ -433,7 +433,11 @@ a {
 	text-decoration: none;
 }
 
-
+.bookSegment {
+	color:cornflowerblue;
+	text-decoration: none;
+	cursor: pointer;
+}
 
 .indent{
 	margin-left: 40px;
@@ -855,17 +859,18 @@ dd > ol > li {
 /* bodge because it's not being seen in savedBookElements */
 .references > dt {
 	font-variant: small-caps;
-	/*
+	
 	color:#00000000;
 	user-select: none;
 	max-width: 0;
 	max-height: 0;
-	*/
+	
 }
 
 .references > dd {
 	text-indent: -2em;
 	margin-left: 2em;
+	margin-bottom: 0;
 	font-size: var(--fontsize);
 	line-height: var(--lineheight);
 }

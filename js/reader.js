@@ -1962,7 +1962,7 @@ function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given
 	}
 	elmnt.scrollIntoView();
 	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
-	window.scrollBy(0, tbHeight); // scroll the target below the topnav bar so you can see it
+	window.scrollBy(0, tbHeight-20); // scroll the target below the topnav bar so you can see it
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
@@ -2825,14 +2825,13 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		var bookSeg = decodeBookSegment(e.target.innerText);
 		closebtn.click();
 		goToTarget(bookSeg);
-
-		// flash the segment gone to
+		// then flash the segment that has been scrolled too
 		anchorlink = document.getElementById(bookSeg);
-		anchorlink.style.background = 'var(--listlinkhover)';
+		anchorlink.classList.add('bookSegmentTarget');
 		setTimeout(function() {
-			anchorlink.style.background = 'var(--primarybackground)';
-		}, 400);
-		
+			anchorlink.classList.remove('bookSegmentTarget');
+		}, 2000);
+
 	}
 
 	if (e.target.nodeName == 'A') {

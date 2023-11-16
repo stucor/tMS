@@ -159,6 +159,10 @@ h3 span.pli-lang .segno {
   margin-bottom: 1em;
 }
 
+#sutta p span {
+  width:fit-content;
+}
+
 #sutta p + p {
   text-indent: 0;
 }

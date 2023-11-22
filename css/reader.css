@@ -796,6 +796,7 @@ table.borderlessTable {
 	padding-right: 10px;
 	color:cornflowerblue;
 	cursor: pointer;
+	user-select: none;
 
 }
 
@@ -816,6 +817,7 @@ table.borderlessTable {
 	color:cornflowerblue;
 	text-decoration: none;
 	border-radius: 1em;
+	user-select: none;
 }
 
 .extlink::after {

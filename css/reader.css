@@ -2380,23 +2380,21 @@ mark.current {
 		margin: 10px 1%;
 		display:block;
 	}
-
 	.booknotesNumber {
 		display:inline;
 		padding:0;
-
 	}
 	.booknotesNumber::after {
 		content:':';
 	}
-	
 	.booknotesText {
 		display:inline;
 		margin: 0;
 	}
 
-
-
+	dd {
+		margin-left:0;
+	}
 }
 
 /* For Touch media - hide the hover */

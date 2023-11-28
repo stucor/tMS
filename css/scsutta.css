@@ -70,13 +70,13 @@ h3 span.pli-lang .segno {
   background: var(--primarybackground);
   border-radius: 5px 5px 0 0;
   border: 1px solid darkgrey;
+  font-family: 'Source Sans Pro';
 }
 
 .button-area > button {
   position:absolute;
   top: 3px;
   right: 20px;
-
   background-color: var(--buttonbackground);
   color: var(--buttontext);
   border: 1px solid grey;
@@ -91,12 +91,10 @@ h3 span.pli-lang .segno {
   border: 2px solid rgb(150, 150, 150, 0.5);
 }
 
-
 .button-area > button:active{
 	background-color:var(--primarycolor);
   color: var(--buttonbackground);
 }
-
 
 .button-area > .checkcontainer{
   position: absolute;
@@ -127,6 +125,7 @@ h3 span.pli-lang .segno {
 } 
 #messagetext {
   font-variant: small-caps;
+  font-family: 'Source Sans Pro';
 }
 
 

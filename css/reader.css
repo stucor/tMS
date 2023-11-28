@@ -779,7 +779,6 @@ table.borderlessTable {
 	display: grid;
   	grid-template-columns: 10% 90%;	
 	align-items:first baseline;
-	font-size: var(--fontsize);
 }
 
 .booknote p {
@@ -1924,6 +1923,8 @@ mark.current {
 
 #ModalNotes {
 	margin-bottom: 3em;
+	font-family: var(--fontfamily);
+	font-size: var(--fontsize);
 }
 
 #ModalDetails {

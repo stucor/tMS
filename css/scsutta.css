@@ -47,7 +47,6 @@ h3 span.pli-lang,
 h4 span.pli-lang,
 h5 span.pli-lang,
 li span.pli-lang {
-  font-family: Source Serif Pro;
   color: var(--secondarytextcolor);
 }
 
@@ -60,7 +59,7 @@ h3 span.pli-lang .segno {
 
 #sutta h2 {
   font-size: 1.3em;
-
+  font-weight: 500;
 }
 
 .button-area {
@@ -150,6 +149,7 @@ h3 span.pli-lang .segno {
   margin: 30px 5%;
   padding: 20px 5%;
   font-size: var(--fontsize);
+  font-family: var(--fontfamily);
 }
 
 #sutta h1 {

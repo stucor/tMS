@@ -203,11 +203,6 @@ body {
 
 /********** General book styling **********/
 
-.appendilist {
-	text-indent: unset !important;
-	padding-top: 1.5rem !important;
-}
-
 .greytop {
 	border-top: 1px solid grey; 
 	padding-top: 1em;

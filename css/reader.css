@@ -202,23 +202,6 @@ body {
 }
 
 /********** General book styling **********/
-/*
-strong {
-	color: rgb(153, 23, 0);
-}
-*/
-
-.paralist {
-	text-align: left;
-	text-indent: unset !important;
-	padding:1em 2em;
-}
-
-.paralist > br {
-	content: 'A';
-	display: block;
-	margin: 0.8em;
-}
 
 .appendilist {
 	text-indent: unset !important;
@@ -468,9 +451,14 @@ a {
 	font-style: italic;
 }
 
+.content ul {
+	list-style-type: circle;
+}
+
 .content li {
 	margin-bottom: .5em;
 	text-align: left;
+	padding-left: 0.5em;
 }	
 
 
@@ -507,6 +495,10 @@ a {
 
 .spacer {
 	width:0; 
+}
+.halfspacer {
+	width:0; 
+	margin: -4px;
 }
 
 .shyphenate {

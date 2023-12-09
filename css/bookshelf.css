@@ -51,6 +51,10 @@
 	border: 1px solid var(--primarycolor);
 }
 
+.booklist > li::marker {
+	content : '' !important;
+}
+
 .booklist > li > a {
 	display:flex;
 	width: auto;

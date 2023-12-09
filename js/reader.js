@@ -984,6 +984,11 @@ function getPlaceInBook () {
 		setTimeout(() => {
 			scrollToNavTarget();
 			fillProgressBar();
+			for (var i = 0; i < savedTOCElements.length; i++) {
+				if (savedTOCElements[i].getAttribute('data-progress') != '') {
+					savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'smooth',});
+				}
+			}
 		}, 600); 
 
 	}

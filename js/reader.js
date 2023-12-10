@@ -986,8 +986,8 @@ function getPlaceInBook () {
 			fillProgressBar();
 			if (!isBookShelf()) {
 				for (var i = 0; i < savedTOCElements.length; i++) {
-					if (savedTOCElements[i].getAttribute('data-progress') != '') {
-						savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'smooth',});
+					if ((savedTOCElements[i].getAttribute('data-progress') != '')) {
+						savedTOCElements[i].scrollIntoView({block: 'center', behavior: 'smooth',});
 					}
 				}
 			}

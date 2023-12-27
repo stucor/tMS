@@ -290,6 +290,14 @@ function startup () {
 				hideSpinner();
 			});
 		}
+		// document.getElementById('TOCTarget0').classList.add('noshow');
+		if (!(isBookShelf() || isAudioBook())) {
+			let engrave = document.getElementsByClassName("engrave");
+			let smallEngrave = document.getElementsByClassName("smallEngrave");
+			engrave[0].classList.add('noshow')
+			smallEngrave[0].classList.add('noshow')
+		}
+
 	});
 }
 

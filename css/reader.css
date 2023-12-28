@@ -1923,6 +1923,27 @@ mark.current {
 	margin: 0 1em 1em 1em;
 }
 
+/* Self Quotes */
+
+.selfquote::before {
+    content: attr(data-before-selfquote); 
+	font-size: small;
+	float:left;
+	font-weight: 100;
+	margin-left: -2em;
+	color: lightgray;
+}
+
+.goselfquote {
+	color:cornflowerblue;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+#ModalSelfquote {
+	padding:2em;
+}
 /* The Close Button */
 
 .modal-header .close {
@@ -2369,6 +2390,11 @@ mark.current {
 
 	dd {
 		margin-left:0;
+	}
+
+	.selfquote::before {
+		margin-left: 0;
+		padding-right: 1em;
 	}
 }
 

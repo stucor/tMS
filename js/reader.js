@@ -290,12 +290,20 @@ function startup () {
 				hideSpinner();
 			});
 		}
-		// document.getElementById('TOCTarget0').classList.add('noshow');
+
 		if (!(isBookShelf() || isAudioBook())) {
 			let engrave = document.getElementsByClassName("engrave");
 			let smallEngrave = document.getElementsByClassName("smallEngrave");
 			engrave[0].classList.add('noshow')
 			smallEngrave[0].classList.add('noshow')
+		}
+
+		let selfquoteArr = document.getElementsByClassName("selfquote");
+		if (selfquoteArr) {
+			for (i = 0; i < selfquoteArr.length; i++) {
+				selfquoteArr[i].setAttribute('data-before-selfquote', `§${i+1}`);
+			}
+			
 		}
 
 	});
@@ -2223,6 +2231,7 @@ var modaldownload = document.getElementById('ModalDownload');
 var modalalert = document.getElementById('ModalDownloadAlert');
 var modalnotes = document.getElementById('ModalNotes');
 var modalsutta = document.getElementById('ModalSutta');
+var modalselfquote = document.getElementById('ModalSelfquote');
 
 
 // Get the buttons that open the modals
@@ -2412,6 +2421,17 @@ function setModalStyle (heading) {
 			modalcontent.style.top = "0";
 			modalcontent.style.padding = "0";
 			break;
+		case 'Selfquote':
+			modalbody.style.height = "auto";
+			modalbody.style.maxHeight = "85vh";
+			modalbody.style.padding = "0";
+			modalcontent.style.width = "95%";
+			modalcontent.style.maxWidth = "55em";
+			modalcontent.style.position ="relative";
+			modalcontent.style.right = "0";
+			modalcontent.style.top = "0";
+			modalcontent.style.padding = "0";
+			break;
 		default:
 			modalbody.style.maxHeight = "75vh";
 			modalbody.style.padding = "0";
@@ -2432,6 +2452,7 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modaldetails);		
 			break;
 		case 'Settings':
@@ -2440,6 +2461,7 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modalsettings);		
 			break;
 		case 'Download':
@@ -2448,6 +2470,7 @@ function showModal (theModal) {
 			hideElement(modalnotes);
 			hideElement(modalalert);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modaldownload);		
 			break;
 		case 'Alert':
@@ -2456,6 +2479,7 @@ function showModal (theModal) {
 			hideElement(modalnotes);
 			hideElement(modaldownload);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modalalert);		
 			break;
 		case 'Notes':
@@ -2464,6 +2488,7 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modalnotes);
 			break;
 		case 'Sutta':
@@ -2471,8 +2496,18 @@ function showModal (theModal) {
 			hideElement(modalsettings);
 			hideElement(modaldownload);
 			hideElement(modalalert);
-			hideElement(modalnotes);		
+			hideElement(modalnotes);
+			hideElement(modalselfquote);		
 			showElement(modalsutta);
+			break;
+		case 'Selfquote':
+			hideElement(modaldetails);
+			hideElement(modalsettings);
+			hideElement(modaldownload);
+			hideElement(modalalert);
+			hideElement(modalnotes);		
+			hideElement(modalsutta);
+			showElement(modalselfquote);
 			break;
 		}
 	showElement(modal);
@@ -2534,6 +2569,10 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				if (true) {e.preventDefault();}
 		}
 	}
+
+	if ((e.target.classList.contains('goselfquote'))) {
+			displaySelfquote(e.target.innerHTML);
+		}
 
 });
 
@@ -2864,6 +2903,35 @@ function displaySutta (linkText) {
 	stopBookScroll ();
 	showBD(linkText);
 	document.getElementById('ModalHeaderText').innerHTML = linkText;
+}
+
+
+/* SelfQuote */
+
+document.getElementById("ModalSelfquote").addEventListener("click", function(e) {
+	if (e.target.classList.contains ('goselfquote')) {
+		scrollToID(`bqseg${e.target.innerText.replace('§','')}`)
+	}
+});
+
+function displaySelfquote (linktext) {
+	setModalStyle('Selfquote');
+	showModal('Selfquote');
+	modalbody.scrollTop = 0;
+	stopBookScroll ();
+	let selfquoteArea = document.getElementById("selfquotearea");
+
+	let selfquoteArr = document.getElementsByClassName("selfquote");
+	let buildHTML = ''
+	for (i = 0; i < selfquoteArr.length; i++) {
+		if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
+			buildHTML = selfquoteArr[i].innerHTML.replace(/\d+/ , "old-sup-value").replace("<sup>old-sup-value</sup>", "")
+			document.getElementById('ModalHeaderText').innerHTML = linktext;
+			buildHTML += `<p><span style="font-variant: small-caps">Go to original quote: </span><span class="goselfquote">${linktext}</span></p>`
+		}
+		
+	}
+	selfquoteArea.innerHTML = buildHTML;
 }
 
 $(function() {

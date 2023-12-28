@@ -2360,7 +2360,7 @@ mark.current {
 	.vcmarg { 
 		position:static;
 		margin-left: 0.2em;
-		margin-right: 0;
+		margin-right: -2em;
 		float:right;
 	}
 

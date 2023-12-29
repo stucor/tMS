@@ -105,6 +105,9 @@ body {
 	z-index: -20;
 }
 
+strong {
+	font-weight: 600;
+}
 
 .engrave {
 	padding: 0 1vh;
@@ -380,8 +383,8 @@ body {
 	font-size: 1.5em;
 	font-style: normal;
 	font-weight: 400;
-	margin-top: 2em;
-	margin-bottom: 1em;
+	margin-top: 1em;
+	margin-bottom: 0;
 }
 
 .content h1.part {
@@ -508,12 +511,22 @@ a {
 
 .line-block {
 	display: table;
-	margin: 0 auto;
+	margin: 1em auto;
 	font-style: normal;
 }
 
+.line-block-fixed {
+	display: block;
+	margin-left: 2em;
+
+}
+
+.line-block-narrative {
+	margin-left: -2em;
+}
+
 .line-block  p {
-	margin-top: 0;
+	margin-top: 1em;
 }
 
 .line-block p + p, .infocontainer p + p {
@@ -533,6 +546,30 @@ blockquote {
 	padding:0 2em; 
 	margin: 2em 0;
 }
+
+
+figure {
+	width:100%; 
+	margin: 2em 0; 
+	text-align:center; 
+
+}
+figure img { 
+	margin: 0.5em; 
+	border: 2px solid rgba(0, 0, 0, 0.443); 
+	min-width: 100px; 
+	max-width: 300px; 
+	box-sizing: border-box;
+}
+
+figcaption { 
+	font-style: italic; 
+	font-size: 0.8em; 
+	max-width: 50%;
+	margin: 0 25%
+}
+
+
 
 
 .hangleft {
@@ -1925,12 +1962,16 @@ mark.current {
 
 /* Self Quotes */
 
+.selfquote {
+	padding-left: 3em;
+}
+
 .selfquote::before {
     content: attr(data-before-selfquote); 
 	font-size: small;
 	float:left;
 	font-weight: 100;
-	margin-left: -2em;
+	margin-left: -3em;
 	color: lightgray;
 }
 
@@ -1942,8 +1983,13 @@ mark.current {
 
 
 #ModalSelfquote {
-	padding:2em;
+	padding: 10%;
 }
+
+#ModalSelfquote p {
+margin-bottom: 0;
+}
+
 /* The Close Button */
 
 .modal-header .close {
@@ -2159,6 +2205,7 @@ mark.current {
 		display: grid;
 		grid-template-columns: 7% 86% 7%;
 	}
+
 
 }
 
@@ -2396,6 +2443,22 @@ mark.current {
 		margin-left: 0;
 		padding-right: 1em;
 	}
+
+	figure {
+		margin: 0.5em 10%;
+		min-width: 80%;
+		max-width: 80%;
+	}
+	figure img { 
+		margin: 0.5em 0;
+		min-width: 100%;
+		max-width: 100%;
+	}
+	figcaption { 
+		max-width: 80%;
+		margin: 0 10%
+	}
+	
 }
 
 /* For Touch media - hide the hover */

@@ -2910,7 +2910,7 @@ function displaySutta (linkText) {
 
 document.getElementById("ModalSelfquote").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('goselfquote')) {
-		scrollToID(`bqseg${e.target.innerText.replace('§','')}`)
+		scrollToID(`bqseg${e.target.innerText.replace('§','').replace(' in the main text','')}`)
 	}
 });
 
@@ -2922,12 +2922,11 @@ function displaySelfquote (linktext) {
 	let selfquoteArea = document.getElementById("selfquotearea");
 
 	let selfquoteArr = document.getElementsByClassName("selfquote");
-	let buildHTML = ''
+	let buildHTML = `<div style="font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
 	for (i = 0; i < selfquoteArr.length; i++) {
 		if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
-			buildHTML = selfquoteArr[i].innerHTML.replace(/\d+/ , "old-sup-value").replace("<sup>old-sup-value</sup>", "")
+			buildHTML += selfquoteArr[i].innerHTML//.replace(/\d+/ , "old-sup-value").replace("<sup>old-sup-value</sup>", "")
 			document.getElementById('ModalHeaderText').innerHTML = linktext;
-			buildHTML += `<p><span style="font-variant: small-caps">Go to original quote: </span><span class="goselfquote">${linktext}</span></p>`
 		}
 		
 	}

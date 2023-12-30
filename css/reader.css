@@ -71,20 +71,20 @@
 	--spinbar: rgb(231, 124, 36) ;
 	--spintextgrad: var(--spinbar);
 
-	--tablecaption: #dadada;
-	--tablehead: #c9c9c9;
-	--tableodd: #f2f2f2;
-	--tableeven: #e1e1e1;
-	--tablefoot: #ececec;
-	--tableborder: #80808080;
+	--tablecaption: #ffffff;
+	--tablehead: #eaeaea;
+	--tableodd: #ffffff;
+	--tableeven: #f8f8f8;
+	--tablefoot: #fcfcfc;
+	--tableborder: #b9b9b980;
 
 	--scsegmentnumbercolor: #5278c0;
-	/*#9e2815;*/
 
 	--ascsutta: ">>";
 	--descsutta: "<<";
 
-
+	--selfquoteleftmargin: -3em;
+	--selfquotetopmargin: -1em;
 }
 
 body {
@@ -416,6 +416,11 @@ a {
 	text-decoration: none;
 }
 
+.noteinnotes {
+	color:cornflowerblue;
+	cursor: pointer;
+}
+
 .bookSegment {
 	color:cornflowerblue;
 	text-decoration: none;
@@ -526,11 +531,12 @@ a {
 }
 
 .line-block  p {
-	margin-top: 1em;
+	margin-top: 0;
 }
 
 .line-block p + p, .infocontainer p + p {
 	text-indent: unset;
+	margin-top: 1em;
 	
 }
 
@@ -642,17 +648,18 @@ ol {
 table {
 	min-width:100%;
 	text-align: left;
-	border:2px solid var(--tableborder);
+	border:1px solid var(--tableborder);
 	border-spacing: 0;
 	margin: 2em 0;
 }
 table caption {
 	padding: 5px;
+	font-variant: small-caps;
 	background-color: var(--tablecaption);
 	border-top: 2px solid  var(--tableborder);
 	border-left: 2px solid  var(--tableborder);
 	border-right: 2px solid  var(--tableborder);
-	font-weight: 700;
+	font-weight: 500;
 }
 td, th {
 	border: 1px solid  var(--tableborder);
@@ -665,6 +672,7 @@ th {
 	padding-bottom: 12px;
 	text-align: center;
 	background-color: var(--tablehead);
+	font-weight: 600;
 }
 
 tfoot tr td {
@@ -1962,17 +1970,16 @@ mark.current {
 
 /* Self Quotes */
 
-.selfquote {
-	padding-left: 3em;
-}
+
 
 .selfquote::before {
     content: attr(data-before-selfquote); 
-	font-size: small;
+	font-size: 0.8em;
 	float:left;
-	font-weight: 100;
-	margin-left: -3em;
-	color: lightgray;
+	font-weight: 500;
+	margin-left: var(--selfquoteleftmargin);
+	margin-top: var(--selfquotetopmargin);
+	color: var(--secondarycolor) /*rgb(170, 170, 170);*/
 }
 
 .goselfquote {
@@ -1983,7 +1990,7 @@ mark.current {
 
 
 #ModalSelfquote {
-	padding: 10%;
+	padding: 2em 10%;
 }
 
 #ModalSelfquote p {
@@ -2400,9 +2407,6 @@ margin-bottom: 0;
 	}
 */
 	/*part of verse couplet vcmarg is a span to position outside the line-block - left for big screens, right for small */
-	blockquote {
-		padding: 0 1em; 
-	}
 
 	.vcmarg { 
 		position:static;
@@ -2438,11 +2442,16 @@ margin-bottom: 0;
 	dd {
 		margin-left:0;
 	}
-
+/*
+	.selfquote {
+		padding-left: 0.5em;
+	}
 	.selfquote::before {
 		margin-left: 0;
-		padding-right: 1em;
+		padding: 0 0.5em;
 	}
+*/
+
 
 	figure {
 		margin: 0.5em 10%;

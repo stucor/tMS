@@ -301,7 +301,7 @@ function startup () {
 		let selfquoteArr = document.getElementsByClassName("selfquote");
 		if (selfquoteArr) {
 			for (i = 0; i < selfquoteArr.length; i++) {
-				selfquoteArr[i].setAttribute('data-before-selfquote', `§${i+1}`);
+				selfquoteArr[i].setAttribute('data-before-selfquote', `§${i+1}`); //§
 			}
 			
 		}
@@ -1504,13 +1504,19 @@ function setTheme(){
 			r.style.setProperty('--bdtexthighlighter', '#fc88320B');//'#e0f4fbb0');//'#eef0fb');
 			r.style.setProperty('--bdtexthighlightborder', '#fc8832C0');
 
-			r.style.setProperty('--tablecaption', '#dadada');
+			r.style.setProperty('--tablecaption', '#ffffff');
+			r.style.setProperty('--tablehead', '#eaeaea');
+			r.style.setProperty('--tableodd', '#fefefe');
+			r.style.setProperty('--tableeven', '#f8f8f8');
+			r.style.setProperty('--tablefoot', '#fcfcfc');
+
+/* 			r.style.setProperty('--tablecaption', '#dadada');
 			r.style.setProperty('--tablehead', '#c9c9c9');
 			r.style.setProperty('--tableodd', '#f2f2f2');
 			r.style.setProperty('--tableeven', '#e1e1e1');
 			r.style.setProperty('--tablefoot', '#ececec');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#5a5a81');//'#a5670a');
+ */			r.style.setProperty('--scsegmentnumbercolor', '#5a5a81');//'#a5670a');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
@@ -1807,23 +1813,30 @@ function doSetMargin () {
 function setMargin() {
 	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
 	var thebook = document.getElementById("thebook");
+	var root = document.querySelector(':root');
 	switch (whatIsPressed) {
-
 		case "narrowmargin":	
 			thebook.style.paddingLeft = '2%';
 			thebook.style.paddingRight = '2%';
 			marginName = "narrowmargin";
+			root.style.setProperty('--selfquoteleftmargin', '-2.2em');
+			root.style.setProperty('--selfquotetopmargin', '-1em');
 			break;
 		case "midmargin":
 			thebook.style.paddingLeft = '10%';
 			thebook.style.paddingRight = '10%';
 			marginName = "midmargin";
+			root.style.setProperty('--selfquoteleftmargin', '-5em');
+			root.style.setProperty('--selfquotetopmargin', '1em');
 			break;
 		case "widemargin":
 			thebook.style.paddingLeft = '20%';
 			thebook.style.paddingRight = '20%';
 			marginName = "widemargin";
+			root.style.setProperty('--selfquoteleftmargin', '-5em');
+			root.style.setProperty('--selfquotetopmargin', '1em');
 		}
+		
 }
 
 
@@ -2835,20 +2848,16 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		if (e.target.classList.contains('expanded')) {
 			e.target.innerHTML = '⊕';
 			e.target.classList.remove('expanded');
-
 		} else {
 			e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
-
 		}
 	}
-
 	if (e.target.classList.contains ('TOCref')) {
 		var toctarget = e.target.getAttribute("data-TOCref");
 		closebtn.click();
 		goToTarget(toctarget);
 	}
-
 	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
 		calledFromNotes = true;
 		let linkNode = e.target;
@@ -2859,7 +2868,6 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		restorePlaceInBook();
 		if (true) {e.preventDefault();}
 	}
-
 	if (e.target.classList.contains ('booknotesNumber')) {
 		var supnumber = e.target.innerHTML;
 		if (supnumber == savedsup.innerHTML) {
@@ -2874,7 +2882,6 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 			goToTarget(savedsup, 'ELEMENT');
 		}
 	}
-
 	if (e.target.classList.contains('bookSegment')){
 		var bookSeg = decodeBookSegment(e.target.innerText);
 		closebtn.click();
@@ -2886,6 +2893,13 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 			anchorlink.classList.remove('bookSegmentTarget');
 		}, 2000);
 
+	}
+
+	if (e.target.classList.contains('noteinnotes')) {
+		let notesArr = document.getElementsByClassName('booknote')
+		noteNumber = e.target.innerText
+		let scrollToE = document.querySelectorAll(`[data-note="${noteNumber}"]`);
+		scrollToE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
 	}
 
 	if (e.target.nodeName == 'A') {
@@ -2925,7 +2939,7 @@ function displaySelfquote (linktext) {
 	let buildHTML = `<div style="font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
 	for (i = 0; i < selfquoteArr.length; i++) {
 		if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
-			buildHTML += selfquoteArr[i].innerHTML//.replace(/\d+/ , "old-sup-value").replace("<sup>old-sup-value</sup>", "")
+			buildHTML += selfquoteArr[i].innerHTML.replaceAll(/<sup>\d+<\/sup>/g, "")
 			document.getElementById('ModalHeaderText').innerHTML = linktext;
 		}
 		

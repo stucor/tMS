@@ -883,6 +883,7 @@ dd > ol > li {
 
 /* bodge because it's not being seen in savedBookElements */
 
+/*
 .references > dt {
 	font-variant: small-caps;
 	color:#00000000;
@@ -899,6 +900,7 @@ dd > ol > li {
 	line-height: var(--lineheight);
 	text-align:left;
 }
+*/
 
 .expander {
 	color: cornflowerblue;

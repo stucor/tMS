@@ -1491,6 +1491,16 @@ span.level {
 	height:60px;
 }
 
+.generalBtn {
+	border: 1px rgba(255, 255, 255, 0) solid; 
+	border-radius:10px; 
+	padding: 10px 5px; 
+	background-color: aliceblue
+}
+
+.generalBtn:hover {
+	border: 1px cornflowerblue solid;
+}
 
 /*
 .bookshelfbtn {

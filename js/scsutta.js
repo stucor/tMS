@@ -92,8 +92,8 @@ function showBD(linktext) {
   }
 
   let [scprintText, highlight] = decodeBDLinkText (linktext);
+  
   let sclinkText = slugStrip(scprintText);
-
   let highlightArr = BDSegmentRange(highlight);
   suttaArea.innerHTML ='';
 

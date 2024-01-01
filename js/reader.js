@@ -181,6 +181,21 @@ function startup () {
 		} 
 		formatbooknotes();
 		formatSCLinktext();
+
+
+
+		// give tables an id starting at table_1
+		let tabrefArr = document.querySelectorAll('table');
+		if (tabrefArr.length  > 0) {
+			for (let i = 0; i < tabrefArr.length; i++) {
+				tabrefArr[i].setAttribute("id", "table_"+ (i+1));
+			}
+			
+		}
+
+
+
+
 		var scroller = Math.floor(window.scrollY);
 		history.replaceState({scrollState: scroller},'',''); 
 		history.scrollRestoration = 'manual';
@@ -366,8 +381,7 @@ function buildInfo () {
 				html += `<div id="lotlist">	`
 				for (let i = 0; i < tabrefArr.length; i++) {
 					if (tabrefArr[i].caption) {
-						tabrefArr[i].setAttribute("id", "lot_"+ i);
-						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${i}'>${tabrefArr[i].caption.innerHTML}</span>`;
+						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML}</span>`;
 						html += `<div class='lotlistitem'>${linktext}</div>`;
 					}
 				}
@@ -2587,6 +2601,19 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 			displaySelfquote(e.target.innerHTML);
 		}
 
+	if (e.target.classList.contains('bookSegment')){
+		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
+		goToTarget(bookSeg);
+		if (mark_paragraph) {
+			// then flash the segment that has been scrolled too
+			anchorlink = document.getElementById(bookSeg);
+			anchorlink.classList.add('bookSegmentTarget');
+			setTimeout(function() {
+				anchorlink.classList.remove('bookSegmentTarget');
+			}, 2000);
+		}
+	}
+
 });
 
 
@@ -2616,7 +2643,7 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	}
 
 	if (e.target.className == "lotlinkref") {
-		var gotoID = 'lot_' + e.target.id.replace("lotlinkfrom_","");
+		var gotoID = 'table_' + e.target.id.replace("lotlinkfrom_","");
 		scrollToID(gotoID);
 	}
 
@@ -2835,11 +2862,21 @@ function doOutAppHREF (href) {
 var savedSUPElements = thebook.querySelectorAll('sup');
 
 function decodeBookSegment (anchortext) {
-	str = anchortext.replace ('Chapter ', 'c' );
-	str = str.replace (', ', '');
-	str = str.replace ('Paragraph ', 'p');
-	return str;
-	
+	let str = ''
+	let unmarked_paragraph = false
+	if (anchortext.substring(0,5).toLowerCase() == 'table') {
+		let tableNum = anchortext.toLowerCase().replace(/\s/g,'').replace('table', '')
+		str = `table_${tableNum}`
+	} else {
+		str = anchortext.toLowerCase().replace(/\s/g,'').replace(',','').replace ('chapter', 'c' ).replace ('paragraph', 'p')
+		if ( str.search('p') == -1 ) {
+			str = `TOCTarget${str.substring(1)}`
+		} else {
+			unmarked_paragraph = true
+		}
+	}
+	return [str, unmarked_paragraph]
+
 }
 
 document.getElementById("ModalNotes").addEventListener("click", function(e) {
@@ -2883,15 +2920,17 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		}
 	}
 	if (e.target.classList.contains('bookSegment')){
-		var bookSeg = decodeBookSegment(e.target.innerText);
+		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
 		closebtn.click();
 		goToTarget(bookSeg);
-		// then flash the segment that has been scrolled too
-		anchorlink = document.getElementById(bookSeg);
-		anchorlink.classList.add('bookSegmentTarget');
-		setTimeout(function() {
-			anchorlink.classList.remove('bookSegmentTarget');
-		}, 2000);
+		if (mark_paragraph) {
+			// then flash the segment that has been scrolled too
+			anchorlink = document.getElementById(bookSeg);
+			anchorlink.classList.add('bookSegmentTarget');
+			setTimeout(function() {
+				anchorlink.classList.remove('bookSegmentTarget');
+			}, 2000);
+		}
 
 	}
 

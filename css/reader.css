@@ -78,6 +78,8 @@
 	--tablefoot: #fcfcfc;
 	--tableborder: #b9b9b980;
 
+	--figureimgborder: #808080;
+
 	--scsegmentnumbercolor: #5278c0;
 
 	--ascsutta: ">>";
@@ -391,7 +393,7 @@ strong {
 	text-align: center;
 	font-size: 1.8em;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 500;
 	font-variant: small-caps;
 	padding-top: 0;
 	margin-top: 0;	
@@ -562,9 +564,9 @@ figure {
 }
 figure img { 
 	margin: 0.5em; 
-	border: 2px solid rgba(0, 0, 0, 0.443); 
+	border: 2px solid var(--figureimgborder);
 	min-width: 100px; 
-	max-width: 300px; 
+	max-width: 250px; 
 	box-sizing: border-box;
 }
 

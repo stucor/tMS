@@ -1524,13 +1524,9 @@ function setTheme(){
 			r.style.setProperty('--tableeven', '#f8f8f8');
 			r.style.setProperty('--tablefoot', '#fcfcfc');
 
-/* 			r.style.setProperty('--tablecaption', '#dadada');
-			r.style.setProperty('--tablehead', '#c9c9c9');
-			r.style.setProperty('--tableodd', '#f2f2f2');
-			r.style.setProperty('--tableeven', '#e1e1e1');
-			r.style.setProperty('--tablefoot', '#ececec');
+			r.style.setProperty('--figureimgborder', '#808080');
 
- */			r.style.setProperty('--scsegmentnumbercolor', '#5a5a81');//'#a5670a');
+			r.style.setProperty('--scsegmentnumbercolor', '#5a5a81');//'#a5670a');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
@@ -1659,6 +1655,8 @@ function setTheme(){
 			r.style.setProperty('--tableodd', '#0d0d0d');
 			r.style.setProperty('--tableeven', '#1e1e1e');
 			r.style.setProperty('--tablefoot', '#131313');
+
+			r.style.setProperty('--figureimgborder', '#b9b9b9');
 
 			r.style.setProperty('--scsegmentnumbercolor', '#c4cdda');
 
@@ -1801,6 +1799,8 @@ function setTheme(){
 			r.style.setProperty('--tableodd', '#f9f9e4');
 			r.style.setProperty('--tableeven', '#f9f4d5');
 			r.style.setProperty('--tablefoot', '#f9f9df');
+
+			r.style.setProperty('--figureimgborder', '#b88b7b');
 
 			r.style.setProperty('--scsegmentnumbercolor', '#5c0909');
 
@@ -2672,8 +2672,6 @@ function showAlert(HTMLToShow) {
 	showModal ("Alert");
 }
 
-
-
 var savedsup = '';
 function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
 	for (var i = 1; i < savedNotesElements.length; i++) {
@@ -2704,26 +2702,7 @@ function clearhighlightnote() {
 	}
 }
 
-/* for setting sutta font size 
-function getFontLevel() {
-	return document.getElementById("flvalue").innerHTML +'px';
-}
-*/
-/*
-function reformatBook () {
 
-	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-	setFontLevel(fontlevel);
-	setDetailsLevel(fontlevel);
-	//setNotesLevel(fontlevel);
-
-	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-	setLH (lhlevel);
-
-	setSerif ();
-
-}
-*/
 function exitStaticModal () {
 	if (calledFromNotes) {
 		setModalStyle ("Notes");
@@ -2867,7 +2846,11 @@ function decodeBookSegment (anchortext) {
 	if (anchortext.substring(0,5).toLowerCase() == 'table') {
 		let tableNum = anchortext.toLowerCase().replace(/\s/g,'').replace('table', '')
 		str = `table_${tableNum}`
-	} else {
+	} else if (anchortext.substring(0,6).toLowerCase() == 'figure') {
+		let figNum = anchortext.toLowerCase().replace(/\s/g,'').replace('figure', '')
+		str = `fig${figNum}`
+	} else
+	{
 		str = anchortext.toLowerCase().replace(/\s/g,'').replace(',','').replace ('chapter', 'c' ).replace ('paragraph', 'p')
 		if ( str.search('p') == -1 ) {
 			str = `TOCTarget${str.substring(1)}`
@@ -2941,6 +2924,13 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		scrollToE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
 	}
 
+	if ((e.target.classList.contains('goselfquote'))) {
+		displaySelfquote(e.target.innerHTML);
+		calledFromNotes = true;
+		restorePlaceInBook();
+		if (true) {e.preventDefault();}
+	}
+
 	if (e.target.nodeName == 'A') {
 		doOutAppHREF (e.target.getAttribute('href'));
 		if (true) {e.preventDefault();}
@@ -2963,7 +2953,9 @@ function displaySutta (linkText) {
 
 document.getElementById("ModalSelfquote").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('goselfquote')) {
-		scrollToID(`bqseg${e.target.innerText.replace('§','').replace(' in the main text','')}`)
+		exitStaticModal()
+		exitStaticModal()
+		goToTarget(`bqseg${e.target.innerText.replace('§','').replace(' in the main text','')}`)
 	}
 });
 
@@ -2979,7 +2971,7 @@ function displaySelfquote (linktext) {
 	for (i = 0; i < selfquoteArr.length; i++) {
 		if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
 			buildHTML += selfquoteArr[i].innerHTML.replaceAll(/<sup>\d+<\/sup>/g, "")
-			document.getElementById('ModalHeaderText').innerHTML = linktext;
+			document.getElementById('ModalHeaderText').innerHTML = `QUOTED SECTION: ${linktext}`;
 		}
 		
 	}

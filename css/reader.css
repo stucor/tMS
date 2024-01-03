@@ -864,6 +864,20 @@ dd > p {
 }
 */
 
+.texttitle {
+	font-style: italic;
+	text-decoration: underline dotted lightgray;
+}
+
+/*
+.texttitle::before {
+	content:'“';
+}
+
+.texttitle::after {
+	content:'”';
+}
+*/
 
 dd {
 	margin-top: 0;
@@ -2000,11 +2014,16 @@ mark.current {
 	color:cornflowerblue;
 	text-decoration: none;
 	cursor: pointer;
+	border-radius: 1em;
+	padding: 5px;
+	margin: -5px;
 }
 
 
 #ModalSelfquote {
 	padding: 2em 10%;
+	font-family: var(--fontfamily);
+	font-size: var(--fontsize);
 }
 
 #ModalSelfquote p {
@@ -2517,7 +2536,7 @@ margin-bottom: 0;
 		cursor:pointer;
 	}
 
-	sup:hover {
+	sup:hover, .goselfquote:hover {
 		box-shadow: 0 0 5px 1px var(--suphovercolor);
 	}
 

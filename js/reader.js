@@ -2811,7 +2811,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 
 	if ((e.target.classList.contains('goselfquote'))) {
 			displaySelfquote(e.target.innerHTML);
-		}
+	}
 
 	if (e.target.classList.contains('bookSegment')){
 		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
@@ -3144,7 +3144,7 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if ((e.target.classList.contains('goselfquote'))) {
 		displaySelfquote(e.target.innerHTML);
 		calledFromNotes = true;
-		restorePlaceInBook();
+		//restorePlaceInBook();
 		if (true) {e.preventDefault();}
 	}
 
@@ -3167,14 +3167,15 @@ function displaySutta (linkText) {
 
 
 /* SelfQuote */
-
+/*
 document.getElementById("ModalSelfquote").addEventListener("click", function(e) {
-	if (e.target.classList.contains ('goselfquote')) {
+	if (e.target.classList.contains('goselfquote')) {
 		exitStaticModal()
 		exitStaticModal()
 		goToTarget(`bqseg${e.target.innerText.replace('§','').replace(' in the main text','')}`)
 	}
 });
+*/
 
 function displaySelfquote (linktext) {
 	setModalStyle('Selfquote');
@@ -3185,7 +3186,7 @@ function displaySelfquote (linktext) {
 	let buildHTML = '';
 	if (linktext.substring(0,1) == '§') {
 		let selfquoteArr = document.getElementsByClassName("selfquote");
-		buildHTML = `<div style="font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
+		//buildHTML = `<div style="font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
 		for (i = 0; i < selfquoteArr.length; i++) {
 			if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
 				buildHTML += selfquoteArr[i].innerHTML.replaceAll(/<sup>\d+<\/sup>/g, "")
@@ -3196,7 +3197,6 @@ function displaySelfquote (linktext) {
 	} else { // it's (currently) a Figure
 		console.log(linktext)
 		let figureID = linktext.replace(/&nbsp;/, '').replace(' ','').toLowerCase().replace('ure', '')
-		console.log (figureID)
 		buildHTML = `<div style="text-align: center">`
 		buildHTML += document.getElementById(figureID).innerHTML
 		buildHTML += `</div>`

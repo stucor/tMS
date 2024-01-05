@@ -418,9 +418,10 @@ a {
 	text-decoration: none;
 }
 
-.noteinnotes {
+.noteinnotes, .noteinnotereturn {
 	color:cornflowerblue;
 	cursor: pointer;
+	font-variant: small-caps;
 }
 
 .bookSegment {
@@ -573,8 +574,8 @@ figure img {
 figcaption { 
 	font-style: italic; 
 	font-size: 0.8em; 
-	max-width: 50%;
-	margin: 0 25%
+	max-width: 70%;
+	margin: 0 15%
 }
 
 
@@ -791,11 +792,9 @@ table.borderlessTable {
 	font-family: var(--fontfamily);
 }
 
-
 .booknote {
 	margin: 10px 10%;
 	padding:10px;
-	text-align: left;
 	border-radius: 10px;
 	display: grid;
   	grid-template-columns: 10% 90%;	
@@ -1972,6 +1971,7 @@ mark.current {
 	margin-bottom: 3em;
 	font-family: var(--fontfamily);
 	font-size: var(--fontsize);
+	text-align: var(--textalign);
 }
 
 #ModalDetails {
@@ -2021,9 +2021,10 @@ mark.current {
 
 
 #ModalSelfquote {
-	padding: 2em 10%;
+	padding: 2em 15%;
 	font-family: var(--fontfamily);
 	font-size: var(--fontsize);
+	text-align: var(--textalign);
 }
 
 #ModalSelfquote p {
@@ -2497,8 +2498,8 @@ margin-bottom: 0;
 		max-width: 100%;
 	}
 	figcaption { 
-		max-width: 80%;
-		margin: 0 10%
+		max-width: 96%;
+		margin: 0 2%
 	}
 
 	.lotlistitem::before, .figlistitem::before {

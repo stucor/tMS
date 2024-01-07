@@ -1037,13 +1037,13 @@ function getPlaceInBook () {
 		setTimeout(() => {
 			scrollToNavTarget();
 			fillProgressBar();
-			if (!isBookShelf()) {
+/*  			if (!isBookShelf()) {
 				for (var i = 0; i < savedTOCElements.length; i++) {
 					if ((savedTOCElements[i].getAttribute('data-progress') != '')) {
 						savedTOCElements[i].scrollIntoView({block: 'center', behavior: 'smooth',});
 					}
 				}
-			}
+			} */
 		}, 600); 
 
 	}
@@ -2089,45 +2089,27 @@ window.onscroll = function() {
 		}
 	} else {
 		theTopBar.style.top = "0";
+		
 	}
-
-
-	if (prevScrollpos > currentScrollPos) {
-		console.log ('scrolling up')
-	} else {
-		console.log ('scrolling down')
-	}
-
 
 	let dataprogArr = document.querySelectorAll("[data-progress]")
 	for (i = 0; i < dataprogArr.length; i++) {
 		if (dataprogArr[i].dataset.progress) {
 			elem = dataprogArr[i].getBoundingClientRect()
-
 			if (prevScrollpos > currentScrollPos) {
-				let elemtop = elem.top-120;
-				if (elem.top < 120 ) {
-					console.log(dataprogArr[i].innerText)
-					dataprogArr[i].parentNode.parentNode.scrollBy({top: elemtop,
-						left: 0,
-						behavior: "smooth",
-					  });
-
+				//console.log('scrolling up')
+				let elemtop = elem.top-120
+				if (elemtop < 0 ) {
+					dataprogArr[i].parentNode.parentNode.scrollBy({top: elemtop, left: 0, behavior: "smooth" });
 				}
-				//console.log ('scrolling up')
 			} else {
-				console.log ('scrolling down')
+				//console.log('scrolling down')
+				let elembot = elem.bottom
+				let parentElembot = dataprogArr[i].parentNode.parentNode.getBoundingClientRect().bottom
+				if (elembot > parentElembot)  {
+					dataprogArr[i].parentNode.parentNode.scrollBy({top: elembot-parentElembot+10, left: 0, behavior: "smooth" });
+				} 
 			}
-
-			console.log(elem.top)
-
-/*			
-			if (!isElementInViewport(dataprogArr[i])) {
-				console.log('Out of View')
-			} else {
-				console.log('In View')
-			}
-*/			
 		}
 	}
  	
@@ -2258,7 +2240,13 @@ function showSideNav() {
 	//setTimeout(() => { tocnav.scrollTo({top:TOCscrollpos,}) }, 100);
 	setTimeout(() => {
 		fillProgressBar();
-	}, 500);
+		let dataprogArr = document.querySelectorAll("[data-progress]")
+		for (i = 0; i < dataprogArr.length; i++) {
+			if (dataprogArr[i].dataset.progress) {
+				dataprogArr[i].scrollIntoView({block: 'center', behavior: 'auto',});
+			}
+		}
+	}, 400);
 }
 
 

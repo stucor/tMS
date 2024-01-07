@@ -33,10 +33,10 @@ biblio.push(["Brahmavamso","Ajahn Brahmavamso","2006","*Mindfulness, Bliss and B
 
 biblio.push(["Brahmāli","Bhikkhu Brahmāli","2009","*What the Nikāyas Say and Do Not Say about Nibbāna* in Buddhist Studies Review vol.26 pp.33–66","","BrahmaliNibb"]);
 biblio.push(["Brasington","Leight Brasington","2000","Dependent Origination: The 3 Lives Model - NOT!","","BrasingtonThree"]);
-biblio.push(["Bucknell","Roderick S. Bucknell","1999","*Dependent Arising Evolves* in Journal of International Association of Buddhist Studies vol.22.2 pp.312–342","","BucknellDO"]);
+biblio.push(["Bucknell","Roderick S. Bucknell","1999","*Conditioned Arising Evolves* in Journal of International Association of Buddhist Studies vol.22.2 pp.312–342","","BucknellDO"]);
 biblio.push(["Budhadāsa","Bhikkhu Budhadāsa","2020","*Paṭiccasamuppāda: Practical Dependent Origination* (pdf edition) (tr. Schmidt)","","BudhadasaPractical"]);
 
-biblio.push(["Cea","Abraham Velez de Cea","2004","*The Silence of the Buddha and the Questions About the Tathāgata After Death* in  Indian International Journal Of Buddhist Studies vol.5","","CeaSilence"]);
+biblio.push(["Velez de Cea","Abraham Velez de Cea","2004","*The Silence of the Buddha and the Questions About the Tathāgata After Death* in  Indian International Journal Of Buddhist Studies vol.5","","CeaSilence"]);
 
 biblio.push(["Choong","Choong Mun-keat (Wei-keat)","2000","*The Fundamental Teachings of Early Buddhism, A Comparative Study Based on the Sūtrāṅga portion of the Pāli Saṃyutta-Nikāya and the Chinese Saṃyuktāgama*" ,"Wiesbaden","ChoongFundamental"]);
 biblio.push(["Cintita","Bhikkhu Cintita","2021","*Dependent Coarising: Meaning Construction in the Twelve Links*","","CintitaDO"]);

@@ -54,7 +54,7 @@ function shortcode() {
 // build sections
 
 function buildSettings (_callback) {
-	buildRef();
+	//buildRef();
 	let parentDiv = document.getElementById('ModalSettings');
 	if (parentDiv.innerHTML == '') {
 		let html = 
@@ -563,7 +563,7 @@ function buildInfo () {
 }
 
 // Populate References/Bibliography
-function buildRef () {
+/* function buildRef () {
 
 	let sectionHolder = document.getElementById('reference-holder');
 	if (sectionHolder != null) {
@@ -716,7 +716,7 @@ function buildRef () {
 		}
 	}
 }
-
+ */
 //ONLOAD
 window.onload = function () {
     showSpinner(); // show spinner

@@ -1,7 +1,17 @@
 const path = require('path')
 const fs = require('fs')
 
-let outputHTML =''
+let outputHTML =`<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="../css/biblio.css">
+<title>test biblio</title>
+<style>
+</style> 
+</head>
+<body>`
 
 function buildRef (bookID) {
     let html =``
@@ -10,70 +20,102 @@ function buildRef (bookID) {
 
     function populateReferences(referencesData) {
 
-        html += `<dl class="references">`
+        html += `<dl class="references">\n`
         for (i in referencesData) {
             let urlLabel ='';
             let attachmentLabel = '';
             let tMSShortcode ='';
+            let internetArchiveURL=''
             
             // get special values from the notes field 
             if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
-                noteArray = referencesData[i]["note"].split('\n');	
+                noteArray = referencesData[i]["note"].split('\n')
                 for (j in noteArray) {
-                    [noteKey, noteValue] = noteArray[j].split(':');
+                    [noteKey, noteValue] = noteArray[j].split(':')
                     switch (noteKey) {
                         case "attachment-label":
-                            attachmentLabel = noteValue;
-                            break;
+                            attachmentLabel = `${noteValue.replace(/ /g, '\u00a0').trim()}`
+                            break
                         case "tMS":
-                            tMSShortcode = noteValue;
-                    }
+                            tMSShortcode = noteValue.trim()
+                            break
+                        case "IACode":
+                            internetArchiveURL = `${noteValue.trim()}`
+                        }
                 }
             }
 
             switch (referencesData[i].type) {
                 case "book":
-                    urlLabel ='Publishers Page';
+                    urlLabel ='Publisher: ';
                     break;
                 case "article-journal":
-                    urlLabel ='Journal Page';
+                    urlLabel ='Journal: ';
                     break;
                 case "document":
+                    urlLabel ='Publisher: ';
                     break;
                 case "post-weblog":
-                    urlLabel ='Blog Post';
+                    urlLabel ='Blog Post: ';
+                    break;
+                case "post":
+                    urlLabel ='Forum Post: ';
                     break;
                 case "webpage":
-                    urlLabel ='Webpage';
+                    urlLabel ='Webpage: ';
                     break;
             }
 
-            html += `<dt>${referencesData[i].id}</dt>`
+            html += `<dt>${referencesData[i].id}</dt>\n`
 
             html += `<dd>`;
 
-            let authorAfter ='& ';
+            // author
+/*             let authorAfter ='';
             for (j in referencesData[i].author) {
+                
                 if (j == referencesData[i].author.length-1) {
-                    authorAfter ='&mdash;'
+                    authorAfter =`[${j},${referencesData[i].author.length}]&ndash;`
+                } else {
+                    authorAfter =`[${j},${referencesData[i].author.length}] & `
                 }
-                html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given} ${authorAfter}`;
+                html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
+            }
+ */
+
+
+            let authorAfter ='';
+            for (j in referencesData[i].author) {
+                
+                if (j == referencesData[i].author.length-1) {
+                    authorAfter =` &ndash; `
+                    
+                } else if (j == referencesData[i].author.length-2) {
+                    authorAfter =` & `
+                    
+                } else {
+                    authorAfter =`, `
+                }
+                html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
             }
 
+
+
+            //translator
             let translatorAfter ='& ';
             for (j in referencesData[i].translator) {
                 if (j == referencesData[i].translator.length-1) {
-                    translatorAfter ='<em>(tr.) </em>&mdash;'
+                    translatorAfter ='<em>(tr.) </em>&ndash;'
                 }
                 html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
             }
 
-            if (referencesData[i].hasOwnProperty('issued')) {
-                html += ` ${referencesData[i]["issued"]["date-parts"][0][0]}.`;
-            }
 
+
+            //title
             html += ` <em>${referencesData[i].title}</em>`;
 
+            //container
             if (referencesData[i].hasOwnProperty('container-title')) {
                 html += `. ${referencesData[i]["container-title"]}`;
             }
@@ -95,7 +137,15 @@ function buildRef (bookID) {
 
             html += `.`;
 
-            if (referencesData[i].hasOwnProperty('publisher')) {
+            // date
+            if (referencesData[i].hasOwnProperty('issued')) {
+                //console.log(`${referencesData[i].id}`)
+                html += ` ${referencesData[i]["issued"]["date-parts"][0][0]}.`;
+            }
+
+            //publisher
+
+/*             if (referencesData[i].hasOwnProperty('publisher')) {
                 html += ` ${referencesData[i]["publisher"]}`;
 
                 if (referencesData[i].hasOwnProperty('publisher-place')) {
@@ -103,11 +153,21 @@ function buildRef (bookID) {
                 }
 
                 html += `.`;
+            } */
+
+            //url
+            let linkSeparator = ' | ';
+
+            if (tMSShortcode !=='') {
+                html += `${linkSeparator} <a class="library" href="https://wiswo.org/books/${tMSShortcode}"></a>`
             }
 
-            let linkSeparator = ' | ';
+            if (internetArchiveURL !== '') {
+                html += `${linkSeparator} <a class="internetArchive" href="https://archive.org/details/${internetArchiveURL}"></a>`
+            }
+
             if (referencesData[i].hasOwnProperty('URL')) {
-                html += `${linkSeparator} <a class="extlink reflink"  href="${referencesData[i].URL}">${urlLabel}</a> `;
+                html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online"  href="${referencesData[i].URL}"></a> `;
             }
 
             if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
@@ -116,26 +176,24 @@ function buildRef (bookID) {
                     if (attachmentLabelArray.length > 1) {
                         let fileArray = referencesData[i].file.split(';');
                         for (k in attachmentLabelArray) {
-                            html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${fileArray[k]}">${attachmentLabelArray[k]}</a> `;
+                            html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/${fileArray[k]}"></a> `;
                         }
                     } else {
-                        html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}">${attachmentLabel}</a> `;
+                        html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/${referencesData[i].file}"></a> `;
                     }
                 } else {
-                    html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+                    html += `${linkSeparator} <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/${referencesData[i].file}"></a> `;
                 }
             }
 
-            if (tMSShortcode !=='') {
-                html += `${linkSeparator} <a class="reflink" href="../${tMSShortcode}">online</a>`
-            }
 
-            html += `</dd>`;
+
+            html += `</dd>\n`;
 
         }
 
-        html += `</dl>`
-        outputHTML = html;
+        html += `</dl>\n`
+        outputHTML += html;
 
     }
 
@@ -152,5 +210,8 @@ populateReferences(bookBiblioData);
 */
 }
 
-buildRef('vasy');
-console.log (outputHTML);
+buildRef('seeds');
+outputHTML += `</body>
+</html>`
+//console.log (outputHTML);
+fs.writeFileSync(path.join(__dirname, '.', 'testBiblio.html'), outputHTML);

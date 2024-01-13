@@ -2630,10 +2630,14 @@ margin-bottom: 0;
 		filter:hue-rotate(0deg);
 	}
 
+/*
 	.refpdf:hover {
+
 		text-decoration: underline;
-		color: var(--buttoncolor); 
+		color: var(--buttoncolor);
+		filter: invert(11%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(110%) contrast(102%);
 	}
+*/
 	
 	.suttasortbuttons > button:hover {
 		border: 3px solid var(--primarycolor);

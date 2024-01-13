@@ -5,7 +5,7 @@ var forceMobileUI;
 var themeName = "Simple";
 var marginName = "";
 
-var prevScrollpos = window.pageYOffset;
+var prevScrollpos = window.scrollY;
 
 // generic cookie functions
 

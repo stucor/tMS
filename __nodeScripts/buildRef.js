@@ -45,7 +45,6 @@ function buildRef (bookID) {
                             break
                         case "audio-file":
                             audioFile = `${noteValue.trim()}`
-                            console.log(`${noteValue.trim()}`)
                         }
                 }
             }
@@ -61,19 +60,19 @@ function buildRef (bookID) {
                     urlLabel ='Publisher:';
                     break;
                 case "post-weblog":
-                    urlLabel ='Blog Post:';
+                    urlLabel ='Blog Post:'.replace(/ /g, '\u00a0').trim();
                     break;
                 case "post":
-                    urlLabel ='Forum Post:';
+                    urlLabel ='Forum Post:'.replace(/ /g, '\u00a0').trim();
                     break;
                 case "webpage":
-                    urlLabel ='Webpage:';
+                    urlLabel ='';
                     break;
                 case "thesis":
                     urlLabel ='University:';
                     break;
                 case "song":
-                    urlLabel ='Audio Source:';
+                    urlLabel ='Audio Source:'.replace(/ /g, '\u00a0').trim();
                     break;
               }
 
@@ -115,6 +114,11 @@ function buildRef (bookID) {
             }
             if (referencesData[i].hasOwnProperty('volume')) {
                 html += `, Vol. ${referencesData[i]["volume"]}`;
+                if (referencesData[i].hasOwnProperty('issue')) {
+                    html += `/${referencesData[i]["issue"]}`;
+                }
+            } else if (referencesData[i].hasOwnProperty('issue')) {
+                html += `, No. ${referencesData[i]["issue"]}`;
             }
 
             if (referencesData[i].hasOwnProperty('number-of-volumes')) {
@@ -161,7 +165,6 @@ function buildRef (bookID) {
             }
 
             if (audioFile !=='') {
-                console.log('here')
                 html += `${linkSeparator} <a class="refaudio" href="https://wiswo.org/books/_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
             }
 

@@ -102,7 +102,7 @@ dt {
     width: 3.5em; 
     height: 1.2em;
     content:"";
-	margin-bottom: -0.2em;
+	margin-bottom: -0.3em;
 	margin-left: 0.1em;
 	background-repeat: no-repeat;
 	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);

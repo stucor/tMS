@@ -22,10 +22,11 @@ function buildRef (bookID) {
 
         html += `<dl class="references">\n`
         for (i in referencesData) {
-            let urlLabel ='';
+            let urlLabel = '';
             let attachmentLabel = '';
-            let tMSShortcode ='';
-            let internetArchiveURL=''
+            let tMSShortcode = '';
+            let internetArchiveURL = ''
+            let audioFile = ''
             
             // get special values from the notes field 
             if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
@@ -41,49 +42,46 @@ function buildRef (bookID) {
                             break
                         case "IACode":
                             internetArchiveURL = `${noteValue.trim()}`
+                            break
+                        case "audio-file":
+                            audioFile = `${noteValue.trim()}`
+                            console.log(`${noteValue.trim()}`)
                         }
                 }
             }
 
             switch (referencesData[i].type) {
                 case "book":
-                    urlLabel ='Publisher: ';
+                    urlLabel ='Publisher:';
                     break;
                 case "article-journal":
-                    urlLabel ='Journal: ';
+                    urlLabel ='Journal:';
                     break;
                 case "document":
-                    urlLabel ='Publisher: ';
+                    urlLabel ='Publisher:';
                     break;
                 case "post-weblog":
-                    urlLabel ='Blog Post: ';
+                    urlLabel ='Blog Post:';
                     break;
                 case "post":
-                    urlLabel ='Forum Post: ';
+                    urlLabel ='Forum Post:';
                     break;
                 case "webpage":
-                    urlLabel ='Webpage: ';
+                    urlLabel ='Webpage:';
                     break;
-            }
+                case "thesis":
+                    urlLabel ='University:';
+                    break;
+                case "song":
+                    urlLabel ='Audio Source:';
+                    break;
+              }
 
             html += `<dt>${referencesData[i].id}</dt>\n`
 
             html += `<dd>`;
 
             // author
-/*             let authorAfter ='';
-            for (j in referencesData[i].author) {
-                
-                if (j == referencesData[i].author.length-1) {
-                    authorAfter =`[${j},${referencesData[i].author.length}]&ndash;`
-                } else {
-                    authorAfter =`[${j},${referencesData[i].author.length}] & `
-                }
-                html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
-            }
- */
-
-
             let authorAfter ='';
             for (j in referencesData[i].author) {
                 
@@ -99,8 +97,6 @@ function buildRef (bookID) {
                 html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
             }
 
-
-
             //translator
             let translatorAfter ='& ';
             for (j in referencesData[i].translator) {
@@ -109,8 +105,6 @@ function buildRef (bookID) {
                 }
                 html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
             }
-
-
 
             //title
             html += ` <em>${referencesData[i].title}</em>`;
@@ -166,6 +160,11 @@ function buildRef (bookID) {
                 html += `${linkSeparator} <a class="internetArchive" href="https://archive.org/details/${internetArchiveURL}"></a>`
             }
 
+            if (audioFile !=='') {
+                console.log('here')
+                html += `${linkSeparator} <a class="refaudio" href="https://wiswo.org/books/_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
+            }
+
             if (referencesData[i].hasOwnProperty('URL')) {
                 html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online"  href="${referencesData[i].URL}"></a> `;
             }
@@ -197,17 +196,8 @@ function buildRef (bookID) {
 
     }
 
-populateReferences(bookBiblioData);
-/*
-			fetch(`../_resources/book-data/${shortCode}/reference.json`)
-				.then(response => response.json())
-				.then (data => populateReferences(data))
-				.catch(error => {
-					console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/reference.json`);
-				}
+    populateReferences(bookBiblioData);
 
-			);
-*/
 }
 
 buildRef('seeds');

@@ -165,18 +165,18 @@ biblio.push(["Wijesekera","O.H. de A. Wijesekera","1993","*Syntax of the Cases i
 biblio.push(["Wijesekera","O.H. de A. Wijesekera","1994","*Buddhist and Vedic Studies: A Miscellany*, Jayasuriya (ed.)","Motilal Banarsidass","WijeVedic"]);
 biblio.push(["Wynne","Alexander Wynne","2007","*The Origin of Buddhist Meditation*","Routledge","WynneOrigin"]);
 
-let html = '' 
-html += `<div>Entries: ${biblio.length}<br><br></div><dl class="ref">`
-for (i = 0; i < biblio.length; i++) {
-	html += `<dt>${biblio[i][0]} ${biblio[i][2]} </dt><dd><strong>${biblio[i][0]}</strong>, ${biblio[i][1].replace(biblio[i][0], '').trim()}. ${biblio[i][3].replace(/\*(.*)\*/gim, '<em>$1</em>').replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")}. ${biblio[i][2]}.</dd>`
-}
-html += `</dl>`
-document.getElementById('bibtest').innerHTML = html
+//let html = '' 
+//html += `<div>Entries: ${biblio.length}<br><br></div><dl class="ref">`
+//for (i = 0; i < biblio.length; i++) {
+//	html += `<dt>${biblio[i][0]} ${biblio[i][2]} </dt><dd><strong>${biblio[i][0]}</strong>, ${biblio[i][1].replace(biblio[i][0], '').trim()}. ${biblio[i][3].replace(/\*(.*)\*/gim, '<em>$1</em>').replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")}. ${biblio[i][2]}.</dd>`
+//}
+//html += `</dl>`
+//document.getElementById('bibtest').innerHTML = html
 
-/*
-TUSITAtables: ["Ñāṇatusita",", Bhikkhu","2005","*Pali Declension Table*",""],
 
-};*/
+let html = ``
+
+
 }
 
 

@@ -56,28 +56,6 @@ dt {
 }
 
 
-
-
-
-.extlink {
-	color:cornflowerblue;
-	text-decoration: none;
-	border-radius: 1em;
-	white-space: nowrap;
-}
-
-.extlink::after {
-	content: url('../_resources/images/icons/leave-app-red.svg');
-	filter:hue-rotate(60deg) opacity(0.7);
-	display: inline;
-}
-
-.tipref {
-	word-spacing: -0.1em;
-	white-space: nowrap;
-	font-variant: normal;
-}
-
 .reflink {
 	font-size: smaller;
 	font-variant: small-caps;

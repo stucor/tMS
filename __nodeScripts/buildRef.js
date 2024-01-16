@@ -13,13 +13,23 @@ let outputHTML =`<!DOCTYPE html>
 </head>
 <body>`
 
+let compareData = ``
+
 function buildRef (bookID) {
     let html =``
+    let biblioMappArr = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblioMapArr.json'))
     let bookBiblioData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblio.json'))
     //console.log (bookBiblioData)
 
-    function populateReferences(referencesData) {
+    
+    function compareRefs (referencesData) {
+        for (i in referencesData) {
+            compareData += `${referencesData[i].id}::${referencesData[i].title}\n`
+        }
+    }
 
+
+    function populateReferences(referencesData) {
         html += `<dl class="references">\n`
         for (i in referencesData) {
             let urlLabel = '';
@@ -76,7 +86,15 @@ function buildRef (bookID) {
                     break;
               }
 
-            html += `<dt>${referencesData[i].id}</dt>\n`
+            //html += `<dt>${referencesData[i].id}</dt>\n`
+
+            for (k in biblioMappArr ) {
+                if (referencesData[i].id == biblioMappArr[k][0]) {
+                    html +=`<dt>${biblioMappArr[k][1].trim()}</dt>`
+                }
+            }
+
+
 
             html += `<dd>`;
 
@@ -106,7 +124,12 @@ function buildRef (bookID) {
             }
 
             //title
-            html += ` <em>${referencesData[i].title}</em>`;
+            if (referencesData[i]["title-short"]) {
+                html += ` <em>${referencesData[i]["title-short"]}</em>`;
+            } else {
+                html += ` <em>${referencesData[i]["title"]}</em>`;
+            }
+            
 
             //container
             if (referencesData[i].hasOwnProperty('container-title')) {
@@ -200,6 +223,7 @@ function buildRef (bookID) {
     }
 
     populateReferences(bookBiblioData);
+    compareRefs (bookBiblioData);
 
 }
 
@@ -208,3 +232,4 @@ outputHTML += `</body>
 </html>`
 //console.log (outputHTML);
 fs.writeFileSync(path.join(__dirname, '.', 'testBiblio.html'), outputHTML);
+fs.writeFileSync(path.join(__dirname, '.', 'compare.txt'), compareData);

@@ -16,6 +16,7 @@ Bausch 2018a::The Kāṇva Brāhmaṇas and Buddhists in Kosala
 Bernhard 1968a::Zur Interpretation der Pratītyasamutpāda-formel
 Bingenheimer 2011a::Studies in Āgama literature: with special reference to the Shorter Chinese Saṃyuktāgama
 Bodhi 1984a::The Great Discourse on Causation: The Mahānidāna Sutta and Its Commentaries
+Bodhi 1995a::The Middle Length Discourses of the Buddha: A new translation of the Majjhima Nikāya
 Bodhi 1998a::A Critical Examination of Ñanavira Thera's 'A Note on Paticcasamuppada' – part 1
 Bodhi 1998b::A Critical Examination of Ñanavira Thera's 'A Note on Paticcasamuppada' – part 2
 Bodhi 2000a::The Connected Discourses of the Buddha: A Translation of the Saṃyutta Nikāya ; translated from the Pāli
@@ -63,7 +64,7 @@ Johansson 1969a::The Psychology of Nirvana
 JonesDhivan 2009a::New Light on the Twelve Nidānas
 JonesDhivan 2011a::This Being, That Becomes: The Buddha’s Teaching on Conditionality
 JonesDhivan 2021a::Translating Paṭicca-samuppāda in Early Buddhism
-JonesDhivan 2022a::“This Being, That Becomes:” Reconsidering the Role of The Imasmiṃ Sati Formula in Early Buddhism
+JonesDhivan 2022a::“This Being, That Becomes”: Reconsidering the Role of The Imasmiṃ Sati Formula in Early Buddhism
 Jurewicz 2000a::Playing With Fire: The pratityasamutpada from the Perspective of Vedic Thought
 Kalupahana 1975a::Causality: The Central Philosophy of Buddhism
 Kalupahana 1976a::Buddhist Philosophy: A Historical Analysis

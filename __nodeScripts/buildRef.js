@@ -6,12 +6,129 @@ let outputHTML =`<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type="text/css" href="../css/biblio.css">
 <title>test biblio</title>
 <style>
+body {
+    margin: 2em 15%;
+}
+
+dt {
+    margin-top: 0.5em;
+    font-variant: small-caps;
+    font-size: smaller;
+}
+
+/*
+.references > dt {
+	font-variant: small-caps;
+	color:#00000000;
+	user-select: none;
+	max-width: 0;
+	max-height: 0;
+}
+
+.references > dd {
+	text-indent: -2em;
+	margin-left: 2em;
+	margin-bottom: 0;
+	font-size: var(--fontsize);
+	line-height: var(--lineheight);
+	text-align:left;
+}
+*/
+
+
+.linkContainer {
+    background: aliceblue;
+    white-space: nowrap;
+    margin: 0 0 -0.3em 0;
+    padding: 0 0.2em;
+    border-radius: 5px;
+}
+
+.refpdf {
+    font-size: smaller;
+}
+
+.refpdf::before {
+    background-image: url('../_resources/images/icons/PDF_file_icon.svg');
+    background-size: 1em;
+    display: inline-block;
+    width: 1em; 
+    height: 1.3em;
+    content:"";
+	margin-bottom: -0.3em;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+
+
+.refaudio::before {
+	background-image: url('../_resources/images/icons/play-button-round-icon.svg');
+    background-size: 1em;
+    display: inline-block;
+    width: 1em; 
+    height: 1em;
+    content:"";
+	margin-bottom: -0.2em;
+	margin-left: 0.1em;
+	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+}
+
+
+.reflink {
+	font-size: smaller;
+	font-variant: small-caps;
+}
+
+.online::before {
+    background-image: url('../_resources/images/icons/internet.svg');
+    background-size: 1em;
+    display: inline-block;
+    width: 1em; 
+    height: 1em;
+    content:"";
+	margin-bottom: -0.2em;
+	margin-left: 0;
+	margin-right: 0;
+	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+}
+
+.library::before {
+    background-image: url('../_resources/images/icons/library.svg');
+    background-size: 3.5em;
+    display: inline-block;
+    width: 3.5em; 
+    height: 1.2em;
+    content:"";
+	margin-bottom: -0.3em;
+	margin-left: 0.1em;
+	background-repeat: no-repeat;
+	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+}
+
+.internetArchive::before {
+    background-image: url('../_resources/images/icons/archive-ar21.svg');
+    background-size: 3.5em;
+    display: inline-block;
+    width: 3.5em; 
+    height: 1.5em;
+	line-height: 0;
+    content:"";
+	margin-bottom: -0.2em;
+	margin-left: 0.2em;
+	margin-right: 0;
+	background-repeat: no-repeat;
+	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+}
+
+.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover {
+	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+}
 </style> 
 </head>
-<body>`
+<body>
+`
 
 let compareData = ``
 
@@ -19,15 +136,12 @@ function buildRef (bookID) {
     let html =``
     let biblioMappArr = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblioMapArr.json'))
     let bookBiblioData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblio.json'))
-    //console.log (bookBiblioData)
-
     
     function compareRefs (referencesData) {
         for (i in referencesData) {
             compareData += `${referencesData[i].id}::${referencesData[i].title}\n`
         }
     }
-
 
     function populateReferences(referencesData) {
         html += `<dl class="references">\n`
@@ -61,28 +175,28 @@ function buildRef (bookID) {
 
             switch (referencesData[i].type) {
                 case "book":
-                    urlLabel ='Publisher:';
+                    urlLabel ='Publisher: '
                     break;
                 case "article-journal":
-                    urlLabel ='Journal:';
+                    urlLabel ='Journal: '
                     break;
                 case "document":
-                    urlLabel ='Publisher:';
+                    urlLabel ='Publisher: '
                     break;
                 case "post-weblog":
-                    urlLabel ='Blog Post:'.replace(/ /g, '\u00a0').trim();
+                    urlLabel ='Blog Post: '
                     break;
                 case "post":
-                    urlLabel ='Forum Post:'.replace(/ /g, '\u00a0').trim();
+                    urlLabel ='Forum Post: '
                     break;
                 case "webpage":
                     urlLabel ='';
                     break;
                 case "thesis":
-                    urlLabel ='University:';
+                    urlLabel ='University: ';
                     break;
                 case "song":
-                    urlLabel ='Audio Source:'.replace(/ /g, '\u00a0').trim();
+                    urlLabel ='Audio Source: '
                     break;
               }
 
@@ -94,10 +208,8 @@ function buildRef (bookID) {
                 }
             }
 
-
-
             html += `<dd>`;
-
+            html += `<span class='bibhead'>`
             // author
             let authorAfter ='';
             for (j in referencesData[i].author) {
@@ -111,6 +223,7 @@ function buildRef (bookID) {
                 } else {
                     authorAfter =`, `
                 }
+
                 html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
             }
 
@@ -123,18 +236,32 @@ function buildRef (bookID) {
                 html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
             }
 
+            // editor - add the editor only in case there is no author
+            if (!referencesData[i].author) {
+                let editorAfter ='& ';
+                for (j in referencesData[i].editor) {
+                    if (j == referencesData[i].editor.length-1) {
+                        editorAfter ='<em>(ed.) </em>&ndash;'
+                    }
+                    html += `<strong>${referencesData[i].editor[j].family}</strong>, ${referencesData[i].editor[j].given} ${editorAfter}`;
+                }
+            }
+
             //title
             if (referencesData[i]["title-short"]) {
                 html += ` <em>${referencesData[i]["title-short"]}</em>`;
             } else {
                 html += ` <em>${referencesData[i]["title"]}</em>`;
             }
-            
 
             //container
             if (referencesData[i].hasOwnProperty('container-title')) {
                 html += `. ${referencesData[i]["container-title"]}`;
             }
+
+            html += `</span>`
+            
+
             if (referencesData[i].hasOwnProperty('volume')) {
                 html += `, Vol. ${referencesData[i]["volume"]}`;
                 if (referencesData[i].hasOwnProperty('issue')) {
@@ -160,8 +287,7 @@ function buildRef (bookID) {
 
             // date
             if (referencesData[i].hasOwnProperty('issued')) {
-                //console.log(`${referencesData[i].id}`)
-                html += ` ${referencesData[i]["issued"]["date-parts"][0][0]}.`;
+                html += ` ${referencesData[i]["issued"]["date-parts"][0][0]} `;
             }
 
             //publisher
@@ -177,8 +303,8 @@ function buildRef (bookID) {
             } */
 
             //url
-            let linkSeparator = ' | ';
-
+            let linkSeparator = `<span style='color:grey; opacity:0.4'>•</span>`;
+            html += `<span class = "linkContainer">`
             if (tMSShortcode !=='') {
                 html += `${linkSeparator} <a class="library" href="https://wiswo.org/books/${tMSShortcode}"></a>`
             }
@@ -211,9 +337,7 @@ function buildRef (bookID) {
                 }
             }
 
-
-
-            html += `</dd>\n`;
+            html += `${linkSeparator}</span></dd>\n`;
 
         }
 

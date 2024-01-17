@@ -2886,18 +2886,34 @@ function isElementPartiallyInViewport(el)
 
 
 function getFullReference (shortReference = '') {
-	var references = document.querySelectorAll('.references');
+	let references = document.querySelectorAll('.references')
+	let counter = 0
+	let fullHTML = ''
+
 	for( let i=0; i < references.length; i++) {
-		referenceLists = references[i].childNodes
+		let referenceLists = references[i].childNodes
 		for (let j = 0; j < referenceLists.length; j++) {
 			if (referenceLists[j].tagName == 'DT') {
 				if (referenceLists[j].innerHTML == shortReference) {
-					return referenceLists[j].nextElementSibling.innerHTML;
+					if (counter > 0) {
+						//fullHTML += ` &#x2756;&nbsp; `
+						fullHTML += ` and `
+						fullHTML += `${referenceLists[j].nextElementSibling.innerHTML.replaceAll(', ', '').replace('bibhead', 'bibheadhide')}` 
+					} else {
+						fullHTML += `${referenceLists[j].nextElementSibling.innerHTML}`
+					}
+					
+					counter ++
 				}
 			}
 		}
 	}
-	return 'reference not found';
+	if (fullHTML) {
+		return fullHTML
+	} else {
+		return 'reference not found';
+	}
+	
 }
 
 

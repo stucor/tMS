@@ -900,7 +900,7 @@ dd > ol > li {
 .references > dd {
 	text-indent: -2em;
 	margin-left: 2em;
-	margin-bottom: 0;
+	margin-bottom: 0.5em;
 	font-size: var(--fontsize);
 	line-height: var(--lineheight);
 	text-align:left;
@@ -915,7 +915,6 @@ dd > ol > li {
 }
 
 .expansion {
-	font-family: 'Source Sans Pro';
 	color: var(--primarytextcolor);
 	cursor:auto;
 	user-select:text;
@@ -1444,6 +1443,18 @@ span.level {
 	z-index: 1;
 }
 */
+
+.bibheadhide {
+ display: none;
+}
+
+.linkContainer {
+    background-color: rgba(100, 148, 237, 0.043);
+    white-space: nowrap;
+    margin: 0 0 -0.3em 0;
+    padding: 0 0.2em;
+    border-radius: 5px;
+}
 
 .refpdf {
     font-size: smaller;

@@ -54,10 +54,11 @@
 
 .refpdf::before {
     background-image: url('../_resources/images/icons/PDF_file_icon.svg');
-    background-size: 1em;
+	background-repeat: no-repeat;
+    background-size: 1.1em;
     display: inline-block;
-    width: 1em; 
-    height: 1.3em;
+    width: 1.1em; 
+    height: 1.4em;
     content:"";
 	margin-bottom: -0.3em;
 	margin-left: 0.2em;
@@ -66,6 +67,7 @@
 
 .refaudio::before {
 	background-image: url('../_resources/images/icons/play-button-round-icon.svg');
+	background-repeat: no-repeat;
     background-size: 1em;
     display: inline-block;
     width: 1em; 
@@ -74,35 +76,8 @@
 	margin-bottom: -0.2em;
 	margin-left: 0.1em;
     margin-right: 0.3em;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+	filter: invert(70%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(87%) contrast(83%);
 }
-
-/*
-.libraryAudio::before {
-	background-image: url('../_resources/images/icons/bookshelf.svg');
-    background-size: 1.2em;
-    display: inline-block;
-    width: 1.2em; 
-    height: 1.2em;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0;
-	margin-right: 0;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-.libraryAudio::after {
-	background-image: url('../_resources/images/icons/play-button.svg');
-    background-size: 0.9em;
-    display: inline-block;
-    width: 0.9em; 
-    height: 0.9em;
-    content:"";
-	margin-bottom: -0.1em;
-	margin-left: 0;
-	margin-right: 0.2em;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-*/
 
 .reflink {
 	font-size: smaller;
@@ -111,15 +86,15 @@
 
 .online::before {
     background-image: url('../_resources/images/icons/internet.svg');
-    background-size: 1em;
+    background-size: 1.1em;
     display: inline-block;
-    width: 1em; 
-    height: 1em;
+    width: 1.1em; 
+    height: 1.1em;
     content:"";
 	margin-bottom: -0.2em;
 	margin-left: 0;
 	margin-right: 0;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+	filter: invert(27%) sepia(78%) saturate(1396%) hue-rotate(221deg) brightness(86%) contrast(91%);
 }
 
 .library::before {
@@ -132,22 +107,23 @@
 	margin-bottom: -0.3em;
 	margin-left: 0.1em;
 	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+	filter: invert(62%) sepia(16%) saturate(6671%) hue-rotate(195deg) brightness(97%) contrast(91%);
 }
-
+/*	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+*/
 .internetArchive::before {
-    background-image: url('../_resources/images/icons/archive-ar21.svg');
-    background-size: 3.5em;
+    background-image: url('../_resources/images/icons/IA-logo.svg');
+    background-size: 3.9em;
     display: inline-block;
-    width: 3.5em; 
-    height: 1.5em;
+    width: 3.9em; 
+    height: 1.1em;
 	line-height: 0;
     content:"";
 	margin-bottom: -0.3em;
-	margin-left: 0em;
+	margin-left: 0;
 	margin-right: 0.2em;
 	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+	filter: invert(34%) sepia(0%) saturate(0%) hue-rotate(162deg) brightness(104%) contrast(90%);
 }
 
 .sacredTexts::before {
@@ -162,10 +138,10 @@
 	margin-left: 0;
 	margin-right: 0.3em;
 	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+	filter: sepia(10%) saturate(100%) brightness(80%) contrast(80%);
 }
 
-
+/* 
 .internetArchive:hover, .library:hover, .online:hover, .refaudio:hover, .sacredTexts:hover{
 	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
+} */

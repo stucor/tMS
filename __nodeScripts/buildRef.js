@@ -79,6 +79,7 @@ function buildRef (bookID) {
 
             switch (referencesData[i].type) {
                 case "book":
+                case "chapter":
                     urlLabel ='Publisher: '
                     break;
                 case "article-journal":
@@ -223,8 +224,13 @@ function buildRef (bookID) {
             } */
 
             //url
-            let linkSeparator = `<span style='color:grey; opacity:0.4'>•</span>`;
+            let linkSeparator = `<span style='color:blue; opacity:0.1'>•</span>`;
             html += `<span class = "linkContainer">`
+
+            if (referencesData[i].hasOwnProperty('URL')) {
+                html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online"  href="${referencesData[i].URL}"></a> `;
+            }
+
             if (tMSShortcode !=='') {
                 html += `${linkSeparator} <a class="library" href="https://wiswo.org/books/${tMSShortcode}"></a>`
             }
@@ -245,9 +251,7 @@ function buildRef (bookID) {
                 html += `${linkSeparator} <a class="refaudio" href="https://wiswo.org/books/_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
             }
 
-            if (referencesData[i].hasOwnProperty('URL')) {
-                html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online"  href="${referencesData[i].URL}"></a> `;
-            }
+
 
             if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
                 if (attachmentLabel !== '') {

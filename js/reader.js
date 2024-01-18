@@ -2713,16 +2713,12 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	}
 
 	if (e.target.classList.contains ('expander')) {
-		var ccDetail = document.getElementById('ccDetail');
 		if (e.target.classList.contains('expanded')) {
 			e.target.innerHTML = '⊕';
 			e.target.classList.remove('expanded');
-			ccDetail.classList.add('noshow');
 		} else {
 			e.target.innerHTML = '⊗ '; 
 			e.target.classList.add('expanded');
-			ccDetail.classList.remove('noshow');
-
 		}
 	}
 

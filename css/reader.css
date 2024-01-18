@@ -840,11 +840,6 @@ table.borderlessTable {
 	font-variant: normal;
 }
 
-.reflink {
-	font-size: smaller;
-	font-variant: small-caps;
-}
-
 dt {
 	font-weight: 700;
 }
@@ -900,31 +895,10 @@ dd > ol > li {
 .references > dd {
 	text-indent: -2em;
 	margin-left: 2em;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.3em;
 	font-size: var(--fontsize);
 	line-height: var(--lineheight);
 	text-align:left;
-}
-
-
-.expander {
-	color: cornflowerblue;
-	margin: 0 0 0 0.1em;
-	cursor: pointer;
-	user-select: none;
-}
-
-.expansion {
-	color: var(--primarytextcolor);
-	cursor:auto;
-	user-select:text;
-}
-
-.expanded {
-	background: var(--bdtexthighlighter);
-	border-bottom: 1px dotted var(--bdtexthighlightborder);
-	font-weight: 500;
-
 }
 
 sup {
@@ -940,7 +914,10 @@ sup {
 	user-select: none;
 }
 
-
+#ccDetail li {
+	font-size: smaller;
+	margin-bottom: 0.5em;
+}
 
 /* START Book Cover and Author Details */
 
@@ -1444,111 +1421,6 @@ span.level {
 }
 */
 
-.bibheadhide {
- display: none;
-}
-
-.linkContainer {
-    background-color: rgba(100, 148, 237, 0.043);
-    white-space: nowrap;
-    margin: 0 0 -0.3em 0;
-    padding: 0 0.2em;
-    border-radius: 5px;
-}
-
-.refpdf {
-    font-size: smaller;
-}
-
-.refpdf::before {
-    background-image: url('../_resources/images/icons/PDF_file_icon.svg');
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1.3em;
-    content:"";
-	margin-bottom: -0.3em;
-	margin-left: 0.2em;
-	margin-right: 0.2em;
-}
-
-.refaudio::before {
-	background-image: url('../_resources/images/icons/play-button-round-icon.svg');
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1em;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.1em;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-
-.online::before {
-    background-image: url('../_resources/images/icons/internet.svg');
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1em;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.1em;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.library::before {
-    background-image: url('../_resources/images/icons/library.svg');
-    background-size: 3.5em;
-    display: inline-block;
-    width: 3.5em; 
-    height: 1.2em;
-    content:"";
-	margin-bottom: -0.3em;
-	margin-left: 0.1em;
-	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.internetArchive::before {
-    background-image: url('../_resources/images/icons/archive-ar21.svg');
-    background-size: 3.5em;
-    display: inline-block;
-    width: 3.5em; 
-    height: 1.5em;
-	line-height: 0;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.2em;
-	margin-right: 0;
-	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover {
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-
-
-.ial::before {
-    background-image: url('../_resources/images/icons/archive-ar21.svg');
-    background-size: 3.5em;
-    display: inline-block;
-    width: 3.5em; 
-    height: 1.5em;
-	line-height: 0;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.2em;
-	margin-right: 0;
-	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.ial:hover, .library:hover, .online:hover {
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
 
 /********** Top navigation bar **********/
 

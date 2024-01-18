@@ -6,125 +6,21 @@ let outputHTML =`<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="../css/biblio.css">
 <title>test biblio</title>
 <style>
+:root {
+	--bdtexthighlighter: #fffaf6;
+}
 body {
     margin: 2em 15%;
 }
-
 dt {
     margin-top: 0.5em;
     font-variant: small-caps;
     font-size: smaller;
 }
 
-/*
-.references > dt {
-	font-variant: small-caps;
-	color:#00000000;
-	user-select: none;
-	max-width: 0;
-	max-height: 0;
-}
-
-.references > dd {
-	text-indent: -2em;
-	margin-left: 2em;
-	margin-bottom: 0;
-	font-size: var(--fontsize);
-	line-height: var(--lineheight);
-	text-align:left;
-}
-*/
-
-
-.linkContainer {
-    background: aliceblue;
-    white-space: nowrap;
-    margin: 0 0 -0.3em 0;
-    padding: 0 0.2em;
-    border-radius: 5px;
-}
-
-.refpdf {
-    font-size: smaller;
-}
-
-.refpdf::before {
-    background-image: url('../_resources/images/icons/PDF_file_icon.svg');
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1.3em;
-    content:"";
-	margin-bottom: -0.3em;
-	margin-left: 0.2em;
-	margin-right: 0.2em;
-}
-
-
-.refaudio::before {
-	background-image: url('../_resources/images/icons/play-button-round-icon.svg');
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1em;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.1em;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-
-.reflink {
-	font-size: smaller;
-	font-variant: small-caps;
-}
-
-.online::before {
-    background-image: url('../_resources/images/icons/internet.svg');
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1em;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0;
-	margin-right: 0;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.library::before {
-    background-image: url('../_resources/images/icons/library.svg');
-    background-size: 3.5em;
-    display: inline-block;
-    width: 3.5em; 
-    height: 1.2em;
-    content:"";
-	margin-bottom: -0.3em;
-	margin-left: 0.1em;
-	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.internetArchive::before {
-    background-image: url('../_resources/images/icons/archive-ar21.svg');
-    background-size: 3.5em;
-    display: inline-block;
-    width: 3.5em; 
-    height: 1.5em;
-	line-height: 0;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.2em;
-	margin-right: 0;
-	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover {
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
 </style> 
 </head>
 <body>
@@ -146,12 +42,14 @@ function buildRef (bookID) {
     function populateReferences(referencesData) {
         html += `<dl class="references">\n`
         for (i in referencesData) {
-            let urlLabel = '';
-            let attachmentLabel = '';
-            let tMSShortcode = '';
+            let urlLabel = ''
+            let attachmentLabel = ''
+            let tMSShortcode = ''
+            let tMSAudioShortcode = ''
             let internetArchiveURL = ''
+            let scaredTextsURL = ''
             let audioFile = ''
-            
+           
             // get special values from the notes field 
             if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
                 noteArray = referencesData[i]["note"].split('\n')
@@ -164,8 +62,14 @@ function buildRef (bookID) {
                         case "tMS":
                             tMSShortcode = noteValue.trim()
                             break
+                        case "tMS-audio":
+                            tMSAudioShortcode = noteValue.trim()
+                            break
                         case "IACode":
                             internetArchiveURL = `${noteValue.trim()}`
+                            break
+                        case "sacred-texts":
+                            scaredTextsURL = `${noteValue.trim()}`
                             break
                         case "audio-file":
                             audioFile = `${noteValue.trim()}`
@@ -209,21 +113,21 @@ function buildRef (bookID) {
             }
 
             html += `<dd>`;
+
+            // add a class bibhead - this is changed to bibheadhide in getFullReference
+            // when there are multiple volumes referenced once in a citation
             html += `<span class='bibhead'>`
+
             // author
             let authorAfter ='';
             for (j in referencesData[i].author) {
-                
                 if (j == referencesData[i].author.length-1) {
                     authorAfter =` &ndash; `
-                    
                 } else if (j == referencesData[i].author.length-2) {
                     authorAfter =` & `
-                    
                 } else {
                     authorAfter =`, `
                 }
-
                 html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
             }
 
@@ -235,6 +139,22 @@ function buildRef (bookID) {
                 }
                 html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
             }
+
+
+            // contributor - special case where there is no author (or you don't want it to be some like The Buddha) 
+            // but there is a translator such as the Nikayas by Bodhi. In the libray use contributor instead so 
+            // that it shows in creator field.
+
+            if (!referencesData[i].author) {
+                let contributorAfter ='& ';
+                for (j in referencesData[i].contributor) {
+                    if (j == referencesData[i].contributor.length-1) {
+                        contributorAfter ='<em>(tr.) </em>&ndash;'
+                    }
+                    html += `<strong>${referencesData[i].contributor[j].family}</strong>, ${referencesData[i].contributor[j].given} ${contributorAfter}`;
+                }
+            }
+
 
             // editor - add the editor only in case there is no author
             if (!referencesData[i].author) {
@@ -309,8 +229,16 @@ function buildRef (bookID) {
                 html += `${linkSeparator} <a class="library" href="https://wiswo.org/books/${tMSShortcode}"></a>`
             }
 
+            if (tMSAudioShortcode !=='') {
+                html += `${linkSeparator} <a class="refaudio" href="https://wiswo.org/books/${tMSAudioShortcode}"></a>`
+            }
+
             if (internetArchiveURL !== '') {
                 html += `${linkSeparator} <a class="internetArchive" href="https://archive.org/details/${internetArchiveURL}"></a>`
+            }
+
+            if (scaredTextsURL !== '') {
+                html += `${linkSeparator} <a class="sacredTexts" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
             }
 
             if (audioFile !=='') {

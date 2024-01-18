@@ -3,125 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="../css/biblio.css">
 <title>test biblio</title>
 <style>
+:root {
+	--bdtexthighlighter: #fffaf6;
+}
 body {
     margin: 2em 15%;
 }
-
 dt {
     margin-top: 0.5em;
     font-variant: small-caps;
     font-size: smaller;
 }
 
-/*
-.references > dt {
-	font-variant: small-caps;
-	color:#00000000;
-	user-select: none;
-	max-width: 0;
-	max-height: 0;
-}
-
-.references > dd {
-	text-indent: -2em;
-	margin-left: 2em;
-	margin-bottom: 0;
-	font-size: var(--fontsize);
-	line-height: var(--lineheight);
-	text-align:left;
-}
-*/
-
-
-.linkContainer {
-    background: aliceblue;
-    white-space: nowrap;
-    margin: 0 0 -0.3em 0;
-    padding: 0 0.2em;
-    border-radius: 5px;
-}
-
-.refpdf {
-    font-size: smaller;
-}
-
-.refpdf::before {
-    background-image: url('../_resources/images/icons/PDF_file_icon.svg');
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1.3em;
-    content:"";
-	margin-bottom: -0.3em;
-	margin-left: 0.2em;
-	margin-right: 0.2em;
-}
-
-
-.refaudio::before {
-	background-image: url('../_resources/images/icons/play-button-round-icon.svg');
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1em;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.1em;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-
-.reflink {
-	font-size: smaller;
-	font-variant: small-caps;
-}
-
-.online::before {
-    background-image: url('../_resources/images/icons/internet.svg');
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1em;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0;
-	margin-right: 0;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.library::before {
-    background-image: url('../_resources/images/icons/library.svg');
-    background-size: 3.5em;
-    display: inline-block;
-    width: 3.5em; 
-    height: 1.2em;
-    content:"";
-	margin-bottom: -0.3em;
-	margin-left: 0.1em;
-	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.internetArchive::before {
-    background-image: url('../_resources/images/icons/archive-ar21.svg');
-    background-size: 3.5em;
-    display: inline-block;
-    width: 3.5em; 
-    height: 1.5em;
-	line-height: 0;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.2em;
-	margin-right: 0;
-	background-repeat: no-repeat;
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
-
-.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover {
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-}
 </style> 
 </head>
 <body>
@@ -144,7 +40,7 @@ dt {
 <dt>Bernhard</dt><dd><span class='bibhead'><strong>Bernhard</strong>, Franz &ndash;  <em>Zur Interpretation der Pratītyasamutpāda-formel</em>. Wiener Zeitschrift für die Kunde Süd- und Ostasiens</span>, Vol. 7–8. p. 54–63. 1968 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Bingenheimer</dt><dd><span class='bibhead'><strong>Bingenheimer</strong>, Marcus &ndash;  <em>Studies in Āgama literature</em></span>. 2011 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://www.swfc.com.tw/"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Bingenheimer_2011_Studies in Āgama literature.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Bodhi 1984</dt><dd><span class='bibhead'><strong>Bodhi</strong>, Bhikkhu &ndash;  <em>The Great Discourse on Causation</em></span>. 1984 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://www.bps.lk/library-search-select.php?id=bp211s"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Bodhi_1984_The Great Discourse on Causation.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
-<dt>Ñāṇamoli 1995</dt><dd><span class='bibhead'><strong>Ñāṇamoli</strong>, Bhikkhu & <strong>Bodhi</strong>, Bhikkhu <em>(tr.) </em>&ndash; <em>The Middle Length Discourses of the Buddha: A new translation of the Majjhima Nikāya</em></span>. 1995 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://wisdomexperience.org/product/middle-length-discourses-buddha/"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
+<dt>Ñāṇamoli 1995</dt><dd><span class='bibhead'><strong>Bodhi</strong>, Bhikkhu & <strong>Ñāṇamoli</strong>, Bhikkhu <em>(tr.) </em>&ndash; <em>The Middle Length Discourses of the Buddha: A new translation of the Majjhima Nikāya</em></span>. 1995 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://wisdomexperience.org/product/middle-length-discourses-buddha/"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Bodhi 1998</dt><dd><span class='bibhead'><strong>Bodhi</strong>, Bhikkhu &ndash;  <em>A Critical Examination of Ñanavira Thera's 'A Note of Paticcasamuppada'</em>. Buddhist Studies Review</span>, Vol. 15/1. pp. 43-64. 1998 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Journal: </span><a class="online"  href="https://journal.equinoxpub.com/BSR/article/view/14728"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Bodhi_1998_A Critical Examination of Ñanavira Thera's 'A Note on Paticcasamuppada' 1.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Bodhi 1998</dt><dd><span class='bibhead'><strong>Bodhi</strong>, Bhikkhu &ndash;  <em>A Critical Examination of Ñanavira Thera's 'A Note of Paticcasamuppada'</em>. Buddhist Studies Review</span>, Vol. 15/2. pp. 157-181. 1998 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Journal: </span><a class="online"  href="https://journal.equinoxpub.com/BSR/article/view/14698/16910"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Bodhi_1998_A Critical Examination of Ñanavira Thera's 'A Note on Paticcasamuppada' 2.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Bodhi 2000</dt><dd><span class='bibhead'><strong>Bodhi</strong>, Bhikkhu <em>(tr.) </em>&ndash; <em>The Connected Discourses of the Buddha</em></span>. 2000 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://wisdomexperience.org/product/connected-discourses-buddha/"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
@@ -177,9 +73,9 @@ dt {
 <dt>Flood</dt><dd><span class='bibhead'><strong>Flood</strong>, Gavin D. <em>(ed.) </em>&ndash; <em>The Blackwell Companion to Hinduism</em></span>. 2003 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://www.wiley.com/en-br/The+Wiley+Blackwell+Companion+to+Hinduism%2C+2nd+Edition-p-9781119144885"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Flood_2003_The Blackwell Companion to Hinduism.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Frauwallner 1953/1973</dt><dd><span class='bibhead'><strong>Frauwallner</strong>, Erich &ndash; <strong>Bedekar</strong>, Vitthal Mahadeo <em>(tr.) </em>&ndash; <em>History of Indian Philosophy</em></span>. 1953 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Vol1:</span><a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Frauwallner_1973_History of Indian Philosophy.pdf"></a> <span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Vol2:</span><a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Frauwallner_1973_History of Indian Philosophy2.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Frauwallner 1995</dt><dd><span class='bibhead'><strong>Frauwallner</strong>, Erich &ndash; <strong>Kidd</strong>, Sophie Francis & <strong>Steinkellner</strong>, Ernst <em>(tr.) </em>&ndash; <em>Studies in Abhidharma Literature and the Origins of Buddhist Philosophical Systems</em></span>. 1995 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://sunypress.edu/Books/S/Studies-in-Abhidharma-Literature-and-the-Origins-of-Buddhist-Philosophical-Systems"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Frauwallner_1995_Studies in Abhidharma Literature and the Origins of Buddhist Philosophical.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
-<dt>Frazer</dt><dd><span class='bibhead'><strong>Frazer</strong>, James George &ndash;  <em>The Golden Bough: A Study in Magic and Religion</em></span>. 1890 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Frazer_1890_The Golden Bough.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
+<dt>Frazer</dt><dd><span class='bibhead'><strong>Frazer</strong>, James George &ndash;  <em>The Golden Bough: A Study in Magic and Religion</em></span>. 1890 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="sacredTexts" href="https://sacred-texts.com/pag/frazer/"></a><span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Frazer_1890_The Golden Bough.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Gombrich 1980</dt><dd><span class='bibhead'><strong>Gombrich</strong>, Richard &ndash;  <em>How Buddhism Began</em></span>. 1996 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://www.routledge.com/How-Buddhism-Began-The-Conditioned-Genesis-of-the-Early-Teachings/Gombrich/p/book/9780415514163"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Gombrich_1996_How Buddhism Began.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
-<dt>Gombrich 2009</dt><dd><span class='bibhead'><strong>Gombrich</strong>, Richard F. &ndash;  <em>What the Buddha thought</em></span>. 2009 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Gombrich_2009_What the Buddha thought.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
+<dt>Gombrich 2009</dt><dd><span class='bibhead'><strong>Gombrich</strong>, Richard F. &ndash;  <em>What the Buddha thought</em></span>. 2009 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://ocbs.org/what-the-buddha-thought/"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Gombrich_2009_What the Buddha thought.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Gonda</dt><dd><span class='bibhead'><strong>Gonda</strong>, J. &ndash;  <em>Notes on names and the name of God in ancient India</em></span>. 1970 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Gonda_1970_Notes on names and the name of God in ancient India.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Hamilton</dt><dd><span class='bibhead'><strong>Hamilton</strong>, Sue &ndash;  <em>Identity and experience</em></span>. 1996 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Hamilton_1996_Identity and experience.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Harvey 2013</dt><dd><span class='bibhead'><strong>Harvey</strong>, Peter &ndash;  <em>An Introduction to Buddhism</em></span>. 1990 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Harvey_1990_An Introduction to Buddhism.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
@@ -236,7 +132,7 @@ dt {
 <dt>Somaratne</dt><dd><span class='bibhead'><strong>Somaratne</strong>, G.A &ndash;  <em>Intermediate Existence and the Higher Fetters in the Pāli Nikāyas</em>. Journal of the Pali Text Society</span>, Vol. 25. pp. 121-154. 1999 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Somaratne_1999_Intermediate Existence and the Higher Fetters in the Pāli Nikāyas.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Sujato 2008</dt><dd><span class='bibhead'><strong>Sujato</strong>, Bhikkhu &ndash;  <em>Rebirth and the In-between State in Early Buddhism</em></span>. 2008 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Publisher: </span><a class="online"  href="https://santifm.org/santipada/wp-content/uploads/2010/05/RebirthandInbetweenState.pdf"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Sujato_2008_Rebirth and the In-between State in Early Buddhism.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Sujato 2011a</dt><dd><span class='bibhead'><strong>Sujato</strong>, Bhikkhu &ndash;  <em>Nibbana is not viññāṇa. Really, it just isn’t.</em>. Sujato’s Blog</span>. 2011 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Blog Post: </span><a class="online"  href="https://sujato.wordpress.com/2011/05/13/vinna%e1%b9%87a-is-not-nibbana-really-it-just-isn%e2%80%99t/"></a> <span style='color:grey; opacity:0.4'>•</span> <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/Sujato_2011_Nibbana is not viññāṇa2.pdf"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
-<dt>Sujato 2012</dt><dd><span class='bibhead'><strong>Sujato</strong>, Bhikkhu &ndash;  <em>A Swift Pair of Messengers</em></span>. 2012 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="library" href="https://wiswo.org/books/spom"></a><span style='color:grey; opacity:0.4'>•</span></span></dd>
+<dt>Sujato 2012</dt><dd><span class='bibhead'><strong>Sujato</strong>, Bhikkhu &ndash;  <em>A Swift Pair of Messengers</em></span>. 2012 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="library" href="https://wiswo.org/books/spom"></a><span style='color:grey; opacity:0.4'>•</span> <a class="refaudio" href="https://wiswo.org/books/audiospom"></a><span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Sujato 2023</dt><dd><span class='bibhead'><strong>Sujato</strong>, Bhikkhu &ndash;  <em>Translations of the Pali Canon</em>. SuttaCentral</span>.<span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'></span><a class="online"  href="https://suttacentral.net/"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Sunyo 2017</dt><dd><span class='bibhead'><strong>Sunyo</strong>, Bhikkhu &ndash;  <em>Upādāna? Let go of clinging</em></span>.<span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <span class='reflink'>Forum Post: </span><a class="online"  href="https://discourse.suttacentral.net/t/upadana-let-go-of-clinging/4158"></a> <span style='color:grey; opacity:0.4'>•</span></span></dd>
 <dt>Sunyo 2021</dt><dd><span class='bibhead'><strong>Sunyo</strong>, Bhikkhu &ndash;  <em>Viññāṇa Anidassana: The State of Boundless Consciousness</em></span>. 2021 <span class = "linkContainer"><span style='color:grey; opacity:0.4'>•</span> <a class="library" href="https://wiswo.org/books/vasy"></a><span style='color:grey; opacity:0.4'>•</span></span></dd>

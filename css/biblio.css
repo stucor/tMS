@@ -1,13 +1,23 @@
-body {
-    margin: 2em 20%;
+.expander {
+	color: cornflowerblue;
+	margin: 0 0 0 0.1em;
+	cursor: pointer;
+	user-select: none;
 }
 
-dt {
-    margin-top: 0.5em;
-    font-variant: small-caps;
-    font-size: smaller;
+.expansion {
+	color: var(--primarytextcolor);
+	cursor:auto;
+	user-select:text;
 }
-/* 
+
+.expanded {
+	background: var(--bdtexthighlighter);
+	border-bottom: 1px dotted var(--bdtexthighlightborder);
+	font-weight: 500;
+}
+
+/*
 .references > dt {
 	font-variant: small-caps;
 	color:#00000000;
@@ -19,12 +29,24 @@ dt {
 .references > dd {
 	text-indent: -2em;
 	margin-left: 2em;
-	margin-bottom: 0;
+	margin-bottom: 0.5em;
 	font-size: var(--fontsize);
 	line-height: var(--lineheight);
 	text-align:left;
 }
- */
+*/
+
+.bibheadhide {
+    display: none;
+}
+
+.linkContainer {
+    background:var(--bdtexthighlighter);
+    white-space: nowrap;
+    margin: 0 0 -0.3em 0;
+    padding: 0 0.2em;
+    border-radius: 5px;
+}
 
 .refpdf {
     font-size: smaller;
@@ -42,7 +64,6 @@ dt {
 	margin-right: 0.2em;
 }
 
-
 .refaudio::before {
 	background-image: url('../_resources/images/icons/play-button-round-icon.svg');
     background-size: 1em;
@@ -52,9 +73,36 @@ dt {
     content:"";
 	margin-bottom: -0.2em;
 	margin-left: 0.1em;
+    margin-right: 0.3em;
 	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
 }
 
+/*
+.libraryAudio::before {
+	background-image: url('../_resources/images/icons/bookshelf.svg');
+    background-size: 1.2em;
+    display: inline-block;
+    width: 1.2em; 
+    height: 1.2em;
+    content:"";
+	margin-bottom: -0.2em;
+	margin-left: 0;
+	margin-right: 0;
+	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+}
+.libraryAudio::after {
+	background-image: url('../_resources/images/icons/play-button.svg');
+    background-size: 0.9em;
+    display: inline-block;
+    width: 0.9em; 
+    height: 0.9em;
+    content:"";
+	margin-bottom: -0.1em;
+	margin-left: 0;
+	margin-right: 0.2em;
+	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+}
+*/
 
 .reflink {
 	font-size: smaller;
@@ -69,7 +117,8 @@ dt {
     height: 1em;
     content:"";
 	margin-bottom: -0.2em;
-	margin-left: 0.1em;
+	margin-left: 0;
+	margin-right: 0;
 	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
 }
 
@@ -94,14 +143,29 @@ dt {
     height: 1.5em;
 	line-height: 0;
     content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.2em;
-	margin-right: 0;
+	margin-bottom: -0.3em;
+	margin-left: 0em;
+	margin-right: 0.2em;
 	background-repeat: no-repeat;
 	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
 }
 
-.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover {
+.sacredTexts::before {
+    background-image: url('../_resources/images/icons/sacred-texts.png');
+    background-size: 3.5em;
+    display: inline-block;
+    width: 3.5em; 
+    height: 1.5em;
+	line-height: 0;
+    content:"";
+	margin-bottom: -0.6em;
+	margin-left: 0;
+	margin-right: 0.3em;
+	background-repeat: no-repeat;
 	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
 }
 
+
+.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover, .sacredTexts:hover{
+	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
+}

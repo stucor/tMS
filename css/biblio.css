@@ -1,3 +1,11 @@
+a {
+	text-decoration: none;
+}
+
+
+
+
+
 .expander {
 	color: cornflowerblue;
 	margin: 0 0 0 0.1em;
@@ -41,7 +49,9 @@
 }
 
 .linkContainer {
-    background:var(--bdtexthighlighter);
+    /*background:var(--bdtexthighlighter);*/
+	border: thin rgba(128, 128, 128, 0.50) dotted;
+	box-sizing: border-box;
     white-space: nowrap;
     margin: 0 0 -0.3em 0;
     padding: 0 0.2em;
@@ -65,7 +75,7 @@
 	margin-right: 0.2em;
 }
 
-.refaudio::before {
+/* .refaudio::before {
 	background-image: url('../_resources/images/icons/play-button-round-icon.svg');
 	background-repeat: no-repeat;
     background-size: 1em;
@@ -77,6 +87,15 @@
 	margin-left: 0.1em;
     margin-right: 0.3em;
 	filter: invert(70%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(87%) contrast(83%);
+}
+ */
+
+.refaudio::before {
+	content: '🔊';
+	margin-bottom: -0.3em;
+	margin-left: 0.1em;
+    margin-right: 0.3em;
+	filter: opacity(75%) ;
 }
 
 .reflink {
@@ -96,7 +115,7 @@
 	margin-right: 0;
 	filter: invert(27%) sepia(78%) saturate(1396%) hue-rotate(221deg) brightness(86%) contrast(91%);
 }
-
+/* 
 .library::before {
     background-image: url('../_resources/images/icons/library.svg');
     background-size: 3.5em;
@@ -109,8 +128,23 @@
 	background-repeat: no-repeat;
 	filter: invert(62%) sepia(16%) saturate(6671%) hue-rotate(195deg) brightness(97%) contrast(91%);
 }
-/*	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
 */
+
+.library::before {
+    background-image: url('../_resources/images/icons/bookshelf-colour.svg');
+    background-size: 1.3em;
+    display: inline-block;
+    width: 1.3em; 
+    height: 1.3em;
+    content:"";
+	margin-bottom: -0.35em;
+	margin-left: 0.1em;
+	margin-right: 0.3em;
+	background-repeat: no-repeat;
+}
+
+
+
 .internetArchive::before {
     background-image: url('../_resources/images/icons/IA-logo.svg');
     background-size: 3.9em;

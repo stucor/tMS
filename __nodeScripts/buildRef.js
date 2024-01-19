@@ -73,6 +73,7 @@ function buildRef (bookID) {
                             break
                         case "audio-file":
                             audioFile = `${noteValue.trim()}`
+                            break
                         }
                 }
             }
@@ -85,6 +86,9 @@ function buildRef (bookID) {
                 case "article-journal":
                     urlLabel ='Journal: '
                     break;
+                case "paper-conference":
+                    urlLabel ='Publisher: '
+                    break;                 
                 case "document":
                     urlLabel ='Publisher: '
                     break;
@@ -257,7 +261,8 @@ function buildRef (bookID) {
                 if (attachmentLabel !== '') {
                     let attachmentLabelArray = attachmentLabel.split(';');
                     if (attachmentLabelArray.length > 1) {
-                        let fileArray = referencesData[i].file.split(';');
+                        let fileArray = referencesData[i]
+                        .file.split(';');
                         for (k in attachmentLabelArray) {
                             html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/${fileArray[k]}"></a> `;
                         }

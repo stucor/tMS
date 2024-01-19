@@ -1704,7 +1704,7 @@ function setTheme(){
 			}
 
 			//lefticons[1].style.filter="invert(0)";
-			lefticons[0].style.filter="invert(5%) sepia(94%) saturate(6660%) hue-rotate(231deg) brightness(108%) contrast(144%)";
+			//lefticons[0].style.filter="invert(5%) sepia(94%) saturate(6660%) hue-rotate(231deg) brightness(108%) contrast(144%)";
 			
 			theBody.style.background = '#f1e8bb';
 			bookPages.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';

@@ -26,7 +26,8 @@ Bodhi 2015b::Investigating the Dhamma: A Collection of Papers
 Bodhi 2017b::The Suttanipata: An Ancient Collection of the Buddha’s Discourses Together with Its Commentaries
 Bodhi 2021a::Reading the Buddha's Discourses in Pali: A Practical Guide to the Language of the Ancient Buddhist Canon
 Bodhi-Audio 1979a::The Buddha’s Teaching As It Is - Nibbāna
-Brahm 2002a::Dependent Origination & Some Remarks on Dependent Origination
+Brahm 1994a::Addendum: Some Remarks on Dependent Origination
+Brahm 2002a::Dependent Origination
 Brahm 2006a::Mindfulness, Bliss, and Beyond: A Meditator's Handbook
 Brahmali 2009a::What the Nikayas Say and Do not Say about Nibbana
 Brasington 2021a::Dependent Origination and Emptiness
@@ -69,17 +70,17 @@ Jurewicz 2000a::Playing With Fire: The pratityasamutpada from the Perspective of
 Kalupahana 1975a::Causality: The Central Philosophy of Buddhism
 Kalupahana 1976a::Buddhist Philosophy: A Historical Analysis
 Karunadasa 1975a::Early Buddhist Teachings: The Middle Position in Theory and Practice
-Langer 2000a::Das Bewußtsein als Träger des Leben: Einige weniger beachtete Aspekte des Viññāṇa im Pālikanon (Consciousness as life principle: some neglected aspects of vinnana in the Pali canon)
+Langer 2001a::Das Bewußtsein als Träger des Leben: Einige weniger beachtete Aspekte des Viññāṇa im Pālikanon (Consciousness as life principle: some neglected aspects of vinnana in the Pali canon)
 Lopez 1997a::Food and Immortality in the Veda: A Gastronomic Theology?
 Mahāsi 1982a::A Discourse on Dependent Origination
 Malvania 2007a::Encyclopedia of Indian Philosophies, Volume X: Jain Philosophy (Part I)
 Mejor 1996a::Buddyjska doktryna o powstawaniu w zależności (pratîtya-samutpâda) – oryginalna koncepcja samego Buddy czy póżniejszy jej rozwój?
-Ñanamoli 1956a::The Path of Purification: Visuddhimagga
+Ñanamoli 1956a::The Path of Purification (Visuddhimagga) by Bhadantācariya Buddhaghosa
 Ñāṇananda 1971a::Concept and Reality in Early Buddhist Thought
 Ñāṇananda 1974a::The Magic of the Mind: An Exposition of the Kalakarama Sutta
 Ñāṇananda 2015a::Nibbāna: The Mind Stilled
-Ñāṇananda 2016a::The Law of Dependent Arising (Paṭicca Samuppāda): The Secret of Bondage and Release – Library Edition
-Ñāṇavīra 1988a::Clearing the path: writings of Ñāṇavīra Thera (1960-1965)
+Ñāṇananda 2016a::The Law of Dependent Arising (Paṭicca Samuppāda): The Secret of Bondage and Release
+Ñāṇavīra 1988a::Clearing the Path (1960-1965)
 Norman 1992a::Theravāda Buddhism and Brahmanical Hinduism: Brahmanical Terms in a Buddhist Guise
 Norman 1996a::Mistaken Ideas About Nibbāna (Collected Papers #117)
 Norman 1997a::A Philological Approach to Buddhism: The Bukkyō Dendō Kyōkai Lectures 1994

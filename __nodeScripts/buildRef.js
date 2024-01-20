@@ -228,19 +228,19 @@ function buildRef (bookID) {
             } */
 
             //url
-            let linkSeparator = `<span style='color:blue; opacity:0.1'>•</span>`;
+            let linkSeparator = `<span style='opacity:0.1'>•</span>`;
             html += `<span class = "linkContainer">`
 
             if (referencesData[i].hasOwnProperty('URL')) {
-                html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online"  href="${referencesData[i].URL}"></a> `;
+                html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online" title="Website" href="${referencesData[i].URL}"></a> `;
             }
 
             if (tMSShortcode !=='') {
-                html += `${linkSeparator} <a class="library" href="https://wiswo.org/books/${tMSShortcode}"></a>`
+                html += `${linkSeparator} <a class="library" title="In Library" href="https://wiswo.org/books/${tMSShortcode}"></a>`
             }
 
             if (tMSAudioShortcode !=='') {
-                html += `${linkSeparator} <a class="refaudio" href="https://wiswo.org/books/${tMSAudioShortcode}"></a>`
+                html += `${linkSeparator} <a class="refaudio" title="Play" href="https://wiswo.org/books/${tMSAudioShortcode}"></a>`
             }
 
             if (internetArchiveURL !== '') {
@@ -248,11 +248,11 @@ function buildRef (bookID) {
             }
 
             if (scaredTextsURL !== '') {
-                html += `${linkSeparator} <a class="sacredTexts" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
+                html += `${linkSeparator} <a class="sacredTexts" title="Online" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
             }
 
             if (audioFile !=='') {
-                html += `${linkSeparator} <a class="refaudio" href="https://wiswo.org/books/_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
+                html += `${linkSeparator} <a class="refaudio" title="Play" href="https://wiswo.org/books/_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
             }
 
 
@@ -264,13 +264,13 @@ function buildRef (bookID) {
                         let fileArray = referencesData[i]
                         .file.split(';');
                         for (k in attachmentLabelArray) {
-                            html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/${fileArray[k]}"></a> `;
+                            html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" title="PDF" href="https://wiswo.org/books/_resources/zotero-attach/${fileArray[k]}"></a> `;
                         }
                     } else {
-                        html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/${referencesData[i].file}"></a> `;
+                        html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" title="PDF" href="https://wiswo.org/books/_resources/zotero-attach/${referencesData[i].file}"></a> `;
                     }
                 } else {
-                    html += `${linkSeparator} <a class="refpdf" href="https://wiswo.org/books/_resources/zotero-attach/${referencesData[i].file}"></a> `;
+                    html += `${linkSeparator} <a class="refpdf" title="PDF" href="https://wiswo.org/books/_resources/zotero-attach/${referencesData[i].file}"></a> `;
                 }
             }
 

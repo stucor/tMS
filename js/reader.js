@@ -2893,7 +2893,7 @@ function getFullReference (shortReference = '') {
 				if (referenceLists[j].innerHTML == shortReference) {
 					if (counter > 0) {
 						//fullHTML += ` &#x2756;&nbsp; `
-						fullHTML += ` and `
+						fullHTML += ` &ndash; `
 						fullHTML += `${referenceLists[j].nextElementSibling.innerHTML.replaceAll(', ', '').replace('bibhead', 'bibheadhide')}` 
 					} else {
 						fullHTML += `${referenceLists[j].nextElementSibling.innerHTML}`

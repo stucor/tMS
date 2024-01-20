@@ -17,6 +17,7 @@ a {
 	color: var(--primarytextcolor);
 	cursor:auto;
 	user-select:text;
+	opacity: 55%;
 }
 
 .expanded {
@@ -73,6 +74,7 @@ a {
 	margin-bottom: -0.3em;
 	margin-left: 0.2em;
 	margin-right: 0.2em;
+	filter:opacity(80%)
 }
 
 /* .refaudio::before {

@@ -201,10 +201,10 @@ function buildRef (bookID) {
             }
 
             if (referencesData[i].hasOwnProperty('page')) {
-                if (referencesData[i].page.includes("-")) { //is a range of pages
-                    html += `. pp. ${referencesData[i].page}`;
+                if ((referencesData[i].page.includes("-")) || (referencesData[i].page.includes("–")))   { //is a range of pages
+                    html += `. pp.&nbsp;${referencesData[i].page.replace("-","–")}`;
                 } else {
-                    html += `. p. ${referencesData[i].page}`;
+                    html += `. p.&nbsp;${referencesData[i].page}`;
                 }
             }
 

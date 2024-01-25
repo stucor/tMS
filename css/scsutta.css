@@ -205,8 +205,8 @@ header li .segno {
   cursor: pointer;
   outline: double 0 var(--notehighlighter); 
   border-radius: 1em;
-  padding: 0.3em;
-	margin: -0.3em;
+	padding: 0 3px;
+	margin: 0 -3px;
   white-space: nowrap;
 }
 

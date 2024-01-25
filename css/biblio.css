@@ -177,7 +177,7 @@ a {
 	filter: sepia(10%) saturate(100%) brightness(80%) contrast(80%);
 }
 
-/* 
-.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover, .sacredTexts:hover{
-	filter: invert(61%) sepia(10%) saturate(2596%) hue-rotate(182deg) brightness(92%) contrast(102%);
-} */
+
+.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover, .refpdf:hover, .sacredTexts:hover{
+	box-shadow: 0 0 5px 1px var(--suphovercolor);
+} 

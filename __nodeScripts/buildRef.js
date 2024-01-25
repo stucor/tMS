@@ -28,6 +28,8 @@ dt {
 
 let compareData = ``
 
+let nopdfs = ``
+
 function buildRef (bookID) {
     let html =``
     let biblioMappArr = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblioMapArr.json'))
@@ -36,6 +38,14 @@ function buildRef (bookID) {
     function compareRefs (referencesData) {
         for (i in referencesData) {
             compareData += `${referencesData[i].id}::${referencesData[i].title}\n`
+        }
+    }
+
+    function noPDFS (referencesData) {
+        for (i in referencesData) {
+            if (!referencesData[i].file) {
+                nopdfs += `${referencesData[i].id}::${referencesData[i].title}\n`
+            }
         }
     }
 
@@ -236,11 +246,11 @@ function buildRef (bookID) {
             }
 
             if (tMSShortcode !=='') {
-                html += `${linkSeparator} <a class="library" title="In Library" href="https://wiswo.org/books/${tMSShortcode}"></a>`
+                html += `${linkSeparator} <a class="library" title="In Library" href="../${tMSShortcode}"></a>`
             }
 
             if (tMSAudioShortcode !=='') {
-                html += `${linkSeparator} <a class="refaudio" title="Play" href="https://wiswo.org/books/${tMSAudioShortcode}"></a>`
+                html += `${linkSeparator} <a class="refaudio" title="Play" href="../${tMSAudioShortcode}"></a>`
             }
 
             if (internetArchiveURL !== '') {
@@ -252,7 +262,7 @@ function buildRef (bookID) {
             }
 
             if (audioFile !=='') {
-                html += `${linkSeparator} <a class="refaudio" title="Play" href="https://wiswo.org/books/_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
+                html += `${linkSeparator} <a class="refaudio" title="Play" href="../_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
             }
 
 
@@ -264,13 +274,13 @@ function buildRef (bookID) {
                         let fileArray = referencesData[i]
                         .file.split(';');
                         for (k in attachmentLabelArray) {
-                            html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" title="PDF" href="https://wiswo.org/books/_resources/zotero-attach/${fileArray[k]}"></a> `;
+                            html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" title="PDF" href="../_resources/zotero-attach/${fileArray[k]}"></a> `;
                         }
                     } else {
-                        html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" title="PDF" href="https://wiswo.org/books/_resources/zotero-attach/${referencesData[i].file}"></a> `;
+                        html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" title="PDF" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
                     }
                 } else {
-                    html += `${linkSeparator} <a class="refpdf" title="PDF" href="https://wiswo.org/books/_resources/zotero-attach/${referencesData[i].file}"></a> `;
+                    html += `${linkSeparator} <a class="refpdf" title="PDF" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
                 }
             }
 
@@ -284,13 +294,15 @@ function buildRef (bookID) {
     }
 
     populateReferences(bookBiblioData);
-    compareRefs (bookBiblioData);
+    //compareRefs (bookBiblioData);
+    //noPDFS(bookBiblioData)
 
 }
 
 buildRef('seeds');
 outputHTML += `</body>
 </html>`
-//console.log (outputHTML);
+
 fs.writeFileSync(path.join(__dirname, '.', 'testBiblio.html'), outputHTML);
-fs.writeFileSync(path.join(__dirname, '.', 'compare.txt'), compareData);
+//fs.writeFileSync(path.join(__dirname, '.', 'compare.txt'), compareData);
+//fs.writeFileSync(path.join(__dirname, '.', 'noPDFS.txt'), nopdfs);

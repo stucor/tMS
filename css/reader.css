@@ -111,6 +111,13 @@ strong {
 	font-weight: 600;
 }
 
+.icon {
+ width: 1.3em;
+ height: 1.3em;
+ line-height: 0;
+ margin-bottom: -0.3em;
+}
+
 .engrave {
 	padding: 0 1vh;
 	color:#7c7c7c;
@@ -903,8 +910,8 @@ dd > ol > li {
 
 sup {
 	line-height: 0;
-	padding: 5px;
-	margin: -5px;
+	padding: 0 3px;
+	margin: 0 -3px;
 	color: cornflowerblue;
 	/*background-color: rgba(255, 255, 0, 0.50);*/
 	outline: double 0 var(--notehighlighter); 
@@ -1978,8 +1985,8 @@ mark.current {
 	text-decoration: none;
 	cursor: pointer;
 	border-radius: 1em;
-	padding: 5px;
-	margin: -5px;
+	padding: 0 3px;
+	margin: 0 -3px;
 }
 
 

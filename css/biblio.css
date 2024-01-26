@@ -8,7 +8,9 @@ a {
 
 .expander {
 	color: cornflowerblue;
-	margin: 0 0 0 0.1em;
+	position: relative;
+	bottom: 0.1em;
+	left:0.1em;
 	cursor: pointer;
 	user-select: none;
 }

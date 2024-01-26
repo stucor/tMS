@@ -2949,15 +2949,24 @@ function decodeBookSegment (anchortext) {
 
 document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
-		var fullReference = getFullReference(e.target.dataset.reference);
-		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⊕';
-			e.target.classList.remove('expanded');
+		if (e.target.classList.contains('externalquote')){
+			buildExternalQuote (e.target)
 		} else {
-			e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
-			e.target.classList.add('expanded');
+			var fullReference = getFullReference(e.target.dataset.reference);
+			if (e.target.classList.contains('expanded')) {
+				e.target.innerHTML = '⊕';
+				e.target.classList.remove('expanded');
+				if (e.target.dataset.quote) {
+					e.target.classList.add('externalquote');
+				}
+			} else {
+				e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
+				e.target.classList.add('expanded');
+			}
 		}
 	}
+
+
 	if (e.target.classList.contains ('TOCref')) {
 		var toctarget = e.target.getAttribute("data-TOCref");
 		closebtn.click();
@@ -3081,7 +3090,7 @@ function displaySelfquote (linktext) {
 			
 		}
 	} else { // it's (currently) a Figure
-		console.log(linktext)
+		//console.log(linktext)
 		let figureID = linktext.replace(/&nbsp;/, '').replace(' ','').toLowerCase().replace('ure', '')
 		buildHTML = `<div style="text-align: center">`
 		buildHTML += document.getElementById(figureID).innerHTML
@@ -3091,6 +3100,44 @@ function displaySelfquote (linktext) {
 	selfquoteArea.innerHTML = buildHTML;
 }
 
+
+
+
+
+
+
+
+function buildExternalQuote (ele) {
+	if (ele.innerText == '⊕'){
+		let [externalResource,quoteFile] = ele.dataset.quote.split(':')
+		let html =``;
+		function populateQuote(quoteData) {
+			ele.classList.add('expanded');
+			ele.classList.remove('externalquote')
+			html += `⊗</span> <div style='color:var(--secondarytextcolor); font-size:0.9em; margin: 0.5em 0; border: 1px dotted lightgrey; background: var(--primarybackground); padding:0.5em 1em;'>`
+			html += `<p style='font-variant:small-caps; margin-bottom: 1em;'>${quoteData.Document}<br>${quoteData.Section}${quoteData.SubSection}, ${quoteData.Title} &mdash; ${quoteData.Author}</p>`
+			html += quoteData.Quote
+			html += `</div>`
+			ele.innerHTML = html
+		}
+		fetch(`../_resources/${externalResource}/${quoteFile}.json`)
+			.then(response => response.json())
+			.then (data => populateQuote(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ../_resources/${externalResource}/${quoteFile}.json`);
+			}
+
+		);
+	}
+}
+
+
+
+
+
+
+
+// SEARCH FUNCTIONALITY
 $(function() {
 	// the input field
 	var $input = $("input[type='search']"),

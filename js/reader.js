@@ -1298,7 +1298,18 @@ function setFontLevel (level) {
 	}
 }
 function setTOCLevel (level) { // if level is between 16 and 24 set it to that otherwise set it to either 16 or 24
-	if (level > 16)  {
+	for (var i = 0; i < savedTOCElements.length; i++) { 
+		console.log (level)
+		if (savedTOCElements[i].classList.contains('sub')) {
+			savedTOCElements[i].style.fontSize = (parseInt(level))+'px';
+		} else if (savedTOCElements[i].classList.contains('subsub')) {
+			savedTOCElements[i].style.fontSize = (parseInt(level)-1)+'px';
+		} else {
+			savedTOCElements[i].style.fontSize = (parseInt(level)+1)+'px';
+		}
+	} 
+
+/* 	if (level > 16)  {
 		if (level <= 24) {
 			for (var i = 0; i < savedTOCElements.length; i++) { 
 				if (savedTOCElements[i].classList.contains('sub')) {
@@ -1331,7 +1342,8 @@ function setTOCLevel (level) { // if level is between 16 and 24 set it to that o
 				savedTOCElements[i].style.fontSize = '16px';
 			}
 		}
-	}	
+	}	 */
+
 }
 function setDetailsLevel (level) {
 	for (var i = 0; i < savedDetailsElements.length; i++) {
@@ -3114,8 +3126,8 @@ function buildExternalQuote (ele) {
 		function populateQuote(quoteData) {
 			ele.classList.add('expanded');
 			ele.classList.remove('externalquote')
-			html += `⊗</span> <div style='color:var(--secondarytextcolor); font-size:0.9em; margin: 0.5em 0; border: 1px dotted lightgrey; background: var(--primarybackground); padding:0.5em 1em;'>`
-			html += `<p style='font-variant:small-caps; margin-bottom: 1em;'>${quoteData.Document}<br>${quoteData.Section}${quoteData.SubSection}, ${quoteData.Title} &mdash; ${quoteData.Author}</p>`
+			html += `⊗ <div class='expansion' style='font-size:0.9em; margin: 0.5em 0;  padding:0.5em 1em;'>`
+			html += `<h3>${quoteData.Document}<br>${quoteData.Section}${quoteData.SubSection}, ${quoteData.Title} &mdash; ${quoteData.Author}</h3>`
 			html += quoteData.Quote
 			html += `</div>`
 			ele.innerHTML = html

@@ -477,7 +477,7 @@ a {
 }	
 
 .content ul li::marker {
-	content: '\203A' /*'\00bb'; */
+	content: '\22C5';/*'\22C5';/*'\2219'; /*'\203A' /*'\00bb'; */
 }	
 
 
@@ -517,7 +517,7 @@ a {
 }
 .halfspacer {
 	width:0; 
-	margin: -4px;
+	margin: -0.2lh;
 }
 
 .shyphenate {

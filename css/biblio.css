@@ -2,31 +2,48 @@ a {
 	text-decoration: none;
 }
 
-
-
-
-
 .expander {
 	color: cornflowerblue;
 	position: relative;
-	bottom: 0.1em;
+	bottom: 0.05em;
 	left:0.1em;
 	cursor: pointer;
 	user-select: none;
 }
 
-.expansion {
-	color: var(--primarytextcolor);
+/* .expansion {
+	color: var(--secondarytextcolortextcolor);
 	cursor:auto;
 	user-select:text;
-	opacity: 55%;
 }
 
 .expanded {
-	background: var(--bdtexthighlighter);
-	border-bottom: 1px dotted var(--bdtexthighlightborder);
+	color:var(--secondarytextcolor);
+	background: var(--primarybackground);
+	border: 1px dotted lightgrey;
+	box-sizing: border-box;
 	font-weight: 500;
+	opacity: 75%;
+} */
+
+.expansion {
+	cursor:auto;
+	user-select:text;
+	color:var(--secondarytextcolor);
+	background: var(--primarybackground);
+	border: 1px dotted lightgrey;
+	box-sizing: border-box;
+	font-weight: 500;
+	opacity: 75%;
 }
+.expansion h3 {
+	font-variant:small-caps; 
+	margin-bottom: 1em;
+	text-align: left;
+	font-size: 1em;
+	font-weight: 600;
+}
+
 
 /*
 .references > dt {

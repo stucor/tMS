@@ -36,7 +36,7 @@
 }
 
 :root {
-	--notused: #d2d2d230;
+	--notused: #a40222;
 
 	--fontsize: 1rem;
 	--lineheight: 1.5;
@@ -913,8 +913,8 @@ sup {
 	padding: 0 3px;
 	margin: 0 -3px;
 	color: cornflowerblue;
-	/*background-color: rgba(255, 255, 0, 0.50);*/
-	outline: double 0 var(--notehighlighter); 
+	/*outline: double 0 var(--notehighlighter); */
+	/*background: var(--primarybackground);*/
 	border-radius: 1em;
 	cursor: pointer;
 	font-style: normal;

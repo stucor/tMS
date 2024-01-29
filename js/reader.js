@@ -1037,13 +1037,6 @@ function getPlaceInBook () {
 		setTimeout(() => {
 			scrollToNavTarget();
 			fillProgressBar();
-/*  			if (!isBookShelf()) {
-				for (var i = 0; i < savedTOCElements.length; i++) {
-					if ((savedTOCElements[i].getAttribute('data-progress') != '')) {
-						savedTOCElements[i].scrollIntoView({block: 'center', behavior: 'smooth',});
-					}
-				}
-			} */
 		}, 600); 
 
 	}
@@ -2759,7 +2752,7 @@ function highlightnote (notetohighlight) {
 	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
 	ModalBody.scrollBy(0,-40);
 }
-function clearhighlightnote() {
+/* function clearhighlightnote() {
 	savedNotesElements[highlightedNote].style.border = "unset";
 	savedNotesElements[highlightedNote].style.background = "unset";
 	if (!(savedsup === '')) {
@@ -2770,11 +2763,29 @@ function clearhighlightnote() {
 		}, 300);
 		setTimeout(function() {
 			savedsup.style = null;
-//			savedsup.style.transition = "none";
 			savedsup='';
 		},600);
 	}
+} */
+
+function clearhighlightnote() {
+	savedNotesElements[highlightedNote].style.border = "unset";
+	savedNotesElements[highlightedNote].style.background = "unset";
+	if (!(savedsup === '')) {
+		savedsup.style.background= "#a40222A0" //"var(--secondarytextcolor)";
+		savedsup.style.color ="white";
+		setTimeout(function() {
+			savedsup.style.transition = "0.7s linear";
+			savedsup.style.background ="var(--primarybackground)";
+		}, 300);
+		setTimeout(function() {
+			savedsup.style = null;
+			savedsup='';
+		},800);
+	}
 }
+
+
 
 function clearAnyNoteInNoteReturn () {
 	let anyReturnArr = document.getElementsByClassName('noteinnotereturn')
@@ -3127,7 +3138,7 @@ function buildExternalQuote (ele) {
 			ele.classList.add('expanded');
 			ele.classList.remove('externalquote')
 			html += `⊗ <div class='expansion' style='font-size:0.9em; margin: 0.5em 0;  padding:0.5em 1em;'>`
-			html += `<h3>${quoteData.Document}<br>${quoteData.Section}${quoteData.SubSection}, ${quoteData.Title} &mdash; ${quoteData.Author}</h3>`
+			html += `<h3>${quoteData.Document}<br>${quoteData.Section}, ${quoteData.SubSection}<br>${quoteData.Title}<br>&mdash; ${quoteData.Author}</h3>`
 			html += quoteData.Quote
 			html += `</div>`
 			ele.innerHTML = html

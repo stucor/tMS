@@ -380,7 +380,7 @@ function buildInfo () {
 				html += `<h3>List of Tables:</h3>`;
 				html += `<div id="lotlist">	`
 				for (let i = 0; i < tabrefArr.length; i++) {
-					if (tabrefArr[i].caption) {
+					if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
 						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML}</span>`;
 						html += `<div class='lotlistitem'>${linktext}</div>`;
 					}
@@ -1292,7 +1292,6 @@ function setFontLevel (level) {
 }
 function setTOCLevel (level) { // if level is between 16 and 24 set it to that otherwise set it to either 16 or 24
 	for (var i = 0; i < savedTOCElements.length; i++) { 
-		console.log (level)
 		if (savedTOCElements[i].classList.contains('sub')) {
 			savedTOCElements[i].style.fontSize = (parseInt(level))+'px';
 		} else if (savedTOCElements[i].classList.contains('subsub')) {
@@ -2664,11 +2663,19 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 
 	if ((e.target.classList.contains('goselfquote'))) {
 			displaySelfquote(e.target.innerHTML);
+			savedsup = e.target;
 	}
 
 	if (e.target.classList.contains('bookSegment')){
 		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
 		goToTarget(bookSeg);
+
+		console.log('from book');
+		savedsup = document.getElementById(bookSeg);
+		clearhighlightnote();
+
+
+/* 
 		if (mark_paragraph) {
 			// then flash the segment that has been scrolled too
 			anchorlink = document.getElementById(bookSeg);
@@ -2676,7 +2683,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 			setTimeout(function() {
 				anchorlink.classList.remove('bookSegmentTarget');
 			}, 2000);
-		}
+		} */
 	}
 
 });
@@ -2752,37 +2759,41 @@ function highlightnote (notetohighlight) {
 	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
 	ModalBody.scrollBy(0,-40);
 }
-/* function clearhighlightnote() {
-	savedNotesElements[highlightedNote].style.border = "unset";
-	savedNotesElements[highlightedNote].style.background = "unset";
-	if (!(savedsup === '')) {
-		savedsup.style.outlineWidth="20px";
-		setTimeout(function() {
-			savedsup.style.transition = "0.4s linear";
-			savedsup.style.outlineWidth ="0";
-		}, 300);
-		setTimeout(function() {
-			savedsup.style = null;
-			savedsup='';
-		},600);
-	}
-} */
 
-function clearhighlightnote() {
+
+function clearhighlightnote(when='delay') {
 	savedNotesElements[highlightedNote].style.border = "unset";
 	savedNotesElements[highlightedNote].style.background = "unset";
-	if (!(savedsup === '')) {
-		savedsup.style.background= "#a40222A0" //"var(--secondarytextcolor)";
-		savedsup.style.color ="white";
-		setTimeout(function() {
-			savedsup.style.transition = "0.7s linear";
-			savedsup.style.background ="var(--primarybackground)";
-		}, 300);
-		setTimeout(function() {
-			savedsup.style = null;
-			savedsup='';
-		},800);
-	}
+		if (!(savedsup === '')) {
+			if (savedsup.tagName == 'TABLE')  {
+				savedsup.parentElement.style.boxShadow = " 0px -22px 77px -5px var(--notehighlighter)"
+			} else if (savedsup.tagName == 'FIGURE') {
+				savedsup.style.boxShadow = " 0px -22px 77px -5px var(--notehighlighter)"
+				savedsup.style.background = "var(--notehighlighter)"
+				savedsup.style.opacity = "0.5"
+			} else {
+				savedsup.style.background = "var(--notehighlighter)" //"var(--secondarytextcolor)"
+				savedsup.style.boxShadow = " 0px 0px 10px 10px var(--notehighlighter)"
+				savedsup.style.opacity = "0.7"
+				savedsup.style.color = "blue"
+			}
+			if (when=='immediate') {
+				savedsup.style = null;
+				savedsup='';
+			} else {
+				setTimeout(function() {
+					savedsup.style.transition = "all 0.3s ease-out";
+					savedsup.style.background ="var(--primarybackground)";
+				}, 300); 
+				setTimeout(function() {
+					savedsup.style = null;
+					if (savedsup.parentElement.classList.contains('tablewrap')) {
+						savedsup.parentElement.style = null;
+					}
+					savedsup='';
+				},400);
+			}
+		}
 }
 
 
@@ -3022,15 +3033,19 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 	if (e.target.classList.contains('bookSegment')){
 		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
 		closebtn.click();
+		clearhighlightnote('immediate');
+		savedsup = document.getElementById(bookSeg);
 		goToTarget(bookSeg);
-		if (mark_paragraph) {
+		clearhighlightnote();
+
+		/* 		if (mark_paragraph) {
 			// then flash the segment that has been scrolled too
 			anchorlink = document.getElementById(bookSeg);
 			anchorlink.classList.add('bookSegmentTarget');
 			setTimeout(function() {
 				anchorlink.classList.remove('bookSegmentTarget');
 			}, 2000);
-		}
+		} */
 
 	}
 
@@ -3094,7 +3109,6 @@ document.getElementById("ModalSelfquote").addEventListener("click", function(e) 
 	}
 });
 
-
 function displaySelfquote (linktext) {
 	setModalStyle('Selfquote');
 	showModal('Selfquote');
@@ -3123,13 +3137,6 @@ function displaySelfquote (linktext) {
 	selfquoteArea.innerHTML = buildHTML;
 }
 
-
-
-
-
-
-
-
 function buildExternalQuote (ele) {
 	if (ele.innerText == '⊕'){
 		let [externalResource,quoteFile] = ele.dataset.quote.split(':')
@@ -3153,10 +3160,6 @@ function buildExternalQuote (ele) {
 		);
 	}
 }
-
-
-
-
 
 
 

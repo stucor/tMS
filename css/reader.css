@@ -36,7 +36,7 @@
 }
 
 :root {
-	--notused: #a40222;
+	--notused: darkgreen;
 
 	--fontsize: 1rem;
 	--lineheight: 1.5;
@@ -642,6 +642,7 @@ ol {
 	position: relative;
 	overflow: auto;
 	text-align: left;
+	margin: 2em 0;
 }
 .tablewrap::-webkit-scrollbar {
 	width: 5px;
@@ -658,7 +659,7 @@ table {
 	text-align: left;
 	border:1px solid var(--tableborder);
 	border-spacing: 0;
-	margin: 2em 0;
+	margin: 0;
 }
 table caption {
 	padding: 5px;

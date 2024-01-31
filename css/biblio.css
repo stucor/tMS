@@ -6,7 +6,7 @@ a {
 	color: cornflowerblue;
 	position: relative;
 	bottom: 0.05em;
-	left:0.1em;
+	padding-left:0.1em;
 	cursor: pointer;
 	user-select: none;
 }
@@ -26,15 +26,19 @@ a {
 	opacity: 75%;
 } */
 
+.expanded {
+	background: var(--primarybackground);
+	border-radius: 1em;
+
+}
+
 .expansion {
 	cursor:auto;
 	user-select:text;
 	color:var(--secondarytextcolor);
 	background: var(--primarybackground);
-	border: 1px dotted lightgrey;
-	box-sizing: border-box;
-	font-weight: 500;
-	opacity: 75%;
+	position:relative;
+	bottom: -0.05em;
 }
 .expansion h3 {
 	font-variant:small-caps; 
@@ -70,10 +74,9 @@ a {
 
 .linkContainer {
     /*background:var(--bdtexthighlighter);*/
-	border: thin rgba(128, 128, 128, 0.50) dotted;
+	border: 1px rgba(128, 128, 128, 0.50) dotted;
 	box-sizing: border-box;
     white-space: nowrap;
-    margin: 0 0 -0.3em 0;
     padding: 0 0.2em;
     border-radius: 5px;
 }

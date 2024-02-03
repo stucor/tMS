@@ -47,7 +47,6 @@ h3 span.pli-lang,
 h4 span.pli-lang,
 h5 span.pli-lang,
 li span.pli-lang {
-  font-family: Source Serif Pro;
   color: var(--secondarytextcolor);
 }
 
@@ -60,7 +59,7 @@ h3 span.pli-lang .segno {
 
 #sutta h2 {
   font-size: 1.3em;
-
+  font-weight: 500;
 }
 
 .button-area {
@@ -71,13 +70,13 @@ h3 span.pli-lang .segno {
   background: var(--primarybackground);
   border-radius: 5px 5px 0 0;
   border: 1px solid darkgrey;
+  font-family: 'Source Sans Pro';
 }
 
 .button-area > button {
   position:absolute;
   top: 3px;
   right: 20px;
-
   background-color: var(--buttonbackground);
   color: var(--buttontext);
   border: 1px solid grey;
@@ -92,12 +91,10 @@ h3 span.pli-lang .segno {
   border: 2px solid rgb(150, 150, 150, 0.5);
 }
 
-
 .button-area > button:active{
 	background-color:var(--primarycolor);
   color: var(--buttonbackground);
 }
-
 
 .button-area > .checkcontainer{
   position: absolute;
@@ -128,6 +125,7 @@ h3 span.pli-lang .segno {
 } 
 #messagetext {
   font-variant: small-caps;
+  font-family: 'Source Sans Pro';
 }
 
 
@@ -150,6 +148,7 @@ h3 span.pli-lang .segno {
   margin: 30px 5%;
   padding: 20px 5%;
   font-size: var(--fontsize);
+  font-family: var(--fontfamily);
 }
 
 #sutta h1 {
@@ -157,6 +156,10 @@ h3 span.pli-lang .segno {
   font-weight: 400;
   font-variant: small-caps;
   margin-bottom: 1em;
+}
+
+#sutta p span {
+  width:fit-content;
 }
 
 #sutta p + p {
@@ -202,8 +205,23 @@ header li .segno {
   cursor: pointer;
   outline: double 0 var(--notehighlighter); 
   border-radius: 1em;
-  padding: 0.3em;
-	margin: -0.3em;
+	padding: 0 3px;
+	margin: 0 -3px;
+  white-space: nowrap;
+}
+
+
+
+/*
+.citeBQ > .sclinktext, .citeBQ > .tipref, .cite > .sclinktext {
+  font-size: smaller;
+}
+*/
+
+.scsegments, .tipsegments {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: var(--scsegmentnumbercolor);
 }
 
 #sc-translator {
@@ -214,20 +232,23 @@ header li .segno {
 
 
 .sc-mark {
-  background-color:  var(--bdtexthighlighter);
+  background-color: var(--bdtexthighlighter);
+  border-bottom: solid var(--bdtexthighlightborder) thin;
 }
 
+/*
 .sc-mark::after {
   content:' ';
   background-color: var(--bdtexthighlighter);
 }
+*/
 
 .segno {
   font-size: 0.7em;
   font-weight: 600;
   color: var(--scsegmentnumbercolor);
   position:relative;
-  top: 0.5em;
+  top: 0.2em;
 }
 
 #sutta .gatha, .uddanagatha {
@@ -242,11 +263,12 @@ header li .segno {
   margin-bottom: 1rem;
 }
 
+/*
 #sutta .gatha > p:after {
   content:unset;
   white-space: unset;
   }
-
+*/
 
 @media (hover: hover) {
   .button-area > button:hover {

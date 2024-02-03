@@ -5,9 +5,7 @@ var forceMobileUI;
 var themeName = "Simple";
 var marginName = "";
 
-var prevScrollpos = window.pageYOffset;
-
-/* COOKIES */
+var prevScrollpos = window.scrollY;
 
 // generic cookie functions
 
@@ -33,6 +31,8 @@ function getCookie(cname) {
     return "";
 }
 
+// generic useful functions
+
 function hasClass(elementtocheck, className) {
 	element = document.getElementById(elementtocheck);
     return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
@@ -51,7 +51,10 @@ function shortcode() {
 	return thebook.getAttribute("data-shortcode");
 }
 
+// build sections
+
 function buildSettings (_callback) {
+	//buildRef();
 	let parentDiv = document.getElementById('ModalSettings');
 	if (parentDiv.innerHTML == '') {
 		let html = 
@@ -136,8 +139,25 @@ function buildSettings (_callback) {
 		`;
 
 		parentDiv.innerHTML = html;
+
 	}
 	_callback();
+}
+
+function formatSCLinktext () {
+	allSCLinktexts = document.querySelectorAll('.sclinktext, .tipref');
+
+	for (var i = 0; i < allSCLinktexts.length; i++) {
+		let [before,after] = allSCLinktexts[i].innerHTML.split(":");
+		if (typeof after !== "undefined") {
+			if (allSCLinktexts[i].classList.contains('tipref')) {
+				allSCLinktexts[i].innerHTML = before + "<span class='tipsegments'>:" + after +"</span>"
+			} else {
+				allSCLinktexts[i].innerHTML = before + "<span class='scsegments'>:" + after +"</span>"
+			}
+		}
+	}
+
 
 }
 
@@ -148,7 +168,8 @@ function startup () {
 		console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
 	}
 	*/
-	
+
+
 	buildSettings(function(){
 		//the following is done after buildSettings completes:
 		document.getElementById('topbar').style.display='block';
@@ -159,6 +180,22 @@ function startup () {
 			initialiseBookSettings ();
 		} 
 		formatbooknotes();
+		formatSCLinktext();
+
+
+
+		// give tables an id starting at table_1
+		let tabrefArr = document.querySelectorAll('table');
+		if (tabrefArr.length  > 0) {
+			for (let i = 0; i < tabrefArr.length; i++) {
+				tabrefArr[i].setAttribute("id", "table_"+ (i+1));
+			}
+			
+		}
+
+
+
+
 		var scroller = Math.floor(window.scrollY);
 		history.replaceState({scrollState: scroller},'',''); 
 		history.scrollRestoration = 'manual';
@@ -182,14 +219,6 @@ function startup () {
 			}
 			shadowSearchBar ();
 		}
-		/* SPC Go 
-		showPageCheck.onclick = function () {
-			settingTouched = true;
-			setPageBreak(true);
-			setPageBreakSize(true);
-			restorePlaceInBook();
-		}
-		*/
 		justifyCheck.onclick = function () {
 			showSpinner(); // show spinner
 			promiseToRunAsync(doJustifyCheck) // execute anync
@@ -204,53 +233,34 @@ function startup () {
 				hideSpinner();
 			});
 		}
-
 		document.getElementById("decfont").onclick = function () { // minus button
-			var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-			if (fontlevel > 9) {
-				fontlevel = fontlevel -1;
-				settingTouched = true;
-				document.getElementById("flvalue").innerHTML = fontlevel;
-				setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
-				setTOCLevel (fontlevel);
-				restorePlaceInBook();
-			}
+				showSpinner(); // show spinner
+				promiseToRunAsync(doDecFont) // execute anync
+				.then(() => {
+					hideSpinner();
+				});
 		}
-		
 		document.getElementById("incfont").onclick = function () { //plus button
-			var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-			if (fontlevel < 32) {
-				fontlevel = fontlevel +1;
-				settingTouched = true;
-				document.getElementById("flvalue").innerHTML = fontlevel;
-				setTOCLevel (fontlevel);
-				setFontLevel(fontlevel, theTopElement-5, theTopElement+150);
-				restorePlaceInBook();
-			}
+			showSpinner(); // show spinner
+			promiseToRunAsync(doIncFont) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
 		}
-
 		declh.onclick = function () {
-			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-			if (lhlevel > 1) {
-				lhlevel = lhlevel -0.1;
-				settingTouched = true;
-				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-				setLH (lhlevel, theTopElement-5, theTopElement+150);
-				restorePlaceInBook();
-			}	
+			showSpinner(); // show spinner
+			promiseToRunAsync(doDecLH) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
 		}
-		
 		inclh.onclick = function () {
-			var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-			if (lhlevel < 3) {
-				lhlevel = lhlevel + 0.1;
-				settingTouched = true;
-				document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
-				setLH (lhlevel, theTopElement-5, theTopElement+150);
-				restorePlaceInBook();
-			}
+			showSpinner(); // show spinner
+			promiseToRunAsync(doIncLH) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
 		} 
-		
 		radioSimple.onclick = function () {
 			setTheme ();
 		}
@@ -260,7 +270,6 @@ function startup () {
 		radioSepia.onclick = function () {
 			setTheme ();
 		}
-
 		radioMargNarrow.onclick = function () {
 			showSpinner(); // show spinner
 			promiseToRunAsync(doSetMargin) // execute anync
@@ -282,13 +291,13 @@ function startup () {
 				hideSpinner();
 			});
 		}
-		
 		serifFont.onclick = function () {
-			settingTouched = true;
-			setSerif(theTopElement-2, theTopElement+150);
-			//restorePlaceInBook ();
+			showSpinner(); // show spinner
+			promiseToRunAsync(doSetSerif) // execute anync
+			.then(() => {
+				hideSpinner();
+			});
 		}
-		
 		showParaNosList.onchange = function () {
 			showSpinner(); // show spinner
 			promiseToRunAsync(doParaNosList) // execute anync
@@ -297,10 +306,23 @@ function startup () {
 			});
 		}
 
+		if (!(isBookShelf() || isAudioBook())) {
+			let engrave = document.getElementsByClassName("engrave");
+			let smallEngrave = document.getElementsByClassName("smallEngrave");
+			engrave[0].classList.add('noshow')
+			smallEngrave[0].classList.add('noshow')
+		}
+
+		let selfquoteArr = document.getElementsByClassName("selfquote");
+		if (selfquoteArr) {
+			for (i = 0; i < selfquoteArr.length; i++) {
+				selfquoteArr[i].setAttribute('data-before-selfquote', `§${i+1}`); //§
+			}
+			
+		}
+
 	});
 }
-
-/* Modal Builders */
 
 function parseInfoText(infoText) {
 	const htmlText = infoText
@@ -358,15 +380,35 @@ function buildInfo () {
 				html += `<h3>List of Tables:</h3>`;
 				html += `<div id="lotlist">	`
 				for (let i = 0; i < tabrefArr.length; i++) {
-					if (tabrefArr[i].caption) {
-						tabrefArr[i].setAttribute("id", "lot_"+ i);
-						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${i}'>${tabrefArr[i].caption.innerHTML}</span>`;
+					if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
+						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML}</span>`;
 						html += `<div class='lotlistitem'>${linktext}</div>`;
 					}
 				}
 				html += `</div></section>`;
 				return html;
 			}
+		}
+
+		function figurelist () {
+			let figArr = document.querySelectorAll('figure');
+			if (figArr.length == 0) { return '';}
+ 
+			let html = "";
+			if (figArr.length > 0) {
+				html = `<section class="infocontainer">`;
+				html += `<h3>List of Figures:</h3>`;
+				html += `<div id="figlist">	`
+				for (let i = 0; i < figArr.length; i++) {
+					if (figArr[i].getElementsByTagName("figcaption")[0]) {
+						let linktext = `<span class='figlinkref' id='figlinkto_${figArr[i].id}'>${figArr[i].getElementsByTagName("figcaption")[0].innerHTML}</span>`;
+						html += `<div class='figlistitem'>${linktext}</div>`;
+					}
+				}
+				html += `</div></section>`;
+				return html;
+			}
+
 		}
 
 		function populateInfo (bookInfoData) {
@@ -377,8 +419,10 @@ function buildInfo () {
 			}
 			html += `<h2>${bookInfoData.Authors}</h2>`;
 
-			html += suttalist();
 			html += tablelist();
+			html += figurelist();
+			html += suttalist();
+
 
 			if (isAudioBook()) {
 				html += `
@@ -518,6 +562,161 @@ function buildInfo () {
 	}
 }
 
+// Populate References/Bibliography
+/* function buildRef () {
+
+	let sectionHolder = document.getElementById('reference-holder');
+	if (sectionHolder != null) {
+		if (sectionHolder.innerHTML == ''){
+			let shortCode = shortcode();
+			let html =``;
+
+			function populateReferences(referencesData) {
+
+
+				html += `<dl class="references">`
+				for (i in referencesData) {
+					let urlLabel ='';
+					let attachmentLabel = '';
+					let tMSShortcode ='';
+					
+					// get special values from the notes field 
+					if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
+						noteArray = referencesData[i]["note"].split('\n');	
+						for (j in noteArray) {
+							[noteKey, noteValue] = noteArray[j].split(':');
+							switch (noteKey) {
+								case "attachment-label":
+									attachmentLabel = noteValue;
+									break;
+								case "tMS":
+									tMSShortcode = noteValue;
+							}
+						}
+					}
+
+					switch (referencesData[i].type) {
+						case "book":
+							urlLabel ='Publishers Page';
+							break;
+						case "article-journal":
+							urlLabel ='Journal Page';
+							break;
+						case "document":
+							break;
+						case "post-weblog":
+							urlLabel ='Blog Post';
+							break;
+						case "webpage":
+							urlLabel ='Webpage';
+							break;
+					}
+
+					html += `<dt>${referencesData[i].id}</dt>`
+
+					html += `<dd>`;
+
+					let authorAfter ='& ';
+					for (j in referencesData[i].author) {
+						if (j == referencesData[i].author.length-1) {
+							authorAfter ='&mdash;'
+						}
+						html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given} ${authorAfter}`;
+					}
+
+					let translatorAfter ='& ';
+					for (j in referencesData[i].translator) {
+						if (j == referencesData[i].translator.length-1) {
+							translatorAfter ='<em>(tr.) </em>&mdash;'
+						}
+						html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
+					}
+
+					if (referencesData[i].hasOwnProperty('issued')) {
+						html += ` ${referencesData[i]["issued"]["date-parts"][0][0]}.`;
+					}
+
+					html += ` <em>${referencesData[i].title}</em>`;
+
+					if (referencesData[i].hasOwnProperty('container-title')) {
+						html += `. ${referencesData[i]["container-title"]}`;
+					}
+					if (referencesData[i].hasOwnProperty('volume')) {
+						html += `, Vol. ${referencesData[i]["volume"]}`;
+					}
+
+					if (referencesData[i].hasOwnProperty('number-of-volumes')) {
+						html += ` of ${referencesData[i]["number-of-volumes"]}`;
+					}
+
+					if (referencesData[i].hasOwnProperty('page')) {
+						if (referencesData[i].page.includes("-")) { //is a range of pages
+							html += `. pp. ${referencesData[i].page}`;
+						} else {
+							html += `. p. ${referencesData[i].page}`;
+						}
+					}
+
+					html += `.`;
+
+					if (referencesData[i].hasOwnProperty('publisher')) {
+						html += ` ${referencesData[i]["publisher"]}`;
+
+						if (referencesData[i].hasOwnProperty('publisher-place')) {
+							html += `, ${referencesData[i]["publisher-place"]}`;
+						}
+		
+						html += `.`;
+					}
+
+					let linkSeparator = ' | ';
+					if (referencesData[i].hasOwnProperty('URL')) {
+						html += `${linkSeparator} <a class="extlink reflink"  href="${referencesData[i].URL}">${urlLabel}</a> `;
+					}
+
+					if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
+						if (attachmentLabel !== '') {
+							let attachmentLabelArray = attachmentLabel.split(';');
+							if (attachmentLabelArray.length > 1) {
+								let fileArray = referencesData[i].file.split(';');
+								for (k in attachmentLabelArray) {
+									html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${fileArray[k]}">${attachmentLabelArray[k]}</a> `;
+								}
+							} else {
+								html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}">${attachmentLabel}</a> `;
+							}
+						} else {
+							html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+						}
+					}
+
+					if (tMSShortcode !=='') {
+						html += `${linkSeparator} <a class="reflink" href="../${tMSShortcode}">online</a>`
+					}
+
+					html += `</dd>`;
+
+				}
+
+				html += `</dl>`
+				sectionHolder.innerHTML = html;
+
+			}
+
+
+
+			fetch(`../_resources/book-data/${shortCode}/reference.json`)
+				.then(response => response.json())
+				.then (data => populateReferences(data))
+				.catch(error => {
+					console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/reference.json`);
+				}
+
+			);
+		}
+	}
+}
+ */
 //ONLOAD
 window.onload = function () {
     showSpinner(); // show spinner
@@ -532,6 +731,7 @@ var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
 var savedNotesElements = ModalNotes.querySelectorAll('h2, div');
+
 
 var theTopBar = document.getElementById("topbar");
 
@@ -601,23 +801,23 @@ function initialiseCommonSettings () {
 		setCookie ('wiswobooks_font_size', local_wiswobooks_font_size,365);
 	} else { 
 		document.getElementById("flvalue").innerHTML = local_wiswobooks_font_size;
-		setFontLevel(local_wiswobooks_font_size, 0, savedBookElements.length);
+		setFontLevel(local_wiswobooks_font_size);
 		setTOCLevel(local_wiswobooks_font_size);
 		setDetailsLevel(local_wiswobooks_font_size);
-		setNotesLevel(local_wiswobooks_font_size);
+		//setNotesLevel(local_wiswobooks_font_size);
 	}	
 }
 
 function initialiseBookSettings () {
 	//LINE-SPACING
 	var local_wiswobooks_line_spacing = getCookie("wiswobooks_line_spacing");
-	document.getElementById("lhvalue").innerHTML = 1.3;
+	document.getElementById("lhvalue").innerHTML = 1.5;
 	if (local_wiswobooks_line_spacing == '') {
-		local_wiswobooks_line_spacing = '1.3';
+		local_wiswobooks_line_spacing = '1.5';
 		setCookie ('wiswobooks_line_spacing',local_wiswobooks_line_spacing,365);
 	} else {
 		document.getElementById("lhvalue").innerHTML = local_wiswobooks_line_spacing;
-		setLH (local_wiswobooks_line_spacing, 0, savedBookElements.length);
+		setLH (local_wiswobooks_line_spacing);
 	}	
 	//MARGINS
 	var local_wiswobooks_margins = getCookie("wiswobooks_margins");
@@ -653,25 +853,8 @@ function initialiseBookSettings () {
 			local_wiswobooks_serif = 'false';
 			setCookie('wiswobooks_serif',local_wiswobooks_serif,365);
 	}
-	setSerif(0, savedBookElements.length);
-	//SHOW-PAGES
-	/* SPC Go
-	var local_wiswobooks_showpages = getCookie("wiswobooks_showpages");
-	switch (local_wiswobooks_showpages) {
-		case 'true' :
-			document.getElementById("showPageCheck").checked = true;
-			break;
-		case 'false' :
-			document.getElementById("showPageCheck").checked = false;
-			break;	
-		default :
-			document.getElementById("showPageCheck").checked = false;
-			local_wiswobooks_showpages = 'false';
-			setCookie('wiswobooks_showpages',local_wiswobooks_showpages,365);
-	}
-	setPageBreak(false);
-	setPageBreakSize();
-	*/
+	setSerif();
+
 	//JUSTIFICATION
 	var local_wiswobooks_justification = getCookie("wiswobooks_justification");
 	switch (local_wiswobooks_justification) {
@@ -1039,106 +1222,27 @@ function buildpageBreak(e) {
 	e.innerHTML = wordcut + "<div class=pagenumber>"+affect+" " + thepagenumber + " "+affect+"</div><hr class='pagebreak'>";
 }
 
-/* SPC Go
-function setPageBreak (islocal) {
-		var elems = document.getElementsByClassName("pageno");
-		var pageCheck = document.getElementById("showPageCheck");
-		if (pageCheck.checked){
-			if (islocal) {
-				for (var i = 0; i < elems.length; i++) {
-					if (isElementInViewport (elems[i])) {
-						buildpageBreak(elems[i]);
-					}
-				}
-				settingTouched = true;
-			} else {
-				for (var i = 0; i < elems.length; i++) {
-					buildpageBreak(elems[i]);
-				}
-			}
-
-		} else {
-			if (islocal) {
-				for (var i = 0; i < elems.length; i++) {
-					if (isElementInViewport (elems[i])) {
-						elems[i].innerHTML = "";
-					}
-				}
-			} else {
-				for (var i = 0; i < elems.length; i++) {
-					elems[i].innerHTML = "";
-				}
-			}
-		}	
-}
-
-function setPageBreakSize(islocal = false) {
-	var pageCheck = document.getElementById("showPageCheck");
-	if (pageCheck.checked) {
-		var pagebreaks = document.getElementsByClassName("pagebreak");
-		var book = document.getElementById("thebook");
-		var bookleft = book.getBoundingClientRect().left;
-		var bookright = book.getBoundingClientRect().right;
-		if (islocal) {
-			for(i=0;i<pagebreaks.length;i++){
-				if (isElementInViewport (pagebreaks[i])) {
-					var newleftmargin = parseInt(bookleft - pagebreaks[i].getBoundingClientRect().left);
-					var newrightmargin = parseInt(pagebreaks[i].getBoundingClientRect().right - bookright);
-					pagebreaks[i].style.marginLeft = newleftmargin + 'px';
-					pagebreaks[i].style.marginRight = newrightmargin + 'px';
-					var pagenumbershunt = newrightmargin - newleftmargin;
-					if (pagenumbershunt !== 0) {
-						pagebreaks[i].previousElementSibling.style.paddingRight = pagenumbershunt + 'px';
-					}
-				}
-			}
-		} else {
-			for(i=0;i<pagebreaks.length;i++){
-				var newleftmargin = parseInt(bookleft - pagebreaks[i].getBoundingClientRect().left);
-				var newrightmargin = parseInt(pagebreaks[i].getBoundingClientRect().right - bookright);
-				pagebreaks[i].style.marginLeft = newleftmargin + 'px';
-				pagebreaks[i].style.marginRight = newrightmargin + 'px';
-				var pagenumbershunt = newrightmargin - newleftmargin;
-				if (pagenumbershunt !== 0) {
-					pagebreaks[i].previousElementSibling.style.paddingRight = pagenumbershunt + 'px';
-				}
-			}
-		}
-	}
-}
-
-*/
 
 // JUSTIFICATION
-
+function doJustifyCheck () {
+	setJustify();
+}
 function setJustify () {
-	var bookPages = document.getElementById("thebook");
+	//var bookPages = document.getElementById("thebook");
 	var justificationCheck = document.getElementById("justifyCheck")
 	if (justificationCheck.checked){
-		bookPages.style.textAlign = "justify";
+		//bookPages.style.textAlign = "justify";
 		document.querySelector(':root').style.setProperty('--textalign', 'justify');
     } else {
-		bookPages.style.textAlign = "left";
+		//bookPages.style.textAlign = "left";
 		document.querySelector(':root').style.setProperty('--textalign', 'left');
     }	
 }
 
-function doJustifyCheck () {
-	setJustify();
-	//restorePlaceInBook();
-	//fillProgressBar();
-}
-
-
-
 // HYPHENATION
-
 function doHyphenCheck () {
 	setHyphenation();
-	//restorePlaceInBook();
-	//fillProgressBar();
 }	
-
 function setHyphenation () {
 	var bookPages = document.getElementById("thebook");
 	var hyphenationCheck = document.getElementById("hyphenCheck")
@@ -1149,72 +1253,90 @@ function setHyphenation () {
     }	
 }
 
-
-
-
-
 // FONT SIZE
-
-function setFontLevel (level, start, end) {
-	if (start < 0) {start = 0}
-	if (end > savedBookElements.length) { end = savedBookElements.length }
-	//if (start < 0) { start = 0}
-	for (var i = start; i < end; i++) {
-		switch (savedBookElements[i].tagName) {
-			case 'P':
-			case 'DIV':
-			case 'H4':
-			case 'H5':
-			case 'LI':
-			case 'DT':
-			case 'DD':
-				if (!isAudioBook()) {
-					savedBookElements[i].style.fontSize = level+'px';
-					document.querySelector(':root').style.setProperty('--fontsize', level+'px');
-			};
-				break;
-			case 'SPAN':
-				/* SPC Go
-				if (savedBookElements[i].className == 'pageno') {savedBookElements[i].style.fontSize = (level)+'px';}
-				*/
-				if (savedBookElements[i].className == 'chapnum') {savedBookElements[i].style.fontSize = (level*1.3)+'px';}
-				break;
-			case 'H1' :
-				savedBookElements[i].style.fontSize = (level*1.9)+'px';
-				break;
-			case 'H2' :
-				savedBookElements[i].style.fontSize = (level*1.3)+'px';
-				break;
-			case 'H3' :
-				savedBookElements[i].style.fontSize = (level*1.2)+'px';
-				break;
-			case 'IMG':
-				if (savedBookElements[i].className == 'emojify') {
-					savedBookElements[i].style.width = (parseInt(level)+parseInt(level/3))+'px';
-				}
-				break;	
-			}
-	}	
+function doDecFont () {
+	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
+	if (fontlevel > 9) {
+		fontlevel = fontlevel -1;
+		document.getElementById("flvalue").innerHTML = fontlevel;
+		setFontLevel(fontlevel);
+		setTOCLevel (fontlevel);
+		//setNotesLevel(fontlevel);
+		restorePlaceInBook();
+	}
 }
+function doIncFont () {
+	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
+	if (fontlevel < 32) {
+		fontlevel = fontlevel +1;
+		document.getElementById("flvalue").innerHTML = fontlevel;
+		setTOCLevel (fontlevel);
+		setFontLevel(fontlevel);
+		//setNotesLevel(fontlevel);
+		restorePlaceInBook();
+	}
+}
+function setFontLevel (level) {
+	if (!isAudioBook()) {
+		document.querySelector(':root').style.setProperty('--fontsize', level+'px');
+	};
 
+	let bookImagesArray = document.querySelectorAll('img');
+	for (i in bookImagesArray) {
+		if (bookImagesArray[i].className == 'emojify') {
+			bookImagesArray[i].style.width = (parseInt(level)+parseInt(level/3))+'px';
+		} else if (bookImagesArray[i].className == 'fleuron') {
+			bookImagesArray[i].style.width = (parseInt(level)*3)+'px';
+		}
+	}
+}
 function setTOCLevel (level) { // if level is between 16 and 24 set it to that otherwise set it to either 16 or 24
-	if (level > 16)  {
+	for (var i = 0; i < savedTOCElements.length; i++) { 
+		if (savedTOCElements[i].classList.contains('sub')) {
+			savedTOCElements[i].style.fontSize = (parseInt(level))+'px';
+		} else if (savedTOCElements[i].classList.contains('subsub')) {
+			savedTOCElements[i].style.fontSize = (parseInt(level)-1)+'px';
+		} else {
+			savedTOCElements[i].style.fontSize = (parseInt(level)+1)+'px';
+		}
+	} 
+
+/* 	if (level > 16)  {
 		if (level <= 24) {
 			for (var i = 0; i < savedTOCElements.length; i++) { 
-				savedTOCElements[i].style.fontSize = level+'px';
+				if (savedTOCElements[i].classList.contains('sub')) {
+					savedTOCElements[i].style.fontSize = (level-2)+'px';
+				} else if (savedTOCElements[i].classList.contains('subsub')) {
+					savedTOCElements[i].style.fontSize = (level-3)+'px';
+				} else {
+					savedTOCElements[i].style.fontSize = level+'px';
+				}
 			} 
 		} else {
 			for (var i = 0; i < savedTOCElements.length; i++) { 
-				savedTOCElements[i].style.fontSize = '24px';
+				
+				if (savedTOCElements[i].classList.contains('sub')) {
+					savedTOCElements[i].style.fontSize = '22px';
+				} else if (savedTOCElements[i].classList.contains('subsub')) {
+					savedTOCElements[i].style.fontSize = '21px';
+				} else {
+					savedTOCElements[i].style.fontSize = '24px';
+				}
 			}	
 		}			
 	} else {
 		for (var i = 0; i < savedTOCElements.length; i++) { 
-			savedTOCElements[i].style.fontSize = '16px';
+			if (savedTOCElements[i].classList.contains('sub')) {
+				savedTOCElements[i].style.fontSize = '14px';
+			} else if (savedTOCElements[i].classList.contains('subsub')) {
+				savedTOCElements[i].style.fontSize = '13px';
+			} else {
+				savedTOCElements[i].style.fontSize = '16px';
+			}
 		}
-	}	
-}
+	}	 */
 
+}
 function setDetailsLevel (level) {
 	for (var i = 0; i < savedDetailsElements.length; i++) {
 		switch (savedDetailsElements[i].tagName) {
@@ -1233,44 +1355,43 @@ function setDetailsLevel (level) {
 			}
 	}
 }	
-
+/*
 function setNotesLevel (level) {
 	for (var i = 0; i < savedNotesElements.length; i++) {
 		savedNotesElements[i].style.fontSize = level+'px';
 	}
 }	
-
-
-
+*/
 // LINE SPACING
-
-function setLH (level, start, end) {
-	if (start < 0) {start = 0}
-	if (end > savedBookElements.length) { end = savedBookElements.length }
-	for (var i = start; i < end; i++) {
-		switch (savedBookElements[i].tagName) {
-			case 'P':
-			case 'DIV':
-			case 'LI':
-			case 'DT':
-			case 'DD':				
-				savedBookElements[i].style.lineHeight = level;
-				break;
-			}
-	}	
+function setLH (level) {
+	if (!isAudioBook()) {
+		document.querySelector(':root').style.setProperty('--lineheight', level);
+	};
 }
-
-
+function doDecLH () {
+	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
+	if (lhlevel > 1) {
+		lhlevel = lhlevel -0.1;
+		document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
+		setLH (lhlevel);
+		restorePlaceInBook();
+	}	
+} 
+function doIncLH () {
+	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
+	if (lhlevel < 3) {
+		lhlevel = lhlevel + 0.1;
+		document.getElementById("lhvalue").innerHTML = Math.round(lhlevel * 100)/100;
+		setLH (lhlevel);
+		restorePlaceInBook();
+	}
+}
 
   
 
 //THEMES
-
-
 function setTheme(){
-
 	var whatIsPressed = document.querySelector('input[name="themeRadio"]:checked').value;
-
 	var theBody = document.getElementById("thebody");
 	var bookPages = document.getElementById("thecontent"); 
 
@@ -1367,7 +1488,7 @@ function setTheme(){
 
 			searchBar.style.background = "#fff";
 			searchBar.style.color = "#000";
-//			searchBar.style.borderColor = "#000";
+			searchBar.style.borderColor = "#000";
 
 			searchInput.style.background = "#fff";
 			searchInput.style.color = "#000";
@@ -1409,27 +1530,30 @@ function setTheme(){
 				sni.style.filter="invert(0)";
 			}
 
-			r.style.setProperty('--TOCprogress', '#0000001f'); //'#f0f2fd80');
-			r.style.setProperty('--TOChighlighter', '#00000037'); //'#e3e7fdc0');
+			r.style.setProperty('--TOCprogress', '#d6630f09');  //'#d6630f08'); '#f0f2fd80');
+			//r.style.setProperty('--TOChighlighter', '#00000000'); // '#00000037'); '#e3e7fdc0');
 			r.style.setProperty('--primarytextcolor', '#000');
 			r.style.setProperty('--secondarytextcolor', '#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
 
 			r.style.setProperty('--pickedtext', '#1c222b');
 			r.style.setProperty('--buttontext', '#000');
-			r.style.setProperty('--buttonbackground', '#f0f2fd');
-			r.style.setProperty('--sliderbackground', '#c9d5fc');
-			r.style.setProperty('--primarycolor', '#06036ea0');
-			r.style.setProperty('--listlinkhover', '#d5dcfd60');
-			r.style.setProperty('--bdtexthighlighter', '#e0f4fb');//'#eef0fb');
+			r.style.setProperty('--buttonbackground', '#fc88320B');//'#f0f2fd');
+			r.style.setProperty('--sliderbackground', '#fc88320B');//'#c9d5fc');
+			r.style.setProperty('--primarycolor', '#217cbe');//'#06036ea0');
+			r.style.setProperty('--listlinkhover', '#217cbe1F');//'#d5dcfd60');
+			r.style.setProperty('--bdtexthighlighter', '#fc88320B');//'#e0f4fbb0');//'#eef0fb');
+			r.style.setProperty('--bdtexthighlightborder', '#fc8832C0');
 
-			r.style.setProperty('--tablecaption', '#dadada');
-			r.style.setProperty('--tablehead', '#c9c9c9');
-			r.style.setProperty('--tableodd', '#f2f2f2');
-			r.style.setProperty('--tableeven', '#e1e1e1');
-			r.style.setProperty('--tablefoot', '#ececec');
+			r.style.setProperty('--tablecaption', '#ffffff');
+			r.style.setProperty('--tablehead', '#eaeaea');
+			r.style.setProperty('--tableodd', '#fefefe');
+			r.style.setProperty('--tableeven', '#f8f8f8');
+			r.style.setProperty('--tablefoot', '#fcfcfc');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#9e2815');
+			r.style.setProperty('--figureimgborder', '#808080');
+
+			r.style.setProperty('--scsegmentnumbercolor', '#5a5a81');//'#a5670a');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
@@ -1498,7 +1622,7 @@ function setTheme(){
 
 			searchBar.style.background = "#121212";
 			searchBar.style.color = "#cfcfcf";
-//			searchBar.style.borderColor = "#cfcfcf";
+			searchBar.style.borderColor = "#cfcfcf";
 
 			searchInput.style.background = "#121212";
 			searchInput.style.color = "#cfcfcf";
@@ -1543,14 +1667,15 @@ function setTheme(){
 			r.style.setProperty('--primarybackground', '#121212');
 
 			r.style.setProperty('--TOCprogress', '#475f7a');
-			r.style.setProperty('--TOChighlighter', '#667b9ea0');
+			//r.style.setProperty('--TOChighlighter', '#667b9ea0');
 			r.style.setProperty('--pickedtext', '#cfcfcf');
 			r.style.setProperty('--buttontext', '#cfcfcf');
 			r.style.setProperty('--buttonbackground', '#475f7a');
 			r.style.setProperty('--sliderbackground', '#475f7a');
 			r.style.setProperty('--primarycolor', '#667b9e');
 			r.style.setProperty('--listlinkhover', '#9db4ff40');
-			r.style.setProperty('--bdtexthighlighter', '#484c5e');
+			r.style.setProperty('--bdtexthighlighter', '#484c5ee0');
+			r.style.setProperty('--bdtexthighlightborder', 'grey');
 
 			r.style.setProperty('--tablecaption', '#252525');
 			r.style.setProperty('--tablehead', '#363636');
@@ -1558,7 +1683,9 @@ function setTheme(){
 			r.style.setProperty('--tableeven', '#1e1e1e');
 			r.style.setProperty('--tablefoot', '#131313');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#d39990');
+			r.style.setProperty('--figureimgborder', '#b9b9b9');
+
+			r.style.setProperty('--scsegmentnumbercolor', '#c4cdda');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#7c7c7c';
@@ -1581,7 +1708,7 @@ function setTheme(){
 			}
 
 			//lefticons[1].style.filter="invert(0)";
-			lefticons[0].style.filter="invert(5%) sepia(94%) saturate(6660%) hue-rotate(231deg) brightness(108%) contrast(144%)";
+			//lefticons[0].style.filter="invert(5%) sepia(94%) saturate(6660%) hue-rotate(231deg) brightness(108%) contrast(144%)";
 			
 			theBody.style.background = '#f1e8bb';
 			bookPages.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';
@@ -1633,7 +1760,7 @@ function setTheme(){
 
 			searchBar.style.background = "#f5efd0";
 			searchBar.style.color = "#00008b";
-//			searchBar.style.borderColor = "#00008b";
+			searchBar.style.borderColor = "#00008b";
 
 			searchInput.style.background = "#f5efd0";
 			searchInput.style.color = "#00008b";
@@ -1680,8 +1807,8 @@ function setTheme(){
 			}
 
 			r.style.setProperty('--TOCprogress', '#eadbbf');
-			r.style.setProperty('--TOChighlighter', '#eadbbf');
-			r.style.setProperty('--primarytextcolor', '#000');
+			//r.style.setProperty('--TOChighlighter', '#eadbbf');
+			r.style.setProperty('--primarytextcolor', '#382500');
 			r.style.setProperty('--secondarytextcolor', '#5c0909');
 			r.style.setProperty('--primarybackground', '#f8f4da');
 
@@ -1691,7 +1818,8 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#ecd38d');
 			r.style.setProperty('--primarycolor', '#cea140');
 			r.style.setProperty('--listlinkhover', '#cea14030');
-			r.style.setProperty('--bdtexthighlighter', '#ffed79') //'#eee5c2');
+			r.style.setProperty('--bdtexthighlighter', '#fa80720F');// '#fffff6ef'); 
+			r.style.setProperty('--bdtexthighlightborder', '#fa8072C0');
 
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');
@@ -1699,7 +1827,9 @@ function setTheme(){
 			r.style.setProperty('--tableeven', '#f9f4d5');
 			r.style.setProperty('--tablefoot', '#f9f9df');
 
-			r.style.setProperty('--scsegmentnumbercolor', '#9e2815');
+			r.style.setProperty('--figureimgborder', '#b88b7b');
+
+			r.style.setProperty('--scsegmentnumbercolor', '#5c0909');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
@@ -1719,58 +1849,60 @@ function setTheme(){
 function doSetMargin () {
 	setMargin();
 	restorePlaceInBook();
-	/*
-	setPageBreak(true);
-	setPageBreakSize(true);
-	*/
 }	
 
 function setMargin() {
 	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
 	var thebook = document.getElementById("thebook");
+	var root = document.querySelector(':root');
 	switch (whatIsPressed) {
-
 		case "narrowmargin":	
 			thebook.style.paddingLeft = '2%';
 			thebook.style.paddingRight = '2%';
 			marginName = "narrowmargin";
+			root.style.setProperty('--selfquoteleftmargin', '-2.2em');
+			root.style.setProperty('--selfquotetopmargin', '-1em');
 			break;
 		case "midmargin":
 			thebook.style.paddingLeft = '10%';
 			thebook.style.paddingRight = '10%';
 			marginName = "midmargin";
+			root.style.setProperty('--selfquoteleftmargin', '-5em');
+			root.style.setProperty('--selfquotetopmargin', '1em');
 			break;
 		case "widemargin":
 			thebook.style.paddingLeft = '20%';
 			thebook.style.paddingRight = '20%';
 			marginName = "widemargin";
+			root.style.setProperty('--selfquoteleftmargin', '-5em');
+			root.style.setProperty('--selfquotetopmargin', '1em');
 		}
+		
 }
 
 
-function setSerif (start, end) {
-	if (start < 0) {start = 0}
-	if (end > savedBookElements.length) { end = savedBookElements.length }
+function doSetSerif () {
+	setSerif();
+	restorePlaceInBook();
+}
+
+function setSerif () {
 
 	if (document.getElementById('serifFont').checked) {
-			for (var i = start; i < end; i++) {	
-				if ((savedBookElements[i].tagName == 'P') || (savedBookElements[i].tagName == 'DIV') || (savedBookElements[i].tagName == 'LI') || (savedBookElements[i].tagName == 'DT') || (savedBookElements[i].tagName == 'DL')) {
-					savedBookElements[i].style.fontFamily = 'Source Serif Pro';
-				}
-			}
+		if (!isAudioBook()) {
+			document.querySelector(':root').style.setProperty('--fontfamily', 'Source Serif Pro');
+		};
 	} else {
-		for (var i = start; i < end; i++) {	
-			if ((savedBookElements[i].tagName == 'P') || (savedBookElements[i].tagName == 'DIV') || (savedBookElements[i].tagName == 'LI') || (savedBookElements[i].tagName == 'DT') || (savedBookElements[i].tagName == 'DL')) {
-				savedBookElements[i].style.fontFamily = 'Source Sans Pro';
-			}
-		}
+		if (!isAudioBook()) {
+			document.querySelector(':root').style.setProperty('--fontfamily', 'Source Sans Pro');
+		};
 	}
+	
 }	
 
 
 function doParaNosList () {
 	setParaNumbers();
-	//fillProgressBar();
 }	
 
 function setParaNumbers () {
@@ -1894,15 +2026,20 @@ function scrollToID (id) {
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
 
-function goToTOCTarget (toctarget) {
+function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given either an ID or an Element
 	var scroller = Math.floor(window.scrollY);
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
-	var elmnt = document.getElementById(toctarget);
+	var elmnt;
+	if (IDOrElement == 'ID') {
+		elmnt = document.getElementById(target);
+	} else if (IDOrElement == 'ELEMENT'){
+		elmnt = target;
+	}
 	elmnt.scrollIntoView();
 	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
-	window.scrollBy(0, tbHeight); // scroll the toctarget below the topnav bar so you can see it
+	window.scrollBy(0, tbHeight-20); // scroll the target below the topnav bar so you can see it
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
@@ -1932,7 +2069,7 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 			if (!(e.target.classList.contains('notTOC'))) { // if there isn't a class notTOC on the li
 				var tocNumber = e.target.id.replace("TOC", "");
 				var toctarget = "TOCTarget" + tocNumber;
-				goToTOCTarget(toctarget);
+				goToTarget(toctarget);
 			}
 		}
 	}
@@ -1942,7 +2079,7 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 // this is a automatic setting mobileUI or the user-setting/cookie forceMobileUI. Then set progress bar
 
 window.onscroll = function() {
-	var currentScrollPos = window.pageYOffset;
+	var currentScrollPos = window.scrollY;
 	if (forceMobileUI) {
 		if (sidebarIsOpen == false){
 			if ((prevScrollpos > currentScrollPos)) { // show top bar when scrolling up
@@ -1956,29 +2093,49 @@ window.onscroll = function() {
 		}
 	} else {
 		theTopBar.style.top = "0";
+		
 	}
+
+	let dataprogArr = document.querySelectorAll("[data-progress]")
+	for (i = 0; i < dataprogArr.length; i++) {
+		if (dataprogArr[i].dataset.progress) {
+			elem = dataprogArr[i].getBoundingClientRect()
+			if (prevScrollpos > currentScrollPos) {
+				//console.log('scrolling up')
+				let elemtop = elem.top-120
+				if (elemtop < 0 ) {
+					dataprogArr[i].parentNode.parentNode.scrollBy({top: elemtop, left: 0, behavior: "smooth" });
+				}
+			} else {
+				//console.log('scrolling down')
+				let elembot = elem.bottom
+				let parentElembot = dataprogArr[i].parentNode.parentNode.getBoundingClientRect().bottom
+				if (elembot > parentElembot)  {
+					dataprogArr[i].parentNode.parentNode.scrollBy({top: elembot-parentElembot+10, left: 0, behavior: "smooth" });
+				} 
+			}
+		}
+	}
+ 	
+
+
+
 	prevScrollpos = currentScrollPos;
+//savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
+
+
+
 	//populate progress bar
 	fillProgressBar();
+
 	// save position
 	getNavTarget();
 	//savePlaceInBook();
 }
 
-/* SPC Go
-function afterResize() {
-	setPageBreak(false);
-	setPageBreakSize();
-}
 
-var doit;
-*/
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
-	/* SPC Go
-	clearTimeout(doit);
-	doit = setTimeout(afterResize, 100);
-	*/
 });
 
 var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");
@@ -1999,15 +2156,19 @@ function fillProgressBar() {
 		for (var i = 0; i < savedTOCElements.length; i++) {
 			savedTOCElements[i].style.background = 'unset';
 			savedTOCElements[i].style.opacity = '1';
+			savedTOCElements[i].style.border = "none";
 			savedTOCElements[i].setAttribute('data-progress', '');
 		}
 		for (var i = 0; i < savedTOCElements.length; i++) {
 			if (savedTOCElements[i].id !== currentTOC) {
 				savedTOCElements[i].style.background = 'var(--TOCprogress)';
-				savedTOCElements[i].style.opacity = '0.4';
+				savedTOCElements[i].style.opacity = '0.35';
+
 			} else {
 				savedTOCElements[i-1].style.opacity = '1';
-				savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
+				savedTOCElements[i-1].style.borderTop = "thin dotted var(--primarycolor)";//#d6630f8F";
+				savedTOCElements[i-1].style.borderBottom = "thin dotted var(--primarycolor)";
+				//savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
 				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 				var scrolled = Math.floor(((winScroll / height) * 100)* 10) /10;
@@ -2083,7 +2244,13 @@ function showSideNav() {
 	//setTimeout(() => { tocnav.scrollTo({top:TOCscrollpos,}) }, 100);
 	setTimeout(() => {
 		fillProgressBar();
-	}, 500);
+		let dataprogArr = document.querySelectorAll("[data-progress]")
+		for (i = 0; i < dataprogArr.length; i++) {
+			if (dataprogArr[i].dataset.progress) {
+				dataprogArr[i].scrollIntoView({block: 'center', behavior: 'auto',});
+			}
+		}
+	}, 400);
 }
 
 
@@ -2155,6 +2322,7 @@ var modaldownload = document.getElementById('ModalDownload');
 var modalalert = document.getElementById('ModalDownloadAlert');
 var modalnotes = document.getElementById('ModalNotes');
 var modalsutta = document.getElementById('ModalSutta');
+var modalselfquote = document.getElementById('ModalSelfquote');
 
 
 // Get the buttons that open the modals
@@ -2222,12 +2390,7 @@ function setModalTheme (theme) {
 			modalheader.style.background = "white";
 			modalheader.style.color = "black";
 			closebtn.style.color = "black";
-			//modalheadertext.innerHTML = heading;
-			modalbody.style.background = "#fcfcfc";
 			modalbody.style.backgroundImage = 'unset';
-			modalbody.style.color = "#000";
-			//settingsadv.style.background = "white";
-			//settingsadv.style.borderTopColor ="#000";
 			modalbody.classList.add('bright-scroll');
 			modalbody.classList.add('bright-scroll-track');
 			modalbody.classList.add('bright-scroll-thumb');
@@ -2242,12 +2405,7 @@ function setModalTheme (theme) {
 			modalheader.style.background = "#121212";
 			modalheader.style.color = "#f7f7f7";
 			closebtn.style.color = "#f7f7f7";
-			//modalheadertext.innerHTML = heading;
-			modalbody.style.background = "#292929";
 			modalbody.style.backgroundImage = 'unset';
-			modalbody.style.color = "#f7f7f7";
-			//settingsadv.style.background = "#121212";
-			//settingsadv.style.borderTopColor ="#f7f7f7";
 			modalbody.classList.remove('bright-scroll');
 			modalbody.classList.remove('bright-scroll-track');
 			modalbody.classList.remove('bright-scroll-thumb');
@@ -2262,12 +2420,7 @@ function setModalTheme (theme) {
 			modalheader.style.background = "#f5efd0";
 			modalheader.style.color = "#00008b";
 			closebtn.style.color = "#00008b";
-			//modalheadertext.innerHTML = heading;
-			modalbody.style.background = "#f5efd0";
 			modalbody.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';
-			modalbody.style.color = "#00008b";
-			//settingsadv.style.background = "#f5efd0";
-			//settingsadv.style.borderTopColor ="#00008b";
 			modalbody.classList.remove('bright-scroll');
 			modalbody.classList.remove('bright-scroll-track');
 			modalbody.classList.remove('bright-scroll-thumb');
@@ -2359,6 +2512,17 @@ function setModalStyle (heading) {
 			modalcontent.style.top = "0";
 			modalcontent.style.padding = "0";
 			break;
+		case 'Selfquote':
+			modalbody.style.height = "auto";
+			modalbody.style.maxHeight = "85vh";
+			modalbody.style.padding = "0";
+			modalcontent.style.width = "95%";
+			modalcontent.style.maxWidth = "55em";
+			modalcontent.style.position ="relative";
+			modalcontent.style.right = "0";
+			modalcontent.style.top = "0";
+			modalcontent.style.padding = "0";
+			break;
 		default:
 			modalbody.style.maxHeight = "75vh";
 			modalbody.style.padding = "0";
@@ -2379,6 +2543,7 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modaldetails);		
 			break;
 		case 'Settings':
@@ -2387,6 +2552,7 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modalsettings);		
 			break;
 		case 'Download':
@@ -2395,6 +2561,7 @@ function showModal (theModal) {
 			hideElement(modalnotes);
 			hideElement(modalalert);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modaldownload);		
 			break;
 		case 'Alert':
@@ -2403,6 +2570,7 @@ function showModal (theModal) {
 			hideElement(modalnotes);
 			hideElement(modaldownload);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modalalert);		
 			break;
 		case 'Notes':
@@ -2411,6 +2579,7 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
+			hideElement(modalselfquote);
 			showElement(modalnotes);
 			break;
 		case 'Sutta':
@@ -2418,8 +2587,18 @@ function showModal (theModal) {
 			hideElement(modalsettings);
 			hideElement(modaldownload);
 			hideElement(modalalert);
-			hideElement(modalnotes);		
+			hideElement(modalnotes);
+			hideElement(modalselfquote);		
 			showElement(modalsutta);
+			break;
+		case 'Selfquote':
+			hideElement(modaldetails);
+			hideElement(modalsettings);
+			hideElement(modaldownload);
+			hideElement(modalalert);
+			hideElement(modalnotes);		
+			hideElement(modalsutta);
+			showElement(modalselfquote);
 			break;
 		}
 	showElement(modal);
@@ -2440,7 +2619,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				var tocNumber = e.target.id.substring(3);
 				toctarget = "TOCTarget" + tocNumber;
 			}
-			goToTOCTarget(toctarget);
+			goToTarget(toctarget);
 			if (true) {e.preventDefault();}
 		} else {	
 			savedsup = e.target;
@@ -2455,19 +2634,23 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⟹';
+			e.target.innerHTML = '⊕';
 			e.target.classList.remove('expanded');
 
 		} else {
-			e.target.innerHTML = '⟸ ' + '<span class="expansion">' + fullReference + '</span>';
+			e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
 
 		}
 	}
 
-	if (e.target.classList.contains('sclinktext')) {
-		displaySutta(e.target.innerHTML);
-		savedsup = e.target;
+	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
+		let linkNode = e.target;
+		if (e.target.classList.contains('scsegments')) {
+			linkNode = e.target.parentNode;
+		}
+		displaySutta(linkNode.innerText);
+		savedsup = linkNode;
 		if (true) {e.preventDefault();}
 	}
 
@@ -2476,6 +2659,31 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				doOutAppHREF(e.target.closest('A').getAttribute('href'));
 				if (true) {e.preventDefault();}
 		}
+	}
+
+	if ((e.target.classList.contains('goselfquote'))) {
+			displaySelfquote(e.target.innerHTML);
+			savedsup = e.target;
+	}
+
+	if (e.target.classList.contains('bookSegment')){
+		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
+		goToTarget(bookSeg);
+
+		console.log('from book');
+		savedsup = document.getElementById(bookSeg);
+		clearhighlightnote();
+
+
+/* 
+		if (mark_paragraph) {
+			// then flash the segment that has been scrolled too
+			anchorlink = document.getElementById(bookSeg);
+			anchorlink.classList.add('bookSegmentTarget');
+			setTimeout(function() {
+				anchorlink.classList.remove('bookSegmentTarget');
+			}, 2000);
+		} */
 	}
 
 });
@@ -2493,31 +2701,36 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	if (e.target.parentNode.id == 'LOT') {
 		var tocNumber = e.target.id.replace("TOC", "");
 		var toctarget = "TOCTarget" + tocNumber;
-		doCloseModal();
-		goToTOCTarget(toctarget);
+		exitStaticModal();
+		goToTarget(toctarget);
 	}
 
-	if (e.target.className == "sclinkref") {
-		var gotoID = 'slt_' + e.target.id.replace("screflinkfrom_","");
+	if ((e.target.className == "sclinkref") || (e.target.className == "scsegments")) {
+		let linkNode = e.target;
+		if (e.target.classList.contains('scsegments')) {
+			linkNode = e.target.parentNode;
+		}
+		var gotoID = 'slt_' + linkNode.id.replace("screflinkfrom_","");
 		scrollToID(gotoID);
 	}
 
 	if (e.target.className == "lotlinkref") {
-		var gotoID = 'lot_' + e.target.id.replace("lotlinkfrom_","");
+		var gotoID = 'table_' + e.target.id.replace("lotlinkfrom_","");
+		scrollToID(gotoID);
+	}
+
+	if (e.target.className == "figlinkref") {
+		var gotoID = e.target.id.replace("figlinkto_","");
 		scrollToID(gotoID);
 	}
 
 	if (e.target.classList.contains ('expander')) {
-		var ccDetail = document.getElementById('ccDetail');
 		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⟹';
+			e.target.innerHTML = '⊕';
 			e.target.classList.remove('expanded');
-			ccDetail.classList.add('noshow');
 		} else {
-			e.target.innerHTML = '⟸ '; 
+			e.target.innerHTML = '⊗ '; 
 			e.target.classList.add('expanded');
-			ccDetail.classList.remove('noshow');
-
 		}
 	}
 
@@ -2532,69 +2745,64 @@ function showAlert(HTMLToShow) {
 	showModal ("Alert");
 }
 
-
-
 var savedsup = '';
 function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
 	for (var i = 1; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].innerHTML = "<span class='booknotesNumbers'>" + (i) + ": </span> " + savedNotesElements[i].innerHTML;
+		savedNotesElements[i].innerHTML = "<div class='booknotesNumber'>" + (i) + "</div> <div class='booknotesText'>" + savedNotesElements[i].innerHTML +"</div>";
 	}
 }
 var highlightedNote = 0;
 function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
-	savedNotesElements[highlightedNote].style.border = "3px solid grey";
-	savedNotesElements[highlightedNote].style.background = "#c0c0c030";
+	savedNotesElements[highlightedNote].style.border = "thin solid var(--bdtexthighlightborder)"; //#229635";
+	savedNotesElements[highlightedNote].style.background = "var(--bdtexthighlighter)"; //"#22963506"; //"#c0c0c020";
 	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
 	ModalBody.scrollBy(0,-40);
 }
-function clearhighlightnote() {
+
+
+function clearhighlightnote(when='delay') {
 	savedNotesElements[highlightedNote].style.border = "unset";
 	savedNotesElements[highlightedNote].style.background = "unset";
-	if (!(savedsup === '')) {
-		savedsup.style.outlineWidth="20px";
-		setTimeout(function() {
-			savedsup.style.transition = "0.3s linear";
-			savedsup.style.outlineWidth ="0";
-		}, 300);
-		setTimeout(function() {
-			savedsup.style.transition = "none";
-			savedsup='';
-		},600);
+		if (!(savedsup === '')) {
+			if (savedsup.tagName == 'TABLE')  {
+				savedsup.parentElement.style.boxShadow = " 0px -22px 77px -5px var(--notehighlighter)"
+			} else if (savedsup.tagName == 'FIGURE') {
+				savedsup.style.boxShadow = " 0px -22px 77px -5px var(--notehighlighter)"
+				savedsup.style.background = "var(--notehighlighter)"
+				savedsup.style.opacity = "0.5"
+			} else {
+				savedsup.style.background = "var(--notehighlighter)" //"var(--secondarytextcolor)"
+				savedsup.style.boxShadow = " 0px 0px 10px 10px var(--notehighlighter)"
+				savedsup.style.opacity = "0.7"
+				savedsup.style.color = "blue"
+			}
+			if (when=='immediate') {
+				savedsup.style = null;
+				savedsup='';
+			} else {
+				setTimeout(function() {
+					savedsup.style.transition = "all 0.3s ease-out";
+					savedsup.style.background ="var(--primarybackground)";
+				}, 300); 
+				setTimeout(function() {
+					savedsup.style = null;
+					if (savedsup.parentElement.classList.contains('tablewrap')) {
+						savedsup.parentElement.style = null;
+					}
+					savedsup='';
+				},400);
+			}
+		}
+}
+
+
+
+function clearAnyNoteInNoteReturn () {
+	let anyReturnArr = document.getElementsByClassName('noteinnotereturn')
+	for (i = 0; i < anyReturnArr.length; i++) {
+		anyReturnArr[i].remove();
 	}
-}
-
-/* for setting sutta font size */
-function getFontLevel() {
-	return document.getElementById("flvalue").innerHTML +'px';
-}
-
-function reformatBook () {
-
-	var fontlevel = parseInt(document.getElementById("flvalue").innerHTML);
-	setFontLevel(fontlevel, 0, savedBookElements.length);
-	setDetailsLevel(fontlevel);
-	setNotesLevel(fontlevel);
-
-	var lhlevel = parseFloat(document.getElementById("lhvalue").innerHTML);
-	setLH (lhlevel, 0, savedBookElements.length);
-
-	setSerif (0, savedBookElements.length);
-	/* SPC Go
-	setPageBreak(false); 
-	setPageBreakSize();
-	*/
-}
-
-
-var settingTouched = false;
-
-function exitSettingsModal () {
-	reformatBook();
-	startBookScroll();
-	scrollToNavTarget();
-	saveCookies();
-	return true;
 }
 
 function exitStaticModal () {
@@ -2610,35 +2818,19 @@ function exitStaticModal () {
 		hideElement(modal);
 		hideElement(modalcontent);
 	}
+	clearAnyNoteInNoteReturn();
 }
 
-/*
-closebtn.onclick = function () {
-	exitModal ();
-}	
-*/
 
-function doCloseModal () {
-	if (settingTouched) {
-		spinnerExitSettingsModal();
-		settingTouched = false;
-	} else {
-		exitStaticModal	();
-	}	
-}
+closebtn.addEventListener('click',exitStaticModal);
 
-closebtn.addEventListener('click',doCloseModal);
-
-
-window.onclick = function(event) {
-    if (event.target == modal) {doCloseModal()}
-}
+window.onclick = function(event) {if (event.target == modal) {exitStaticModal()}}
 
 function showSpinner() {
-    document.querySelector('#spinbox').style.display = 'block';
+	document.querySelector('#spinbox').style.display = 'block';
 }
 function hideSpinner() {
-    document.querySelector('#spinbox').style.display = 'none';
+	document.querySelector('#spinbox').style.display = 'none';
 }
 
 function promiseToRunAsync(executor, ...params) {
@@ -2650,16 +2842,6 @@ function promiseToRunAsync(executor, ...params) {
     });
 }
 
-function spinnerExitSettingsModal() {
-    showSpinner(); // show spinner
-    promiseToRunAsync(exitSettingsModal) // execute anync
-    .then(() => {
-        hideSpinner();
-	});
-	// code here will run before the spinner is hidden
-	hideElement(modal);
-	hideElement(modalcontent);
-}
 
 function shadowSearchBar () {
 	var searchBar = document.getElementById("SearchBar");
@@ -2729,23 +2911,39 @@ function isElementPartiallyInViewport(el)
     var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
     var vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
     var horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
-    return (vertInView && horInView);
+    return (vertInView && horInViexpanderew);
 }
 
 
 function getFullReference (shortReference = '') {
+	let references = document.querySelectorAll('.references')
+	let counter = 0
+	let fullHTML = ''
 
-	var references = document.getElementById('references');
-	var referenceChildren = references.children;
-
-	for (let i = 0; i < references.children.length; i++) {
-		if (references.children[i].tagName == 'DT') {
-			if (references.children[i].innerHTML == shortReference) {
-				return references.children[i].nextElementSibling.innerHTML;
+	for( let i=0; i < references.length; i++) {
+		let referenceLists = references[i].childNodes
+		for (let j = 0; j < referenceLists.length; j++) {
+			if (referenceLists[j].tagName == 'DT') {
+				if (referenceLists[j].innerHTML == shortReference) {
+					if (counter > 0) {
+						//fullHTML += ` &#x2756;&nbsp; `
+						fullHTML += ` &ndash; `
+						fullHTML += `${referenceLists[j].nextElementSibling.innerHTML.replaceAll(', ', '').replace('bibhead', 'bibheadhide')}` 
+					} else {
+						fullHTML += `${referenceLists[j].nextElementSibling.innerHTML}`
+					}
+					
+					counter ++
+				}
 			}
 		}
 	}
-	return 'reference not found';
+	if (fullHTML) {
+		return fullHTML
+	} else {
+		return 'reference not found';
+	}
+	
 }
 
 
@@ -2758,29 +2956,127 @@ function doOutAppHREF (href) {
 		}
 }
 
-document.getElementById("ModalNotes").addEventListener("click", function(e) {
-	if (e.target.classList.contains ('expander')) {
-		var fullReference = getFullReference(e.target.dataset.reference);
-		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⟹';
-			e.target.classList.remove('expanded');
 
+var savedSUPElements = thebook.querySelectorAll('sup');
+
+function decodeBookSegment (anchortext) {
+	let str = ''
+	let unmarked_paragraph = false
+	if (anchortext.substring(0,5).toLowerCase() == 'table') {
+		let tableNum = anchortext.toLowerCase().replace(/\s/g,'').replace('table', '')
+		str = `table_${tableNum}`
+	} else if (anchortext.substring(0,6).toLowerCase() == 'figure') {
+		let figNum = anchortext.toLowerCase().replace(/\s/g,'').replace('figure', '')
+		str = `fig${figNum}`
+	} else
+	{
+		str = anchortext.toLowerCase().replace(/\s/g,'').replace(',','').replace ('chapter', 'c' ).replace ('paragraph', 'p')
+		if ( str.search('p') == -1 ) {
+			str = `TOCTarget${str.substring(1)}`
 		} else {
-			e.target.innerHTML = '⟸ ' + '<span class="expansion">' + fullReference + '</span>';
-			e.target.classList.add('expanded');
-
+			unmarked_paragraph = true
 		}
 	}
+	return [str, unmarked_paragraph]
+
+}
+
+document.getElementById("ModalNotes").addEventListener("click", function(e) {
+	if (e.target.classList.contains ('expander')) {
+		if (e.target.classList.contains('externalquote')){
+			buildExternalQuote (e.target)
+		} else {
+			var fullReference = getFullReference(e.target.dataset.reference);
+			if (e.target.classList.contains('expanded')) {
+				e.target.innerHTML = '⊕';
+				e.target.classList.remove('expanded');
+				if (e.target.dataset.quote) {
+					e.target.classList.add('externalquote');
+				}
+			} else {
+				e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
+				e.target.classList.add('expanded');
+			}
+		}
+	}
+
 
 	if (e.target.classList.contains ('TOCref')) {
 		var toctarget = e.target.getAttribute("data-TOCref");
 		closebtn.click();
-		goToTOCTarget(toctarget);
+		goToTarget(toctarget);
+	}
+	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
+		calledFromNotes = true;
+		let linkNode = e.target;
+		if (e.target.classList.contains('scsegments')) {
+			linkNode = e.target.parentNode;
+		}
+		displaySutta(linkNode.innerText);
+		restorePlaceInBook();
+		if (true) {e.preventDefault();}
+	}
+	if (e.target.classList.contains ('booknotesNumber')) {
+		var supnumber = e.target.innerHTML;
+		if (supnumber == savedsup.innerHTML) {
+			closebtn.click();
+		} else {
+			for (let i=0; i < savedSUPElements.length; i++) {
+				if (supnumber == savedSUPElements[i].innerHTML) {
+					savedsup = savedSUPElements[i];
+					closebtn.click();
+				}
+			}
+			goToTarget(savedsup, 'ELEMENT');
+		}
+	}
+	if (e.target.classList.contains('bookSegment')){
+		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
+		closebtn.click();
+		clearhighlightnote('immediate');
+		savedsup = document.getElementById(bookSeg);
+		goToTarget(bookSeg);
+		clearhighlightnote();
+
+		/* 		if (mark_paragraph) {
+			// then flash the segment that has been scrolled too
+			anchorlink = document.getElementById(bookSeg);
+			anchorlink.classList.add('bookSegmentTarget');
+			setTimeout(function() {
+				anchorlink.classList.remove('bookSegmentTarget');
+			}, 2000);
+		} */
+
 	}
 
-	if (e.target.classList.contains('sclinktext')) {
+
+
+	if (e.target.classList.contains('noteinnotes')) {
+		//let notesArr = document.getElementsByClassName('booknote')
+		noteNumber = e.target.innerText
+		noteFromNumber = e.target.parentNode.parentNode.dataset.note;
+
+		let scrollToE = document.querySelectorAll(`[data-note="${noteNumber}"]`);
+		scrollToE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+
+		// create a return btn(span)
+		const backbtn = document.createElement("span");
+		backbtn.classList.add('noteinnotereturn')
+		const backbtnText = document.createTextNode(`Return to note ${noteFromNumber}`);
+		backbtn.appendChild(backbtnText)
+		backbtn.addEventListener('click', (event) => {
+			let scrollToCallingE = document.querySelectorAll(`[data-note="${noteFromNumber}"]`);
+			scrollToCallingE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+			//remove return btn(span) after clickand scroll back
+			event.target.remove();
+		  });
+		
+		scrollToE[0].lastChild.appendChild(backbtn)
+	}
+
+	if ((e.target.classList.contains('goselfquote'))) {
+		displaySelfquote(e.target.innerHTML);
 		calledFromNotes = true;
-		displaySutta( e.target.innerHTML);
 		restorePlaceInBook();
 		if (true) {e.preventDefault();}
 	}
@@ -2789,6 +3085,8 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		doOutAppHREF (e.target.getAttribute('href'));
 		if (true) {e.preventDefault();}
 	}
+
+
 });
 
 function displaySutta (linkText) {
@@ -2800,6 +3098,72 @@ function displaySutta (linkText) {
 	document.getElementById('ModalHeaderText').innerHTML = linkText;
 }
 
+
+/* SelfQuote */
+
+document.getElementById("ModalSelfquote").addEventListener("click", function(e) {
+	if (e.target.classList.contains('goselfquote')) {
+		calledFromNotes = false
+		exitStaticModal()
+		goToTarget(`bqseg${e.target.innerText.replace('§','').replace(' in the main text','')}`)
+	}
+});
+
+function displaySelfquote (linktext) {
+	setModalStyle('Selfquote');
+	showModal('Selfquote');
+	modalbody.scrollTop = 0;
+	stopBookScroll ();
+	let selfquoteArea = document.getElementById("selfquotearea");
+	let buildHTML = '';
+	if (linktext.substring(0,1) == '§') {
+		let selfquoteArr = document.getElementsByClassName("selfquote");
+		buildHTML = `<div style="font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
+		for (i = 0; i < selfquoteArr.length; i++) {
+			if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
+				buildHTML += selfquoteArr[i].innerHTML.replaceAll(/ style=""/g, "").replaceAll(/<sup>[0-9]+<\/sup>/g, "").replaceAll(/<span class="goselfquote">(§[0-9]+)<\/span>/g, '$1' )
+				document.getElementById('ModalHeaderText').innerHTML = `QUOTED SECTION: ${linktext}`;
+			}
+			
+		}
+	} else { // it's (currently) a Figure
+		//console.log(linktext)
+		let figureID = linktext.replace(/&nbsp;/, '').replace(' ','').toLowerCase().replace('ure', '')
+		buildHTML = `<div style="text-align: center">`
+		buildHTML += document.getElementById(figureID).innerHTML
+		buildHTML += `</div>`
+		document.getElementById('ModalHeaderText').innerHTML = `Figure ${figureID.slice(3)}`;
+	}
+	selfquoteArea.innerHTML = buildHTML;
+}
+
+function buildExternalQuote (ele) {
+	if (ele.innerText == '⊕'){
+		let [externalResource,quoteFile] = ele.dataset.quote.split(':')
+		let html =``;
+		function populateQuote(quoteData) {
+			ele.classList.add('expanded');
+			ele.classList.remove('externalquote')
+			html += `⊗ <div class='expansion' style='font-size:0.9em; margin: 0.5em 0;  padding:0.5em 1em;'>`
+			html += `<h3>${quoteData.Document}<br>${quoteData.Section}, ${quoteData.SubSection}<br>${quoteData.Title}<br>&mdash; ${quoteData.Author}</h3>`
+			html += quoteData.Quote
+			html += `</div>`
+			ele.innerHTML = html
+		}
+		fetch(`../_resources/${externalResource}/${quoteFile}.json`)
+			.then(response => response.json())
+			.then (data => populateQuote(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ../_resources/${externalResource}/${quoteFile}.json`);
+			}
+
+		);
+	}
+}
+
+
+
+// SEARCH FUNCTIONALITY
 $(function() {
 	// the input field
 	var $input = $("input[type='search']"),

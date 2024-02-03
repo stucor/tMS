@@ -35,21 +35,41 @@ function showBD(linktext) {
 
   function getMultiSuttaJSONFileName (suttaNumber) {//suttanumber(slug), file, slug
     const multiSuttaArr = [
+      ['an1.170','an1.170-187',''],
+      ['an1.188','an1.188-197',''],
+      ['an1.239','an1.235-247',''],
       ['an1.328','an1.316-332',''],
       ['an1.49','an1.41-50',''],
       ['an2.31','an2.21-31',''],
+      ['an2.33','an2.32-41',''],
+      ['an2.38','an2.32-41',''],
       ['an2.172','an2.163-179',''],
       ['an2.310','an2.310-479','an2.310-319'],
+      ['an2.5', 'an2.1-10', ''],
       ['an2.11','an2.11-20',''],
+      ['dhp49','dhp44-59',''],
+      ['dhp60','dhp60-75',''],
+      ['dhp64','dhp60-75',''],
+      ['dhp142','dhp129-145',''],
+      ['dhp146','dhp146-156',''],
+      ['dhp157','dhp157-166',''],
+      ['dhp188','dhp179-196',''],
       ['dhp204','dhp197-208',''],
+      ['dhp228','dhp221-234',''],
+      ['dhp256','dhp256-272',''],
+      ['dhp257','dhp256-272',''],
       ['dhp273','dhp273-289',''],
       ['dhp274','dhp273-289',''],
       ['dhp277','dhp273-289',''],
       ['dhp278','dhp273-289',''],
       ['dhp279','dhp273-289',''],
+      ['dhp332','dhp320-333',''],
+      ['dhp337','dhp334-359',''],
+      ['dhp338','dhp334-359',''],
       ['dhp348','dhp334-359',''],
       ['dhp372','dhp360-382',''],
       ['dhp387','dhp383-423',''],
+      ['dhp395','dhp383-423',''],
       ['dhp409','dhp383-423',''],
       ['sn43.20','sn43.14-43',''],
       ['sn43.22','sn43.14-43','']
@@ -74,8 +94,8 @@ function showBD(linktext) {
   }
 
   let [scprintText, highlight] = decodeBDLinkText (linktext);
+  
   let sclinkText = slugStrip(scprintText);
-
   let highlightArr = BDSegmentRange(highlight);
   suttaArea.innerHTML ='';
 

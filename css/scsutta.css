@@ -52,7 +52,10 @@ li span.pli-lang {
 
 h1 span.pli-lang .segno,
 h2 span.pli-lang .segno, 
-h3 span.pli-lang .segno {
+h3 span.pli-lang .segno,
+h4 span.pli-lang .segno,
+h5 span.pli-lang .segno,
+li span.pli-lang .segno {
     display:none;
 }
   
@@ -139,6 +142,7 @@ h3 span.pli-lang .segno {
 #sutta.hide-pali h2 span.pli-lang,
 #sutta.hide-pali h3 span.pli-lang,
 #sutta.hide-pali h4 span.pli-lang,
+#sutta.hide-pali h5 span.pli-lang,
 #sutta.hide-pali li span.pli-lang {
   display: none !important;
 }

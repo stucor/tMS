@@ -552,9 +552,15 @@ a {
 
 .vcmarg {
 	position:relative;
-	top:0;
+	color: var(--secondarytextcolor);
+	font-size: 0.8em;
+	top:0.3em;
 	float:left;
-	margin-left: -3em;
+	margin-left: -4em;
+}
+
+blockquote > p:nth-child(1) > span.vcmarg  {
+	text-indent: 2.4em;
 }
 
 blockquote {
@@ -1981,6 +1987,7 @@ mark.current {
 	color: var(--secondarycolor) /*rgb(170, 170, 170);*/
 }
 
+
 .goselfquote {
 	color:cornflowerblue;
 	text-decoration: none;
@@ -2414,7 +2421,6 @@ margin-bottom: 0;
 	/*part of verse couplet vcmarg is a span to position outside the line-block - left for big screens, right for small */
 
 	.vcmarg { 
-		position:static;
 		margin-left: 0.2em;
 		margin-right: -2em;
 		float:right;

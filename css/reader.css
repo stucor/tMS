@@ -323,6 +323,19 @@ strong {
 	margin-bottom: 1em;
 }	
 
+.editor-note {
+	color: var(--secondarytextcolor);
+	font-style: italic;
+}
+
+.editor-note::before {
+	content: '(ed: ';
+}
+
+.editor-note::after {
+	content: ')';
+}
+
 .content h2 {
 	font-family: 'Source Sans Pro';
     font-weight: 500;

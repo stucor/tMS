@@ -35,11 +35,14 @@ function showBD(linktext) {
 
   function getMultiSuttaJSONFileName (suttaNumber) {//suttanumber(slug), file, slug
     const multiSuttaArr = [
+      ['an1.43','an1.41-50',''],
+      ['an1.44','an1.41-50',''],
       ['an1.170','an1.170-187',''],
       ['an1.188','an1.188-197',''],
       ['an1.239','an1.235-247',''],
       ['an1.328','an1.316-332',''],
       ['an1.49','an1.41-50',''],
+      ['an2.17','an2.11-20',''],
       ['an2.31','an2.21-31',''],
       ['an2.33','an2.32-41',''],
       ['an2.38','an2.32-41',''],
@@ -101,10 +104,10 @@ function showBD(linktext) {
 
   let [JSONFile, slug] = getMultiSuttaJSONFileName(slugStrip(scprintText));
 
+
   if (typeof showSpinner === "function") { 
 	  showSpinner();
   }
-
 
   buildSutta (JSONFile, slug, highlightArr, sclinkText, scprintText);
 
@@ -132,13 +135,13 @@ function slugStrip(slug) {
 }
 
 function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
-/*
+/* 
   console.log('file: '+ file); //file
   console.log('slug: '+ slug); //slug
   console.log('highlightArr: '+ highlightArr); //highlight array
   console.log('sclink: '+ sclink);
   console.log('scdisplayText: '+ scdisplayText); //printtext
-*/
+ */
   let html = '';
 
   html += `<div class="button-area">
@@ -195,13 +198,13 @@ function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
       var marker = removeHead = "";
       const [segSuttaNo, segSegmentNo] = segment.split(":");
 
-      if (segSegmentNo == highlightArr[highlightArrCounter]) {
+      if ((segSegmentNo == highlightArr[highlightArrCounter]) && (segSuttaNo == slug)) {
         inMark=true; // turns highlighting on
       }
       if (inMark) {
         marker = "sc-mark"; //add the class sc-mark
       } 
-      if (segSegmentNo == highlightArr[highlightArrCounter+1]) {
+      if ((segSegmentNo == highlightArr[highlightArrCounter+1]) && (segSuttaNo == slug)) {
         inMark=false; // turns highlighting off
         if (highlightArr.length-1 >= highlightArrCounter+2) {
           highlightArrCounter = highlightArrCounter+2;

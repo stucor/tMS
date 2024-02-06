@@ -284,6 +284,7 @@ strong {
 	/*text-align: justify;*/
 	width: 100%;
 	hyphens: auto;
+	hyphenate-limit-chars: 10 3 4;
 	font-size: var(--fontsize);
 	line-height: var(--lineheight);
 	overflow-x: scroll;
@@ -560,6 +561,10 @@ a {
 }
 
 blockquote > p:nth-child(1) > span.vcmarg  {
+	text-indent: 2.4em;
+}
+
+#selfquotearea > p:nth-child(2) > span.vcmarg  {
 	text-indent: 2.4em;
 }
 
@@ -865,12 +870,13 @@ dd > p {
 
 .texttitle {
 	font-style: italic;
-	text-decoration: underline dotted lightgray;
+	text-decoration: underline dotted rgba(211, 211, 211, 0.632);
 }
+
 
 /*
 .texttitle::before {
-	content:'“';
+  	content:'“';
 }
 
 .texttitle::after {

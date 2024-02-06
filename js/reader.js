@@ -182,19 +182,13 @@ function startup () {
 		formatbooknotes();
 		formatSCLinktext();
 
-
-
 		// give tables an id starting at table_1
 		let tabrefArr = document.querySelectorAll('table');
 		if (tabrefArr.length  > 0) {
 			for (let i = 0; i < tabrefArr.length; i++) {
 				tabrefArr[i].setAttribute("id", "table_"+ (i+1));
 			}
-			
 		}
-
-
-
 
 		var scroller = Math.floor(window.scrollY);
 		history.replaceState({scrollState: scroller},'',''); 
@@ -381,7 +375,7 @@ function buildInfo () {
 				html += `<div id="lotlist">	`
 				for (let i = 0; i < tabrefArr.length; i++) {
 					if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
-						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML}</span>`;
+						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
 						html += `<div class='lotlistitem'>${linktext}</div>`;
 					}
 				}

@@ -33,16 +33,19 @@ function showBD(linktext) {
     return output;
   }
 
-  function getMultiSuttaJSONFileName (suttaNumber) {//suttanumber(slug), file, slug
+  function getMultiSuttaJSONFileName (suttaNumber) { //suttanumber(slug), file, slug
     const multiSuttaArr = [
       ['an1.43','an1.41-50',''],
       ['an1.44','an1.41-50',''],
       ['an1.170','an1.170-187',''],
       ['an1.188','an1.188-197',''],
       ['an1.239','an1.235-247',''],
+      ['an1.314','an1.306-315',''],
+      ['an1.315','an1.306-315',''],
       ['an1.328','an1.316-332',''],
       ['an1.49','an1.41-50',''],
       ['an2.17','an2.11-20',''],
+      ['an2.18','an2.11-20',''],
       ['an2.31','an2.21-31',''],
       ['an2.33','an2.32-41',''],
       ['an2.38','an2.32-41',''],
@@ -55,6 +58,7 @@ function showBD(linktext) {
       ['dhp64','dhp60-75',''],
       ['dhp142','dhp129-145',''],
       ['dhp146','dhp146-156',''],
+      ['dhp154','dhp146-156',''],
       ['dhp157','dhp157-166',''],
       ['dhp188','dhp179-196',''],
       ['dhp204','dhp197-208',''],

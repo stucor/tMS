@@ -1429,24 +1429,20 @@ function setTheme(){
 				righticonstext[i].style.color = '#000';
 			}
 			
-			//lefticons[1].style.filter="invert(0)";
 			lefticons[0].style.filter="invert(0) hue-rotate(0) saturate(1) brightness(1) contrast(1) grayscale(0) sepia(0) ";
 
 			theBody.style.background = '#f7f7f7';
-			bookPages.style.background = '#fff';
-			bookPages.style.color = '#000'; 
+			bookPages.style.backgroundImage = 'unset';
 
 			theTopBar.style.background = '#fff';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
-			//theProgCont.style.background = '#eee';
-			//theProgCont.style.filter = 'brightness(1)';
 
 			theTocBtn.style.color = '#000';
 			theTocBtn2.style.color = '#000';
 			theTocBtn2.style.background = '#fff';	
 
-			theTocNav.style.background = '#fff';
-			theTocNav.style.color = '#000';
+			//theTocNav.style.background = '#fff';
+			//theTocNav.style.color = '#000';
 
 			theTocNav.classList.add('bright-scroll');
 			theTocNav.classList.add('bright-scroll-track');
@@ -1458,7 +1454,7 @@ function setTheme(){
 			theTocNav.classList.remove('mellow-scroll-track');
 			theTocNav.classList.remove('mellow-scroll-thumb');
 
-			theTocNav.style.boxShadow = '6px 0 6px -3px #888';
+			//theTocNav.style.boxShadow = '6px 0 6px -3px #888';
 
 			document.getElementsByTagName('meta')["theme-color"].content = "#fff";
 
@@ -1526,7 +1522,7 @@ function setTheme(){
 
 			r.style.setProperty('--TOCprogress', '#d6630f09');  //'#d6630f08'); '#f0f2fd80');
 			//r.style.setProperty('--TOChighlighter', '#00000000'); // '#00000037'); '#e3e7fdc0');
-			r.style.setProperty('--primarytextcolor', '#000');
+			r.style.setProperty('--primarytextcolor', '#13036c');
 			r.style.setProperty('--secondarytextcolor', '#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
 
@@ -1549,6 +1545,8 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#5a5a81');//'#a5670a');
 
+			r.style.setProperty('--sidenavboxshadow', '6px 0 3px -3px #BBB');
+
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
@@ -1566,24 +1564,18 @@ function setTheme(){
 			for( var i = 0; i < righticonstext.length; i++ ) {
 				righticonstext[i].style.color = '#d7d7d7';
 			}
-			//lefticons[1].style.filter="invert(35%)";
 			lefticons[0].style.filter="invert(75%)";
 
 			theBody.style.background = '#000';
-			bookPages.style.background = '#121212';
-			bookPages.style.color = '#d7d7d7';
+			bookPages.style.backgroundImage = 'unset';
 
 			theTopBar.style.background = '#121212';
 			theTopBar.style.boxShadow = '0 1px 0 1px #595959';
-			//theProgCont.style.background = '#414141';
-			//theProgCont.style.filter = 'brightness(.8)';
 
 			theTocBtn.style.color = '#cfcfcf';
 			theTocBtn2.style.color = '#cfcfcf';
 			theTocBtn2.style.background = '#121212';	
 
-			theTocNav.style.background = '#121212';
-			theTocNav.style.color = '#cfcfcf';
 			theTocNav.classList.remove('mellow-scroll'); 
 			theTocNav.classList.remove('mellow-scroll-track');
 			theTocNav.classList.remove('mellow-scroll-thumb');
@@ -1593,8 +1585,7 @@ function setTheme(){
 			theTocNav.classList.add('dark-scroll'); // the test
 			theTocNav.classList.add('dark-scroll-track'); // the test
 			theTocNav.classList.add('dark-scroll-thumb'); // the test
-			theTocNav.style.boxShadow = '2px 0 2px 1px #595959';
-			
+
 			document.getElementsByTagName('meta')["theme-color"].content = "#121212";
 
 			setModalTheme ("SimpleDark") 
@@ -1681,6 +1672,8 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#c4cdda');
 
+			r.style.setProperty('--sidenavboxshadow', '2px 0 2px 1px #595959');
+
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#7c7c7c';
 			engrave.style.textShadow ='0px 1px 0px #ffffff';
@@ -1701,25 +1694,16 @@ function setTheme(){
 				righticonstext[i].style.color = '#191892';
 			}
 
-			//lefticons[1].style.filter="invert(0)";
-			//lefticons[0].style.filter="invert(5%) sepia(94%) saturate(6660%) hue-rotate(231deg) brightness(108%) contrast(144%)";
-			
 			theBody.style.background = '#f1e8bb';
 			bookPages.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';
-			bookPages.style.color = '#382500'; 
 
 			theTopBar.style.background = '#f5efd0';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
-			//theProgCont.style.background = '#ccc';
-			//theProgCont.style.filter = 'brightness(1)';
 
 			theTocBtn.style.color = '#00008b';
 
 			theTocBtn2.style.color = '#00008b';
 			theTocBtn2.style.background =  '#f5efd0';	
-	
-			theTocNav.style.background = '#f5efd0';
-			theTocNav.style.color = '#382500'; //'#5e4102';
 
 			theTocNav.classList.remove('bright-scroll');
 			theTocNav.classList.remove('bright-scroll-track');
@@ -1730,7 +1714,6 @@ function setTheme(){
 			theTocNav.classList.add('mellow-scroll'); 
 			theTocNav.classList.add('mellow-scroll-track');
 			theTocNav.classList.add('mellow-scroll-thumb');
-			theTocNav.style.boxShadow = '6px 0 6px -3px #888';
 
 			document.getElementsByTagName('meta')["theme-color"].content = "#f5efd0";
 
@@ -1765,11 +1748,6 @@ function setTheme(){
 				searchbuttons[i].style.color = "#00008b";
 			}			
 
-			/*
-			for( var i = 0; i < tables.length; i++ ) {
-				tables[i].style.filter = "sepia(55%) contrast(95%)";
-			}	
-*/
 
 			if (isAudioBook ()) {
 				r.style.setProperty('--audioplayercont', 'unset');
@@ -1824,6 +1802,8 @@ function setTheme(){
 			r.style.setProperty('--figureimgborder', '#b88b7b');
 
 			r.style.setProperty('--scsegmentnumbercolor', '#5c0909');
+
+			r.style.setProperty('--sidenavboxshadow', '3px 0 6px -3px #888');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';

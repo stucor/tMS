@@ -36,7 +36,7 @@
 }
 
 :root {
-	--notused: darkgreen;
+	--notused: #b87524;
 
 	--fontsize: 1rem;
 	--lineheight: 1.5;
@@ -87,6 +87,8 @@
 
 	--selfquoteleftmargin: -3em;
 	--selfquotetopmargin: -1em;
+
+	--sidenavboxshadow: 6px 0 6px -3px #888;
 }
 
 body {
@@ -105,6 +107,11 @@ body {
 	min-width:100%;
 	position:relative;
 	z-index: -20;
+}
+
+::selection {
+	color: var(--primarybackground);
+	background-color: var(--primarytextcolor);
 }
 
 strong {
@@ -289,6 +296,7 @@ strong {
 	line-height: var(--lineheight);
 	overflow-x: scroll;
 	min-height: 100vh;
+
 }
 
 .content h1 {
@@ -326,6 +334,8 @@ strong {
 .editor-note {
 	color: var(--secondarytextcolor);
 	font-style: italic;
+	font-size: smaller;
+	user-select: none;
 }
 
 .editor-note::before {
@@ -820,6 +830,8 @@ table.borderlessTable {
 	display:none;
 	text-align: var(--textalign);
 	font-family: var(--fontfamily);
+	background-color: var(--primarybackground);
+	color: var(--primarytextcolor)
 }
 
 .booknote {
@@ -1749,11 +1761,12 @@ mark.current {
     width: 0;
     position: fixed;
     left: 0;
-    background-color: #fff;
+    background-color: var(--primarybackground);
+	color: var(--primarytextcolor);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 0;
-	box-shadow: 6px 0 6px -3px #888;
+	box-shadow: var(--sidenavboxshadow);
 	user-select: none;
 	hyphens: auto;
 /*	top: 0;

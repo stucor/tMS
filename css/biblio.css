@@ -68,6 +68,24 @@ a {
 }
 */
 
+.quotepno {
+	position: relative;
+	color:var(--primarybackground);
+	background: darkgrey;
+	padding: 0 0.3em;
+	border-radius: 0.5em;
+	top:-0.2em;
+	font-size: 0.6em;
+	margin: 0 0.2em 0 0;
+	user-select: none;
+}
+.quotepno::before {
+	content: 'p.'
+}
+.quotepno::after {
+	content: ''
+}
+
 .bibheadhide {
     display: none;
 }
@@ -99,21 +117,6 @@ a {
 	filter:opacity(80%)
 }
 
-/* .refaudio::before {
-	background-image: url('../_resources/images/icons/play-button-round-icon.svg');
-	background-repeat: no-repeat;
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1em;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.1em;
-    margin-right: 0.3em;
-	filter: invert(70%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(87%) contrast(83%);
-}
- */
-
 .refaudio::before {
 	content: '🔊';
 	margin-bottom: -0.3em;
@@ -139,20 +142,6 @@ a {
 	margin-right: 0;
 	filter: invert(27%) sepia(78%) saturate(1396%) hue-rotate(221deg) brightness(86%) contrast(91%);
 }
-/* 
-.library::before {
-    background-image: url('../_resources/images/icons/library.svg');
-    background-size: 3.5em;
-    display: inline-block;
-    width: 3.5em; 
-    height: 1.2em;
-    content:"";
-	margin-bottom: -0.3em;
-	margin-left: 0.1em;
-	background-repeat: no-repeat;
-	filter: invert(62%) sepia(16%) saturate(6671%) hue-rotate(195deg) brightness(97%) contrast(91%);
-}
-*/
 
 .library::before {
     background-image: url('../_resources/images/icons/bookshelf-colour.svg');
@@ -166,8 +155,6 @@ a {
 	margin-right: 0.3em;
 	background-repeat: no-repeat;
 }
-
-
 
 .internetArchive::before {
     background-image: url('../_resources/images/icons/IA-logo.svg');

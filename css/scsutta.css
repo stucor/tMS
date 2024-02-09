@@ -207,7 +207,6 @@ header li .segno {
   color: cornflowerblue;
   text-decoration: none;
   cursor: pointer;
-  outline: double 0 var(--notehighlighter); 
   border-radius: 1em;
 	padding: 0 3px;
 	margin: 0 -3px;

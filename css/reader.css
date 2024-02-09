@@ -2007,8 +2007,6 @@ mark.current {
 
 /* Self Quotes */
 
-
-
 .selfquote::before {
     content: attr(data-before-selfquote); 
 	font-size: 0.8em;

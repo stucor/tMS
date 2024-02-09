@@ -2730,30 +2730,33 @@ function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
 	savedNotesElements[highlightedNote].style.border = "thin solid var(--bdtexthighlightborder)"; //#229635";
 	savedNotesElements[highlightedNote].style.background = "var(--bdtexthighlighter)"; //"#22963506"; //"#c0c0c020";
-	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
-	ModalBody.scrollBy(0,-40);
+	savedNotesElements[highlightedNote].scrollIntoView({block: "center", inline: "nearest", behavior: "smooth"});
+	//ModalBody.scrollBy(0,-40);
 }
 
 
-function clearhighlightnote(when='delay') {
+function clearhighlightnote(when='delay', keepSup= false) {
 	savedNotesElements[highlightedNote].style.border = "unset";
 	savedNotesElements[highlightedNote].style.background = "unset";
 		if (!(savedsup === '')) {
 			if (savedsup.tagName == 'TABLE')  {
-				savedsup.parentElement.style.boxShadow = " 0px -22px 77px -5px var(--notehighlighter)"
+				savedsup.parentElement.style.boxShadow = "0px -22px 77px -5px var(--notehighlighter)"
 			} else if (savedsup.tagName == 'FIGURE') {
 				savedsup.style.boxShadow = " 0px -22px 77px -5px var(--notehighlighter)"
 				savedsup.style.background = "var(--notehighlighter)"
 				savedsup.style.opacity = "0.5"
 			} else {
 				savedsup.style.background = "var(--notehighlighter)" //"var(--secondarytextcolor)"
-				savedsup.style.boxShadow = " 0px 0px 10px 10px var(--notehighlighter)"
+				savedsup.style.boxShadow = "0px 0px 10px 10px var(--notehighlighter)"
 				savedsup.style.opacity = "0.7"
-				savedsup.style.color = "blue"
+				savedsup.style.color = "red"
 			}
 			if (when=='immediate') {
 				savedsup.style = null;
-				savedsup='';
+				if (!keepSup) {
+					savedsup='';
+				}
+
 			} else {
 				setTimeout(function() {
 					savedsup.style.transition = "all 0.3s ease-out";
@@ -2764,7 +2767,9 @@ function clearhighlightnote(when='delay') {
 					if (savedsup.parentElement.classList.contains('tablewrap')) {
 						savedsup.parentElement.style = null;
 					}
-					savedsup='';
+					if (!keepSup) {
+						savedsup='';
+					}
 				},400);
 			}
 		}
@@ -3031,7 +3036,9 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		noteFromNumber = e.target.parentNode.parentNode.dataset.note;
 
 		let scrollToE = document.querySelectorAll(`[data-note="${noteNumber}"]`);
-		scrollToE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+		scrollToE[0].scrollIntoView({block: "center", inline: "nearest", behavior: "smooth"});
+		clearhighlightnote(noteFromNumber, 'immediate', true);
+		highlightnote(noteNumber);
 
 		// create a return btn(span)
 		const backbtn = document.createElement("span");
@@ -3039,9 +3046,8 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		const backbtnText = document.createTextNode(`Return to note ${noteFromNumber}`);
 		backbtn.appendChild(backbtnText)
 		backbtn.addEventListener('click', (event) => {
-			let scrollToCallingE = document.querySelectorAll(`[data-note="${noteFromNumber}"]`);
-			scrollToCallingE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
-			//remove return btn(span) after clickand scroll back
+			clearhighlightnote(noteNumber,'immediate', true);
+			highlightnote(noteFromNumber);
 			event.target.remove();
 		  });
 		

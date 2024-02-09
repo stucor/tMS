@@ -188,6 +188,7 @@ strong {
 }
 
 
+
 /********** Page Breaks **********/
 /*
 .pagebreak {
@@ -439,7 +440,7 @@ strong {
 	margin-bottom: 0;
 }
 
-p + p {
+.book > p + p, blockquote > p + p {
 	text-indent: 2em;
 	margin-top: 0;
 }
@@ -569,7 +570,6 @@ a {
 }
 
 .line-block p + p, .infocontainer p + p {
-	text-indent: unset;
 	margin-top: 1em;
 	
 }
@@ -581,6 +581,24 @@ a {
 	top:0.3em;
 	float:left;
 	margin-left: -4em;
+}
+
+/* in line blocks you can use these to slightly out-dent the first line if there is a “ starting the line */
+.OAstart {
+	text-indent: -0.43em;
+}
+.OAstart-top {
+	text-indent: -0.46em;
+}
+.OAstart-doubletop {
+	text-indent: -0.58em;
+}
+.OAstart-bottom {
+	text-indent: -0.35em;
+}
+
+.OAstart > span.vcmarg {
+	text-indent: 0.05em;
 }
 
 blockquote > p:nth-child(1) > span.vcmarg  {
@@ -2543,11 +2561,11 @@ margin-bottom: 0;
 		background-color: var(--listlinkhover);
 		cursor:pointer;
 	}
-
+/* 
 	sup:hover, .goselfquote:hover {
 		box-shadow: 0 0 5px 1px var(--suphovercolor);
 	}
-
+ */
 	.select-css:hover {
 		box-shadow: 0 0 5px 1px var(--primarycolor);
 	}

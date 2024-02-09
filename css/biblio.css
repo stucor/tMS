@@ -29,7 +29,6 @@ a {
 .expanded {
 	background: var(--primarybackground);
 	border-radius: 1em;
-
 }
 
 .expansion {
@@ -187,6 +186,7 @@ a {
 }
 
 
-.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover, .refpdf:hover, .sacredTexts:hover{
+/* .internetArchive:hover, .library:hover, .online:hover, .refaudio:hover, .refpdf:hover, .sacredTexts:hover{
 	box-shadow: 0 0 5px 1px var(--suphovercolor);
 } 
+ */

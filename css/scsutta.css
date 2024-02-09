@@ -277,11 +277,11 @@ header li .segno {
   .button-area > button:hover {
     box-shadow: 0 0 1px 1px var(--primarycolor);
   }
-
+/* 
   .sclinktext:hover {
 		box-shadow: 0 0 5px 1px var(--primarycolor);
 	}
-
+ */
 	.checkcontainer:hover input ~ .checkmark {
 		box-shadow: 0 0 2px 1px var(--primarycolor);
 	  }
@@ -292,9 +292,6 @@ header li .segno {
     margin: 30px 0;
     padding: 20px 1%;
   }
-
-
-
 
   .button-area > span.sc-link {
     left: 0;

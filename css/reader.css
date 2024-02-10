@@ -495,14 +495,39 @@ a {
 	list-style-type: circle;
 }
 
+@counter-style paren-decimal {
+	system: extends decimal;
+	prefix: "";
+	suffix: ") ";
+  }
+
+/* @counter-style circled-alpha {
+	system: fixed;
+	symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
+	suffix: " ";
+}
+ */
+ 
+
+ 
+.content ol {
+	list-style: paren-decimal;
+}
+
+ .content ol li::marker {
+	font-variant: small-caps;
+	font-family: 'Source Sans Pro';
+}
+
 .content li {
 	margin-bottom: .5em;
 	text-align: left;
 	padding-left: 0.5em;
+	text-align: var(--textalign);
 }	
 
 .content ul li::marker {
-	content: '\22C5';/*'\22C5';/*'\2219'; /*'\203A' /*'\00bb'; */
+	content: '·';/*'\22C5';/*'\2219'; /*'\203A' /*'\00bb'; */
 }	
 
 
@@ -596,8 +621,15 @@ a {
 .OAstart-bottom {
 	text-indent: -0.35em;
 }
+.OAstart-little {
+	text-indent: -0.3em;
+}
 
-.OAstart > span.vcmarg {
+.OAstart > span.vcmarg, 
+.OAstart-top > span.vcmarg, 
+.OAstart-doubletop > span.vcmarg, 
+.OAstart-bottom > span.vcmarg, 
+.OAstart-little > span.vcmarg  {
 	text-indent: 0.05em;
 }
 
@@ -679,7 +711,7 @@ blockquote p::after {
 	margin-bottom: 0.5em;
 }
 
-ol {
+ol, ul {
 	padding:0 1em; 
 	margin: 1em 2em 2em 2em;
 }
@@ -853,6 +885,7 @@ table.borderlessTable {
 }
 
 .booknote {
+	scroll-margin-block-start: 2em;
 	margin: 10px 10%;
 	padding:10px;
 	border-radius: 10px;
@@ -1787,9 +1820,6 @@ mark.current {
 	box-shadow: var(--sidenavboxshadow);
 	user-select: none;
 	hyphens: auto;
-/*	top: 0;
-	bottom: 0;
-	overflow-y: scroll; */
 	overscroll-behavior: none;
 }
 
@@ -1806,12 +1836,13 @@ mark.current {
 }
 
 .sidenav ul {
-	padding: 10px;
 	min-height: 101vh;
+	margin: 10px 0;
+	padding: 0;
 }
 
 .sidenav ul li {
-    padding: 8px;
+    padding: 8px 2px;
 	text-decoration: none;
     display: block;
 	cursor: pointer;
@@ -1823,13 +1854,14 @@ mark.current {
 .sidenav li {
 	position:relative;
 	border:1px dotted #ffffff00;
-	margin: 0 -10px;
+	margin: 0;
 }
 
 .sidenav li::after {
 	position:absolute;
 	right:2px;
-	bottom: 0;
+	bottom: 1px;
+	padding:1px;
 	content: attr(data-progress);
 	color: var(--pickedtext);
 	background-color: var(--primarybackground);
@@ -2589,7 +2621,6 @@ margin-bottom: 0;
 
 	.sidenav li:hover {
 		border:1px solid var(--primarycolor);
-		margin: 0 -10px;
 		background-color: var(--listlinkhover) !important;
 		opacity:1 !important;
 	}

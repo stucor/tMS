@@ -2090,14 +2090,8 @@ window.onscroll = function() {
 			}
 		}
 	}
- 	
-
-
 
 	prevScrollpos = currentScrollPos;
-//savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
-
-
 
 	//populate progress bar
 	fillProgressBar();
@@ -2142,7 +2136,6 @@ function fillProgressBar() {
 				savedTOCElements[i-1].style.opacity = '1';
 				savedTOCElements[i-1].style.borderTop = "thin dotted var(--primarycolor)";//#d6630f8F";
 				savedTOCElements[i-1].style.borderBottom = "thin dotted var(--primarycolor)";
-				//savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
 				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 				var scrolled = Math.floor(((winScroll / height) * 100)* 10) /10;
@@ -2730,8 +2723,8 @@ function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
 	savedNotesElements[highlightedNote].style.border = "thin solid var(--bdtexthighlightborder)"; //#229635";
 	savedNotesElements[highlightedNote].style.background = "var(--bdtexthighlighter)"; //"#22963506"; //"#c0c0c020";
-	savedNotesElements[highlightedNote].scrollIntoView({block: "center", inline: "nearest", behavior: "smooth"});
-	//ModalBody.scrollBy(0,-40);
+	//console.log('here')
+	savedNotesElements[highlightedNote].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
 }
 
 
@@ -2789,7 +2782,6 @@ function exitStaticModal () {
 		setModalStyle ("Notes");
 		showModal("Notes");
 		savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
-		ModalBody.scrollBy(0,-40);
 		calledFromNotes = false;
 	} else {
 		startBookScroll();
@@ -3036,7 +3028,7 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		noteFromNumber = e.target.parentNode.parentNode.dataset.note;
 
 		let scrollToE = document.querySelectorAll(`[data-note="${noteNumber}"]`);
-		scrollToE[0].scrollIntoView({block: "center", inline: "nearest", behavior: "smooth"});
+		scrollToE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
 		clearhighlightnote(noteFromNumber, 'immediate', true);
 		highlightnote(noteNumber);
 
@@ -3050,7 +3042,6 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 			highlightnote(noteFromNumber);
 			event.target.remove();
 		  });
-		
 		scrollToE[0].lastChild.appendChild(backbtn)
 	}
 

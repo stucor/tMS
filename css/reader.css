@@ -501,15 +501,7 @@ a {
 	suffix: ") ";
   }
 
-/* @counter-style circled-alpha {
-	system: fixed;
-	symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
-	suffix: " ";
-}
- */
- 
 
- 
 .content ol {
 	list-style: paren-decimal;
 }
@@ -1010,10 +1002,6 @@ sup {
 	user-select: none;
 }
 
-#ccDetail li {
-	font-size: smaller;
-	margin-bottom: 0.5em;
-}
 
 /* START Book Cover and Author Details */
 
@@ -1076,7 +1064,7 @@ sup {
 
 
 .info-addon {
-	margin: 1em 2em; 
+	margin: 1em; 
 	text-align: left; 
 	background-color: #8080800c; 
 	padding: 1rem 1rem 0.1rem 1rem;
@@ -1087,18 +1075,14 @@ sup {
 	margin:0 0 1rem 0;
 }
 
-.cclicense {
-	text-align: left;
+.copyright {
+	font-size: 0.9em;
+	text-align: justify;
 	margin-right: 2em;
+	line-height: 1.2em;
 }
 
 .cclicense h3 {
-	font-size: 1em;
-}
-
-.cclicense p {
-	margin: 0.5em 0 0 0;
-	font-weight: 400;
 	font-size: 1em;
 }
 
@@ -1113,6 +1097,9 @@ sup {
 	white-space: nowrap;
 }
 
+#ccDetail > p, #ccDetail > ul > li{
+	margin: 0 0 0.3em 0;
+} 
 
 #reflist {
 	display: grid;

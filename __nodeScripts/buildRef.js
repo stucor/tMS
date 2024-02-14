@@ -238,7 +238,7 @@ function buildRef (bookID) {
             } */
 
             //url
-            let linkSeparator = `<span style='opacity:0.1'>•</span>`;
+            let linkSeparator = `<span class='linkseparator'>•</span>`;
             html += `<span class = "linkContainer">`
 
             if (referencesData[i].hasOwnProperty('URL')) {

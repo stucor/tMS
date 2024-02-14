@@ -36,7 +36,7 @@
 }
 
 :root {
-	--notused: #b87524;
+	--notused: #8f3e00;/*#843924;*/
 
 	--fontsize: 1rem;
 	--lineheight: 1.5;
@@ -51,6 +51,7 @@
 	--TOChighlighter: #f7f7f7;
 
 	--invisiblecolor: rgba(42, 218, 159, 0);
+	--lightwash:  rgba(239, 239, 239, 0.14);
 
 	--primarycolor: #cea140;
 	--primarytextcolor: #000;
@@ -440,7 +441,7 @@ strong {
 	margin-bottom: 0;
 }
 
-.book > p + p, blockquote > p + p {
+.book > p + p, blockquote > p + p, #selfquotearea > p + p {
 	text-indent: 2em;
 	margin-top: 0;
 }
@@ -2549,6 +2550,10 @@ margin-bottom: 0;
 	.lotlistitem::before, .figlistitem::before {
 		content: '\00B7 ';
 		margin-left: -0.3em
+	}
+
+	#ModalSelfquote {
+		padding: 2em 2%;
 	}
 	
 }

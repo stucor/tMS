@@ -90,14 +90,14 @@ a {
 }
 
 .linkContainer {
-    /*background:var(--bdtexthighlighter);*/
-	border: 1px rgba(128, 128, 128, 0.50) dotted;
 	box-sizing: border-box;
     white-space: nowrap;
     padding: 0 0.2em;
     border-radius: 5px;
 }
-
+.linkseparator {
+	opacity: 0.5;
+}
 .refpdf {
     font-size: smaller;
 }

@@ -1523,7 +1523,7 @@ function setTheme(){
 			r.style.setProperty('--TOCprogress', '#d6630f09');  //'#d6630f08'); '#f0f2fd80');
 			//r.style.setProperty('--TOChighlighter', '#00000000'); // '#00000037'); '#e3e7fdc0');
 			r.style.setProperty('--primarytextcolor', '#13036c');
-			r.style.setProperty('--secondarytextcolor', '#5a5a81');//'#577096');
+			r.style.setProperty('--secondarytextcolor', '#8f3e00'); //'#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
 
 			r.style.setProperty('--pickedtext', '#1c222b');

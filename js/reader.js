@@ -215,42 +215,42 @@ function startup () {
 		}
 		justifyCheck.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doJustifyCheck) // execute anync
+			promiseToRunAsync(doJustifyCheck) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		hyphenCheck.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doHyphenCheck) // execute anync
+			promiseToRunAsync(doHyphenCheck) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		document.getElementById("decfont").onclick = function () { // minus button
 				showSpinner(); // show spinner
-				promiseToRunAsync(doDecFont) // execute anync
+				promiseToRunAsync(doDecFont) 
 				.then(() => {
 					hideSpinner();
 				});
 		}
 		document.getElementById("incfont").onclick = function () { //plus button
 			showSpinner(); // show spinner
-			promiseToRunAsync(doIncFont) // execute anync
+			promiseToRunAsync(doIncFont) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		declh.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doDecLH) // execute anync
+			promiseToRunAsync(doDecLH) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		inclh.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doIncLH) // execute anync
+			promiseToRunAsync(doIncLH) 
 			.then(() => {
 				hideSpinner();
 			});
@@ -266,35 +266,35 @@ function startup () {
 		}
 		radioMargNarrow.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doSetMargin) // execute anync
+			promiseToRunAsync(doSetMargin) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		radioMargMid.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doSetMargin) // execute anync
+			promiseToRunAsync(doSetMargin) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		radioMargWide.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doSetMargin) // execute anync
+			promiseToRunAsync(doSetMargin) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		serifFont.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doSetSerif) // execute anync
+			promiseToRunAsync(doSetSerif) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		showParaNosList.onchange = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doParaNosList) // execute anync
+			promiseToRunAsync(doParaNosList) 
 			.then(() => {
 				hideSpinner();
 			});
@@ -714,7 +714,7 @@ function buildInfo () {
 //ONLOAD
 window.onload = function () {
     showSpinner(); // show spinner
-    promiseToRunAsync(startup) // execute anync
+    promiseToRunAsync(startup) 
     .then(() => {
         hideSpinner();
 		getPlaceInBook();
@@ -3024,9 +3024,15 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 
 	if (e.target.classList.contains('noteinnotes')) {
 		//let notesArr = document.getElementsByClassName('booknote')
-		noteNumber = e.target.innerText
-		noteFromNumber = e.target.parentNode.parentNode.dataset.note;
-
+		let noteNumber = e.target.innerText
+		let noteFromNumber = '';
+		if (e.target.parentNode.parentNode.hasAttribute("data-note") ) {
+			noteFromNumber = e.target.parentNode.parentNode.dataset.note;
+		} else if (e.target.parentNode.parentNode.parentNode.hasAttribute("data-note") ) {
+			noteFromNumber = e.target.parentNode.parentNode.parentNode.dataset.note;
+		}
+		clearAnyNoteInNoteReturn();
+		
 		let scrollToE = document.querySelectorAll(`[data-note="${noteNumber}"]`);
 		scrollToE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
 		clearhighlightnote(noteFromNumber, 'immediate', true);
@@ -3035,7 +3041,7 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		// create a return btn(span)
 		const backbtn = document.createElement("span");
 		backbtn.classList.add('noteinnotereturn')
-		const backbtnText = document.createTextNode(`Return to note ${noteFromNumber}`);
+		const backbtnText = document.createTextNode(` [Return to note ${noteFromNumber}]`);
 		backbtn.appendChild(backbtnText)
 		backbtn.addEventListener('click', (event) => {
 			clearhighlightnote(noteNumber,'immediate', true);
@@ -3117,7 +3123,7 @@ function buildExternalQuote (ele) {
 			ele.classList.remove('externalquote')
 			html += `⊗ <div class='expansion' style='font-size:0.9em; margin: 0.5em 0;  padding:0.5em 1em;'>`
 			html += `<h3>${quoteData.Document}<br>${quoteData.Section}, ${quoteData.SubSection}<br>${quoteData.Title}<br>&mdash; ${quoteData.Author}</h3>`
-			html += quoteData.Quote
+			html += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
 			html += `</div>`
 			ele.innerHTML = html
 		}
@@ -3127,7 +3133,6 @@ function buildExternalQuote (ele) {
 			.catch(error => {
 				console.log(`${error}ERROR: Can't fetch ../_resources/${externalResource}/${quoteFile}.json`);
 			}
-
 		);
 	}
 }

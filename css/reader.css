@@ -507,7 +507,7 @@ a {
 	list-style: paren-decimal;
 }
 
- .content ol li::marker {
+.content ol li::marker {
 	font-variant: small-caps;
 	font-family: 'Source Sans Pro';
 }
@@ -522,7 +522,6 @@ a {
 .content ul li::marker {
 	content: '·';/*'\22C5';/*'\2219'; /*'\203A' /*'\00bb'; */
 }	
-
 
 .addendumtitle {
 	font-size: 1em;
@@ -891,6 +890,34 @@ table.borderlessTable {
 	margin-top: 0;
 	margin-bottom: 0;
 	text-indent: 1em;
+}
+.booknote ol, .booknote ul {
+	padding:0 1em; 
+	margin: 1em 2em;
+}
+
+.booknote ol {
+	list-style: paren-decimal;
+}
+
+.booknote ol li::marker {
+	font-variant: small-caps;
+	font-family: 'Source Sans Pro';
+}
+
+.booknote li {
+	margin-bottom: .5em;
+	text-align: left;
+	padding-left: 0.5em;
+	text-align: var(--textalign);
+}	
+
+.booknote ul li::marker {
+	content: '·';/*'\22C5';/*'\2219'; /*'\203A' /*'\00bb'; */
+}
+
+.booknote ol + p {
+	text-indent: 0;
 }
 
 
@@ -1830,7 +1857,7 @@ mark.current {
 }
 
 .sidenav ul li {
-    padding: 8px 2px;
+    padding: 8px 4px;
 	text-decoration: none;
     display: block;
 	cursor: pointer;
@@ -2052,7 +2079,7 @@ mark.current {
 	font-weight: 500;
 	margin-left: var(--selfquoteleftmargin);
 	margin-top: var(--selfquotetopmargin);
-	color: var(--secondarycolor) /*rgb(170, 170, 170);*/
+	color: var(--secondarycolor);
 }
 
 

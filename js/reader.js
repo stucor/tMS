@@ -1294,42 +1294,6 @@ function setTOCLevel (level) { // if level is between 16 and 24 set it to that o
 			savedTOCElements[i].style.fontSize = (parseInt(level)+1)+'px';
 		}
 	} 
-
-/* 	if (level > 16)  {
-		if (level <= 24) {
-			for (var i = 0; i < savedTOCElements.length; i++) { 
-				if (savedTOCElements[i].classList.contains('sub')) {
-					savedTOCElements[i].style.fontSize = (level-2)+'px';
-				} else if (savedTOCElements[i].classList.contains('subsub')) {
-					savedTOCElements[i].style.fontSize = (level-3)+'px';
-				} else {
-					savedTOCElements[i].style.fontSize = level+'px';
-				}
-			} 
-		} else {
-			for (var i = 0; i < savedTOCElements.length; i++) { 
-				
-				if (savedTOCElements[i].classList.contains('sub')) {
-					savedTOCElements[i].style.fontSize = '22px';
-				} else if (savedTOCElements[i].classList.contains('subsub')) {
-					savedTOCElements[i].style.fontSize = '21px';
-				} else {
-					savedTOCElements[i].style.fontSize = '24px';
-				}
-			}	
-		}			
-	} else {
-		for (var i = 0; i < savedTOCElements.length; i++) { 
-			if (savedTOCElements[i].classList.contains('sub')) {
-				savedTOCElements[i].style.fontSize = '14px';
-			} else if (savedTOCElements[i].classList.contains('subsub')) {
-				savedTOCElements[i].style.fontSize = '13px';
-			} else {
-				savedTOCElements[i].style.fontSize = '16px';
-			}
-		}
-	}	 */
-
 }
 function setDetailsLevel (level) {
 	for (var i = 0; i < savedDetailsElements.length; i++) {
@@ -1349,13 +1313,7 @@ function setDetailsLevel (level) {
 			}
 	}
 }	
-/*
-function setNotesLevel (level) {
-	for (var i = 0; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].style.fontSize = level+'px';
-	}
-}	
-*/
+
 // LINE SPACING
 function setLH (level) {
 	if (!isAudioBook()) {
@@ -1389,16 +1347,10 @@ function setTheme(){
 	var theBody = document.getElementById("thebody");
 	var bookPages = document.getElementById("thecontent"); 
 
-	//var theProgCont = document.getElementById("prog-cont"); 
-	//var theProgBar = document.getElementById("progressBar");
-
-	var theTocBtn = document.getElementById("tocBtn");	
-	var theTocBtn2 = document.getElementById("tocbtn2");
 	var theTocNav = document.getElementById("tocnav");
 
 	var imgs = document.querySelectorAll("img");
 	var righticons = document.querySelectorAll(".topnav-right > a > img ");
-	var righticonstext = document.querySelectorAll(".topnav-right > a > p");
 	var lefticons = document.querySelectorAll(".topnav-left > a > img");
 
 	var shbuttons = document.querySelectorAll(".settingsheadersright > button");
@@ -1425,10 +1377,7 @@ function setTheme(){
 			for( var i = 0; i < righticons.length; i++ ) {
 				righticons[i].style.filter="invert(0)";
 			}
-			for( var i = 0; i < righticonstext.length; i++ ) {
-				righticonstext[i].style.color = '#000';
-			}
-			
+	
 			lefticons[0].style.filter="invert(0) hue-rotate(0) saturate(1) brightness(1) contrast(1) grayscale(0) sepia(0) ";
 
 			theBody.style.background = '#f7f7f7';
@@ -1436,13 +1385,6 @@ function setTheme(){
 
 			theTopBar.style.background = '#fff';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
-
-			theTocBtn.style.color = '#000';
-			theTocBtn2.style.color = '#000';
-			theTocBtn2.style.background = '#fff';	
-
-			//theTocNav.style.background = '#fff';
-			//theTocNav.style.color = '#000';
 
 			theTocNav.classList.add('bright-scroll');
 			theTocNav.classList.add('bright-scroll-track');
@@ -1453,8 +1395,6 @@ function setTheme(){
 			theTocNav.classList.remove('mellow-scroll'); 
 			theTocNav.classList.remove('mellow-scroll-track');
 			theTocNav.classList.remove('mellow-scroll-thumb');
-
-			//theTocNav.style.boxShadow = '6px 0 6px -3px #888';
 
 			document.getElementsByTagName('meta')["theme-color"].content = "#fff";
 
@@ -1501,10 +1441,6 @@ function setTheme(){
 				r.style.setProperty('--audiosliderhovercolor', '#c9d5fc');
 				var audiobookcover = document.getElementById("bookimage");
 				audiobookcover.style.filter = "grayscale(0) sepia(0)  opacity(1)";
-				var buttontext = document.querySelectorAll("#button-cont button");
-				for (var i = 0; i < buttontext.length; i++) {
-					buttontext[i].style.color = "#000";
-				}
 				var vd = document.getElementById('vol-down');
 				var vu = document.getElementById('vol-up');
 				vd.style.filter="invert(0)";
@@ -1521,10 +1457,12 @@ function setTheme(){
 			}
 
 			r.style.setProperty('--TOCprogress', '#d6630f09');  //'#d6630f08'); '#f0f2fd80');
-			//r.style.setProperty('--TOChighlighter', '#00000000'); // '#00000037'); '#e3e7fdc0');
 			r.style.setProperty('--primarytextcolor', '#13036c');
 			r.style.setProperty('--secondarytextcolor', '#8f3e00'); //'#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
+
+			r.style.setProperty('--primaryinterfacecolor', '#000');
+			r.style.setProperty('--imgbackground', '#00000000');
 
 			r.style.setProperty('--pickedtext', '#1c222b');
 			r.style.setProperty('--buttontext', '#000');
@@ -1556,14 +1494,12 @@ function setTheme(){
 
 		case "simpledark":
 			for( var i = 0; i < imgs.length; i++ ) {
-				imgs[i].style.filter="brightness(.8) contrast(1.2) grayscale(10%)";
+				imgs[i].style.filter="brightness(.8) contrast(1.2) grayscale(50%)";
 			}
 			for( var i = 0; i < righticons.length; i++ ) {
 				righticons[i].style.filter="invert(75%)";
 			}
-			for( var i = 0; i < righticonstext.length; i++ ) {
-				righticonstext[i].style.color = '#d7d7d7';
-			}
+
 			lefticons[0].style.filter="invert(75%)";
 
 			theBody.style.background = '#000';
@@ -1572,19 +1508,15 @@ function setTheme(){
 			theTopBar.style.background = '#121212';
 			theTopBar.style.boxShadow = '0 1px 0 1px #595959';
 
-			theTocBtn.style.color = '#cfcfcf';
-			theTocBtn2.style.color = '#cfcfcf';
-			theTocBtn2.style.background = '#121212';	
-
 			theTocNav.classList.remove('mellow-scroll'); 
 			theTocNav.classList.remove('mellow-scroll-track');
 			theTocNav.classList.remove('mellow-scroll-thumb');
 			theTocNav.classList.remove('bright-scroll'); 
 			theTocNav.classList.remove('bright-scroll-track');
 			theTocNav.classList.remove('bright-scroll-thumb');
-			theTocNav.classList.add('dark-scroll'); // the test
-			theTocNav.classList.add('dark-scroll-track'); // the test
-			theTocNav.classList.add('dark-scroll-thumb'); // the test
+			theTocNav.classList.add('dark-scroll'); 
+			theTocNav.classList.add('dark-scroll-track');
+			theTocNav.classList.add('dark-scroll-thumb');
 
 			document.getElementsByTagName('meta')["theme-color"].content = "#121212";
 
@@ -1629,10 +1561,6 @@ function setTheme(){
 				r.style.setProperty('--audiosliderhovercolor', '#475f7a');
 				var audiobookcover = document.getElementById("bookimage");
 				audiobookcover.style.filter = "grayscale(0.7) sepia(0) opacity(0.5)";
-				var buttontext = document.querySelectorAll("#button-cont button");
-				for (var i = 0; i < buttontext.length; i++) {
-					buttontext[i].style.color = "#cfcfcf";
-				}
 				var vd = document.getElementById('vol-down');
 				var vu = document.getElementById('vol-up');
 				vd.style.filter="invert(0)";
@@ -1651,8 +1579,10 @@ function setTheme(){
 			r.style.setProperty('--secondarytextcolor', '#c4cdda');
 			r.style.setProperty('--primarybackground', '#121212');
 
+			r.style.setProperty('--primaryinterfacecolor', '#d7d7d7');
+			r.style.setProperty('--imgbackground', '#667b9e8f');
+
 			r.style.setProperty('--TOCprogress', '#475f7a');
-			//r.style.setProperty('--TOChighlighter', '#667b9ea0');
 			r.style.setProperty('--pickedtext', '#cfcfcf');
 			r.style.setProperty('--buttontext', '#cfcfcf');
 			r.style.setProperty('--buttonbackground', '#475f7a');
@@ -1690,20 +1620,12 @@ function setTheme(){
 			for( var i = 0; i < righticons.length; i++ ) {
 				righticons[i].style.filter="invert(5%) sepia(94%) saturate(6660%) hue-rotate(231deg) brightness(108%) contrast(144%)";
 			}
-			for( var i = 0; i < righticonstext.length; i++ ) {
-				righticonstext[i].style.color = '#191892';
-			}
 
 			theBody.style.background = '#f1e8bb';
 			bookPages.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';
 
 			theTopBar.style.background = '#f5efd0';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
-
-			theTocBtn.style.color = '#00008b';
-
-			theTocBtn2.style.color = '#00008b';
-			theTocBtn2.style.background =  '#f5efd0';	
 
 			theTocNav.classList.remove('bright-scroll');
 			theTocNav.classList.remove('bright-scroll-track');
@@ -1760,10 +1682,6 @@ function setTheme(){
 				r.style.setProperty('--audiosliderhovercolor', '#d3aa52');
 				var audiobookcover = document.getElementById("bookimage");
 				audiobookcover.style.filter = "grayscale(0) sepia(60%) opacity(0.8)";
-				var buttontext = document.querySelectorAll("#button-cont button");
-				for (var i = 0; i < buttontext.length; i++) {
-					buttontext[i].style.color = "#382500";
-				}
 				var vd = document.getElementById('vol-down');
 				var vu = document.getElementById('vol-up');
 				vd.style.filter="invert(100%)";
@@ -1779,10 +1697,12 @@ function setTheme(){
 			}
 
 			r.style.setProperty('--TOCprogress', '#eadbbf');
-			//r.style.setProperty('--TOChighlighter', '#eadbbf');
 			r.style.setProperty('--primarytextcolor', '#382500');
 			r.style.setProperty('--secondarytextcolor', '#5c0909');
 			r.style.setProperty('--primarybackground', '#f8f4da');
+
+			r.style.setProperty('--primaryinterfacecolor', '#00008b');
+			r.style.setProperty('--imgbackground', '#00000000');
 
 			r.style.setProperty('--pickedtext', '#5c0909');
 			r.style.setProperty('--buttontext', '#382500');

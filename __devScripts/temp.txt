@@ -1,0 +1,9 @@
+<div class="booknote" data-note="323"><span class="sclinktext">DN&#8239;14:1.21.2</span> (PTS&puncsp;D&#8239;II&#8239;14), <span class="sclinktext">MN&#8239;123:12.3</span> (PTS&puncsp;M&#8239;III&#8239;121); <span class="sclinktext">MN&#8239;79:11.1</span> (PTS&puncsp;M&#8239;II&#8239;33), <span class="sclinktext">MN&#8239;80:4.1</span> (PTS&puncsp;M&#8239;II&#8239;41)</div>
+
+
+
+
+
+
+\(PTS&puncsp;([A-Z])&#8239;([\S]*)&#8239;([0-9]*)\)
+<span class="ptsref">(PTS&puncsp;$1&#8239;$2&#8239;$3)</span>

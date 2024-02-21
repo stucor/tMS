@@ -675,6 +675,11 @@ figcaption {
 	cursor:pointer;
 }	
 
+.ptsref {
+	font-size: smaller;
+	opacity:60%;
+}
+
 #ModalNotes blockquote {
 	margin: 1em 0;
 }
@@ -2543,15 +2548,7 @@ margin-bottom: 0;
 	dd {
 		margin-left:0;
 	}
-/*
-	.selfquote {
-		padding-left: 0.5em;
-	}
-	.selfquote::before {
-		margin-left: 0;
-		padding: 0 0.5em;
-	}
-*/
+
 
 
 	figure {
@@ -2575,8 +2572,9 @@ margin-bottom: 0;
 	}
 
 	#ModalSelfquote {
-		padding: 2em 2%;
+		padding: 2em;
 	}
+
 	
 }
 

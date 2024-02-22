@@ -2044,10 +2044,12 @@ mark.current {
 	font-family: var(--fontfamily);
 	font-size: var(--fontsize);
 	text-align: var(--textalign);
+	line-height: var(--lineheight);
 }
 
 #ModalDetails {
 	font-size: var(--fontsize);
+	line-height: var(--lineheight);
 }
 
 #ModalDetails > h1 {
@@ -2096,6 +2098,7 @@ mark.current {
 	font-family: var(--fontfamily);
 	font-size: var(--fontsize);
 	text-align: var(--textalign);
+	line-height: var(--lineheight);
 }
 
 #ModalSelfquote p {

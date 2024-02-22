@@ -2644,7 +2644,7 @@ function highlightnote (notetohighlight) {
 	savedNotesElements[highlightedNote].style.border = "thin solid var(--bdtexthighlightborder)"; //#229635";
 	savedNotesElements[highlightedNote].style.background = "var(--bdtexthighlighter)"; //"#22963506"; //"#c0c0c020";
 	//console.log('here')
-	savedNotesElements[highlightedNote].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+	savedNotesElements[highlightedNote].scrollIntoView({block: "start", inline: "nearest", behavior: "auto"});
 }
 
 

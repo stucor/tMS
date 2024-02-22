@@ -15,6 +15,7 @@ a {
 .expanded {
 	background: var(--primarybackground);
 	border-radius: 1em;
+	font-weight: unset;
 }
 
 .expansion {

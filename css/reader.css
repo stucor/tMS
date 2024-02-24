@@ -676,8 +676,18 @@ figcaption {
 }	
 
 .ptsref {
+	display:inline-block;
 	font-size: smaller;
 	opacity:60%;
+	word-spacing: -0.1em;
+	white-space: nowrap;
+
+}
+.ptsref::before {
+	content: "\(";
+}
+.ptsref::after {
+	content: "\)";
 }
 
 #ModalNotes blockquote {
@@ -2105,6 +2115,7 @@ mark.current {
 margin-bottom: 0;
 }
 
+
 /* The Close Button */
 
 .modal-header .close {
@@ -2269,6 +2280,7 @@ margin-bottom: 0;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	font-variant: small-caps;
+
 }
 /* When the checkbox is checked, add a background */
 .checkcontainer input:checked ~ .checkmark {

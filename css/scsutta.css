@@ -74,6 +74,7 @@ li span.pli-lang .segno {
   border-radius: 5px 5px 0 0;
   border: 1px solid darkgrey;
   font-family: 'Source Sans Pro';
+  line-height: 24px;
 }
 
 .button-area > button {
@@ -153,6 +154,7 @@ li span.pli-lang .segno {
   padding: 20px 5%;
   font-size: var(--fontsize);
   font-family: var(--fontfamily);
+  line-height: var(--lineheight);
 }
 
 #sutta h1 {
@@ -204,6 +206,8 @@ header li .segno {
 }
 
 .sclinktext, .sclinkref {
+  word-spacing: -0.1em;
+  display: inline-block;
   color: cornflowerblue;
   text-decoration: none;
   cursor: pointer;

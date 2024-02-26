@@ -678,10 +678,9 @@ figcaption {
 .ptsref {
 	display:inline-block;
 	font-size: smaller;
-	opacity:60%;
 	word-spacing: -0.1em;
 	white-space: nowrap;
-
+	color:darkgray
 }
 .ptsref::before {
 	content: "\(";

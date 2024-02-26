@@ -35,6 +35,19 @@ a {
 	font-weight: 600;
 }
 
+.expansion blockquote {
+	border-left: none;
+	padding-left: 1em;
+}
+
+.expansion blockquote > p {
+	text-indent: unset;
+}
+
+.expansion blockquote > p + p{
+	margin-top: 0.5em;
+}
+
 /*
 .references > dt {
 	font-variant: small-caps;

@@ -2698,6 +2698,10 @@ function clearAnyNoteInNoteReturn () {
 }
 
 function exitStaticModal () {
+	let modalHeaderText = document.getElementById('ModalHeaderText').innerText
+	if (modalHeaderText == 'NOTES') {
+		clearAnyNoteInNoteReturn();
+	}
 	if (calledFromNotes) {
 		setModalStyle ("Notes");
 		showModal("Notes");
@@ -2709,7 +2713,6 @@ function exitStaticModal () {
 		hideElement(modal);
 		hideElement(modalcontent);
 	}
-	clearAnyNoteInNoteReturn();
 }
 
 
@@ -3039,10 +3042,14 @@ function buildExternalQuote (ele) {
 		let [externalResource,quoteFile] = ele.dataset.quote.split(':')
 		let html =``;
 		function populateQuote(quoteData) {
+			let subSectionSpacer = ''
+			if (quoteData.SubSection) {
+				subSectionSpacer = '<br>'
+			}
 			ele.classList.add('expanded');
 			ele.classList.remove('externalquote')
 			html += `⊗ <div class='expansion' style='font-size:0.9em; margin: 0.5em 0;  padding:0.5em 1em;'>`
-			html += `<h3>${quoteData.Document}<br>${quoteData.Section}, ${quoteData.SubSection}<br>${quoteData.Title}<br>&mdash; ${quoteData.Author}</h3>`
+			html += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>by ${quoteData.Author}</h3>`
 			html += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
 			html += `</div>`
 			ele.innerHTML = html

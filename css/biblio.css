@@ -29,6 +29,7 @@ a {
 }
 .expansion h3 {
 	font-variant:small-caps; 
+	margin-top: 0;
 	margin-bottom: 1em;
 	text-align: left;
 	font-size: 1em;

@@ -3054,7 +3054,7 @@ function buildExternalQuote (ele) {
 			html += `</div>`
 			ele.innerHTML = html
 		}
-		fetch(`../_resources/${externalResource}/${quoteFile}.json`)
+		fetch(`../_resources/external-quotes/${externalResource}/${quoteFile}.json`)
 			.then(response => response.json())
 			.then (data => populateQuote(data))
 			.catch(error => {

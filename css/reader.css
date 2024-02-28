@@ -743,7 +743,7 @@ ol, ul {
 	position: relative;
 	overflow: auto;
 	text-align: left;
-	margin: 2em 0;
+	margin: 2em 2em;
 }
 .tablewrap::-webkit-scrollbar {
 	width: 5px;
@@ -788,6 +788,30 @@ th {
 tfoot tr td {
 	border: 0;
 	background-color: var(--tablefoot);
+}
+
+.simpletable {
+	border: none;
+}
+
+.simpletable caption {
+	font-style: italic; 
+	font-variant: normal;
+	font-size: 0.8em; 
+	border: none;
+	caption-side: bottom;
+	border-top: 1px solid var(--primarytextcolor);
+}
+
+.simpletable > tbody  th, .simpletable > tbody  tr, td {
+	text-align: left;
+	border: none;
+	background: none;
+}
+
+.simpletable > tbody  th {
+	border-top: 1px solid var(--primarytextcolor);
+	border-bottom: 1px solid var(--primarytextcolor);
 }
 
 /*Small Borderless Table */
@@ -2573,7 +2597,9 @@ margin-bottom: 0;
 		margin-left:0;
 	}
 
-
+	.tablewrap {
+		margin: 2em 0;
+	}
 
 	figure {
 		margin: 0.5em 10%;

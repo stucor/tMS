@@ -724,7 +724,7 @@ window.onload = function () {
 var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
-var savedNotesElements = ModalNotes.querySelectorAll('h2, div');
+var savedNotesElements = ModalNotes.querySelectorAll('h2, div.booknote');
 
 
 var theTopBar = document.getElementById("topbar");

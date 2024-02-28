@@ -36,7 +36,7 @@
 }
 
 :root {
-	--notused: #00008b;/*#843924;*/
+	--notused: #ffa600;/*#843924;*/
 
 	--fontsize: 1rem;
 	--lineheight: 1.5;
@@ -552,7 +552,13 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 	width: 10%;
-}	
+}
+
+.fleuronfilter1 {
+	width:30px;
+	opacity: 15%; 
+	filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(1519%) hue-rotate(171deg) brightness(92%) contrast(85%);
+}
 
 .smallcaps {
 	font-variant: small-caps;
@@ -676,17 +682,18 @@ figcaption {
 }	
 
 .ptsref {
-	display:inline-block;
+	display:flexbox;
 	font-size: smaller;
 	word-spacing: -0.1em;
 	white-space: nowrap;
-	color:darkgray
+	color: grey;
+	opacity:70%;
 }
 .ptsref::before {
-	content: "\(";
+	content: "\[";
 }
 .ptsref::after {
-	content: "\)";
+	content: "\]";
 }
 
 #ModalNotes blockquote {
@@ -968,6 +975,7 @@ table.borderlessTable {
 }
 
 .tipref {
+	display:flexbox;
 	word-spacing: -0.1em;
 	white-space: nowrap;
 	font-variant: normal;
@@ -1318,7 +1326,7 @@ button:focus {
 }
 
 button.decrease {
-margin-top: -15px;
+	margin-top: -15px;
     background: url(../_resources/images/icons/minus.svg) no-repeat center left; 
     background-size: contain;
     cursor: pointer;
@@ -2054,6 +2062,8 @@ mark.current {
 	font-size: var(--fontsize);
 	text-align: var(--textalign);
 	line-height: var(--lineheight);
+	hyphens: auto;
+	hyphenate-limit-chars: 10 3 4;
 }
 
 #ModalDetails {

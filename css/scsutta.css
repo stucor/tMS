@@ -207,7 +207,7 @@ header li .segno {
 
 .sclinktext, .sclinkref {
   word-spacing: -0.1em;
-  display: inline-block;
+  display: flexbox;
   color: cornflowerblue;
   text-decoration: none;
   cursor: pointer;

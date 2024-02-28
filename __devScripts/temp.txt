@@ -6,4 +6,6 @@
 
 
 \(PTS&puncsp;([A-Z])&#8239;([\S]*)&#8239;([0-9]*)\)
+
+<span class="ptsref">(PTS: $1 $2 $3)</span>
 <span class="ptsref">(PTS&puncsp;$1&#8239;$2&#8239;$3)</span>

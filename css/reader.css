@@ -745,16 +745,41 @@ ol, ul {
 	text-align: left;
 	margin: 2em 2em;
 }
+
 .tablewrap::-webkit-scrollbar {
-	width: 5px;
-	height: 12px;
-}
+   height: 4px;
+}  
 .tablewrap::-webkit-scrollbar-track {
-	background-color: #dfdfdf; /* or add it to the track */
- }
- .tablewrap::-webkit-scrollbar-thumb {
+   background-color: var(--primarybackground); 
+   border-radius: 8px; 
+   border: 1px solid var(--primarytextcolor);
+}
+.tablewrap::-webkit-scrollbar-thumb {
+	background-color: var(--primarycolor);
+	border-radius: 8px;
+   cursor:grab;
+}
+
+/* .tablewrap::-webkit-scrollbar {
+   height: 6px;
+}  
+.tablewrap::-webkit-scrollbar-track {
+   background-color: var(--primarycolor); 
+   border-radius: 8px; 
+}
+.tablewrap::-webkit-scrollbar-thumb {
+	background-color: var(--primarybackground);
+	border-radius: 8px;
+   border: 1px solid var(--primarytextcolor);
+   cursor:grab;
+}  */
+
+/* .tablewrap::-webkit-scrollbar-track {
+	background-color: #dfdfdf; 
+}
+.tablewrap::-webkit-scrollbar-thumb {
 	 background-color: #7e7e7e;
- }
+}  */
 table {
 	min-width:100%;
 	text-align: left;
@@ -790,8 +815,16 @@ tfoot tr td {
 	background-color: var(--tablefoot);
 }
 
+/* simpletable */
+
 .simpletable {
-	border: none;
+	border-top: 1px solid var(--primarytextcolor);
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	padding-bottom: 0.6em;
+	hyphens:none;
+	table-layout: fixed;
 }
 
 .simpletable caption {
@@ -800,19 +833,48 @@ tfoot tr td {
 	font-size: 0.8em; 
 	border: none;
 	caption-side: bottom;
-	border-top: 1px solid var(--primarytextcolor);
+	margin: 0;
+	background-color: var(--primarybackground);
 }
 
 .simpletable > tbody  th, .simpletable > tbody  tr, td {
 	text-align: left;
 	border: none;
 	background: none;
+	vertical-align: top;
 }
 
-.simpletable > tbody  th {
-	border-top: 1px solid var(--primarytextcolor);
-	border-bottom: 1px solid var(--primarytextcolor);
+.simpletable td {
+	width:0.1%;
+	white-space: nowrap;
 }
+
+.simpletable tr > th {
+	width:0.1%;
+	white-space: nowrap;
+}
+
+.simpletable tr {
+	box-shadow: 0px 0.5px 0px 0px var(--tableborder);
+}
+
+.norowborders tr {
+	box-shadow: none;
+}
+
+.norowborders td {
+	padding: 0.2em;
+}
+
+.simpletable > tbody > tr:last-child {
+	box-shadow: 0px 0.5px 0px 0px var(--primarytextcolor);
+}
+
+.simpletable > tbody > tr:nth-child(1) {
+	box-shadow: 0px 0.5px 0px 0px var(--primarytextcolor);
+} 
+
+
 
 /*Small Borderless Table */
 table.borderlessTable {

@@ -815,7 +815,7 @@ tfoot tr td {
 	background-color: var(--tablefoot);
 }
 
-/* simpletable */
+/* .simpletable class with optional classes .norowborders and .notopborder*/
 
 .simpletable {
 	border-top: 1px solid var(--primarytextcolor);
@@ -825,8 +825,8 @@ tfoot tr td {
 	padding-bottom: 0.6em;
 	hyphens:none;
 	table-layout: fixed;
+	font-size: 0.9em;
 }
-
 .simpletable caption {
 	font-style: italic; 
 	font-variant: normal;
@@ -836,44 +836,56 @@ tfoot tr td {
 	margin: 0;
 	background-color: var(--primarybackground);
 }
-
 .simpletable > tbody  th, .simpletable > tbody  tr, td {
 	text-align: left;
 	border: none;
 	background: none;
 	vertical-align: top;
+	padding: 0.5em 0.5em 0.5em 0.5;
 }
-
 .simpletable td {
 	width:0.1%;
 	white-space: nowrap;
 }
-
 .simpletable tr > th {
 	width:0.1%;
 	white-space: nowrap;
 }
-
 .simpletable tr {
 	box-shadow: 0px 0.5px 0px 0px var(--tableborder);
 }
-
-.norowborders tr {
-	box-shadow: none;
-}
-
-.norowborders td {
-	padding: 0.2em;
-}
-
 .simpletable > tbody > tr:last-child {
 	box-shadow: 0px 0.5px 0px 0px var(--primarytextcolor);
+}
+.simpletable > tbody > tr:last-child > td {
+	padding-bottom: 1em;
 }
 
 .simpletable > tbody > tr:nth-child(1) {
 	box-shadow: 0px 0.5px 0px 0px var(--primarytextcolor);
 } 
+.simpletable > tbody > tr:nth-child(2) > td, 
+.simpletable > tbody > tr:nth-child(2) > th {
+	padding-top: 1em
+} 
+.norowborders tr {
+	box-shadow: none;
+}
 
+.norowborders td {
+	padding: 0.3em 0.5em 0.2em 0.5em;
+}
+
+.norowborders th {
+	padding: 0.3em 0.5em;
+
+}
+.notopborder {
+	border:none;
+}
+.notopborder > tbody > tr:nth-child(1) {
+	box-shadow: none;
+} 
 
 
 /*Small Borderless Table */

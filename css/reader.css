@@ -85,13 +85,15 @@
 
 	--figureimgborder: #808080;
 
+	--infoaddonbackground: #afafaf48;
+
 	--scsegmentnumbercolor: #5278c0;
 
 	--ascsutta: ">>";
 	--descsutta: "<<";
 
 	--selfquoteleftmargin: -3em;
-	--selfquotetopmargin: -1em;
+	--selfquotetopmargin: 0;
 
 	--sidenavboxshadow: 6px 0 6px -3px #888;
 }
@@ -626,14 +628,18 @@ a {
 .OAstart-little {
 	text-indent: -0.3em;
 }
+.OAstart-tiny {
+	text-indent: -0.1em;
+}
 
 .OAstart > span.vcmarg, 
 .OAstart-top > span.vcmarg, 
 .OAstart-doubletop > span.vcmarg, 
 .OAstart-bottom > span.vcmarg, 
-.OAstart-little > span.vcmarg  {
+.OAstart-little > span.vcmarg,
+.OAstart-tiny > span.vcmarg  {
 	text-indent: 0.05em;
-}
+} 
 
 blockquote > p:nth-child(1) > span.vcmarg  {
 	text-indent: 2.4em;
@@ -744,6 +750,7 @@ ol, ul {
 	overflow: auto;
 	text-align: left;
 	margin: 2em 2em;
+	padding-bottom:0.5em;
 }
 
 .tablewrap::-webkit-scrollbar {
@@ -757,7 +764,7 @@ ol, ul {
 .tablewrap::-webkit-scrollbar-thumb {
 	background-color: var(--primarycolor);
 	border-radius: 8px;
-   cursor:grab;
+	cursor:grab;
 }
 
 /* .tablewrap::-webkit-scrollbar {
@@ -836,7 +843,7 @@ tfoot tr td {
 	margin: 0;
 	background-color: var(--primarybackground);
 }
-.simpletable > tbody  th, .simpletable > tbody  tr, td {
+.simpletable > tbody  th, .simpletable > tbody  tr, .simpletable > tbody td {
 	text-align: left;
 	border: none;
 	background: none;
@@ -1207,7 +1214,7 @@ sup {
 .info-addon {
 	margin: 1em; 
 	text-align: left; 
-	background-color: #8080800c; 
+	background-color: var(--infoaddonbackground); 
 	padding: 1rem 1rem 0.1rem 1rem;
 	border-radius: .5rem;
 }
@@ -2196,7 +2203,7 @@ mark.current {
 	font-weight: 500;
 	margin-left: var(--selfquoteleftmargin);
 	margin-top: var(--selfquotetopmargin);
-	color: var(--secondarycolor);
+	color: var(--secondarytextcolor);
 }
 
 

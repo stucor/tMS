@@ -329,6 +329,7 @@ function parseInfoText(infoText) {
 //		.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
 		.replace(/\[(.*?)\]\X\((.*?)\)/gim, "<a class='extlink' href='$2'>$1</a>") //like markdown but and X inbetween like this: [text]X(link) - to denote an external link
 		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>") // markdown style link
+		.replace('lulugraphic', '<img style="max-height: 35px;" alt="Seeds, Paintings and a Beam of Light at Lulu" src="../_resources/images/icons/lulu-logo.svg" ></img>')
 		.replace(/\n/gim, '<br />') //markdown style linebreaks
 	return htmlText.trim()
 }
@@ -402,7 +403,6 @@ function buildInfo () {
 				html += `</div></section>`;
 				return html;
 			}
-
 		}
 
 		function populateInfo (bookInfoData) {
@@ -412,6 +412,28 @@ function buildInfo () {
 				html += `<h3>${bookInfoData.BookSubtitle}</h3>`;
 			}
 			html += `<h2>${bookInfoData.Authors}</h2>`;
+
+			//Add Ons
+			if (bookInfoData.AddInfo.length > 0) {
+				html += `<section class="infocontainer">`;
+				for (i in bookInfoData.AddInfo) {
+					for (j in bookInfoData.AddInfo[i]) {
+						if (j == 0) {
+							x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
+						} else if (j == 1) {
+							html += `<div class="info-addon">`;
+							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
+						} else {
+							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
+						}
+						html += x;
+					}
+					html += `</div>`;
+				}
+				html += `</section>`
+			}	
+
+
 
 			html += tablelist();
 			html += figurelist();
@@ -448,25 +470,7 @@ function buildInfo () {
 				`;
 			}
 
-			//Add Ons
-			if (bookInfoData.AddInfo.length > 0) {
-				html += `<section class="infocontainer">`;
-				for (i in bookInfoData.AddInfo) {
-					for (j in bookInfoData.AddInfo[i]) {
-						if (j == 0) {
-							x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
-						} else if (j == 1) {
-							html += `<div class="info-addon">`;
-							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
-						} else {
-							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
-						}
-						html += x;
-					}
-					html += `</div>`;
-				}
-				html += `</section>`
-			}	
+
 			
 			//Author(s)
 			let authors = '';
@@ -1485,6 +1489,8 @@ function setTheme(){
 
 			r.style.setProperty('--sidenavboxshadow', '6px 0 3px -3px #BBB');
 
+			r.style.setProperty('--infoaddonbackground', '#80808008');
+
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
@@ -1603,6 +1609,8 @@ function setTheme(){
 			r.style.setProperty('--scsegmentnumbercolor', '#c4cdda');
 
 			r.style.setProperty('--sidenavboxshadow', '2px 0 2px 1px #595959');
+
+			r.style.setProperty('--infoaddonbackground', '#afafaf48');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#7c7c7c';
@@ -1725,6 +1733,9 @@ function setTheme(){
 
 			r.style.setProperty('--sidenavboxshadow', '3px 0 6px -3px #888');
 
+			r.style.setProperty('--infoaddonbackground', '#cea1400a');
+
+
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
@@ -1754,7 +1765,7 @@ function setMargin() {
 			thebook.style.paddingLeft = '2%';
 			thebook.style.paddingRight = '2%';
 			marginName = "narrowmargin";
-			root.style.setProperty('--selfquoteleftmargin', '-2.2em');
+			root.style.setProperty('--selfquoteleftmargin', '-2.5em');
 			root.style.setProperty('--selfquotetopmargin', '-1em');
 			break;
 		case "midmargin":
@@ -1762,14 +1773,14 @@ function setMargin() {
 			thebook.style.paddingRight = '10%';
 			marginName = "midmargin";
 			root.style.setProperty('--selfquoteleftmargin', '-5em');
-			root.style.setProperty('--selfquotetopmargin', '1em');
+			root.style.setProperty('--selfquotetopmargin', '3px');
 			break;
 		case "widemargin":
 			thebook.style.paddingLeft = '20%';
 			thebook.style.paddingRight = '20%';
 			marginName = "widemargin";
 			root.style.setProperty('--selfquoteleftmargin', '-5em');
-			root.style.setProperty('--selfquotetopmargin', '1em');
+			root.style.setProperty('--selfquotetopmargin', '3px');
 		}
 		
 }
@@ -1896,12 +1907,15 @@ function scrollToID (id) {
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
 	var elmnt = document.getElementById(id);
-	let noteElmnt = '';
-	if (elmnt.parentElement.classList.contains('booknote')){
+	let noteElmnt = elmnt.closest('.booknote');
+/* 	if (elmnt.parentElement.classList.contains('booknote')){
 		noteElmnt = elmnt.parentElement;
 	} else if (elmnt.parentElement.parentElement.classList.contains('booknote')) {
 		noteElmnt = elmnt.parentElement.parentElement;
-	}
+	} else if (elmnt.parentElement.parentElement.parentElement.classList.contains('booknote')) {
+		noteElmnt = elmnt.parentElement.parentElement.parentElement;
+	} */
+
 	if (noteElmnt) {
 		setModalStyle ("Notes");
 		showModal("Notes");
@@ -2662,7 +2676,7 @@ function clearhighlightnote(when='delay', keepSup= false) {
 				savedsup.style.background = "var(--notehighlighter)" //"var(--secondarytextcolor)"
 				savedsup.style.boxShadow = "0px 0px 10px 10px var(--notehighlighter)"
 				savedsup.style.opacity = "0.7"
-				savedsup.style.color = "red"
+				savedsup.style.color = "crimson"
 			}
 			if (when=='immediate') {
 				savedsup.style = null;

@@ -554,10 +554,11 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 	width: 10%;
+	user-select: none;
 }
 
 .fleuronfilter1 {
-	width:30px;
+	width:50px;
 	opacity: 15%; 
 	filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(1519%) hue-rotate(171deg) brightness(92%) contrast(85%);
 }
@@ -579,31 +580,55 @@ a {
 }
 
 .line-block {
-	display: table;
+	width:fit-content;
+	max-width: 100%;
 	margin: 1em auto;
 	font-style: normal;
-}
+	white-space: nowrap;
+	overflow-x: auto;
+	padding-bottom: 1em;
+/* 	border-bottom: 1px dotted rgba(169, 169, 169, 0.47);
+ */}
+
+.line-block::-webkit-scrollbar {
+	height: 4px;
+}  
+
+.line-block::-webkit-scrollbar-thumb {
+	 background-color: var(--primarycolor);
+	 border-radius: 8px;
+	 cursor:grab;
+ }
 
 .line-block-fixed {
 	display: block;
 	margin-left: 2em;
-
 }
 
-.line-block-narrative {
-	margin-left: -2em;
+.line-block > p > span.vcmarg {
+	position: relative;
+	color: var(--secondarytextcolor);
+	font-size: 0.8em;
+	float:left;
+	margin: 0.2em 0 0 -3em;
 }
 
 .line-block  p {
 	margin-top: 0;
+	padding-left: 3em;
+	padding-right: 3em;
 }
+
+ .line-block-narrative {
+	margin-left: -2.5em;
+}   
 
 .line-block p + p, .infocontainer p + p {
 	margin-top: 1em;
 	
 }
 
-.vcmarg {
+blockquote > p > span.vcmarg {
 	position:relative;
 	color: var(--secondarytextcolor);
 	font-size: 0.8em;
@@ -2627,7 +2652,6 @@ margin-bottom: 0;
 		grid-template-columns: 0 100% 0;
 	}
 
-
 	.content div.quote {
 		width: 85%;
 	}
@@ -2635,21 +2659,13 @@ margin-bottom: 0;
 	.content div.cite {
 		width: 100%;
 	}	
-
-	/*
-	.line-block {
-		display:block;
-		margin-left: 0;
-	}
-*/
+	
 	/*part of verse couplet vcmarg is a span to position outside the line-block - left for big screens, right for small */
-
-	.vcmarg { 
+ 	blockquote > p > span.vcmarg { 
 		margin-left: 0.2em;
 		margin-right: -2em;
 		float:right;
-	}
-
+	} 
 	.checkcontainer {
 		display: block;
 		text-align: left;
@@ -2657,7 +2673,6 @@ margin-bottom: 0;
 	.checktextFull {
 		display: none;
 	}
-
 	.booknote {
 		margin: 10px 1%;
 		display:block;
@@ -2673,15 +2688,12 @@ margin-bottom: 0;
 		display:inline;
 		margin: 0;
 	}
-
 	dd {
 		margin-left:0;
 	}
-
 	.tablewrap {
 		margin: 2em 0;
 	}
-
 	figure {
 		margin: 0.5em 10%;
 		min-width: 80%;
@@ -2703,10 +2715,21 @@ margin-bottom: 0;
 	}
 
 	#ModalSelfquote {
-		padding: 2em;
+		padding: 1em;
 	}
 
-	
+	.line-block::-webkit-scrollbar {
+		height: 2px;
+	} 
+
+ 	blockquote:not(.selfquote) {
+		padding: 0 0.5em
+	} 
+/* 	.line-block {
+		border: thin rgba(128, 128, 128, 0.155) solid;
+		border-radius: 5px;
+	} */
+
 }
 
 /* For Touch media - hide the hover */

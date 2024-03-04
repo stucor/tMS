@@ -1765,6 +1765,34 @@ function setMargin() {
 			thebook.style.paddingLeft = '2%';
 			thebook.style.paddingRight = '2%';
 			marginName = "narrowmargin";
+			root.style.setProperty('--selfquoteleftmargin', '0');
+			root.style.setProperty('--selfquotetopmargin', '-1em');
+			break;
+		case "midmargin":
+			thebook.style.paddingLeft = '10%';
+			thebook.style.paddingRight = '10%';
+			marginName = "midmargin";
+			root.style.setProperty('--selfquoteleftmargin', '-2.4em');
+			root.style.setProperty('--selfquotetopmargin', '0');
+			break;
+		case "widemargin":
+			thebook.style.paddingLeft = '20%';
+			thebook.style.paddingRight = '20%';
+			marginName = "widemargin";
+			root.style.setProperty('--selfquoteleftmargin', '-2.4em');
+			root.style.setProperty('--selfquotetopmargin', '0');
+		}
+		
+}
+/* function setMargin() {
+	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
+	var thebook = document.getElementById("thebook");
+	var root = document.querySelector(':root');
+	switch (whatIsPressed) {
+		case "narrowmargin":	
+			thebook.style.paddingLeft = '2%';
+			thebook.style.paddingRight = '2%';
+			marginName = "narrowmargin";
 			root.style.setProperty('--selfquoteleftmargin', '-2.5em');
 			root.style.setProperty('--selfquotetopmargin', '-1em');
 			break;
@@ -1783,7 +1811,7 @@ function setMargin() {
 			root.style.setProperty('--selfquotetopmargin', '3px');
 		}
 		
-}
+} */
 
 
 function doSetSerif () {

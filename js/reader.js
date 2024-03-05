@@ -1756,6 +1756,9 @@ function doSetMargin () {
 	restorePlaceInBook();
 }	
 
+
+
+
 function setMargin() {
 	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
 	var thebook = document.getElementById("thebook");
@@ -1765,54 +1768,20 @@ function setMargin() {
 			thebook.style.paddingLeft = '2%';
 			thebook.style.paddingRight = '2%';
 			marginName = "narrowmargin";
-			root.style.setProperty('--selfquoteleftmargin', '0');
-			root.style.setProperty('--selfquotetopmargin', '-1em');
 			break;
 		case "midmargin":
 			thebook.style.paddingLeft = '10%';
 			thebook.style.paddingRight = '10%';
 			marginName = "midmargin";
-			root.style.setProperty('--selfquoteleftmargin', '-2.4em');
-			root.style.setProperty('--selfquotetopmargin', '0');
 			break;
 		case "widemargin":
 			thebook.style.paddingLeft = '20%';
 			thebook.style.paddingRight = '20%';
 			marginName = "widemargin";
-			root.style.setProperty('--selfquoteleftmargin', '-2.4em');
-			root.style.setProperty('--selfquotetopmargin', '0');
 		}
+ setSelfquoteMargins();
 		
 }
-/* function setMargin() {
-	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
-	var thebook = document.getElementById("thebook");
-	var root = document.querySelector(':root');
-	switch (whatIsPressed) {
-		case "narrowmargin":	
-			thebook.style.paddingLeft = '2%';
-			thebook.style.paddingRight = '2%';
-			marginName = "narrowmargin";
-			root.style.setProperty('--selfquoteleftmargin', '-2.5em');
-			root.style.setProperty('--selfquotetopmargin', '-1em');
-			break;
-		case "midmargin":
-			thebook.style.paddingLeft = '10%';
-			thebook.style.paddingRight = '10%';
-			marginName = "midmargin";
-			root.style.setProperty('--selfquoteleftmargin', '-5em');
-			root.style.setProperty('--selfquotetopmargin', '3px');
-			break;
-		case "widemargin":
-			thebook.style.paddingLeft = '20%';
-			thebook.style.paddingRight = '20%';
-			marginName = "widemargin";
-			root.style.setProperty('--selfquoteleftmargin', '-5em');
-			root.style.setProperty('--selfquotetopmargin', '3px');
-		}
-		
-} */
-
 
 function doSetSerif () {
 	setSerif();
@@ -2063,9 +2032,25 @@ window.onscroll = function() {
 	//savePlaceInBook();
 }
 
+function setSelfquoteMargins () {
+	var root = document.querySelector(':root');
+	if ( document.querySelector('input[name="marginRadio"]:checked').value == "narrowmargin") {
+		root.style.setProperty('--selfquoteleftmargin', '-1em');
+		root.style.setProperty('--selfquotetopmargin', '-1em');
+	} else {
+		if (window.innerWidth > 666) {
+			root.style.setProperty('--selfquoteleftmargin', '-5.8em');
+			root.style.setProperty('--selfquotetopmargin', '0');
+		} else {
+			root.style.setProperty('--selfquoteleftmargin', '-3.8em');
+			root.style.setProperty('--selfquotetopmargin', '0');	
+		}
+	}
+}
 
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
+	setSelfquoteMargins();
 });
 
 var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");

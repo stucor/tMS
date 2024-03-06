@@ -2039,10 +2039,10 @@ function setSelfquoteMargins () {
 		root.style.setProperty('--selfquotetopmargin', '-1em');
 	} else {
 		if (window.innerWidth > 666) {
-			root.style.setProperty('--selfquoteleftmargin', '-5.8em');
+			root.style.setProperty('--selfquoteleftmargin', '-5em');
 			root.style.setProperty('--selfquotetopmargin', '0');
 		} else {
-			root.style.setProperty('--selfquoteleftmargin', '-3.8em');
+			root.style.setProperty('--selfquoteleftmargin', '-3.5em');
 			root.style.setProperty('--selfquotetopmargin', '0');	
 		}
 	}

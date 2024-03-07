@@ -16,6 +16,7 @@
          url('../_resources/fonts/SourceSans3VF-Italic.ttf.woff') format('woff'),
          url('../_resources/fonts/SourceSans3VF-Italic.ttf') format('truetype');
 }
+
 @font-face{
     font-family: 'Source Serif Pro';
     font-weight: 400 700;
@@ -23,7 +24,7 @@
     font-stretch: normal;
     src: url('../_resources/fonts/SourceSerif4Variable-Roman.ttf.woff2') format('woff2'),
          url('../_resources/fonts/SourceSerif4Variable-Roman.ttf.woff') format('woff'),
-         url('../_resources/fonts/SourceSerif4Variable-Roman.ttf') format('truetype');
+         url('../_resources/fonts/SourceSerif4Variable-Roman.ttf') format('truetype'); 
 }
 @font-face{
     font-family: 'Source Serif Pro';

@@ -25,7 +25,7 @@ a {
 	background: var(--primarybackground);
 	position:relative;
 	bottom: -0.05em;
-	border-radius: 10px;;
+	border-radius: 10px;
 }
 .expansion h3 {
 	font-variant:small-caps; 

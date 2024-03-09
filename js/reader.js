@@ -1629,7 +1629,8 @@ function setTheme(){
 				righticons[i].style.filter="invert(5%) sepia(94%) saturate(6660%) hue-rotate(231deg) brightness(108%) contrast(144%)";
 			}
 
-			theBody.style.background = '#f1e8bb';
+			//theBody.style.background = '#f1e8bb';
+			theBody.style.background = '#f1e8bbb0';
 			bookPages.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';
 
 			theTopBar.style.background = '#f5efd0';

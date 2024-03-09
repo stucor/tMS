@@ -538,7 +538,7 @@ a {
 }
 
 .fleuronfilter1 {
-	width:50px;
+	width: 4em;
 	opacity: 15%; 
 	filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(1519%) hue-rotate(171deg) brightness(92%) contrast(85%);
 }

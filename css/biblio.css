@@ -94,15 +94,9 @@ a {
 	font-size: 0.6em;
 	user-select: none;	
 }
-
-
-
 .quotepno::before {
 	content: 'p.'
 }
-/* .quotepno::after {
-	content: ''
-} */
 
 .bibheadhide {
     display: none;
@@ -140,7 +134,7 @@ a {
 	margin-bottom: -0.3em;
 	margin-left: 0.1em;
     margin-right: 0.3em;
-	filter: opacity(75%) ;
+	filter: opacity(85%) ;
 }
 
 .reflink {

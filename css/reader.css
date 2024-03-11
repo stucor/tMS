@@ -803,9 +803,11 @@ figcaption {
 	text-align: var(--textalign);
 }	
 
+
 .content ul li::marker {
-	content: '·';/*'\22C5';/*'\2219'; /*'\203A' /*'\00bb'; */
-}	
+	content: '·';
+}
+
 
 .explainer {
 	opacity: 0.7;
@@ -1187,8 +1189,10 @@ dd > ol > li {
 	margin-bottom: 0 !important;
 }
 
-/* bodge because it's not being seen in savedBookElements */
 
+/* Bibliography */
+
+/* bodge because it's not being seen in savedBookElements */
 .references > dt {
 	font-variant: small-caps;
 	color:#00000000;
@@ -1205,6 +1209,179 @@ dd > ol > li {
 	line-height: var(--lineheight);
 	text-align:left;
 }
+
+.references > dd > span.linkContainer {
+	background: rgba(209, 209, 209, 0.15)
+}
+.references > dd > span.linkContainer > span.linkseparator{
+	opacity: 0.25;
+}
+
+.expander {
+	color: rgba(100, 148, 237, 0.74);
+	position: relative;
+	bottom: 0.05em;
+	padding-left:0.1em;
+	cursor: pointer;
+	user-select: none;
+	font-weight: 100;
+}
+
+.expanded {
+	background: var(--primarybackground);
+	border-radius: 1em;
+	font-weight: unset;
+}
+
+.expansion {
+	cursor:auto;
+	user-select:text;
+	color:var(--secondarytextcolor);
+	background: var(--primarybackground);
+	position:relative;
+	bottom: -0.05em;
+	border-radius: 10px;
+}
+.expansion h3 {
+	font-variant:small-caps; 
+	margin-top: 0;
+	margin-bottom: 1em;
+	text-align: left;
+	font-size: 1em;
+	font-weight: 600;
+}
+
+.expansion blockquote {
+	border-left: none;
+	padding-left: 1em;
+}
+
+.expansion blockquote > p {
+	text-indent: unset;
+}
+
+.expansion blockquote > p + p{
+	margin-top: 0.5em;
+}
+
+.quotepno {
+	position: relative;
+	bottom: 0.3em;
+ 	padding: 0 0.3em 0.1em 0.4em;
+	margin: 0 0.5em 0 0;
+	border-radius: 0.5em;
+	color:var(--primarybackground);
+	background: var(--secondarytextcolor);
+	opacity:60%;
+	font-size: 0.6em;
+	user-select: none;	
+}
+.quotepno::before {
+	content: 'p.'
+}
+
+.bibheadhide {
+    display: none;
+}
+
+.linkContainer {
+	box-sizing: border-box;
+    white-space: nowrap;
+    padding: 0 0.2em;
+    border-radius: 5px;
+}
+.linkseparator {
+	opacity: 0.5;
+}
+
+.refpdf {
+    font-size: smaller;
+}
+.refpdf::before {
+    background-image: url('../_resources/images/icons/PDF_file_icon.svg');
+	background-repeat: no-repeat;
+    background-size: 1.1em;
+    display: inline-block;
+    width: 1.1em; 
+    height: 1.4em;
+    content:"";
+	margin-bottom: -0.3em;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+	filter:opacity(80%)
+}
+
+.refaudio::before {
+	content: '🔊';
+	margin-bottom: -0.3em;
+	margin-left: 0.1em;
+    margin-right: 0.3em;
+	filter: opacity(85%) ;
+}
+
+.reflink {
+	font-size: smaller;
+	font-variant: small-caps;
+}
+
+.online::before {
+    background-image: url('../_resources/images/icons/internet.svg');
+    background-size: 1.1em;
+    display: inline-block;
+    width: 1.1em; 
+    height: 1.1em;
+    content:"";
+	margin-bottom: -0.2em;
+	margin-left: 0;
+	margin-right: 0;
+	filter: invert(27%) sepia(78%) saturate(1396%) hue-rotate(221deg) brightness(86%) contrast(91%);
+}
+
+.library::before {
+    background-image: url('../_resources/images/icons/bookshelf-colour.svg');
+    background-size: 1.3em;
+    display: inline-block;
+    width: 1.3em; 
+    height: 1.3em;
+    content:"";
+	margin-bottom: -0.35em;
+	margin-left: 0.1em;
+	margin-right: 0.3em;
+	background-repeat: no-repeat;
+}
+
+.internetArchive::before {
+    background-image: url('../_resources/images/icons/IA-logo.svg');
+    background-size: 3.9em;
+    display: inline-block;
+    width: 3.9em; 
+    height: 1.1em;
+	line-height: 0;
+    content:"";
+	margin-bottom: -0.3em;
+	margin-left: 0;
+	margin-right: 0.2em;
+	background-repeat: no-repeat;
+	filter: invert(34%) sepia(0%) saturate(0%) hue-rotate(162deg) brightness(104%) contrast(90%);
+}
+
+.sacredTexts::before {
+    background-image: url('../_resources/images/icons/sacred-texts.png');
+    background-size: 3.5em;
+    display: inline-block;
+    width: 3.5em; 
+    height: 1.5em;
+	line-height: 0;
+    content:"";
+	margin-bottom: -0.6em;
+	margin-left: 0;
+	margin-right: 0.3em;
+	background-repeat: no-repeat;
+	filter: sepia(10%) saturate(100%) brightness(80%) contrast(80%);
+}
+
+/* End Bibliography */
+
 
 sup {
 	line-height: 0;

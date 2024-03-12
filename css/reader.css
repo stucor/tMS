@@ -539,7 +539,7 @@ a {
 
 .fleuronfilter1 {
 	width: 4em;
-	opacity: 15%; 
+	opacity: 13%; 
 	filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(1519%) hue-rotate(171deg) brightness(92%) contrast(85%);
 }
 
@@ -1211,7 +1211,8 @@ dd > ol > li {
 }
 
 .references > dd > span.linkContainer {
-	background: rgba(209, 209, 209, 0.15)
+ 	background: rgba(212, 197, 171, 0.09);
+	border: thin dotted rgba(212, 197, 171, 0.2);
 }
 .references > dd > span.linkContainer > span.linkseparator{
 	opacity: 0.25;
@@ -2477,6 +2478,27 @@ mark.current {
 margin-bottom: 0;
 }
 
+#ModalSelfquote h4 {
+	text-align: left;
+	font-weight: 600;
+	font-variant: small-caps;
+	margin: 0;
+}
+
+#ModalSelfquote h5 {
+	text-align: left;
+	margin-top:0.5em;
+	font-weight: normal;;
+}
+
+#ModalSelfquote .expander {
+	display:none;
+}
+
+#ModalSelfquote .sclinktext {
+	color: var(--primarytextcolor);
+	cursor:default;
+}
 
 /* The Close Button */
 

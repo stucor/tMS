@@ -2501,6 +2501,23 @@ mark.current {
 	font-variant: normal;
 }
 
+#ModalSelfquote p > span.vcmarg { 
+	position: relative;
+	margin-left: 0;
+	margin-right: -2em;
+	text-indent: 1em;
+	float:right;
+	color: var(--secondarytextcolor);
+	font-size: 0.8em;
+	top: 0.2em;
+}
+
+#ModalSelfquote .line-block > p {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+
 /* The Close Button */
 
 .modal-header .close {
@@ -2976,6 +2993,10 @@ mark.current {
 
 	#ModalSelfquote {
 		padding: 1em;
+	}
+
+	#ModalSelfquote p > span.vcmarg { 
+		margin-right: 0;
 	}
 
 	.booknote ol, .booknote ul {

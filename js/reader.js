@@ -439,12 +439,9 @@ function buildInfo () {
 				html += `</section>`
 			}	
 
-
-
 			html += tablelist();
 			html += figurelist();
 			html += suttalist();
-
 
 			if (isAudioBook()) {
 				html += `
@@ -475,8 +472,6 @@ function buildInfo () {
 				</section>
 				`;
 			}
-
-
 			
 			//Author(s)
 			let authors = '';
@@ -566,161 +561,7 @@ function buildInfo () {
 	}
 }
 
-// Populate References/Bibliography
-/* function buildRef () {
 
-	let sectionHolder = document.getElementById('reference-holder');
-	if (sectionHolder != null) {
-		if (sectionHolder.innerHTML == ''){
-			let shortCode = shortcode();
-			let html =``;
-
-			function populateReferences(referencesData) {
-
-
-				html += `<dl class="references">`
-				for (i in referencesData) {
-					let urlLabel ='';
-					let attachmentLabel = '';
-					let tMSShortcode ='';
-					
-					// get special values from the notes field 
-					if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
-						noteArray = referencesData[i]["note"].split('\n');	
-						for (j in noteArray) {
-							[noteKey, noteValue] = noteArray[j].split(':');
-							switch (noteKey) {
-								case "attachment-label":
-									attachmentLabel = noteValue;
-									break;
-								case "tMS":
-									tMSShortcode = noteValue;
-							}
-						}
-					}
-
-					switch (referencesData[i].type) {
-						case "book":
-							urlLabel ='Publishers Page';
-							break;
-						case "article-journal":
-							urlLabel ='Journal Page';
-							break;
-						case "document":
-							break;
-						case "post-weblog":
-							urlLabel ='Blog Post';
-							break;
-						case "webpage":
-							urlLabel ='Webpage';
-							break;
-					}
-
-					html += `<dt>${referencesData[i].id}</dt>`
-
-					html += `<dd>`;
-
-					let authorAfter ='& ';
-					for (j in referencesData[i].author) {
-						if (j == referencesData[i].author.length-1) {
-							authorAfter ='&mdash;'
-						}
-						html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given} ${authorAfter}`;
-					}
-
-					let translatorAfter ='& ';
-					for (j in referencesData[i].translator) {
-						if (j == referencesData[i].translator.length-1) {
-							translatorAfter ='<em>(tr.) </em>&mdash;'
-						}
-						html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
-					}
-
-					if (referencesData[i].hasOwnProperty('issued')) {
-						html += ` ${referencesData[i]["issued"]["date-parts"][0][0]}.`;
-					}
-
-					html += ` <em>${referencesData[i].title}</em>`;
-
-					if (referencesData[i].hasOwnProperty('container-title')) {
-						html += `. ${referencesData[i]["container-title"]}`;
-					}
-					if (referencesData[i].hasOwnProperty('volume')) {
-						html += `, Vol. ${referencesData[i]["volume"]}`;
-					}
-
-					if (referencesData[i].hasOwnProperty('number-of-volumes')) {
-						html += ` of ${referencesData[i]["number-of-volumes"]}`;
-					}
-
-					if (referencesData[i].hasOwnProperty('page')) {
-						if (referencesData[i].page.includes("-")) { //is a range of pages
-							html += `. pp. ${referencesData[i].page}`;
-						} else {
-							html += `. p. ${referencesData[i].page}`;
-						}
-					}
-
-					html += `.`;
-
-					if (referencesData[i].hasOwnProperty('publisher')) {
-						html += ` ${referencesData[i]["publisher"]}`;
-
-						if (referencesData[i].hasOwnProperty('publisher-place')) {
-							html += `, ${referencesData[i]["publisher-place"]}`;
-						}
-		
-						html += `.`;
-					}
-
-					let linkSeparator = ' | ';
-					if (referencesData[i].hasOwnProperty('URL')) {
-						html += `${linkSeparator} <a class="extlink reflink"  href="${referencesData[i].URL}">${urlLabel}</a> `;
-					}
-
-					if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
-						if (attachmentLabel !== '') {
-							let attachmentLabelArray = attachmentLabel.split(';');
-							if (attachmentLabelArray.length > 1) {
-								let fileArray = referencesData[i].file.split(';');
-								for (k in attachmentLabelArray) {
-									html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${fileArray[k]}">${attachmentLabelArray[k]}</a> `;
-								}
-							} else {
-								html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}">${attachmentLabel}</a> `;
-							}
-						} else {
-							html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
-						}
-					}
-
-					if (tMSShortcode !=='') {
-						html += `${linkSeparator} <a class="reflink" href="../${tMSShortcode}">online</a>`
-					}
-
-					html += `</dd>`;
-
-				}
-
-				html += `</dl>`
-				sectionHolder.innerHTML = html;
-
-			}
-
-
-
-			fetch(`../_resources/book-data/${shortCode}/reference.json`)
-				.then(response => response.json())
-				.then (data => populateReferences(data))
-				.catch(error => {
-					console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/reference.json`);
-				}
-
-			);
-		}
-	}
-}
- */
 //ONLOAD
 window.onload = function () {
     showSpinner(); // show spinner
@@ -1098,11 +939,6 @@ if (!nuclearOption) {
 		//SERIF-FONT
 		var local_wiswobooks_serif = document.getElementById("serifFont").checked;
 		setCookie('wiswobooks_serif',local_wiswobooks_serif,365);
-		//SHOW-PAGES
-		/* SPC Go
-		var local_wiswobooks_showpages = document.getElementById("showPageCheck").checked;
-		setCookie('wiswobooks_showpages',local_wiswobooks_showpages,365);
-		*/
 		//JUSTIFICATION
 		var local_wiswobooks_justification = document.getElementById("justifyCheck").checked;
 		setCookie('wiswobooks_justification',local_wiswobooks_justification,365);
@@ -1786,8 +1622,7 @@ function setMargin() {
 			thebook.style.paddingRight = '20%';
 			marginName = "widemargin";
 		}
- setSelfquoteMargins();
-		
+ 	setSelfquoteMargins();	
 }
 
 function doSetSerif () {
@@ -2427,7 +2262,7 @@ function setModalStyle (heading) {
 			modalbody.style.maxHeight = "85vh";
 			modalbody.style.padding = "0";
 			modalcontent.style.width = "95%";
-			modalcontent.style.maxWidth = "55em";
+			modalcontent.style.maxWidth = "65em";
 			modalcontent.style.position ="relative";
 			modalcontent.style.right = "0";
 			modalcontent.style.top = "0";
@@ -2438,7 +2273,7 @@ function setModalStyle (heading) {
 			modalbody.style.maxHeight = "85vh";
 			modalbody.style.padding = "0";
 			modalcontent.style.width = "95%";
-			modalcontent.style.maxWidth = "55em";
+			modalcontent.style.maxWidth = "65em";
 			modalcontent.style.position ="relative";
 			modalcontent.style.right = "0";
 			modalcontent.style.top = "0";
@@ -3049,426 +2884,61 @@ function displaySelfquote (linktext) {
 	modalbody.scrollTop = 0;
 	stopBookScroll ();
 	let selfquoteArea = document.getElementById("selfquotearea");
-	
 
 	let buildHTML = '';
 
 	//console.log(linktext.slice(1))
 
-
-
 	if (linktext.substring(0,1) == '§') {
-		let SQHeaderArray = [
-			{
-				"section": "2",
-				"modalHead": "Section",
-				"bodyHead": "Multiple Suttas",
-				"supHTML": ""
-			},
-			{
-				"section": "5",
-				"modalHead": "Mahāhatthipadopamasutta",
-				"bodyHead": "The Longer Simile of the Elephant’s Footprint",
-				"supHTML": ""
-			},
-			{
-				"section": "6",
-				"modalHead": "Samādhisutta",
-				"bodyHead": "Development of Immersion",
-				"supHTML": ""
-			},
-			{
-				"section": "7",
-				"modalHead": "Uppādasutta",
-				"bodyHead": "Arising",
-				"supHTML": ""
-			},
-			{
-				"section": "8",
-				"modalHead": "Paṭhamadabbasutta",
-				"bodyHead": "With Dabba (1st)",
-				"supHTML": ""
-			},
-			{
-				"section": "11",
-				"modalHead": "Gotamasutta",
-				"bodyHead": "Gotama",
-				"supHTML": ""
-			},
-			{
-				"section": "17",
-				"modalHead": "Kappattheragāthā",
-				"bodyHead": "Kappa",
-				"supHTML": ""
-			},
-			{
-				"section": "20",
-				"modalHead": "Vibhaṅgasutta",
-				"bodyHead": "Analysis",
-				"supHTML": ""
-			},
-			{
-				"section": "23",
-				"modalHead": "Atthirāgasutta",
-				"bodyHead": "If There is Desire",
-				"supHTML": ""
-			},
-			{
-				"section": "24",
-				"modalHead": "Mahāvedallasutta",
-				"bodyHead": "The Great Classification",
-				"supHTML": ""
-			},
-			{
-				"section": "25",
-				"modalHead": "Titthāyatanasutta",
-				"bodyHead": "Sectarian Tenets",
-				"supHTML": ""
-			},
-			{
-				"section": "26",
-				"modalHead": "Mahātaṇhāsaṅkhayasutta",
-				"bodyHead": "The Longer Discourse on the Ending of Craving",
-				"supHTML": ""
-			},
-			{
-				"section": "33",
-				"modalHead": "Dutiyagaddulabaddhasuttam",
-				"bodyHead": "A Leash (2nd)",
-				"supHTML": ""
-			},
-			{
-				"section": "35",
-				"modalHead": "Upādānaparipavattasutta",
-				"bodyHead": "Perspectives",
-				"supHTML": ""
-			},
-			{
-				"section": "49",
-				"modalHead": "Natumhasutta",
-				"bodyHead": "Not Yours",
-				"supHTML": ""
-			},
-			{
-				"section": "53",
-				"modalHead": "Cetanāsutta",
-				"bodyHead": "Intention",
-				"supHTML": ""
-			},
-			{
-				"section": "54",
-				"modalHead": "Dutiyacetanāsutta",
-				"bodyHead": "Intention (2nd)",
-				"supHTML": ""
-			},
-			{
-				"section": "55",
-				"modalHead": "Parivīmaṁsanasutta",
-				"bodyHead": "An Inquiry",
-				"supHTML": ""
-			},
-			{
-				"section": "56",
-				"modalHead": "Āneñjasappāyasutta",
-				"bodyHead": "Conducive to the Imperturbable",
-				"supHTML": ""
-			},
-			{
-				"section": "57",
-				"modalHead": "Mahānidānasutta",
-				"bodyHead": "The Great Discourse on Causation",
-				"supHTML": ""
-			},
-			{
-				"section": "62",
-				"modalHead": "Migajālattheragāthā",
-				"bodyHead": "Migajāla",
-				"supHTML": ""
-			},
-			{
-				"section": "65",
-				"modalHead": "Moḷiyaphaggunasutta",
-				"bodyHead": "Phagguna of the Top-Knot",
-				"supHTML": ""
-			},
-			{
-				"section": "66",
-				"modalHead": "Titthāyatanasutta",
-				"bodyHead": "Sectarian Tenets",
-				"supHTML": ""
-			},
-			{
-				"section": "68",
-				"modalHead": "Paṭhamamahāpañhāsutta",
-				"bodyHead": "The Great Questions (1st)",
-				"supHTML": ""
-			},
-			{
-				"section": "71",
-				"modalHead": "Paṭhamabhavasutta",
-				"bodyHead": "Continued Existence (1st)",
-				"supHTML": ""
-			},
-			{
-				"section": "76",
-				"modalHead": "Bījasutta",
-				"bodyHead": "A Seed",
-				"supHTML": ""
-			},
-			{
-				"section": "77",
-				"modalHead": "Tikaṇṇasutta",
-				"bodyHead": "With Tikaṇṇa",
-				"supHTML": "<span class='sclinktext'>AN 3.58<span class='scsegments'>:5.1–6.4</span></span>"
-			},
-			{
-				"section": "78",
-				"modalHead": "Ādittapariyāyasutta",
-				"bodyHead": "The Exposition on Burning",
-				"supHTML": ""
-			},
-			{
-				"section": "79",
-				"modalHead": "Taruṇarukkhasutta",
-				"bodyHead": "A Sapling",
-				"supHTML": ""
-			},
-			{
-				"section": "80",
-				"modalHead": "Nāmarūpasutta",
-				"bodyHead": "Name and Form",
-				"supHTML": ""
-			},
-			{
-				"section": "81",
-				"modalHead": "Viññāṇasutta",
-				"bodyHead": "Consciousness",
-				"supHTML": ""
-			},
-			{
-				"section": "83",
-				"modalHead": "Nagarasutta",
-				"bodyHead": "The City",
-				"supHTML": ""
-			},
-			{
-				"section": "84",
-				"modalHead": "Mahānidānasutta",
-				"bodyHead": "The Great Discourse on Causation",
-				"supHTML": ""
-			},
-			{
-				"section": "85",
-				"modalHead": "Subhasutta",
-				"bodyHead": "With Subha",
-				"supHTML": ""
-			},
-			{
-				"section": "87",
-				"modalHead": "Section",
-				"bodyHead": "Upaniṣads",
-				"supHTML": ""
-			},
-			{
-				"section": "88",
-				"modalHead": "Section",
-				"bodyHead": "Upaniṣads",
-				"supHTML": ""
-			},
-			{
-				"section": "89",
-				"modalHead": "Section",
-				"bodyHead": "Upaniṣads",
-				"supHTML": ""
-			},
-			{
-				"section": "90",
-				"modalHead": "Alagaddūpamasutta",
-				"bodyHead": "The Simile of the Snake",
-				"supHTML": "<span class='sclinktext'>MN 22<span class='scsegments'>:25.5–25.6</span></span> <span class='ptsref'>PTS: M I 138</span>"
-			},
-			{
-				"section": "92",
-				"modalHead": "Ajitamāṇavapucchā",
-				"bodyHead": "The Questions of Ajita",
-				"supHTML": ""
-			},
-			{
-				"section": "94",
-				"modalHead": "Section",
-				"bodyHead": "Upaniṣads",
-				"supHTML": ""
-			},
-			{
-				"section": "95",
-				"modalHead": "Naḷakalāpīsutta",
-				"bodyHead": "Bundles of Reeds",
-				"supHTML": ""
-			},
-			{
-				"section": "99",
-				"modalHead": "Mahāvedallasutta",
-				"bodyHead": "The Great Classification",
-				"supHTML": ""
-			},
-			{
-				"section": "101",
-				"modalHead": "Mahāhatthipadopamasutta",
-				"bodyHead": "The Longer Simile of the Elephant’s Footprint",
-				"supHTML": ""
-			},
-			{
-				"section": "102",
-				"modalHead": "Mahātaṇhāsaṅkhayasutta",
-				"bodyHead": "The Longer Discourse on the Ending of Craving",
-				"supHTML": ""
-			},
-			{
-				"section": "104",
-				"modalHead": "Nandakovādasutta",
-				"bodyHead": "Advice from Nandaka",
-				"supHTML": ""
-			},
-			{
-				"section": "105",
-				"modalHead": "Paṭhamadvayasutta",
-				"bodyHead": "A Duality (1st)",
-				"supHTML": ""
-			},
-			{
-				"section": "106",
-				"modalHead": "Dutiyadvayasutta",
-				"bodyHead": "A Duality (2nd)",
-				"supHTML": ""
-			},
-			{
-				"section": "108",
-				"modalHead": "Bālapaṇḍitasutta",
-				"bodyHead": "The Astute and the Foolish",
-				"supHTML": ""
-			},
-			{
-				"section": "109",
-				"modalHead": "Mahānidānasutta",
-				"bodyHead": "The Great Discourse on Causation",
-				"supHTML": ""
-			},
-			{
-				"section": "114",
-				"modalHead": "Sekhasutta",
-				"bodyHead": "A Trainee",
-				"supHTML": ""
-			},
-			{
-				"section": "115",
-				"modalHead": "Tatiyacetanāsutta",
-				"bodyHead": "Intention (3rd)",
-				"supHTML": ""
-			},
-			{
-				"section": "116",
-				"modalHead": "Section",
-				"bodyHead": "Multiple Suttas",
-				"supHTML": ""
-			},
-			{
-				"section": "118",
-				"modalHead": "Upayasutta",
-				"bodyHead": "Involvement",
-				"supHTML": ""
-			},
-			{
-				"section": "119",
-				"modalHead": "Aniccasutta",
-				"bodyHead": "Impermanence",
-				"supHTML": ""
-			},
-			{
-				"section": "120",
-				"modalHead": "Parivīmaṁsanasutta",
-				"bodyHead": "An Inquiry",
-				"supHTML": ""
-			},
-			{
-				"section": "121",
-				"modalHead": "Atthirāgasutta",
-				"bodyHead": "If There Is Desire",
-				"supHTML": ""
-			},
-			{
-				"section": "122",
-				"modalHead": "Dutiyacetanāsutta",
-				"bodyHead": "Intention (2nd)",
-				"supHTML": ""
-			},
-			{
-				"section": "126",
-				"modalHead": "Assutavāsutta",
-				"bodyHead": "Unlearned",
-				"supHTML": ""
-			},
-			{
-				"section": "134",
-				"modalHead": "Samiddhisutta",
-				"bodyHead": "With Samiddhi",
-				"supHTML": ""
-			},
-			{
-				"section": "137",
-				"modalHead": "Yamakasutta",
-				"bodyHead": "With Yamaka",
-				"supHTML": ""
-			},
-			{
-				"section": "142",
-				"modalHead": "Paṭhamanibbānapaṭisaṁyuttasutta",
-				"bodyHead": "About Extinguishment (1st)",
-				"supHTML": ""
-			},
-			{
-				"section": "146",
-				"modalHead": "Mahānidānasutta",
-				"bodyHead": "The Great Discourse on Causation",
-				"supHTML": ""
-			}
-		]
+		let SQHeaderArray = [];
+		let shortCode = shortcode();
 
-
-
-		buildHTML += `<div style="margin-top: 1em; font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
-
-		let selfquoteArr = document.getElementsByClassName("selfquote");
-		for (i = 0; i < selfquoteArr.length; i++) {
-			if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
-				let modalHeader = 'Section'
-				let supHTML = '';
-				
-				for (let j=0; j<SQHeaderArray.length; j++) {
-					if (linktext.slice(1) == SQHeaderArray[j].section) {
-						buildHTML += `<h4>${SQHeaderArray[j].bodyHead}</h4>`
-						modalHeader = SQHeaderArray[j].modalHead
-						supHTML = SQHeaderArray[j].supHTML
-					}
-				}
-
-				let bookNoteNumber = selfquoteArr[i].innerHTML.substring(selfquoteArr[i].innerHTML.lastIndexOf('<sup>')+5,selfquoteArr[i].innerHTML.lastIndexOf('</sup>'))
-				if (supHTML != '' ) {
-					buildHTML += `<h5>${supHTML}</h5>`
-				} else {
-					let allBookNotes = document.getElementsByClassName("booknotesNumber");
-					for (let k=0; k < allBookNotes.length; k++) {
-						if (allBookNotes[k].innerText == bookNoteNumber) {
-							buildHTML += `<h5>${allBookNotes[k].nextElementSibling.innerHTML}</h5>`
+		function buildText (headerData) {
+			SQHeaderArray = headerData;
+			buildHTML += `<div style="margin-top: 0; font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
+			let selfquoteArr = document.getElementsByClassName("selfquote");
+			for (i = 0; i < selfquoteArr.length; i++) {
+				if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
+					let modalHeader = 'Section'
+					let supHTML = '';
+					
+					for (let j=0; j<SQHeaderArray.length; j++) {
+						if (linktext.slice(1) == SQHeaderArray[j].section) {
+							buildHTML += `<h4>${SQHeaderArray[j].modalHead}`
+							buildHTML += `<br>${SQHeaderArray[j].bodyHead}`
+							modalHeader = SQHeaderArray[j].modalHead
+							supHTML = SQHeaderArray[j].supHTML
 						}
 					}
+	
+					let bookNoteNumber = selfquoteArr[i].innerHTML.substring(selfquoteArr[i].innerHTML.lastIndexOf('<sup>')+5,selfquoteArr[i].innerHTML.lastIndexOf('</sup>'))
+					if (supHTML != '' ) {
+						buildHTML += `<br>${supHTML}</h4>`
+					} else {
+						let allBookNotes = document.getElementsByClassName("booknotesNumber");
+						for (let k=0; k < allBookNotes.length; k++) {
+							if (allBookNotes[k].innerText == bookNoteNumber) {
+								buildHTML += `<br>${allBookNotes[k].nextElementSibling.innerHTML}</h4>`
+							}
+						}
+					}
+	
+					buildHTML += selfquoteArr[i].innerHTML.replaceAll(/ style=""/g, "").replaceAll(/<sup>[0-9]+<\/sup>/g, "").replaceAll(/<span class="goselfquote">(§[0-9]+)<\/span>/g, '$1' )
+	
+					document.getElementById('ModalHeaderText').innerHTML = `${linktext}`;
 				}
-
-				buildHTML += selfquoteArr[i].innerHTML.replaceAll(/ style=""/g, "").replaceAll(/<sup>[0-9]+<\/sup>/g, "").replaceAll(/<span class="goselfquote">(§[0-9]+)<\/span>/g, '$1' )
-
-				document.getElementById('ModalHeaderText').innerHTML = `${modalHeader} :: ${linktext}`;
 			}
-			
+			selfquoteArea.innerHTML = buildHTML;
 		}
+
+		fetch(`../_resources/book-data/${shortCode}/selfquoteHeaders.json`)
+			.then(response => response.json())
+			.then (data => buildText(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/selfquoteHeaders.json`);
+			}
+		);
+
 
 	} else { // it's (currently) a Figure
 		let figureID = linktext.replace(/&nbsp;/, '').replace(' ','').toLowerCase().replace('ure', '')
@@ -3476,8 +2946,9 @@ function displaySelfquote (linktext) {
 		buildHTML += document.getElementById(figureID).innerHTML
 		buildHTML += `</div>`
 		document.getElementById('ModalHeaderText').innerHTML = `Figure ${figureID.slice(3)}`;
+		selfquoteArea.innerHTML = buildHTML;
 	}
-	selfquoteArea.innerHTML = buildHTML;
+	
 }
 
 function buildExternalQuote (ele) {

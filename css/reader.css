@@ -2467,7 +2467,7 @@ mark.current {
 
 
 #ModalSelfquote {
-	padding: 2em 15%;
+	padding: 1em 15% 2em 15%;
 	font-family: var(--fontfamily);
 	font-size: var(--fontsize);
 	text-align: var(--textalign);
@@ -2475,29 +2475,30 @@ mark.current {
 }
 
 #ModalSelfquote p {
-margin-bottom: 0;
+	margin-bottom: 0;
+	margin-top: 0;
 }
 
 #ModalSelfquote h4 {
 	text-align: left;
-	font-weight: 600;
 	font-variant: small-caps;
-	margin: 0;
+	color: var(--secondarytextcolor);
+	font-size: 0.9em;
+	font-weight: 500;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.46);
 }
 
-#ModalSelfquote h5 {
-	text-align: left;
-	margin-top:0.5em;
-	font-weight: normal;;
-}
 
 #ModalSelfquote .expander {
 	display:none;
 }
 
-#ModalSelfquote .sclinktext {
+#ModalSelfquote .sclinktext, #ModalSelfquote .scsegments {
 	color: var(--primarytextcolor);
 	cursor:default;
+	font-variant: normal;
 }
 
 /* The Close Button */

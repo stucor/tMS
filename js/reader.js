@@ -1437,7 +1437,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#475f7a');
 			r.style.setProperty('--primarycolor', '#667b9e');
 			r.style.setProperty('--listlinkhover', '#9db4ff40');
-			r.style.setProperty('--bdtexthighlighter', '#484c5ee0');
+			r.style.setProperty('--bdtexthighlighter', '#484c5e40');
 			r.style.setProperty('--bdtexthighlightborder', 'grey');
 
 			r.style.setProperty('--tablecaption', '#252525');

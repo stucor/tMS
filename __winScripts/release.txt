@@ -1,16 +1,15 @@
-ren C:\Users\stuar\OneDrive\Desktop\staging\js\bookshelf.js bookshelf_240301a.js
-ren C:\Users\stuar\OneDrive\Desktop\staging\js\player.js player_240301a.js
-ren C:\Users\stuar\OneDrive\Desktop\staging\js\reader.js reader_240301a.js
-ren C:\Users\stuar\OneDrive\Desktop\staging\js\scsutta.js scsutta_240301a.js
+ren C:\Users\stuar\OneDrive\Desktop\staging\js\bookshelf.js bookshelf_240313a.js
+ren C:\Users\stuar\OneDrive\Desktop\staging\js\player.js player_240313a.js
+ren C:\Users\stuar\OneDrive\Desktop\staging\js\reader.js reader_240313a.js
+ren C:\Users\stuar\OneDrive\Desktop\staging\js\scsutta.js scsutta_240313a.js
 
-ren C:\Users\stuar\OneDrive\Desktop\staging\css\bookshelf.css bookshelf_240301a.css
-ren C:\Users\stuar\OneDrive\Desktop\staging\css\player.css player_240301a.css
-ren C:\Users\stuar\OneDrive\Desktop\staging\css\reader.css reader_240301a.css
-ren C:\Users\stuar\OneDrive\Desktop\staging\css\scsutta.css scsutta_240301a.css
-ren C:\Users\stuar\OneDrive\Desktop\staging\css\biblio.css biblio_240301a.css
-
-
-(bookshelf.js)|(player.js)|(reader.js)|(scsutta.js)|(bookshelf.css)|(player.css)|(reader.css)|(scsutta.css)|(biblio.css)
+ren C:\Users\stuar\OneDrive\Desktop\staging\css\bookshelf.css bookshelf_240313a.css
+ren C:\Users\stuar\OneDrive\Desktop\staging\css\player.css player_240313a.css
+ren C:\Users\stuar\OneDrive\Desktop\staging\css\reader.css reader_240313a.css
+ren C:\Users\stuar\OneDrive\Desktop\staging\css\scsutta.css scsutta_240313a.css
 
 
-(?1bookshelf_240301a.js)(?2player_240301a.js)(?3reader_240301a.js)(?4scsutta_240301a.js)(?5bookshelf_240301a.css)(?6player_240301a.css)(?7reader_240301a.css)(?8scsutta_240301a.css)(?9biblio_240301a.css)
+(bookshelf.js)|(player.js)|(reader.js)|(scsutta.js)|(bookshelf.css)|(player.css)|(reader.css)|(scsutta.css)
+
+
+(?1bookshelf_240313a.js)(?2player_240313a.js)(?3reader_240313a.js)(?4scsutta_240313a.js)(?5bookshelf_240313a.css)(?6player_240313a.css)(?7reader_240313a.css)(?8scsutta_240313a.css)

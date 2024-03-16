@@ -477,12 +477,12 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 }
-
+/* 
 .bookSegmentTarget {
 	margin-top: -1px;
 	border-top: 1px dotted var(--bdtexthighlightborder);
 	background: linear-gradient(var(--bdtexthighlighter), rgba(255, 255, 255, 0) 5em);
-}
+} */
 
 
 .indent{
@@ -737,12 +737,13 @@ figcaption {
 }	
 
 .ptsref {
-	display:flexbox;
+	display:inline-flex;
 	font-size: smaller;
-	word-spacing: -0.1em;
+	word-spacing: 0;
 	white-space: nowrap;
 	color: grey;
-	opacity:70%;
+	opacity:90%;
+	font-weight: 100;
 }
 .ptsref::before {
 	content: "\[";

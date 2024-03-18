@@ -2396,7 +2396,6 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		} else {
 			e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
-
 		}
 	}
 
@@ -2425,22 +2424,52 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	if (e.target.classList.contains('bookSegment')){
 		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
 		goToTarget(bookSeg);
-
-		console.log('from book');
 		savedsup = document.getElementById(bookSeg);
 		clearhighlightnote();
-
-
-/* 
-		if (mark_paragraph) {
-			// then flash the segment that has been scrolled too
-			anchorlink = document.getElementById(bookSeg);
-			anchorlink.classList.add('bookSegmentTarget');
-			setTimeout(function() {
-				anchorlink.classList.remove('bookSegmentTarget');
-			}, 2000);
-		} */
 	}
+
+	if (e.target.classList.contains('texttitle')){
+		let shortCode = shortcode();
+		function getTexttitleInfo (ttData) {
+			for (let i in ttData) {
+				if (((ttData[i].type == 'suttaplex') || (ttData[i].type == 'sutta')) && (ttData[i].texttitle == e.target.innerText)) {
+					let strippedSCRef = ttData[i].scref.replace(/\s+/g, '').toLowerCase()
+					let scRefHTML = ''
+					if (ttData[i].type == 'sutta') {
+						scRefHTML = `<span class="sclinktext">${(ttData[i].scref)}</span>`
+					}
+
+					if ((e.target.nextElementSibling) && (e.target.nextElementSibling.classList.contains('opentexttitle'))) {
+						e.target.nextElementSibling.remove();
+					} else {
+						function doSCAPI(scData) {
+							e.target.insertAdjacentHTML("afterend", `<div class=opentexttitle><strong>${scData[0].translated_title} (${scData[0].original_title})</strong> ${scRefHTML}<br>${scData[0].blurb}</div>`);
+						}
+						fetch(`https://suttacentral.net/api/suttaplex/${strippedSCRef}`)
+						.then(response => response.json())
+						.then (data => doSCAPI(data))
+						.catch(error => {
+							console.log(`${error}ERROR: Can't fetch https://suttacentral.net/api/suttaplex/${(ttData[i].scref)}`);
+						});
+					}
+				} else 
+				if ((ttData[i].type == 'wiki') && (ttData[i].texttitle == e.target.innerText)){
+					if ((e.target.nextElementSibling) && (e.target.nextElementSibling.classList.contains('opentexttitle'))) {
+						e.target.nextElementSibling.remove();
+					} else {
+						e.target.insertAdjacentHTML("afterend", `<div class=opentexttitle>  ${(ttData[i].texttitle)} at <a alt="wikipedia logo" href = "https://en.wikipedia.org/wiki/${(ttData[i].scref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></div>`);
+					}
+				}
+			}
+		}
+		fetch(`../_resources/book-data/${shortCode}/texttitle.json`)
+		.then(response => response.json())
+		.then (data => getTexttitleInfo(data))
+		.catch(error => {
+			console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/texttitle.json`);
+		});
+	}
+
 
 });
 
@@ -2800,16 +2829,6 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		savedsup = document.getElementById(bookSeg);
 		goToTarget(bookSeg);
 		clearhighlightnote();
-
-		/* 		if (mark_paragraph) {
-			// then flash the segment that has been scrolled too
-			anchorlink = document.getElementById(bookSeg);
-			anchorlink.classList.add('bookSegmentTarget');
-			setTimeout(function() {
-				anchorlink.classList.remove('bookSegmentTarget');
-			}, 2000);
-		} */
-
 	}
 
 

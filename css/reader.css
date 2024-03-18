@@ -1169,8 +1169,26 @@ dd > p {
 
 .texttitle {
 	font-style: italic;
-	text-decoration: underline dotted rgba(211, 211, 211, 0.632);
+	text-decoration: underline solid rgba(100, 148, 237, 0.486);
+	cursor:pointer;
 }
+
+.opentexttitle {
+	padding:1em; 
+	text-indent:0;
+	color:var(--secondarytextcolor);
+	border: 1px dotted var(--figureimgborder);
+	white-space: wrap;
+	font-weight: normal;
+}
+
+.opentexttitle > .sclinktext{
+	font-size: smaller;
+} 
+/* .texttitle {
+	font-style: italic;
+	text-decoration: underline dotted rgba(211, 211, 211, 0.632);
+} */
 
 dd {
 	margin-top: 0;

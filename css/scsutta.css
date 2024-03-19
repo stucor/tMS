@@ -243,18 +243,31 @@ header li .segno {
   padding-top: 0;
 }
 
+p:has(> .sc-mark), p:has(> span.verse-line > .sc-mark) {
+  background-color: var(--bdtexthighlighter);
+  box-shadow: 1px 1px 3px 1px var(--bdtexthighlightborder);
+  padding: 0.5em;
+  border-radius: 1em;
+}
+/* 
+p:has(> span.verse-line > .sc-mark) {
+  background-color: var(--bdtexthighlighter);
+  box-shadow: 1px 1px 3px 1px var(--bdtexthighlightborder);
+  border-radius: 1em;
+  padding: 0.5em;
+} */
 
 .sc-mark {
-  background-color: var(--bdtexthighlighter);
-  border-bottom: solid var(--bdtexthighlightborder) thin;
+/*   background-color: var(--bdtexthighlighter); */
+  border-bottom: dotted var(--bdtexthighlightborder) 1px;
 }
 
-/*
+
 .sc-mark::after {
   content:' ';
-  background-color: var(--bdtexthighlighter);
+  border-bottom: dotted var(--bdtexthighlightborder) 1px;
 }
-*/
+
 
 .segno {
   font-size: 0.7em;

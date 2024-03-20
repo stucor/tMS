@@ -1185,7 +1185,7 @@ span[class^="texttitle closebutton"] {
 
 .opentexttitle {
 	margin: 0.5em 0.5em 1em 0.5em;
-	padding:1em; 
+	padding: 1em 2em; 
 	text-indent:0;
 	color:var(--secondarytextcolor);
 	box-shadow: 2px 2px 3px 1px var(--bdtexthighlightborder);
@@ -1198,7 +1198,15 @@ span[class^="texttitle closebutton"] {
 
 .opentexttitle > .sclinktext{
 	font-size: 0.8em;
-} 
+}
+
+.opentexttitle p {
+	margin-top: 0;
+}
+
+.opentexttitle p + p {
+	text-indent: 2em;
+}
 
 
 dd {

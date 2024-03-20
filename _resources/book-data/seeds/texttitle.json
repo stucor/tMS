@@ -2,441 +2,624 @@
     {
         "texttitle": "A Hundred Spears",
         "scref": "SN 56.35",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Advice to Anāthapiṇḍika Discourse",
         "scref": "MN 143",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Analysis of the Elements Discourse",
         "scref": "MN 140",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Analysis of the Six Sense Spheres",
         "scref": "MN 137",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Anāthapiṇḍika Sutta",
         "scref": "MN 143",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Anupada Sutta",
         "scref": "MN 111",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Anurādha Sutta",
         "scref": "SN 22.86",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Assalāyana Sutta",
         "scref": "MN 93",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Bhava Sutta",
         "scref": "AN 3.76",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "71",
+        "noteHTML": ""
     },
     {
         "texttitle": "Child’s Flesh Discourse",
         "scref": "SN 12.63",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "City Discourse",
         "scref": "SN 12.65",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "83",
+        "noteHTML": ""
     },
     {
         "texttitle": "Cūḷavedalla Sutta",
         "scref": "MN 44",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Discourse on Direct Conditions",
         "scref": "SN 12.23",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Discourse on Rebirth Through Will",
         "scref": "MN 120",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Discourse on the Foolish and Wise",
         "scref": "MN 129",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Dog-Duty Ascetic Discourse",
         "scref": "MN 57",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "First Discourse on Intention",
         "scref": "SN 12.38",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "First Discourse on the Leash",
         "scref": "SN 22.99",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Godhika Sutta",
         "scref": "SN 4.23",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Great Discourse on the Sources [of Things]",
         "scref": "DN 15",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "If There is Desire Discourse",
         "scref": "SN 12.64",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "23",
+        "noteHTML": ""
     },
     {
         "texttitle": "Kevaddha Sutta",
         "scref": "DN 11",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Longer Discourse on Advice to Rāhula",
         "scref": "MN 62",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Longer Discourse on the Ending of Craving",
         "scref": "MN 38",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "26",
+        "noteHTML": ""
     },
     {
         "texttitle": "Longer Discourse on the Simile of the Elephant’s Footprint",
         "scref": "MN 28",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Mahanidāna",
         "scref": "dn15",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Mahānidāna Sutta",
         "scref": "DN 15",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "57|84|109|146",
+        "noteHTML": ""
     },
     {
         "texttitle": "Mahāpadāna Sutta",
         "scref": "DN 14",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Mahā­sati­paṭ­ṭhā­na Sutta",
+        "scref": "DN 22",
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Mahāsatipaṭṭhāna Sutta",
         "scref": "DN 22",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Mahāvedalla Sutta",
         "scref": "MN 43",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Pañcattaya Sutta",
         "scref": "MN 102",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Precipice Discourse",
         "scref": "SN 56.42",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Ratana Sutta",
         "scref": "KP 6",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Sāleyyaka Sutta",
         "scref": "MN 41",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Sampasādanīya Sutta",
         "scref": "DN 28",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Sangīti Sutta",
         "scref": "DN 33",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Saṅkhāra Sutta",
         "scref": "AN 3.23",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Saṅkhāra-upapatti Sutta",
         "scref": "MN 120",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Sappurisa Sutta",
         "scref": "MN 113",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Satippaṭṭhāna Sutta",
         "scref": "MN 10",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Second",
         "scref": "SN 12.39",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Second Discourse on Intention",
         "scref": "SN 12.39",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Second Discourse on the Leash",
         "scref": "SN 22.100",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Seeds Discourse",
         "scref": "SN 22.54",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "76",
+        "noteHTML": ""
     },
     {
         "texttitle": "Sīgālovāda Sutta",
         "scref": "DN 31",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Simile of the Snake Discourse",
         "scref": "MN 22",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Tangle Discourse",
         "scref": "SN 7.6",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "The Analysis of the Truths",
         "scref": "MN 141",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "The Discourse on Right View",
         "scref": "MN 9",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "The Great Lion’s Roar Discourse",
         "scref": "DN 8",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "The Longer Discourse on the Lion’s Roar",
         "scref": "MN 12",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Third Discourse on Intention",
         "scref": "SN12.40",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "115",
+        "noteHTML": ""
     },
     {
         "texttitle": "Vakkali Sutta",
         "scref": "SN 22.87",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Vappa Discourse",
         "scref": "AN 4.195",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "47",
+        "noteHTML": ""
     },
     {
         "texttitle": "Way to the Undisturbable Discourse",
         "scref": "MN 106",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Yamaka Sutta",
         "scref": "SN 22.85",
-        "type": "sutta"
+        "type": "sutta",
+        "sections": "137",
+        "noteHTML": ""
     },
     {
         "texttitle": "Aṅguttara Nikāya",
         "scref": "an",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Arthaviniścaya Sūtra",
         "scref": "arv",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Cūḷaniddesa",
         "scref": "cnd",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Dhammasaṅgaṇī",
         "scref": "ds",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Dīgha Nikāya",
         "scref": "dn",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Dīrgha Āgama",
         "scref": "da",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Ekottarika Āgama",
         "scref": "ea",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Itivuttaka",
         "scref": "iti",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Madhyama Āgama",
         "scref": "ma",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Majjhima Nikāya",
         "scref": "mn",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Nidāna Saṁyutta",
         "scref": "sn12",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Pāli Abhidhamma",
         "scref": "abhidhamma",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Pārāyana Vagga",
         "scref": "snp-parayanavagga",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Paṭisambhidāmagga",
         "scref": "ps",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Questions of Milinda",
         "scref": "mil",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Saḷāyatana Vagga",
         "scref": "sn-salayatanavaggasamyutta",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Saṁyukta Āgama",
         "scref": "sa",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Saṁyutta Nikāya",
         "scref": "sn",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Śāriputra Abhidharma",
         "scref": "sab",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Satipaṭṭhāna Saṁyutta",
         "scref": "sn47",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Sīlakkhandha Vagga",
         "scref": "dn-silakkhandhavagga",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Suttanipāta",
         "scref": "snp",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Therāgāthā",
         "scref": "thag",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Udāna",
         "scref": "ud",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Udānavarga",
         "scref": "uv",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Vibhaṅga",
         "scref": "vb",
-        "type": "suttaplex"
+        "type": "suttaplex",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Bṛhadāraṇyaka Upaniṣad",
         "scref": "Brihadaranyaka_Upanishad",
-        "type": "wiki"
-    },
-    {
-        "texttitle": "Chāndogya Upaniṣad",
-        "scref": "Chandogya_Upanishad",
-        "type": "wiki"
+        "type": "wiki",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Chāndogya",
         "scref": "Chandogya_Upanishad",
-        "type": "wiki"
+        "type": "wiki",
+        "sections": "Olivelle",
+        "noteHTML": "<p>The <em><strong>Chandogya Upanishad</strong></em> (Sanskrit: <span lang=\"sa\">छान्दोग्योपनिषद्</span>, IAST: <em>Chāndogyopaniṣad</em>) is a Sanskrit text embedded in the Chandogya Brahmana of the Sama Veda of Hinduism. It is one of the oldest Upanishads. It lists as number 9 in the Muktika canon of 108 Upanishads.</p><p>The Upanishad belongs to the <em>Tandya</em> school of the Samaveda. Like <em>Brihadaranyaka Upanishad</em>, the Chandogya is an anthology of texts that must have pre-existed as separate texts, and were edited into a larger text by one or more ancient Indian scholars. The precise chronology of <em>Chandogya Upanishad</em> is uncertain, and it is variously dated to have been composed by the 8th to 6th century BCE in India.</p><p>It is one of the largest Upanishadic compilations, and has eight <em>Prapathakas</em> (literally lectures, chapters), each with many volumes, and each volume contains many verses.The volumes are a motley collection of stories and themes. As part of the poetic and chants-focussed Samaveda, the broad unifying theme of the Upanishad is the importance of speech, language, song and chants to man’s quest for knowledge and salvation, to metaphysical premises and questions, as well as to rituals.</p><p>The <em>Chandogya Upanishad</em> is notable for its lilting metric structure, its mention of ancient cultural elements such as musical instruments, and embedded philosophical premises that later served as foundation for Vedanta school of Hinduism. It is one of the most cited texts in later <em>Bhasyas</em> (reviews and commentaries) by scholars from the diverse schools of Hinduism. Adi Shankaracharya, for example, cited <em>Chandogya Upanishad</em> 810 times in his <em>Vedanta Sutra Bhasya</em>, more than any other ancient text.</p>"
+    },
+    {
+        "texttitle": "Chāndogya Upaniṣad",
+        "scref": "Chandogya_Upanishad",
+        "type": "wiki",
+        "sections": "Olivelle",
+        "noteHTML": "<p>The <em><strong>Chandogya Upanishad</strong></em> (Sanskrit: <span lang=\"sa\">छान्दोग्योपनिषद्</span>, IAST: <em>Chāndogyopaniṣad</em>) is a Sanskrit text embedded in the Chandogya Brahmana of the Sama Veda of Hinduism. It is one of the oldest Upanishads. It lists as number 9 in the Muktika canon of 108 Upanishads.</p><p>The Upanishad belongs to the <em>Tandya</em> school of the Samaveda. Like <em>Brihadaranyaka Upanishad</em>, the Chandogya is an anthology of texts that must have pre-existed as separate texts, and were edited into a larger text by one or more ancient Indian scholars. The precise chronology of <em>Chandogya Upanishad</em> is uncertain, and it is variously dated to have been composed by the 8th to 6th century BCE in India.</p><p>It is one of the largest Upanishadic compilations, and has eight <em>Prapathakas</em> (literally lectures, chapters), each with many volumes, and each volume contains many verses.The volumes are a motley collection of stories and themes. As part of the poetic and chants-focussed Samaveda, the broad unifying theme of the Upanishad is the importance of speech, language, song and chants to man’s quest for knowledge and salvation, to metaphysical premises and questions, as well as to rituals.</p><p>The <em>Chandogya Upanishad</em> is notable for its lilting metric structure, its mention of ancient cultural elements such as musical instruments, and embedded philosophical premises that later served as foundation for Vedanta school of Hinduism. It is one of the most cited texts in later <em>Bhasyas</em> (reviews and commentaries) by scholars from the diverse schools of Hinduism. Adi Shankaracharya, for example, cited <em>Chandogya Upanishad</em> 810 times in his <em>Vedanta Sutra Bhasya</em>, more than any other ancient text.</p>"
     },
     {
         "texttitle": "Kāṇva Śatapatha Brāhmaṇa",
         "scref": "Shatapatha_Brahmana",
-        "type": "wiki"
+        "type": "wiki",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Taittirīya Upaniṣad",
         "scref": "Taittiriya_Upanishad",
-        "type": "wiki"
+        "type": "wiki",
+        "sections": "",
+        "noteHTML": ""
     },
     {
         "texttitle": "Visuddhimagga",
         "scref": "Visuddhimagga",
-        "type": "wiki"
+        "type": "wiki",
+        "sections": "Ñāṇamoli 1956",
+        "noteHTML": "<p>The <em><strong>Visuddhimagga</strong></em> (Pali; English: <em><strong>The Path of Purification</strong></em>), is the ‘great treatise’ on Buddhist practice and Theravāda Abhidhamma written by Buddhaghosa approximately in the 5th century in Sri Lanka. It is a manual condensing and systematizing the 5th century understanding and interpretation of the Buddhist path as maintained by the elders of the Mahavihara Monastery in Anuradhapura, Sri Lanka.</p><p>It is considered the most important Theravada text outside the Tipitaka canon of scriptures, and is described by Bhikkhu Ñāṇamoli as “the hub of a complete and coherent method of exegesis of the Tipitaka.”</p>"
     }
 ]

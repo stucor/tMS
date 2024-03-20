@@ -1302,7 +1302,7 @@ function setTheme(){
 				sni.style.filter="invert(0)";
 			}
 
-			r.style.setProperty('--TOCprogress', '#d6630f09');  //'#d6630f08'); '#f0f2fd80');
+			r.style.setProperty('--TOCprogress', '#ffffcf28');//'#d6630f09');  //'#d6630f08'); '#f0f2fd80');
 			r.style.setProperty('--primarytextcolor', '#13036c');
 			r.style.setProperty('--secondarytextcolor', '#8f3e00'); //'#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
@@ -1907,6 +1907,7 @@ function fillProgressBar() {
 			savedTOCElements[i].style.background = 'unset';
 			savedTOCElements[i].style.opacity = '1';
 			savedTOCElements[i].style.border = "none";
+			savedTOCElements[i].style.color = "var(--primarytextcolor)";
 			savedTOCElements[i].setAttribute('data-progress', '');
 		}
 		for (var i = 0; i < savedTOCElements.length; i++) {
@@ -1916,8 +1917,9 @@ function fillProgressBar() {
 
 			} else {
 				savedTOCElements[i-1].style.opacity = '1';
-				savedTOCElements[i-1].style.borderTop = "thin dotted var(--primarycolor)";//#d6630f8F";
-				savedTOCElements[i-1].style.borderBottom = "thin dotted var(--primarycolor)";
+				savedTOCElements[i-1].style.borderTop = "thin dotted var(--secondarycolor)";//#d6630f8F";
+				savedTOCElements[i-1].style.borderBottom = "thin dotted var(--secondarycolor)";
+				savedTOCElements[i-1].style.color = "var(--secondarytextcolor)";
 				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 				var scrolled = Math.floor(((winScroll / height) * 100)* 10) /10;
@@ -2422,59 +2424,30 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	}
 
 	if (e.target.classList.contains('texttitle')){
-		let shortCode = shortcode();
-		function getTexttitleInfo (ttData) {
-			for (let i in ttData) {
-				if (ttData[i].texttitle == e.target.innerText) {
-					if ((ttData[i].type == 'suttaplex') || (ttData[i].type == 'sutta')) {
-						let strippedSCRef = ttData[i].scref.replace(/\s+/g, '').toLowerCase()
-						let scRefHTML = ''
-						if (ttData[i].type == 'sutta') {
-							scRefHTML = `<span class="sclinktext">${(ttData[i].scref)}</span>`
-						}
-	
-						if ((e.target.nextElementSibling) && (e.target.nextElementSibling.classList.contains('opentexttitle'))) {
-							e.target.nextElementSibling.remove();
-							e.target.classList.remove('closebutton');
-						} else {
-							function doSCAPI(scData) {
-								e.target.insertAdjacentHTML("afterend", `<div class=opentexttitle><strong>${scData[0].translated_title} (${scData[0].original_title})</strong> ${scRefHTML}<br>${scData[0].blurb}<br><span style='float:right; font-size:smaller'>—Summary from SuttaCentral—</span><br></div>`);
-								e.target.classList.add('closebutton')
-							}
-							fetch(`https://suttacentral.net/api/suttaplex/${strippedSCRef}`)
-							.then(response => response.json())
-							.then (data => doSCAPI(data))
-							.catch(error => {
-								console.log(`${error}ERROR: Can't fetch https://suttacentral.net/api/suttaplex/${strippedSCRef}`);
-							});
-						}
-					} else 
-					if (ttData[i].type == 'wiki'){
-						if ((e.target.nextElementSibling) && (e.target.nextElementSibling.classList.contains('opentexttitle'))) {
-							e.target.nextElementSibling.remove();
-						} else {
-							e.target.insertAdjacentHTML("afterend", `<div class=opentexttitle>  ${(ttData[i].texttitle)} at <a alt="wikipedia logo" href = "https://en.wikipedia.org/wiki/${(ttData[i].scref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></div>`);
-						}
-					}
-				}
-			}
+		toggleTexttitle(e.target);
+	}
 
-			
-/* 			for (let i in ttData) {
-				if (((ttData[i].type == 'suttaplex') || (ttData[i].type == 'sutta')) && (ttData[i].texttitle == e.target.innerText)) {
+});
+
+function toggleTexttitle (el) {
+	let shortCode = shortcode();
+	function getTexttitleInfo (ttData) {
+		for (let i in ttData) {
+			if (ttData[i].texttitle == el.innerText) {
+				if ((ttData[i].type == 'suttaplex') || (ttData[i].type == 'sutta')) {
 					let strippedSCRef = ttData[i].scref.replace(/\s+/g, '').toLowerCase()
 					let scRefHTML = ''
 					if (ttData[i].type == 'sutta') {
 						scRefHTML = `<span class="sclinktext">${(ttData[i].scref)}</span>`
 					}
 
-					if ((e.target.nextElementSibling) && (e.target.nextElementSibling.classList.contains('opentexttitle'))) {
-						e.target.nextElementSibling.remove();
-						e.target.classList.remove('closebutton');
+					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opentexttitle'))) {
+						el.nextElementSibling.remove();
+						el.classList.remove('closebutton');
 					} else {
 						function doSCAPI(scData) {
-							e.target.insertAdjacentHTML("afterend", `<div class=opentexttitle><strong>${scData[0].translated_title} (${scData[0].original_title})</strong> ${scRefHTML}<br>${scData[0].blurb}<br><span style='float:right; font-size:smaller'>—Summary from SuttaCentral—</span><br></div>`);
-							e.target.classList.add('closebutton')
+							el.insertAdjacentHTML("afterend", `<div class=opentexttitle><strong>${scData[0].translated_title} (${scData[0].original_title})</strong> ${scRefHTML}<br>${scData[0].blurb}<br><span style='float:right; font-size:smaller'>Summary from SuttaCentral</span><br></div>`);
+							el.classList.add('closebutton')
 						}
 						fetch(`https://suttacentral.net/api/suttaplex/${strippedSCRef}`)
 						.then(response => response.json())
@@ -2484,26 +2457,31 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 						});
 					}
 				} else 
-				if ((ttData[i].type == 'wiki') && (ttData[i].texttitle == e.target.innerText)){
-					if ((e.target.nextElementSibling) && (e.target.nextElementSibling.classList.contains('opentexttitle'))) {
-						e.target.nextElementSibling.remove();
+				if (ttData[i].type == 'wiki'){
+					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opentexttitle'))) {
+						el.nextElementSibling.remove();
+						el.classList.remove('closebutton');
 					} else {
-						e.target.insertAdjacentHTML("afterend", `<div class=opentexttitle>  ${(ttData[i].texttitle)} at <a alt="wikipedia logo" href = "https://en.wikipedia.org/wiki/${(ttData[i].scref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></div>`);
+						let wikiEntry = `<span style='float:right; font-size:smaller'><a alt="wikipedia page" href = "https://en.wikipedia.org/wiki/${(ttData[i].scref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></span><br><br>`
+						//let wikiEntryOld = `${(ttData[i].texttitle)} at <a alt="wikipedia logo" href = "https://en.wikipedia.org/wiki/${(ttData[i].scref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a><br><br>`
+						
+						
+						let bibReference = getFullReference(ttData[i].sections)
+						let noteHTML = `${ttData[i].noteHTML}`;
+						el.insertAdjacentHTML("afterend", `<div class=opentexttitle>${noteHTML}${wikiEntry}<span style='font-variant:small-caps'>Bibliography Entry: </span>${bibReference}</div>`);
+						el.classList.add('closebutton')
 					}
 				}
-			} */
+			}
 		}
-		fetch(`../_resources/book-data/${shortCode}/texttitle.json`)
-		.then(response => response.json())
-		.then (data => getTexttitleInfo(data))
-		.catch(error => {
-			console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/texttitle.json`);
-		});
 	}
-
-
-});
-
+	fetch(`../_resources/book-data/${shortCode}/texttitle.json`)
+	.then(response => response.json())
+	.then (data => getTexttitleInfo(data))
+	.catch(error => {
+		console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/texttitle.json`);
+	});
+}
 
 
 document.getElementById("ModalDetails").addEventListener("click", function(e) {
@@ -2765,7 +2743,7 @@ function getFullReference (shortReference = '') {
 	if (fullHTML) {
 		return fullHTML
 	} else {
-		return 'reference not found';
+		return 'Error: Bibliography reference not found';
 	}
 	
 }
@@ -2824,7 +2802,6 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		}
 	}
 
-
 	if (e.target.classList.contains ('TOCref')) {
 		var toctarget = e.target.getAttribute("data-TOCref");
 		closebtn.click();
@@ -2863,8 +2840,6 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		clearhighlightnote();
 	}
 
-
-
 	if (e.target.classList.contains('noteinnotes')) {
 		//let notesArr = document.getElementsByClassName('booknote')
 		let noteNumber = e.target.innerText
@@ -2875,12 +2850,10 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 			noteFromNumber = e.target.parentNode.parentNode.parentNode.dataset.note;
 		}
 		clearAnyNoteInNoteReturn();
-		
 		let scrollToE = document.querySelectorAll(`[data-note="${noteNumber}"]`);
 		scrollToE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
 		clearhighlightnote(noteFromNumber, 'immediate', true);
 		highlightnote(noteNumber);
-
 		// create a return btn(span)
 		const backbtn = document.createElement("span");
 		backbtn.classList.add('noteinnotereturn')
@@ -2906,6 +2879,9 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		if (true) {e.preventDefault();}
 	}
 
+	if (e.target.classList.contains('texttitle')) {
+		toggleTexttitle (e.target)
+	}
 
 });
 

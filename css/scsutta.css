@@ -68,7 +68,7 @@ li span.pli-lang .segno {
 .button-area {
   position:absolute;
   top: -30px;
-  left:0;
+  left:-1px;
   width:calc(100%);
   background: var(--primarybackground);
   border-radius: 5px 5px 0 0;

@@ -1169,18 +1169,20 @@ dd > p {
 
 .texttitle {
 	text-decoration: underline solid cornflowerblue;
-/* 	text-decoration: underline solid rgba(100, 148, 237, 0.486); */
 	cursor:pointer;
 }
 
 .closebutton::after{
 	color: cornflowerblue;
 	font-style: normal;
-	content: '⊗';
+	content: '\202F\202F☒'; 
 }
+ 
 
 span[class^="texttitle closebutton"] {
 	text-decoration: none;
+	color:var(--secondarytextcolor);
+	background-color: var(--bdtexthighlighter); 
 }
 
 .opentexttitle {
@@ -1207,7 +1209,6 @@ span[class^="texttitle closebutton"] {
 .opentexttitle p + p {
 	text-indent: 2em;
 }
-
 
 dd {
 	margin-top: 0;
@@ -2402,8 +2403,8 @@ mark.current {
 
 .modal-header {
     padding: 2px 5px;
-	font-size: 14px;
-	font-weight: 700;
+	font-size: 15px;
+	font-weight: 500;
     text-align:center;
 	border-bottom: 1px solid darkgrey;
 	user-select: none;

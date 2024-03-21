@@ -2434,11 +2434,20 @@ function toggleTexttitle (el) {
 	function getTexttitleInfo (ttData) {
 		for (let i in ttData) {
 			if (ttData[i].texttitle == el.innerText) {
+
+				if (ttData[i].type == 'internalRef') {
+					for (let j in ttData) {
+						if (ttData[i].extref == ttData[j].texttitle)  {
+							i=j;
+						}
+					}
+				}
+
 				if ((ttData[i].type == 'suttaplex') || (ttData[i].type == 'sutta')) {
-					let strippedSCRef = ttData[i].scref.replace(/\s+/g, '').toLowerCase()
+					let strippedSCRef = ttData[i].extref.replace(/\s+/g, '').toLowerCase()
 					let scRefHTML = ''
 					if (ttData[i].type == 'sutta') {
-						scRefHTML = `<span class="sclinktext">${(ttData[i].scref)}</span>`
+						scRefHTML = `<span class="sclinktext">${(ttData[i].extref)}</span>`
 					}
 
 					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opentexttitle'))) {
@@ -2462,13 +2471,14 @@ function toggleTexttitle (el) {
 						el.nextElementSibling.remove();
 						el.classList.remove('closebutton');
 					} else {
-						let wikiEntry = `<span style='float:right; font-size:smaller'><a alt="wikipedia page" href = "https://en.wikipedia.org/wiki/${(ttData[i].scref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></span><br><br>`
-						//let wikiEntryOld = `${(ttData[i].texttitle)} at <a alt="wikipedia logo" href = "https://en.wikipedia.org/wiki/${(ttData[i].scref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a><br><br>`
-						
-						
-						let bibReference = getFullReference(ttData[i].sections)
+
 						let noteHTML = `${ttData[i].noteHTML}`;
-						el.insertAdjacentHTML("afterend", `<div class=opentexttitle>${noteHTML}${wikiEntry}<span style='font-variant:small-caps'>Bibliography Entry: </span>${bibReference}</div>`);
+						let wikiLink = `<span style='float:right; font-size:smaller'><a alt="wikipedia page" href = "https://en.wikipedia.org/wiki/${(ttData[i].extref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></span><br><br>`
+						let bibReference = ''
+						if (ttData[i].biblio) {
+							bibReference = `<span style='font-variant:small-caps'>Bibliography Entry: </span>${getFullReference(ttData[i].biblio)}`
+						}
+						el.insertAdjacentHTML("afterend", `<div class=opentexttitle>${noteHTML}${wikiLink}${bibReference}</div>`);
 						el.classList.add('closebutton')
 					}
 				}
@@ -2891,7 +2901,14 @@ function displaySutta (linkText) {
 	modalbody.scrollTop = 0;
 	stopBookScroll ();
 	showBD(linkText);
-	document.getElementById('ModalHeaderText').innerHTML = linkText;
+	let [slug, verses] = linkText.split(":");
+	if (!verses) {
+		verses = ''
+	} else {
+		verses = `<span style='font-size:smaller; font-weight:300'>:${verses}</span>`
+	}
+	document.getElementById('ModalHeaderText').innerHTML = `${slug}${verses}`;
+//	document.getElementById('ModalHeaderText').innerHTML = linkText;
 }
 
 

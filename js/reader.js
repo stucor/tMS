@@ -2249,7 +2249,7 @@ function setModalStyle (heading) {
 			modalbody.style.maxHeight = "65vh";
 			modalbody.style.padding = "0";
 			modalcontent.style.width = "95%";
-			modalcontent.style.maxWidth = "55em";
+			modalcontent.style.maxWidth = "65em";
 			modalcontent.style.position ="relative";
 			modalcontent.style.right = "0";
 			modalcontent.style.top = "0";

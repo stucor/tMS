@@ -1,0 +1,90 @@
+[
+    {
+        "sesame": "Bodhi 2000 n.4",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-12-4",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2012 n.503",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "AN-503",
+        "biblio": "Bodhi 2012"
+    },
+    {
+        "sesame": "Bodhi 2000 p.48",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-GenIntro-Namarupa",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 p.518",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-CausationIntro-12Nidanasamyutta",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "‘Remembering Past Lives’ in Brahmavamso 2006 Chapter 13",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "brahm-mbb",
+        "file": "23-001",
+        "biblio": "Brahmavamso 2006"
+    },
+    {
+        "sesame": "Bodhi 2000 n.81",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-22-81",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.206",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-22-206",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.173",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-12-173",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.110",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-22-110",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.112",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-12-112",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 p.522",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-CausationIntro-12Nidanasamyutta",
+        "biblio": "Bodhi 2000"
+    }
+]

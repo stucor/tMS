@@ -1318,6 +1318,7 @@ function setTheme(){
 			r.style.setProperty('--listlinkhover', '#217cbe1F');//'#d5dcfd60');
 			r.style.setProperty('--bdtexthighlighter', '#ffffcf28');//'#fc88320B');//'#e0f4fbb0');//'#eef0fb');
 			r.style.setProperty('--bdtexthighlightborder', '#8f3e00');//'#fc8832C0');
+			r.style.setProperty('--sesamebackground', '#fffff8');
 
 			r.style.setProperty('--tablecaption', '#ffffff');
 			r.style.setProperty('--tablehead', '#eaeaea');
@@ -1439,6 +1440,7 @@ function setTheme(){
 			r.style.setProperty('--listlinkhover', '#9db4ff40');
 			r.style.setProperty('--bdtexthighlighter', '#484c5e40');
 			r.style.setProperty('--bdtexthighlightborder', 'grey');
+			r.style.setProperty('--sesamebackground', '#000');
 
 			r.style.setProperty('--tablecaption', '#252525');
 			r.style.setProperty('--tablehead', '#363636');
@@ -1563,6 +1565,7 @@ function setTheme(){
 			r.style.setProperty('--listlinkhover', '#cea14030');
 			r.style.setProperty('--bdtexthighlighter', '#fa80720F');// '#fffff6ef'); 
 			r.style.setProperty('--bdtexthighlightborder', '#fa807280');
+			r.style.setProperty('--sesamebackground', '#fbefd7');
 
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');
@@ -2429,70 +2432,6 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 
 });
 
-function toggleTexttitle (el) {
-	let shortCode = shortcode();
-	function getTexttitleInfo (ttData) {
-		for (let i in ttData) {
-			if (ttData[i].texttitle == el.innerText) {
-
-				if (ttData[i].type == 'internalRef') {
-					for (let j in ttData) {
-						if (ttData[i].extref == ttData[j].texttitle)  {
-							i=j;
-						}
-					}
-				}
-
-				if ((ttData[i].type == 'suttaplex') || (ttData[i].type == 'sutta')) {
-					let strippedSCRef = ttData[i].extref.replace(/\s+/g, '').toLowerCase()
-					let scRefHTML = ''
-					if (ttData[i].type == 'sutta') {
-						scRefHTML = `<span class="sclinktext">${(ttData[i].extref)}</span>`
-					}
-
-					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opentexttitle'))) {
-						el.nextElementSibling.remove();
-						el.classList.remove('closebutton');
-					} else {
-						function doSCAPI(scData) {
-							el.insertAdjacentHTML("afterend", `<div class=opentexttitle><strong>${scData[0].translated_title} (${scData[0].original_title})</strong> ${scRefHTML}<br>${scData[0].blurb}<br><span style='float:right; font-size:smaller'>Summary from SuttaCentral</span><br></div>`);
-							el.classList.add('closebutton')
-						}
-						fetch(`https://suttacentral.net/api/suttaplex/${strippedSCRef}`)
-						.then(response => response.json())
-						.then (data => doSCAPI(data))
-						.catch(error => {
-							console.log(`${error}ERROR: Can't fetch https://suttacentral.net/api/suttaplex/${strippedSCRef}`);
-						});
-					}
-				} else 
-				if (ttData[i].type == 'wiki'){
-					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opentexttitle'))) {
-						el.nextElementSibling.remove();
-						el.classList.remove('closebutton');
-					} else {
-
-						let noteHTML = `${ttData[i].noteHTML}`;
-						let wikiLink = `<span style='float:right; font-size:smaller'><a alt="wikipedia page" href = "https://en.wikipedia.org/wiki/${(ttData[i].extref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></span><br><br>`
-						let bibReference = ''
-						if (ttData[i].biblio) {
-							bibReference = `<span style='font-variant:small-caps'>Bibliography Entry: </span>${getFullReference(ttData[i].biblio)}`
-						}
-						el.insertAdjacentHTML("afterend", `<div class=opentexttitle>${noteHTML}${wikiLink}${bibReference}</div>`);
-						el.classList.add('closebutton')
-					}
-				}
-			}
-		}
-	}
-	fetch(`../_resources/book-data/${shortCode}/texttitle.json`)
-	.then(response => response.json())
-	.then (data => getTexttitleInfo(data))
-	.catch(error => {
-		console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/texttitle.json`);
-	});
-}
-
 
 document.getElementById("ModalDetails").addEventListener("click", function(e) {
 	if (e.target.closest('A') !== null) {
@@ -2893,7 +2832,140 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		toggleTexttitle (e.target)
 	}
 
+	if (e.target.classList.contains('sesame')) {
+		toggleSesame (e.target)
+	}
+
 });
+
+function toggleSesame (el) {
+	let shortCode = shortcode();
+
+	function getSesame (sesameData) {
+		for (let i in sesameData) {
+			if (sesameData[i].sesame == el.innerText) {
+
+				if (sesameData[i].type == 'internalRef') {
+					for (let j in sesameData) {
+						if (sesameData[i].sesameref == sesameData[j].sesame)  {
+							i=j;
+						}
+					}
+				}
+
+				if (sesameData[i].type == `externalQuote`) {
+
+					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame'))) {
+						el.nextElementSibling.remove();
+						el.classList.remove('closebutton');
+					} else {
+
+						let bibReference = ''
+						if (sesameData[i].biblio) {
+							bibReference = `<hr style='width:50%; margin:1em auto;'><span style='font-variant:small-caps'>Bibliography Entry: </span>${getFullReference(sesameData[i].biblio)}`
+						}
+
+						let fetchPath = `../_resources/external-quotes/${sesameData[i].directory}/${sesameData[i].file}.json`
+						function populateQuote(quoteData) {
+
+							let subSectionSpacer = ''
+							if (quoteData.SubSection) {
+								subSectionSpacer = '<br>'
+							}
+							let quoteHTML = ''
+							quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>by ${quoteData.Author}</h3>`
+							quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
+
+							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}${bibReference}</div>`);
+							el.classList.add('closebutton')
+
+						}
+						fetch(fetchPath)
+							.then(response => response.json())
+							.then (data => populateQuote(data))
+							.catch(error => {
+								console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+							}
+						);
+					}
+				}
+			}
+		}
+	}
+
+
+	fetch(`../_resources/book-data/${shortCode}/sesame.json`)
+	.then(response => response.json())
+	.then (data => getSesame(data))
+	.catch(error => {
+		console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesame.json`);
+	});
+}
+
+
+function toggleTexttitle (el) {
+	let shortCode = shortcode();
+	function getTexttitleInfo (ttData) {
+		for (let i in ttData) {
+			if (ttData[i].texttitle == el.innerText) {
+
+				if (ttData[i].type == 'internalRef') {
+					for (let j in ttData) {
+						if (ttData[i].extref == ttData[j].texttitle)  {
+							i=j;
+						}
+					}
+				}
+
+				if ((ttData[i].type == 'suttaplex') || (ttData[i].type == 'sutta')) {
+					let strippedSCRef = ttData[i].extref.replace(/\s+/g, '').toLowerCase()
+					let scRefHTML = ''
+					if (ttData[i].type == 'sutta') {
+						scRefHTML = `<span class="sclinktext">${(ttData[i].extref)}</span>`
+					}
+
+					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opentexttitle'))) {
+						el.nextElementSibling.remove();
+						el.classList.remove('closebutton');
+					} else {
+						function doSCAPI(scData) {
+							el.insertAdjacentHTML("afterend", `<div class=opentexttitle><strong>${scData[0].translated_title} (${scData[0].original_title})</strong> ${scRefHTML}<br>${scData[0].blurb}<br><span style='float:right; font-size:smaller'>Summary from SuttaCentral</span><br></div>`);
+							el.classList.add('closebutton')
+						}
+						fetch(`https://suttacentral.net/api/suttaplex/${strippedSCRef}`)
+						.then(response => response.json())
+						.then (data => doSCAPI(data))
+						.catch(error => {
+							console.log(`${error}ERROR: Can't fetch https://suttacentral.net/api/suttaplex/${strippedSCRef}`);
+						});
+					}
+				} else 
+				if (ttData[i].type == 'wiki'){
+					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opentexttitle'))) {
+						el.nextElementSibling.remove();
+						el.classList.remove('closebutton');
+					} else {
+
+						let noteHTML = `${ttData[i].noteHTML}`;
+						let wikiLink = `<span style='float:right; font-size:smaller'><a alt="wikipedia page" href = "https://en.wikipedia.org/wiki/${(ttData[i].extref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></span><br><br>`
+						let bibReference = ''
+						if (ttData[i].biblio) {
+							bibReference = `<span style='font-variant:small-caps'>Bibliography Entry: </span>${getFullReference(ttData[i].biblio)}`
+						}
+						el.insertAdjacentHTML("afterend", `<div class=opentexttitle>${noteHTML}${wikiLink}${bibReference}</div>`);
+						el.classList.add('closebutton')
+					}
+				}
+			}
+		}
+	}
+	fetch(`../_resources/book-data/${shortCode}/texttitle.json`)
+	.then(response => response.json())
+	.then (data => getTexttitleInfo(data))
+	.catch(error => {
+		console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/texttitle.json`);
+	});
+}
 
 function displaySutta (linkText) {
 	setModalStyle('Sutta');

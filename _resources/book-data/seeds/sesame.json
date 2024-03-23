@@ -286,5 +286,669 @@
         "directory": "wiki-entry",
         "file": "Visuddhimagga",
         "biblio": "Ñāṇamoli 1956"
+    },
+    {
+        "sesame": "A Hundred Spears",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 56.35",
+        "biblio": ""
+    },
+    {
+        "sesame": "Advice to Anāthapiṇḍika Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 143",
+        "biblio": ""
+    },
+    {
+        "sesame": "Analysis of the Elements Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 140",
+        "biblio": ""
+    },
+    {
+        "sesame": "Analysis of the Six Sense Spheres",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 137",
+        "biblio": ""
+    },
+    {
+        "sesame": "Anāthapiṇḍika Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 143",
+        "biblio": ""
+    },
+    {
+        "sesame": "Anupada Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 111",
+        "biblio": ""
+    },
+    {
+        "sesame": "Anurādha Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 22.86",
+        "biblio": ""
+    },
+    {
+        "sesame": "Assalāyana Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 93",
+        "biblio": ""
+    },
+    {
+        "sesame": "Bhava Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "AN 3.76",
+        "biblio": ""
+    },
+    {
+        "sesame": "Child’s Flesh Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 12.63",
+        "biblio": ""
+    },
+    {
+        "sesame": "City Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 12.65",
+        "biblio": ""
+    },
+    {
+        "sesame": "Cūḷavedalla Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 44",
+        "biblio": ""
+    },
+    {
+        "sesame": "Discourse on Direct Conditions",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 12.23",
+        "biblio": ""
+    },
+    {
+        "sesame": "Discourse on Rebirth Through Will",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 120",
+        "biblio": ""
+    },
+    {
+        "sesame": "Discourse on the Foolish and Wise",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 129",
+        "biblio": ""
+    },
+    {
+        "sesame": "Dog-Duty Ascetic Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 57",
+        "biblio": ""
+    },
+    {
+        "sesame": "First Discourse on Intention",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 12.38",
+        "biblio": ""
+    },
+    {
+        "sesame": "First Discourse on the Leash",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 22.99",
+        "biblio": ""
+    },
+    {
+        "sesame": "Godhika Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 4.23",
+        "biblio": ""
+    },
+    {
+        "sesame": "Great Discourse on the Sources [of Things]",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 15",
+        "biblio": ""
+    },
+    {
+        "sesame": "If There is Desire Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 12.64",
+        "biblio": ""
+    },
+    {
+        "sesame": "Kevaddha Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 11",
+        "biblio": ""
+    },
+    {
+        "sesame": "Longer Discourse on Advice to Rāhula",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 62",
+        "biblio": ""
+    },
+    {
+        "sesame": "Longer Discourse on the Ending of Craving",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 38",
+        "biblio": ""
+    },
+    {
+        "sesame": "Longer Discourse on the Simile of the Elephant’s Footprint",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 28",
+        "biblio": ""
+    },
+    {
+        "sesame": "Mahānidāna",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 15",
+        "biblio": ""
+    },
+    {
+        "sesame": "Mahānidāna Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 15",
+        "biblio": ""
+    },
+    {
+        "sesame": "Mahāpadāna Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 14",
+        "biblio": ""
+    },
+    {
+        "sesame": "Mahā­sati­paṭ­ṭhā­na Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 22",
+        "biblio": ""
+    },
+    {
+        "sesame": "Mahāsatipaṭṭhāna Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 22",
+        "biblio": ""
+    },
+    {
+        "sesame": "Mahāvedalla Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 43",
+        "biblio": ""
+    },
+    {
+        "sesame": "Pañcattaya Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 102",
+        "biblio": ""
+    },
+    {
+        "sesame": "Precipice Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 56.42",
+        "biblio": ""
+    },
+    {
+        "sesame": "Ratana Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "KP 6",
+        "biblio": ""
+    },
+    {
+        "sesame": "Sāleyyaka Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 41",
+        "biblio": ""
+    },
+    {
+        "sesame": "Sampasādanīya Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 28",
+        "biblio": ""
+    },
+    {
+        "sesame": "Sangīti Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 33",
+        "biblio": ""
+    },
+    {
+        "sesame": "Saṅkhāra Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "AN 3.23",
+        "biblio": ""
+    },
+    {
+        "sesame": "Saṅkhāra-upapatti Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 120",
+        "biblio": ""
+    },
+    {
+        "sesame": "Sappurisa Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 113",
+        "biblio": ""
+    },
+    {
+        "sesame": "Satippaṭṭhāna Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 10",
+        "biblio": ""
+    },
+    {
+        "sesame": "Second",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 12.39",
+        "biblio": ""
+    },
+    {
+        "sesame": "Second Discourse on Intention",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 12.39",
+        "biblio": ""
+    },
+    {
+        "sesame": "Second Discourse on the Leash",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 22.100",
+        "biblio": ""
+    },
+    {
+        "sesame": "Seeds Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 22.54",
+        "biblio": ""
+    },
+    {
+        "sesame": "Sīgālovāda Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 31",
+        "biblio": ""
+    },
+    {
+        "sesame": "Simile of the Snake Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 22",
+        "biblio": ""
+    },
+    {
+        "sesame": "Tangle Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 7.6",
+        "biblio": ""
+    },
+    {
+        "sesame": "The Analysis of the Truths",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 141",
+        "biblio": ""
+    },
+    {
+        "sesame": "The Discourse on Right View",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 9",
+        "biblio": ""
+    },
+    {
+        "sesame": "The Great Lion’s Roar Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "DN 8",
+        "biblio": ""
+    },
+    {
+        "sesame": "The Longer Discourse on the Lion’s Roar",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 12",
+        "biblio": ""
+    },
+    {
+        "sesame": "Third Discourse on Intention",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN12.40",
+        "biblio": ""
+    },
+    {
+        "sesame": "Vakkali Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 22.87",
+        "biblio": ""
+    },
+    {
+        "sesame": "Vappa Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "AN 4.195",
+        "biblio": ""
+    },
+    {
+        "sesame": "Way to the Undisturbable Discourse",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "MN 106",
+        "biblio": ""
+    },
+    {
+        "sesame": "Yamaka Sutta",
+        "type": "sutta",
+        "sesameref": "",
+        "directory": "",
+        "file": "SN 22.85",
+        "biblio": ""
+    },
+    {
+        "sesame": "Aṅguttara Nikāya",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "an",
+        "biblio": ""
+    },
+    {
+        "sesame": "Arthaviniścaya Sūtra",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "arv",
+        "biblio": ""
+    },
+    {
+        "sesame": "Cūḷaniddesa",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "cnd",
+        "biblio": ""
+    },
+    {
+        "sesame": "Dhammasaṅgaṇī",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "ds",
+        "biblio": ""
+    },
+    {
+        "sesame": "Dīgha Nikāya",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "dn",
+        "biblio": ""
+    },
+    {
+        "sesame": "Dīrgha Āgama",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "da",
+        "biblio": ""
+    },
+    {
+        "sesame": "Ekottarika Āgama",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "ea",
+        "biblio": ""
+    },
+    {
+        "sesame": "Itivuttaka",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "iti",
+        "biblio": ""
+    },
+    {
+        "sesame": "Madhyama Āgama",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "ma",
+        "biblio": ""
+    },
+    {
+        "sesame": "Majjhima Nikāya",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "mn",
+        "biblio": ""
+    },
+    {
+        "sesame": "Nidāna Saṁyutta",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "sn12",
+        "biblio": ""
+    },
+    {
+        "sesame": "Pāli Abhidhamma",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "abhidhamma",
+        "biblio": ""
+    },
+    {
+        "sesame": "Pārāyana Vagga",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "snp-parayanavagga",
+        "biblio": ""
+    },
+    {
+        "sesame": "Paṭisambhidāmagga",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "ps",
+        "biblio": ""
+    },
+    {
+        "sesame": "Questions of Milinda",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "mil",
+        "biblio": ""
+    },
+    {
+        "sesame": "Saḷāyatana Vagga",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "sn-salayatanavaggasamyutta",
+        "biblio": ""
+    },
+    {
+        "sesame": "Saṁyukta Āgama",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "sa",
+        "biblio": ""
+    },
+    {
+        "sesame": "Saṁyutta Nikāya",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "sn",
+        "biblio": ""
+    },
+    {
+        "sesame": "Śāriputra Abhidharma",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "sab",
+        "biblio": ""
+    },
+    {
+        "sesame": "Satipaṭṭhāna Saṁyutta",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "sn47",
+        "biblio": ""
+    },
+    {
+        "sesame": "Sīlakkhandha Vagga",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "dn-silakkhandhavagga",
+        "biblio": ""
+    },
+    {
+        "sesame": "Suttanipāta",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "snp",
+        "biblio": ""
+    },
+    {
+        "sesame": "Therāgāthā",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "thag",
+        "biblio": ""
+    },
+    {
+        "sesame": "Udāna",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "ud",
+        "biblio": ""
+    },
+    {
+        "sesame": "Udānavarga",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "uv",
+        "biblio": ""
+    },
+    {
+        "sesame": "Vibhaṅga",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "vb",
+        "biblio": ""
     }
 ]

@@ -2845,34 +2845,27 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 function toggleSesame (el) {
 	let shortCode = shortcode();
 
-	function getSesame (sesameData) {
-		for (let i in sesameData) {
-			if (sesameData[i].sesame == el.innerText) {
+	if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame'))) {
+		el.nextElementSibling.remove();
+		el.classList.remove('closebutton');
+	} else {
+		function openSesame (sesameData) {
+			for (let i in sesameData) {
+				if (sesameData[i].sesame == el.innerText) {
 
-				if (sesameData[i].type == 'internalRef') {
-					for (let j in sesameData) {
-						if (sesameData[i].sesameref == sesameData[j].sesame)  {
-							i=j;
+					if (sesameData[i].type == 'internalRef') {
+						for (let j in sesameData) {
+							if (sesameData[i].sesameref == sesameData[j].sesame)  {
+								i=j;
+							}
 						}
 					}
-				}
 
-				if (sesameData[i].type == `externalQuote`) {
-
-					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame'))) {
-						el.nextElementSibling.remove();
-						el.classList.remove('closebutton');
-					} else {
-
-						let wikiLink = ''
-/* 						if (sesameData[i].directory == 'wiki-entry') {
-							console.log (sesameData[i].file);
-							wikiLink = `<span style='float:right; font-size:smaller'><a alt="wikipedia page" href = "https://en.wikipedia.org/wiki/${(sesameData[i].file)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></span><br><br>`
-						} */
+					if (sesameData[i].type == `externalQuote`) {
 
 						let bibReference = ''
 						if (sesameData[i].biblio) {
-							bibReference = `<hr style='width:50%; margin:1em auto;'><span style='font-variant:small-caps'>Bibliography Entry: </span>${getFullReference(sesameData[i].biblio)}`
+							bibReference = `<div style='text-align:left'><hr style='width:50%; margin:1em auto;'><span style='font-variant:small-caps'>Bibliography Entry: </span>${getFullReference(sesameData[i].biblio)}`
 						}
 
 						let fetchPath = `../_resources/external-quotes/${sesameData[i].directory}/${sesameData[i].file}.json`
@@ -2890,7 +2883,7 @@ function toggleSesame (el) {
 							quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}</h3>`
 							quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
 
-							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}${wikiLink}${bibReference}</div>`);
+							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}${bibReference}</div>`);
 							el.classList.add('closebutton')
 
 						}
@@ -2901,20 +2894,41 @@ function toggleSesame (el) {
 								console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 							}
 						);
+					} else 
+					if ((sesameData[i].type == 'suttaplex') || (sesameData[i].type == 'sutta')) {
+						let strippedSCRef = sesameData[i].file.replace(/\s+/g, '').toLowerCase()
+						let scRefHTML = ''
+						if (sesameData[i].type == 'sutta') {
+							scRefHTML = `<span class="sclinktext">${(sesameData[i].file)}</span>`
+						}
+
+						function doSCAPI(scData) {
+							el.insertAdjacentHTML("afterend", `<div class=opensesame><h3>${scData[0].translated_title} (${scData[0].original_title}) ${scRefHTML}</h3>${scData[0].blurb}<br><span style='float:right; font-size:smaller'>Summary from SuttaCentral</span><br></div>`);
+							el.classList.add('closebutton')
+						}
+						fetch(`https://suttacentral.net/api/suttaplex/${strippedSCRef}`)
+						.then(response => response.json())
+						.then (data => doSCAPI(data))
+						.catch(error => {
+							console.log(`${error}ERROR: Can't fetch https://suttacentral.net/api/suttaplex/${strippedSCRef}`);
+						});		
+						
 					}
 				}
 			}
 		}
+		fetch(`../_resources/book-data/${shortCode}/sesame.json`)
+		.then(response => response.json())
+		.then (data => openSesame(data))
+		.catch(error => {
+			console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesame.json`);
+		});
 	}
-
-
-	fetch(`../_resources/book-data/${shortCode}/sesame.json`)
-	.then(response => response.json())
-	.then (data => getSesame(data))
-	.catch(error => {
-		console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesame.json`);
-	});
 }
+
+
+
+
 
 
 function toggleTexttitle (el) {

@@ -94,5 +94,157 @@
         "directory": "bodhi-nikaya-notes",
         "file": "SN-12-166",
         "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.24",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-12-24",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.25",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-12-25",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.339",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-18-339",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2017 p.523",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-com",
+        "file": "PjII-209",
+        "biblio": "Bodhi 2017"
+    },
+    {
+        "sesame": "“when one dwells contemplating gratification in things that can fetter”",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya/SN",
+        "file": "SN12.58",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2012, AN 5.30",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya/AN",
+        "file": "AN5.30",
+        "biblio": "Bodhi 2012"
+    },
+    {
+        "sesame": "Brahmavamso 2006 p.221",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "brahm-mbb",
+        "file": "24-009",
+        "biblio": "Brahmavamso 2006"
+    },
+    {
+        "sesame": "Bodhi 2000 n.114",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-22-114",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Brahmavamso 2006 ‘The Nature of Citta’",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "brahm-mbb",
+        "file": "17-017",
+        "biblio": "Brahmavamso 2006"
+    },
+    {
+        "sesame": "Bodhi 2012 at AN 3.32",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya/AN",
+        "file": "AN3.32",
+        "biblio": "Bodhi 2012"
+    },
+    {
+        "sesame": "AN 3.33",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya/AN",
+        "file": "AN3.33",
+        "biblio": "Bodhi 2012"
+    },
+    {
+        "sesame": "AN 7.49",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya/AN",
+        "file": "AN7.49",
+        "biblio": "Bodhi 2012"
+    },
+    {
+        "sesame": "Bodhi 2000 n.182",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-2-182",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.48",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-12-48",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.53",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-35-53",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Bodhi 2000 n.174",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-12-174",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "Ñāṇamoli 1995 n.266",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "MN-266",
+        "biblio": "Ñāṇamoli 1995"
+    },
+    {
+        "sesame": "Bodhi 2000 n.38",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-1-38",
+        "biblio": "Bodhi 2000"
+    },
+    {
+        "sesame": "",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "",
+        "biblio": "Bodhi 2000"
     }
 ]

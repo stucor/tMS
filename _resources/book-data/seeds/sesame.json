@@ -240,11 +240,51 @@
         "biblio": "Bodhi 2000"
     },
     {
-        "sesame": "",
+        "sesame": "Bṛhadāraṇyaka Upaniṣad",
         "type": "externalQuote",
         "sesameref": "",
-        "directory": "bodhi-nikaya-notes",
-        "file": "",
-        "biblio": "Bodhi 2000"
+        "directory": "wiki-entry",
+        "file": "Brihadaranyaka_Upanishad",
+        "biblio": "Olivelle"
+    },
+    {
+        "sesame": "Chāndogya Upaniṣad",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "wiki-entry",
+        "file": "Chandogya_Upanishad",
+        "biblio": "Olivelle"
+    },
+    {
+        "sesame": "Chāndogya",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "wiki-entry",
+        "file": "Chandogya_Upanishad",
+        "biblio": "Olivelle"
+    },
+    {
+        "sesame": "Kāṇva Śatapatha Brāhmaṇa",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "wiki-entry",
+        "file": "Shatapatha_Brahmana",
+        "biblio": ""
+    },
+    {
+        "sesame": "Taittirīya Upaniṣad",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "wiki-entry",
+        "file": "Taittiriya_Upanishad",
+        "biblio": "Olivelle"
+    },
+    {
+        "sesame": "Visuddhimagga",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "wiki-entry",
+        "file": "Visuddhimagga",
+        "biblio": "Ñāṇamoli 1956"
     }
 ]

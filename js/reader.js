@@ -2429,6 +2429,10 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	if (e.target.classList.contains('texttitle')){
 		toggleTexttitle(e.target);
 	}
+	
+	if (e.target.classList.contains('sesame')) {
+		toggleSesame (e.target)
+	}
 
 });
 
@@ -2860,6 +2864,12 @@ function toggleSesame (el) {
 						el.classList.remove('closebutton');
 					} else {
 
+						let wikiLink = ''
+/* 						if (sesameData[i].directory == 'wiki-entry') {
+							console.log (sesameData[i].file);
+							wikiLink = `<span style='float:right; font-size:smaller'><a alt="wikipedia page" href = "https://en.wikipedia.org/wiki/${(sesameData[i].file)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></span><br><br>`
+						} */
+
 						let bibReference = ''
 						if (sesameData[i].biblio) {
 							bibReference = `<hr style='width:50%; margin:1em auto;'><span style='font-variant:small-caps'>Bibliography Entry: </span>${getFullReference(sesameData[i].biblio)}`
@@ -2873,10 +2883,14 @@ function toggleSesame (el) {
 								subSectionSpacer = '<br>'
 							}
 							let quoteHTML = ''
-							quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>by ${quoteData.Author}</h3>`
+							let author = ''
+							if (quoteData.Author) {
+								author = `by ${quoteData.Author}`
+							}
+							quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}</h3>`
 							quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
 
-							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}${bibReference}</div>`);
+							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}${wikiLink}${bibReference}</div>`);
 							el.classList.add('closebutton')
 
 						}

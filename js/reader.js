@@ -2426,9 +2426,9 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		clearhighlightnote();
 	}
 
-	if (e.target.classList.contains('texttitle')){
+/* 	if (e.target.classList.contains('texttitle')){
 		toggleTexttitle(e.target);
-	}
+	} */
 	
 	if (e.target.classList.contains('sesame')) {
 		toggleSesame (e.target)
@@ -2832,9 +2832,9 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		if (true) {e.preventDefault();}
 	}
 
-	if (e.target.classList.contains('texttitle')) {
+/* 	if (e.target.classList.contains('texttitle')) {
 		toggleTexttitle (e.target)
-	}
+	} */
 
 	if (e.target.classList.contains('sesame')) {
 		toggleSesame (e.target)
@@ -2852,14 +2852,13 @@ function toggleSesame (el) {
 		function openSesame (sesameData) {
 			for (let i in sesameData) {
 				if (sesameData[i].sesame == el.innerText) {
-
-					if (sesameData[i].type == 'internalRef') {
+/* 					if (sesameData[i].type == 'internalRef') {
 						for (let j in sesameData) {
 							if (sesameData[i].sesameref == sesameData[j].sesame)  {
 								i=j;
 							}
 						}
-					}
+					} */
 
 					if (sesameData[i].type == `externalQuote`) {
 
@@ -2899,7 +2898,7 @@ function toggleSesame (el) {
 						let strippedSCRef = sesameData[i].file.replace(/\s+/g, '').toLowerCase()
 						let scRefHTML = ''
 						if (sesameData[i].type == 'sutta') {
-							scRefHTML = `<span class="sclinktext">${(sesameData[i].file)}</span>`
+							scRefHTML = `<span class="sclinktext">${(sesameData[i].file).toLowerCase()}</span>`
 						}
 
 						function doSCAPI(scData) {
@@ -2913,16 +2912,37 @@ function toggleSesame (el) {
 							console.log(`${error}ERROR: Can't fetch https://suttacentral.net/api/suttaplex/${strippedSCRef}`);
 						});		
 						
+					} else
+					if (sesameData[i].type == 'ref') {
+						let bibReference = ''
+						if (sesameData[i].biblio) {
+							bibReference = `${getFullReference(sesameData[i].biblio)}`
+						}
+						el.insertAdjacentHTML("afterend", `<div class=opensesame>${bibReference}</div>`);
+						el.classList.add('closebutton')
 					}
 				}
 			}
 		}
-		fetch(`../_resources/book-data/${shortCode}/sesame.json`)
-		.then(response => response.json())
-		.then (data => openSesame(data))
-		.catch(error => {
-			console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesame.json`);
-		});
+		if (el.classList.contains('ref')) {
+			fetch(`../_resources/book-data/${shortCode}/sesameref.json`)
+			.then(response => response.json())
+			.then (data => openSesame(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesameref.json`);
+			});
+		} else {
+			fetch(`../_resources/book-data/${shortCode}/sesame.json`)
+			.then(response => response.json())
+			.then (data => openSesame(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesame.json`);
+			});
+		}
+
+
+
+
 	}
 }
 
@@ -2931,7 +2951,7 @@ function toggleSesame (el) {
 
 
 
-function toggleTexttitle (el) {
+/* function toggleTexttitle (el) {
 	let shortCode = shortcode();
 	function getTexttitleInfo (ttData) {
 		for (let i in ttData) {
@@ -2993,7 +3013,7 @@ function toggleTexttitle (el) {
 	.catch(error => {
 		console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/texttitle.json`);
 	});
-}
+} */
 
 function displaySutta (linkText) {
 	setModalStyle('Sutta');

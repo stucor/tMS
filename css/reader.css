@@ -1072,7 +1072,7 @@ table.borderlessTable {
 .booknote {
 	scroll-margin-block-start: 2em;
 	margin: 1em 10%;
-	padding:1em 2em 1em 0;
+	padding:0.5em 2em 0.5em 0;
 	border-radius: 1em;
 	display: grid;
   	grid-template-columns: 10% 90%;	
@@ -1162,6 +1162,12 @@ dd > p {
 	text-decoration: underline solid cornflowerblue;
 	cursor:pointer;
 }
+.ref {
+	border: 5px solid limegreen
+}
+.expander {
+	border: 5px solid orange
+}
 
 .opensesame {
 	margin: 0.5em 0em 1em 0em;
@@ -1176,7 +1182,14 @@ dd > p {
 	border-radius: 1em;
 }
 
-span[class^="sesame closebutton"] {
+.closebutton::after{
+	color: cornflowerblue;
+	font-style: normal;
+	content: '\202F\202F☒'; 
+}
+ 
+span[class^="sesame closebutton"], span[class^="sesame ref closebutton"]  {
+/* 	white-space: nowrap; */
 	text-decoration: none;
 	color:var(--secondarytextcolor);
 	background-color: var(--sesamebackground); 
@@ -1200,29 +1213,49 @@ span[class^="sesame closebutton"] {
 	padding-left: 1em;
 }
 
-.opensesame blockquote > p {
+.opensesame p {
+	text-indent: unset;
+}
+
+.opensesame p + p{
+	margin-top: 0;
+	text-indent: 2em;
+}
+ .opensesame blockquote > p {
 	text-indent: unset;
 }
 
 .opensesame blockquote > p + p{
 	margin-top: 0.5em;
-}
+} 
 
+
+
+.quotepno {
+ 	padding: 0 0.5em 0.1em 0.6em;
+	margin: 0 0.5em 0 0;
+	border-radius: 0.6em;
+	color: var(--primarytextcolor);
+	background-color: var(--primarybackground);
+	opacity:80%;
+	font-size: 0.8em;
+	user-select: none;	
+} 
 /* .quotepno {
 	position: relative;
 	bottom: 0.3em;
- 	padding: 0 0.3em 0.1em 0.4em;
+ 	padding: 0 0.5em 0.1em 0.6em;
 	margin: 0 0.5em 0 0;
-	border-radius: 0.5em;
-	color:var(--primarybackground);
+	border-radius: 0.6em;
+	color:var(--sesamebackground);
 	background: var(--secondarytextcolor);
 	opacity:60%;
 	font-size: 0.6em;
 	user-select: none;	
-}
+}  */
 .quotepno::before {
 	content: 'p.'
-} */
+}
 
 
 
@@ -1230,7 +1263,7 @@ span[class^="sesame closebutton"] {
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 
-.texttitle {
+/* .texttitle {
 	text-decoration: underline solid cornflowerblue;
 	cursor:pointer;
 }
@@ -1271,7 +1304,7 @@ span[class^="texttitle closebutton"] {
 
 .opentexttitle p + p {
 	text-indent: 2em;
-}
+} */
 
 dd {
 	margin-top: 0;
@@ -1365,22 +1398,6 @@ dd > ol > li {
 
 .expansion blockquote > p + p{
 	margin-top: 0.5em;
-}
-
-.quotepno {
-	position: relative;
-	bottom: 0.3em;
- 	padding: 0 0.3em 0.1em 0.4em;
-	margin: 0 0.5em 0 0;
-	border-radius: 0.5em;
-	color:var(--primarybackground);
-	background: var(--secondarytextcolor);
-	opacity:60%;
-	font-size: 0.6em;
-	user-select: none;	
-}
-.quotepno::before {
-	content: 'p.'
 }
 
 .bibheadhide {

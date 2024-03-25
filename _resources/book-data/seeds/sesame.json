@@ -32,6 +32,14 @@
         "biblio": "Bodhi 2000"
     },
     {
+        "sesame": "Bodhi 2000 p.840",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya-notes",
+        "file": "SN-AggregatesIntro-22Khandhasamyutta",
+        "biblio": "Bodhi 2000"
+    },
+    {
         "sesame": "‘Remembering Past Lives’ in Brahmavamso 2006 Chapter 13",
         "type": "externalQuote",
         "sesameref": "",
@@ -141,6 +149,14 @@
         "sesameref": "",
         "directory": "bodhi-nikaya/AN",
         "file": "AN5.30",
+        "biblio": "Bodhi 2012"
+    },
+    {
+        "sesame": "Bodhi 2012, AN 10.65",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-nikaya/AN",
+        "file": "AN10.65",
         "biblio": "Bodhi 2012"
     },
     {
@@ -281,6 +297,14 @@
     },
     {
         "sesame": "Visuddhimagga",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "wiki-entry",
+        "file": "Visuddhimagga",
+        "biblio": "Ñāṇamoli 1956"
+    },
+    {
+        "sesame": "Vism",
         "type": "externalQuote",
         "sesameref": "",
         "directory": "wiki-entry",
@@ -793,6 +817,14 @@
     },
     {
         "sesame": "Ekottarika Āgama",
+        "type": "suttaplex",
+        "sesameref": "",
+        "directory": "",
+        "file": "ea",
+        "biblio": ""
+    },
+    {
+        "sesame": "Ekottarika",
         "type": "suttaplex",
         "sesameref": "",
         "directory": "",

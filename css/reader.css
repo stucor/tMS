@@ -1166,8 +1166,7 @@ dd > p {
 span[class^="sesame ref closebutton"] {
 	border:none
 }
-/* .ref {
-	text-decoration: solid underline cornflowerblue;
+/*  .ref {
 	border: 5px solid limegreen
 }  */
 .expander {

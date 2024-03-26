@@ -1162,9 +1162,14 @@ dd > p {
 	text-decoration: underline solid cornflowerblue;
 	cursor:pointer;
 }
-.ref {
-	border: 5px solid limegreen
+
+span[class^="sesame ref closebutton"] {
+	border:none
 }
+/* .ref {
+	text-decoration: solid underline cornflowerblue;
+	border: 5px solid limegreen
+}  */
 .expander {
 	border: 5px solid orange
 }
@@ -1181,6 +1186,17 @@ dd > p {
  	background-color: var(--sesamebackground); 
 	border-radius: 1em;
 }
+.opensesameref {
+	padding: 0 0.5em; 
+	color:var(--secondarytextcolor);
+/* 	box-shadow: 2px 2px 3px 1px var(--bdtexthighlightborder); */
+	white-space: wrap;
+	font-weight: normal;
+/* 	font-size: 0.9em; */
+ 	background-color: var(--sesamebackground); 
+	border-bottom: 1px dotted var(--bdtexthighlightborder);
+	box-sizing: border-box;
+}
 
 .closebutton::after{
 	color: cornflowerblue;
@@ -1188,9 +1204,15 @@ dd > p {
 	content: '\202F\202F☒'; 
 }
  
-span[class^="sesame closebutton"], span[class^="sesame ref closebutton"]  {
+span[class^="sesame closebutton"]  {
 /* 	white-space: nowrap; */
 	text-decoration: none;
+	color:var(--secondarytextcolor);
+	background-color: var(--sesamebackground); 
+}
+span[class^="sesame ref closebutton"]  {
+	text-decoration: none;
+/* 	border-bottom: 1px dotted var(--bdtexthighlightborder); */
 	color:var(--secondarytextcolor);
 	background-color: var(--sesamebackground); 
 }

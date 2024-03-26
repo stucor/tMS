@@ -2845,11 +2845,12 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 function toggleSesame (el) {
 	let shortCode = shortcode();
 
-	if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame'))) {
+	if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame') || el.nextElementSibling.classList.contains('opensesameref'))) {
 		el.nextElementSibling.remove();
 		el.classList.remove('closebutton');
 	} else {
 		function openSesame (sesameData) {
+			let bibsesame = el.innerText;
 			for (let i in sesameData) {
 				if (sesameData[i].sesame == el.innerText) {
 /* 					if (sesameData[i].type == 'internalRef') {
@@ -2912,17 +2913,31 @@ function toggleSesame (el) {
 							console.log(`${error}ERROR: Can't fetch https://suttacentral.net/api/suttaplex/${strippedSCRef}`);
 						});		
 						
-					} else
-					if (sesameData[i].type == 'ref') {
+					}  else
+					if (el.classList.contains('ref')) {
+						if (el.innerText == sesameData[i].sesame) {
+							bibsesame = sesameData[i].biblio
+						}
+					} 
+
+
+
+/* 					if (sesameData[i].type == 'ref') {
 						let bibReference = ''
 						if (sesameData[i].biblio) {
-							bibReference = `${getFullReference(sesameData[i].biblio)}`
-						}
+							bibReference = ` ${getFullReference(sesameData[i].biblio)}`
+						} 
 						el.insertAdjacentHTML("afterend", `<div class=opensesame>${bibReference}</div>`);
 						el.classList.add('closebutton')
-					}
+					} */
 				}
+			} 
+			if (el.classList.contains('ref')) {
+				let bibReference = ` ${getFullReference(bibsesame)}`
+				el.insertAdjacentHTML("afterend", `<span class=opensesameref>${bibReference}</span>`);
+				el.classList.add('closebutton')
 			}
+
 		}
 		if (el.classList.contains('ref')) {
 			fetch(`../_resources/book-data/${shortCode}/sesameref.json`)

@@ -1161,15 +1161,16 @@ dd > p {
 .sesame {
 	text-decoration: underline solid cornflowerblue;
 	cursor:pointer;
+	border-bottom: solid 1px red;
 }
 
 span[class^="sesame ref closebutton"] {
 	border:none
 }
-/*  .ref {
+/* .ref {
 	border: 5px solid limegreen
-}  */
-.expander {
+} 
+ */.expander {
 	border: 5px solid orange
 }
 
@@ -1531,6 +1532,7 @@ sup {
 	color: cornflowerblue;
 	/*outline: double 0 var(--notehighlighter); */
 	/*background: var(--primarybackground);*/
+	border: 6px solid yellow;
 	border-radius: 1em;
 	cursor: pointer;
 	font-style: normal;

@@ -2432,6 +2432,8 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	
 	if (e.target.classList.contains('sesame')) {
 		toggleSesame (e.target)
+	} else if (e.target.parentNode.classList.contains('sesame')) {
+		toggleSesame (e.target.parentNode)
 	}
 
 });
@@ -2832,12 +2834,10 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		if (true) {e.preventDefault();}
 	}
 
-/* 	if (e.target.classList.contains('texttitle')) {
-		toggleTexttitle (e.target)
-	} */
-
 	if (e.target.classList.contains('sesame')) {
 		toggleSesame (e.target)
+	} else if (e.target.parentNode.classList.contains('sesame')) {
+		toggleSesame (e.target.parentNode)
 	}
 
 });
@@ -2853,13 +2853,6 @@ function toggleSesame (el) {
 			let bibsesame = el.innerText;
 			for (let i in sesameData) {
 				if (sesameData[i].sesame == el.innerText) {
-/* 					if (sesameData[i].type == 'internalRef') {
-						for (let j in sesameData) {
-							if (sesameData[i].sesameref == sesameData[j].sesame)  {
-								i=j;
-							}
-						}
-					} */
 
 					if (sesameData[i].type == `externalQuote`) {
 
@@ -2919,26 +2912,15 @@ function toggleSesame (el) {
 							bibsesame = sesameData[i].biblio
 						}
 					} 
-
-
-
-/* 					if (sesameData[i].type == 'ref') {
-						let bibReference = ''
-						if (sesameData[i].biblio) {
-							bibReference = ` ${getFullReference(sesameData[i].biblio)}`
-						} 
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${bibReference}</div>`);
-						el.classList.add('closebutton')
-					} */
 				}
-			} 
+			}
 			if (el.classList.contains('ref')) {
 				let bibReference = ` ${getFullReference(bibsesame)}`
 				el.insertAdjacentHTML("afterend", `<span class=opensesameref>${bibReference}</span>`);
 				el.classList.add('closebutton')
 			}
-
 		}
+
 		if (el.classList.contains('ref')) {
 			fetch(`../_resources/book-data/${shortCode}/sesameref.json`)
 			.then(response => response.json())
@@ -2954,10 +2936,6 @@ function toggleSesame (el) {
 				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesame.json`);
 			});
 		}
-
-
-
-
 	}
 }
 

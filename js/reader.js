@@ -2385,7 +2385,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		}	
 	}
 
-	if (e.target.classList.contains ('expander')) {
+/* 	if (e.target.classList.contains ('expander')) {
 		var fullReference = getFullReference(e.target.dataset.reference);
 		if (e.target.classList.contains('expanded')) {
 			e.target.innerHTML = '⊕';
@@ -2395,7 +2395,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 			e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
 			e.target.classList.add('expanded');
 		}
-	}
+	} */
 
 	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
 		let linkNode = e.target;
@@ -2473,7 +2473,7 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 		scrollToID(gotoID);
 	}
 
-	if (e.target.classList.contains ('expander')) {
+/* 	if (e.target.classList.contains ('expander')) {
 		if (e.target.classList.contains('expanded')) {
 			e.target.innerHTML = '⊕';
 			e.target.classList.remove('expanded');
@@ -2481,7 +2481,7 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 			e.target.innerHTML = '⊗ '; 
 			e.target.classList.add('expanded');
 		}
-	}
+	} */
 
 });
 
@@ -2668,7 +2668,7 @@ function isElementPartiallyInViewport(el)
     var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
     var vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
     var horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
-    return (vertInView && horInViexpanderew);
+    return (vertInView && horInView);
 }
 
 
@@ -2739,7 +2739,7 @@ function decodeBookSegment (anchortext) {
 }
 
 document.getElementById("ModalNotes").addEventListener("click", function(e) {
-	if (e.target.classList.contains ('expander')) {
+/* 	if (e.target.classList.contains ('expander')) {
 		if (e.target.classList.contains('externalquote')){
 			buildExternalQuote (e.target)
 		} else {
@@ -2755,7 +2755,7 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 				e.target.classList.add('expanded');
 			}
 		}
-	}
+	} */
 
 	if (e.target.classList.contains ('TOCref')) {
 		var toctarget = e.target.getAttribute("data-TOCref");
@@ -2939,11 +2939,6 @@ function toggleSesame (el) {
 	}
 }
 
-
-
-
-
-
 /* function toggleTexttitle (el) {
 	let shortCode = shortcode();
 	function getTexttitleInfo (ttData) {
@@ -3108,7 +3103,7 @@ function displaySelfquote (linktext) {
 	
 }
 
-function buildExternalQuote (ele) {
+/* function buildExternalQuote (ele) {
 	if (ele.innerText == '⊕'){
 		let [externalResource,quoteFile] = ele.dataset.quote.split(':')
 		let html =``;
@@ -3133,7 +3128,7 @@ function buildExternalQuote (ele) {
 			}
 		);
 	}
-}
+} */
 
 
 

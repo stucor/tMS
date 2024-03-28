@@ -1161,7 +1161,7 @@ dd > p {
 .sesame {
 	text-decoration: underline solid cornflowerblue;
 	cursor:pointer;
-	border-bottom: solid 1px red;
+/* 	border-bottom: solid 1px red; */
 }
 
 span[class^="sesame ref closebutton"] {
@@ -1170,9 +1170,8 @@ span[class^="sesame ref closebutton"] {
 /* .ref {
 	border: 5px solid limegreen
 } 
- */.expander {
-	border: 5px solid orange
-}
+ */
+ 
 
 .opensesame {
 	margin: 0.5em 0em 1em 0em;
@@ -1375,6 +1374,7 @@ dd > ol > li {
 	opacity: 0.25;
 }
 
+/*
 .expander {
 	color: rgba(100, 148, 237, 0.74);
 	position: relative;
@@ -1420,7 +1420,7 @@ dd > ol > li {
 
 .expansion blockquote > p + p{
 	margin-top: 0.5em;
-}
+} */
 
 .bibheadhide {
     display: none;
@@ -1532,7 +1532,6 @@ sup {
 	color: cornflowerblue;
 	/*outline: double 0 var(--notehighlighter); */
 	/*background: var(--primarybackground);*/
-	border: 6px solid yellow;
 	border-radius: 1em;
 	cursor: pointer;
 	font-style: normal;
@@ -2627,9 +2626,9 @@ mark.current {
 }
 
 
-#ModalSelfquote .expander {
+/* #ModalSelfquote .expander {
 	display:none;
-}
+} */
 
 #ModalSelfquote .sclinktext, #ModalSelfquote .scsegments {
 	color: var(--primarytextcolor);

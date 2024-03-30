@@ -1563,9 +1563,9 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#ecd38d');
 			r.style.setProperty('--primarycolor', '#cea140');
 			r.style.setProperty('--listlinkhover', '#cea14030');
-			r.style.setProperty('--bdtexthighlighter', '#fa80720F');// '#fffff6ef'); 
-			r.style.setProperty('--bdtexthighlightborder', '#fa807280');
-			r.style.setProperty('--sesamebackground', '#fbefd7');
+			r.style.setProperty('--bdtexthighlighter', '#ddc9a220');// '#fffff6ef'); 
+			r.style.setProperty('--bdtexthighlightborder', '#ddc9a2');
+			r.style.setProperty('--sesamebackground', '#ddc9a210');
 
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');

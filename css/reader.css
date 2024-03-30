@@ -322,18 +322,6 @@ strong {
 	font-style: normal;
 }
 
-/*
-.content h1.preface {
-	text-align: center;
-	font-size: calc(var(--fontsize)*1.9);
-	font-style: normal;
-	font-weight: 400;
-	font-variant: small-caps;
-	padding-bottom: 0;
-	padding-top:3em;
-}
-*/
-
 .prefacewriter {
 	margin-top: 1em;
 	margin-bottom: 1em;
@@ -1167,11 +1155,6 @@ dd > p {
 span[class^="sesame ref closebutton"] {
 	border:none
 }
-/* .ref {
-	border: 5px solid limegreen
-} 
- */
- 
 
 .opensesame {
 	margin: 0.5em 0em 1em 0em;
@@ -1185,40 +1168,36 @@ span[class^="sesame ref closebutton"] {
  	background-color: var(--sesamebackground); 
 	border-radius: 1em;
 }
+
 .opensesameref {
-	padding: 0 0.5em; 
+	padding: 0; 
 	color:var(--secondarytextcolor);
-/* 	box-shadow: 2px 2px 3px 1px var(--bdtexthighlightborder); */
 	white-space: wrap;
 	font-weight: normal;
-/* 	font-size: 0.9em; */
  	background-color: var(--sesamebackground); 
 	border-bottom: 1px dotted var(--bdtexthighlightborder);
 	box-sizing: border-box;
 }
 
 .closebutton::after{
+	position: relative;
+	top:-0.05em;
 	color: cornflowerblue;
 	font-style: normal;
-	content: '\202F\202F☒'; 
+	padding: 0 0.4em 0 0.1em;
+	content: '\22A0'; 
 }
- 
+
 span[class^="sesame closebutton"]  {
-/* 	white-space: nowrap; */
 	text-decoration: none;
 	color:var(--secondarytextcolor);
 	background-color: var(--sesamebackground); 
 }
 span[class^="sesame ref closebutton"]  {
 	text-decoration: none;
-/* 	border-bottom: 1px dotted var(--bdtexthighlightborder); */
 	color:var(--secondarytextcolor);
 	background-color: var(--sesamebackground); 
 }
-
-/* .booknotesText:has(> .opensesame) > .opensesame {
-	background: #00000000
-} */
 
 .opensesame h3 {
 	font-variant:small-caps; 
@@ -1250,8 +1229,6 @@ span[class^="sesame ref closebutton"]  {
 	margin-top: 0.5em;
 } 
 
-
-
 .quotepno {
  	padding: 0 0.5em 0.1em 0.6em;
 	margin: 0 0.5em 0 0;
@@ -1262,70 +1239,9 @@ span[class^="sesame ref closebutton"]  {
 	font-size: 0.8em;
 	user-select: none;	
 } 
-/* .quotepno {
-	position: relative;
-	bottom: 0.3em;
- 	padding: 0 0.5em 0.1em 0.6em;
-	margin: 0 0.5em 0 0;
-	border-radius: 0.6em;
-	color:var(--sesamebackground);
-	background: var(--secondarytextcolor);
-	opacity:60%;
-	font-size: 0.6em;
-	user-select: none;	
-}  */
 .quotepno::before {
 	content: 'p.'
 }
-
-
-
-
-
-/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
-
-/* .texttitle {
-	text-decoration: underline solid cornflowerblue;
-	cursor:pointer;
-}
-
-.closebutton::after{
-	color: cornflowerblue;
-	font-style: normal;
-	content: '\202F\202F☒'; 
-}
- 
-
-span[class^="texttitle closebutton"] {
-	text-decoration: none;
-	color:var(--secondarytextcolor);
-	background-color: var(--bdtexthighlighter); 
-}
-
-.opentexttitle {
-	margin: 0.5em 0.5em 1em 0.5em;
-	padding: 1em 2em; 
-	text-indent:0;
-	color:var(--secondarytextcolor);
-	box-shadow: 2px 2px 3px 1px var(--bdtexthighlightborder);
-	white-space: wrap;
-	font-weight: normal;
-	font-size: 0.9em;
- 	background-color: var(--bdtexthighlighter); 
-	border-radius: 1em;
-}
-
-.opentexttitle > .sclinktext{
-	font-size: 0.8em;
-}
-
-.opentexttitle p {
-	margin-top: 0;
-}
-
-.opentexttitle p + p {
-	text-indent: 2em;
-} */
 
 dd {
 	margin-top: 0;
@@ -1374,57 +1290,10 @@ dd > ol > li {
 	opacity: 0.25;
 }
 
-/*
-.expander {
-	color: rgba(100, 148, 237, 0.74);
-	position: relative;
-	bottom: 0.05em;
-	padding-left:0.1em;
-	cursor: pointer;
-	user-select: none;
-	font-weight: 100;
-}
-
-.expanded {
-	background: var(--primarybackground);
-	border-radius: 1em;
-	font-weight: unset;
-}
-
-.expansion {
-	cursor:auto;
-	user-select:text;
-	color:var(--secondarytextcolor);
-	background: var(--primarybackground);
-	position:relative;
-	bottom: -0.05em;
-	border-radius: 10px;
-}
-.expansion h3 {
-	font-variant:small-caps; 
-	margin-top: 0;
-	margin-bottom: 1em;
-	text-align: left;
-	font-size: 1em;
-	font-weight: 600;
-}
-
-.expansion blockquote {
-	border-left: none;
-	padding-left: 1em;
-}
-
-.expansion blockquote > p {
-	text-indent: unset;
-}
-
-.expansion blockquote > p + p{
-	margin-top: 0.5em;
-} */
-
 .bibheadhide {
     display: none;
 }
+
 
 .linkContainer {
 	box-sizing: border-box;
@@ -3140,6 +3009,11 @@ mark.current {
 		margin: 1em;
 	}
 
+	.opensesame {
+		padding: 1em 0.2em; 
+		font-size: 1em;
+	}
+
 }
 
 /* For Touch media - hide the hover */
@@ -3230,6 +3104,12 @@ mark.current {
 	 .suttasortbuttons > button:hover {
 		border: 3px solid var(--primarycolor);
 		box-shadow: none;
+	}
+}
+
+@media (pointer: coarse) {
+	.sesame {
+		user-select: none;
 	}
 }
 

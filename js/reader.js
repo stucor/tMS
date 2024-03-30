@@ -2695,6 +2695,8 @@ function getFullReference (shortReference = '') {
 			}
 		}
 	}
+
+	console.log(`XXX${fullHTML}`)
 	if (fullHTML) {
 		return fullHTML
 	} else {
@@ -2915,7 +2917,7 @@ function toggleSesame (el) {
 				}
 			}
 			if (el.classList.contains('ref')) {
-				let bibReference = ` ${getFullReference(bibsesame)}`
+				let bibReference = `${getFullReference(bibsesame)}`
 				el.insertAdjacentHTML("afterend", `<span class=opensesameref>${bibReference}</span>`);
 				el.classList.add('closebutton')
 			}

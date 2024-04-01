@@ -1563,9 +1563,10 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#ecd38d');
 			r.style.setProperty('--primarycolor', '#cea140');
 			r.style.setProperty('--listlinkhover', '#cea14030');
-			r.style.setProperty('--bdtexthighlighter', '#ddc9a220');// '#fffff6ef'); 
+			r.style.setProperty('--bdtexthighlighter', '#fffddd80'); 
 			r.style.setProperty('--bdtexthighlightborder', '#ddc9a2');
-			r.style.setProperty('--sesamebackground', '#ddc9a210');
+			r.style.setProperty('--sesamebackground', '#ffffff30');
+/* 			r.style.setProperty('--sesamebackground', '#fffddd'); */
 
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');
@@ -2894,7 +2895,7 @@ function toggleSesame (el) {
 						let strippedSCRef = sesameData[i].file.replace(/\s+/g, '').toLowerCase()
 						let scRefHTML = ''
 						if (sesameData[i].type == 'sutta') {
-							scRefHTML = `<span class="sclinktext">${(sesameData[i].file).toLowerCase()}</span>`
+							scRefHTML = `<span class="sclinktext">${(sesameData[i].file)}</span>`
 						}
 
 						function doSCAPI(scData) {

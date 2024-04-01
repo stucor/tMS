@@ -1162,7 +1162,7 @@ span[class^="sesame ref closebutton"] {
 	text-indent:0;
 	color:var(--secondarytextcolor);
 	box-shadow: 2px 2px 3px 1px var(--bdtexthighlightborder);
-	white-space: wrap;
+	white-space: normal;
 	font-weight: normal;
 	font-size: 0.9em;
  	background-color: var(--sesamebackground); 
@@ -1172,7 +1172,7 @@ span[class^="sesame ref closebutton"] {
 .opensesameref {
 	padding: 0; 
 	color:var(--secondarytextcolor);
-	white-space: wrap;
+	white-space: normal;
 	font-weight: normal;
  	background-color: var(--sesamebackground); 
 	border-bottom: 1px dotted var(--bdtexthighlightborder);
@@ -1184,8 +1184,8 @@ span[class^="sesame ref closebutton"] {
 	top:-0.05em;
 	color: cornflowerblue;
 	font-style: normal;
-	padding: 0 0.4em 0 0.1em;
-	content: '\22A0'; 
+	/* padding: 0 0.4em 0 0.1em; */
+	content: '\00a0\22A0\00a0'; 
 }
 
 span[class^="sesame closebutton"]  {
@@ -1228,6 +1228,11 @@ span[class^="sesame ref closebutton"]  {
 .opensesame blockquote > p + p{
 	margin-top: 0.5em;
 } 
+
+.opensesame > h3 > .sclinktext {
+	font-variant: normal;
+	font-size: smaller;
+}
 
 .quotepno {
  	padding: 0 0.5em 0.1em 0.6em;
@@ -2505,6 +2510,7 @@ mark.current {
 	font-variant: normal;
 }
 
+
 #ModalSelfquote p > span.vcmarg { 
 	position: relative;
 	margin-left: 0;
@@ -2969,6 +2975,9 @@ mark.current {
 	.booknotesText {
 		display:inline;
 		margin: 0;
+	}
+	div.booknote:has(> div.booknotesText > span.opensesameref) {
+		text-align: left;
 	}
 	dd {
 		margin-left:0;

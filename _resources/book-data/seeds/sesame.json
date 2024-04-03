@@ -1,5 +1,21 @@
 [
     {
+        "sesame": "Bodhi 2020, 6. The Unconditioned: The Goal, Introduction",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-books",
+        "file": "RBDP-6TheUnconditioned-Intro",
+        "biblio": "Bodhi 2020"
+    },
+    {
+        "sesame": "Bodhi 2020 p.25",
+        "type": "externalQuote",
+        "sesameref": "",
+        "directory": "bodhi-books",
+        "file": "RBDP-0BriefOverviewGrammar-Prefixes",
+        "biblio": "Bodhi 2020"
+    },
+    {
         "sesame": "The Book of the Six Sense Fields in Sujato 2019",
         "type": "externalQuote",
         "sesameref": "",

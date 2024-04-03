@@ -716,20 +716,20 @@ figcaption {
 }	
 
 .ptsref {
-	display:inline-flex;
+	display:inline;
 	font-size: smaller;
-	word-spacing: 0;
+	word-spacing: -0.05em;
 	white-space: nowrap;
 	color: grey;
 	opacity:90%;
 	font-weight: 100;
 }
-.ptsref::before {
+ .ptsref::before {
 	content: "\[";
 }
 .ptsref::after {
 	content: "\]";
-}
+} 
 
 #ModalNotes blockquote {
 	margin: 1em 0;
@@ -2121,6 +2121,7 @@ mark.current {
 
 #tocbtn2 {
 	display:none;
+	background-color: var(--primarybackground);
 	font-size: 18px;
 	font-variant: small-caps;
 	padding-top: 5px;
@@ -2976,9 +2977,22 @@ mark.current {
 		display:inline;
 		margin: 0;
 	}
-	div.booknote:has(> div.booknotesText > span.opensesameref) {
+/* 	div.booknote:has(> div.booknotesText > span.opensesameref) {
 		text-align: left;
+	} */
+/* 	.booknote {
+		text-align: left;
+	} */
+	.opensesameref:before {
+		content: "\a";
+		white-space: pre;
 	}
+
+	.ptsref {
+		display:inline;
+		white-space: normal;
+	}
+
 	dd {
 		margin-left:0;
 	}

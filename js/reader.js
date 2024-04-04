@@ -2697,7 +2697,6 @@ function getFullReference (shortReference = '') {
 		}
 	}
 
-	console.log(`XXX${fullHTML}`)
 	if (fullHTML) {
 		return fullHTML
 	} else {
@@ -2866,19 +2865,26 @@ function toggleSesame (el) {
 
 						let fetchPath = `../_resources/external-quotes/${sesameData[i].directory}/${sesameData[i].file}.json`
 						function populateQuote(quoteData) {
-
 							let subSectionSpacer = ''
 							if (quoteData.SubSection) {
 								subSectionSpacer = '<br>'
 							}
-							let quoteHTML = ''
+							let linkHTML = ''
+							if (sesameData[i].directory == 'wiki-entry') {
+								linkHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameData[i].file}'>on <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span><br>`
+							} else {
+								let [directory,subdirectory] = sesameData[i].directory.split('/')
+								if (directory == 'sujato-nikaya-notes') {
+									linkHTML = `<br><span class='extlink'><a alt='SuttaCentral Guide' href = 'https://suttacentral.net/${subdirectory}'>on <img class='icon' src='../_resources/images/icons/sc-icon.png'>SuttaCentral</a></span>`
+								}
+							}
 							let author = ''
 							if (quoteData.Author) {
 								author = `by ${quoteData.Author}`
 							}
-							quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}</h3>`
+							let quoteHTML = ''
+							quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}${linkHTML}</h3>`
 							quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
-
 							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}${bibReference}</div>`);
 							el.classList.add('closebutton')
 
@@ -2896,7 +2902,9 @@ function toggleSesame (el) {
 						let scRefHTML = ''
 						if (sesameData[i].type == 'sutta') {
 							scRefHTML = `<span class="sclinktext">${(sesameData[i].file)}</span>`
-						}
+						} else {
+ 							scRefHTML = `<a class="extlink" href="https://suttacentral.net/${(sesameData[i].file)}"><br>on <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`;
+ 						}
 
 						function doSCAPI(scData) {
 							el.insertAdjacentHTML("afterend", `<div class=opensesame><h3>${scData[0].translated_title} (${scData[0].original_title}) ${scRefHTML}</h3>${scData[0].blurb}<br><span style='float:right; font-size:smaller'>Summary from SuttaCentral</span><br></div>`);
@@ -2942,69 +2950,6 @@ function toggleSesame (el) {
 	}
 }
 
-/* function toggleTexttitle (el) {
-	let shortCode = shortcode();
-	function getTexttitleInfo (ttData) {
-		for (let i in ttData) {
-			if (ttData[i].texttitle == el.innerText) {
-
-				if (ttData[i].type == 'internalRef') {
-					for (let j in ttData) {
-						if (ttData[i].extref == ttData[j].texttitle)  {
-							i=j;
-						}
-					}
-				}
-
-				if ((ttData[i].type == 'suttaplex') || (ttData[i].type == 'sutta')) {
-					let strippedSCRef = ttData[i].extref.replace(/\s+/g, '').toLowerCase()
-					let scRefHTML = ''
-					if (ttData[i].type == 'sutta') {
-						scRefHTML = `<span class="sclinktext">${(ttData[i].extref)}</span>`
-					}
-
-					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opentexttitle'))) {
-						el.nextElementSibling.remove();
-						el.classList.remove('closebutton');
-					} else {
-						function doSCAPI(scData) {
-							el.insertAdjacentHTML("afterend", `<div class=opentexttitle><strong>${scData[0].translated_title} (${scData[0].original_title})</strong> ${scRefHTML}<br>${scData[0].blurb}<br><span style='float:right; font-size:smaller'>Summary from SuttaCentral</span><br></div>`);
-							el.classList.add('closebutton')
-						}
-						fetch(`https://suttacentral.net/api/suttaplex/${strippedSCRef}`)
-						.then(response => response.json())
-						.then (data => doSCAPI(data))
-						.catch(error => {
-							console.log(`${error}ERROR: Can't fetch https://suttacentral.net/api/suttaplex/${strippedSCRef}`);
-						});
-					}
-				} else 
-				if (ttData[i].type == 'wiki'){
-					if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opentexttitle'))) {
-						el.nextElementSibling.remove();
-						el.classList.remove('closebutton');
-					} else {
-
-						let noteHTML = `${ttData[i].noteHTML}`;
-						let wikiLink = `<span style='float:right; font-size:smaller'><a alt="wikipedia page" href = "https://en.wikipedia.org/wiki/${(ttData[i].extref)}"><img class='icon' src="../_resources/images/icons/Wikipedia-logo-v2.svg"> Wikipedia</a></span><br><br>`
-						let bibReference = ''
-						if (ttData[i].biblio) {
-							bibReference = `<span style='font-variant:small-caps'>Bibliography Entry: </span>${getFullReference(ttData[i].biblio)}`
-						}
-						el.insertAdjacentHTML("afterend", `<div class=opentexttitle>${noteHTML}${wikiLink}${bibReference}</div>`);
-						el.classList.add('closebutton')
-					}
-				}
-			}
-		}
-	}
-	fetch(`../_resources/book-data/${shortCode}/texttitle.json`)
-	.then(response => response.json())
-	.then (data => getTexttitleInfo(data))
-	.catch(error => {
-		console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/texttitle.json`);
-	});
-} */
 
 function displaySutta (linkText) {
 	setModalStyle('Sutta');
@@ -3041,8 +2986,6 @@ function displaySelfquote (linktext) {
 	let selfquoteArea = document.getElementById("selfquotearea");
 
 	let buildHTML = '';
-
-	//console.log(linktext.slice(1))
 
 	if (linktext.substring(0,1) == '§') {
 		let SQHeaderArray = [];
@@ -3105,33 +3048,6 @@ function displaySelfquote (linktext) {
 	}
 	
 }
-
-/* function buildExternalQuote (ele) {
-	if (ele.innerText == '⊕'){
-		let [externalResource,quoteFile] = ele.dataset.quote.split(':')
-		let html =``;
-		function populateQuote(quoteData) {
-			let subSectionSpacer = ''
-			if (quoteData.SubSection) {
-				subSectionSpacer = '<br>'
-			}
-			ele.classList.add('expanded');
-			ele.classList.remove('externalquote')
-			html += `⊗ <div class='expansion' style='font-size:0.9em; margin: 0.5em 0;  padding:0.5em 1em;'>`
-			html += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>by ${quoteData.Author}</h3>`
-			html += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
-			html += `</div>`
-			ele.innerHTML = html
-		}
-		fetch(`../_resources/external-quotes/${externalResource}/${quoteFile}.json`)
-			.then(response => response.json())
-			.then (data => populateQuote(data))
-			.catch(error => {
-				console.log(`${error}ERROR: Can't fetch ../_resources/${externalResource}/${quoteFile}.json`);
-			}
-		);
-	}
-} */
 
 
 

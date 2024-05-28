@@ -1,0 +1,46 @@
+In notepad++:
+
+1. Remove all backlinks :—
+replace: <a href="#fnref\d+" class="footnote-back" role="doc-backlink">↩︎</a></li>
+with: ''
+
+
+2. Find: </p>\r\n<p>
+This will be any multiple paragraphs that you will need to deal with manually.
+
+
+3. 
+replace: <li id="fn(\d+)"><div data-custom-style="footnote text">
+with: <div class="booknote" data-note="\1">
+
+
+4. Remove all reference number styles
+replace: <span data-custom-style="footnote reference"></span> 
+with: ''
+
+
+5. Make sesame for zotero-citations
+replace: <span data-custom-style="zot-cite">\[
+with: <span class="sesame ref">
+    AND
+replace: ]</span>
+with: </span>
+
+6. Change pali to lang
+replace: <span data-custom-style="pali">
+with: <span lang="pli">
+
+7. Change sesame-suttaplex to sesame (dont' forget youré going to need a )
+replace: <span data-custom-style="sesame-suttaplex">
+with: <span class="sesame">
+
+8. Change ptsref
+replace: <span data-custom-style="pts-reference">
+with: <span class="ptsref">
+
+9.
+replace: <a href="[\S]*"><span data-custom-style="Hyperlink">
+with: <span class="sclinktext">
+    AND
+replace: </span></a>
+with: </span>

@@ -1,10 +1,60 @@
 const path = require('path')
 const fs = require('fs')
+const { parse } = require('node-html-parser');
 
 let outputHTML =``
 
 
+
+
+function buildFootnotes (bookID) {
+	let footnotesRoot = ``
+	let localHTML =``
+
+	try {
+		const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'footnotes.html', 'utf8');
+		footnotesRoot = parse(data);
+	} catch (err) {
+		console.error(err);
+	}
+	
+	let outFNPara = footnotesRoot.getElementsByTagName ('p');
+	
+	for (let i in outFNPara) {
+		localHTML +=`\t\t\t\t<div class="booknote" data-note="${Number(i)+1}">`
+		localHTML += outFNPara[i].innerHTML
+			.replace('<span data-custom-style="footnote reference"></span> ', '')
+			.replace('<span data-custom-style="pali">', '<span lang="pli">')
+			.replace('<span data-custom-style="pts-reference">','<span class="ptsref">')
+			.replace ('<span data-custom-style="sesame-suttaplex">','<span class="sesame">')
+			.replace('<span data-custom-style="zot-cite">[', '<span class="sesame ref">')
+			.replaceAll('<a href="','{')
+			.replaceAll('"><span data-custom-style="Hyperlink">','}')
+			.replace(/\{(.+?)\}/g, '{')
+			.replaceAll('</span></a>','}')
+			.replaceAll('{AN ','{AN&#8239;')
+			.replaceAll('{DN ','{DN&#8239;')
+			.replaceAll('{MN ','{MN&#8239;')
+			.replaceAll('{SN ','{SN&#8239;')
+			.replaceAll('{Snp ','{Snp&#8239;')
+			.replaceAll('{Dhp ','{Dhp&#8239;')
+			.replaceAll('{Kd ','{Kd&#8239;')
+			.replaceAll('{Ud ','{Ud&#8239;')
+			.replaceAll('{Ja ','{Ja&#8239;')
+			.replaceAll('{', '<span class="sclinktext">')
+			.replaceAll('}', '</span>')
+			.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
+			.replaceAll('<em>,</em>',',') // clean up unexpected italics
+		localHTML += '</div>\n'
+	}
+	return localHTML;
+}
+
 function buildBook (bookID) {
+	return '\n\nBOOK GOES HERE\n\n'
+}
+
+function buildCompleteBook (bookID) {
 
 let html =``
 let metaData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'meta.json'))
@@ -41,6 +91,8 @@ const infoButtonURL = `${iconsFolder}info.svg`
 const settingsButtonURL = `${iconsFolder}settings.svg`
 const downloadButtonURL = `${iconsFolder}download.svg`
 
+// Downloads
+const downloadsFolder = `../_resources/book-downloads/${bookID}/`
 
 const bookURL = installationDirectory + bookID
 const bookFullURL = bookURL + '/index.html'
@@ -59,103 +111,148 @@ const frontCoverRelativeURL = `${metaData.FrontCover}`
 const frontCoverfullURl =  installationDirectory + frontCoverRelativeURL.slice(3)
 
 // Build Header
-html +=`
-    <!DOCTYPE html>
-    <html lang=en-GB>
-    <head> 
-        <meta name="theme-color" content="#fff">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="${mainCSS}">
-        <link rel="stylesheet" type="text/css" href="${suttaCSS}">
-        <link rel="shortcut icon" type="image/x-icon"  href="${siteLogoURL}">
-        <title>${title} - ${authorShortname}</title>
-        <meta property="og:title" content="${title} by ${authorShortname}">
-        <meta property="og:description" content="${shortAbstract}">
-        <meta property="og:image" content="${frontCoverfullURl}">
-        <meta property="og:url" content="${bookFullURL}">
-        <meta name="twitter:card" content="${frontCoverfullURl}">
-        <meta property="og:site_name" content="${siteName}">
-        <meta name="twitter:image:alt" content="Book Cover">
-    </head>
-    <body id="thebody">
-
-`    
+html +=`<!DOCTYPE html>
+<html lang=en-GB>
+<head> 
+	<meta name="theme-color" content="#fff">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="${mainCSS}">
+	<link rel="stylesheet" type="text/css" href="${suttaCSS}">
+	<link rel="shortcut icon" type="image/x-icon"  href="${siteLogoURL}">
+	<title>${title} - ${authorShortname}</title>
+	<meta property="og:title" content="${title} by ${authorShortname}">
+	<meta property="og:description" content="${shortAbstract}">
+	<meta property="og:image" content="${frontCoverfullURl}">
+	<meta property="og:url" content="${bookFullURL}">
+	<meta name="twitter:card" content="${frontCoverfullURl}">
+	<meta property="og:site_name" content="${siteName}">
+	<meta name="twitter:image:alt" content="Book Cover">
+</head>
+<body id="thebody">`    
 // Build TOC
-html += `\n\t<div id="tocnav" class="sidenav"  >
-		<div id="tocbtn2" class="tocbtn, no-print" onclick="closeFromTocbtn2 ()">&#10094; Contents</div>
-		<ul  id="TOC">
-			<li id="TOC0" class="noshow">Engrave</li>
-			<li id="TOC0-1">Title Page</li>\n`
+html += `
+<div id="tocnav" class="sidenav">
+	<div id="tocbtn2" class="tocbtn, no-print" onclick="closeFromTocbtn2 ()">&#10094; Contents</div>
+	<ul id="TOC">
+		<li id="TOC0" class="noshow">Engrave</li>
+		<li id="TOC0-1">Title Page</li>\n`
 
 let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'toc.json'))
 for (var i in TOCData){
-    html += `\t\t\t<li id="TOC${TOCData[i].tocno}">${TOCData[i].heading}</li>\n`
+    html += `\t\t<li id="TOC${TOCData[i].tocno}">${TOCData[i].heading}</li>\n`
 }
 html +=
-`			<li id="TOC999999999" class="noshow">TERMINATOR</li>
-		</ul>	
-	</div>
-    `
+`		<li id="TOC999999999" class="noshow">TERMINATOR</li>
+	</ul>	
+</div>`
 
 // TopBar
 html += `
-	<div class="no-print" id="topbar">
-		<div class="topnav" id="myTopnav">
-			<div class="topnav-left">
-				<a id="homebutton"><img class="bookshelfbtn" src="${homeButtonURL}" alt="The Library" title="The Library"><p>Library</p></a>
-			</div>
-			<div class="topnav-right">
-				<a id="searchBtn"><img src="${searchButtonURL}" alt="Search"><p>Search</p></a>
-				<a id="detailsBtn"><img src="${infoButtonURL}" alt="Info"><p>Info</p></a>
-				<a id="settingsBtn"><img src="${settingsButtonURL}" alt="Settings"><p>Settings</p></a> 
-				<a id="downloadBtn"><img src="${downloadButtonURL}" alt="Download"><p>Download</p></a>
-			</div>
+<div class="no-print" id="topbar">
+	<div class="topnav" id="myTopnav">
+		<div class="topnav-left">
+			<a id="homebutton"><img class="bookshelfbtn" src="${homeButtonURL}" alt="The Library" title="The Library"><p>Library</p></a>
 		</div>
-		<div class="topnav2">
-			<div id="tocBtn" class="tocbtn">&#10095; Contents</div>
-			<div class="booktitle">${title}<br>${authorShortname}</div>
+		<div class="topnav-right">
+			<a id="searchBtn"><img src="${searchButtonURL}" alt="Search"><p>Search</p></a>
+			<a id="detailsBtn"><img src="${infoButtonURL}" alt="Info"><p>Info</p></a>
+			<a id="settingsBtn"><img src="${settingsButtonURL}" alt="Settings"><p>Settings</p></a> 
+			<a id="downloadBtn"><img src="${downloadButtonURL}" alt="Download"><p>Download</p></a>
 		</div>
 	</div>
+	<div class="topnav2">
+		<div id="tocBtn" class="tocbtn">&#10095; Contents</div>
+		<div class="booktitle">${title}<br>${authorShortname}</div>
+	</div>
+</div>
 `
 //SearchBar
+html += `<div id="SearchBar" class ="searchbar">
+	<input type="search" id="SearchInput" placeholder="Search in book ...">
+	<button class="sbbutton closesearch" data-search="clear">&#10006;</button>
+	<span class="resultcounter">
+		<span id="searchcount"></span>
+		<span id="currentresult"></span> 
+		<span id="totalresults"></span>
+	</span>
+	<button class="sbbutton" data-search="next">&#9660;</button>
+	<button class="sbbutton" data-search="prev">&#9650;</button>
+	<button class="sbbutton" data-search="revert">&#8634;</button>
+</div>`
+
 html += `
-	<div id="SearchBar" class ="searchbar">
-		<input type="search" id="SearchInput" placeholder="Search in book ...">
-		<button class="sbbutton closesearch" data-search="clear">&#10006;</button>
-		<span class="resultcounter">
-			<span id="searchcount"></span>
-			<span id="currentresult"></span> 
-			<span id="totalresults"></span>
-		</span>
-		<button class="sbbutton" data-search="next">&#9660;</button>
-		<button class="sbbutton" data-search="prev">&#9650;</button>
-		<button class="sbbutton" data-search="revert">&#8634;</button>
-	</div>
+<div id="Modal" class="modal hide">
+	<div id="ModalContent" class="modal-content">
+		<div id="ModalHeader" class="modal-header"><span id="modalCloseBtn" class="close">&times;</span>
+			<div id="ModalHeaderText"></div>
+		</div>
+		<div id="ModalBody" class="modal-body">
+			<div id="ModalDetails"></div>
 `
 
-html += `	
-	<div id="Modal" class="modal hide">
-		<div id="ModalContent" class="modal-content">
-			<div id="ModalHeader" class="modal-header"><span id="modalCloseBtn" class="close">&times;</span>
-				<div id="ModalHeaderText">
+html += `			<div id="ModalNotes">
+			<h2>Notes for ${title}</h2>
+`
+
+html += buildFootnotes(bookID);
+
+html += `				</div>
+			<div id="ModalSettings"></div>
+			<div id="ModalDownload">
+				<div>
+					<div class="downloads">
+						<a href="${downloadsFolder}${bookID}.pdf" download > <img alt="${title} pdf download" src="../_resources/images/icons/PDF_file_icon.svg" ></a>
+						<a href="${downloadsFolder}${bookID}.epub" download > <img alt="${title} epub download" src="../_resources/images/icons/epub_file_icon.svg" ></a>
+						<a href="${downloadsFolder}${bookID}.azw3" download > <img alt="${title} azw3 download" src="../_resources/images/icons/azw3_file_icon.svg" ></a>
+					</div>
 				</div>
 			</div>
-			<div id="ModalBody" class="modal-body">
-				<div id="ModalDetails"></div>
+			<div id="ModalSutta"><div id="sutta"></div></div><div id="ModalDownloadAlert"></div>
+			<div id="ModalSelfquote"><div id="selfquotearea"></div></div>
+		</div>
+	</div>
+</div>
+<div id="spinbox"><div id="spintext"></div></div>
 `
 
+html += `<div class="wrapper" id="bookwrap"><div></div>
+	<div class="content" id="thecontent">
+		<h1 class="engrave center" id="TOCTarget0">${title}</h1>
+		<p class="center smallEngrave">${authorShortname}</p>
+		<div class="book" id="thebook" data-shortcode="${bookID}">
+			<h1 class="titlepage" id="TOCTarget0-1">${title}</h1>
+			<h4 class="titlepage">${subtitle}</h4>
+			<h2 class="titlepage">${authorShortname}</h2>`
 
+html += buildBook(bookID)
 
+html += `
+			<div class="eob">-- END OF BOOK --<br>
+				<a href="../..">
+					<img src="../_resources/images/icons/logo.png" alt="Wiswo Logo"> 
+					<span>Wisdom & Wonders</span>
+				</a>
+			</div>
 
+			<h1 id="TOCTarget999999999"></h1>
+		</div>	
+	</div>
+<div></div></div> 
 
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/jquery.mark.min.js"></script>
+<script src="../js/list.js.2.3.1/list.min.js"></script>
+<script src="../js/reader.js"></script>
+<script src="../js/scsutta.js"></script>
+<script src="../js/fslightbox.js"></script>
 
+</body>
+</html>`
 
-
-
-    outputHTML = html
+outputHTML = html
 }
 
-buildBook('milk')
+buildCompleteBook('milk')
 
 fs.writeFileSync(path.join(__dirname, '.', 'newbook.html'), outputHTML)

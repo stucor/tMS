@@ -1,112 +1,89 @@
-[
-    {
-        "tocno": "0-2",
-        "html-id": "acknowledgements",
-        "heading": "Acknowledgements"
-    },
-    {
-        "tocno": "0-3",
-        "html-id": "introduction",
-        "heading": "Introduction"
-    },
-    {
-        "tocno": "1",
-        "html-id": "what-is-love",
-        "heading": "What is Love?"
-    },
-    {
-        "tocno": "2",
-        "html-id": "two-hearts-beating-as-one",
-        "heading": "Two Hearts Beating as One"
-    },
-    {
-        "tocno": "3",
-        "html-id": "all-in-the-family",
-        "heading": "All in the Family"
-    },
-    {
-        "tocno": "4",
-        "html-id": "until-the-mountains-are-washed-to-the-sea",
-        "heading": "Until the Mountains are Washed to the Sea"
-    },
-    {
-        "tocno": "5",
-        "html-id": "i-was-a-stranger-and-you-took-me-in",
-        "heading": "I Was a Stranger and You Took Me In"
-    },
-    {
-        "tocno": "6",
-        "html-id": "firm-friends-and-true",
-        "heading": "Firm Friends and True"
-    },
-    {
-        "tocno": "7",
-        "html-id": "self-sacrificing-love",
-        "heading": "Self-sacrificing Love"
-    },
-    {
-        "tocno": "8",
-        "html-id": "forbidden-love",
-        "heading": "Forbidden Love"
-    },
-    {
-        "tocno": "9",
-        "html-id": "furred-and-feathered-friends",
-        "heading": "Furred and Feathered Friends"
-    },
-    {
-        "tocno": "10",
-        "html-id": "that-love-of-which-there-is-none-higher",
-        "heading": "That Love of Which There is None Higher"
-    },
-    {
-        "tocno": "11",
-        "html-id": "the-brahma-viharas",
-        "heading": "The Brahma Viharas"
-    },
-    {
-        "tocno": "12",
-        "html-id": "breaking-down-the-barriers",
-        "heading": "Breaking Down the Barriers"
-    },
-    {
-        "tocno": "13",
-        "html-id": "more-about-metta-meditation",
-        "heading": "More About Metta Meditation"
-    },
-    {
-        "tocno": "14",
-        "html-id": "kind-heart-clear-mind",
-        "heading": "Kind Heart, Clear Mind"
-    },
-    {
-        "tocno": "15",
-        "html-id": "an-adorned-and-beautified-mind",
-        "heading": "An Adorned and Beautified Mind"
-    },
-    {
-        "tocno": "16",
-        "html-id": "images-of-love",
-        "heading": "Images of Love"
-    },
-    {
-        "tocno": "999-1",
-        "html-id": "appendix-i-instructions-for-metta-meditation",
-        "heading": "Appendix I—Instructions for Metta Meditation"
-    },
-    {
-        "tocno": "999-2",
-        "html-id": "appendix-ii-instructions-for-mindfulness-meditation",
-        "heading": "Appendix II—Instructions for Mindfulness Meditation"
-    },
-    {
-        "tocno": "999-3",
-        "html-id": "appendix-iii-love-kindness-and-compassion-in-the-early-buddhist-literature",
-        "heading": "Appendix III—Love, Kindness and Compassion in the Early Buddhist Literature"
-    },
-    {
-        "tocno": "999-4",
-        "html-id": "abbreviations",
-        "heading": "Abbreviations"
-    }
+[{
+	"tocno": "1",
+	"html-id": "acknowledgements",
+	"heading": "Acknowledgements"},
+{
+	"tocno": "2",
+	"html-id": "introduction",
+	"heading": "Introduction"},
+{
+	"tocno": "3",
+	"html-id": "what-is-love",
+	"heading": "What is Love?"},
+{
+	"tocno": "4",
+	"html-id": "two-hearts-beating-as-one",
+	"heading": "Two Hearts Beating as One"},
+{
+	"tocno": "5",
+	"html-id": "all-in-the-family",
+	"heading": "All in the Family"},
+{
+	"tocno": "6",
+	"html-id": "until-the-mountains-are-washed-to-the-sea",
+	"heading": "Until the Mountains are Washed to the Sea"},
+{
+	"tocno": "7",
+	"html-id": "i-was-a-stranger-and-you-took-me-in",
+	"heading": "I Was a Stranger and You Took Me In"},
+{
+	"tocno": "8",
+	"html-id": "firm-friends-and-true",
+	"heading": "Firm Friends and True"},
+{
+	"tocno": "9",
+	"html-id": "self-sacrificing-love",
+	"heading": "Self-sacrificing Love"},
+{
+	"tocno": "10",
+	"html-id": "forbidden-love",
+	"heading": "Forbidden Love"},
+{
+	"tocno": "11",
+	"html-id": "furred-and-feathered-friends",
+	"heading": "Furred and Feathered Friends"},
+{
+	"tocno": "12",
+	"html-id": "that-love-of-which-there-is-none-higher",
+	"heading": "That Love of Which There is None Higher"},
+{
+	"tocno": "13",
+	"html-id": "the-brahma-viharas",
+	"heading": "The Brahma Viharas"},
+{
+	"tocno": "14",
+	"html-id": "breaking-down-the-barriers",
+	"heading": "Breaking Down the Barriers"},
+{
+	"tocno": "15",
+	"html-id": "more-about-metta-meditation",
+	"heading": "More About Metta Meditation"},
+{
+	"tocno": "16",
+	"html-id": "kind-heart-clear-mind",
+	"heading": "Kind Heart, Clear Mind"},
+{
+	"tocno": "17",
+	"html-id": "an-adorned-and-beautified-mind",
+	"heading": "An Adorned and Beautified Mind"},
+{
+	"tocno": "18",
+	"html-id": "images-of-love",
+	"heading": "Images of Love"},
+{
+	"tocno": "19",
+	"html-id": "appendix-i-instructions-for-metta-meditation",
+	"heading": "Appendix I—Instructions for Metta Meditation"},
+{
+	"tocno": "20",
+	"html-id": "appendix-ii-instructions-for-mindfulness-meditation",
+	"heading": "Appendix II—Instructions for Mindfulness Meditation"},
+{
+	"tocno": "21",
+	"html-id": "appendix-iii-love-kindness-and-compassion-in-the-early-buddhist-literature",
+	"heading": "Appendix III—Love, Kindness and Compassion in the Early Buddhist Literature"},
+{
+	"tocno": "22",
+	"html-id": "abbreviations",
+	"heading": "Abbreviations"}
 ]

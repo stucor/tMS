@@ -2,22 +2,41 @@ const path = require('path')
 const fs = require('fs')
 const { parse } = require('node-html-parser');
 
+let bookID = process.argv.slice(2)[0];
+
+let pandocRoot =``
+try {
+	const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'pandoc.html', 'utf8');
+	pandocRoot = parse(data);
+} catch (err) {
+	console.error(err);
+}
+
+
 let outputHTML =``
 
+function buildTOCJSON () {
+	let localJSON = ``
+	let TOChtml = pandocRoot.querySelectorAll('#TOC > ul > li > a ')
 
-
-
-function buildFootnotes (bookID) {
-	let footnotesRoot = ``
-	let localHTML =``
-
-	try {
-		const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'footnotes.html', 'utf8');
-		footnotesRoot = parse(data);
-	} catch (err) {
-		console.error(err);
+	localJSON += `[`
+	for (let i in TOChtml) {
+		localJSON += `{\n\t"tocno": "${Number(i)+1}",\n\t"html-id": "${TOChtml[i].getAttribute('href').substring(1)}",\n\t"heading": "${TOChtml[i].innerHTML.replace(/(\r\n|\n|\r)/gm, "").replace('<br>','—')}"}`
+		if (i == TOChtml.length -1) {
+			localJSON += '\n]'
+		} else {
+			localJSON += ',\n'
+		}
 	}
-	
+
+	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'TOC.json'), localJSON, 'utf8')
+}
+
+function buildFootnotes () {
+
+	let footnotesRoot = parse (pandocRoot.querySelector('#footnotes'))
+
+	let localHTML =``
 	let outFNPara = footnotesRoot.getElementsByTagName ('p');
 	
 	for (let i in outFNPara) {
@@ -50,11 +69,55 @@ function buildFootnotes (bookID) {
 	return localHTML;
 }
 
-function buildBook (bookID) {
-	return '\n\nBOOK GOES HERE\n\n'
+function buildBook () {
+	let html = '';
+	let bookRoot = ``;
+	try {
+		const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'book.html', 'utf8');
+		bookRoot = parse(data);
+	} catch (err) {
+		console.error(err);
+	}
+
+	// TOCTarget ids
+	let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'toc.json'))
+	let headingArr = bookRoot.querySelectorAll ('h1, h2, h3')
+	for (let i in headingArr) {
+		bookRoot.querySelectorAll ('h1')[i].setAttribute('id',`TOCTarget${TOCData[i].tocno}`)
+	}
+
+	// superscripts and sups 
+	let suffix = ['st', 'rd', 'nd', 'th']
+	let superscriptIDs =[]
+	for (i in bookRoot.querySelectorAll('sup')) {
+		if (suffix.includes(bookRoot.querySelectorAll('sup')[i].text)) {
+			bookRoot.querySelectorAll('sup')[i].setAttribute('id','superscript'+i)
+			superscriptIDs.push(i);
+		}
+	}
+	for (j in superscriptIDs) {
+		//console.log(superscriptIDs[j])
+		temptext = bookRoot.getElementById(`superscript${superscriptIDs[j]}`).text
+		bookRoot.getElementById(`superscript${superscriptIDs[j]}`).replaceWith(`<span class='superscript'>${temptext}</span>`)
+	}
+
+	let footnoteRef = bookRoot.querySelectorAll('a')
+	let idArr = [];
+	let supArr =[];
+	for (i in footnoteRef) {
+		if (footnoteRef[i].innerHTML.substring(0, 5) == `<sup>`) {
+			supArr.push (footnoteRef[i].innerHTML)
+			idArr.push (footnoteRef[i].id);
+		}
+	}
+	for (i in idArr) {
+		bookRoot.getElementById(idArr[i]).replaceWith(supArr[i])
+	}
+
+	return `\n${bookRoot}`;
 }
 
-function buildCompleteBook (bookID) {
+function buildCompleteBook () {
 
 let html =``
 let metaData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'meta.json'))
@@ -253,6 +316,8 @@ html += `
 outputHTML = html
 }
 
+buildTOCJSON('milk');
 buildCompleteBook('milk')
+
 
 fs.writeFileSync(path.join(__dirname, '.', 'newbook.html'), outputHTML)

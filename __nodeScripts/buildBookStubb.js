@@ -12,8 +12,17 @@ try {
 	console.error(err);
 }
 
-
 let outputHTML =``
+
+function extractBookHTML () {
+	let bookRoot = parse (pandocRoot.querySelector('body'))
+	bookRoot.querySelector('#TOC').remove()
+	bookRoot.querySelector('#footnotes').remove()
+	bookRoot.querySelector('header').remove()
+	let html = ``
+	html += bookRoot.querySelector('body').innerHTML
+	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'book.html'), html, 'utf8')
+}
 
 function buildTOCJSON () {
 	let localJSON = ``
@@ -33,20 +42,17 @@ function buildTOCJSON () {
 }
 
 function buildFootnotes () {
-
 	let footnotesRoot = parse (pandocRoot.querySelector('#footnotes'))
-
 	let localHTML =``
 	let outFNPara = footnotesRoot.getElementsByTagName ('p');
-	
 	for (let i in outFNPara) {
 		localHTML +=`\t\t\t\t<div class="booknote" data-note="${Number(i)+1}">`
 		localHTML += outFNPara[i].innerHTML
 			.replace('<span data-custom-style="footnote reference"></span> ', '')
-			.replace('<span data-custom-style="pali">', '<span lang="pli">')
-			.replace('<span data-custom-style="pts-reference">','<span class="ptsref">')
-			.replace ('<span data-custom-style="sesame-suttaplex">','<span class="sesame">')
-			.replace('<span data-custom-style="zot-cite">[', '<span class="sesame ref">')
+			.replaceAll('<span data-custom-style="pali">', '<span lang="pli">')
+			.replaceAll('<span data-custom-style="pts-reference">','<span class="ptsref">')
+			.replaceAll('<span data-custom-style="sesame-suttaplex">','<span class="sesame">')
+			.replaceAll('<span data-custom-style="zot-cite">',' <span class="sesame ref">')
 			.replaceAll('<a href="','{')
 			.replaceAll('"><span data-custom-style="Hyperlink">','}')
 			.replace(/\{(.+?)\}/g, '{')
@@ -70,7 +76,7 @@ function buildFootnotes () {
 }
 
 function buildBook () {
-	let html = '';
+	let html = ``;
 	let bookRoot = ``;
 	try {
 		const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'book.html', 'utf8');
@@ -80,7 +86,9 @@ function buildBook () {
 	}
 
 	// TOCTarget ids
-	let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'toc.json'))
+	//let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'toc.json'))
+	let TOCData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'toc.json', 'utf8'));
+	//console.log(TOCData)
 	let headingArr = bookRoot.querySelectorAll ('h1, h2, h3')
 	for (let i in headingArr) {
 		bookRoot.querySelectorAll ('h1')[i].setAttribute('id',`TOCTarget${TOCData[i].tocno}`)
@@ -96,7 +104,6 @@ function buildBook () {
 		}
 	}
 	for (j in superscriptIDs) {
-		//console.log(superscriptIDs[j])
 		temptext = bookRoot.getElementById(`superscript${superscriptIDs[j]}`).text
 		bookRoot.getElementById(`superscript${superscriptIDs[j]}`).replaceWith(`<span class='superscript'>${temptext}</span>`)
 	}
@@ -113,6 +120,34 @@ function buildBook () {
 	for (i in idArr) {
 		bookRoot.getElementById(idArr[i]).replaceWith(supArr[i])
 	}
+
+	let allParas = bookRoot.querySelectorAll('p') 
+	for (i in allParas) {
+		allParas[i].innerHTML = allParas[i].innerHTML
+		.replaceAll('data-custom-style="pali"', 'lang="pli"')
+		.replaceAll('data-custom-style="sesame-suttaplex"', 'class="sesame"')
+		.replaceAll('data-custom-style="bob-cite"', 'class="bob-cite"')
+	}
+
+ 	let allDivs = bookRoot.querySelectorAll('div') 
+	for (i in allDivs) {
+		if (allDivs[i].getAttribute('data-custom-style') == "Quote-Block") {
+			allDivs[i].tagName = "blockquote"
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "BOB-Text") {
+			allDivs[i].classList.add ('bob-text')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "sublist-comment") {
+			allDivs[i].classList.add ('sublist-comment')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "list-comment") {
+			allDivs[i].classList.add ('list-comment')
+			allDivs[i].removeAttribute('data-custom-style')
+		}	
+	} 
 
 	return `\n${bookRoot}`;
 }
@@ -244,6 +279,7 @@ html += `<div id="SearchBar" class ="searchbar">
 	<button class="sbbutton" data-search="revert">&#8634;</button>
 </div>`
 
+// SideBar
 html += `
 <div id="Modal" class="modal hide">
 	<div id="ModalContent" class="modal-content">
@@ -254,12 +290,14 @@ html += `
 			<div id="ModalDetails"></div>
 `
 
+// Notes
 html += `			<div id="ModalNotes">
 			<h2>Notes for ${title}</h2>
 `
 
 html += buildFootnotes(bookID);
 
+// Settings
 html += `				</div>
 			<div id="ModalSettings"></div>
 			<div id="ModalDownload">
@@ -278,7 +316,7 @@ html += `				</div>
 </div>
 <div id="spinbox"><div id="spintext"></div></div>
 `
-
+// Book
 html += `<div class="wrapper" id="bookwrap"><div></div>
 	<div class="content" id="thecontent">
 		<h1 class="engrave center" id="TOCTarget0">${title}</h1>
@@ -288,7 +326,7 @@ html += `<div class="wrapper" id="bookwrap"><div></div>
 			<h4 class="titlepage">${subtitle}</h4>
 			<h2 class="titlepage">${authorShortname}</h2>`
 
-html += buildBook(bookID)
+html += buildBook()
 
 html += `
 			<div class="eob">-- END OF BOOK --<br>
@@ -316,8 +354,9 @@ html += `
 outputHTML = html
 }
 
-buildTOCJSON('milk');
-buildCompleteBook('milk')
+extractBookHTML()
+buildTOCJSON()
+buildCompleteBook()
 
 
 fs.writeFileSync(path.join(__dirname, '.', 'newbook.html'), outputHTML)

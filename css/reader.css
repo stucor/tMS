@@ -99,6 +99,10 @@
 	--sesamebackground: #fffff8;
 }
 
+*:lang(pli) {
+	font-style: italic;
+}
+
 body {
 	margin: 0;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -762,15 +766,18 @@ figcaption {
 	padding: 0;
 }
 
-@counter-style paren-decimal {
+
+ @counter-style paren-decimal {
 	system: extends decimal;
 	prefix: "";
 	suffix: ") ";
   }
 
 
+
 .content ol {
-	list-style: paren-decimal;
+	list-style: paren-decimal; 
+
 	margin: 1em 3em;
 	padding: 0;
 }
@@ -792,6 +799,12 @@ figcaption {
 	content: '·';
 }
 
+.content .list-comment {
+	margin: 0 2em;
+}
+.content .sublist-comment {
+	margin: 0 6em;
+}
 
 .explainer {
 	opacity: 0.7;
@@ -1002,6 +1015,29 @@ table.borderlessTable {
 	margin-right: 10px;
 }
 
+.content div.bob-text {
+	font-family: 'Source Serif Pro';
+	width:fit-content;
+	max-width: 50%;
+	margin: 2em 25% 3em 25%;
+	font-style: normal;
+	font-style: italic;
+	font-weight: 500;
+	font-size: larger;
+	hyphens: none;
+	text-align: left;
+}
+
+.content span.bob-cite {
+	float:right;
+	font-style: normal;
+	font-size: smaller;
+	padding-top: 1em;
+}
+
+.content div.bob-text + div.bob-text {
+	margin-top: -2em;
+}
 
 .content div.quote {
     font-style: italic;
@@ -3040,6 +3076,14 @@ mark.current {
 		padding: 1em 0.2em; 
 		font-size: 1em;
 	}
+
+	.content div.bob-text {
+		max-width: 80%;
+		font-weight: 500;
+		margin: 2em 10%;
+
+	}
+	
 
 }
 

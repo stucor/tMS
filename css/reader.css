@@ -376,6 +376,7 @@ strong {
 }
 
 .content h1.titlepage {
+	font-family: 'Source Serif pro';
 	text-align: center;
 	font-style: normal;
 	font-weight: 400;
@@ -403,10 +404,12 @@ strong {
 }
 
 .content h4.titlepage {
+	font-family: 'Source Serif pro';
 	text-align: center;
 	font-style: italic;
 	font-weight: 400;
-	margin-top: -3.9em;
+	font-size: 1.4em;
+	margin-top: -3em;
 }
 
 

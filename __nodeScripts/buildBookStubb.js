@@ -14,14 +14,67 @@ try {
 
 let outputHTML =``
 
-function extractBookHTML () {
-	let bookRoot = parse (pandocRoot.querySelector('body'))
-	bookRoot.querySelector('#TOC').remove()
-	bookRoot.querySelector('#footnotes').remove()
-	bookRoot.querySelector('header').remove()
-	let html = ``
-	html += bookRoot.querySelector('body').innerHTML
-	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'book.html'), html, 'utf8')
+
+function buildMetaJSON () {
+	let localJSON = ``
+	let authors = ``
+	let title = ``
+	let subtitle = ``
+	let abstractShort = ``
+	let abstract = ``
+	let copyrightArr = []
+	let copyright = ``
+	let CCLicense = ``
+	let frontCoverLocation = `../_resources/book-data/${bookID}/FrontLarge.jpg`
+
+	let tokens = pandocRoot.querySelectorAll('div, p, h1')
+	for (i in tokens) {
+		if (tokens[i].getAttribute('data-custom-style') == "AbstractShort") {
+			abstractShort = tokens[i].innerHTML
+				.replaceAll(`<span data-custom-style="pali">`, `<span lang='pli'>`)
+				.replaceAll(/(\r\n|\n|\r)/gm, "")
+		} else 
+		if (tokens[i].getAttribute('data-custom-style') == "Abstract") {
+			abstract = tokens[i].innerHTML
+			.replaceAll(`<span data-custom-style="pali">`, `<span lang='pli'>`)
+			.replaceAll(/(\r\n|\n|\r)/gm, "")
+		} else
+		if (tokens[i].classList.contains ('author')) {
+			authors += `"${tokens[i].innerHTML}",`
+		} else 
+		if (tokens[i].classList.contains ('title')) {
+			title += `${tokens[i].innerHTML}`
+		} else 
+		if (tokens[i].classList.contains ('subtitle')) {
+			subtitle += `${tokens[i].innerHTML}`
+		} else 
+		if (tokens[i].getAttribute('data-custom-style') == "Copyright") {
+			copyrightArr = tokens[i].innerHTML.replace('<p>', '').replace('</p>','').replaceAll(/(\r\n|\n|\r)/gm, "").split('<br>');
+			CCLicense = copyrightArr.pop();
+			for (i in copyrightArr) {
+				copyright += `"${copyrightArr[i]}",`
+			}
+			copyright = copyright.slice(0, -1)
+	}
+}
+
+	authors = authors.slice(0,-1)
+
+	localJSON += `{
+		"Authors" : [${authors}],
+		"BookTitle" : "${title}",
+		"BookSubtitle" : "${subtitle}",
+		"ShortAbstract" : "${abstractShort}",
+		"Abstract" : "${abstract}",
+		"AddInfo"   : [],
+		"Copyright" : [${copyright}],
+		"CCLicense": "${CCLicense}",
+		"FrontCover": "${frontCoverLocation}",
+		"BackCover": "",
+		"BackMatter": []
+	}`
+	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'meta.json'), localJSON, 'utf8')
+	//console.log (copyrightArr[2])
 }
 
 function buildTOCJSON () {
@@ -39,6 +92,31 @@ function buildTOCJSON () {
 	}
 
 	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'TOC.json'), localJSON, 'utf8')
+}
+
+
+function extractBookHTML () {
+	let bookRoot = parse (pandocRoot.querySelector('body'))
+	bookRoot.querySelector('#TOC').remove()
+	bookRoot.querySelector('#footnotes').remove()
+	bookRoot.querySelector('header').remove()
+	bookRoot.querySelector('#short-abstract').remove()
+	bookRoot.querySelector('#abstract').remove()
+	bookRoot.querySelector('#copyright').remove()
+
+	let allDivs = bookRoot.querySelectorAll('div')
+
+	for (i in allDivs) {
+		if ((allDivs[i].getAttribute("data-custom-style") == "AbstractShort") 
+			|| (allDivs[i].getAttribute("data-custom-style") == "Abstract")
+			|| (allDivs[i].getAttribute("data-custom-style") == "Copyright")) {
+			allDivs[i].remove();
+		}
+	}
+	
+	let html = ``
+	html += bookRoot.querySelector('body').innerHTML
+	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'book.html'), html, 'utf8')
 }
 
 function buildFootnotes () {
@@ -352,11 +430,58 @@ html += `
 </html>`
 
 outputHTML = html
+fs.writeFileSync(path.join(__dirname, '.', 'newbook.html'), outputHTML)
 }
 
-extractBookHTML()
+
+function buildBookInfoJSON () {
+	//let metaData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'meta.json', 'utf8'));
+    let metaData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'meta.json'));
+    let authors = metaData.Authors;
+    let metaDataStr = JSON.stringify(metaData, null, '\t');
+    let jsonStr = `${metaDataStr.substring(0, metaDataStr.length-1)},`;
+    
+    jsonStr += `"AuthorsData": [`;
+    for (i in authors) {
+        let author = require(path.join(__dirname, '..', '_resources', 'author-data', authors[i], 'bio.json'));
+        jsonStr += `${JSON.stringify(author, null, '\t')},`;
+    }
+    jsonStr = jsonStr.substring(0, jsonStr.length - 1);
+    jsonStr += `]\}`; 
+
+    let newjson = JSON.parse(jsonStr);
+
+    if (newjson.AuthorsData.length > 1) {
+        let i = 0;
+        let manyAuthors = "";
+        while (i < newjson.AuthorsData.length) {
+            manyAuthors += newjson.AuthorsData[i].ShortName;
+            i++;
+            if (newjson.AuthorsData.length - i > 1) {
+                manyAuthors += ', ';
+            } else if ((newjson.AuthorsData.length - i == 1)){
+                manyAuthors += ' and ';
+            }
+        }
+        newjson.Authors = manyAuthors;
+    } else {
+        newjson.Authors = newjson.AuthorsData[0].ShortName;
+    }
+    let CCLongLicenses = require(path.join(__dirname, '..', '_resources', 'copyright-data', 'cclicence.json'));
+	for (let i = 0; i< Object.keys(CCLongLicenses).length; i++) {
+		if (newjson.CCLicense == Object.keys(CCLongLicenses)[i]) {
+			newjson.CCLicense = Object.values(CCLongLicenses)[i];
+		}
+	}
+    jsonStr = JSON.stringify(newjson, null, '\t');
+    fs.mkdirSync(path.join(__dirname, '..', '_resources', 'built-info-data', bookID), { recursive: true }, (err) => {
+        if (err) throw err;
+      });
+    fs.writeFileSync(path.join(__dirname, '..', '_resources', 'built-info-data', bookID, 'info.json'), jsonStr);
+}
+
+buildMetaJSON();
 buildTOCJSON()
+extractBookHTML()
 buildCompleteBook()
-
-
-fs.writeFileSync(path.join(__dirname, '.', 'newbook.html'), outputHTML)
+buildBookInfoJSON ()

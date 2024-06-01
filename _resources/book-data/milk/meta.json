@@ -1,12 +1,13 @@
 {
-    "Authors" : ["sdhammika"],
-    "BookTitle" : "Like Milk and Water Mixed",
-    "BookSubtitle" : "Buddhist Reflections on Love",
-    "ShortAbstract" : "Bhante S. Dhammika combines Buddhist insights with modern psychology to craft a definition of love that cuts through the warm but often unrealistic ideas about love that prevent us from having a clearer and more realistic understanding of it. Drawing upon his many years study of Buddhist scriptures, he explores what the Buddha had to say about romantic love, parental love, love of animals, loving friendship and otehrs. Included also is an in-depth look at mettā, the highest love—what it is, why it is an essential part of the spiritual life",
-    "AddInfo"   : [],
-    "Copyright" : ["Shravasti Dhammika","First Published in 2013.","Second Edition 2016.","This Wisdom & Wonders online edition 2024.","Also Published by Pariyatti Publishing as a Paperback 2024","pp. 183 (in pdf format)."],
-    "CCLicense": "CC0 4.0",
-    "FrontCover": "../_resources/book-data/milk/FrontLarge.jpg",
-    "BackCover": "",
-    "BackMatter": []
-}
+		"Authors" : ["sdhammika"],
+		"BookTitle" : "Like Milk and Water Mixed",
+		"BookSubtitle" : "Buddhist Reflections on Love",
+		"ShortAbstract" : "<p>Bhante Dhammika combines Buddhist insights with modern psychology to craft a cohesive definition of love. Drawing upon his many years study of Buddhist scriptures, he explores what the Buddha had to say about romantic love, parental love, love of animals, loving friendship and others. Included is an in-depth look at <span lang='pli'>mettā</span>, the highest love—what it is and why it is an essential part of the spiritual life.</p>",
+		"Abstract" : "<p>The Buddha’s teaching of universal love (<span lang='pli'>mettā</span>) is widely known, even to those outside the Buddhist community. What is less well-known is that the Buddha also had much to say about the many other expressions of love. In this book, the author combines Buddhist insights with modern psychology to craft a definition of love that cuts through the warm but often unrealistic ideas about love that prevent us from having a clearer and more realistic understanding of it. Then, drawing upon his many years study of the Tipitaka, the Buddhist scriptures, he explores what the Buddha had to say about romantic love, parental love, love of animals, loving friendship—nine types altogether. Included also is an in-depth look at <span lang='pli'>mettā</span>, the highest love—what it is, why it is an essential part of the spiritual life and how meditation can awaken and enhance it. Step-by-step instructions on how to practice this meditation are also given. The book finishes with a selection of over fifty quotations from the Tipitaka and later Buddhist literature about love, compassion, kindness and good-will. Anyone interested in getting a deeper insight into the Buddhist theory and practice will find this book a compelling read.</p>",
+		"AddInfo"   : [],
+		"Copyright" : ["Shravasti Dhammika","First Published in 2013.","Second Edition 2016.","This Wisdom &amp; Wonders online edition 2024.","Also Published by Pariyatti Publishing in Paperback 2024 (without SuttaCentral references).","pp. 183 (in pdf format)."],
+		"CCLicense": "BY-NC-ND 4.0",
+		"FrontCover": "../_resources/book-data/milk/FrontLarge.jpg",
+		"BackCover": "",
+		"BackMatter": []
+	}

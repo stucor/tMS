@@ -121,11 +121,99 @@ function extractBookHTML () {
 
 function buildFootnotes () {
 	let footnotesRoot = parse (pandocRoot.querySelector('#footnotes'))
+
+	let spans = footnotesRoot.getElementsByTagName ('span')
+	for (i in spans) {
+		let dataCustomStyle = spans[i].getAttribute('data-custom-style')
+		switch(dataCustomStyle) {
+			case 'Footnote Characters':
+				spans[i].remove()
+			break
+			case 'Hyperlink':
+				let tempHTML = spans[i].innerHTML
+				spans[i].replaceWith (tempHTML)
+			break
+			case 'pts-reference':
+				spans[i].classList.add('ptsref')
+				spans[i].removeAttribute ('data-custom-style')
+			break
+			case 'zot-cite':
+				spans[i].classList.add('sesame')
+				spans[i].classList.add('ref')
+				spans[i].removeAttribute ('data-custom-style')
+			break
+			case 'sesame-suttaplex':
+				spans[i].classList.add('sesame')
+				spans[i].removeAttribute ('data-custom-style')
+			break
+			case 'pali':
+				spans[i].setAttribute('lang','pli')
+				spans[i].removeAttribute ('data-custom-style')
+			break
+			default:
+
+			}
+	}
+
+	let anchors = footnotesRoot.getElementsByTagName ('a') 
+	for (i in anchors) {
+		let firstThree = anchors[i].text.slice(0,3)
+		switch(firstThree) {
+			case 'MN ':
+			case 'AN ':
+			case 'SN ':
+			case 'DN ':
+			case 'Ud ':
+				let tempTop =  anchors[i].text.slice(0, 2)
+				let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
+				let tempText = tempTop + '&#8239;' + tempTail
+				anchors[i].replaceWith(`<span class="sclinktext">${tempText}</span>`)
+			break
+			case 'Dhp':
+			case 'Snp':
+			case 'Iti':
+				let temp2Top =  anchors[i].text.slice(0, 3)
+				let temp2Tail = anchors[i].text.slice(4,anchors[i].text.length)
+				let temp2Text = temp2Top + '&#8239;' + temp2Tail
+				anchors[i].replaceWith(`<span class="sclinktext">${temp2Text}</span>`)
+			break
+			case 'Tha':
+			case 'Thi':
+				let temp3Top =  anchors[i].text.slice(0, 4)
+				let temp3Tail = anchors[i].text.slice(5,anchors[i].text.length)
+				let temp3Text = temp3Top + '&#8239;' + temp3Tail
+				anchors[i].replaceWith(`<span class="sclinktext">${temp3Text}</span>`)
+			break
+
+			default:
+				anchors[i].classList.add('extlink')
+
+		}
+		
+		
+	}
+
 	let localHTML =``
 	let outFNPara = footnotesRoot.getElementsByTagName ('p');
 	for (let i in outFNPara) {
 		localHTML +=`\t\t\t\t<div class="booknote" data-note="${Number(i)+1}">`
 		localHTML += outFNPara[i].innerHTML
+		.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
+		.replaceAll('<em>,</em>',',') // clean up unexpected italics
+		localHTML += '</div>\n'
+	}
+	return localHTML;
+}
+
+
+/* function buildFootnotes () {
+	let footnotesRoot = parse (pandocRoot.querySelector('#footnotes'))
+	let localHTML =``
+	let outFNPara = footnotesRoot.getElementsByTagName ('p');
+	for (let i in outFNPara) {
+		localHTML +=`\t\t\t\t<div class="booknote" data-note="${Number(i)+1}">`
+		localHTML += outFNPara[i].innerHTML
+			.replace('<span data-custom-style="Footnote Characters"></span> ', '')
 			.replace('<span data-custom-style="footnote reference"></span> ', '')
 			.replaceAll('<span data-custom-style="pali">', '<span lang="pli">')
 			.replaceAll('<span data-custom-style="pts-reference">','<span class="ptsref">')
@@ -141,9 +229,9 @@ function buildFootnotes () {
 			.replaceAll('{SN ','{SN&#8239;')
 			.replaceAll('{Snp ','{Snp&#8239;')
 			.replaceAll('{Dhp ','{Dhp&#8239;')
-			.replaceAll('{Kd ','{Kd&#8239;')
 			.replaceAll('{Ud ','{Ud&#8239;')
 			.replaceAll('{Ja ','{Ja&#8239;')
+			.replaceAll('{Kd ','{Kd&#8239;')
 			.replaceAll('{', '<span class="sclinktext">')
 			.replaceAll('}', '</span>')
 			.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
@@ -151,7 +239,7 @@ function buildFootnotes () {
 		localHTML += '</div>\n'
 	}
 	return localHTML;
-}
+} */
 
 function buildBook () {
 	let html = ``;
@@ -224,6 +312,14 @@ function buildBook () {
 		if (allDivs[i].getAttribute('data-custom-style') == "list-comment") {
 			allDivs[i].classList.add ('list-comment')
 			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "Normal") {
+			let tempHTML = allDivs[i].innerHTML
+			allDivs[i].replaceWith(tempHTML)
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "List Paragraph") {
+			let tempHTML = allDivs[i].innerHTML
+			allDivs[i].replaceWith(tempHTML)
 		}	
 	} 
 

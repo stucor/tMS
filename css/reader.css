@@ -770,23 +770,23 @@ figcaption {
 }
 
 
- @counter-style paren-decimal {
+/*  @counter-style paren-decimal {
 	system: extends decimal;
 	prefix: "";
 	suffix: ") ";
   }
-
+ */
 
 
 .content ol {
-	list-style: paren-decimal; 
-
+	/* list-style: paren-decimal;  */
 	margin: 1em 3em;
 	padding: 0;
 }
 
 .content ol li::marker {
-	font-variant: small-caps;
+	/* font-variant: small-caps; */
+	font-size: smaller;
 	font-family: 'Source Sans Pro';
 }
 

@@ -338,6 +338,7 @@ function buildBook () {
 	}
 	
 
+	let suttaVerseHTML = ``
  	let allDivs = bookRoot.querySelectorAll('div') 
 	for (i in allDivs) {
 		if (allDivs[i].getAttribute('data-custom-style') == "Quote-Block") {
@@ -356,26 +357,33 @@ function buildBook () {
 			allDivs[i].classList.add ('list-comment')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
-		if (allDivs[i].getAttribute('data-custom-style') == "Normal") {
+		if ((allDivs[i].getAttribute('data-custom-style') == "Normal") 
+			|| (allDivs[i].getAttribute('data-custom-style') == "Sutta-Text") ){
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
 		} else
 		if (allDivs[i].getAttribute('data-custom-style') == "List Paragraph") {
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
-		}	
+		} else
 		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Verse") {
-			allDivs[i].classList.add('line-block')
-			allDivs[i].removeAttribute('data-custom-style')
-		}	
-		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Text") {
-			//allDivs[i].classList.add('line-block')
-			allDivs[i].removeAttribute('data-custom-style')
-		}	
+			suttaVerseHTML += allDivs[i].innerHTML
+			allDivs[i].remove()
+		} else
 		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Cite") {
+			allDivs[i].insertAdjacentHTML('beforebegin', `<div class="line-block">${suttaVerseHTML}</div>\n`)
+			suttaVerseHTML = ``;
 			allDivs[i].classList.add('citebigger')
 			allDivs[i].removeAttribute('data-custom-style')
 		}	
+/* 		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Verse") {
+			allDivs[i].classList.add('line-block')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Cite") {
+			allDivs[i].classList.add('citebigger')
+			allDivs[i].removeAttribute('data-custom-style')
+		}	 */
 	} 
 	
 	return `\n${bookRoot}`;

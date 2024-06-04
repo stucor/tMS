@@ -119,9 +119,10 @@ function extractBookHTML () {
 	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'book.html'), html, 'utf8')
 }
 
+
 function buildFootnotes () {
 	let footnotesRoot = parse (pandocRoot.querySelector('#footnotes'))
-
+	//custom-styles
 	let spans = footnotesRoot.getElementsByTagName ('span')
 	for (i in spans) {
 		let dataCustomStyle = spans[i].getAttribute('data-custom-style')
@@ -154,7 +155,7 @@ function buildFootnotes () {
 
 			}
 	}
-
+	// anchors
 	let anchors = footnotesRoot.getElementsByTagName ('a') 
 	for (i in anchors) {
 		let firstThree = anchors[i].text.slice(0,3)
@@ -184,7 +185,13 @@ function buildFootnotes () {
 				let temp3Text = temp3Top + '&#8239;' + temp3Tail
 				anchors[i].replaceWith(`<span class="sclinktext">${temp3Text}</span>`)
 			break
-
+			case 'Ja ':
+			case 'Kd ':
+			case 'Mil':
+			case 'Bu ':
+				anchors[i].classList.add('extlink')
+				anchors[i].classList.add('tipref')
+			break
 			default:
 				anchors[i].classList.add('extlink')
 
@@ -206,41 +213,6 @@ function buildFootnotes () {
 }
 
 
-/* function buildFootnotes () {
-	let footnotesRoot = parse (pandocRoot.querySelector('#footnotes'))
-	let localHTML =``
-	let outFNPara = footnotesRoot.getElementsByTagName ('p');
-	for (let i in outFNPara) {
-		localHTML +=`\t\t\t\t<div class="booknote" data-note="${Number(i)+1}">`
-		localHTML += outFNPara[i].innerHTML
-			.replace('<span data-custom-style="Footnote Characters"></span> ', '')
-			.replace('<span data-custom-style="footnote reference"></span> ', '')
-			.replaceAll('<span data-custom-style="pali">', '<span lang="pli">')
-			.replaceAll('<span data-custom-style="pts-reference">','<span class="ptsref">')
-			.replaceAll('<span data-custom-style="sesame-suttaplex">','<span class="sesame">')
-			.replaceAll('<span data-custom-style="zot-cite">',' <span class="sesame ref">')
-			.replaceAll('<a href="','{')
-			.replaceAll('"><span data-custom-style="Hyperlink">','}')
-			.replace(/\{(.+?)\}/g, '{')
-			.replaceAll('</span></a>','}')
-			.replaceAll('{AN ','{AN&#8239;')
-			.replaceAll('{DN ','{DN&#8239;')
-			.replaceAll('{MN ','{MN&#8239;')
-			.replaceAll('{SN ','{SN&#8239;')
-			.replaceAll('{Snp ','{Snp&#8239;')
-			.replaceAll('{Dhp ','{Dhp&#8239;')
-			.replaceAll('{Ud ','{Ud&#8239;')
-			.replaceAll('{Ja ','{Ja&#8239;')
-			.replaceAll('{Kd ','{Kd&#8239;')
-			.replaceAll('{', '<span class="sclinktext">')
-			.replaceAll('}', '</span>')
-			.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
-			.replaceAll('<em>,</em>',',') // clean up unexpected italics
-		localHTML += '</div>\n'
-	}
-	return localHTML;
-} */
-
 function buildBook () {
 	let html = ``;
 	let bookRoot = ``;
@@ -252,48 +224,119 @@ function buildBook () {
 	}
 
 	// TOCTarget ids
-	//let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'toc.json'))
 	let TOCData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'toc.json', 'utf8'));
-	//console.log(TOCData)
+
 	let headingArr = bookRoot.querySelectorAll ('h1, h2, h3')
 	for (let i in headingArr) {
-		bookRoot.querySelectorAll ('h1')[i].setAttribute('id',`TOCTarget${TOCData[i].tocno}`)
+		headingArr[i].setAttribute('id',`TOCTarget${TOCData[i].tocno}`)
 	}
 
 	// superscripts and sups 
 	let suffix = ['st', 'rd', 'nd', 'th']
-	let superscriptIDs =[]
-	for (i in bookRoot.querySelectorAll('sup')) {
-		if (suffix.includes(bookRoot.querySelectorAll('sup')[i].text)) {
-			bookRoot.querySelectorAll('sup')[i].setAttribute('id','superscript'+i)
-			superscriptIDs.push(i);
+
+	let allSups = bookRoot.querySelectorAll('sup')
+	for (i in allSups) {
+		if (suffix.includes(allSups[i].text)) {
+			let tempText = allSups[i].text
+			allSups[i].replaceWith(`<span class='superscript'>${tempText}</span>`)
 		}
 	}
-	for (j in superscriptIDs) {
-		temptext = bookRoot.getElementById(`superscript${superscriptIDs[j]}`).text
-		bookRoot.getElementById(`superscript${superscriptIDs[j]}`).replaceWith(`<span class='superscript'>${temptext}</span>`)
-	}
 
-	let footnoteRef = bookRoot.querySelectorAll('a')
-	let idArr = [];
-	let supArr =[];
-	for (i in footnoteRef) {
-		if (footnoteRef[i].innerHTML.substring(0, 5) == `<sup>`) {
-			supArr.push (footnoteRef[i].innerHTML)
-			idArr.push (footnoteRef[i].id);
+	let allAnchors = bookRoot.querySelectorAll('a')
+	for (i in allAnchors) {
+		if (allAnchors[i].innerHTML.substring(0, 5) == `<sup>`) {
+			let tempHTML = allAnchors[i].innerHTML
+			allAnchors[i].replaceWith(tempHTML)
 		}
 	}
-	for (i in idArr) {
-		bookRoot.getElementById(idArr[i]).replaceWith(supArr[i])
-	}
 
-	let allParas = bookRoot.querySelectorAll('p') 
+
+
+/* 	let allParas = bookRoot.querySelectorAll('p') 
 	for (i in allParas) {
 		allParas[i].innerHTML = allParas[i].innerHTML
 		.replaceAll('data-custom-style="pali"', 'lang="pli"')
 		.replaceAll('data-custom-style="sesame-suttaplex"', 'class="sesame"')
 		.replaceAll('data-custom-style="bob-cite"', 'class="bob-cite"')
+	} */
+
+
+	let spans = bookRoot.getElementsByTagName ('span')
+	for (i in spans) {
+		let dataCustomStyle = spans[i].getAttribute('data-custom-style')
+		switch(dataCustomStyle) {
+			case 'Footnote Characters':
+				spans[i].remove()
+			break
+			case 'Hyperlink':
+				let tempHTML = spans[i].innerHTML
+				spans[i].replaceWith (tempHTML)
+			break
+			case 'pts-reference':
+				spans[i].classList.add('ptsref')
+				spans[i].removeAttribute ('data-custom-style')
+			break
+			case 'zot-cite':
+				spans[i].classList.add('sesame')
+				spans[i].classList.add('ref')
+				spans[i].removeAttribute ('data-custom-style')
+			break
+			case 'sesame-suttaplex':
+				spans[i].classList.add('sesame')
+				spans[i].removeAttribute ('data-custom-style')
+			break
+			case 'pali':
+				spans[i].setAttribute('lang','pli')
+				spans[i].removeAttribute ('data-custom-style')
+			break
+			default:
+
+			}
 	}
+
+
+	let anchors = bookRoot.getElementsByTagName ('a') 
+	for (i in anchors) {
+		let firstThree = anchors[i].text.slice(0,3)
+		switch(firstThree) {
+			case 'MN ':
+			case 'AN ':
+			case 'SN ':
+			case 'DN ':
+			case 'Ud ':
+				let tempTop =  anchors[i].text.slice(0, 2)
+				let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
+				let tempText = tempTop + '&#8239;' + tempTail
+				anchors[i].replaceWith(`<span class="sclinktext">${tempText}</span>`)
+			break
+			case 'Dhp':
+			case 'Snp':
+			case 'Iti':
+				let temp2Top =  anchors[i].text.slice(0, 3)
+				let temp2Tail = anchors[i].text.slice(4,anchors[i].text.length)
+				let temp2Text = temp2Top + '&#8239;' + temp2Tail
+				anchors[i].replaceWith(`<span class="sclinktext">${temp2Text}</span>`)
+			break
+			case 'Tha':
+			case 'Thi':
+				let temp3Top =  anchors[i].text.slice(0, 4)
+				let temp3Tail = anchors[i].text.slice(5,anchors[i].text.length)
+				let temp3Text = temp3Top + '&#8239;' + temp3Tail
+				anchors[i].replaceWith(`<span class="sclinktext">${temp3Text}</span>`)
+			break
+			case 'Ja ':
+			case 'Kd ':
+			case 'Mil':
+			case 'Bu ':
+				anchors[i].classList.add('extlink')
+				anchors[i].classList.add('tipref')
+			break
+			default:
+				anchors[i].classList.add('extlink')
+
+		}
+	}
+	
 
  	let allDivs = bookRoot.querySelectorAll('div') 
 	for (i in allDivs) {
@@ -321,8 +364,20 @@ function buildBook () {
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
 		}	
+		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Verse") {
+			allDivs[i].classList.add('line-block')
+			allDivs[i].removeAttribute('data-custom-style')
+		}	
+		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Text") {
+			//allDivs[i].classList.add('line-block')
+			allDivs[i].removeAttribute('data-custom-style')
+		}	
+		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Cite") {
+			allDivs[i].classList.add('citebigger')
+			allDivs[i].removeAttribute('data-custom-style')
+		}	
 	} 
-
+	
 	return `\n${bookRoot}`;
 }
 
@@ -463,7 +518,6 @@ html += `
 		<div id="ModalBody" class="modal-body">
 			<div id="ModalDetails"></div>
 `
-
 // Notes
 html += `			<div id="ModalNotes">
 			<h2>Notes for ${title}</h2>
@@ -500,7 +554,7 @@ html += `<div class="wrapper" id="bookwrap"><div></div>
 			<h4 class="titlepage">${subtitle}</h4>
 			<h2 class="titlepage">${authorShortname}</h2>`
 
-html += buildBook()
+html += buildBook ()
 
 html += `
 			<div class="eob">-- END OF BOOK --<br>

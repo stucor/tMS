@@ -299,10 +299,10 @@ function buildRef (bookID) {
 
 }
 
-buildRef('seeds');
+buildRef('milk');
 outputHTML += `</body>
 </html>`
 
-fs.writeFileSync(path.join(__dirname, '.', 'testBiblio.html'), outputHTML);
+fs.writeFileSync(path.join(__dirname, '.', 'newbiblio.html'), outputHTML);
 //fs.writeFileSync(path.join(__dirname, '.', 'compare.txt'), compareData);
 //fs.writeFileSync(path.join(__dirname, '.', 'noPDFS.txt'), nopdfs);

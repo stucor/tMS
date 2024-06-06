@@ -546,15 +546,7 @@ a {
 	hyphens: manual;
 }
 
-
-.line-block {
-	margin: 1em 0 1em 2em;
-	font-style: normal;
-	white-space: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
-}
-/* .line-block {
+.line-block-center {
 	width:fit-content;
 	max-width: 100%;
 	margin: 1em auto;
@@ -563,7 +555,23 @@ a {
 	overflow-x: auto;
 	overflow-y: hidden;
 }
- */
+
+.line-block-center > .cite {
+	float:right; 
+	font-style: italic; 
+	margin-top: 0;
+	font-size: smaller;
+}
+
+
+.line-block {
+	margin: 1em 0 1em 2em;
+	font-style: normal;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+ 
 .line-block p:has(> sup) {
 	padding-right: 1em;
 }
@@ -803,12 +811,26 @@ figcaption {
 	content: '·';
 }
 
-.content .list-comment {
+/* .content .list-comment {
 	margin: 0 2em;
 }
 .content .sublist-comment {
 	margin: 0 6em;
+} */
+
+.content .list-comment {
+	font-style: italic;
+	margin: 1em 2em;
 }
+
+.content div.list-cite {
+	display: block;
+	text-align: right;
+	margin-top: -0.8em;
+	margin-bottom: 2em;
+	line-height: 1em;
+
+}	
 
 .explainer {
 	opacity: 0.7;
@@ -1000,7 +1022,7 @@ table.borderlessTable {
 	padding:5px 10px;
 	text-align: left;
 	border-radius: 10px;
-	border: 3px solid rgba(128, 128, 128, 0.5);
+	border: 1px solid rgba(128, 128, 128, 0.5);
 }
 
 
@@ -1022,12 +1044,12 @@ table.borderlessTable {
 .content div.bob-text {
 	font-family: 'Source Serif Pro';
 	width:fit-content;
-	max-width: 50%;
-	margin: 2em 25% 3em 25%;
+	max-width: 60%;
+	margin: 2em 20% 3em 20%;
 	font-style: normal;
 	font-style: italic;
 	font-weight: 500;
-	font-size: larger;
+	font-size: 1.3em;
 	hyphens: none;
 	text-align: left;
 }
@@ -1035,8 +1057,8 @@ table.borderlessTable {
 .content span.bob-cite {
 	float:right;
 	font-style: normal;
-	font-size: smaller;
-	padding-top: 1em;
+	font-size: 0.7em;
+	padding-top: 0;
 }
 
 .content div.bob-text + div.bob-text {
@@ -1081,6 +1103,7 @@ table.borderlessTable {
 	padding-bottom: 1.5em;
 	width: 100%;
 }	
+
 
 .content div.pagenumber {
 	position:relative;

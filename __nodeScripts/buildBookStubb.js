@@ -6,11 +6,27 @@ let bookID = process.argv.slice(2)[0];
 
 let pandocRoot =``
 try {
-	const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'pandoc.html', 'utf8');
-	pandocRoot = parse(data);
+	const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'pandoc.html', 'utf8')
+	pandocRoot = parse(data)
 } catch (err) {
 	console.error(err);
 }
+
+
+function buildReferences () {
+	let referenceRoot = ``
+
+	try {
+		const data = fs.readFileSync('newbiblio.html', 'utf8');
+		referenceRoot = parse(data);
+	} catch (err) {
+		console.error(err);
+	}
+
+	let refs = referenceRoot.querySelectorAll('dl')
+	return refs[0].outerHTML
+}
+
 
 let outputHTML =``
 
@@ -139,9 +155,12 @@ function buildFootnotes () {
 				spans[i].removeAttribute ('data-custom-style')
 			break
 			case 'zot-cite':
-				spans[i].classList.add('sesame')
+/* 				let zotHTML = spans[i].innerHTML.replace('[','').replace(']','')
+				spans[i].set_content(spans[i].innerHTML.replace('[','').replace(']',''))
+ */				spans[i].classList.add('sesame')
 				spans[i].classList.add('ref')
 				spans[i].removeAttribute ('data-custom-style')
+				
 			break
 			case 'sesame-suttaplex':
 				spans[i].classList.add('sesame')
@@ -285,6 +304,10 @@ function buildBook () {
 				spans[i].classList.add('sesame')
 				spans[i].removeAttribute ('data-custom-style')
 			break
+			case 'bob-cite':
+				spans[i].classList.add('bob-cite')
+				spans[i].removeAttribute ('data-custom-style')
+			break
 			case 'pali':
 				spans[i].setAttribute('lang','pli')
 				spans[i].removeAttribute ('data-custom-style')
@@ -353,7 +376,7 @@ function buildBook () {
 			allDivs[i].classList.add ('sublist-comment')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
-		if (allDivs[i].getAttribute('data-custom-style') == "list-comment") {
+		if (allDivs[i].getAttribute('data-custom-style') == "List-Comment") {
 			allDivs[i].classList.add ('list-comment')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
@@ -371,19 +394,25 @@ function buildBook () {
 			allDivs[i].remove()
 		} else
 		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Cite") {
-			allDivs[i].insertAdjacentHTML('beforebegin', `<div class="line-block">${suttaVerseHTML}</div>\n`)
-			suttaVerseHTML = ``;
-			allDivs[i].classList.add('citebigger')
-			allDivs[i].removeAttribute('data-custom-style')
-		}	
-/* 		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Verse") {
-			allDivs[i].classList.add('line-block')
+			if (suttaVerseHTML != '') {
+				allDivs[i].insertAdjacentHTML('beforebegin', `<div class="line-block">${suttaVerseHTML}</div>\n`)
+				suttaVerseHTML = ``;
+			}
+			allDivs[i].classList.add('list-cite')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
-		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Cite") {
-			allDivs[i].classList.add('citebigger')
-			allDivs[i].removeAttribute('data-custom-style')
-		}	 */
+		if (allDivs[i].getAttribute('data-custom-style') == "List-Instructions") {
+			//allDivs[i].insertAdjacentHTML('afterbegin', `<hr class='halfspacer'>`)
+			let spacerHTML = ``
+			let tempHTML = allDivs[i].innerHTML
+			let c = tempHTML.charAt(5)
+
+			if (c >= '0' && c <= '9') {
+				spacerHTML = `<hr class='halfspacer'>`
+			}
+			allDivs[i].replaceWith(`${spacerHTML}${tempHTML}`)
+		} 
+
 	} 
 	
 	return `\n${bookRoot}`;
@@ -531,7 +560,8 @@ html += `			<div id="ModalNotes">
 			<h2>Notes for ${title}</h2>
 `
 
-html += buildFootnotes(bookID);
+html += buildFootnotes()
+
 
 // Settings
 html += `				</div>
@@ -563,6 +593,8 @@ html += `<div class="wrapper" id="bookwrap"><div></div>
 			<h2 class="titlepage">${authorShortname}</h2>`
 
 html += buildBook ()
+
+html += buildReferences()
 
 html += `
 			<div class="eob">-- END OF BOOK --<br>

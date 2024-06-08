@@ -49,6 +49,7 @@ function showBD(linktext) {
       ['an2.31','an2.21-31',''],
       ['an2.33','an2.32-41',''],
       ['an2.38','an2.32-41',''],
+      ['an2.157','an2.151-162',''],
       ['an2.172','an2.163-179',''],
       ['an2.310','an2.310-479','an2.310-319'],
       ['an2.36', 'an2.32-41', ''],
@@ -148,8 +149,8 @@ function slugStrip(slug) {
 }
 
 function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
-/* 
-  console.log('file: '+ file); //file
+ 
+/*   console.log('file: '+ file); //file
   console.log('slug: '+ slug); //slug
   console.log('highlightArr: '+ highlightArr); //highlight array
   console.log('sclink: '+ sclink);
@@ -422,10 +423,15 @@ function parseSlug(slug) {
   const book = slugParts[1];
   const firstNum = slugParts[2];
 
+  console.log (book)
+  console.log (firstNum)
+
   if (book === "dn" || book === "mn") {
     return `${book}/${slug}`;
   } else if (book === "sn" || book === "an") {
     return `${book}/${book}${firstNum}/${slug}`;
+  } else if (book === "cp") {
+    return `kn/cp/${slug}`;
   } else if (book === "kp") {
     return `kn/kp/${slug}`;
   } else if (book === "dhp") {

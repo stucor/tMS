@@ -15,7 +15,7 @@ try {
 
 function buildReferences () {
 	let referenceRoot = ``
-
+	let html =`<h1>Bibliography</h1>`
 	try {
 		const data = fs.readFileSync('newbiblio.html', 'utf8');
 		referenceRoot = parse(data);
@@ -24,7 +24,9 @@ function buildReferences () {
 	}
 
 	let refs = referenceRoot.querySelectorAll('dl')
-	return refs[0].outerHTML
+
+	html += refs[0].outerHTML
+	return html
 }
 
 
@@ -233,7 +235,6 @@ function buildFootnotes () {
 
 
 function buildBook () {
-	let html = ``;
 	let bookRoot = ``;
 	try {
 		const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'book.html', 'utf8');
@@ -241,18 +242,25 @@ function buildBook () {
 	} catch (err) {
 		console.error(err);
 	}
-
 	// TOCTarget ids
 	let TOCData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'toc.json', 'utf8'));
 
 	let headingArr = bookRoot.querySelectorAll ('h1, h2, h3')
 	for (let i in headingArr) {
+		if (headingArr[i].tagName == 'H1') {
+			let [number, heading] = headingArr[i].innerHTML.split('. ')
+			if (heading) {
+				if (number.length < 3 ) { //it's a chapter (1-99)
+					headingArr[i].set_content(`<span class="chapnum">chapter ${number}</span><br>${heading}`)
+				} else { // it's something like an appendix
+					headingArr[i].set_content(`<span class="chapnum">${number.toLowerCase()}</span><br>${heading}`)
+				}
+			}
+		}
 		headingArr[i].setAttribute('id',`TOCTarget${TOCData[i].tocno}`)
 	}
-
 	// superscripts and sups 
 	let suffix = ['st', 'rd', 'nd', 'th']
-
 	let allSups = bookRoot.querySelectorAll('sup')
 	for (i in allSups) {
 		if (suffix.includes(allSups[i].text)) {
@@ -268,17 +276,6 @@ function buildBook () {
 			allAnchors[i].replaceWith(tempHTML)
 		}
 	}
-
-
-
-/* 	let allParas = bookRoot.querySelectorAll('p') 
-	for (i in allParas) {
-		allParas[i].innerHTML = allParas[i].innerHTML
-		.replaceAll('data-custom-style="pali"', 'lang="pli"')
-		.replaceAll('data-custom-style="sesame-suttaplex"', 'class="sesame"')
-		.replaceAll('data-custom-style="bob-cite"', 'class="bob-cite"')
-	} */
-
 
 	let spans = bookRoot.getElementsByTagName ('span')
 	for (i in spans) {
@@ -327,6 +324,7 @@ function buildBook () {
 			case 'SN ':
 			case 'DN ':
 			case 'Ud ':
+			case 'Cp ':
 				let tempTop =  anchors[i].text.slice(0, 2)
 				let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
 				let tempText = tempTop + '&#8239;' + tempTail

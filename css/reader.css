@@ -315,12 +315,14 @@ strong {
 .content h1 {
 	font-family: 'Source Sans Pro';
 	text-align: center;
-	font-size: calc(var(--fontsize)*1.9);
+	font-size: 1.9em;
+/* 	font-size: calc(var(--fontsize)*1.9); */
 	font-style: normal;
 	font-weight: 400;
 	font-variant: small-caps;
-	padding-bottom: 0;
-	padding-top:3em;
+	line-height: 1.2em;
+	padding-bottom: 1em;
+	padding-top:4em;
 }
 
 .content h1 > em {
@@ -435,7 +437,8 @@ strong {
 }
 
 .chapnum {
- font-size: calc(var(--fontsize)*1.3);
+/*  font-size: calc(var(--fontsize)*1.3); */
+ font-size: 0.7em;
 }
 
 

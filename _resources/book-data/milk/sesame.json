@@ -16,6 +16,22 @@
     "biblio": ""
 },
 {
+    "sesame": "Milindapañha",
+    "type": "suttaplex",
+    "sesameref": "",
+    "directory": "",
+    "file": "mil",
+    "biblio": ""
+},
+{
+    "sesame": "Mahāvastu",
+    "type": "suttaplex",
+    "sesameref": "",
+    "directory": "",
+    "file": "san-lo-mvu",
+    "biblio": ""
+},
+{
     "sesame": "Vism",
     "type": "externalQuote",
     "sesameref": "",
@@ -29,6 +45,30 @@
     "sesameref": "",
     "directory": "wiki-entry",
     "file": "Ramayana",
+    "biblio": ""
+},
+{
+    "sesame": "Kāma Sūtra",
+    "type": "externalQuote",
+    "sesameref": "",
+    "directory": "wiki-entry",
+    "file": "Kama_Sutra",
+    "biblio": ""
+},
+{
+    "sesame": "Xuanzang",
+    "type": "externalQuote",
+    "sesameref": "",
+    "directory": "wiki-entry",
+    "file": "Xuanzang",
+    "biblio": ""
+},
+{
+    "sesame": "Nāgārjuna",
+    "type": "externalQuote",
+    "sesameref": "",
+    "directory": "wiki-entry",
+    "file": "Nagarjuna",
     "biblio": ""
 }
 ]

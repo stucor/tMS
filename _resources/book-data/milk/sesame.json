@@ -32,6 +32,22 @@
     "biblio": ""
 },
 {
+    "sesame": "Divyāvadāna’s",
+    "type": "suttaplex",
+    "sesameref": "",
+    "directory": "",
+    "file": "divy",
+    "biblio": ""
+},
+{
+    "sesame": "Divyāvadāna",
+    "type": "suttaplex",
+    "sesameref": "",
+    "directory": "",
+    "file": "divy",
+    "biblio": ""
+},
+{
     "sesame": "Vism",
     "type": "externalQuote",
     "sesameref": "",
@@ -85,6 +101,14 @@
     "sesameref": "",
     "directory": "wiki-entry",
     "file": "Cūḷavaṃsa",
+    "biblio": ""
+},
+{
+    "sesame": "Taisho Tripitaka",
+    "type": "externalQuote",
+    "sesameref": "",
+    "directory": "wiki-entry",
+    "file": "Taishō_Tripiṭaka",
     "biblio": ""
 }
 ]

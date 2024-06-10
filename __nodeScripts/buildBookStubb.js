@@ -164,7 +164,7 @@ function buildFootnotes () {
 				spans[i].removeAttribute ('data-custom-style')
 				
 			break
-			case 'sesame-suttaplex':
+			case 'sesame':
 				spans[i].classList.add('sesame')
 				spans[i].removeAttribute ('data-custom-style')
 			break
@@ -297,7 +297,7 @@ function buildBook () {
 				spans[i].classList.add('ref')
 				spans[i].removeAttribute ('data-custom-style')
 			break
-			case 'sesame-suttaplex':
+			case 'sesame':
 				spans[i].classList.add('sesame')
 				spans[i].removeAttribute ('data-custom-style')
 			break

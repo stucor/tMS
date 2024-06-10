@@ -1048,7 +1048,7 @@ table.borderlessTable {
 	font-family: 'Source Serif Pro';
 	width:fit-content;
 	max-width: 60%;
-	margin: 2em 20% 3em 20%;
+	margin: 2em auto 3em auto;
 	font-style: normal;
 	font-style: italic;
 	font-weight: 500;
@@ -1237,6 +1237,7 @@ span[class^="sesame ref closebutton"] {
 	font-size: 0.9em;
  	background-color: var(--sesamebackground); 
 	border-radius: 1em;
+	font-style: normal;
 }
 
 .opensesameref {
@@ -3113,7 +3114,6 @@ mark.current {
 		margin: 2em 10%;
 
 	}
-	
 
 }
 

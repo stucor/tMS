@@ -70,5 +70,21 @@
     "directory": "wiki-entry",
     "file": "Nagarjuna",
     "biblio": ""
+},
+{
+    "sesame": "Mahābhārata",
+    "type": "externalQuote",
+    "sesameref": "",
+    "directory": "wiki-entry",
+    "file": "Mahabharata",
+    "biblio": ""
+},
+{
+    "sesame": "Cūlavaṁsa",
+    "type": "externalQuote",
+    "sesameref": "",
+    "directory": "wiki-entry",
+    "file": "Cūḷavaṃsa",
+    "biblio": ""
 }
 ]

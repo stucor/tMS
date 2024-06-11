@@ -412,8 +412,11 @@ function buildBook () {
 		} 
 
 	} 
-	
-	return `\n${bookRoot}`;
+
+	let returnHTML = `\n${bookRoot}`.replaceAll('</blockquote>\r\n<blockquote>','')
+									.replaceAll('</p>\r\n\r\n\r\n<p>','</p>\r\n<p>')
+									.replaceAll('</p>\r\n\r\n<p>','</p>\r\n<p>')
+	return returnHTML
 }
 
 function buildCompleteBook () {
@@ -590,7 +593,7 @@ html += `<div class="wrapper" id="bookwrap"><div></div>
 			<h4 class="titlepage">${subtitle}</h4>
 			<h2 class="titlepage">${authorShortname}</h2>`
 
-html += buildBook ()
+html += buildBook()
 
 html += buildReferences()
 

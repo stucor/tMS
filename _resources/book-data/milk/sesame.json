@@ -110,5 +110,21 @@
     "directory": "wiki-entry",
     "file": "Taishō_Tripiṭaka",
     "biblio": ""
+},
+{
+    "sesame": "Motzu",
+    "type": "externalQuote",
+    "sesameref": "",
+    "directory": "wiki-entry",
+    "file": "Mozi",
+    "biblio": ""
+},
+{
+    "sesame": "Confucius",
+    "type": "externalQuote",
+    "sesameref": "",
+    "directory": "wiki-entry",
+    "file": "Confucius",
+    "biblio": ""
 }
 ]

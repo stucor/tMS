@@ -157,9 +157,7 @@ function buildFootnotes () {
 				spans[i].removeAttribute ('data-custom-style')
 			break
 			case 'zot-cite':
-/* 				let zotHTML = spans[i].innerHTML.replace('[','').replace(']','')
-				spans[i].set_content(spans[i].innerHTML.replace('[','').replace(']',''))
- */				spans[i].classList.add('sesame')
+				spans[i].classList.add('sesame')
 				spans[i].classList.add('ref')
 				spans[i].removeAttribute ('data-custom-style')
 				
@@ -173,9 +171,11 @@ function buildFootnotes () {
 				spans[i].removeAttribute ('data-custom-style')
 			break
 			default:
+		}
 
-			}
 	}
+
+
 	// anchors
 	let anchors = footnotesRoot.getElementsByTagName ('a') 
 	for (i in anchors) {
@@ -213,12 +213,13 @@ function buildFootnotes () {
 				anchors[i].classList.add('extlink')
 				anchors[i].classList.add('tipref')
 			break
+			case 'Seg': // it's an internal segment number
+				let temp4Text = anchors[i].text
+				anchors[i].replaceWith(`<span class="bookSegment">${temp4Text}</span>`)
+			break
 			default:
 				anchors[i].classList.add('extlink')
-
 		}
-		
-		
 	}
 
 	let localHTML =``
@@ -279,6 +280,9 @@ function buildBook () {
 
 	let spans = bookRoot.getElementsByTagName ('span')
 	for (i in spans) {
+		if (spans[i].classList.contains('anchor')) { // remove any in book link targets
+			spans[i].remove()
+		}
 		let dataCustomStyle = spans[i].getAttribute('data-custom-style')
 		switch(dataCustomStyle) {
 			case 'Footnote Characters':
@@ -310,12 +314,12 @@ function buildBook () {
 				spans[i].removeAttribute ('data-custom-style')
 			break
 			default:
+		}
 
-			}
 	}
 
 
-	let anchors = bookRoot.getElementsByTagName ('a') 
+ 	let anchors = bookRoot.getElementsByTagName ('a') 
 	for (i in anchors) {
 		let firstThree = anchors[i].text.slice(0,3)
 		switch(firstThree) {
@@ -352,11 +356,14 @@ function buildBook () {
 				anchors[i].classList.add('extlink')
 				anchors[i].classList.add('tipref')
 			break
+			case 'Seg':
+				let temp4Text =  anchors[i].text
+				anchors[i].replaceWith(`<span class="bookSegment">${temp4Text}</span>`)
+			break;
 			default:
 				anchors[i].classList.add('extlink')
-
 		}
-	}
+	} 
 	
 
 	let suttaVerseHTML = ``
@@ -413,9 +420,17 @@ function buildBook () {
 
 	} 
 
+	let allSegments = bookRoot.querySelectorAll('p')
+
+	for (i in allSegments) {
+		allSegments[i].setAttribute('id',`seg-${i}`)
+	}
+
+
 	let returnHTML = `\n${bookRoot}`.replaceAll('</blockquote>\r\n<blockquote>','')
 									.replaceAll('</p>\r\n\r\n\r\n<p>','</p>\r\n<p>')
 									.replaceAll('</p>\r\n\r\n<p>','</p>\r\n<p>')
+
 	return returnHTML
 }
 

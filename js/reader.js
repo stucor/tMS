@@ -2727,8 +2727,10 @@ function decodeBookSegment (anchortext) {
 	} else if (anchortext.substring(0,6).toLowerCase() == 'figure') {
 		let figNum = anchortext.toLowerCase().replace(/\s/g,'').replace('figure', '')
 		str = `fig${figNum}`
-	} else
-	{
+	} else if (anchortext.substring(0,7).toLowerCase() == 'segment') {
+		let segNum = anchortext.toLowerCase().replace(/\s/g,'').replace('segment', '')
+		str = `seg-${segNum}`
+	} else	{
 		str = anchortext.toLowerCase().replace(/\s/g,'').replace(',','').replace ('chapter', 'c' ).replace ('paragraph', 'p')
 		if ( str.search('p') == -1 ) {
 			str = `TOCTarget${str.substring(1)}`
@@ -2737,7 +2739,6 @@ function decodeBookSegment (anchortext) {
 		}
 	}
 	return [str, unmarked_paragraph]
-
 }
 
 document.getElementById("ModalNotes").addEventListener("click", function(e) {

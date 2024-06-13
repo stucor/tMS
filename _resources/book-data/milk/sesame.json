@@ -126,5 +126,13 @@
     "directory": "wiki-entry",
     "file": "Confucius",
     "biblio": ""
+},
+{
+    "sesame": "Mencius",
+    "type": "externalQuote",
+    "sesameref": "",
+    "directory": "wiki-entry",
+    "file": "Mencius",
+    "biblio": "Mencius 1970a"
 }
 ]

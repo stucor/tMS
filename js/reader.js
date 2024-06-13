@@ -2426,11 +2426,12 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		savedsup = document.getElementById(bookSeg);
 		clearhighlightnote();
 	}
-
-/* 	if (e.target.classList.contains('texttitle')){
-		toggleTexttitle(e.target);
-	} */
 	
+	if (e.target.classList.contains('manualLink')) {
+		var whereTo = e.target.getAttribute('data-target').substring(1);
+		goToTarget(whereTo);
+	}
+
 	if (e.target.classList.contains('sesame')) {
 		toggleSesame (e.target)
 	} else if (e.target.parentNode.classList.contains('sesame')) {
@@ -2795,6 +2796,15 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		clearhighlightnote('immediate');
 		savedsup = document.getElementById(bookSeg);
 		goToTarget(bookSeg);
+		clearhighlightnote();
+	}
+
+	if (e.target.classList.contains('manualLink')) {
+		var whereTo = e.target.getAttribute('data-target').substring(1);
+		closebtn.click();
+		clearhighlightnote('immediate');
+		savedsup = document.getElementById(whereTo);
+		goToTarget(whereTo);
 		clearhighlightnote();
 	}
 

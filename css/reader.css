@@ -462,7 +462,7 @@ a {
 	font-variant: small-caps;
 }
 
-.bookSegment {
+.bookSegment, .manualLink {
 	color:cornflowerblue;
 	text-decoration: none;
 	cursor: pointer;

@@ -213,12 +213,15 @@ function buildFootnotes () {
 				anchors[i].classList.add('extlink')
 				anchors[i].classList.add('tipref')
 			break
-			case 'Seg': // it's an internal segment number
-				let temp4Text = anchors[i].text
-				anchors[i].replaceWith(`<span class="bookSegment">${temp4Text}</span>`)
-			break
 			default:
-				anchors[i].classList.add('extlink')
+				if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
+					let target = anchors[i].getAttribute('href');
+					let temp4Text = anchors[i].text
+					anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`)
+
+				} else {
+					anchors[i].classList.add('extlink')
+				}
 		}
 	}
 
@@ -229,6 +232,7 @@ function buildFootnotes () {
 		localHTML += outFNPara[i].innerHTML
 		.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
 		.replaceAll('<em>,</em>',',') // clean up unexpected italics
+		.replaceAll(' | ','<br>')
 		localHTML += '</div>\n'
 	}
 	return localHTML;
@@ -361,7 +365,13 @@ function buildBook () {
 				anchors[i].replaceWith(`<span class="bookSegment">${temp4Text}</span>`)
 			break;
 			default:
-				anchors[i].classList.add('extlink')
+				if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
+					let target = anchors[i].getAttribute('href');
+					let temp4Text = anchors[i].text
+					anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`)
+				} else {
+					anchors[i].classList.add('extlink')
+				}
 		}
 	} 
 	
@@ -421,15 +431,14 @@ function buildBook () {
 	} 
 
 	let allSegments = bookRoot.querySelectorAll('p')
-
 	for (i in allSegments) {
 		allSegments[i].setAttribute('id',`seg-${i}`)
 	}
 
 
 	let returnHTML = `\n${bookRoot}`.replaceAll('</blockquote>\r\n<blockquote>','')
-									.replaceAll('</p>\r\n\r\n\r\n<p>','</p>\r\n<p>')
-									.replaceAll('</p>\r\n\r\n<p>','</p>\r\n<p>')
+									.replaceAll('</p>\r\n\r\n\r\n<p','</p>\r\n<p')
+									.replaceAll('</p>\r\n\r\n<p','</p>\r\n<p')
 
 	return returnHTML
 }

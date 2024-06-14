@@ -2,7 +2,6 @@
 {
     "sesame": "Nigrodhamiga Jātaka",
     "type": "suttaplex",
-    "sesameref": "",
     "directory": "",
     "file": "ja12",
     "biblio": ""
@@ -10,7 +9,6 @@
 {
     "sesame": "Culla Niddesa",
     "type": "suttaplex",
-    "sesameref": "",
     "directory": "",
     "file": "cnd",
     "biblio": ""
@@ -18,7 +16,6 @@
 {
     "sesame": "Mahā Niddesa",
     "type": "suttaplex",
-    "sesameref": "",
     "directory": "",
     "file": "mnd",
     "biblio": ""
@@ -26,7 +23,6 @@
 {
     "sesame": "Milindapañha",
     "type": "suttaplex",
-    "sesameref": "",
     "directory": "",
     "file": "mil",
     "biblio": ""
@@ -34,7 +30,6 @@
 {
     "sesame": "Mahāvastu",
     "type": "suttaplex",
-    "sesameref": "",
     "directory": "",
     "file": "san-lo-mvu",
     "biblio": ""
@@ -42,7 +37,6 @@
 {
     "sesame": "Divyāvadāna’s",
     "type": "suttaplex",
-    "sesameref": "",
     "directory": "",
     "file": "divy",
     "biblio": ""
@@ -50,7 +44,6 @@
 {
     "sesame": "Divyāvadāna",
     "type": "suttaplex",
-    "sesameref": "",
     "directory": "",
     "file": "divy",
     "biblio": ""
@@ -58,7 +51,6 @@
 {
     "sesame": "Vism",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Visuddhimagga",
     "biblio": "Ñāṇamoli 1956"
@@ -66,7 +58,6 @@
 {
     "sesame": "Rāmāyaṇa",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Ramayana",
     "biblio": ""
@@ -74,7 +65,6 @@
 {
     "sesame": "Kāma Sūtra",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Kama_Sutra",
     "biblio": ""
@@ -82,7 +72,6 @@
 {
     "sesame": "Xuanzang",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Xuanzang",
     "biblio": ""
@@ -90,7 +79,6 @@
 {
     "sesame": "Nāgārjuna",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Nagarjuna",
     "biblio": ""
@@ -98,7 +86,6 @@
 {
     "sesame": "Mahābhārata",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Mahabharata",
     "biblio": ""
@@ -106,7 +93,6 @@
 {
     "sesame": "Cūlavaṁsa",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Cūḷavaṃsa",
     "biblio": ""
@@ -114,7 +100,6 @@
 {
     "sesame": "Taisho Tripitaka",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Taishō_Tripiṭaka",
     "biblio": ""
@@ -122,7 +107,6 @@
 {
     "sesame": "Motzu",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Mozi",
     "biblio": ""
@@ -130,7 +114,6 @@
 {
     "sesame": "Confucius",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Confucius",
     "biblio": ""
@@ -138,7 +121,6 @@
 {
     "sesame": "Mencius",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Mencius",
     "biblio": "Mencius 1970a"
@@ -146,7 +128,6 @@
 {
     "sesame": "Kāma",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Kamadeva",
     "biblio": ""
@@ -154,7 +135,6 @@
 {
     "sesame": "Hariti",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Hariti",
     "biblio": ""
@@ -162,7 +142,6 @@
 {
     "sesame": "Pancika",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Pañcika",
     "biblio": ""
@@ -170,7 +149,6 @@
 {
     "sesame": "Mahāvaṁsa",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Mahāvaṃsa",
     "biblio": "Geiger 1912a"
@@ -178,7 +156,6 @@
 {
     "sesame": "Avalokiteśvara",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Avalokiteśvara",
     "biblio": ""
@@ -186,7 +163,6 @@
 {
     "sesame": "Kṣitigarbha",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Kṣitigarbha",
     "biblio": ""
@@ -194,7 +170,6 @@
 {
     "sesame": "Metteyya",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Maitreya",
     "biblio": ""
@@ -202,7 +177,6 @@
 {
     "sesame": "Maitreya",
     "type": "externalQuote",
-    "sesameref": "",
     "directory": "wiki-entry",
     "file": "Maitreya",
     "biblio": ""

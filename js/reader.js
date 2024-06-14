@@ -2882,11 +2882,11 @@ function toggleSesame (el) {
 							}
 							let linkHTML = ''
 							if (sesameData[i].directory == 'wiki-entry') {
-								linkHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameData[i].file}'>on <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span><br>`
+								linkHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameData[i].file}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span><br>`
 							} else {
 								let [directory,subdirectory] = sesameData[i].directory.split('/')
 								if (directory == 'sujato-nikaya-notes') {
-									linkHTML = `<br><span class='extlink'><a alt='SuttaCentral Guide' href = 'https://suttacentral.net/${subdirectory}'>on <img class='icon' src='../_resources/images/icons/sc-icon.png'>SuttaCentral</a></span>`
+									linkHTML = `<br><span class='extlink'><a alt='SuttaCentral Guide' href = 'https://suttacentral.net/${subdirectory}'>source: <img class='icon' src='../_resources/images/icons/sc-icon.png'>SuttaCentral</a></span>`
 								}
 							}
 							let author = ''
@@ -2914,11 +2914,11 @@ function toggleSesame (el) {
 						if (sesameData[i].type == 'sutta') {
 							scRefHTML = `<span class="sclinktext">${(sesameData[i].file)}</span>`
 						} else {
- 							scRefHTML = `<a class="extlink" href="https://suttacentral.net/${(sesameData[i].file)}"><br>on <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`;
+ 							scRefHTML = `<a class="extlink" href="https://suttacentral.net/${(sesameData[i].file)}"><br>source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`;
  						}
 
 						function doSCAPI(scData) {
-							el.insertAdjacentHTML("afterend", `<div class=opensesame><h3>${scData[0].translated_title} (${scData[0].original_title}) ${scRefHTML}</h3>${scData[0].blurb}<br><span style='float:right; font-size:smaller'>Summary from SuttaCentral</span><br></div>`);
+							el.insertAdjacentHTML("afterend", `<div class=opensesame><h3>${scData[0].translated_title} (${scData[0].original_title}) ${scRefHTML}</h3>${scData[0].blurb}</div>`);
 							el.classList.add('closebutton')
 						}
 						fetch(`https://suttacentral.net/api/suttaplex/${strippedSCRef}`)

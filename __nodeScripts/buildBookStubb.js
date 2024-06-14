@@ -235,6 +235,7 @@ function buildFootnotes () {
 		.replaceAll(' | ','<br>')
 		localHTML += '</div>\n'
 	}
+	localHTML += `<div style='margin-top: 2em; background: #7f7f7f50; text-align:center; font-variant:small-caps; margin-bottom: 50%'>End of Notes</div>`
 	return localHTML;
 }
 

@@ -903,6 +903,10 @@ td, th {
 	border: 1px solid  var(--tableborder);
 	padding: 8px;
   }
+
+td > p {
+	margin: 0;
+}
 tr:nth-child(even){background-color: var(--tableeven);}
 tr:nth-child(odd){background-color: var(--tableodd);}
 th {
@@ -1238,6 +1242,7 @@ span[class^="sesame ref closebutton"] {
  	background-color: var(--sesamebackground); 
 	border-radius: 1em;
 	font-style: normal;
+	text-align: var(--textalign);
 }
 
 .opensesameref {
@@ -1667,11 +1672,7 @@ sup {
 	margin:10px;
 	background-color: var(--imgbackground);
 }
-.downloads::before {
-	content: "available in the following formats";
-	display:block;
-	padding-top: 5px;
-}
+
 
 .downloads img {
 	width: auto; 
@@ -1679,7 +1680,7 @@ sup {
 	padding:5px;
 	margin:5px;
 	border-radius: 10px;
-	border: 1px solid #00000000;
+	border: 1px solid rgba(100, 148, 237, 0.2);
 }
 
 

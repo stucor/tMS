@@ -15,7 +15,7 @@ try {
 
 function buildReferences () {
 	let referenceRoot = ``
-	let html =`<h1>Bibliography</h1>`
+	let html =`<h2>Bibliography</h2>`
 	try {
 		const data = fs.readFileSync('newbiblio.html', 'utf8');
 		referenceRoot = parse(data);
@@ -44,6 +44,8 @@ function buildMetaJSON () {
 	let copyright = ``
 	let CCLicense = ``
 	let frontCoverLocation = `../_resources/book-data/${bookID}/FrontLarge.jpg`
+	let downloadsAvailable =``
+	let downloadHTML =``
 
 	let tokens = pandocRoot.querySelectorAll('div, p, h1')
 	for (i in tokens) {
@@ -73,8 +75,18 @@ function buildMetaJSON () {
 				copyright += `"${copyrightArr[i]}",`
 			}
 			copyright = copyright.slice(0, -1)
+		} else
+		if (tokens[i].getAttribute('data-custom-style') == "DownloadsAvailable") {
+			downloadsAvailable +=  `${tokens[i].text.replaceAll('\r\n','').replaceAll('\n',',')}`
+		} else
+		if (tokens[i].getAttribute('data-custom-style') == "DownloadText") {
+			downloadHTML +=  tokens[i].innerHTML.replaceAll('\r\n','')
+		} else
+		if (tokens[i].getAttribute('data-custom-style') == "DownloadHTML") {
+			downloadHTML +=  `${tokens[i].text.replaceAll('\r\n','')}`
+		} 
+
 	}
-}
 
 	authors = authors.slice(0,-1)
 
@@ -89,10 +101,12 @@ function buildMetaJSON () {
 		"CCLicense": "${CCLicense}",
 		"FrontCover": "${frontCoverLocation}",
 		"BackCover": "",
-		"BackMatter": []
+		"BackMatter": [],
+		"DownloadsAvailable": "${downloadsAvailable}",
+		"DownloadHTML": "${downloadHTML}"
 	}`
 	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'meta.json'), localJSON, 'utf8')
-	//console.log (copyrightArr[2])
+
 }
 
 function buildTOCJSON () {
@@ -121,13 +135,18 @@ function extractBookHTML () {
 	bookRoot.querySelector('#short-abstract').remove()
 	bookRoot.querySelector('#abstract').remove()
 	bookRoot.querySelector('#copyright').remove()
+	bookRoot.querySelector('#downloads').remove()
 
 	let allDivs = bookRoot.querySelectorAll('div')
 
 	for (i in allDivs) {
 		if ((allDivs[i].getAttribute("data-custom-style") == "AbstractShort") 
 			|| (allDivs[i].getAttribute("data-custom-style") == "Abstract")
-			|| (allDivs[i].getAttribute("data-custom-style") == "Copyright")) {
+			|| (allDivs[i].getAttribute("data-custom-style") == "Copyright")
+			|| (allDivs[i].getAttribute("data-custom-style") == "DownloadsAvailable")
+			|| (allDivs[i].getAttribute("data-custom-style") == "DownloadText")
+			|| (allDivs[i].getAttribute("data-custom-style") == "DownloadHTML")
+			) {
 			allDivs[i].remove();
 		}
 	}
@@ -237,6 +256,32 @@ function buildFootnotes () {
 	}
 	localHTML += `<div style='margin-top: 2em; background: #7f7f7f50; text-align:center; font-variant:small-caps; margin-bottom: 50%'>End of Notes</div>`
 	return localHTML;
+}
+
+function buildDownloadInfo () {
+	let tempHTML = ''
+	let metaData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'meta.json'))
+	const classUnavailable = `class="unavailable"`
+	const downloadsFolder = `../_resources/book-downloads/${bookID}/`
+	const title = metaData.BookTitle
+	const downloadHTML = metaData.DownloadHTML
+	let whatsAvailable = metaData.DownloadsAvailable.split(',');
+
+	let noFormatAvaiable = true;
+	for (i in whatsAvailable) {
+		[doctype, available] = whatsAvailable[i].split('=')
+		if (available == 'yes') {
+			noFormatAvaiable = false
+			tempHTML +=`<a href="${downloadsFolder}${bookID}.${doctype}" download > <img alt="${title} ${doctype} download" src="../_resources/images/icons/${doctype}_file_icon.svg" ></a>`
+		} else {
+			tempHTML +=`<a ${classUnavailable} href="${downloadsFolder}${bookID}.${doctype}" download > <img alt="${title} ${doctype} download" src="../_resources/images/icons/${doctype}_file_icon.svg" ></a>`
+		}
+	}
+	if (noFormatAvaiable) { 
+		tempHTML =``
+	}
+	tempHTML += downloadHTML
+	return tempHTML
 }
 
 
@@ -411,7 +456,7 @@ function buildBook () {
 		} else
 		if (allDivs[i].getAttribute('data-custom-style') == "Sutta-Cite") {
 			if (suttaVerseHTML != '') {
-				allDivs[i].insertAdjacentHTML('beforebegin', `<div class="line-block">${suttaVerseHTML}</div>\n`)
+				allDivs[i].insertAdjacentHTML('beforebegin', `<div class="line-block-center">${suttaVerseHTML}</div>\n`)
 				suttaVerseHTML = ``;
 			}
 			allDivs[i].classList.add('list-cite')
@@ -428,8 +473,40 @@ function buildBook () {
 			}
 			allDivs[i].replaceWith(`${spacerHTML}${tempHTML}`)
 		} 
-
 	} 
+
+	// table rows
+	let allTableRows = bookRoot.querySelectorAll('tr') 
+	for (i in allTableRows) {
+		allTableRows[i].classList.remove('odd')
+		allTableRows[i].classList.remove('even')
+	}
+
+	//colgroups 
+	let allColGroups = bookRoot.querySelectorAll('colgroup')
+	for (i in allColGroups) {
+		allColGroups[i].remove()
+	}
+
+
+	// table captions
+	let allTablesAndCaptions = bookRoot.querySelectorAll('table, div')
+
+	for (let i in allTablesAndCaptions) {
+		//console.log(allTablesAndCaptions[i].innerHTML)
+		if (allTablesAndCaptions[i].getAttribute('data-custom-style') == 'Table') {
+			let caption = allTablesAndCaptions[i].text
+			let table = allTablesAndCaptions[Number(i)+1].innerHTML.replaceAll('<tr class>','<tr>')
+			allTablesAndCaptions[i].replaceWith(`<div class="tablewrap">
+<table>
+<caption >${caption}</caption>${table}
+</table>
+</div>`)
+			allTablesAndCaptions[Number(i)+1].remove()
+
+		}
+	}
+
 
 	let allSegments = bookRoot.querySelectorAll('p')
 	for (i in allSegments) {
@@ -443,6 +520,9 @@ function buildBook () {
 
 	return returnHTML
 }
+
+
+
 
 function buildCompleteBook () {
 
@@ -480,9 +560,6 @@ const searchButtonURL = `${iconsFolder}search.svg`
 const infoButtonURL = `${iconsFolder}info.svg`
 const settingsButtonURL = `${iconsFolder}settings.svg`
 const downloadButtonURL = `${iconsFolder}download.svg`
-
-// Downloads
-const downloadsFolder = `../_resources/book-downloads/${bookID}/`
 
 const bookURL = installationDirectory + bookID
 const bookFullURL = bookURL + '/index.html'
@@ -594,11 +671,11 @@ html += `				</div>
 			<div id="ModalSettings"></div>
 			<div id="ModalDownload">
 				<div>
-					<div class="downloads">
-						<a href="${downloadsFolder}${bookID}.pdf" download > <img alt="${title} pdf download" src="../_resources/images/icons/PDF_file_icon.svg" ></a>
-						<a href="${downloadsFolder}${bookID}.epub" download > <img alt="${title} epub download" src="../_resources/images/icons/epub_file_icon.svg" ></a>
-						<a href="${downloadsFolder}${bookID}.azw3" download > <img alt="${title} azw3 download" src="../_resources/images/icons/azw3_file_icon.svg" ></a>
-					</div>
+					<div class="downloads">`
+
+html += buildDownloadInfo()
+
+html +=					`</div>
 				</div>
 			</div>
 			<div id="ModalSutta"><div id="sutta"></div></div><div id="ModalDownloadAlert"></div>
@@ -623,16 +700,15 @@ html += buildBook()
 html += buildReferences()
 
 html += `
-			<div class="eob">-- END OF BOOK --<br>
-				<a href="../..">
-					<img src="../_resources/images/icons/logo.png" alt="Wiswo Logo"> 
-					<span>Wisdom & Wonders</span>
-				</a>
-			</div>
-
-			<h1 id="TOCTarget999999999"></h1>
-		</div>	
-	</div>
+<div class="eob">-- END OF BOOK --<br>
+<a href="../..">
+<img src="../_resources/images/icons/logo.png" alt="Wiswo Logo"> 
+<span>Wisdom & Wonders</span>
+</a>
+</div>
+<h1 id="TOCTarget999999999"></h1>
+</div>	
+</div>
 <div></div></div> 
 
 <script src="../js/jquery-3.6.0.min.js"></script>

@@ -1563,7 +1563,7 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#ecd38d');
 			r.style.setProperty('--primarycolor', '#cea140');
 			r.style.setProperty('--listlinkhover', '#cea14030');
-			r.style.setProperty('--bdtexthighlighter', '#fffddd80'); 
+			r.style.setProperty('--bdtexthighlighter', '#fa807210'); 
 			r.style.setProperty('--bdtexthighlightborder', '#ddc9a2');
 			r.style.setProperty('--sesamebackground', '#ffffff30');
 /* 			r.style.setProperty('--sesamebackground', '#fffddd'); */

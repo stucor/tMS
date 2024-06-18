@@ -463,7 +463,6 @@ function buildBook () {
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
 		if (allDivs[i].getAttribute('data-custom-style') == "List-Instructions") {
-			//allDivs[i].insertAdjacentHTML('afterbegin', `<hr class='halfspacer'>`)
 			let spacerHTML = ``
 			let tempHTML = allDivs[i].innerHTML
 			let c = tempHTML.charAt(5)
@@ -692,7 +691,7 @@ html += `<div class="wrapper" id="bookwrap"><div></div>
 			<h4 class="titlepage">${subtitle}</h4>
 			<h2 class="titlepage">${authorShortname}</h2>`
 
-html += buildBook().replaceAll('\r\n\r\n','')
+html += buildBook().replaceAll('\r\n\r\n\r\n','').replaceAll('\r\n\r\n','\r\n')
 
 html += buildReferences()
 

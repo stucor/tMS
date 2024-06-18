@@ -521,9 +521,6 @@ function buildBook () {
 	return returnHTML
 }
 
-
-
-
 function buildCompleteBook () {
 
 let html =``
@@ -695,7 +692,7 @@ html += `<div class="wrapper" id="bookwrap"><div></div>
 			<h4 class="titlepage">${subtitle}</h4>
 			<h2 class="titlepage">${authorShortname}</h2>`
 
-html += buildBook()
+html += buildBook().replaceAll('\r\n\r\n','')
 
 html += buildReferences()
 

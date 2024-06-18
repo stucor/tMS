@@ -568,7 +568,7 @@ a {
 
 
 .line-block {
-	margin: 1em 0 1em 2em;
+	margin: 1em 0 0 0;
 	font-style: normal;
 	white-space: nowrap;
 	overflow-x: auto;
@@ -599,24 +599,22 @@ a {
 	font-size: 0.8em;
 	top: 0.2em;
 	float:left;
-	margin: 0.1em 0 0 -2em;
+	margin: 0.1em 0 0 -2.2em;
 }
 
 
 .line-block p {
 	margin-top: 0;
-	padding: 0 ;
+	padding-left: 0 ;
 }
 .line-block p + p {
 	margin-top: 1em;
 }
 
 .line-block-narrative {
-	margin-left: -1.5em;
+	margin-left: 1em;
 }   
-.line-block:has(> .line-block-narrative) > p {
-	padding-left: 1.5em;
-}
+
 
 .line-block > p:has(> span.vcmarg) {
 	padding-left: 3em;
@@ -649,27 +647,31 @@ blockquote > p > span.vcmarg {
 
 
 .OAstart-tiny {text-indent: -0.1em;}
-.line-block:has(> .OAstart-tiny) {padding-left: 0.1em; margin-left: calc(2em - 0.1em);}
+.line-block:has(> .OAstart-tiny) {padding-left: 0.1em; margin-left: calc(-0.1em);}
+.OAstart-2 {text-indent: -0.2em;}
+.line-block:has(> .OAstart-2) {padding-left: 0.2em; margin-left: calc(-0.2em);}
 .OAstart-little {text-indent: -0.3em;}
-.line-block:has(> .OAstart-little) {padding-left: 0.3em; margin-left: calc(2em - 0.3em);}
+.line-block:has(> .OAstart-little) {padding-left: 0.3em; margin-left: calc(-0.3em);}
 .OAstart-bottom {text-indent: -0.35em;}
-.line-block:has(> .OAstart-bottom) {padding-left: 0.35em; margin-left: calc(2em - 0.35em);}
+.line-block:has(> .OAstart-bottom) {padding-left: 0.35em; margin-left: calc(-0.35em);}
 .OAstart {text-indent: -0.43em;}
-.line-block:has(> .OAstart) {padding-left: 0.43em; margin-left: calc(2em - 0.43em);}
+.line-block:has(> .OAstart) {padding-left: 0.43em; margin-left: calc(-0.43em);}
 .OAstart-top {text-indent: -0.46em;}
-.line-block:has(> .OAstart-top) {padding-left: 0.46em; margin-left: calc(2em - 0.46em);}
+.line-block:has(> .OAstart-top) {padding-left: 0.46em; margin-left: calc(-0.46em);}
 .OAstart-doubletop {text-indent: -0.58em;}
-.line-block:has(> .OAstart-doubletop) {padding-left: 0.58em; margin-left: calc(2em - 0.58em);}
+.line-block:has(> .OAstart-doubletop) {padding-left: 0.58em; margin-left: calc(-0.58em);}
 .OAstart > span.vcmarg, 
 .OAstart-top > span.vcmarg, 
 .OAstart-doubletop > span.vcmarg, 
 .OAstart-bottom > span.vcmarg, 
 .OAstart-little > span.vcmarg,
+.OAstart-2 > span.vcmarg,
 .OAstart-tiny > span.vcmarg  {
 	text-indent: 0.05em;
 } 
 
 .OAbody-tiny {text-indent: 1.9em;}
+.OAbody-2 {text-indent: 1.8em;}
 .OAbody-little {text-indent: 1.7em;}
 .OAbody-bottom {text-indent: 1.65em;}
 .OAbody {text-indent: 1.57em;}
@@ -680,6 +682,7 @@ blockquote > p > span.vcmarg {
 .OAbody-doubletop > span.vcmarg, 
 .OAbody-bottom > span.vcmarg, 
 .OAbody-little > span.vcmarg,
+.OAbody-2 > span.vcmarg,
 .OAbody-tiny > span.vcmarg  {
 	text-indent: 2.55em;
 } 
@@ -689,23 +692,11 @@ blockquote > p > span.vcmarg {
 	text-indent: 2.4em;
 }
 
-/* #selfquotearea > p:nth-child(2) > span.vcmarg  {
-	text-indent: 2.4em;
-	background-color: greenyellow;
-} */
-
 blockquote {
-/* 	border-left: 1px solid #cccccc7c; */
-box-shadow:  -5px 1px 0px -4px #cccccc7c;
-/* 	padding:0; 
-	margin: 2em 0; */
+	box-shadow:  -5px 1px 0px -4px #cccccc7c;
 	padding:0 2em; 
-	margin: 2em 0;
+	margin: 1em 0;
 }
-
-/* blockquote p {
-	padding: 0 2em;
-} */
 
 figure {
 	width:100%; 
@@ -761,7 +752,7 @@ figcaption {
 
 .citeBQ {
 	text-align:right;
-	margin: -1.5em 1em 2em auto;
+	margin: -1em 1em 2em auto;
 	font-variant: small-caps;
 }
 
@@ -1056,20 +1047,21 @@ table.borderlessTable {
 	font-style: normal;
 	font-style: italic;
 	font-weight: 500;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	hyphens: none;
 	text-align: left;
 }
 
 .content span.bob-cite {
 	float:right;
+	text-align: right;
 	font-style: normal;
 	font-size: 0.75em;
 	padding-top: 0;
 }
 
 .content div.bob-text + div.bob-text {
-	margin-top: -2em;
+	margin-top: -2.6em;
 }
 
 .content div.quote {

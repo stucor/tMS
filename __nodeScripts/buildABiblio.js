@@ -229,7 +229,7 @@ function buildRef () {
                         html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
                     }
                 } else {
-                    html += `${linkSeparator} <a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+                    html += `${linkSeparator} <a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file.replaceAll(' ','%20')}"></a> `;
                 }
             }
 

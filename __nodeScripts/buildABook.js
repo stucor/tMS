@@ -6,6 +6,7 @@ const { parse } = require('node-html-parser');
 let bookID = process.argv.slice(2)[0];
 
 let sesameArr = []
+let sesameRefArr = []
 
 function buildSesameStub () {
 	let sortedSesames = [...new Set(sesameArr)].sort()
@@ -21,28 +22,32 @@ function buildSesameStub () {
 		}
 	}
 	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameSTUB.json'), localJSON, 'utf8')
-	console.log(`* A new file: /book-data/${bookID}/sesameSTUB.json has been created *\nUse this as a basis for your sesame.json file\n`);
+	console.log(`*** A new file: /book-data/${bookID}/sesameSTUB.json has been created ***\nUse this as a basis for your sesame.json file\n`);
+}
 
+function buildSesameRefStub () {
+	console.log(sesameRefArr)
 }
 
 function buildMyBook () {
-	let docx = path.join(__dirname,'..','_resources','book-data', bookID, bookID+'.docx');
-	let outPandocHTML = path.join(__dirname,'..','_resources','book-data', bookID, 'pandoc.html');
+	let docx = path.join(__dirname,'..','_resources','book-data', bookID, bookID+'.docx')
+	let outPandocHTML = path.join(__dirname,'..','_resources','book-data', bookID, 'pandoc.html')
 	exec(`pandoc --from docx+styles ${docx} -s --toc -o ${outPandocHTML} --wrap=none`, 
 		(error, stdout, stderr) => { 
 		  if (error) { 
-			console.error(`Error: ${error.message}`); 
+			console.error(`Error: ${error.message}`)
 			return; 
 		  } 
 		  if (stderr) { 
-			console.error(`stderr: ${stderr}`); 
+			console.error(`stderr: ${stderr}`)
 			return; 
 		  } 
-		  console.log(`\n* Pandoc has created pandoc.html sucessfully from ${bookID}.docx *\n`);
-		  processPandoc();
+		  console.log(`\n* Pandoc has created pandoc.html sucessfully from ${bookID}.docx *\n`)
+		  processPandoc()
 		  buildCompleteBook() 
-		  console.log(`* books/${bookID}/index.html BUILD COMPLETE *\n`);
-		  buildSesameStub();
+		  console.log(`* books/${bookID}/index.html BUILD COMPLETE *\n`)
+		  buildSesameStub()
+		  //buildSesameRefStub()
 		}); 
 }
 
@@ -320,6 +325,7 @@ function buildBook () {
 				spans[i].classList.add('sesame')
 				spans[i].classList.add('ref')
 				spans[i].removeAttribute ('data-custom-style')
+				sesameRefArr.push(spans[i].text)
 			break
 			case 'sesame':
 				spans[i].classList.add('sesame')
@@ -487,11 +493,13 @@ function buildBook () {
 	let returnHTML = `\n${bookRoot}`.replaceAll('</blockquote>\r\n<blockquote>','')
 									.replaceAll('</p>\r\n\r\n\r\n<p','</p>\r\n<p')
 									.replaceAll('</p>\r\n\r\n<p','</p>\r\n<p')
+									.replaceAll('\r\n\r\n\r\n','')
+									.replaceAll('\r\n\r\n','\r\n')
 
 	return returnHTML
 }
 
-html += buildBook().replaceAll('\r\n\r\n\r\n','').replaceAll('\r\n\r\n','\r\n')
+html += buildBook()
 
 function buildReferences () {
 	let referenceRoot = ``
@@ -537,6 +545,28 @@ function buildReferences () {
 	  }
 
 
+
+	let dtArrText = [] // An array for dt Text
+	let uniqSesameRefArr = [...new Set(sesameRefArr)] // remove all duplicates
+	for (i in dtArr) {
+		dtArrText.push(dtArr[i].text)
+	}
+	
+	let nonBiblioReferences = uniqSesameRefArr.filter(x => !dtArrText.includes(x)); //get the differences
+
+	let localJSON = ``
+
+	localJSON += `[\n`
+	for (let i in nonBiblioReferences) {
+		localJSON += `{\n\t"sesame": "${nonBiblioReferences[i]}",\n\t"biblio": ""\n}`
+		if (i == nonBiblioReferences.length -1) {
+			localJSON += '\n]'
+		} else {
+			localJSON += ',\n'
+		}
+	}
+	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameRefSTUB.json'), localJSON, 'utf8')
+	console.log(`\n*** A new file: /book-data/${bookID}/sesameRefSTUB.json has been created ***\nUse this as a basis for your sesameRef.json file\n`);
 
 	let refs = referenceRoot.querySelectorAll('dl')
 
@@ -598,6 +628,7 @@ function processPandoc() {
 		console.error(err);
 	}
 	console.log(`Attempting to process pandoc.html ...`)
+
 	function buildMetaJSON () {
 		let localJSON = ``
 		let authors = ``
@@ -715,7 +746,7 @@ function processPandoc() {
 					spans[i].classList.add('sesame')
 					spans[i].classList.add('ref')
 					spans[i].removeAttribute ('data-custom-style')
-					
+					sesameRefArr.push(spans[i].text)
 				break
 				case 'sesame':
 					spans[i].classList.add('sesame')

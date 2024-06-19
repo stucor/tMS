@@ -5,7 +5,25 @@ const { parse } = require('node-html-parser');
 
 let bookID = process.argv.slice(2)[0];
 
+let sesameArr = []
 
+function buildSesameStub () {
+	let sortedSesames = [...new Set(sesameArr)].sort()
+	let localJSON = ``
+
+	localJSON += `[\n`
+	for (let i in sortedSesames) {
+		localJSON += `{\n\t"sesame": "${sortedSesames[i]}",\n\t"type": "",\n\t"directory": "",\n\t"file": "",\n\t"biblio": ""\n}`
+		if (i == sortedSesames.length -1) {
+			localJSON += '\n]'
+		} else {
+			localJSON += ',\n'
+		}
+	}
+	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameSTUB.json'), localJSON, 'utf8')
+	console.log(`* A new file: /book-data/${bookID}/sesameSTUB.json has been created *\nUse this as a basis for your sesame.json file\n`);
+
+}
 
 function buildMyBook () {
 	let docx = path.join(__dirname,'..','_resources','book-data', bookID, bookID+'.docx');
@@ -20,11 +38,11 @@ function buildMyBook () {
 			console.error(`stderr: ${stderr}`); 
 			return; 
 		  } 
-		  console.log(`pandoc.html created sucessfully`);
+		  console.log(`\n* Pandoc has created pandoc.html sucessfully from ${bookID}.docx *\n`);
 		  processPandoc();
-		  console.log(`pandoc.html processed`);
 		  buildCompleteBook() 
-		  console.log(`${bookID}.html built sucessfully`);
+		  console.log(`* books/${bookID}/index.html BUILD COMPLETE *\n`);
+		  buildSesameStub();
 		}); 
 }
 
@@ -246,7 +264,7 @@ function buildBook () {
 		console.error(err);
 	}
 	// TOCTarget ids
-	let TOCData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'toc.json', 'utf8'));
+	let TOCData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'toc.json', 'utf8'))
 
 	let headingArr = bookRoot.querySelectorAll ('h1, h2, h3')
 	for (let i in headingArr) {
@@ -306,6 +324,7 @@ function buildBook () {
 			case 'sesame':
 				spans[i].classList.add('sesame')
 				spans[i].removeAttribute ('data-custom-style')
+				sesameArr.push(spans[i].text)
 			break
 			case 'bob-cite':
 				spans[i].classList.add('bob-cite')
@@ -476,13 +495,48 @@ html += buildBook().replaceAll('\r\n\r\n\r\n','').replaceAll('\r\n\r\n','\r\n')
 
 function buildReferences () {
 	let referenceRoot = ``
+
 	let html =`<h2>Bibliography</h2>`
 	try {
-		const data = fs.readFileSync('newbiblio.html', 'utf8');
+		const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'biblio.html', 'utf8')
 		referenceRoot = parse(data);
 	} catch (err) {
 		console.error(err);
 	}
+
+	let dtArr = referenceRoot.getElementsByTagName('dt')
+
+	if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'biblioMapArr.json')) {
+		console.log ('Using existing biblioMapArr.json')
+		let biblioMapArr =``
+		try {
+			const data =  fs.readFileSync('../_resources/book-data/'+bookID+'/'+'biblioMapArr.json', 'utf8')
+			biblioMapArr = JSON.parse(data);
+		} catch (err) {
+			console.error(err);
+		}
+		for (i in dtArr) {
+			for (k in biblioMapArr ) {
+				if (dtArr[i].innerHTML == biblioMapArr[k][0]) {
+					dtArr[i].set_content(biblioMapArr[k][1])
+				}
+			}
+		}
+	  } else {
+		let newBiblioMapArr = `[\n`
+		for (i in dtArr) {
+			newBiblioMapArr += `\t["${dtArr[i].innerHTML}", "${dtArr[i].innerHTML}"]`
+			if (i == dtArr.length -1) {
+				newBiblioMapArr += '\n]'
+			} else {
+				newBiblioMapArr += ',\n'
+			}
+		}
+		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMappArr.json'), newBiblioMapArr, 'utf8')
+		console.log ('initial biblioMapArr.json file created — PLEASE EDIT')
+	  }
+
+
 
 	let refs = referenceRoot.querySelectorAll('dl')
 
@@ -490,7 +544,16 @@ function buildReferences () {
 	return html
 }
 
-html += buildReferences()
+
+if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.html`)) {
+	console.log(`Attempting to create Bibliography ...`)
+	html += buildReferences()
+	console.log (`* Bibliography Added from /book-data/biblio.html *`)
+} else {
+	console.log (`*** NO BIBLIOGRAPHY DATA found at /book-data/biblio.html ***`)
+}
+
+
 
 html += `
 <div class="eob">—END OF BOOK—<br>
@@ -514,7 +577,15 @@ html += `
 </body>
 </html>`
 
-//fs.writeFileSync(path.join(__dirname, '.', 'newbook.html'), html)
+
+const newIndexDirectoryPath = `../${bookID}`
+
+if (fs.existsSync(newIndexDirectoryPath)) {
+  console.log(`\nBook directory already exists - replacing index.html in /books/${bookID}`)
+} else {
+  console.log(`\nCreating new directory /books/${bookID} for index.html`);
+  fs.mkdirSync(newIndexDirectoryPath);
+}
 fs.writeFileSync(path.join(__dirname, '..', bookID, 'index.html'), html)
 }
 
@@ -526,7 +597,7 @@ function processPandoc() {
 	} catch (err) {
 		console.error(err);
 	}
-
+	console.log(`Attempting to process pandoc.html ...`)
 	function buildMetaJSON () {
 		let localJSON = ``
 		let authors = ``
@@ -600,7 +671,7 @@ function processPandoc() {
 			"DownloadHTML": "${downloadHTML}"
 		}`
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'meta.json'), localJSON, 'utf8')
-	
+		console.log(`book-data/${bookID}/meta.json has been created`)
 	}
 	
 	function buildTOCJSON () {
@@ -618,6 +689,8 @@ function processPandoc() {
 		}
 
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'TOC.json'), localJSON, 'utf8')
+		console.log(`book-data/${bookID}/TOC.json has been created`)
+
 	}
 
 	function buildFootnotesJSON () {
@@ -647,6 +720,7 @@ function processPandoc() {
 				case 'sesame':
 					spans[i].classList.add('sesame')
 					spans[i].removeAttribute ('data-custom-style')
+					sesameArr.push(spans[i].text)
 				break
 				case 'pali':
 					spans[i].setAttribute('lang','pli')
@@ -721,9 +795,10 @@ function processPandoc() {
 				localJSON += ',\n'
 			}
 
-			fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
-
 		}
+		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
+		console.log(`book-data/${bookID}/footnotes.json has been created`)
+
 	}
 
 	function buildBookInfoJSON () {
@@ -769,6 +844,7 @@ function processPandoc() {
 			if (err) throw err;
 		  });
 		fs.writeFileSync(path.join(__dirname, '..', '_resources', 'built-info-data', bookID, 'info.json'), jsonStr);
+		console.log(`built-info-data/${bookID}/info.json has been created`)
 	}
 
 	function extractBookHTML () {
@@ -798,6 +874,8 @@ function processPandoc() {
 		let html = ``
 		html += bookRoot.querySelector('body').innerHTML
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'book.html'), html, 'utf8')
+		console.log(`book-data/${bookID}/book.html has been created`)
+
 	}
 
 	buildMetaJSON()
@@ -805,6 +883,7 @@ function processPandoc() {
 	buildFootnotesJSON()
 	buildBookInfoJSON()
 	extractBookHTML()
+	console.log(`* pandoc.html PROCESSING COMPLETE *\n`);
 }
 
 buildMyBook();

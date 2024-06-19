@@ -3,56 +3,10 @@ const fs = require('fs')
 
 let bookID = process.argv.slice(2)[0];
 
-let outputHTML =``
-
-/* `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type="text/css" href="../css/biblio.css">
-<title>test biblio</title>
-<style>
-:root {
-	--bdtexthighlighter: #fffaf6;
-}
-body {
-    margin: 2em 15%;
-}
-dt {
-    margin-top: 0.5em;
-    font-variant: small-caps;
-    font-size: smaller;
-}
-
-</style> 
-</head>
-<body>
-` */
-
-let compareData = ``
-
-let nopdfs = ``
+let html =``
 
 function buildRef () {
-    let html =``
-    let biblioMappArr = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblioMapArr.json'))
     let bookBiblioData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblio.json'))
-    
-    function compareRefs (referencesData) {
-        for (i in referencesData) {
-            compareData += `${referencesData[i].id}::${referencesData[i].title}\n`
-        }
-    }
-
-    function noPDFS (referencesData) {
-        for (i in referencesData) {
-            if (!referencesData[i].file) {
-                nopdfs += `${referencesData[i].id}::${referencesData[i].title}\n`
-            }
-        }
-    }
-
     function populateReferences(referencesData) {
         html += `<dl class="references">\n`
         for (i in referencesData) {
@@ -123,14 +77,7 @@ function buildRef () {
                     break;
               }
 
-            //html += `<dt>${referencesData[i].id}</dt>\n`
-
-            for (k in biblioMappArr ) {
-                if (referencesData[i].id == biblioMappArr[k][0]) {
-                    html +=`<dt>${biblioMappArr[k][1].trim()}</dt>`
-                }
-            }
-
+            html += `<dt>${referencesData[i].id}</dt>`
             html += `<dd>`;
 
             // add a class bibhead - this is changed to bibheadhide in getFullReference
@@ -230,8 +177,8 @@ function buildRef () {
             }
 
             //publisher
-
-/*             if (referencesData[i].hasOwnProperty('publisher')) {
+/* 
+            if (referencesData[i].hasOwnProperty('publisher')) {
                 html += ` ${referencesData[i]["publisher"]}`;
 
                 if (referencesData[i].hasOwnProperty('publisher-place')) {
@@ -239,8 +186,8 @@ function buildRef () {
                 }
 
                 html += `.`;
-            } */
-
+            }
+ */
             //url
             let linkSeparator = `<span class='linkseparator'>•</span>`;
             html += `<span class = "linkContainer">`
@@ -269,8 +216,6 @@ function buildRef () {
                 html += `${linkSeparator} <a class="refaudio" href="../_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
             }
 
-
-
             if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
                 if (attachmentLabel !== '') {
                     let attachmentLabelArray = attachmentLabel.split(';');
@@ -293,20 +238,10 @@ function buildRef () {
         }
 
         html += `</dl>\n`
-        outputHTML += html;
-
     }
-
     populateReferences(bookBiblioData);
-    //compareRefs (bookBiblioData);
-    //noPDFS(bookBiblioData)
-
 }
 
 buildRef();
-/* outputHTML += `</body>
-</html>` */
 
-fs.writeFileSync(path.join(__dirname, '.', 'newbiblio.html'), outputHTML);
-//fs.writeFileSync(path.join(__dirname, '.', 'compare.txt'), compareData);
-//fs.writeFileSync(path.join(__dirname, '.', 'noPDFS.txt'), nopdfs);
+fs.writeFileSync(path.join(__dirname, '..','_resources', 'book-data', bookID, 'biblio.html'), html);

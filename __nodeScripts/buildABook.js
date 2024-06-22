@@ -22,7 +22,7 @@ function buildSesameStub () {
 		}
 	}
 	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameSTUB.json'), localJSON, 'utf8')
-	console.log(`*** A new file: /book-data/${bookID}/sesameSTUB.json has been created ***\nUse this as a basis for your sesame.json file\n`);
+	console.log(`*** A new file: /book-data/${bookID}/sesameSTUB.json has been created ***\nYou can use this as a basis for your sesame.json file\n`);
 }
 
 function buildSesameRefStub () {
@@ -541,7 +541,7 @@ function buildReferences () {
 			}
 		}
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMappArr.json'), newBiblioMapArr, 'utf8')
-		console.log ('initial biblioMapArr.json file created — PLEASE EDIT')
+		console.log ('*** Initial biblioMapArr.json file created ***\nThis file will need to be edited to correspond with the reference entries in the book\nThe first entry is the Zotero citation reference, the second entry is as it appears in the book')
 	  }
 
 
@@ -566,7 +566,7 @@ function buildReferences () {
 		}
 	}
 	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameRefSTUB.json'), localJSON, 'utf8')
-	console.log(`\n*** A new file: /book-data/${bookID}/sesameRefSTUB.json has been created ***\nUse this as a basis for your sesameRef.json file\n`);
+	console.log(`\n*** A new file: /book-data/${bookID}/sesameRefSTUB.json has been created ***\nYou can use this as a basis for your sesameRef.json file\n`);
 
 	let refs = referenceRoot.querySelectorAll('dl')
 

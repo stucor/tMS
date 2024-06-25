@@ -1382,7 +1382,7 @@ dd > ol > li {
     font-size: smaller;
 }
 .refpdf::before {
-    background-image: url('../_resources/images/icons/PDF_file_icon.svg');
+    background-image: url('../_resources/images/icons/pdf_file_icon.svg');
 	background-repeat: no-repeat;
     background-size: 1.1em;
     display: inline-block;

@@ -1,0 +1,13 @@
+And one more time-demanding edit, I apologize, namely an additional footnote. It does confirm the central thesis of the book, so that's why I'd like to add it. It's harder to explain this edit in email format, so see the PDF or HTML version as well.
+
+- "cannot be replanted anywhere, and then will cease to exist.[577]" Add footnote 577 saying:
+
+See Tan: “Appatiṭṭhitaṁ means ‘without […] support for consciousness.’ Hence, there is neither sensing nor knowing.”
+
+The bibliography reference to be added accordingly is: "Tan — Sutta Discovery 50.1: Nibbāna Paṭisaṁyutta Sutta 1, Piya Tan, 2017." The document by Tan is attached for your beautiful library of references!
+
+All  footnote numbers following 577 need to be increased by one consequentially. I had to do this manually in the HTML and EPUB versions, but luckily the footnote is near the end of the book, so it wasn't too bad. :)
+
+Thanks again!
+
+Here goes:

@@ -14,11 +14,9 @@ try {
 }
 
 //Get Title and author
-
 let newTitle = ``
 let newSubtitle =``
 let newAuthor =``
-
 let allTitlePage = bookRoot.querySelectorAll('.titlepage')
 for (i in allTitlePage) {
     if (i == 0) {
@@ -35,23 +33,14 @@ for (i in allTitlePage) {
         newAuthor = allTitlePage[i].text
     }
 }
-
 //HTML
-let newHeaderHTML = `<header id="title-block-header">\n<h1 class="title">${newTitle}</h1>\n<p class="subtitle">${newSubtitle}</p>\n<p class="author">${newAuthor}</p>\n</header>`
+let newHeaderHTML = `<header id="title-block-header">\n<h1 class="title">${newTitle}</h1>\n<p class="subtitle">${newSubtitle}</p>\n<p class="author">${newAuthor}</p>\n</header>\n`
 
 
-/* let allDivs = bookRoot.querySelectorAll('div')
-for (i in allDivs) {
-    if ((allDivs[i].id == 'topbar') || (allDivs[i].id == 'SearchBar') || (allDivs[i].id == 'tocbtn2')) {
-        allDivs[i].remove()
-    }
-}  
- */
 
+//Get TOC
 let allLis = bookRoot.getElementsByTagName ('li')
-
 let newTOCHTML = `<nav id="TOC" role="doc-toc">\n<ul>\n`
-
 for (i in allLis ) {
     if (allLis[i].classList.contains('noshow')) {
         allLis[i].remove()
@@ -63,35 +52,60 @@ for (i in allLis ) {
         }
     }
 }
-
 //HTML
 newTOCHTML += `</ul>\n</nav>`
+
+
+
+//Get Notes
+let allNotes = bookRoot.querySelectorAll('.booknote')
+let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">\n<hr />\n<ol>\n`
+for (i in allNotes) {
+    let tempInnerHTML = allNotes[i].innerHTML
+    let tempNoteNumber = allNotes[i].getAttribute('data-note')
+    newNotesHTML += `<li id="fn${tempNoteNumber}"><p>${tempInnerHTML}<a href="#fnref${tempNoteNumber}" class="footnote-back" role="doc-backlink">↩︎</a></p></li>\n`
+}  
+//HTML
+newNotesHTML += `</ol>\n</section>`
 
 
 
 let allSups = bookRoot.querySelectorAll('sup')
  for (i in allSups) {
     let tempText = allSups[i].text
-    allSups[i].replaceWith(`href="#fn${tempText}" class="footnote-ref" id="fnref${tempText}" role="doc-noteref"><sup>${tempText}</sup></a>`)
+    allSups[i].replaceWith(`<a href="#fn${tempText}" class="footnote-ref" id="fnref${tempText}" role="doc-noteref"><sup>${tempText}</sup></a>`)
 }  
 
 
-function makeNotes () {
-    let allNotes = bookRoot.querySelectorAll('.booknote')
-    let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">\n<hr />\n<ol>\n`
-    for (i in allNotes) {
-        let tempInnerHTML = allNotes[i].innerHTML
-        let tempNoteNumber = allNotes[i].getAttribute('data-note')
-        newNotesHTML += `<li id="fn${tempNoteNumber}"><p>${tempInnerHTML}<a href="#fnref${tempNoteNumber}" class="footnote-back" role="doc-backlink">↩︎</a></p></li>\n`
-    }  
-    return newNotesHTML
-}
+
+let html = `<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="${newAuthor}" />
+  <title>${newTitle}</title>
+</head>
+<body>`
+
+html += newHeaderHTML
+html += newTOCHTML
+
+html += bookRoot.querySelector('#thebook').innerHTML
+
+html += newNotesHTML
+html += `\n</body>\n</html>`
+
+fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'simple.html'), html, 'utf8')
 
 
-//console.log(makeNotes().substring(0,2000))
 
 
-let allSpans = bookRoot.querySelectorAll('span')
+
+
+
+/* let allSpans = bookRoot.querySelectorAll('span')
 for (i in allSpans) {
     if (allSpans[i].classList.contains('sesame')) {
         if (allSpans[i].classList.contains('ref')) {
@@ -100,7 +114,7 @@ for (i in allSpans) {
         }
 
     }
-}
+} */
 
 
 
@@ -109,17 +123,31 @@ for (i in allSpans) {
 
 
 
-
-
-
-/* let html = bookRoot.querySelectorAll('div')
-for (i in html) {
-    if (i < 20) {
-        console.log (html[i].outerHTML)
-    } 
-}
+/* let allDivs = bookRoot.querySelectorAll('div')
+for (i in allDivs) {
+    if ((allDivs[i].id == 'topbar') || (allDivs[i].id == 'SearchBar') || (allDivs[i].id == 'tocbtn2')) {
+        allDivs[i].remove()
+    }
+}  
  */
 
 
+/* let html2 = bookRoot.querySelectorAll('p')
+for (i in html2) {
+    if (i < 2000) {
+        console.log (html2[i].outerHTML)
+    } 
+} */
 
-//console.log(bookRoot.querySelector('#tocnav').innerHTML)
+
+
+/* 
+    let allDivs = bookRoot.querySelectorAll('div')
+    for (i in allDivs) {
+        if (allDivs[i].id == 'thebook') {
+            console.log(allDivs[i].innerHTML)
+        }
+    }   */
+
+       // console.log(bookRoot.querySelector('#thebook').innerHTML)
+

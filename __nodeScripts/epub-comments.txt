@@ -1,0 +1,2 @@
+pandoc simple.html -o simple.epub --css ../../css/epub.css --epub-embed-font ../../fonts/SourceSerif4Variable-Roman.ttf  --epub-embed-font ../../fonts/SourceSerif4Variable-Italic.ttf  --epub-title-page=false
+

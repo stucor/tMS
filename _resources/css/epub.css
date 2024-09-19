@@ -1,0 +1,64 @@
+
+.noshow h1 {
+	display: none;
+}
+
+.titlepage-title {
+	margin-top: 3em;
+	margin-bottom: 0.5em;
+	text-align: center;
+	font-size: 2.5em;
+}
+.titlepage-subtitle {
+	margin-bottom: 1.5em;
+	text-align: center;
+	font-size: 1.2em
+}
+.titlepage-author {
+	margin-bottom: 2em;
+	text-align: center;
+	font-size: 1.3em
+}
+
+h1 {
+	text-align: center;
+	font-weight: 400;
+	font-size: 2.5em;
+	padding-top: 2em;
+	padding-bottom: 1em;
+}
+
+.quote {
+	text-align: center;
+}
+
+.cite {
+	text-align: center;
+	font-size: smaller;
+	margin-top:0.5em;
+}
+
+.citeBQ {
+	text-align: right;
+	margin-right: 2em;
+}
+
+.chapnum {
+  font-variant:small-caps;
+  font-size: 0.7em;
+}
+
+.footnote-ref {
+  font-size:smaller;
+  text-decoration: none;
+}  
+  
+.footnotes > div {
+  margin-bottom : 1em;
+}
+
+.footnote-back {
+  margin-right: 1em;
+  font-size:smaller;
+  text-decoration: none;
+}

@@ -1,3 +1,55 @@
+/*  @font-face {
+	font-family: EBGaramond;
+	font-style: normal;
+	font-weight: normal;
+	src:url("../fonts/EBGaramond-Medium.ttf");
+ }
+ @font-face {
+	font-family: EBGaramond;
+	font-style: normal;
+	font-weight: bold;
+	src:url("../fonts/EBGaramond-Bold.ttf");
+ }
+ @font-face {
+	font-family: EBGaramond;
+	font-style: italic;
+	font-weight: normal;
+	src:url("../fonts/EBGaramond-MediumItalic.ttf");
+ }
+ @font-face {
+	font-family: EBGaramond;
+	font-style: italic;
+	font-weight: bold;
+	src:url("../fonts/EBGaramond-BoldItalic.ttf");
+ }  */
+
+ @font-face {
+	font-family: Heuristica;
+	font-style: normal;
+	font-weight: normal;
+	src:url("../fonts/Heuristica-Regular.otf");
+ }
+ @font-face {
+	font-family: Heuristica;
+	font-style: normal;
+	font-weight: bold;
+	src:url("../fonts/Heuristica-Bold.otf");
+ }
+ @font-face {
+	font-family: Heuristica;
+	font-style: italic;
+	font-weight: normal;
+	src:url("../fonts/Heuristica-Italic.otf");
+ }
+ @font-face {
+	font-family: Heuristica;
+	font-style: italic;
+	font-weight: bold;
+	src:url("../fonts/Heuristica-BoldItalic.otf");
+ } 
+body {
+	font-family: 'Heuristica';
+}
 
 .noshow h1 {
 	display: none;
@@ -61,4 +113,14 @@ h1 {
   margin-right: 1em;
   font-size:smaller;
   text-decoration: none;
+}
+
+.references {
+	margin-left: 2em;
+	margin-bottom: 0.5em;
+	text-indent:-2em;
+}
+
+.references > div {
+	margin-bottom: 0.3em;
 }

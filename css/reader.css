@@ -35,15 +35,7 @@
          url('../_resources/fonts/SourceSerif4Variable-Italic.ttf.woff') format('woff'),
          url('../_resources/fonts/SourceSerif4Variable-Italic.ttf') format('truetype');
 }
-/* @font-face{
-    font-family: 'Source Serif Pro';
-    font-weight: 300 700;
-    font-style: italic;
-    font-stretch: normal;
-    src: url('../_resources/fonts/SourceSerif4Variable-Italic.ttf.woff2 ') format('woff2'),
-         url('../_resources/fonts/SourceSerif4Variable-Italic.ttf.woff') format('woff'),
-         url('../_resources/fonts/SourceSerif4Variable-Italic.ttf') format('truetype');
-} */
+
 
 :root {
 	--notused: #ffa600;/*#843924;*/

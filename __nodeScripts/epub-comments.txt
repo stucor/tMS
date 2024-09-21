@@ -1,2 +1,10 @@
-pandoc simple.html -o simple.epub --css ../../css/epub.css --epub-embed-font ../../fonts/SourceSerif4Variable-Roman.ttf  --epub-embed-font ../../fonts/SourceSerif4Variable-Italic.ttf  --epub-title-page=false
+pandoc simple.html -o simple.epub --css ../../css/epub.css --epub-embed-font ../../fonts/EBGaramond/EBGaramond-Medium.ttf --epub-embed-font ../../fonts/EBGaramond/EBGaramond-Bold.ttf --epub-embed-font ../../fonts/EBGaramond/EBGaramond-MediumItalic.ttf --epub-embed-font ../../fonts/EBGaramond/EBGaramond-BoldItalic.ttf  --epub-title-page=false --epub-cover-image ./FrontLarge.jpg
+
+pandoc simple.html -o simple.epub --css ../../css/epub.css --epub-embed-font ../../fonts/Heuristica/Heuristica-Regular.otf --epub-embed-font ../../fonts/Heuristica/Heuristica-Bold.otf --epub-embed-font ../../fonts/Heuristica/Heuristica-Italic.otf --epub-embed-font ../../fonts/Heuristica/Heuristica-BoldItalic.otf  --epub-title-page=false --epub-cover-image ./FrontLarge.jpg
+
+
+
+
+
+pandoc simple.html -o simple.epub --css ../../css/epub.css  --epub-title-page=false --epub-cover-image ./FrontLarge.jpg
 

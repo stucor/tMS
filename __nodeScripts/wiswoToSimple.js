@@ -40,8 +40,6 @@ for (i in allTitlePage) {
 //HTML
 let newHeaderHTML = `<header id="title-block-header">\n<h1 class="title">${newTitle}</h1>\n<p class="subtitle">${newSubtitle}</p>\n<p class="author">${newAuthor}</p>\n</header>\n`
 
-
-
 //Get TOC
 let allLis = bookRoot.getElementsByTagName ('li')
 let newTOCHTML = `<nav id="TOC" role="doc-toc">\n<ul>\n`
@@ -59,11 +57,9 @@ for (i in allLis ) {
 //HTML
 newTOCHTML += `</ul>\n</nav>`
 
-
-
 //Get Notes
 let allNotes = bookRoot.querySelectorAll('.booknote')
-let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">\n<hr />\n`
+let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">\n<h1>Notes</h1>\n`
 for (i in allNotes) {
     let tempInnerHTML = allNotes[i].innerHTML
     let tempNoteNumber = allNotes[i].getAttribute('data-note')
@@ -72,39 +68,75 @@ for (i in allNotes) {
 //HTML
 newNotesHTML += `\n</section>`
 
-
-
+// Reformat sups
 let allSups = bookRoot.querySelectorAll('sup')
  for (i in allSups) {
     let tempText = allSups[i].text
     allSups[i].replaceWith(`<a href="#fn${tempText}" class="footnote-ref" id="fnref${tempText}" role="doc-noteref"><sup>${tempText}</sup></a>`)
 }  
 
-
+//Remove end-of-book
 let eobDiv = bookRoot.querySelectorAll('.eob')
 eobDiv[0].remove()
 
+let terminator = bookRoot.querySelector('#TOCTarget999999999')
+terminator.remove()
+
+//Make anchors explicit
 let allAnchors = bookRoot.querySelectorAll('a')
 for (i in allAnchors) {
-    let tempInnerHTML = allAnchors[i].innerHTML
-/*     if (allAnchors[i].getAttribute('href').substring(0,3) == '../') {
-        console.log (allAnchors[i].innerHTML)
-    } */
-    if ((allAnchors[i].getAttribute('href')) && (!(allAnchors[i].classList.contains('refpdf'))) && (allAnchors[i].getAttribute('href').substring(0,3) == '../')) {
-        if (allAnchors[i].classList.contains('library')) {
-            allAnchors[i].innerHTML = 'Find it on theMettāShelf'
+    if ((allAnchors[i].getAttribute('href')) && (!(allAnchors[i].classList.contains('refpdf'))) ) {
+        if (allAnchors[i].getAttribute('href').substring(0,3) == '../') {
+            if (allAnchors[i].classList.contains('library')) {
+                allAnchors[i].innerHTML = ' on theMettāShelf'
+            }
+            let tempHref = allAnchors[i].getAttribute('href').substring(3, allAnchors[i].getAttribute('href').length)
+            allAnchors[i].setAttribute('href',`https://wiswo.org/books/${tempHref}`)
+        } else
+        if (allAnchors[i].getAttribute('href').substring(0,2) == './') {
+            if (allAnchors[i].getAttribute('href').slice(-3) == 'jpg') {
+                let newImageHTML = allAnchors[i].innerHTML.replace(`./`,`../../../${bookID}/`)
+                allAnchors[i].replaceWith(newImageHTML);
+            }
         }
-        tempinnerHTML = allAnchors[i].innerHTML
-        tempHref = allAnchors[i].getAttribute('href').substring(3, allAnchors[i].getAttribute('href').length)
-        console.log (allAnchors[i].innerHTML)
-        console.log (tempHref)
     }
 }
+
+let allNoShows = bookRoot.querySelectorAll('.noshow')
+for (i in allNoShows) {
+    if (allNoShows[i].tagName == 'CAPTION') {
+        allNoShows[i].remove()
+    }
+}
+
+//Change the bibliography and other references to divs and add ids
+let allDls = bookRoot.querySelectorAll('.references')
+for (i in allDls) {
+    tempRefInner = allDls[i].innerHTML
+    refRoot = parse(tempRefInner)
+    let allDts = refRoot.querySelectorAll('dt')
+    let allDds = refRoot.querySelectorAll('dd')
+    for (j in allDts) {
+        let tempDt = allDts[j].text
+        allDts[j].remove();
+        if (tempDt) {
+            allDds[j].innerHTML += ` [${tempDt}]`
+            allDds[j].setAttribute('id', `bibref-${tempDt}`)
+
+        }
+        allDds[j].tagName = 'div';
+    }
+
+    allDls[i].innerHTML = refRoot.innerHTML;
+    allDls[i].tagName = 'div'
+
+}
+
+//make sesame refs hrefs
 
 
 
 // Now build the HTML
-
 let html = `<!DOCTYPE html>
 
 <html lang="en">

@@ -80,7 +80,7 @@ h1 {
 }
 
 .footnote-ref {
-  font-size:smaller;
+
   text-decoration: none;
 }  
   
@@ -89,9 +89,7 @@ h1 {
 }
 
 .footnote-back {
-  margin-right: 1em;
-  font-size:smaller;
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .references {
@@ -106,4 +104,10 @@ h1 {
 
 .tipref {
 	font-size: smaller;
+}
+.smaller {
+	font-size: smaller;
+}
+a {
+	text-decoration: none;
 }

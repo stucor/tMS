@@ -57,28 +57,42 @@ for (i in allLis ) {
 //HTML
 newTOCHTML += `</ul>\n</nav>`
 
-//make sesame refs hrefs
-
 let sesamerefData = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/sesameref.json`, 'utf8'))
 let allSesames = bookRoot.querySelectorAll('.sesame')
 for (i in allSesames) {
+    let tempHTML = `${allSesames[i].innerHTML} <span class='smaller noitalics'>[<a href="#${allSesames[i].text}">${allSesames[i].text}</a>]</span>`
     if (allSesames[i].classList.contains('ref')) {
         for (j in sesamerefData) {
             if (allSesames[i].text == sesamerefData[j].sesame) {
-                let bracketBibEntry = sesamerefData[j].biblio
-                tempHTML = `${allSesames[i].innerHTML} <a href="#bibref-${sesamerefData[j].biblio}"><span class='noitalics'>[${bracketBibEntry}]</span></a>`
-                allSesames[i].innerHTML = tempHTML
-            }
+                tempHTML = `${allSesames[i].innerHTML} <span class='smaller noitalics'>[<a href="#${sesamerefData[j].biblio}">${sesamerefData[j].biblio}</a>]</span>`
+            } 
         }
     } 
+    allSesames[i].innerHTML = tempHTML
 }
 
 
+// make suttacentral (sujato) links explicit
+function suttaCentralIt (suttaReference) {
+    let newHTML = ''
+     let [head,tail] = suttaReference.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0].split(':')
+      if (tail) {
+         tail = '#' + tail
+         newHTML = `<a class="extlink tipref" href='https://suttacentral.net/${head}/en/sujato${tail}'>${allSCLinktexts[i].text}<a>`
+     } else {
+         newHTML = `<a class="extlink tipref" href='https://suttacentral.net/${head}/en/sujato'>${allSCLinktexts[i].text}<a>`
+     }
+      return newHTML
+ }
+ let allSCLinktexts = bookRoot.querySelectorAll('.sclinktext')
+ for (i in allSCLinktexts) {
+     allSCLinktexts[i].replaceWith(suttaCentralIt(allSCLinktexts[i].text))
+ }
 
 
 //Get Notes
 let allNotes = bookRoot.querySelectorAll('.booknote')
-let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">\n<h1>Notes</h1>\n`
+let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">\n<h1 class='chapter' >Notes</h1>\n`
 for (i in allNotes) {
     let tempInnerHTML = allNotes[i].innerHTML
     let tempNoteNumber = allNotes[i].getAttribute('data-note')
@@ -94,7 +108,7 @@ let allSups = bookRoot.querySelectorAll('sup')
     allSups[i].replaceWith(`<a href="#fn${tempText}" class="footnote-ref" id="fnref${tempText}" role="doc-noteref"><sup>${tempText}</sup></a>`)
 }  
 
-//Remove end-of-book
+//Remove end-of-book bits
 let eobDiv = bookRoot.querySelectorAll('.eob')
 eobDiv[0].remove()
 
@@ -121,22 +135,7 @@ for (i in allAnchors) {
     }
 }
 
-let allSCLinktexts = bookRoot.querySelectorAll('.sclinktext')
-for (i in allSCLinktexts) {
-    //console.log(allSCLinktexts[i].text.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0])
-    let newHTML = ''
-    let [head,tail] = allSCLinktexts[i].text.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0].split(':')
 
-    if (tail) {
-        tail = '#' + tail
-        //console.log(`${head}:::::::${tail}`)
-        newHTML = `<a class="extlink tipref" href='https://suttacentral.net/${head}/en/sujato${tail}'>${allSCLinktexts[i].text}<a>`
-    } else {
-        newHTML = `<a class="extlink tipref" href='https://suttacentral.net/${head}/en/sujato'>${allSCLinktexts[i].text}<a>`
-    }
-    //console.log(newHTML)
-    allSCLinktexts[i].replaceWith(newHTML)
-}
 
 let allNoShows = bookRoot.querySelectorAll('.noshow')
 for (i in allNoShows) {
@@ -154,10 +153,11 @@ for (i in allDls) {
     let allDds = refRoot.querySelectorAll('dd')
     for (j in allDts) {
         let tempDt = allDts[j].text
+        //console.log(allDts[j].text)
         allDts[j].remove();
         if (tempDt) {
-            allDds[j].innerHTML += ` [${tempDt}]`
-            allDds[j].setAttribute('id', `bibref-${tempDt}`)
+            //allDds[j].innerHTML += ` [${tempDt}]`
+            allDds[j].setAttribute('id', `${tempDt}`)
 
         }
         allDds[j].tagName = 'div';
@@ -165,7 +165,14 @@ for (i in allDls) {
 
     allDls[i].innerHTML = refRoot.innerHTML;
     allDls[i].tagName = 'div'
+
 }
+
+
+
+
+
+
 
 let allh1s = bookRoot.querySelectorAll('h1')
 for (i in allh1s) {

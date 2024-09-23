@@ -42,7 +42,7 @@ let newHeaderHTML = `<header id="title-block-header">\n<h1 class="title">${newTi
 
 //Get TOC
 let allLis = bookRoot.getElementsByTagName ('li')
-let newTOCHTML = `<nav id="TOC" role="doc-toc">\n<ul>\n`
+let newTOCHTML = `<h1>Table of Contents</h1><nav id="TOC" role="doc-toc">\n<ul>\n`
 for (i in allLis ) {
     if (allLis[i].classList.contains('noshow')) {
         allLis[i].remove()
@@ -56,6 +56,25 @@ for (i in allLis ) {
 }
 //HTML
 newTOCHTML += `</ul>\n</nav>`
+
+//make sesame refs hrefs
+
+let sesamerefData = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/sesameref.json`, 'utf8'))
+let allSesames = bookRoot.querySelectorAll('.sesame')
+for (i in allSesames) {
+    if (allSesames[i].classList.contains('ref')) {
+        for (j in sesamerefData) {
+            if (allSesames[i].text == sesamerefData[j].sesame) {
+                let bracketBibEntry = sesamerefData[j].biblio
+                tempHTML = `${allSesames[i].innerHTML} <a href="#bibref-${sesamerefData[j].biblio}"><span class='noitalics'>[${bracketBibEntry}]</span></a>`
+                allSesames[i].innerHTML = tempHTML
+            }
+        }
+    } 
+}
+
+
+
 
 //Get Notes
 let allNotes = bookRoot.querySelectorAll('.booknote')
@@ -102,6 +121,23 @@ for (i in allAnchors) {
     }
 }
 
+let allSCLinktexts = bookRoot.querySelectorAll('.sclinktext')
+for (i in allSCLinktexts) {
+    //console.log(allSCLinktexts[i].text.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0])
+    let newHTML = ''
+    let [head,tail] = allSCLinktexts[i].text.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0].split(':')
+
+    if (tail) {
+        tail = '#' + tail
+        //console.log(`${head}:::::::${tail}`)
+        newHTML = `<a class="extlink tipref" href='https://suttacentral.net/${head}/en/sujato${tail}'>${allSCLinktexts[i].text}<a>`
+    } else {
+        newHTML = `<a class="extlink tipref" href='https://suttacentral.net/${head}/en/sujato'>${allSCLinktexts[i].text}<a>`
+    }
+    //console.log(newHTML)
+    allSCLinktexts[i].replaceWith(newHTML)
+}
+
 let allNoShows = bookRoot.querySelectorAll('.noshow')
 for (i in allNoShows) {
     if (allNoShows[i].tagName == 'CAPTION') {
@@ -129,16 +165,26 @@ for (i in allDls) {
 
     allDls[i].innerHTML = refRoot.innerHTML;
     allDls[i].tagName = 'div'
-
 }
 
-//make sesame refs hrefs
+let allh1s = bookRoot.querySelectorAll('h1')
+for (i in allh1s) {
+    if (allh1s[i].classList.contains('engrave'))  {
+        allh1s[i].remove()
+    } else 
+    if (allh1s[i].classList.contains('noshow')) {
+        allh1s[i].remove()
+    } else {
+        allh1s[i].classList.add ('chapter');
+        allh1s[i].innerHTML = allh1s[i].innerHTML.replace('<br>', ' <br>')
+    }
+}
+
 
 
 
 // Now build the HTML
 let html = `<!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -158,47 +204,4 @@ html += newNotesHTML
 html += `\n</body>\n</html>`
 
 fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'simple.html'), html, 'utf8')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* let allDivs = bookRoot.querySelectorAll('div')
-for (i in allDivs) {
-    if ((allDivs[i].id == 'topbar') || (allDivs[i].id == 'SearchBar') || (allDivs[i].id == 'tocbtn2')) {
-        allDivs[i].remove()
-    }
-}  
- */
-
-
-/* let html2 = bookRoot.querySelectorAll('p')
-for (i in html2) {
-    if (i < 2000) {
-        console.log (html2[i].outerHTML)
-    } 
-} */
-
-
-
-/* 
-    let allDivs = bookRoot.querySelectorAll('div')
-    for (i in allDivs) {
-        if (allDivs[i].id == 'thebook') {
-            console.log(allDivs[i].innerHTML)
-        }
-    }   */
-
-       // console.log(bookRoot.querySelector('#thebook').innerHTML)
 

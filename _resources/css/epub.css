@@ -34,22 +34,58 @@ body {
 	font-style: normal;
 }
 
-.titlepage-title {
-	margin-top: 3em;
+.copyright > p {
+	font-size: smaller;
+}
+
+.cclicense {
+	font-size: smaller;
+}
+
+#ccDetail > ul > li {
+	margin-bottom: 1em;
+}
+
+.logo {
+	margin-top: 5em;
+	text-align: center;
+}
+.logo > img {
+	width:30px;
+}
+.logo > div {
+	font-size: small;
+	margin-bottom: 5em;
+}
+
+.titlepage.title {
+	margin-top: 1em;
 	margin-bottom: 0.5em;
 	text-align: center;
 	font-size: 2.5em;
 }
-.titlepage-subtitle {
+
+.titlepage.subtitle {
 	margin-bottom: 1.5em;
 	text-align: center;
 	font-size: 1.2em
 }
-.titlepage-author {
-	margin-bottom: 2em;
+.titlepage.author {
+	margin-bottom: 3em;
 	text-align: center;
-	font-size: 1.3em
+	font-variant: small-caps;
+	font-size: 1em
 }
+
+.TitlePageHide {
+	margin:0; font-size: 1em; color: rgba(255, 255, 255, 0);
+}
+
+#TOC > ul  {
+	list-style-type: none;
+	margin-top: 0;
+}
+
 
 h1 {
 	text-align: center;
@@ -71,16 +107,17 @@ h1 {
 
 .citeBQ {
 	text-align: right;
+	font-size: smaller;
+	margin-top:0.5em;
 	margin-right: 2em;
 }
 
 .chapnum {
   font-variant:small-caps;
-  font-size: 0.7em;
+  font-size: 0.5em;
 }
 
 .footnote-ref {
-
   text-decoration: none;
 }  
   
@@ -102,9 +139,6 @@ h1 {
 	margin-bottom: 0.3em;
 }
 
-.tipref {
-	font-size: smaller;
-}
 .smaller {
 	font-size: smaller;
 }

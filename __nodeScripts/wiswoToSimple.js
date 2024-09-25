@@ -1,4 +1,4 @@
-const path = require('path')
+//const path = require('path')
 const fs = require('fs')
 const { exec } = require('child_process'); 
 const { parse } = require('node-html-parser');
@@ -13,36 +13,80 @@ try {
     console.error(err);
 }
 
-//Get Title and author
-let newTitle = ``
-let newSubtitle =``
-let newAuthor =``
-let allTitlePage = bookRoot.querySelectorAll('.titlepage')
-for (i in allTitlePage) {
-    if (i == 0) {
-        newTitle = allTitlePage[i].text
-        allTitlePage[i].replaceWith(`<h1 class='noshow'>Title Page</h1><div class=titlepage-title>${newTitle}</div>`)
-    } else 
-    if (i == 1)  {
-        if (allTitlePage.length > 1) {
-            newSubtitle = allTitlePage[i].text
-            allTitlePage[i].replaceWith(`<div class=titlepage-subtitle>${newSubtitle}</div>`)
-        } else {
-            newAuthor = allTitlePage[i].text
-            allTitlePage[i].replaceWith(`<div class=titlepage-author>${newAuthor}</div>`)
-        }
-    } else 
-    if (i == 2) {
-        newAuthor = allTitlePage[i].text
-        allTitlePage[i].replaceWith(`<div class=titlepage-author>${newAuthor}</div>`)
+//Get Info
+
+let builtInfoData = JSON.parse(fs.readFileSync(`../_resources/built-info-data/${bookID}/info.json`, 'utf8'))
+
+// Build Copywrite
+let copyrightHTML = 
+`\n<section class='copyright'>
+<h1 style='margin:0; font-size: 1em; color: rgba(255, 255, 255, 0);' class='chapter'>Copyright</h1>
+`
+for (i in builtInfoData.Copyright) {
+    if (!(i == builtInfoData.Copyright.length-1)) {
+        copyrightHTML += `<p>${builtInfoData.Copyright[i].replaceAll('**','')}</p>\n`
     }
 }
+copyrightHTML += `
+<p>This electronic edition published by Wisdom & Wonders Books</p>
+<p>Go to <a href='https://wiswo.org/books'>wiswo.org/books</a> for more publications.</p>`
+copyrightHTML += builtInfoData.CCLicense
+/* copyrightHTML += `<p style = 'text-align:center; margin-top: 3em'>The gift of the Dhamma excels all gifts;<br>
+the taste of the Dhamma excels all tastes;<br>
+delight in the Dhamma excels all delights.<br>
+The eradication of craving overcomes all suffering.</p>
+<p style = text-align:'right'>— The Buddha,<br>Dhammapada 354</p>` */
+copyrightHTML += `</section>\n`
+
+
+// Build Author Info
+
+let authorsBio = builtInfoData.AuthorsData
+let authorImgSrc = ``
+let authorShortBio = `<p>`
+for (i in authorsBio) {
+    authorImgSrc = authorsBio[i].InfoImage
+    for (k in authorsBio[i].ShortBio)  {
+        authorShortBio += `${authorsBio[i].ShortBio[k]}`
+    }
+    authorShortBio += `</p>`
+}
+let authorBioHTML = `<section> <h1 class= 'chapter'>About the Author</h1><p><img src= '../../${authorImgSrc}'></p>${authorShortBio}</section>`
+
+
+//Build Title Page
+let newTitle = builtInfoData.BookTitle
+let newSubtitle = builtInfoData.BookSubtitle
+let newAuthor = builtInfoData.Authors
+
+let newTitlePageHTML = `<div class="titlepage title">${newTitle}</div>\n<div class="titlepage subtitle"><em>${newSubtitle}</em></div>\n<div class="titlepage author">${newAuthor}\n</div>`
+
+let allTitlePage = bookRoot.querySelectorAll('.titlepage')
+    for (i in allTitlePage) {
+        if (i==0) {
+            newTitlePageHTML = `<h1 id="${allTitlePage[i].id}" style='margin:0; font-size: 1em; color: rgba(255, 255, 255, 0);' class='chapter'>Title Page</h1>\n` + newTitlePageHTML
+        }
+        if (allTitlePage[i].tagName == 'DIV') {
+            newTitlePageHTML += `${allTitlePage[i].outerHTML}\n`
+        }
+        if (i == allTitlePage.length-1) {
+            allTitlePage[i].insertAdjacentHTML('afterend', `${newTitlePageHTML}\n<div class='logo'><img src = '../../../_resources/images/icons/logo-enso-large.png'><div>Wisdom & Wonders<br>Books<br><a href='https://wiswo.org/books'>wiswo.org/books</a></div></div>`)
+        }
+        allTitlePage[i].remove()
+    }
+
+//newTitlePageHTML += `<div class='logo'><img src = '../../../_resources/images/icons/logo-enso-large.png'><div>Wisdom & Wonders<br>Books</div></div>`
+
+
+
+
+
 //HTML
 let newHeaderHTML = `<header id="title-block-header">\n<h1 class="title">${newTitle}</h1>\n<p class="subtitle">${newSubtitle}</p>\n<p class="author">${newAuthor}</p>\n</header>\n`
 
 //Get TOC
 let allLis = bookRoot.getElementsByTagName ('li')
-let newTOCHTML = `<h1>Table of Contents</h1><nav id="TOC" role="doc-toc">\n<ul>\n`
+let newTOCHTML = `<h1 style='margin-bottom:0' class='chapter'>Contents</h1><nav id="TOC" role="doc-toc">\n<ul>\n`
 for (i in allLis ) {
     if (allLis[i].classList.contains('noshow')) {
         allLis[i].remove()
@@ -56,6 +100,7 @@ for (i in allLis ) {
 }
 //HTML
 newTOCHTML += `</ul>\n</nav>`
+//<span style="page-break-after: always" />
 
 let sesamerefData = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/sesameref.json`, 'utf8'))
 let allSesames = bookRoot.querySelectorAll('.sesame')
@@ -96,7 +141,7 @@ let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-do
 for (i in allNotes) {
     let tempInnerHTML = allNotes[i].innerHTML
     let tempNoteNumber = allNotes[i].getAttribute('data-note')
-    newNotesHTML += `<div id="fn${tempNoteNumber}"><a href="#fnref${tempNoteNumber}" class="footnote-back" role="doc-backlink"><sup>${tempNoteNumber}</sup></a>${tempInnerHTML}</div>\n`
+    newNotesHTML += `<div id="fn${tempNoteNumber}"><a href="#fnref${tempNoteNumber}" class="footnote-back" role="doc-backlink"><sup>${tempNoteNumber}</sup></a><div>${tempInnerHTML}</div></div>\n`
 }  
 //HTML
 newNotesHTML += `\n</section>`
@@ -168,12 +213,6 @@ for (i in allDls) {
 
 }
 
-
-
-
-
-
-
 let allh1s = bookRoot.querySelectorAll('h1')
 for (i in allh1s) {
     if (allh1s[i].classList.contains('engrave'))  {
@@ -202,12 +241,11 @@ let html = `<!DOCTYPE html>
 </head>
 <body>`
 
-//html += newHeaderHTML
-//html += newTOCHTML
-
 html += bookRoot.querySelector('#thebook').innerHTML
-
 html += newNotesHTML
+html += copyrightHTML
+html += newTOCHTML
+html += authorBioHTML
 html += `\n</body>\n</html>`
 
 fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'simple.html'), html, 'utf8')

@@ -406,6 +406,12 @@ strong {
 	font-size: 1.4em;
 	margin-top: -3em;
 }
+.content .cite.titlepage {
+	text-align: center;
+	margin: -1.5em 0;
+	font-size: 0.8em;
+}
+
 
 
 .content h2.part {

@@ -20,8 +20,14 @@ let builtInfoData = JSON.parse(fs.readFileSync(`../_resources/built-info-data/${
 // Build Copywrite
 let copyrightHTML = 
 `\n<section class='copyright'>
-<h1 style='margin:0; font-size: 1em; color: rgba(255, 255, 255, 0);' class='chapter'>Copyright</h1>
+<h1 style = 'display:none' title='Copyright' class='chapter'></h1>
 `
+/* let copyrightHTML = 
+`\n<section class='copyright'>
+<h1 style='margin:0; font-size: 0.1em; color: rgba(255, 255, 255, 0);' class='chapter'>Copyright</h1>
+`
+ */
+
 for (i in builtInfoData.Copyright) {
     if (!(i == builtInfoData.Copyright.length-1)) {
         copyrightHTML += `<p>${builtInfoData.Copyright[i].replaceAll('**','')}</p>\n`
@@ -59,18 +65,18 @@ let newTitle = builtInfoData.BookTitle
 let newSubtitle = builtInfoData.BookSubtitle
 let newAuthor = builtInfoData.Authors
 
-let newTitlePageHTML = `<div class="titlepage title">${newTitle}</div>\n<div class="titlepage subtitle"><em>${newSubtitle}</em></div>\n<div class="titlepage author">${newAuthor}\n</div>`
+let newTitlePageHTML = `<div class="titlepage title">${newTitle}</div>\n<div class="titlepage subtitle"><em>${newSubtitle}</em></div>\n<div class="titlepage author">${newAuthor}</div>\n`
 
 let allTitlePage = bookRoot.querySelectorAll('.titlepage')
     for (i in allTitlePage) {
         if (i==0) {
-            newTitlePageHTML = `<h1 id="${allTitlePage[i].id}" style='margin:0; font-size: 1em; color: rgba(255, 255, 255, 0);' class='chapter'>Title Page</h1>\n` + newTitlePageHTML
+            newTitlePageHTML = `<h1 id="${allTitlePage[i].id}" style='display: none' title = 'Title Page' class='chapter'></h1>\n` + newTitlePageHTML
         }
         if (allTitlePage[i].tagName == 'DIV') {
             newTitlePageHTML += `${allTitlePage[i].outerHTML}\n`
         }
         if (i == allTitlePage.length-1) {
-            allTitlePage[i].insertAdjacentHTML('afterend', `${newTitlePageHTML}\n<div class='logo'><img src = '../../../_resources/images/icons/logo-enso-large.png'><div>Wisdom & Wonders<br>Books<br><a href='https://wiswo.org/books'>wiswo.org/books</a></div></div>`)
+            allTitlePage[i].insertAdjacentHTML('afterend', `${newTitlePageHTML}\n<div class = 'logo-block'>\n<div class='logo'><img src = '../../../_resources/images/icons/logo-enso-large.png'></div>\n<div class=logo-text>Wisdom & Wonders<br>Books<br><a href='https://wiswo.org/books'>www.wiswo.org/books</a></div>\n</div>`)
         }
         allTitlePage[i].remove()
     }
@@ -244,9 +250,12 @@ let html = `<!DOCTYPE html>
 html += bookRoot.querySelector('#thebook').innerHTML
 html += newNotesHTML
 html += copyrightHTML
-html += newTOCHTML
+//html += newTOCHTML
 html += authorBioHTML
 html += `\n</body>\n</html>`
 
-fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'simple.html'), html, 'utf8')
+//fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'simple.html'), html, 'utf8')
+fs.writeFileSync((`../_resources/book-data/${bookID}/${bookID}.html`), html, 'utf8')
+exec(`ebook-convert ../_resources/book-data/${bookID}/${bookID}.html ../_resources/book-data/${bookID}/${bookID}.azw3 --embed-font-family Heuristica --extra-css ../_resources/css/epub.css --cover ../_resources/book-data/${bookID}/FrontLarge.jpg --allow-local-files-outside-root --language en`)
+exec(`ebook-convert ../_resources/book-data/${bookID}/${bookID}.html ../_resources/book-data/${bookID}/${bookID}.epub --embed-font-family Heuristica --extra-css ../_resources/css/epub.css --cover ../_resources/book-data/${bookID}/FrontLarge.jpg --allow-local-files-outside-root --language en`)
 

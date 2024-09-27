@@ -46,21 +46,26 @@ body {
 	margin-bottom: 1em;
 }
 
+.logo-block {
+	margin-top: 3em;
+}
 .logo {
-	margin-top: 5em;
-	text-align: center;
+	margin: 1em 45% 0.5em 45%;
+	max-width: 10%;
 }
 .logo > img {
-	width:30px;
+	margin: 0;
+	width:100%;
 }
-.logo > div {
+.logo-text {
 	font-size: small;
 	margin-bottom: 5em;
+	text-align: center;
 }
 
 .titlepage.title {
-	margin-top: 1em;
-	margin-bottom: 0.5em;
+	margin-top: 3em;
+	margin-bottom: 0.2em;
 	text-align: center;
 	font-size: 2.5em;
 }

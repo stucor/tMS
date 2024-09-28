@@ -147,7 +147,7 @@ let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-do
 for (i in allNotes) {
     let tempInnerHTML = allNotes[i].innerHTML
     let tempNoteNumber = allNotes[i].getAttribute('data-note')
-    newNotesHTML += `<div id="fn${tempNoteNumber}"><a href="#fnref${tempNoteNumber}" class="footnote-back" role="doc-backlink"><sup>${tempNoteNumber}</sup></a><div>${tempInnerHTML}</div></div>\n`
+    newNotesHTML += `<div id="fn${tempNoteNumber}"><a href="#fnref${tempNoteNumber}" class="footnote-back" role="doc-backlink"><sup>${tempNoteNumber}</sup></a>&#x2005;${tempInnerHTML}</div>\n`
 }  
 //HTML
 newNotesHTML += `\n</section>`
@@ -204,12 +204,9 @@ for (i in allDls) {
     let allDds = refRoot.querySelectorAll('dd')
     for (j in allDts) {
         let tempDt = allDts[j].text
-        //console.log(allDts[j].text)
         allDts[j].remove();
         if (tempDt) {
-            //allDds[j].innerHTML += ` [${tempDt}]`
             allDds[j].setAttribute('id', `${tempDt}`)
-
         }
         allDds[j].tagName = 'div';
     }
@@ -254,7 +251,6 @@ html += copyrightHTML
 html += authorBioHTML
 html += `\n</body>\n</html>`
 
-//fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'simple.html'), html, 'utf8')
 fs.writeFileSync((`../_resources/book-data/${bookID}/${bookID}.html`), html, 'utf8')
 exec(`ebook-convert ../_resources/book-data/${bookID}/${bookID}.html ../_resources/book-data/${bookID}/${bookID}.azw3 --embed-font-family Heuristica --extra-css ../_resources/css/epub.css --cover ../_resources/book-data/${bookID}/FrontLarge.jpg --allow-local-files-outside-root --language en`)
 exec(`ebook-convert ../_resources/book-data/${bookID}/${bookID}.html ../_resources/book-data/${bookID}/${bookID}.epub --embed-font-family Heuristica --extra-css ../_resources/css/epub.css --cover ../_resources/book-data/${bookID}/FrontLarge.jpg --allow-local-files-outside-root --language en`)

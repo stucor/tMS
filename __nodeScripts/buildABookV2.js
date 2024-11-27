@@ -46,7 +46,7 @@ function buildMyBook () {
 		  processPandoc()
 		  buildCompleteBook() 
 		  console.log(`* books/${bookID}/index.html BUILD COMPLETE *\n`)
-		  buildSesameStub()
+		  //buildSesameStub()
 		  //buildSesameRefStub()
 		}); 
 }
@@ -707,21 +707,28 @@ function processPandoc() {
 	
 	function buildTOCJSON () {
 		let localJSON = ``
-		let TOChtml = pandocRoot.querySelectorAll('#TOC > ul > li > a ')
+		let TOChtml = pandocRoot.querySelectorAll('div')
 
 		localJSON += `[`
+		let count = 0
+
 		for (let i in TOChtml) {
-			localJSON += `{\n\t"tocno": "${Number(i)+1}",\n\t"pandoc-html-id": "${TOChtml[i].getAttribute('href').substring(1)}",\n\t"heading": "${TOChtml[i].innerHTML.replace(/(\r\n|\n|\r)/gm, "").replace('<br>','—')}"}`
-			if (i == TOChtml.length -1) {
-				localJSON += '\n]'
-			} else {
-				localJSON += ',\n'
+			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-Chapter') {
+				count += 1
+				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
+				let nextTOCID = `CHAPTER-${nextTOCText.replaceAll(' ','-')}`
+				localJSON += `{\n\t"tocno": "${count}",\n\t"pandoc-html-id": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
+				let newElement = `<h1 id='${nextTOCID}'\>${nextTOCText}</h1>`
+				//console.log(newElement);
+				TOChtml[i].replaceWith(newElement)
 			}
 		}
 
+		localJSON = localJSON.substring(0, localJSON.length -2)
+		localJSON += `]`
+
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'TOC.json'), localJSON, 'utf8')
 		console.log(`book-data/${bookID}/TOC.json has been created`)
-
 	}
 
 	function buildFootnotesJSON () {
@@ -880,7 +887,7 @@ function processPandoc() {
 
 	function extractBookHTML () {
 		let bookRoot = parse (pandocRoot.querySelector('body'))
-		bookRoot.querySelector('#TOC').remove()
+		//bookRoot.querySelector('#TOC').remove()
 		bookRoot.querySelector('#footnotes').remove()
 		bookRoot.querySelector('header').remove()
 		bookRoot.querySelector('#short-abstract').remove()

@@ -406,6 +406,21 @@ function buildBook () {
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
 		} else
+/* 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Caption-Centered-Sans"){
+			let tempText = allDivs[i].text
+			let newHTML = `<p class='caption-centered-sans'>${tempText}</p>`
+			allDivs[i].replaceWith(newHTML)
+		} else */
+ 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Caption-Centered-Sans"){
+			let tempHTML = allDivs[i].innerHTML
+			let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-sans'` + tempHTML.slice(4)
+			allDivs[i].replaceWith(newHTML)
+		} else
+ 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Caption-Centered-Serif"){
+			let tempHTML = allDivs[i].innerHTML
+			let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-serif'` + tempHTML.slice(4)
+			allDivs[i].replaceWith(newHTML)
+		} else
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Chap-Section01"){
 			let tempText = allDivs[i].text
 			let newHTML = `<h2>${tempText}</h2>`

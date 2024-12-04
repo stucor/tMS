@@ -1103,6 +1103,22 @@ table.borderlessTable {
 	line-height: 115%;
 	margin-bottom: 4em;
 }
+.content p.caption-centered-sans {
+	font-family: 'Source Sans Pro';
+	font-variant: small-caps;
+	hyphens: none;
+	text-align: center;
+	margin: 2em 0 0 0;
+}
+
+.content p.caption-centered-serif {
+	font-family: 'Source Serif Pro';
+	font-style: italic;
+	hyphens: none;
+	text-align: center;
+	margin: 0 0 2em 0;
+	font-size: 0.9em;
+}
 
 .content div.bob-text + div.bob-text {
 	margin-top: -2.6em;

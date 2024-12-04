@@ -400,8 +400,37 @@ function buildBook () {
 	
 
 	let suttaVerseHTML = ``
-		let allDivs = bookRoot.querySelectorAll('div') 
+	let allDivs = bookRoot.querySelectorAll('div') 
 	for (i in allDivs) {
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
+			let tempHTML = allDivs[i].innerHTML
+			allDivs[i].replaceWith(tempHTML)
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-Chap-Section01"){
+			let tempText = allDivs[i].text
+			let newHTML = `<h2>${tempText}</h2>`
+			allDivs[i].replaceWith(newHTML)
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-image") {
+			let [source, altText] = allDivs[i].text.split("=");
+			allDivs[i].classList.add ('centered-img')
+			allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}'>`
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-image") {
+			let [source, altText] = allDivs[i].text.split("=");
+			allDivs[i].classList.add ('epigram-img')
+			allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}'>`
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram") {
+			allDivs[i].classList.add ('epigram')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-cite") {
+			allDivs[i].classList.add ('epigram-cite')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
 		if (allDivs[i].getAttribute('data-custom-style') == "Quote-Block") {
 			allDivs[i].tagName = "blockquote"
 			allDivs[i].removeAttribute('data-custom-style')
@@ -664,8 +693,16 @@ function processPandoc() {
 			if (tokens[i].classList.contains ('subtitle')) {
 				subtitle += `${tokens[i].innerHTML}`
 			} else 
-			if (tokens[i].getAttribute('data-custom-style') == "Copyright") {
-				copyrightArr = tokens[i].innerHTML.replace('<p>', '').replace('</p>','').replaceAll(/(\r\n|\n|\r)/gm, "").split('<br>');
+			if (tokens[i].getAttribute('data-custom-style') == "WW-Copyright") {
+				//console.log(tokens[i].innerHTML)
+				copyrightArr = tokens[i].innerHTML
+					.replace('<p>', '')
+					.replaceAll('\"', '\'')
+					.replaceAll('\<span data-custom-style=\"Hyperlink\"\>','')
+					.replaceAll('\<\/span\>','')
+					.replace('</p>','')
+					.replaceAll(/(\r\n|\n|\r)/gm, "")
+					.split('<br>');
 				CCLicense = copyrightArr.pop();
 				for (i in copyrightArr) {
 					copyright += `"${copyrightArr[i]}",`
@@ -719,7 +756,6 @@ function processPandoc() {
 				let nextTOCID = `CHAPTER-${nextTOCText.replaceAll(' ','-')}`
 				localJSON += `{\n\t"tocno": "${count}",\n\t"pandoc-html-id": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
 				let newElement = `<h1 id='${nextTOCID}'\>${nextTOCText}</h1>`
-				//console.log(newElement);
 				TOChtml[i].replaceWith(newElement)
 			}
 		}
@@ -900,7 +936,7 @@ function processPandoc() {
 		for (i in allDivs) {
 			if ((allDivs[i].getAttribute("data-custom-style") == "AbstractShort") 
 				|| (allDivs[i].getAttribute("data-custom-style") == "Abstract")
-				|| (allDivs[i].getAttribute("data-custom-style") == "Copyright")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-Copyright")
 				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadsAvailable")
 				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadText")
 				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadHTML")

@@ -314,7 +314,7 @@ strong {
 	font-variant: small-caps;
 	line-height: 1.2em;
 	padding-bottom: 1em;
-	padding-top:4em;
+	padding-top: 6em;
 }
 
 .content h1 > em {
@@ -1058,6 +1058,52 @@ table.borderlessTable {
 	padding-top: 0;
 }
 
+
+.content div.centered-img {
+	width:fit-content;
+	max-width: 100%;
+	margin: 1em auto;
+	text-align: center;
+}
+
+.content div.centered-img > img {
+	width: 10em;
+}
+
+.content div.epigram-img {
+	width:fit-content;
+	max-width: 100%;
+	margin: 10em auto -10em auto;
+	text-align: center;
+}
+
+.content div.epigram-img > img {
+	width: 10em;
+}
+
+.content div.epigram {
+	font-family: 'Source Serif Pro';
+	width:fit-content;
+	max-width: 100%;
+	margin: 1em auto 0 auto;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 1em;
+	hyphens: none;
+	text-align: center;
+	line-height: 135%;
+}
+
+.content div.epigram-cite {
+	font-family: 'Source Sans Pro';
+	font-variant: small-caps;
+	font-size: 0.9em;
+	hyphens: none;
+	text-align: center;
+	line-height: 115%;
+	margin-bottom: 4em;
+}
+
 .content div.bob-text + div.bob-text {
 	margin-top: -2.6em;
 }
@@ -1575,6 +1621,7 @@ sup {
 
 #ccDetail > p, #ccDetail > ul > li{
 	margin: 0 0 0.3em 0;
+	font-size: 0.8em;
 } 
 
 #reflist {

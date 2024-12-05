@@ -402,15 +402,12 @@ function buildBook () {
 	let suttaVerseHTML = ``
 	let allDivs = bookRoot.querySelectorAll('div') 
 	for (i in allDivs) {
+		// PARAGRAPHS
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
 		} else
-/* 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Caption-Centered-Sans"){
-			let tempText = allDivs[i].text
-			let newHTML = `<p class='caption-centered-sans'>${tempText}</p>`
-			allDivs[i].replaceWith(newHTML)
-		} else */
+		// CAPTIONS
  		if (allDivs[i].getAttribute('data-custom-style') == "WW-Caption-Centered-Sans"){
 			let tempHTML = allDivs[i].innerHTML
 			let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-sans'` + tempHTML.slice(4)
@@ -421,23 +418,40 @@ function buildBook () {
 			let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-serif'` + tempHTML.slice(4)
 			allDivs[i].replaceWith(newHTML)
 		} else
+		// VERSES (line-block-centered)
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block-center") {
+			console.log(allDivs[i].innerHTML.charAt(5))
+			if (allDivs[i].innerHTML.charAt(5) == '“') {
+				let tempHTML = allDivs[i].innerHTML
+				let newHTML = tempHTML.slice(0,4) + ` class='OAstart'` + tempHTML.slice(4)
+				allDivs[i].innerHTML = newHTML	
+			}
+			allDivs[i].classList.add ('line-block-center')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		//HEADINGS
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Chap-Section01"){
 			let tempText = allDivs[i].text
 			let newHTML = `<h2>${tempText}</h2>`
 			allDivs[i].replaceWith(newHTML)
-		} else
+		} else 
+		//IMAGES
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-image") {
-			let [source, altText] = allDivs[i].text.split("=");
+			let [source, altText, width, border] = allDivs[i].text.split("=");
+			if (border == `border\r\n`) {
+				allDivs[i].classList.add ('centered-img-border')
+			}
 			allDivs[i].classList.add ('centered-img')
-			allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}'>`
+			allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}' width='${width.replace('\r\n', '')}%'>`
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-image") {
-			let [source, altText] = allDivs[i].text.split("=");
+			let [source, altText, width] = allDivs[i].text.split("=");
 			allDivs[i].classList.add ('epigram-img')
-			allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}'>`
+			allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}' width=${width.replace('\r\n', '')}%>`
 			allDivs[i].removeAttribute('data-custom-style')
-		} else
+		} else 
+		//EPIGRAMS
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram") {
 			allDivs[i].classList.add ('epigram')
 			allDivs[i].removeAttribute('data-custom-style')
@@ -445,7 +459,7 @@ function buildBook () {
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-cite") {
 			allDivs[i].classList.add ('epigram-cite')
 			allDivs[i].removeAttribute('data-custom-style')
-		} else
+		} else //OLD STUFF FROM MILK
 		if (allDivs[i].getAttribute('data-custom-style') == "Quote-Block") {
 			allDivs[i].tagName = "blockquote"
 			allDivs[i].removeAttribute('data-custom-style')

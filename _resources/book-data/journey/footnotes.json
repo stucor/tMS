@@ -33,7 +33,7 @@
 	"fnHTML": "<p>Māra is the Evil One or the Tempter.</p>"},
 {
 	"fnNumber": "12",
-	"fnHTML": "<p><span lang='pli'>Kamma</span> is the Pāli spelling of <span data-custom-style='emphasis'>karma</span> and means deed. ‘Unfortunate <span lang='pli'>kamma</span>’ here was used to mean ‘bad luck’.</p>"},
+	"fnHTML": "<p>Kamma is the Pāli spelling of karma and means deed. ‘Unfortunate kamma’ here was used to mean ‘bad luck’.</p>"},
 {
 	"fnNumber": "13",
 	"fnHTML": "<p><span lang='pli'>Mettā</span> is loving-kindness or friendliness.</p>"},
@@ -96,5 +96,5 @@
 	"fnHTML": "<p>A <span lang='pli'>bhikkhunī</span> is a fully ordained Buddhist nun</p>"},
 {
 	"fnNumber": "33",
-	"fnHTML": "<p>For more on Dependent Cessation see the booklet <span data-custom-style='emphasis'>Dependent Liberation</span> by Ajahn Brahmali at <a href='https://wiswo.org/books/dlbl' class='extlink'>wiswo.org/books/dlbl</a></p>"}
+	"fnHTML": "<p>For more on Dependent Cessation see the booklet <em>Dependent Liberation</em> by Ajahn Brahmali at <a href='https://wiswo.org/books/dlbl' class='extlink'>wiswo.org/books/dlbl</a></p>"}
 ]

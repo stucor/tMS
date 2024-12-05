@@ -654,6 +654,7 @@ blockquote > p > span.vcmarg {
 .line-block:has(> .OAstart-bottom) {padding-left: 0.35em; margin-left: calc(-0.35em);}
 .OAstart {text-indent: -0.43em;}
 .line-block:has(> .OAstart) {padding-left: 0.43em; margin-left: calc(-0.43em);}
+.line-block-center:has(> .OAstart) {padding-left: 0.43em; margin-left: calc(auto -0.43em);}
 .OAstart-top {text-indent: -0.46em;}
 .line-block:has(> .OAstart-top) {padding-left: 0.46em; margin-left: calc(-0.46em);}
 .OAstart-doubletop {text-indent: -0.58em;}
@@ -1059,15 +1060,30 @@ table.borderlessTable {
 }
 
 
-.content div.centered-img {
-	width:fit-content;
-	max-width: 100%;
-	margin: 1em auto;
-	text-align: center;
-}
+/*
+	figure {
+		margin: 0.5em 10%;
+		min-width: 80%;
+		max-width: 80%;
+	}
+	figure img { 
+		margin: 0.5em 0;
+		min-width: 100%;
+		max-width: 100%;
+	}
+*/
 
+.content div.centered-img {
+	display: plex;
+	justify-content: center;
+	align-items:center;
+}
 .content div.centered-img > img {
-	width: 10em;
+	display: block;
+	margin: 2em auto;
+}
+.centered-img-border > img {
+	border:solid lightgrey 1px;
 }
 
 .content div.epigram-img {
@@ -1075,10 +1091,6 @@ table.borderlessTable {
 	max-width: 100%;
 	margin: 10em auto -10em auto;
 	text-align: center;
-}
-
-.content div.epigram-img > img {
-	width: 10em;
 }
 
 .content div.epigram {
@@ -1109,6 +1121,8 @@ table.borderlessTable {
 	hyphens: none;
 	text-align: center;
 	margin: 2em 0 0 0;
+	font-size: 1.2em;
+	text-indent: 0;
 }
 
 .content p.caption-centered-serif {
@@ -1117,7 +1131,8 @@ table.borderlessTable {
 	hyphens: none;
 	text-align: center;
 	margin: 0 0 2em 0;
-	font-size: 0.9em;
+	font-size: 1em;
+	text-indent: 0;
 }
 
 .content div.bob-text + div.bob-text {
@@ -2951,6 +2966,11 @@ mark.current {
 
 
 @media screen and (max-width: 666px) {
+
+	.content div.centered-img > img {
+		width: 100%;
+	}
+
 	.nomobile {
 		display:none;
 	}

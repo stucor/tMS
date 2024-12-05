@@ -420,7 +420,7 @@ function buildBook () {
 		} else
 		// VERSES (line-block-centered)
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block-center") {
-			console.log(allDivs[i].innerHTML.charAt(5))
+			//console.log(allDivs[i].innerHTML.charAt(5))
 			if (allDivs[i].innerHTML.charAt(5) == '“') {
 				let tempHTML = allDivs[i].innerHTML
 				let newHTML = tempHTML.slice(0,4) + ` class='OAstart'` + tempHTML.slice(4)

@@ -344,17 +344,18 @@ strong {
 .content h2 {
 	font-family: 'Source Sans Pro';
     font-weight: 500;
-	text-align: left;
+	text-align: center;
 	font-size: calc(var(--fontsize)*1.3);
-    padding-top: 1em;
+    padding-top: 2em;
 	hyphens: manual;
+	font-variant: small-caps;
 }
 
 .content h3 {
 	font-family: 'Source Sans Pro';
 	text-align: left;
     font-weight: 500;
-	font-size: calc(var(--fontsize)*1.2);
+	font-size: calc(var(--fontsize)*1.1);
 	margin-bottom: -.5em;
 }
 
@@ -1060,19 +1061,8 @@ table.borderlessTable {
 }
 
 
-/*
-	figure {
-		margin: 0.5em 10%;
-		min-width: 80%;
-		max-width: 80%;
-	}
-	figure img { 
-		margin: 0.5em 0;
-		min-width: 100%;
-		max-width: 100%;
-	}
-*/
 
+/***** CENTERED IMAGE *****/
 .content div.centered-img {
 	display: plex;
 	justify-content: center;
@@ -1086,13 +1076,25 @@ table.borderlessTable {
 	border:solid lightgrey 1px;
 }
 
+/* SPACE */
+
+.content div.space-1 {
+	padding: 1em 0;
+}
+.content div.space-2 {
+	padding: 2em 0;
+}
+.content div.space-3 {
+	padding: 3em 0;
+}
+
+/***** EPIGRAM *****/
 .content div.epigram-img {
 	width:fit-content;
 	max-width: 100%;
 	margin: 10em auto -10em auto;
 	text-align: center;
 }
-
 .content div.epigram {
 	font-family: 'Source Serif Pro';
 	width:fit-content;
@@ -1105,16 +1107,17 @@ table.borderlessTable {
 	text-align: center;
 	line-height: 135%;
 }
-
 .content div.epigram-cite {
 	font-family: 'Source Sans Pro';
 	font-variant: small-caps;
-	font-size: 0.9em;
+	font-size: 1em;
 	hyphens: none;
 	text-align: center;
 	line-height: 115%;
 	margin-bottom: 4em;
 }
+
+/***** CENTERED TEXT *****/
 .content p.caption-centered-sans {
 	font-family: 'Source Sans Pro';
 	font-variant: small-caps;
@@ -1124,7 +1127,6 @@ table.borderlessTable {
 	font-size: 1.2em;
 	text-indent: 0;
 }
-
 .content p.caption-centered-serif {
 	font-family: 'Source Serif Pro';
 	font-style: italic;
@@ -1134,6 +1136,19 @@ table.borderlessTable {
 	font-size: 1em;
 	text-indent: 0;
 }
+
+/***** GLOSSARY *****/
+.content p.gloss-term {
+	font-weight: 600;
+	text-indent: 0;
+	margin-top: 1em;
+}
+.content p.gloss-text {
+	text-indent: 0;
+	margin-left: 2em;
+}
+
+
 
 .content div.bob-text + div.bob-text {
 	margin-top: -2.6em;
@@ -1276,6 +1291,7 @@ table.borderlessTable {
 	word-spacing: -0.1em;
 	white-space: nowrap;
 	font-variant: normal;
+	font-style: normal;
 }
 
 dt {

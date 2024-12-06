@@ -205,6 +205,10 @@ header li .segno {
   display:none;
 }
 
+header h4 {
+  font-weight: 500;
+}
+
 .sclinktext, .sclinkref {
   word-spacing: -0.1em;
   display: flexbox;

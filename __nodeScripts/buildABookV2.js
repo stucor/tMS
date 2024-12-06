@@ -402,6 +402,13 @@ function buildBook () {
 	let suttaVerseHTML = ``
 	let allDivs = bookRoot.querySelectorAll('div') 
 	for (i in allDivs) {
+		// SPACE
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
+			let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
+				allDivs[i].classList.add(`space-${spaceWidth}`)
+				allDivs[i].removeAttribute('data-custom-style')
+				allDivs[i].innerHTML = ''
+		} else 
 		// PARAGRAPHS
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
 			let tempHTML = allDivs[i].innerHTML
@@ -459,7 +466,19 @@ function buildBook () {
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-cite") {
 			allDivs[i].classList.add ('epigram-cite')
 			allDivs[i].removeAttribute('data-custom-style')
-		} else //OLD STUFF FROM MILK
+		} else 
+		// GLOSSARIES
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-gloss-term") {
+			let tempHTML = allDivs[i].innerHTML
+			let newHTML = tempHTML.slice(0,4) + ` class='gloss-term'` + tempHTML.slice(4)
+			allDivs[i].replaceWith(newHTML)
+		} else 
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-gloss-text") {
+			let tempHTML = allDivs[i].innerHTML
+			let newHTML = tempHTML.slice(0,4) + ` class='gloss-text'` + tempHTML.slice(4)
+			allDivs[i].replaceWith(newHTML)
+		} else 
+		//OLD STUFF FROM MILK
 		if (allDivs[i].getAttribute('data-custom-style') == "Quote-Block") {
 			allDivs[i].tagName = "blockquote"
 			allDivs[i].removeAttribute('data-custom-style')
@@ -528,7 +547,7 @@ function buildBook () {
 
 	for (let i in allTablesAndCaptions) {
 		//console.log(allTablesAndCaptions[i].innerHTML)
-		if (allTablesAndCaptions[i].getAttribute('data-custom-style') == 'Table') {
+		if (allTablesAndCaptions[i].getAttribute('data-custom-style') == 'WW-table-caption') {
 			let caption = allTablesAndCaptions[i].text
 			let table = allTablesAndCaptions[Number(i)+1].innerHTML.replaceAll('<tr class>','<tr>')
 			allTablesAndCaptions[i].replaceWith(`<div class="tablewrap">

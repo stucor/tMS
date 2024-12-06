@@ -305,9 +305,10 @@ function buildBook () {
 
 	let spans = bookRoot.getElementsByTagName ('span')
 	for (i in spans) {
-		if (spans[i].classList.contains('anchor')) { // remove any in book link targets
-			spans[i].remove()
-		}
+/*  		if (spans[i].classList.contains('anchor')) { // remove any in book link targets       ________________________________CHECK THIS_____________________________________
+			//spans[i].remove()
+			//console.log(spans[i].outerHTML)
+		}  */
 		let dataCustomStyle = spans[i].getAttribute('data-custom-style')
 		switch(dataCustomStyle) {
 			case 'Footnote Characters':
@@ -389,9 +390,9 @@ function buildBook () {
 			break;
 			default:
 				if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
-					let target = anchors[i].getAttribute('href');
+ 					let target = anchors[i].getAttribute('href');
 					let temp4Text = anchors[i].text
-					anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`)
+					anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`) 
 				} else {
 					anchors[i].classList.add('extlink')
 				}
@@ -438,9 +439,9 @@ function buildBook () {
 		} else
 		//HEADINGS
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Chap-Section01"){
-			let tempText = allDivs[i].text
-			let newHTML = `<h2>${tempText}</h2>`
-			allDivs[i].replaceWith(newHTML)
+			allDivs[i].tagName = "h2"
+			allDivs[i].removeAttribute('data-custom-style')
+			allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll(`<p>`,'').replaceAll(`</p>`,'')
 		} else 
 		//IMAGES
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-image") {
@@ -856,6 +857,12 @@ function processPandoc() {
 		// anchors
 		let anchors = footnotesRoot.getElementsByTagName ('a') 
 		for (i in anchors) {
+			let istMSBook = anchors[i].text.slice(0,16) == `wiswo.org/books/`
+			if (istMSBook) {
+				let tMSShortcode = anchors[i].text.slice(16)
+				anchors[i].innerHTML = `<a href='../${tMSShortcode}'> on theMettāShelf </a>`
+				break
+			}
 			let firstThree = anchors[i].text.slice(0,3)
 			switch(firstThree) {
 				case 'MN ':
@@ -895,7 +902,6 @@ function processPandoc() {
 						let target = anchors[i].getAttribute('href');
 						let temp4Text = anchors[i].text
 						anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`)
-
 					} else {
 						anchors[i].classList.add('extlink')
 					}

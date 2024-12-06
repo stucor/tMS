@@ -2542,6 +2542,7 @@ function clearhighlightnote(when='delay', keepSup= false) {
 				}, 300); 
 				setTimeout(function() {
 					savedsup.style = null;
+					//console.log (savedsup.parentElement)
 					if (savedsup.parentElement.classList.contains('tablewrap')) {
 						savedsup.parentElement.style = null;
 					}
@@ -2805,7 +2806,7 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		clearhighlightnote('immediate');
 		savedsup = document.getElementById(whereTo);
 		goToTarget(whereTo);
-		clearhighlightnote();
+		//clearhighlightnote();
 	}
 
 	if (e.target.classList.contains('noteinnotes')) {

@@ -720,6 +720,8 @@ function processPandoc() {
 		let frontCoverLocation = `../_resources/book-data/${bookID}/FrontLarge.jpg`
 		let downloadsAvailable =``
 		let downloadHTML =``
+		let backCoverLocation = ``
+		let backcoverHTML =``
 	
 		let tokens = pandocRoot.querySelectorAll('div, p, h1')
 		for (i in tokens) {
@@ -743,7 +745,6 @@ function processPandoc() {
 				subtitle += `${tokens[i].innerHTML}`
 			} else 
 			if (tokens[i].getAttribute('data-custom-style') == "WW-Copyright") {
-				//console.log(tokens[i].innerHTML)
 				copyrightArr = tokens[i].innerHTML
 					.replace('<p>', '')
 					.replaceAll('\"', '\'')
@@ -766,8 +767,13 @@ function processPandoc() {
 			} else
 			if (tokens[i].getAttribute('data-custom-style') == "DownloadHTML") {
 				downloadHTML +=  `${tokens[i].text.replaceAll('\r\n','')}`
+			} else
+			if (tokens[i].getAttribute('data-custom-style') == "WW-backcover-text") {
+				if (backCoverLocation == '') {
+					backCoverLocation = `../_resources/book-data/${bookID}/BackLarge.jpg`
+				}
+				backcoverHTML +=  `${tokens[i].innerHTML.replaceAll('\r\n','')}`
 			} 
-	
 		}
 	
 		authors = authors.slice(0,-1)
@@ -782,8 +788,8 @@ function processPandoc() {
 			"Copyright" : [${copyright}],
 			"CCLicense": "${CCLicense}",
 			"FrontCover": "${frontCoverLocation}",
-			"BackCover": "",
-			"BackMatter": [],
+			"BackCover": "${backCoverLocation}",
+			"BackMatter": ["${backcoverHTML}"],
 			"DownloadsAvailable": "${downloadsAvailable}",
 			"DownloadHTML": "${downloadHTML}"
 		}`
@@ -984,6 +990,7 @@ function processPandoc() {
 		bookRoot.querySelector('#abstract').remove()
 		bookRoot.querySelector('#copyright').remove()
 		bookRoot.querySelector('#downloads').remove()
+		bookRoot.querySelector('#backcover').remove()
 	
 		let allDivs = bookRoot.querySelectorAll('div')
 	
@@ -994,6 +1001,7 @@ function processPandoc() {
 				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadsAvailable")
 				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadText")
 				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadHTML")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-backcover-text")
 				) {
 				allDivs[i].remove();
 			}

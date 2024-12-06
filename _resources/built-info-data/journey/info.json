@@ -17,8 +17,10 @@
 	],
 	"CCLicense": "<div class='cclicense'><h3>CC0 1.0 Universal <span>(CC0 1.0) Public Domain Dedication</span></h3><div id = 'ccDetail'><p><strong>No Copyright</strong></p><ul>    <li>The person who associated a work with this deed has <em>dedicated</em> the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.</li>    <li>You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.</li></ul><p><strong>Other Information</strong></p><ul><li>In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.</li><li>Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.</li><li>When using or citing the work, you should not imply endorsement by the author or the affirmer.</li></ul></div></div>",
 	"FrontCover": "../_resources/book-data/journey/FrontLarge.jpg",
-	"BackCover": "",
-	"BackMatter": [],
+	"BackCover": "../_resources/book-data/journey/BackLarge.jpg",
+	"BackMatter": [
+		"<p>Discover the magic of kindfulness with Journey to the Heart of the Lotus, a guide to peace and insight based on the teachings of Ajahn Brahm on his 2023 Easter retreat at Jhana Grove.</p><p>Each chapter will take you deeper into the art of letting go, calming the mind and embracing the present moment.</p><p>Whether you're a seasoned meditator or just beginning your practice, a path to the radiant joy of stillness and true serenity awaits you within these pages.</p>"
+	],
 	"DownloadsAvailable": "pdf=yes,epub=no,azw3=no",
 	"DownloadHTML": "",
 	"AuthorsData": [

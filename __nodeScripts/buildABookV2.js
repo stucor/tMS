@@ -132,9 +132,15 @@ html += `
 		<li id="TOC0" class="noshow">Engrave</li>
 		<li id="TOC0-1">Title Page</li>\n`
 
-let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'toc.json'))
+let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'TOC.json'))
 for (var i in TOCData){
-    html += `\t\t<li id="TOC${TOCData[i].tocno}">${TOCData[i].heading}</li>\n`
+	console.log(TOCData[i].pandocHTMLID.substring(0,15))
+	if (TOCData[i].pandocHTMLID.substring(0,8)=='CHAPTER-') {
+		html += `\t\t<li id="TOC${TOCData[i].tocno}">${TOCData[i].heading}</li>\n`
+	} else
+	if (TOCData[i].pandocHTMLID.substring(0,15)=='CHAP-SECTION-01') {
+		html += `\t\t<li class='sub' id="TOC${TOCData[i].tocno}">${TOCData[i].heading}</li>\n`
+	}
 }
 html +=
 `		<li id="TOC999999999" class="noshow">TERMINATOR</li>
@@ -443,11 +449,11 @@ function buildBook () {
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
 		//HEADINGS
-		if (allDivs[i].getAttribute('data-custom-style') == "WW-Chap-Section01"){
+/* 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Chap-Section01"){
 			allDivs[i].tagName = "h2"
 			allDivs[i].removeAttribute('data-custom-style')
 			allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll(`<p>`,'').replaceAll(`</p>`,'').replaceAll('\r\n', '')
-		} else 
+		} else  */
 		//IMAGES
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-image") {
 			let [source, altText, width, border] = allDivs[i].text.split("=");
@@ -555,7 +561,6 @@ function buildBook () {
 	let allTablesAndCaptions = bookRoot.querySelectorAll('table, div')
 
 	for (let i in allTablesAndCaptions) {
-		//console.log(allTablesAndCaptions[i].innerHTML)
 		if (allTablesAndCaptions[i].getAttribute('data-custom-style') == 'WW-table-caption') {
 			let caption = allTablesAndCaptions[i].text
 			let table = allTablesAndCaptions[Number(i)+1].innerHTML.replaceAll('<tr class>','<tr>')
@@ -817,9 +822,19 @@ function processPandoc() {
 				count += 1
 				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
 				let nextTOCID = `CHAPTER-${nextTOCText.replaceAll(' ','-')}`
-				localJSON += `{\n\t"tocno": "${count}",\n\t"pandoc-html-id": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
+				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
 				let newElement = `<h1 id='${nextTOCID}'\>${nextTOCText}</h1>`
 				TOChtml[i].replaceWith(newElement)
+			} else
+			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-Chap-Section01') {
+				//console.log(TOChtml[i].text)
+				count += 1
+				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
+				let nextTOCID = `CHAP-SECTION-01-${nextTOCText.replaceAll(' ','-')}`
+				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
+				let newElement = `<h2 id='${nextTOCID}'\>${nextTOCText}</h2>`
+				TOChtml[i].replaceWith(newElement)
+
 			}
 		}
 
@@ -874,7 +889,7 @@ function processPandoc() {
 			let istMSBook = anchors[i].text.slice(0,16) == `wiswo.org/books/`
 			if (istMSBook) {
 				let tMSShortcode = anchors[i].text.slice(16)
-				anchors[i].innerHTML = `<a href='../${tMSShortcode}'> on theMettāShelf </a>`
+				anchors[i].replaceWith(`<a href='../${tMSShortcode}'> on theMettāShelf </a>`)
 				break
 			}
 			let firstThree = anchors[i].text.slice(0,3)

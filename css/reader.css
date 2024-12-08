@@ -1020,7 +1020,7 @@ table.borderlessTable {
 	padding:5px 10px;
 	text-align: left;
 	border-radius: 10px;
-	border: 1px solid rgba(128, 128, 128, 0.5);
+	border: 1px solid #80808080;
 }
 
 
@@ -1060,7 +1060,17 @@ table.borderlessTable {
 	padding-top: 0;
 }
 
-
+/***** SPECIAL MESSAGE *****/
+.special-message {
+	text-align: center;
+	color:#950925;
+	font-size: 0.8em;
+	font-family: 'Source Sans Pro';
+	padding: 2em;
+	margin-top: -4em;
+	margin-bottom: 4em;
+	border: 1px solid #80808080
+}
 
 /***** CENTERED IMAGE *****/
 .content div.centered-img {
@@ -1071,13 +1081,17 @@ table.borderlessTable {
 .content div.centered-img > img {
 	display: block;
 	margin: 2em auto;
+	max-width: max-content;
 }
 .centered-img-border > img {
-	border:solid lightgrey 1px;
+	border: 1px solid #80808080;
 }
 
 /* SPACE */
 
+.content div.space-1 {
+	padding: 0;
+}
 .content div.space-1 {
 	padding: 1em 0;
 }

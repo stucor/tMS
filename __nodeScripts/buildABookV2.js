@@ -46,7 +46,7 @@ function buildMyBook () {
 		  processPandoc()
 		  buildCompleteBook() 
 		  console.log(`* books/${bookID}/index.html BUILD COMPLETE *\n`)
-		  //buildSesameStub()
+		  buildSesameStub()
 		  //buildSesameRefStub()
 		}); 
 }
@@ -328,7 +328,7 @@ function buildBook () {
 				spans[i].removeAttribute ('data-custom-style')
 				sesameRefArr.push(spans[i].text)
 			break
-			case 'sesame':
+			case 'WW-sesame':
 				spans[i].classList.add('sesame')
 				spans[i].removeAttribute ('data-custom-style')
 				sesameArr.push(spans[i].text)
@@ -404,6 +404,11 @@ function buildBook () {
 	let allDivs = bookRoot.querySelectorAll('div') 
 	for (i in allDivs) {
 		// SPACE
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-special-message") {
+				allDivs[i].classList.add(`special-message`)
+				allDivs[i].removeAttribute('data-custom-style')
+		} else 
+		// SPACE
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
 			let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
 				allDivs[i].classList.add(`space-${spaceWidth}`)
@@ -441,7 +446,7 @@ function buildBook () {
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Chap-Section01"){
 			allDivs[i].tagName = "h2"
 			allDivs[i].removeAttribute('data-custom-style')
-			allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll(`<p>`,'').replaceAll(`</p>`,'')
+			allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll(`<p>`,'').replaceAll(`</p>`,'').replaceAll('\r\n', '')
 		} else 
 		//IMAGES
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-image") {
@@ -478,6 +483,9 @@ function buildBook () {
 			let tempHTML = allDivs[i].innerHTML
 			let newHTML = tempHTML.slice(0,4) + ` class='gloss-text'` + tempHTML.slice(4)
 			allDivs[i].replaceWith(newHTML)
+		} else 
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-author-biography") {
+			allDivs[i].remove()
 		} else 
 		//OLD STUFF FROM MILK
 		if (allDivs[i].getAttribute('data-custom-style') == "Quote-Block") {
@@ -991,6 +999,8 @@ function processPandoc() {
 		bookRoot.querySelector('#copyright').remove()
 		bookRoot.querySelector('#downloads').remove()
 		bookRoot.querySelector('#backcover').remove()
+		bookRoot.querySelector('#author-bio').remove()
+		bookRoot.querySelector('#special-message').remove()
 	
 		let allDivs = bookRoot.querySelectorAll('div')
 	

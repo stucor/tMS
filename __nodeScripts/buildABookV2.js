@@ -134,7 +134,6 @@ html += `
 
 let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'TOC.json'))
 for (var i in TOCData){
-	console.log(TOCData[i].pandocHTMLID.substring(0,15))
 	if (TOCData[i].pandocHTMLID.substring(0,8)=='CHAPTER-') {
 		html += `\t\t<li id="TOC${TOCData[i].tocno}">${TOCData[i].heading}</li>\n`
 	} else
@@ -417,11 +416,15 @@ function buildBook () {
 		// SPACE
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
 			let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
+			allDivs[i].replaceWith(`<hr style='border:0; margin-top: -1em; height:${spaceWidth}em'>`)
+		} else 
+/* 		if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
+			let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
 				allDivs[i].classList.add(`space-${spaceWidth}`)
 				allDivs[i].removeAttribute('data-custom-style')
 				allDivs[i].innerHTML = ''
 		} else 
-		// PARAGRAPHS
+ */		// PARAGRAPHS
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
@@ -437,9 +440,22 @@ function buildBook () {
 			let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-serif'` + tempHTML.slice(4)
 			allDivs[i].replaceWith(newHTML)
 		} else
-		// VERSES (line-block-centered)
+		// VERSES 
+		//(line-block)
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block") {
+			let tempHTML = allDivs[i].innerHTML
+			if (allDivs[i].innerHTML.charAt(5) == '“') {
+				let newHTML = `<blockquote> ${tempHTML.slice(0,4)} class='OAstart' ${tempHTML.slice(4)} </blockquote>`
+				allDivs[i].innerHTML = newHTML	
+			} else {
+				let newHTML = `<blockquote> ${tempHTML} </blockquote>`
+				allDivs[i].innerHTML = newHTML	
+			}
+			allDivs[i].classList.add ('line-block')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		//(line-block-centered)
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block-center") {
-			//console.log(allDivs[i].innerHTML.charAt(5))
 			if (allDivs[i].innerHTML.charAt(5) == '“') {
 				let tempHTML = allDivs[i].innerHTML
 				let newHTML = tempHTML.slice(0,4) + ` class='OAstart'` + tempHTML.slice(4)
@@ -448,12 +464,6 @@ function buildBook () {
 			allDivs[i].classList.add ('line-block-center')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
-		//HEADINGS
-/* 		if (allDivs[i].getAttribute('data-custom-style') == "WW-Chap-Section01"){
-			allDivs[i].tagName = "h2"
-			allDivs[i].removeAttribute('data-custom-style')
-			allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll(`<p>`,'').replaceAll(`</p>`,'').replaceAll('\r\n', '')
-		} else  */
 		//IMAGES
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-image") {
 			let [source, altText, width, border] = allDivs[i].text.split("=");
@@ -827,7 +837,6 @@ function processPandoc() {
 				TOChtml[i].replaceWith(newElement)
 			} else
 			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-Chap-Section01') {
-				//console.log(TOChtml[i].text)
 				count += 1
 				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
 				let nextTOCID = `CHAP-SECTION-01-${nextTOCText.replaceAll(' ','-')}`

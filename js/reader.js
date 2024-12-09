@@ -2386,18 +2386,6 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		}	
 	}
 
-/* 	if (e.target.classList.contains ('expander')) {
-		var fullReference = getFullReference(e.target.dataset.reference);
-		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⊕';
-			e.target.classList.remove('expanded');
-
-		} else {
-			e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
-			e.target.classList.add('expanded');
-		}
-	} */
-
 	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
 		let linkNode = e.target;
 		if (e.target.classList.contains('scsegments')) {
@@ -2433,8 +2421,10 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	}
 
 	if (e.target.classList.contains('sesame')) {
+		showSpinner();
 		toggleSesame (e.target)
 	} else if (e.target.parentNode.classList.contains('sesame')) {
+		showSpinner();
 		toggleSesame (e.target.parentNode)
 	}
 
@@ -2744,24 +2734,6 @@ function decodeBookSegment (anchortext) {
 }
 
 document.getElementById("ModalNotes").addEventListener("click", function(e) {
-/* 	if (e.target.classList.contains ('expander')) {
-		if (e.target.classList.contains('externalquote')){
-			buildExternalQuote (e.target)
-		} else {
-			var fullReference = getFullReference(e.target.dataset.reference);
-			if (e.target.classList.contains('expanded')) {
-				e.target.innerHTML = '⊕';
-				e.target.classList.remove('expanded');
-				if (e.target.dataset.quote) {
-					e.target.classList.add('externalquote');
-				}
-			} else {
-				e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
-				e.target.classList.add('expanded');
-			}
-		}
-	} */
-
 	if (e.target.classList.contains ('TOCref')) {
 		var toctarget = e.target.getAttribute("data-TOCref");
 		closebtn.click();
@@ -2848,20 +2820,29 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		if (true) {e.preventDefault();}
 	}
 
+
 	if (e.target.classList.contains('sesame')) {
+		showSpinner();
+		toggleSesame (e.target)
+	} else if (e.target.parentNode.classList.contains('sesame')) {
+		showSpinner()
+		toggleSesame (e.target.parentNode)
+	}
+
+/* 	if (e.target.classList.contains('sesame')) {
 		toggleSesame (e.target)
 	} else if (e.target.parentNode.classList.contains('sesame')) {
 		toggleSesame (e.target.parentNode)
 	}
-
+ */
 });
 
 function toggleSesame (el) {
 	let shortCode = shortcode();
-
 	if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame') || el.nextElementSibling.classList.contains('opensesameref'))) {
 		el.nextElementSibling.remove();
 		el.classList.remove('closebutton');
+		hideSpinner()
 	} else {
 		function openSesame (sesameData) {
 			let bibsesame = el.innerText;
@@ -2948,6 +2929,7 @@ function toggleSesame (el) {
 			fetch(`../_resources/book-data/${shortCode}/sesameref.json`)
 			.then(response => response.json())
 			.then (data => openSesame(data))
+			.then (() => hideSpinner())
 			.catch(error => {
 				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesameref.json`);
 			});
@@ -2955,6 +2937,7 @@ function toggleSesame (el) {
 			fetch(`../_resources/book-data/${shortCode}/sesame.json`)
 			.then(response => response.json())
 			.then (data => openSesame(data))
+			.then (() => hideSpinner())
 			.catch(error => {
 				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesame.json`);
 			});

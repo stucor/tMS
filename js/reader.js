@@ -2820,7 +2820,6 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		if (true) {e.preventDefault();}
 	}
 
-
 	if (e.target.classList.contains('sesame')) {
 		showSpinner();
 		toggleSesame (e.target)
@@ -2828,13 +2827,6 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		showSpinner()
 		toggleSesame (e.target.parentNode)
 	}
-
-/* 	if (e.target.classList.contains('sesame')) {
-		toggleSesame (e.target)
-	} else if (e.target.parentNode.classList.contains('sesame')) {
-		toggleSesame (e.target.parentNode)
-	}
- */
 });
 
 function toggleSesame (el) {

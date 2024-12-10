@@ -898,7 +898,7 @@ function processPandoc() {
 			let istMSBook = anchors[i].text.slice(0,16) == `wiswo.org/books/`
 			if (istMSBook) {
 				let tMSShortcode = anchors[i].text.slice(16)
-				anchors[i].replaceWith(`<a href='../${tMSShortcode}'> on theMettāShelf </a>`)
+				anchors[i].replaceWith(`<a class='library' href='../${tMSShortcode}'> on theMettāShelf</a>`)
 				break
 			}
 			let firstThree = anchors[i].text.slice(0,3)

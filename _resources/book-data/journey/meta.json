@@ -10,6 +10,6 @@
 			"FrontCover": "../_resources/book-data/journey/FrontLarge.jpg",
 			"BackCover": "../_resources/book-data/journey/BackLarge.jpg",
 			"BackMatter": ["<p>Discover the magic of kindfulness with Journey to the Heart of the Lotus, a guide to peace and insight based on the teachings of Ajahn Brahm on his 2023 Easter retreat at Jhana Grove.</p><p>Each chapter will take you deeper into the art of letting go, calming the mind and embracing the present moment.</p><p>Whether you're a seasoned meditator or just beginning your practice, a path to the radiant joy of stillness and true serenity awaits you within these pages.</p>"],
-			"DownloadsAvailable": "pdf=yes,epub=no,azw3=no",
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
 			"DownloadHTML": ""
 		}

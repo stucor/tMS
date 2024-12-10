@@ -140,14 +140,14 @@ for (i in allAnchors) {
     if (allAnchors[i].classList.contains('library')) {
         let linkBookShortcode = allAnchors[i].getAttribute('href').slice(3)
         allAnchors[i].setAttribute('href', `https://wiswo.org/books/${linkBookShortcode}`)
-        allAnchors[i].innerHTML = ` available at wiswo.org/books/${linkBookShortcode}`
+        allAnchors[i].innerHTML = ` (wiswo.org/books/${linkBookShortcode})`
     }
 }
 
 
 //Get Notes
 let allNotes = bookRoot.querySelectorAll('.booknote')
-let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">\n<h1 class='chapter' >Notes</h1>\n`
+let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">\n<h1 class='chapter' >Endnotes</h1>\n`
 for (i in allNotes) {
     let tempInnerHTML = allNotes[i].innerHTML
     let tempNoteNumber = allNotes[i].getAttribute('data-note')

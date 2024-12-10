@@ -191,3 +191,11 @@ li {
     font-style: italic;
     margin-bottom: 2em;
 }
+
+.gloss-term {
+    font-weight: bold;
+}
+
+.gloss-text {
+    margin-left: 1em;
+}

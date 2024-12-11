@@ -1,0 +1,204 @@
+body {
+	font-family: Gentium Book Plus;
+}
+
+.noshow {
+	display: none;
+}
+
+.noitalics {
+	font-style: normal;
+}
+
+.copyright > p {
+	font-size: smaller;
+}
+
+.cclicense {
+	font-size: smaller;
+}
+
+#ccDetail > ul > li {
+	margin-bottom: 1em;
+}
+
+.logo-block {
+	margin-top: 3em;
+}
+.logo {
+	margin: 1em 45% 0.5em 45%;
+	max-width: 10%;
+}
+.logo > img {
+	margin: 0;
+	width:100%;
+}
+.logo-text {
+	font-size: small;
+	margin-bottom: 5em;
+	text-align: center;
+}
+
+.titlepage.title {
+	margin-top: 3em;
+	margin-bottom: 0.2em;
+	text-align: center;
+	font-size: 2.5em;
+}
+
+.titlepage.subtitle {
+	margin-bottom: 1.5em;
+	text-align: center;
+	font-size: 1.2em
+}
+.titlepage.author {
+	margin-bottom: 3em;
+	text-align: center;
+	font-variant: small-caps;
+	font-size: 1em
+}
+
+.TitlePageHide {
+	margin:0; font-size: 1em; color: rgba(255, 255, 255, 0);
+}
+
+#TOC > ul  {
+	list-style-type: none;
+	margin-top: 0;
+}
+
+
+h1 {
+    font-family: Linux Biolinum Capitals;
+	text-align: center;
+	font-weight: 400;
+	font-size: 2.5em;
+	padding-top: 2em;
+	padding-bottom: 1em;
+	font-variant: small-caps;
+}
+
+h2 {
+    font-family: Linux Biolinum Capitals;
+    padding-top: 2em;
+	text-align: center;
+	font-variant: small-caps;
+    font-weight: 400;
+}
+
+.quote {
+	text-align: center;
+}
+
+.cite {
+	text-align: center;
+	font-size: smaller;
+	margin-top:0.5em;
+}
+
+.citeBQ {
+	text-align: right;
+	font-size: smaller;
+	margin-top:0.5em;
+	margin-right: 2em;
+}
+
+.chapnum {
+  font-variant:small-caps;
+  font-size: 0.5em;
+}
+
+.footnote-ref {
+  text-decoration: none;
+}  
+  
+.footnotes > div {
+  margin-bottom : 1em;
+}
+
+.footnote-back {
+	text-decoration: none;
+}
+
+.references {
+	margin-left: 2em;
+	margin-bottom: 0.5em;
+	text-indent:-2em;
+}
+
+.references > div {
+	margin-bottom: 0.3em;
+}
+
+.smaller {
+	font-size: smaller;
+}
+a {
+	text-decoration: none;
+}
+
+/* Additional for Journey */
+
+.logo-text {
+    page-break-after: always;
+}
+.epigram {
+	text-align: center;
+	font-style: italic;
+}
+.epigram-cite {
+	text-align: center;
+	font-style: normal;
+	font-variant: small-caps;
+    font-family: Linux Biolinum Capitals;
+    page-break-after: always;
+}
+.epigram-img {
+	text-align: center;
+}
+.epigram-img > img {
+	margin: 0;
+	width:20%;
+}
+
+.centered-img {
+	text-align: center;
+}
+
+.centered-img-border > img {
+	border: 1px solid grey;
+}
+
+li {
+    list-style-type: '· ';
+}
+
+*:lang(pli) {
+	font-style: italic;
+}
+
+.captioned-image {
+	page-break-inside:avoid
+}
+
+.caption-centered-sans {
+    text-align: center;
+	font-style: normal;
+	font-variant: small-caps;
+    font-family: Linux Biolinum Capitals;
+    font-size: 1.2em;
+}
+
+.caption-centered-serif {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 2em;
+}
+
+.gloss-term {
+    font-weight: bold;
+}
+
+.gloss-text {
+    margin-left: 1em;
+}

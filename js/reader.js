@@ -182,19 +182,13 @@ function startup () {
 		formatbooknotes();
 		formatSCLinktext();
 
-
-
 		// give tables an id starting at table_1
 		let tabrefArr = document.querySelectorAll('table');
 		if (tabrefArr.length  > 0) {
 			for (let i = 0; i < tabrefArr.length; i++) {
 				tabrefArr[i].setAttribute("id", "table_"+ (i+1));
 			}
-			
 		}
-
-
-
 
 		var scroller = Math.floor(window.scrollY);
 		history.replaceState({scrollState: scroller},'',''); 
@@ -221,42 +215,42 @@ function startup () {
 		}
 		justifyCheck.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doJustifyCheck) // execute anync
+			promiseToRunAsync(doJustifyCheck) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		hyphenCheck.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doHyphenCheck) // execute anync
+			promiseToRunAsync(doHyphenCheck) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		document.getElementById("decfont").onclick = function () { // minus button
 				showSpinner(); // show spinner
-				promiseToRunAsync(doDecFont) // execute anync
+				promiseToRunAsync(doDecFont) 
 				.then(() => {
 					hideSpinner();
 				});
 		}
 		document.getElementById("incfont").onclick = function () { //plus button
 			showSpinner(); // show spinner
-			promiseToRunAsync(doIncFont) // execute anync
+			promiseToRunAsync(doIncFont) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		declh.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doDecLH) // execute anync
+			promiseToRunAsync(doDecLH) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		inclh.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doIncLH) // execute anync
+			promiseToRunAsync(doIncLH) 
 			.then(() => {
 				hideSpinner();
 			});
@@ -272,35 +266,35 @@ function startup () {
 		}
 		radioMargNarrow.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doSetMargin) // execute anync
+			promiseToRunAsync(doSetMargin) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		radioMargMid.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doSetMargin) // execute anync
+			promiseToRunAsync(doSetMargin) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		radioMargWide.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doSetMargin) // execute anync
+			promiseToRunAsync(doSetMargin) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		serifFont.onclick = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doSetSerif) // execute anync
+			promiseToRunAsync(doSetSerif) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		showParaNosList.onchange = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doParaNosList) // execute anync
+			promiseToRunAsync(doParaNosList) 
 			.then(() => {
 				hideSpinner();
 			});
@@ -335,6 +329,7 @@ function parseInfoText(infoText) {
 //		.replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
 		.replace(/\[(.*?)\]\X\((.*?)\)/gim, "<a class='extlink' href='$2'>$1</a>") //like markdown but and X inbetween like this: [text]X(link) - to denote an external link
 		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>") // markdown style link
+		.replace('lulugraphic', '<img style="max-height: 35px;" alt="Seeds, Paintings and a Beam of Light at Lulu" src="../_resources/images/icons/lulu-logo.svg" ></img>')
 		.replace(/\n/gim, '<br />') //markdown style linebreaks
 	return htmlText.trim()
 }
@@ -347,6 +342,12 @@ function buildInfo () {
 		let shortCode = shortcode();
 		let html ='';
 
+/* 		let sections = document.getElementsByClassName('goselfquote');
+		
+		for (let i = 0; i <sections.length; i++) {
+			html += sections[i].innerText.replace('§', '') + "<br>";
+		  }
+ */
 		function suttalist () {
 			let suttarefArr = document.getElementsByClassName('sclinktext');
 			if (suttarefArr.length == 0) { return '';}
@@ -381,7 +382,7 @@ function buildInfo () {
 				html += `<div id="lotlist">	`
 				for (let i = 0; i < tabrefArr.length; i++) {
 					if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
-						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML}</span>`;
+						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
 						html += `<div class='lotlistitem'>${linktext}</div>`;
 					}
 				}
@@ -408,7 +409,6 @@ function buildInfo () {
 				html += `</div></section>`;
 				return html;
 			}
-
 		}
 
 		function populateInfo (bookInfoData) {
@@ -419,10 +419,29 @@ function buildInfo () {
 			}
 			html += `<h2>${bookInfoData.Authors}</h2>`;
 
+			//Add Ons
+			if (bookInfoData.AddInfo.length > 0) {
+				html += `<section class="infocontainer">`;
+				for (i in bookInfoData.AddInfo) {
+					for (j in bookInfoData.AddInfo[i]) {
+						if (j == 0) {
+							x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
+						} else if (j == 1) {
+							html += `<div class="info-addon">`;
+							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
+						} else {
+							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
+						}
+						html += x;
+					}
+					html += `</div>`;
+				}
+				html += `</section>`
+			}	
+
 			html += tablelist();
 			html += figurelist();
 			html += suttalist();
-
 
 			if (isAudioBook()) {
 				html += `
@@ -453,26 +472,6 @@ function buildInfo () {
 				</section>
 				`;
 			}
-
-			//Add Ons
-			if (bookInfoData.AddInfo.length > 0) {
-				html += `<section class="infocontainer">`;
-				for (i in bookInfoData.AddInfo) {
-					for (j in bookInfoData.AddInfo[i]) {
-						if (j == 0) {
-							x = `<h3>${bookInfoData.AddInfo[i][j]}</h3>`;
-						} else if (j == 1) {
-							html += `<div class="info-addon">`;
-							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
-						} else {
-							x = `<p>${parseInfoText(bookInfoData.AddInfo[i][j])}</p>`;
-						}
-						html += x;
-					}
-					html += `</div>`;
-				}
-				html += `</section>`
-			}	
 			
 			//Author(s)
 			let authors = '';
@@ -562,165 +561,11 @@ function buildInfo () {
 	}
 }
 
-// Populate References/Bibliography
-/* function buildRef () {
 
-	let sectionHolder = document.getElementById('reference-holder');
-	if (sectionHolder != null) {
-		if (sectionHolder.innerHTML == ''){
-			let shortCode = shortcode();
-			let html =``;
-
-			function populateReferences(referencesData) {
-
-
-				html += `<dl class="references">`
-				for (i in referencesData) {
-					let urlLabel ='';
-					let attachmentLabel = '';
-					let tMSShortcode ='';
-					
-					// get special values from the notes field 
-					if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
-						noteArray = referencesData[i]["note"].split('\n');	
-						for (j in noteArray) {
-							[noteKey, noteValue] = noteArray[j].split(':');
-							switch (noteKey) {
-								case "attachment-label":
-									attachmentLabel = noteValue;
-									break;
-								case "tMS":
-									tMSShortcode = noteValue;
-							}
-						}
-					}
-
-					switch (referencesData[i].type) {
-						case "book":
-							urlLabel ='Publishers Page';
-							break;
-						case "article-journal":
-							urlLabel ='Journal Page';
-							break;
-						case "document":
-							break;
-						case "post-weblog":
-							urlLabel ='Blog Post';
-							break;
-						case "webpage":
-							urlLabel ='Webpage';
-							break;
-					}
-
-					html += `<dt>${referencesData[i].id}</dt>`
-
-					html += `<dd>`;
-
-					let authorAfter ='& ';
-					for (j in referencesData[i].author) {
-						if (j == referencesData[i].author.length-1) {
-							authorAfter ='&mdash;'
-						}
-						html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given} ${authorAfter}`;
-					}
-
-					let translatorAfter ='& ';
-					for (j in referencesData[i].translator) {
-						if (j == referencesData[i].translator.length-1) {
-							translatorAfter ='<em>(tr.) </em>&mdash;'
-						}
-						html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
-					}
-
-					if (referencesData[i].hasOwnProperty('issued')) {
-						html += ` ${referencesData[i]["issued"]["date-parts"][0][0]}.`;
-					}
-
-					html += ` <em>${referencesData[i].title}</em>`;
-
-					if (referencesData[i].hasOwnProperty('container-title')) {
-						html += `. ${referencesData[i]["container-title"]}`;
-					}
-					if (referencesData[i].hasOwnProperty('volume')) {
-						html += `, Vol. ${referencesData[i]["volume"]}`;
-					}
-
-					if (referencesData[i].hasOwnProperty('number-of-volumes')) {
-						html += ` of ${referencesData[i]["number-of-volumes"]}`;
-					}
-
-					if (referencesData[i].hasOwnProperty('page')) {
-						if (referencesData[i].page.includes("-")) { //is a range of pages
-							html += `. pp. ${referencesData[i].page}`;
-						} else {
-							html += `. p. ${referencesData[i].page}`;
-						}
-					}
-
-					html += `.`;
-
-					if (referencesData[i].hasOwnProperty('publisher')) {
-						html += ` ${referencesData[i]["publisher"]}`;
-
-						if (referencesData[i].hasOwnProperty('publisher-place')) {
-							html += `, ${referencesData[i]["publisher-place"]}`;
-						}
-		
-						html += `.`;
-					}
-
-					let linkSeparator = ' | ';
-					if (referencesData[i].hasOwnProperty('URL')) {
-						html += `${linkSeparator} <a class="extlink reflink"  href="${referencesData[i].URL}">${urlLabel}</a> `;
-					}
-
-					if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
-						if (attachmentLabel !== '') {
-							let attachmentLabelArray = attachmentLabel.split(';');
-							if (attachmentLabelArray.length > 1) {
-								let fileArray = referencesData[i].file.split(';');
-								for (k in attachmentLabelArray) {
-									html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${fileArray[k]}">${attachmentLabelArray[k]}</a> `;
-								}
-							} else {
-								html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}">${attachmentLabel}</a> `;
-							}
-						} else {
-							html += `${linkSeparator} <a class="refpdf reflink" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
-						}
-					}
-
-					if (tMSShortcode !=='') {
-						html += `${linkSeparator} <a class="reflink" href="../${tMSShortcode}">online</a>`
-					}
-
-					html += `</dd>`;
-
-				}
-
-				html += `</dl>`
-				sectionHolder.innerHTML = html;
-
-			}
-
-
-
-			fetch(`../_resources/book-data/${shortCode}/reference.json`)
-				.then(response => response.json())
-				.then (data => populateReferences(data))
-				.catch(error => {
-					console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/reference.json`);
-				}
-
-			);
-		}
-	}
-}
- */
 //ONLOAD
 window.onload = function () {
     showSpinner(); // show spinner
-    promiseToRunAsync(startup) // execute anync
+    promiseToRunAsync(startup) 
     .then(() => {
         hideSpinner();
 		getPlaceInBook();
@@ -730,7 +575,7 @@ window.onload = function () {
 var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
-var savedNotesElements = ModalNotes.querySelectorAll('h2, div');
+var savedNotesElements = ModalNotes.querySelectorAll('h2, div.booknote');
 
 
 var theTopBar = document.getElementById("topbar");
@@ -1094,11 +939,6 @@ if (!nuclearOption) {
 		//SERIF-FONT
 		var local_wiswobooks_serif = document.getElementById("serifFont").checked;
 		setCookie('wiswobooks_serif',local_wiswobooks_serif,365);
-		//SHOW-PAGES
-		/* SPC Go
-		var local_wiswobooks_showpages = document.getElementById("showPageCheck").checked;
-		setCookie('wiswobooks_showpages',local_wiswobooks_showpages,365);
-		*/
 		//JUSTIFICATION
 		var local_wiswobooks_justification = document.getElementById("justifyCheck").checked;
 		setCookie('wiswobooks_justification',local_wiswobooks_justification,365);
@@ -1300,42 +1140,6 @@ function setTOCLevel (level) { // if level is between 16 and 24 set it to that o
 			savedTOCElements[i].style.fontSize = (parseInt(level)+1)+'px';
 		}
 	} 
-
-/* 	if (level > 16)  {
-		if (level <= 24) {
-			for (var i = 0; i < savedTOCElements.length; i++) { 
-				if (savedTOCElements[i].classList.contains('sub')) {
-					savedTOCElements[i].style.fontSize = (level-2)+'px';
-				} else if (savedTOCElements[i].classList.contains('subsub')) {
-					savedTOCElements[i].style.fontSize = (level-3)+'px';
-				} else {
-					savedTOCElements[i].style.fontSize = level+'px';
-				}
-			} 
-		} else {
-			for (var i = 0; i < savedTOCElements.length; i++) { 
-				
-				if (savedTOCElements[i].classList.contains('sub')) {
-					savedTOCElements[i].style.fontSize = '22px';
-				} else if (savedTOCElements[i].classList.contains('subsub')) {
-					savedTOCElements[i].style.fontSize = '21px';
-				} else {
-					savedTOCElements[i].style.fontSize = '24px';
-				}
-			}	
-		}			
-	} else {
-		for (var i = 0; i < savedTOCElements.length; i++) { 
-			if (savedTOCElements[i].classList.contains('sub')) {
-				savedTOCElements[i].style.fontSize = '14px';
-			} else if (savedTOCElements[i].classList.contains('subsub')) {
-				savedTOCElements[i].style.fontSize = '13px';
-			} else {
-				savedTOCElements[i].style.fontSize = '16px';
-			}
-		}
-	}	 */
-
 }
 function setDetailsLevel (level) {
 	for (var i = 0; i < savedDetailsElements.length; i++) {
@@ -1355,13 +1159,7 @@ function setDetailsLevel (level) {
 			}
 	}
 }	
-/*
-function setNotesLevel (level) {
-	for (var i = 0; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].style.fontSize = level+'px';
-	}
-}	
-*/
+
 // LINE SPACING
 function setLH (level) {
 	if (!isAudioBook()) {
@@ -1395,16 +1193,10 @@ function setTheme(){
 	var theBody = document.getElementById("thebody");
 	var bookPages = document.getElementById("thecontent"); 
 
-	//var theProgCont = document.getElementById("prog-cont"); 
-	//var theProgBar = document.getElementById("progressBar");
-
-	var theTocBtn = document.getElementById("tocBtn");	
-	var theTocBtn2 = document.getElementById("tocbtn2");
 	var theTocNav = document.getElementById("tocnav");
 
 	var imgs = document.querySelectorAll("img");
 	var righticons = document.querySelectorAll(".topnav-right > a > img ");
-	var righticonstext = document.querySelectorAll(".topnav-right > a > p");
 	var lefticons = document.querySelectorAll(".topnav-left > a > img");
 
 	var shbuttons = document.querySelectorAll(".settingsheadersright > button");
@@ -1431,28 +1223,14 @@ function setTheme(){
 			for( var i = 0; i < righticons.length; i++ ) {
 				righticons[i].style.filter="invert(0)";
 			}
-			for( var i = 0; i < righticonstext.length; i++ ) {
-				righticonstext[i].style.color = '#000';
-			}
-			
-			//lefticons[1].style.filter="invert(0)";
+	
 			lefticons[0].style.filter="invert(0) hue-rotate(0) saturate(1) brightness(1) contrast(1) grayscale(0) sepia(0) ";
 
 			theBody.style.background = '#f7f7f7';
-			bookPages.style.background = '#fff';
-			bookPages.style.color = '#000'; 
+			bookPages.style.backgroundImage = 'unset';
 
 			theTopBar.style.background = '#fff';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
-			//theProgCont.style.background = '#eee';
-			//theProgCont.style.filter = 'brightness(1)';
-
-			theTocBtn.style.color = '#000';
-			theTocBtn2.style.color = '#000';
-			theTocBtn2.style.background = '#fff';	
-
-			theTocNav.style.background = '#fff';
-			theTocNav.style.color = '#000';
 
 			theTocNav.classList.add('bright-scroll');
 			theTocNav.classList.add('bright-scroll-track');
@@ -1463,8 +1241,6 @@ function setTheme(){
 			theTocNav.classList.remove('mellow-scroll'); 
 			theTocNav.classList.remove('mellow-scroll-track');
 			theTocNav.classList.remove('mellow-scroll-thumb');
-
-			theTocNav.style.boxShadow = '6px 0 6px -3px #888';
 
 			document.getElementsByTagName('meta')["theme-color"].content = "#fff";
 
@@ -1511,10 +1287,6 @@ function setTheme(){
 				r.style.setProperty('--audiosliderhovercolor', '#c9d5fc');
 				var audiobookcover = document.getElementById("bookimage");
 				audiobookcover.style.filter = "grayscale(0) sepia(0)  opacity(1)";
-				var buttontext = document.querySelectorAll("#button-cont button");
-				for (var i = 0; i < buttontext.length; i++) {
-					buttontext[i].style.color = "#000";
-				}
 				var vd = document.getElementById('vol-down');
 				var vu = document.getElementById('vol-up');
 				vd.style.filter="invert(0)";
@@ -1530,11 +1302,13 @@ function setTheme(){
 				sni.style.filter="invert(0)";
 			}
 
-			r.style.setProperty('--TOCprogress', '#d6630f09');  //'#d6630f08'); '#f0f2fd80');
-			//r.style.setProperty('--TOChighlighter', '#00000000'); // '#00000037'); '#e3e7fdc0');
-			r.style.setProperty('--primarytextcolor', '#000');
-			r.style.setProperty('--secondarytextcolor', '#5a5a81');//'#577096');
+			r.style.setProperty('--TOCprogress', '#ffffcf28');//'#d6630f09');  //'#d6630f08'); '#f0f2fd80');
+			r.style.setProperty('--primarytextcolor', '#13036c');
+			r.style.setProperty('--secondarytextcolor', '#8f3e00'); //'#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
+
+			r.style.setProperty('--primaryinterfacecolor', '#000');
+			r.style.setProperty('--imgbackground', '#00000000');
 
 			r.style.setProperty('--pickedtext', '#1c222b');
 			r.style.setProperty('--buttontext', '#000');
@@ -1542,8 +1316,9 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#fc88320B');//'#c9d5fc');
 			r.style.setProperty('--primarycolor', '#217cbe');//'#06036ea0');
 			r.style.setProperty('--listlinkhover', '#217cbe1F');//'#d5dcfd60');
-			r.style.setProperty('--bdtexthighlighter', '#fc88320B');//'#e0f4fbb0');//'#eef0fb');
-			r.style.setProperty('--bdtexthighlightborder', '#fc8832C0');
+			r.style.setProperty('--bdtexthighlighter', '#ffffcf28');//'#fc88320B');//'#e0f4fbb0');//'#eef0fb');
+			r.style.setProperty('--bdtexthighlightborder', '#8f3e00');//'#fc8832C0');
+			r.style.setProperty('--sesamebackground', '#fffff8');
 
 			r.style.setProperty('--tablecaption', '#ffffff');
 			r.style.setProperty('--tablehead', '#eaeaea');
@@ -1555,6 +1330,10 @@ function setTheme(){
 
 			r.style.setProperty('--scsegmentnumbercolor', '#5a5a81');//'#a5670a');
 
+			r.style.setProperty('--sidenavboxshadow', '6px 0 3px -3px #BBB');
+
+			r.style.setProperty('--infoaddonbackground', '#80808008');
+
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
@@ -1564,43 +1343,30 @@ function setTheme(){
 
 		case "simpledark":
 			for( var i = 0; i < imgs.length; i++ ) {
-				imgs[i].style.filter="brightness(.8) contrast(1.2) grayscale(10%)";
+				imgs[i].style.filter="brightness(.8) contrast(1.2) grayscale(50%)";
 			}
 			for( var i = 0; i < righticons.length; i++ ) {
 				righticons[i].style.filter="invert(75%)";
 			}
-			for( var i = 0; i < righticonstext.length; i++ ) {
-				righticonstext[i].style.color = '#d7d7d7';
-			}
-			//lefticons[1].style.filter="invert(35%)";
+
 			lefticons[0].style.filter="invert(75%)";
 
 			theBody.style.background = '#000';
-			bookPages.style.background = '#121212';
-			bookPages.style.color = '#d7d7d7';
+			bookPages.style.backgroundImage = 'unset';
 
 			theTopBar.style.background = '#121212';
 			theTopBar.style.boxShadow = '0 1px 0 1px #595959';
-			//theProgCont.style.background = '#414141';
-			//theProgCont.style.filter = 'brightness(.8)';
 
-			theTocBtn.style.color = '#cfcfcf';
-			theTocBtn2.style.color = '#cfcfcf';
-			theTocBtn2.style.background = '#121212';	
-
-			theTocNav.style.background = '#121212';
-			theTocNav.style.color = '#cfcfcf';
 			theTocNav.classList.remove('mellow-scroll'); 
 			theTocNav.classList.remove('mellow-scroll-track');
 			theTocNav.classList.remove('mellow-scroll-thumb');
 			theTocNav.classList.remove('bright-scroll'); 
 			theTocNav.classList.remove('bright-scroll-track');
 			theTocNav.classList.remove('bright-scroll-thumb');
-			theTocNav.classList.add('dark-scroll'); // the test
-			theTocNav.classList.add('dark-scroll-track'); // the test
-			theTocNav.classList.add('dark-scroll-thumb'); // the test
-			theTocNav.style.boxShadow = '2px 0 2px 1px #595959';
-			
+			theTocNav.classList.add('dark-scroll'); 
+			theTocNav.classList.add('dark-scroll-track');
+			theTocNav.classList.add('dark-scroll-thumb');
+
 			document.getElementsByTagName('meta')["theme-color"].content = "#121212";
 
 			setModalTheme ("SimpleDark") 
@@ -1644,10 +1410,6 @@ function setTheme(){
 				r.style.setProperty('--audiosliderhovercolor', '#475f7a');
 				var audiobookcover = document.getElementById("bookimage");
 				audiobookcover.style.filter = "grayscale(0.7) sepia(0) opacity(0.5)";
-				var buttontext = document.querySelectorAll("#button-cont button");
-				for (var i = 0; i < buttontext.length; i++) {
-					buttontext[i].style.color = "#cfcfcf";
-				}
 				var vd = document.getElementById('vol-down');
 				var vu = document.getElementById('vol-up');
 				vd.style.filter="invert(0)";
@@ -1666,16 +1428,19 @@ function setTheme(){
 			r.style.setProperty('--secondarytextcolor', '#c4cdda');
 			r.style.setProperty('--primarybackground', '#121212');
 
+			r.style.setProperty('--primaryinterfacecolor', '#d7d7d7');
+			r.style.setProperty('--imgbackground', '#667b9e8f');
+
 			r.style.setProperty('--TOCprogress', '#475f7a');
-			//r.style.setProperty('--TOChighlighter', '#667b9ea0');
 			r.style.setProperty('--pickedtext', '#cfcfcf');
 			r.style.setProperty('--buttontext', '#cfcfcf');
 			r.style.setProperty('--buttonbackground', '#475f7a');
 			r.style.setProperty('--sliderbackground', '#475f7a');
 			r.style.setProperty('--primarycolor', '#667b9e');
 			r.style.setProperty('--listlinkhover', '#9db4ff40');
-			r.style.setProperty('--bdtexthighlighter', '#484c5ee0');
+			r.style.setProperty('--bdtexthighlighter', '#484c5e40');
 			r.style.setProperty('--bdtexthighlightborder', 'grey');
+			r.style.setProperty('--sesamebackground', '#000');
 
 			r.style.setProperty('--tablecaption', '#252525');
 			r.style.setProperty('--tablehead', '#363636');
@@ -1686,6 +1451,10 @@ function setTheme(){
 			r.style.setProperty('--figureimgborder', '#b9b9b9');
 
 			r.style.setProperty('--scsegmentnumbercolor', '#c4cdda');
+
+			r.style.setProperty('--sidenavboxshadow', '2px 0 2px 1px #595959');
+
+			r.style.setProperty('--infoaddonbackground', '#afafaf48');
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#7c7c7c';
@@ -1703,29 +1472,13 @@ function setTheme(){
 			for( var i = 0; i < righticons.length; i++ ) {
 				righticons[i].style.filter="invert(5%) sepia(94%) saturate(6660%) hue-rotate(231deg) brightness(108%) contrast(144%)";
 			}
-			for( var i = 0; i < righticonstext.length; i++ ) {
-				righticonstext[i].style.color = '#191892';
-			}
 
-			//lefticons[1].style.filter="invert(0)";
-			//lefticons[0].style.filter="invert(5%) sepia(94%) saturate(6660%) hue-rotate(231deg) brightness(108%) contrast(144%)";
-			
-			theBody.style.background = '#f1e8bb';
+			//theBody.style.background = '#f1e8bb';
+			theBody.style.background = '#f1e8bbb0';
 			bookPages.style.backgroundImage = 'url("../_resources/images/themes/paper1.jpg")';
-			bookPages.style.color = '#382500'; 
 
 			theTopBar.style.background = '#f5efd0';
 			theTopBar.style.boxShadow = '0 2px 6px 0 #777';
-			//theProgCont.style.background = '#ccc';
-			//theProgCont.style.filter = 'brightness(1)';
-
-			theTocBtn.style.color = '#00008b';
-
-			theTocBtn2.style.color = '#00008b';
-			theTocBtn2.style.background =  '#f5efd0';	
-	
-			theTocNav.style.background = '#f5efd0';
-			theTocNav.style.color = '#382500'; //'#5e4102';
 
 			theTocNav.classList.remove('bright-scroll');
 			theTocNav.classList.remove('bright-scroll-track');
@@ -1736,7 +1489,6 @@ function setTheme(){
 			theTocNav.classList.add('mellow-scroll'); 
 			theTocNav.classList.add('mellow-scroll-track');
 			theTocNav.classList.add('mellow-scroll-thumb');
-			theTocNav.style.boxShadow = '6px 0 6px -3px #888';
 
 			document.getElementsByTagName('meta')["theme-color"].content = "#f5efd0";
 
@@ -1771,11 +1523,6 @@ function setTheme(){
 				searchbuttons[i].style.color = "#00008b";
 			}			
 
-			/*
-			for( var i = 0; i < tables.length; i++ ) {
-				tables[i].style.filter = "sepia(55%) contrast(95%)";
-			}	
-*/
 
 			if (isAudioBook ()) {
 				r.style.setProperty('--audioplayercont', 'unset');
@@ -1788,10 +1535,6 @@ function setTheme(){
 				r.style.setProperty('--audiosliderhovercolor', '#d3aa52');
 				var audiobookcover = document.getElementById("bookimage");
 				audiobookcover.style.filter = "grayscale(0) sepia(60%) opacity(0.8)";
-				var buttontext = document.querySelectorAll("#button-cont button");
-				for (var i = 0; i < buttontext.length; i++) {
-					buttontext[i].style.color = "#382500";
-				}
 				var vd = document.getElementById('vol-down');
 				var vu = document.getElementById('vol-up');
 				vd.style.filter="invert(100%)";
@@ -1807,10 +1550,12 @@ function setTheme(){
 			}
 
 			r.style.setProperty('--TOCprogress', '#eadbbf');
-			//r.style.setProperty('--TOChighlighter', '#eadbbf');
 			r.style.setProperty('--primarytextcolor', '#382500');
 			r.style.setProperty('--secondarytextcolor', '#5c0909');
 			r.style.setProperty('--primarybackground', '#f8f4da');
+
+			r.style.setProperty('--primaryinterfacecolor', '#00008b');
+			r.style.setProperty('--imgbackground', '#00000000');
 
 			r.style.setProperty('--pickedtext', '#5c0909');
 			r.style.setProperty('--buttontext', '#382500');
@@ -1818,8 +1563,10 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#ecd38d');
 			r.style.setProperty('--primarycolor', '#cea140');
 			r.style.setProperty('--listlinkhover', '#cea14030');
-			r.style.setProperty('--bdtexthighlighter', '#fa80720F');// '#fffff6ef'); 
-			r.style.setProperty('--bdtexthighlightborder', '#fa8072C0');
+			r.style.setProperty('--bdtexthighlighter', '#fa807210'); 
+			r.style.setProperty('--bdtexthighlightborder', '#ddc9a2');
+			r.style.setProperty('--sesamebackground', '#ffffff30');
+/* 			r.style.setProperty('--sesamebackground', '#fffddd'); */
 
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');
@@ -1830,6 +1577,11 @@ function setTheme(){
 			r.style.setProperty('--figureimgborder', '#b88b7b');
 
 			r.style.setProperty('--scsegmentnumbercolor', '#5c0909');
+
+			r.style.setProperty('--sidenavboxshadow', '3px 0 6px -3px #888');
+
+			r.style.setProperty('--infoaddonbackground', '#cea1400a');
+
 
 			var engrave = document.getElementById('TOCTarget0');
 			engrave.style.color ='#bdbdbd';
@@ -1851,6 +1603,9 @@ function doSetMargin () {
 	restorePlaceInBook();
 }	
 
+
+
+
 function setMargin() {
 	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
 	var thebook = document.getElementById("thebook");
@@ -1860,26 +1615,19 @@ function setMargin() {
 			thebook.style.paddingLeft = '2%';
 			thebook.style.paddingRight = '2%';
 			marginName = "narrowmargin";
-			root.style.setProperty('--selfquoteleftmargin', '-2.2em');
-			root.style.setProperty('--selfquotetopmargin', '-1em');
 			break;
 		case "midmargin":
 			thebook.style.paddingLeft = '10%';
 			thebook.style.paddingRight = '10%';
 			marginName = "midmargin";
-			root.style.setProperty('--selfquoteleftmargin', '-5em');
-			root.style.setProperty('--selfquotetopmargin', '1em');
 			break;
 		case "widemargin":
 			thebook.style.paddingLeft = '20%';
 			thebook.style.paddingRight = '20%';
 			marginName = "widemargin";
-			root.style.setProperty('--selfquoteleftmargin', '-5em');
-			root.style.setProperty('--selfquotetopmargin', '1em');
 		}
-		
+ 	setSelfquoteMargins();	
 }
-
 
 function doSetSerif () {
 	setSerif();
@@ -2002,12 +1750,8 @@ function scrollToID (id) {
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
 	var elmnt = document.getElementById(id);
-	let noteElmnt = '';
-	if (elmnt.parentElement.classList.contains('booknote')){
-		noteElmnt = elmnt.parentElement;
-	} else if (elmnt.parentElement.parentElement.classList.contains('booknote')) {
-		noteElmnt = elmnt.parentElement.parentElement;
-	}
+	let noteElmnt = elmnt.closest('.booknote');
+
 	if (noteElmnt) {
 		setModalStyle ("Notes");
 		showModal("Notes");
@@ -2116,14 +1860,8 @@ window.onscroll = function() {
 			}
 		}
 	}
- 	
-
-
 
 	prevScrollpos = currentScrollPos;
-//savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
-
-
 
 	//populate progress bar
 	fillProgressBar();
@@ -2133,9 +1871,25 @@ window.onscroll = function() {
 	//savePlaceInBook();
 }
 
+function setSelfquoteMargins () {
+	var root = document.querySelector(':root');
+	if ( document.querySelector('input[name="marginRadio"]:checked').value == "narrowmargin") {
+		root.style.setProperty('--selfquoteleftmargin', '-1em');
+		root.style.setProperty('--selfquotetopmargin', '-1em');
+	} else {
+		if (window.innerWidth > 666) {
+			root.style.setProperty('--selfquoteleftmargin', '-5em');
+			root.style.setProperty('--selfquotetopmargin', '0');
+		} else {
+			root.style.setProperty('--selfquoteleftmargin', '-3.5em');
+			root.style.setProperty('--selfquotetopmargin', '0');	
+		}
+	}
+}
 
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
+	setSelfquoteMargins();
 });
 
 var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");
@@ -2157,6 +1911,7 @@ function fillProgressBar() {
 			savedTOCElements[i].style.background = 'unset';
 			savedTOCElements[i].style.opacity = '1';
 			savedTOCElements[i].style.border = "none";
+			savedTOCElements[i].style.color = "var(--primarytextcolor)";
 			savedTOCElements[i].setAttribute('data-progress', '');
 		}
 		for (var i = 0; i < savedTOCElements.length; i++) {
@@ -2166,9 +1921,9 @@ function fillProgressBar() {
 
 			} else {
 				savedTOCElements[i-1].style.opacity = '1';
-				savedTOCElements[i-1].style.borderTop = "thin dotted var(--primarycolor)";//#d6630f8F";
-				savedTOCElements[i-1].style.borderBottom = "thin dotted var(--primarycolor)";
-				//savedTOCElements[i-1].scrollIntoView({block: 'center', behavior: 'auto',});
+				savedTOCElements[i-1].style.borderTop = "thin dotted var(--secondarycolor)";//#d6630f8F";
+				savedTOCElements[i-1].style.borderBottom = "thin dotted var(--secondarycolor)";
+				savedTOCElements[i-1].style.color = "var(--secondarytextcolor)";
 				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 				var scrolled = Math.floor(((winScroll / height) * 100)* 10) /10;
@@ -2495,7 +2250,7 @@ function setModalStyle (heading) {
 			modalbody.style.maxHeight = "65vh";
 			modalbody.style.padding = "0";
 			modalcontent.style.width = "95%";
-			modalcontent.style.maxWidth = "55em";
+			modalcontent.style.maxWidth = "65em";
 			modalcontent.style.position ="relative";
 			modalcontent.style.right = "0";
 			modalcontent.style.top = "0";
@@ -2506,7 +2261,7 @@ function setModalStyle (heading) {
 			modalbody.style.maxHeight = "85vh";
 			modalbody.style.padding = "0";
 			modalcontent.style.width = "95%";
-			modalcontent.style.maxWidth = "55em";
+			modalcontent.style.maxWidth = "65em";
 			modalcontent.style.position ="relative";
 			modalcontent.style.right = "0";
 			modalcontent.style.top = "0";
@@ -2517,7 +2272,7 @@ function setModalStyle (heading) {
 			modalbody.style.maxHeight = "85vh";
 			modalbody.style.padding = "0";
 			modalcontent.style.width = "95%";
-			modalcontent.style.maxWidth = "55em";
+			modalcontent.style.maxWidth = "65em";
 			modalcontent.style.position ="relative";
 			modalcontent.style.right = "0";
 			modalcontent.style.top = "0";
@@ -2631,19 +2386,6 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		}	
 	}
 
-	if (e.target.classList.contains ('expander')) {
-		var fullReference = getFullReference(e.target.dataset.reference);
-		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⊕';
-			e.target.classList.remove('expanded');
-
-		} else {
-			e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
-			e.target.classList.add('expanded');
-
-		}
-	}
-
 	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
 		let linkNode = e.target;
 		if (e.target.classList.contains('scsegments')) {
@@ -2669,25 +2411,24 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	if (e.target.classList.contains('bookSegment')){
 		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
 		goToTarget(bookSeg);
-
-		console.log('from book');
 		savedsup = document.getElementById(bookSeg);
 		clearhighlightnote();
+	}
+	
+	if (e.target.classList.contains('manualLink')) {
+		var whereTo = e.target.getAttribute('data-target').substring(1);
+		goToTarget(whereTo);
+	}
 
-
-/* 
-		if (mark_paragraph) {
-			// then flash the segment that has been scrolled too
-			anchorlink = document.getElementById(bookSeg);
-			anchorlink.classList.add('bookSegmentTarget');
-			setTimeout(function() {
-				anchorlink.classList.remove('bookSegmentTarget');
-			}, 2000);
-		} */
+	if (e.target.classList.contains('sesame')) {
+		showSpinner();
+		toggleSesame (e.target)
+	} else if (e.target.parentNode.classList.contains('sesame')) {
+		showSpinner();
+		toggleSesame (e.target.parentNode)
 	}
 
 });
-
 
 
 document.getElementById("ModalDetails").addEventListener("click", function(e) {
@@ -2724,7 +2465,7 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 		scrollToID(gotoID);
 	}
 
-	if (e.target.classList.contains ('expander')) {
+/* 	if (e.target.classList.contains ('expander')) {
 		if (e.target.classList.contains('expanded')) {
 			e.target.innerHTML = '⊕';
 			e.target.classList.remove('expanded');
@@ -2732,7 +2473,7 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 			e.target.innerHTML = '⊗ '; 
 			e.target.classList.add('expanded');
 		}
-	}
+	} */
 
 });
 
@@ -2754,32 +2495,36 @@ function formatbooknotes() { // adds the notes numbers to the booknotes - called
 var highlightedNote = 0;
 function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
-	savedNotesElements[highlightedNote].style.border = "thin solid var(--bdtexthighlightborder)"; //#229635";
-	savedNotesElements[highlightedNote].style.background = "var(--bdtexthighlighter)"; //"#22963506"; //"#c0c0c020";
-	savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
-	ModalBody.scrollBy(0,-40);
+//	savedNotesElements[highlightedNote].style.border = "thin solid var(--bdtexthighlightborder)"
+	savedNotesElements[highlightedNote].style.boxShadow = "2px 2px 5px 0px var(--bdtexthighlightborder)"
+	savedNotesElements[highlightedNote].style.background = "var(--bdtexthighlighter)"
+	savedNotesElements[highlightedNote].scrollIntoView({block: "start", inline: "nearest", behavior: "auto"});
 }
 
 
-function clearhighlightnote(when='delay') {
-	savedNotesElements[highlightedNote].style.border = "unset";
+function clearhighlightnote(when='delay', keepSup= false) {
+	savedNotesElements[highlightedNote].style.boxShadow = "unset"
+//	savedNotesElements[highlightedNote].style.border = "unset";
 	savedNotesElements[highlightedNote].style.background = "unset";
 		if (!(savedsup === '')) {
 			if (savedsup.tagName == 'TABLE')  {
-				savedsup.parentElement.style.boxShadow = " 0px -22px 77px -5px var(--notehighlighter)"
+				savedsup.parentElement.style.boxShadow = "0px -22px 77px -5px var(--notehighlighter)"
 			} else if (savedsup.tagName == 'FIGURE') {
 				savedsup.style.boxShadow = " 0px -22px 77px -5px var(--notehighlighter)"
 				savedsup.style.background = "var(--notehighlighter)"
 				savedsup.style.opacity = "0.5"
 			} else {
 				savedsup.style.background = "var(--notehighlighter)" //"var(--secondarytextcolor)"
-				savedsup.style.boxShadow = " 0px 0px 10px 10px var(--notehighlighter)"
+				savedsup.style.boxShadow = "0px 0px 10px 10px var(--notehighlighter)"
 				savedsup.style.opacity = "0.7"
-				savedsup.style.color = "blue"
+				savedsup.style.color = "crimson"
 			}
 			if (when=='immediate') {
 				savedsup.style = null;
-				savedsup='';
+				if (!keepSup) {
+					savedsup='';
+				}
+
 			} else {
 				setTimeout(function() {
 					savedsup.style.transition = "all 0.3s ease-out";
@@ -2787,10 +2532,13 @@ function clearhighlightnote(when='delay') {
 				}, 300); 
 				setTimeout(function() {
 					savedsup.style = null;
+					//console.log (savedsup.parentElement)
 					if (savedsup.parentElement.classList.contains('tablewrap')) {
 						savedsup.parentElement.style = null;
 					}
-					savedsup='';
+					if (!keepSup) {
+						savedsup='';
+					}
 				},400);
 			}
 		}
@@ -2806,11 +2554,14 @@ function clearAnyNoteInNoteReturn () {
 }
 
 function exitStaticModal () {
+	let modalHeaderText = document.getElementById('ModalHeaderText').innerText
+	if (modalHeaderText == 'NOTES') {
+		clearAnyNoteInNoteReturn();
+	}
 	if (calledFromNotes) {
 		setModalStyle ("Notes");
 		showModal("Notes");
 		savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
-		ModalBody.scrollBy(0,-40);
 		calledFromNotes = false;
 	} else {
 		startBookScroll();
@@ -2818,7 +2569,6 @@ function exitStaticModal () {
 		hideElement(modal);
 		hideElement(modalcontent);
 	}
-	clearAnyNoteInNoteReturn();
 }
 
 
@@ -2911,7 +2661,7 @@ function isElementPartiallyInViewport(el)
     var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
     var vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
     var horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
-    return (vertInView && horInViexpanderew);
+    return (vertInView && horInView);
 }
 
 
@@ -2938,10 +2688,11 @@ function getFullReference (shortReference = '') {
 			}
 		}
 	}
+
 	if (fullHTML) {
 		return fullHTML
 	} else {
-		return 'reference not found';
+		return 'Error: Bibliography reference not found';
 	}
 	
 }
@@ -2968,8 +2719,10 @@ function decodeBookSegment (anchortext) {
 	} else if (anchortext.substring(0,6).toLowerCase() == 'figure') {
 		let figNum = anchortext.toLowerCase().replace(/\s/g,'').replace('figure', '')
 		str = `fig${figNum}`
-	} else
-	{
+	} else if (anchortext.substring(0,7).toLowerCase() == 'segment') {
+		let segNum = anchortext.toLowerCase().replace(/\s/g,'').replace('segment', '')
+		str = `seg-${segNum}`
+	} else	{
 		str = anchortext.toLowerCase().replace(/\s/g,'').replace(',','').replace ('chapter', 'c' ).replace ('paragraph', 'p')
 		if ( str.search('p') == -1 ) {
 			str = `TOCTarget${str.substring(1)}`
@@ -2978,29 +2731,9 @@ function decodeBookSegment (anchortext) {
 		}
 	}
 	return [str, unmarked_paragraph]
-
 }
 
 document.getElementById("ModalNotes").addEventListener("click", function(e) {
-	if (e.target.classList.contains ('expander')) {
-		if (e.target.classList.contains('externalquote')){
-			buildExternalQuote (e.target)
-		} else {
-			var fullReference = getFullReference(e.target.dataset.reference);
-			if (e.target.classList.contains('expanded')) {
-				e.target.innerHTML = '⊕';
-				e.target.classList.remove('expanded');
-				if (e.target.dataset.quote) {
-					e.target.classList.add('externalquote');
-				}
-			} else {
-				e.target.innerHTML = '⊗ ' + '<span class="expansion">' + fullReference + '</span>';
-				e.target.classList.add('expanded');
-			}
-		}
-	}
-
-
 	if (e.target.classList.contains ('TOCref')) {
 		var toctarget = e.target.getAttribute("data-TOCref");
 		closebtn.click();
@@ -3037,40 +2770,41 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		savedsup = document.getElementById(bookSeg);
 		goToTarget(bookSeg);
 		clearhighlightnote();
-
-		/* 		if (mark_paragraph) {
-			// then flash the segment that has been scrolled too
-			anchorlink = document.getElementById(bookSeg);
-			anchorlink.classList.add('bookSegmentTarget');
-			setTimeout(function() {
-				anchorlink.classList.remove('bookSegmentTarget');
-			}, 2000);
-		} */
-
 	}
 
-
+	if (e.target.classList.contains('manualLink')) {
+		var whereTo = e.target.getAttribute('data-target').substring(1);
+		closebtn.click();
+		clearhighlightnote('immediate');
+		savedsup = document.getElementById(whereTo);
+		goToTarget(whereTo);
+		//clearhighlightnote();
+	}
 
 	if (e.target.classList.contains('noteinnotes')) {
 		//let notesArr = document.getElementsByClassName('booknote')
-		noteNumber = e.target.innerText
-		noteFromNumber = e.target.parentNode.parentNode.dataset.note;
-
+		let noteNumber = e.target.innerText
+		let noteFromNumber = '';
+		if (e.target.parentNode.parentNode.hasAttribute("data-note") ) {
+			noteFromNumber = e.target.parentNode.parentNode.dataset.note;
+		} else if (e.target.parentNode.parentNode.parentNode.hasAttribute("data-note") ) {
+			noteFromNumber = e.target.parentNode.parentNode.parentNode.dataset.note;
+		}
+		clearAnyNoteInNoteReturn();
 		let scrollToE = document.querySelectorAll(`[data-note="${noteNumber}"]`);
 		scrollToE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
-
+		clearhighlightnote(noteFromNumber, 'immediate', true);
+		highlightnote(noteNumber);
 		// create a return btn(span)
 		const backbtn = document.createElement("span");
 		backbtn.classList.add('noteinnotereturn')
-		const backbtnText = document.createTextNode(`Return to note ${noteFromNumber}`);
+		const backbtnText = document.createTextNode(` [Return to note ${noteFromNumber}]`);
 		backbtn.appendChild(backbtnText)
 		backbtn.addEventListener('click', (event) => {
-			let scrollToCallingE = document.querySelectorAll(`[data-note="${noteFromNumber}"]`);
-			scrollToCallingE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
-			//remove return btn(span) after clickand scroll back
+			clearhighlightnote(noteNumber,'immediate', true);
+			highlightnote(noteFromNumber);
 			event.target.remove();
 		  });
-		
 		scrollToE[0].lastChild.appendChild(backbtn)
 	}
 
@@ -3086,8 +2820,123 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		if (true) {e.preventDefault();}
 	}
 
-
+	if (e.target.classList.contains('sesame')) {
+		showSpinner();
+		toggleSesame (e.target)
+	} else if (e.target.parentNode.classList.contains('sesame')) {
+		showSpinner()
+		toggleSesame (e.target.parentNode)
+	}
 });
+
+function toggleSesame (el) {
+	let shortCode = shortcode();
+	if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame') || el.nextElementSibling.classList.contains('opensesameref'))) {
+		el.nextElementSibling.remove();
+		el.classList.remove('closebutton');
+		hideSpinner()
+	} else {
+		function openSesame (sesameData) {
+			let bibsesame = el.innerText;
+			for (let i in sesameData) {
+				if (sesameData[i].sesame == el.innerText) {
+
+					if (sesameData[i].type == `externalQuote`) {
+
+						let bibReference = ''
+						if (sesameData[i].biblio) {
+							bibReference = `<div style='text-align:left'><hr style='width:50%; margin:1em auto;'><span style='font-variant:small-caps'>Bibliography Entry: </span>${getFullReference(sesameData[i].biblio)}`
+						}
+
+						let fetchPath = `../_resources/external-quotes/${sesameData[i].directory}/${sesameData[i].file}.json`
+						function populateQuote(quoteData) {
+							let subSectionSpacer = ''
+							if (quoteData.SubSection) {
+								subSectionSpacer = '<br>'
+							}
+							let linkHTML = ''
+							if (sesameData[i].directory == 'wiki-entry') {
+								linkHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameData[i].file}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span><br>`
+							} else {
+								let [directory,subdirectory] = sesameData[i].directory.split('/')
+								if (directory == 'sujato-nikaya-notes') {
+									linkHTML = `<br><span class='extlink'><a alt='SuttaCentral Guide' href = 'https://suttacentral.net/${subdirectory}'>source: <img class='icon' src='../_resources/images/icons/sc-icon.png'>SuttaCentral</a></span>`
+								}
+							}
+							let author = ''
+							if (quoteData.Author) {
+								author = `by ${quoteData.Author}`
+							}
+							let quoteHTML = ''
+							quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}${linkHTML}</h3>`
+							quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
+							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}${bibReference}</div>`);
+							el.classList.add('closebutton')
+
+						}
+						fetch(fetchPath)
+							.then(response => response.json())
+							.then (data => populateQuote(data))
+							.catch(error => {
+								console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+							}
+						);
+					} else 
+					if ((sesameData[i].type == 'suttaplex') || (sesameData[i].type == 'sutta')) {
+						let strippedSCRef = sesameData[i].file.replace(/\s+/g, '').toLowerCase()
+						let scRefHTML = ''
+						if (sesameData[i].type == 'sutta') {
+							scRefHTML = `<span class="sclinktext">${(sesameData[i].file)}</span>`
+						} else {
+ 							scRefHTML = `<a class="extlink" href="https://suttacentral.net/${(sesameData[i].file)}"><br>source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`;
+ 						}
+
+						function doSCAPI(scData) {
+							el.insertAdjacentHTML("afterend", `<div class=opensesame><h3>${scData[0].translated_title} (${scData[0].original_title}) ${scRefHTML}</h3>${scData[0].blurb}</div>`);
+							el.classList.add('closebutton')
+						}
+						fetch(`https://suttacentral.net/api/suttaplex/${strippedSCRef}`)
+						.then(response => response.json())
+						.then (data => doSCAPI(data))
+						.catch(error => {
+							console.log(`${error}ERROR: Can't fetch https://suttacentral.net/api/suttaplex/${strippedSCRef}`);
+						});		
+						
+					}  else
+					if (el.classList.contains('ref')) {
+						if (el.innerText == sesameData[i].sesame) {
+							bibsesame = sesameData[i].biblio
+						}
+					} 
+				}
+			}
+			if (el.classList.contains('ref')) {
+				let bibReference = `${getFullReference(bibsesame)}`
+				el.insertAdjacentHTML("afterend", `<span class=opensesameref>${bibReference}</span>`);
+				el.classList.add('closebutton')
+			}
+		}
+
+		if (el.classList.contains('ref')) {
+			fetch(`../_resources/book-data/${shortCode}/sesameref.json`)
+			.then(response => response.json())
+			.then (data => openSesame(data))
+			.then (() => hideSpinner())
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesameref.json`);
+			});
+		} else {
+			fetch(`../_resources/book-data/${shortCode}/sesame.json`)
+			.then(response => response.json())
+			.then (data => openSesame(data))
+			.then (() => hideSpinner())
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesame.json`);
+			});
+		}
+	}
+}
+
 
 function displaySutta (linkText) {
 	setModalStyle('Sutta');
@@ -3095,7 +2944,14 @@ function displaySutta (linkText) {
 	modalbody.scrollTop = 0;
 	stopBookScroll ();
 	showBD(linkText);
-	document.getElementById('ModalHeaderText').innerHTML = linkText;
+	let [slug, verses] = linkText.split(":");
+	if (!verses) {
+		verses = ''
+	} else {
+		verses = `<span style='font-size:smaller; font-weight:300'>:${verses}</span>`
+	}
+	document.getElementById('ModalHeaderText').innerHTML = `${slug}${verses}`;
+//	document.getElementById('ModalHeaderText').innerHTML = linkText;
 }
 
 
@@ -3115,50 +2971,69 @@ function displaySelfquote (linktext) {
 	modalbody.scrollTop = 0;
 	stopBookScroll ();
 	let selfquoteArea = document.getElementById("selfquotearea");
+
 	let buildHTML = '';
+
 	if (linktext.substring(0,1) == '§') {
-		let selfquoteArr = document.getElementsByClassName("selfquote");
-		buildHTML = `<div style="font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
-		for (i = 0; i < selfquoteArr.length; i++) {
-			if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
-				buildHTML += selfquoteArr[i].innerHTML.replaceAll(/ style=""/g, "").replaceAll(/<sup>[0-9]+<\/sup>/g, "").replaceAll(/<span class="goselfquote">(§[0-9]+)<\/span>/g, '$1' )
-				document.getElementById('ModalHeaderText').innerHTML = `QUOTED SECTION: ${linktext}`;
+		let SQHeaderArray = [];
+		let shortCode = shortcode();
+
+		function buildText (headerData) {
+			SQHeaderArray = headerData;
+			buildHTML += `<div style="margin-top: 0; font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
+			let selfquoteArr = document.getElementsByClassName("selfquote");
+			for (i = 0; i < selfquoteArr.length; i++) {
+				if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
+					let modalHeader = 'Section'
+					let supHTML = '';
+					
+					for (let j=0; j<SQHeaderArray.length; j++) {
+						if (linktext.slice(1) == SQHeaderArray[j].section) {
+							buildHTML += `<h4>${SQHeaderArray[j].modalHead}`
+							buildHTML += `<br>${SQHeaderArray[j].bodyHead}`
+							modalHeader = SQHeaderArray[j].modalHead
+							supHTML = SQHeaderArray[j].supHTML
+						}
+					}
+	
+					let bookNoteNumber = selfquoteArr[i].innerHTML.substring(selfquoteArr[i].innerHTML.lastIndexOf('<sup>')+5,selfquoteArr[i].innerHTML.lastIndexOf('</sup>'))
+					if (supHTML != '' ) {
+						buildHTML += `<br>${supHTML}</h4>`
+					} else {
+						let allBookNotes = document.getElementsByClassName("booknotesNumber");
+						for (let k=0; k < allBookNotes.length; k++) {
+							if (allBookNotes[k].innerText == bookNoteNumber) {
+								buildHTML += `<br>${allBookNotes[k].nextElementSibling.innerHTML}</h4>`
+							}
+						}
+					}
+	
+					buildHTML += selfquoteArr[i].innerHTML.replaceAll(/ style=""/g, "").replaceAll(/<sup>[0-9]+<\/sup>/g, "").replaceAll(/<span class="goselfquote">(§[0-9]+)<\/span>/g, '$1' )
+	
+					document.getElementById('ModalHeaderText').innerHTML = `${linktext}`;
+				}
 			}
-			
+			selfquoteArea.innerHTML = buildHTML;
 		}
+
+		fetch(`../_resources/book-data/${shortCode}/selfquoteHeaders.json`)
+			.then(response => response.json())
+			.then (data => buildText(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/selfquoteHeaders.json`);
+			}
+		);
+
+
 	} else { // it's (currently) a Figure
-		//console.log(linktext)
 		let figureID = linktext.replace(/&nbsp;/, '').replace(' ','').toLowerCase().replace('ure', '')
 		buildHTML = `<div style="text-align: center">`
 		buildHTML += document.getElementById(figureID).innerHTML
 		buildHTML += `</div>`
 		document.getElementById('ModalHeaderText').innerHTML = `Figure ${figureID.slice(3)}`;
+		selfquoteArea.innerHTML = buildHTML;
 	}
-	selfquoteArea.innerHTML = buildHTML;
-}
-
-function buildExternalQuote (ele) {
-	if (ele.innerText == '⊕'){
-		let [externalResource,quoteFile] = ele.dataset.quote.split(':')
-		let html =``;
-		function populateQuote(quoteData) {
-			ele.classList.add('expanded');
-			ele.classList.remove('externalquote')
-			html += `⊗ <div class='expansion' style='font-size:0.9em; margin: 0.5em 0;  padding:0.5em 1em;'>`
-			html += `<h3>${quoteData.Document}<br>${quoteData.Section}, ${quoteData.SubSection}<br>${quoteData.Title}<br>&mdash; ${quoteData.Author}</h3>`
-			html += quoteData.Quote
-			html += `</div>`
-			ele.innerHTML = html
-		}
-		fetch(`../_resources/${externalResource}/${quoteFile}.json`)
-			.then(response => response.json())
-			.then (data => populateQuote(data))
-			.catch(error => {
-				console.log(`${error}ERROR: Can't fetch ../_resources/${externalResource}/${quoteFile}.json`);
-			}
-
-		);
-	}
+	
 }
 
 

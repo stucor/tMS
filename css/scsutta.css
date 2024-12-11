@@ -52,7 +52,10 @@ li span.pli-lang {
 
 h1 span.pli-lang .segno,
 h2 span.pli-lang .segno, 
-h3 span.pli-lang .segno {
+h3 span.pli-lang .segno,
+h4 span.pli-lang .segno,
+h5 span.pli-lang .segno,
+li span.pli-lang .segno {
     display:none;
 }
   
@@ -64,13 +67,14 @@ h3 span.pli-lang .segno {
 
 .button-area {
   position:absolute;
-  top: -35px;
-  left:0;
+  top: -30px;
+  left:-1px;
   width:calc(100%);
   background: var(--primarybackground);
   border-radius: 5px 5px 0 0;
   border: 1px solid darkgrey;
   font-family: 'Source Sans Pro';
+  line-height: 24px;
 }
 
 .button-area > button {
@@ -139,6 +143,7 @@ h3 span.pli-lang .segno {
 #sutta.hide-pali h2 span.pli-lang,
 #sutta.hide-pali h3 span.pli-lang,
 #sutta.hide-pali h4 span.pli-lang,
+#sutta.hide-pali h5 span.pli-lang,
 #sutta.hide-pali li span.pli-lang {
   display: none !important;
 }
@@ -149,6 +154,7 @@ h3 span.pli-lang .segno {
   padding: 20px 5%;
   font-size: var(--fontsize);
   font-family: var(--fontfamily);
+  line-height: var(--lineheight);
 }
 
 #sutta h1 {
@@ -199,17 +205,28 @@ header li .segno {
   display:none;
 }
 
+header h4 {
+  font-weight: 500;
+}
+
 .sclinktext, .sclinkref {
+  word-spacing: -0.1em;
+  display: flexbox;
   color: cornflowerblue;
   text-decoration: none;
   cursor: pointer;
-  outline: double 0 var(--notehighlighter); 
   border-radius: 1em;
 	padding: 0 3px;
 	margin: 0 -3px;
+
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
 }
 
+.booknotesText .scsegments {
+  white-space: wrap;
+}
 
 
 /*
@@ -230,18 +247,31 @@ header li .segno {
   padding-top: 0;
 }
 
+p:has(> .sc-mark), p:has(> span.verse-line > .sc-mark) {
+  background-color: var(--bdtexthighlighter);
+  box-shadow: 1px 1px 3px 1px var(--bdtexthighlightborder);
+  padding: 0.5em;
+  border-radius: 1em;
+}
+/* 
+p:has(> span.verse-line > .sc-mark) {
+  background-color: var(--bdtexthighlighter);
+  box-shadow: 1px 1px 3px 1px var(--bdtexthighlightborder);
+  border-radius: 1em;
+  padding: 0.5em;
+} */
 
 .sc-mark {
-  background-color: var(--bdtexthighlighter);
-  border-bottom: solid var(--bdtexthighlightborder) thin;
+/*   background-color: var(--bdtexthighlighter); */
+  border-bottom: dotted var(--bdtexthighlightborder) 1px;
 }
 
-/*
+
 .sc-mark::after {
   content:' ';
-  background-color: var(--bdtexthighlighter);
+  border-bottom: dotted var(--bdtexthighlightborder) 1px;
 }
-*/
+
 
 .segno {
   font-size: 0.7em;
@@ -274,11 +304,11 @@ header li .segno {
   .button-area > button:hover {
     box-shadow: 0 0 1px 1px var(--primarycolor);
   }
-
+/* 
   .sclinktext:hover {
 		box-shadow: 0 0 5px 1px var(--primarycolor);
 	}
-
+ */
 	.checkcontainer:hover input ~ .checkmark {
 		box-shadow: 0 0 2px 1px var(--primarycolor);
 	  }
@@ -289,9 +319,6 @@ header li .segno {
     margin: 30px 0;
     padding: 20px 1%;
   }
-
-
-
 
   .button-area > span.sc-link {
     left: 0;

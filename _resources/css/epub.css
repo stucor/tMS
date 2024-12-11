@@ -1,0 +1,152 @@
+ @font-face {
+	font-family: Heuristica;
+	font-style: normal;
+	font-weight: normal;
+	src:url("../fonts/Heuristica-Regular.otf");
+ }
+ @font-face {
+	font-family: Heuristica;
+	font-style: normal;
+	font-weight: bold;
+	src:url("../fonts/Heuristica-Bold.otf");
+ }
+ @font-face {
+	font-family: Heuristica;
+	font-style: italic;
+	font-weight: normal;
+	src:url("../fonts/Heuristica-Italic.otf");
+ }
+ @font-face {
+	font-family: Heuristica;
+	font-style: italic;
+	font-weight: bold;
+	src:url("../fonts/Heuristica-BoldItalic.otf");
+ } 
+body {
+	font-family: 'Heuristica';
+}
+
+.noshow {
+	display: none;
+}
+
+.noitalics {
+	font-style: normal;
+}
+
+.copyright > p {
+	font-size: smaller;
+}
+
+.cclicense {
+	font-size: smaller;
+}
+
+#ccDetail > ul > li {
+	margin-bottom: 1em;
+}
+
+.logo-block {
+	margin-top: 3em;
+}
+.logo {
+	margin: 1em 45% 0.5em 45%;
+	max-width: 10%;
+}
+.logo > img {
+	margin: 0;
+	width:100%;
+}
+.logo-text {
+	font-size: small;
+	margin-bottom: 5em;
+	text-align: center;
+}
+
+.titlepage.title {
+	margin-top: 3em;
+	margin-bottom: 0.2em;
+	text-align: center;
+	font-size: 2.5em;
+}
+
+.titlepage.subtitle {
+	margin-bottom: 1.5em;
+	text-align: center;
+	font-size: 1.2em
+}
+.titlepage.author {
+	margin-bottom: 3em;
+	text-align: center;
+	font-variant: small-caps;
+	font-size: 1em
+}
+
+.TitlePageHide {
+	margin:0; font-size: 1em; color: rgba(255, 255, 255, 0);
+}
+
+#TOC > ul  {
+	list-style-type: none;
+	margin-top: 0;
+}
+
+
+h1 {
+	text-align: center;
+	font-weight: 400;
+	font-size: 2.5em;
+	padding-top: 2em;
+	padding-bottom: 1em;
+}
+
+.quote {
+	text-align: center;
+}
+
+.cite {
+	text-align: center;
+	font-size: smaller;
+	margin-top:0.5em;
+}
+
+.citeBQ {
+	text-align: right;
+	font-size: smaller;
+	margin-top:0.5em;
+	margin-right: 2em;
+}
+
+.chapnum {
+  font-variant:small-caps;
+  font-size: 0.5em;
+}
+
+.footnote-ref {
+  text-decoration: none;
+}  
+  
+.footnotes > div {
+  margin-bottom : 1em;
+}
+
+.footnote-back {
+	text-decoration: none;
+}
+
+.references {
+	margin-left: 2em;
+	margin-bottom: 0.5em;
+	text-indent:-2em;
+}
+
+.references > div {
+	margin-bottom: 0.3em;
+}
+
+.smaller {
+	font-size: smaller;
+}
+a {
+	text-decoration: none;
+}

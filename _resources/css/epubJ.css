@@ -177,13 +177,16 @@ li {
 	font-style: italic;
 }
 
+.captioned-image {
+	page-break-inside:avoid
+}
+
 .caption-centered-sans {
     text-align: center;
 	font-style: normal;
 	font-variant: small-caps;
     font-family: Linux Biolinum Capitals;
     font-size: 1.2em;
-    page-break-before: always;
 }
 
 .caption-centered-serif {

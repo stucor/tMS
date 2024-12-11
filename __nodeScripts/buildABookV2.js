@@ -574,14 +574,28 @@ function buildBook () {
 		if (allTablesAndCaptions[i].getAttribute('data-custom-style') == 'WW-table-caption') {
 			let caption = allTablesAndCaptions[i].text
 			let table = allTablesAndCaptions[Number(i)+1].innerHTML.replaceAll('<tr class>','<tr>')
-			allTablesAndCaptions[i].replaceWith(`<div class="tablewrap">
-<table>
-<caption >${caption}</caption>${table}
-</table>
-</div>`)
+			allTablesAndCaptions[i].replaceWith(`<div class="tablewrap">\n<table>\n<caption >${caption}</caption>${table}\n</table>\n</div>`)
 			allTablesAndCaptions[Number(i)+1].remove()
 
 		}
+	}
+
+	let allTables = bookRoot.querySelectorAll('table')
+	for (i in allTables) {
+		let eachTable = parse(allTables[i].innerHTML)
+		rowTextArr = eachTable.querySelectorAll('td')
+		//console.log (`XXX${rowTextArr[0].text}YYY`)
+		if (rowTextArr[0].text == `\r\nIMAGE TABLE\r\n`) {
+			let tempHTML = `<div class='captioned-image'>`
+			for (j in rowTextArr) {
+				if (j > 0) {
+					tempHTML += `${rowTextArr[j].innerHTML}`
+				}
+			}
+			tempHTML += `\n</div>`
+			allTables[i].replaceWith(tempHTML)
+		}
+		//console.log (allTables[i].innerHTML)
 	}
 
 

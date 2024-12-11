@@ -2,7 +2,7 @@
     "Authors" : ["sunyo"],
     "BookTitle" : "Seeds, Paintings and a Beam of Light",
     "BookSubtitle" : "Similes for Dependent Arising",
-    "AddInfo"   : [],
+    "AddInfo"   : [["Alternate Media", "For PDF, EPUB and Kindle formats click the Download icon in the top righthand corner of the main screen.\n\nFor screen readers see the [simplified html version](./simple.html).\n\nPrint on demand at:\n [lulugraphic](https://www.lulu.com/shop/bhikkhu-sunyo/seeds-paintings-and-a-beam-of-light/paperback/product-q66nwq2.html?page=1&pageSize=4)"]],
     "Copyright" : ["First published in **2024** by Wisdom & Wonders Books\n311pp (in pdf format)."],
     "CCLicense": "CC0 1.0",
     "FrontCover": "../_resources/book-data/seeds/FrontLarge.jpg",

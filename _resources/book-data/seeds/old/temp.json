@@ -1,0 +1,184 @@
+[
+    {
+        "texttitle": "Aṅguttara Nikāya",
+        "extref": "an",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Arthaviniścaya Sūtra",
+        "extref": "arv",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Cūḷaniddesa",
+        "extref": "cnd",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Dhammasaṅgaṇī",
+        "extref": "ds",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Dīgha Nikāya",
+        "extref": "dn",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Dīrgha Āgama",
+        "extref": "da",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Ekottarika Āgama",
+        "extref": "ea",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Itivuttaka",
+        "extref": "iti",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Madhyama Āgama",
+        "extref": "ma",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Majjhima Nikāya",
+        "extref": "mn",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Nidāna Saṁyutta",
+        "extref": "sn12",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Pāli Abhidhamma",
+        "extref": "abhidhamma",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Pārāyana Vagga",
+        "extref": "snp-parayanavagga",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Paṭisambhidāmagga",
+        "extref": "ps",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Questions of Milinda",
+        "extref": "mil",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Saḷāyatana Vagga",
+        "extref": "sn-salayatanavaggasamyutta",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Saṁyukta Āgama",
+        "extref": "sa",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Saṁyutta Nikāya",
+        "extref": "sn",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Śāriputra Abhidharma",
+        "extref": "sab",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Satipaṭṭhāna Saṁyutta",
+        "extref": "sn47",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Sīlakkhandha Vagga",
+        "extref": "dn-silakkhandhavagga",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Suttanipāta",
+        "extref": "snp",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Therāgāthā",
+        "extref": "thag",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Udāna",
+        "extref": "ud",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Udānavarga",
+        "extref": "uv",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    },
+    {
+        "texttitle": "Vibhaṅga",
+        "extref": "vb",
+        "type": "suttaplex",
+        "biblio": "",
+        "noteHTML": ""
+    }
+]

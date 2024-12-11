@@ -3,33 +3,19 @@ a {
 }
 
 .expander {
-	color: cornflowerblue;
+	color: rgba(100, 148, 237, 0.74);
 	position: relative;
 	bottom: 0.05em;
 	padding-left:0.1em;
 	cursor: pointer;
 	user-select: none;
+	font-weight: 100;
 }
-
-/* .expansion {
-	color: var(--secondarytextcolortextcolor);
-	cursor:auto;
-	user-select:text;
-}
-
-.expanded {
-	color:var(--secondarytextcolor);
-	background: var(--primarybackground);
-	border: 1px dotted lightgrey;
-	box-sizing: border-box;
-	font-weight: 500;
-	opacity: 75%;
-} */
 
 .expanded {
 	background: var(--primarybackground);
 	border-radius: 1em;
-
+	font-weight: unset;
 }
 
 .expansion {
@@ -39,15 +25,29 @@ a {
 	background: var(--primarybackground);
 	position:relative;
 	bottom: -0.05em;
+	border-radius: 10px;
 }
 .expansion h3 {
 	font-variant:small-caps; 
+	margin-top: 0;
 	margin-bottom: 1em;
 	text-align: left;
 	font-size: 1em;
 	font-weight: 600;
 }
 
+.expansion blockquote {
+	border-left: none;
+	padding-left: 1em;
+}
+
+.expansion blockquote > p {
+	text-indent: unset;
+}
+
+.expansion blockquote > p + p{
+	margin-top: 0.5em;
+}
 
 /*
 .references > dt {
@@ -68,19 +68,49 @@ a {
 }
 */
 
+/* .quotepno {
+	position: relative;
+	color:var(--primarybackground);
+	background: var(--secondarytextcolor);
+	opacity:40%;
+	padding: 0 0.3em 0.1em 0.4em;
+	border-radius: 0.5em;
+	top:-0.25em;
+	font-size: 0.6em;
+	margin: 0 0.2em 0 0;
+	user-select: none;
+}
+ */
+
+.quotepno {
+	position: relative;
+	bottom: 0.3em;
+ 	padding: 0 0.3em 0.1em 0.4em;
+	margin: 0 0.5em 0 0;
+	border-radius: 0.5em;
+	color:var(--primarybackground);
+	background: var(--secondarytextcolor);
+	opacity:60%;
+	font-size: 0.6em;
+	user-select: none;	
+}
+.quotepno::before {
+	content: 'p.'
+}
+
 .bibheadhide {
     display: none;
 }
 
 .linkContainer {
-    /*background:var(--bdtexthighlighter);*/
-	border: 1px rgba(128, 128, 128, 0.50) dotted;
 	box-sizing: border-box;
     white-space: nowrap;
     padding: 0 0.2em;
     border-radius: 5px;
 }
-
+.linkseparator {
+	opacity: 0.5;
+}
 .refpdf {
     font-size: smaller;
 }
@@ -99,27 +129,12 @@ a {
 	filter:opacity(80%)
 }
 
-/* .refaudio::before {
-	background-image: url('../_resources/images/icons/play-button-round-icon.svg');
-	background-repeat: no-repeat;
-    background-size: 1em;
-    display: inline-block;
-    width: 1em; 
-    height: 1em;
-    content:"";
-	margin-bottom: -0.2em;
-	margin-left: 0.1em;
-    margin-right: 0.3em;
-	filter: invert(70%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(87%) contrast(83%);
-}
- */
-
 .refaudio::before {
 	content: '🔊';
 	margin-bottom: -0.3em;
 	margin-left: 0.1em;
     margin-right: 0.3em;
-	filter: opacity(75%) ;
+	filter: opacity(85%) ;
 }
 
 .reflink {
@@ -139,20 +154,6 @@ a {
 	margin-right: 0;
 	filter: invert(27%) sepia(78%) saturate(1396%) hue-rotate(221deg) brightness(86%) contrast(91%);
 }
-/* 
-.library::before {
-    background-image: url('../_resources/images/icons/library.svg');
-    background-size: 3.5em;
-    display: inline-block;
-    width: 3.5em; 
-    height: 1.2em;
-    content:"";
-	margin-bottom: -0.3em;
-	margin-left: 0.1em;
-	background-repeat: no-repeat;
-	filter: invert(62%) sepia(16%) saturate(6671%) hue-rotate(195deg) brightness(97%) contrast(91%);
-}
-*/
 
 .library::before {
     background-image: url('../_resources/images/icons/bookshelf-colour.svg');
@@ -166,8 +167,6 @@ a {
 	margin-right: 0.3em;
 	background-repeat: no-repeat;
 }
-
-
 
 .internetArchive::before {
     background-image: url('../_resources/images/icons/IA-logo.svg');
@@ -198,8 +197,3 @@ a {
 	background-repeat: no-repeat;
 	filter: sepia(10%) saturate(100%) brightness(80%) contrast(80%);
 }
-
-
-.internetArchive:hover, .library:hover, .online:hover, .refaudio:hover, .refpdf:hover, .sacredTexts:hover{
-	box-shadow: 0 0 5px 1px var(--suphovercolor);
-} 

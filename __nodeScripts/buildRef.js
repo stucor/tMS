@@ -1,7 +1,11 @@
 const path = require('path')
 const fs = require('fs')
 
-let outputHTML =`<!DOCTYPE html>
+let bookID = process.argv.slice(2)[0];
+
+let outputHTML =``
+
+/* `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -24,13 +28,13 @@ dt {
 </style> 
 </head>
 <body>
-`
+` */
 
 let compareData = ``
 
 let nopdfs = ``
 
-function buildRef (bookID) {
+function buildRef () {
     let html =``
     let biblioMappArr = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblioMapArr.json'))
     let bookBiblioData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblio.json'))
@@ -156,7 +160,7 @@ function buildRef (bookID) {
             }
 
 
-            // contributor - special case where there is no author (or you don't want it to be some like The Buddha) 
+            // contributor - special case where there is no author (or you don't want it to be something like The Buddha) 
             // but there is a translator such as the Nikayas by Bodhi. In the libray use contributor instead so 
             // that it shows in creator field.
 
@@ -238,19 +242,19 @@ function buildRef (bookID) {
             } */
 
             //url
-            let linkSeparator = `<span style='opacity:0.1'>•</span>`;
+            let linkSeparator = `<span class='linkseparator'>•</span>`;
             html += `<span class = "linkContainer">`
 
             if (referencesData[i].hasOwnProperty('URL')) {
-                html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online" title="Website" href="${referencesData[i].URL}"></a> `;
+                html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online" href="${referencesData[i].URL}"></a> `;
             }
 
             if (tMSShortcode !=='') {
-                html += `${linkSeparator} <a class="library" title="In Library" href="../${tMSShortcode}"></a>`
+                html += `${linkSeparator} <a class="library" href="../${tMSShortcode}"></a>`
             }
 
             if (tMSAudioShortcode !=='') {
-                html += `${linkSeparator} <a class="refaudio" title="Play" href="../${tMSAudioShortcode}"></a>`
+                html += `${linkSeparator} <a class="refaudio" href="../${tMSAudioShortcode}"></a>`
             }
 
             if (internetArchiveURL !== '') {
@@ -258,11 +262,11 @@ function buildRef (bookID) {
             }
 
             if (scaredTextsURL !== '') {
-                html += `${linkSeparator} <a class="sacredTexts" title="Online" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
+                html += `${linkSeparator} <a class="sacredTexts" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
             }
 
             if (audioFile !=='') {
-                html += `${linkSeparator} <a class="refaudio" title="Play" href="../_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
+                html += `${linkSeparator} <a class="refaudio" href="../_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
             }
 
 
@@ -274,13 +278,13 @@ function buildRef (bookID) {
                         let fileArray = referencesData[i]
                         .file.split(';');
                         for (k in attachmentLabelArray) {
-                            html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" title="PDF" href="../_resources/zotero-attach/${fileArray[k]}"></a> `;
+                            html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" href="../_resources/zotero-attach/${fileArray[k]}"></a> `;
                         }
                     } else {
-                        html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" title="PDF" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+                        html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
                     }
                 } else {
-                    html += `${linkSeparator} <a class="refpdf" title="PDF" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+                    html += `${linkSeparator} <a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
                 }
             }
 
@@ -299,10 +303,10 @@ function buildRef (bookID) {
 
 }
 
-buildRef('seeds');
-outputHTML += `</body>
-</html>`
+buildRef();
+/* outputHTML += `</body>
+</html>` */
 
-fs.writeFileSync(path.join(__dirname, '.', 'testBiblio.html'), outputHTML);
+fs.writeFileSync(path.join(__dirname, '.', 'newbiblio.html'), outputHTML);
 //fs.writeFileSync(path.join(__dirname, '.', 'compare.txt'), compareData);
 //fs.writeFileSync(path.join(__dirname, '.', 'noPDFS.txt'), nopdfs);

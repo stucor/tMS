@@ -18,8 +18,8 @@
 .book {
   max-height: calc(100vh - 195px);
   height: calc(100vh - 195px);
-  margin: 40px 0;
-  padding: 0 !important;
+  margin: 0;
+  padding: 40px 0;
   }
 
 .wrapper {
@@ -107,7 +107,7 @@
 }
 
 #button-cont button {
-  color:white;
+  color:var(--audiobuttontext);
   display: inline;
 }
 
@@ -168,7 +168,6 @@
   width:50px;
   height:50px;
   background-color: var(--audiobuttoncolor);
-  color: var(--audiobuttontextcolor);
   cursor: pointer;
 }
 
@@ -226,7 +225,6 @@
   width:50px;
   height:50px;
   background-color: var(--audiobuttoncolor);
-  color: var(--audiobuttontextcolor);
   cursor: pointer;
 }
 

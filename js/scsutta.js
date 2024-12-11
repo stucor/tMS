@@ -33,33 +33,54 @@ function showBD(linktext) {
     return output;
   }
 
-  function getMultiSuttaJSONFileName (suttaNumber) {//suttanumber(slug), file, slug
+  function getMultiSuttaJSONFileName (suttaNumber) { //suttanumber(slug), file, slug
     const multiSuttaArr = [
+      ['an1.43','an1.41-50',''],
+      ['an1.44','an1.41-50',''],
       ['an1.170','an1.170-187',''],
       ['an1.188','an1.188-197',''],
       ['an1.239','an1.235-247',''],
+      ['an1.314','an1.306-315',''],
+      ['an1.315','an1.306-315',''],
       ['an1.328','an1.316-332',''],
       ['an1.49','an1.41-50',''],
+      ['an1.50','an1.41-50',''],
+      ['an2.17','an2.11-20',''],
+      ['an2.18','an2.11-20',''],
+      ['an2.19','an2.11-20',''],
       ['an2.31','an2.21-31',''],
       ['an2.33','an2.32-41',''],
       ['an2.38','an2.32-41',''],
+      ['an2.157','an2.151-162',''],
       ['an2.172','an2.163-179',''],
       ['an2.310','an2.310-479','an2.310-319'],
+      ['an2.36', 'an2.32-41', ''],
       ['an2.5', 'an2.1-10', ''],
       ['an2.11','an2.11-20',''],
+      ['dhp3','dhp1-20',''],
+      ['dhp4','dhp1-20',''],
+      ['dhp5','dhp1-20',''],
+      ['dhp16','dhp1-20',''],
       ['dhp49','dhp44-59',''],
       ['dhp60','dhp60-75',''],
       ['dhp64','dhp60-75',''],
+      ['dhp129','dhp129-145',''],
       ['dhp142','dhp129-145',''],
       ['dhp146','dhp146-156',''],
+      ['dhp154','dhp146-156',''],
       ['dhp157','dhp157-166',''],
+      ['dhp182','dhp179-196',''],
       ['dhp188','dhp179-196',''],
       ['dhp204','dhp197-208',''],
+      ['dhp223','dhp221-234',''],
       ['dhp228','dhp221-234',''],
       ['dhp256','dhp256-272',''],
       ['dhp257','dhp256-272',''],
+      ['dhp262','dhp256-272',''],
+      ['dhp263','dhp256-272',''],
       ['dhp273','dhp273-289',''],
       ['dhp274','dhp273-289',''],
+      ['dhp276','dhp273-289',''],
       ['dhp277','dhp273-289',''],
       ['dhp278','dhp273-289',''],
       ['dhp279','dhp273-289',''],
@@ -67,10 +88,12 @@ function showBD(linktext) {
       ['dhp337','dhp334-359',''],
       ['dhp338','dhp334-359',''],
       ['dhp348','dhp334-359',''],
+      ['dhp368','dhp360-382',''],
       ['dhp372','dhp360-382',''],
       ['dhp387','dhp383-423',''],
       ['dhp395','dhp383-423',''],
       ['dhp409','dhp383-423',''],
+      ['dhp420','dhp383-423',''],
       ['sn43.20','sn43.14-43',''],
       ['sn43.22','sn43.14-43','']
     ];
@@ -101,10 +124,10 @@ function showBD(linktext) {
 
   let [JSONFile, slug] = getMultiSuttaJSONFileName(slugStrip(scprintText));
 
+
   if (typeof showSpinner === "function") { 
 	  showSpinner();
   }
-
 
   buildSutta (JSONFile, slug, highlightArr, sclinkText, scprintText);
 
@@ -132,13 +155,13 @@ function slugStrip(slug) {
 }
 
 function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
-/*
-  console.log('file: '+ file); //file
+ 
+/*   console.log('file: '+ file); //file
   console.log('slug: '+ slug); //slug
   console.log('highlightArr: '+ highlightArr); //highlight array
   console.log('sclink: '+ sclink);
   console.log('scdisplayText: '+ scdisplayText); //printtext
-*/
+ */
   let html = '';
 
   html += `<div class="button-area">
@@ -195,13 +218,13 @@ function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
       var marker = removeHead = "";
       const [segSuttaNo, segSegmentNo] = segment.split(":");
 
-      if (segSegmentNo == highlightArr[highlightArrCounter]) {
+      if ((segSegmentNo == highlightArr[highlightArrCounter]) && (segSuttaNo == slug)) {
         inMark=true; // turns highlighting on
       }
       if (inMark) {
         marker = "sc-mark"; //add the class sc-mark
       } 
-      if (segSegmentNo == highlightArr[highlightArrCounter+1]) {
+      if ((segSegmentNo == highlightArr[highlightArrCounter+1]) && (segSuttaNo == slug)) {
         inMark=false; // turns highlighting off
         if (highlightArr.length-1 >= highlightArrCounter+2) {
           highlightArrCounter = highlightArrCounter+2;
@@ -406,10 +429,15 @@ function parseSlug(slug) {
   const book = slugParts[1];
   const firstNum = slugParts[2];
 
+  console.log (book)
+  console.log (firstNum)
+
   if (book === "dn" || book === "mn") {
     return `${book}/${slug}`;
   } else if (book === "sn" || book === "an") {
     return `${book}/${book}${firstNum}/${slug}`;
+  } else if (book === "cp") {
+    return `kn/cp/${slug}`;
   } else if (book === "kp") {
     return `kn/kp/${slug}`;
   } else if (book === "dhp") {

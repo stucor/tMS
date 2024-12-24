@@ -42,10 +42,10 @@ function buildMyBook () {
 			console.error(`stderr: ${stderr}`)
 			return; 
 		  } 
-		  console.log(`\n* Pandoc has created pandoc.html sucessfully from ${bookID}.docx *\n`)
+		  console.log(`\n✅ pandoc.html created\n`)
 		  processPandoc()
 		  buildCompleteBook() 
-		  console.log(`* books/${bookID}/index.html BUILD COMPLETE *\n`)
+		  console.log(`✅ books/${bookID}/index.html BUILD COMPLETE *\n`)
 		  buildSesameStub()
 		  //buildSesameRefStub()
 		}); 
@@ -99,6 +99,8 @@ const title = metaData.BookTitle
 const subtitle = metaData.BookSubtitle
 
 const shortAbstract = metaData.ShortAbstract
+
+const itemType = metaData.ItemType
 
 // Images
 const frontCoverRelativeURL = `${metaData.FrontCover}`
@@ -275,14 +277,17 @@ function buildBook () {
 	}
 	// TOCTarget ids
 	let TOCData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'toc.json', 'utf8'))
-
+	let chapterPrefix = `Chapter`
+	if (itemType == 'Document') {
+		chapterPrefix = ``
+	}
 	let headingArr = bookRoot.querySelectorAll ('h1, h2, h3')
 	for (let i in headingArr) {
 		if (headingArr[i].tagName == 'H1') {
 			let [number, heading] = headingArr[i].innerHTML.split('. ')
 			if (heading) {
 				if (number.length < 3 ) { //it's a chapter (1-99)
-					headingArr[i].set_content(`<span class="chapnum">chapter ${number}</span><br>${heading}`)
+					headingArr[i].set_content(`<span class="chapnum">${chapterPrefix} ${number}</span><br>${heading}`)
 				} else { // it's something like an appendix
 					headingArr[i].set_content(`<span class="chapnum">${number.toLowerCase()}</span><br>${heading}`)
 				}
@@ -352,7 +357,7 @@ function buildBook () {
 	}
 
 
-		let anchors = bookRoot.getElementsByTagName ('a') 
+	let anchors = bookRoot.getElementsByTagName ('a') 
 	for (i in anchors) {
 		let firstThree = anchors[i].text.slice(0,3)
 		switch(firstThree) {
@@ -404,27 +409,25 @@ function buildBook () {
 		}
 	} 
 	
-
+	// All the divs
 	let suttaVerseHTML = ``
 	let allDivs = bookRoot.querySelectorAll('div') 
 	for (i in allDivs) {
 		// SPACE
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-special-message") {
+			if(allDivs[i].text.replaceAll('\r\n', '') == `None`) { //remove the special message box if it says: 'None'
+				allDivs[i].remove()
+			} else {
 				allDivs[i].classList.add(`special-message`)
 				allDivs[i].removeAttribute('data-custom-style')
+			}
 		} else 
 		// SPACE
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
 			let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
 			allDivs[i].replaceWith(`<hr style='border:0; margin-top: -1em; height:${spaceWidth}em'>`)
 		} else 
-/* 		if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
-			let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
-				allDivs[i].classList.add(`space-${spaceWidth}`)
-				allDivs[i].removeAttribute('data-custom-style')
-				allDivs[i].innerHTML = ''
-		} else 
- */		// PARAGRAPHS
+		// PARAGRAPHS
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
@@ -503,6 +506,11 @@ function buildBook () {
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-author-biography") {
 			allDivs[i].remove()
 		} else 
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-blockquote") {
+			allDivs[i].tagName = "blockquote"
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+
 		//OLD STUFF FROM MILK
 		if (allDivs[i].getAttribute('data-custom-style') == "Quote-Block") {
 			allDivs[i].tagName = "blockquote"
@@ -751,6 +759,7 @@ function processPandoc() {
 		let subtitle = ``
 		let abstractShort = ``
 		let abstract = ``
+		let itemType =``
 		let copyrightArr = []
 		let copyright = ``
 		let CCLicense = ``
@@ -772,6 +781,9 @@ function processPandoc() {
 				.replaceAll(`<span data-custom-style="pali">`, `<span lang='pli'>`)
 				.replaceAll(/(\r\n|\n|\r)/gm, "")
 			} else
+			if (tokens[i].getAttribute('data-custom-style') ==  ('WW-item-type')) {
+				itemType += `${tokens[i].text.replaceAll(/(\r\n|\n|\r)/gm, "")}`
+			} else 
 			if (tokens[i].classList.contains ('author')) {
 				authors += `"${tokens[i].innerHTML}",`
 			} else 
@@ -821,6 +833,7 @@ function processPandoc() {
 			"BookSubtitle" : "${subtitle}",
 			"ShortAbstract" : "${abstractShort}",
 			"Abstract" : "${abstract}",
+			"ItemType" : "${itemType}",
 			"AddInfo"   : [],
 			"Copyright" : [${copyright}],
 			"CCLicense": "${CCLicense}",
@@ -922,6 +935,7 @@ function processPandoc() {
 				case 'SN ':
 				case 'DN ':
 				case 'Ud ':
+					console.log(anchors[i].text)
 					let tempTop =  anchors[i].text.slice(0, 2)
 					let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
 					let tempText = tempTop + '&#8239;' + tempTail
@@ -1034,17 +1048,21 @@ function processPandoc() {
 		bookRoot.querySelector('header').remove()
 		bookRoot.querySelector('#short-abstract').remove()
 		bookRoot.querySelector('#abstract').remove()
+		bookRoot.querySelector('#item-type').remove()
 		bookRoot.querySelector('#copyright').remove()
 		bookRoot.querySelector('#downloads').remove()
 		bookRoot.querySelector('#backcover').remove()
-		bookRoot.querySelector('#author-bio').remove()
 		bookRoot.querySelector('#special-message').remove()
+		if (bookRoot.querySelector('#author-bio')) {
+			bookRoot.querySelector('#author-bio').remove()
+		}
 	
 		let allDivs = bookRoot.querySelectorAll('div')
 	
 		for (i in allDivs) {
 			if ((allDivs[i].getAttribute("data-custom-style") == "AbstractShort") 
 				|| (allDivs[i].getAttribute("data-custom-style") == "Abstract")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-item-type")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-Copyright")
 				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadsAvailable")
 				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadText")
@@ -1067,7 +1085,7 @@ function processPandoc() {
 	buildFootnotesJSON()
 	buildBookInfoJSON()
 	extractBookHTML()
-	console.log(`* pandoc.html PROCESSING COMPLETE *\n`);
+	console.log(`✅ pandoc.html PROCESSING COMPLETE\n`);
 }
 
 buildMyBook();

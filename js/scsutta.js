@@ -45,6 +45,14 @@ function showBD(linktext) {
       ['an1.328','an1.316-332',''],
       ['an1.49','an1.41-50',''],
       ['an1.50','an1.41-50',''],
+      ['an1.439','an1.394-574',''],
+      ['an1.440','an1.394-574',''],
+      ['an1.441','an1.394-574',''],
+      ['an1.442','an1.394-574',''],
+      ['an1.443','an1.394-574',''],
+      ['an1.444','an1.394-574',''],
+      ['an1.445','an1.394-574',''],
+      ['an1.446','an1.394-574',''],
       ['an2.17','an2.11-20',''],
       ['an2.18','an2.11-20',''],
       ['an2.19','an2.11-20',''],
@@ -124,7 +132,6 @@ function showBD(linktext) {
 
   let [JSONFile, slug] = getMultiSuttaJSONFileName(slugStrip(scprintText));
 
-
   if (typeof showSpinner === "function") { 
 	  showSpinner();
   }
@@ -156,12 +163,12 @@ function slugStrip(slug) {
 
 function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
  
-/*   console.log('file: '+ file); //file
+   console.log('file: '+ file); //file
   console.log('slug: '+ slug); //slug
   console.log('highlightArr: '+ highlightArr); //highlight array
   console.log('sclink: '+ sclink);
   console.log('scdisplayText: '+ scdisplayText); //printtext
- */
+ 
   let html = '';
 
   html += `<div class="button-area">
@@ -429,8 +436,9 @@ function parseSlug(slug) {
   const book = slugParts[1];
   const firstNum = slugParts[2];
 
-  console.log (book)
+/*   console.log (book)
   console.log (firstNum)
+  console.log(slug) */
 
   if (book === "dn" || book === "mn") {
     return `${book}/${slug}`;

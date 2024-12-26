@@ -328,11 +328,12 @@ function buildBook () {
 				let tempHTML = spans[i].innerHTML
 				spans[i].replaceWith (tempHTML)
 			break
-			case 'pts-reference':
+			case 'WW-PTS-reference':
+				spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
 				spans[i].classList.add('ptsref')
 				spans[i].removeAttribute ('data-custom-style')
 			break
-			case 'zot-cite':
+			case 'WW-sesame-zot-reference':
 				spans[i].classList.add('sesame')
 				spans[i].classList.add('ref')
 				spans[i].removeAttribute ('data-custom-style')
@@ -625,6 +626,9 @@ function buildBook () {
 html += buildBook()
 
 function buildReferences () {
+/* 	if (fs.existsSync(`../_resources/book-data/${bookID}/biblioMapArr.json`)) {
+		console.log(`hereUUUUUUU ${bookID}`)
+	} */
 	let referenceRoot = ``
 
 	let html =`<h2>Bibliography</h2>`
@@ -663,7 +667,7 @@ function buildReferences () {
 				newBiblioMapArr += ',\n'
 			}
 		}
-		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMappArr.json'), newBiblioMapArr, 'utf8')
+		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMapArr.json'), newBiblioMapArr, 'utf8')
 		console.log ('*** Initial biblioMapArr.json file created ***\nThis file will need to be edited to correspond with the reference entries in the book\nThe first entry is the Zotero citation reference, the second entry is as it appears in the book')
 	  }
 
@@ -701,7 +705,7 @@ function buildReferences () {
 if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.html`)) {
 	console.log(`Attempting to create Bibliography ...`)
 	html += buildReferences()
-	console.log (`* Bibliography Added from /book-data/biblio.html *`)
+	console.log (`✅ Bibliography Added from /book-data/biblio.html`)
 } else {
 	console.log (`*** NO BIBLIOGRAPHY DATA found at /book-data/biblio.html ***`)
 }
@@ -895,17 +899,19 @@ function processPandoc() {
 					let tempHTML = spans[i].innerHTML
 					spans[i].replaceWith (tempHTML)
 				break
-				case 'pts-reference':
+				case 'WW-PTS-reference':
+					spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
 					spans[i].classList.add('ptsref')
 					spans[i].removeAttribute ('data-custom-style')
+					
 				break
-				case 'zot-cite':
+				case 'WW-sesame-zot-reference':
 					spans[i].classList.add('sesame')
 					spans[i].classList.add('ref')
 					spans[i].removeAttribute ('data-custom-style')
 					sesameRefArr.push(spans[i].text)
 				break
-				case 'sesame':
+				case 'WW-sesame':
 					spans[i].classList.add('sesame')
 					spans[i].removeAttribute ('data-custom-style')
 					sesameArr.push(spans[i].text)
@@ -935,7 +941,6 @@ function processPandoc() {
 				case 'SN ':
 				case 'DN ':
 				case 'Ud ':
-					console.log(anchors[i].text)
 					let tempTop =  anchors[i].text.slice(0, 2)
 					let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
 					let tempText = tempTop + '&#8239;' + tempTail
@@ -1088,4 +1093,5 @@ function processPandoc() {
 	console.log(`✅ pandoc.html PROCESSING COMPLETE\n`);
 }
 
+console. log('-------------------------------------------------------------------------')
 buildMyBook();

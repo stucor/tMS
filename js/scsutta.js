@@ -45,14 +45,14 @@ function showBD(linktext) {
       ['an1.328','an1.316-332',''],
       ['an1.49','an1.41-50',''],
       ['an1.50','an1.41-50',''],
-      ['an1.439','an1.394-574',''],
-      ['an1.440','an1.394-574',''],
-      ['an1.441','an1.394-574',''],
-      ['an1.442','an1.394-574',''],
-      ['an1.443','an1.394-574',''],
-      ['an1.444','an1.394-574',''],
-      ['an1.445','an1.394-574',''],
-      ['an1.446','an1.394-574',''],
+      ['an1.439','an1.394-574','an1.439'],
+      ['an1.440','an1.394-574','—an1.440'],
+      ['an1.441','an1.394-574','—an1.441'],
+      ['an1.442','an1.394-574','—an1.442'],
+      ['an1.443','an1.394-574','—an1.443'],
+      ['an1.444','an1.394-574','—an1.444'],
+      ['an1.445','an1.394-574','—an1.445'],
+      ['an1.446','an1.394-574','—an1.446'],
       ['an2.17','an2.11-20',''],
       ['an2.18','an2.11-20',''],
       ['an2.19','an2.11-20',''],
@@ -163,11 +163,19 @@ function slugStrip(slug) {
 
 function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
  
-   console.log('file: '+ file); //file
+  
+/*   console.log('file: '+ file); //file
   console.log('slug: '+ slug); //slug
   console.log('highlightArr: '+ highlightArr); //highlight array
   console.log('sclink: '+ sclink);
-  console.log('scdisplayText: '+ scdisplayText); //printtext
+  console.log('scdisplayText: '+ scdisplayText); //printtext */
+
+  let continuationSutta = false
+  if (slug.substr(0,1) == '—') {
+    slug = slug.substring(1)
+    continuationSutta = true
+  }
+
  
   let html = '';
 
@@ -242,7 +250,7 @@ function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
       let printThis = true;
       if (file != slug) {
         printThis=false;
-        if (transData[segment] == paliData[segment]) { //remove duplicate if pali and eng are the same
+        if (transData[segment].replaceAll(' ','') == paliData[segment].replaceAll(' ','')) { //remove duplicate if pali and eng are the same
           removeHead = "noshow";
         }
         if (keyCount == 1) {
@@ -252,19 +260,28 @@ function buildSutta (file, slug, highlightArr =[], sclink, scdisplayText) {
           html += `<li class='subdivision'><span class="pli-lang" lang="pi">${paliData[segment]}</span><span class="eng-lang" lang="en">${transData[segment]}</span></li></ul>`;
         }
         if (keyCount == 3) {
-          html += `<h1 class='range-title'><span class="pli-lang ${removeHead}" lang="pi">${paliData[segment]}</span><span class="eng-lang" lang="en">${transData[segment]}</span></h1><h4>${scdisplayText}</h4></header>`;
+//            html += `<h1 class='range-title'><span class="pli-lang ${removeHead}" lang="pi">${paliData[segment]}</span><span class="eng-lang" lang="en">${transData[segment]}</span></h1><h4>${scdisplayText}</h4></header>`;
+          html += `<h4>${scdisplayText}</h4></header>`;
+          if (continuationSutta) {
+            html += `<p>`
+          }
         }
         if ((slug == segSuttaNo ) && (segSegmentNo !== '1.0') && (segSegmentNo !== '0') && (segSegmentNo !== '0.1') && (segSegmentNo !== '0.2') && (segSegmentNo !== '0.3')) {
           printThis = true;
         }
       }
 
-      const [openHtml, closeHtml] = htmlData[segment].split(/{}/);
+      let [openHtml, closeHtml] = htmlData[segment].split(/{}/);
+
+
       if (printThis) {
         html += `${openHtml}<span class="pli-lang ${marker} ${removeHead}" lang="pi"><span class="segno">${segSegmentNo} <br /></span>${paliData[segment]}</span><span class="eng-lang ${marker}" lang="en">${transData[segment]}</span>${closeHtml}\n\n`;
       }
 
     });
+    if (continuationSutta) {
+      html += `</p>`
+    }
 
     const sctranslator = `<p id="sc-translator">&#8212; transl. Bhikkhu Sujato</p>`;
     html += sctranslator;

@@ -2849,6 +2849,7 @@ function toggleSesame (el) {
 						}
 
 						let fetchPath = `../_resources/external-quotes/${sesameData[i].directory}/${sesameData[i].file}.json`
+
 						function populateQuote(quoteData) {
 							let subSectionSpacer = ''
 							if (quoteData.SubSection) {
@@ -2872,8 +2873,8 @@ function toggleSesame (el) {
 							quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
 							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}${bibReference}</div>`);
 							el.classList.add('closebutton')
-
 						}
+
 						fetch(fetchPath)
 							.then(response => response.json())
 							.then (data => populateQuote(data))
@@ -2881,7 +2882,31 @@ function toggleSesame (el) {
 								console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 							}
 						);
+
 					} else 
+					if (sesameData[i].type == `scBlurb`) {
+
+						let fetchPath = `../_resources/bilara-data/published/root/en/blurb/${sesameData[i].file}.json`
+						function populateQuote(quoteData) {
+							let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${(sesameData[i].file)}"><br>source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`;
+							let blurbKey = `super-blurbs:${sesameData[i].directory}`
+							scRefHTML = `<a class="extlink" href="https://suttacentral.net/${(sesameData[i].directory)}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`;
+							let quoteHTML =`${scRefHTML}<br><h3>${sesameData[i].sesame}</h3><p>${quoteData[blurbKey]}</p>`
+							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+							el.classList.add('closebutton')
+						}
+						fetch(fetchPath)
+						.then(response => response.json())
+						.then (data => populateQuote(data))
+						.catch(error => {
+							console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+						}
+					);
+
+
+					} else
+
+
 					if ((sesameData[i].type == 'suttaplex') || (sesameData[i].type == 'sutta')) {
 						let strippedSCRef = sesameData[i].file.replace(/\s+/g, '').toLowerCase()
 						let scRefHTML = ''

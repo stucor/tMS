@@ -1,9 +1,9 @@
 [
 {
 	"sesame": "Aṅguttara Nikāya",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"type": "scBlurb",
+	"directory": "an",
+	"file": "super-blurbs_root-en",
 	"biblio": ""
 },
 {
@@ -22,10 +22,10 @@
 },
 {
 	"sesame": "Bodhi in Ñāṇamoli n.509",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"type": "externalQuote",
+	"directory": "bodhi-nikaya-notes",
+	"file": "MN-509",
+	"biblio": "Ñāṇamoli"
 },
 {
 	"sesame": "Brahmajāla Sutta",
@@ -42,7 +42,7 @@
 	"biblio": ""
 },
 {
-	"sesame": "Brahmanimantanika Sutta",
+	"sesame": "Brahmanimantaṇika Sutta",
 	"type": "",
 	"directory": "",
 	"file": "",
@@ -99,16 +99,16 @@
 },
 {
 	"sesame": "Madhyama Āgama",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"type": "scBlurb",
+	"directory": "ma",
+	"file": "super-blurbs_root-en",
 	"biblio": ""
 },
 {
 	"sesame": "Madhyama-āgama",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"type": "scBlurb",
+	"directory": "ma",
+	"file": "super-blurbs_root-en",
 	"biblio": ""
 },
 {
@@ -120,23 +120,23 @@
 },
 {
 	"sesame": "Majjhima-nikāya",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"type": "scBlurb",
+	"directory": "mn",
+	"file": "super-blurbs_root-en",
 	"biblio": ""
 },
 {
 	"sesame": "MuṇU",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"type": "externalQuote",
+	"directory": "wiki-entry",
+	"file": "Mundaka_Upanishad",
 	"biblio": ""
 },
 {
 	"sesame": "Muṇḍaka Upaniṣad",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"type": "externalQuote",
+	"directory": "wiki-entry",
+	"file": "Mundaka_Upanishad",
 	"biblio": ""
 },
 {
@@ -176,10 +176,10 @@
 },
 {
 	"sesame": "Taittirīya Upaniṣad",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"type": "externalQuote",
+	"directory": "wiki-entry",
+	"file": "Taittiriya_Upanishad",
+	"biblio": "Olivelle"
 },
 {
 	"sesame": "Upakkilesa (Impurities) Sutta",
@@ -204,10 +204,10 @@
 },
 {
 	"sesame": "Ñāṇamoli & Bodhi n.513.",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"type": "externalQuote",
+	"directory": "bodhi-nikaya-notes",
+	"file": "MN-513",
+	"biblio": "Ñāṇamoli"
 },
 {
 	"sesame": "Ātman",

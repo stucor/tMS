@@ -2889,9 +2889,24 @@ function toggleSesame (el) {
 						let fetchPath = `../_resources/bilara-data/published/root/en/blurb/${sesameData[i].file}.json`
 						function populateQuote(quoteData) {
 							let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${(sesameData[i].file)}"><br>source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`;
-							let blurbKey = `super-blurbs:${sesameData[i].directory}`
+							let blurbKeyHead = sesameData[i].file.split('_')[0]
+							let blurbKey = `${blurbKeyHead}:${sesameData[i].directory}`
 							scRefHTML = `<a class="extlink" href="https://suttacentral.net/${(sesameData[i].directory)}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`;
-							let quoteHTML =`${scRefHTML}<br><h3>${sesameData[i].sesame}</h3><p>${quoteData[blurbKey]}</p>`
+							let linkHTML = ``
+							if (sesameData[i].file.substr(0,6) != 'super-') {
+								let linkTextArr = sesameData[i].directory.match(/[a-z]+|[^a-z]+/gi);
+								switch (linkTextArr[0]) {
+									case "dn":
+									case "an":
+									case "sn":
+									case "mn":
+										linkTextArr[0] = linkTextArr[0].toUpperCase()
+										break
+								}
+								let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
+								linkHTML= `(<span class='sclinktext'>${linkText}</span>)`
+							}
+							let quoteHTML =`${scRefHTML}<br><h3>${sesameData[i].sesame} ${linkHTML}</h3><p>${quoteData[blurbKey]}</p>`
 							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
 							el.classList.add('closebutton')
 						}

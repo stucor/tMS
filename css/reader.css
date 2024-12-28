@@ -591,7 +591,7 @@ a {
 	 cursor:grab;
  } 
 
- .line-block > p > span.vcmarg {
+ .line-block > p > span.list-margin {
 	position: relative;
 	color: var(--secondarytextcolor);
 	font-size: 0.8em;
@@ -614,11 +614,11 @@ a {
 }   
 
 
-.line-block > p:has(> span.vcmarg) {
+.line-block > p:has(> span.list-margin) {
 	padding-left: 3em;
 }
 
-.line-block > p:has(> span.vcmarg) > .vcmarg {
+.line-block > p:has(> span.list-margin) > .list-margin {
 	text-indent: -1.5em;
 }
 
@@ -632,7 +632,7 @@ a {
 	margin-top: 1em;
 }
 
-blockquote > p > span.vcmarg {
+blockquote > p > span.list-margin {
 	position:relative;
 	color: var(--secondarytextcolor);
 	font-size: 0.8em;
@@ -659,13 +659,13 @@ blockquote > p > span.vcmarg {
 .line-block:has(> .OAstart-top) {padding-left: 0.46em; margin-left: calc(-0.46em);}
 .OAstart-doubletop {text-indent: -0.58em;}
 .line-block:has(> .OAstart-doubletop) {padding-left: 0.58em; margin-left: calc(-0.58em);}
-.OAstart > span.vcmarg, 
-.OAstart-top > span.vcmarg, 
-.OAstart-doubletop > span.vcmarg, 
-.OAstart-bottom > span.vcmarg, 
-.OAstart-little > span.vcmarg,
-.OAstart-2 > span.vcmarg,
-.OAstart-tiny > span.vcmarg  {
+.OAstart > span.list-margin, 
+.OAstart-top > span.list-margin, 
+.OAstart-doubletop > span.list-margin, 
+.OAstart-bottom > span.list-margin, 
+.OAstart-little > span.list-margin,
+.OAstart-2 > span.list-margin,
+.OAstart-tiny > span.list-margin  {
 	text-indent: 0.05em;
 } 
 
@@ -676,18 +676,18 @@ blockquote > p > span.vcmarg {
 .OAbody {text-indent: 1.57em;}
 .OAbody-top {text-indent: 1.53em;}
 .OAbody-doubletop {text-indent: 1.42em;}
-.OAbody > span.vcmarg, 
-.OAbody-top > span.vcmarg, 
-.OAbody-doubletop > span.vcmarg, 
-.OAbody-bottom > span.vcmarg, 
-.OAbody-little > span.vcmarg,
-.OAbody-2 > span.vcmarg,
-.OAbody-tiny > span.vcmarg  {
+.OAbody > span.list-margin, 
+.OAbody-top > span.list-margin, 
+.OAbody-doubletop > span.list-margin, 
+.OAbody-bottom > span.list-margin, 
+.OAbody-little > span.list-margin,
+.OAbody-2 > span.list-margin,
+.OAbody-tiny > span.list-margin  {
 	text-indent: 2.55em;
 } 
 
 
- blockquote > p:nth-child(1) > span.vcmarg  {
+ blockquote > p:nth-child(1) > span.list-margin  {
 	text-indent: 2.4em;
 }
 
@@ -2682,7 +2682,7 @@ mark.current {
 }
 
 
-#ModalSelfquote p > span.vcmarg { 
+#ModalSelfquote p > span.list-margin { 
 	position: relative;
 	margin-left: 0;
 	margin-right: -2em;
@@ -3122,7 +3122,7 @@ mark.current {
 		padding: 0;
 	}
 
-	blockquote > p > span.vcmarg { 
+	blockquote > p > span.list-margin { 
 		margin-left: 0;
 		margin-right: -1.5em;
 		text-indent: 1em;
@@ -3198,7 +3198,7 @@ mark.current {
 		padding: 1em;
 	}
 
-	#ModalSelfquote p > span.vcmarg { 
+	#ModalSelfquote p > span.list-margin { 
 		margin-right: 0;
 	}
 

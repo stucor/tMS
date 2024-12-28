@@ -333,6 +333,11 @@ function buildBook () {
 				spans[i].classList.add('ptsref')
 				spans[i].removeAttribute ('data-custom-style')
 			break
+			case 'WW-list-margin':
+				//spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
+				spans[i].classList.add('list-margin')
+				spans[i].removeAttribute ('data-custom-style')
+			break
 			case 'WW-sesame-zot-reference':
 				spans[i].classList.add('sesame')
 				spans[i].classList.add('ref')
@@ -447,6 +452,23 @@ function buildBook () {
 		// VERSES 
 		//(line-block)
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block") {
+			let tempHTML = allDivs[i].innerHTML.replaceAll('\r\n', '')
+			let newHTML = `<blockquote><div class='line-block'>${tempHTML}</div></blockquote>`
+			if (tempHTML.substr(0,29) == `<p><span class="list-margin">`) {
+				console.log(tempHTML)
+				//find the first closed span
+				let closedSpanIndex = tempHTML.indexOf('</span>')+7
+				if (tempHTML.substr(closedSpanIndex,1) == '“') {
+					newHTML = `<blockquote><div class='line-block'>${tempHTML.slice(0,2)} class='OAstart' ${tempHTML.slice(2)}</div></blockquote>`
+				}
+			} else 
+			if (tempHTML.substr(0,4) == `<p>“`) {
+				newHTML = `<blockquote><div class='line-block'>${tempHTML.slice(0,2)} class='OAstart' ${tempHTML.slice(2)}</div></blockquote>`
+			}
+			allDivs[i].replaceWith(newHTML)
+		} else
+
+/* 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block") {
 			let tempHTML = allDivs[i].innerHTML
 			if (allDivs[i].innerHTML.charAt(5) == '“') {
 				let newHTML = `<blockquote> ${tempHTML.slice(0,4)} class='OAstart' ${tempHTML.slice(4)} </blockquote>`
@@ -457,7 +479,8 @@ function buildBook () {
 			}
 			allDivs[i].classList.add ('line-block')
 			allDivs[i].removeAttribute('data-custom-style')
-		} else
+		} else */
+
 		//(line-block-centered)
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block-center") {
 			if (allDivs[i].innerHTML.charAt(5) == '“') {

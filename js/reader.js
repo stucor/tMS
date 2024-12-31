@@ -2857,7 +2857,8 @@ function toggleSesame (el) {
 							}
 							let linkHTML = ''
 							if (sesameData[i].directory == 'wiki-entry') {
-								linkHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameData[i].file}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span><br>`
+								linkHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameData[i].file.replace('-', '#')}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span><br>`
+//								linkHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameData[i].file}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span><br>`
 							} else {
 								let [directory,subdirectory] = sesameData[i].directory.split('/')
 								if (directory == 'sujato-nikaya-notes') {
@@ -2885,9 +2886,11 @@ function toggleSesame (el) {
 
 					} else 
 					if (sesameData[i].type == `scBlurb`) {
-
 						let fetchPath = `../_resources/bilara-data/published/root/en/blurb/${sesameData[i].file}.json`
 						function populateQuote(quoteData) {
+							function capitalizeFirstLetter(val) {
+								return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+							}
 							let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${(sesameData[i].file)}"><br>source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`;
 							let blurbKeyHead = sesameData[i].file.split('_')[0]
 							let blurbKey = `${blurbKeyHead}:${sesameData[i].directory}`
@@ -2902,9 +2905,18 @@ function toggleSesame (el) {
 									case "mn":
 										linkTextArr[0] = linkTextArr[0].toUpperCase()
 										break
+									case "snp":
+										if (linkTextArr[2]) { // its a vagga
+											linkTextArr[0] = ``
+										} else {
+										linkTextArr[0] = capitalizeFirstLetter(linkTextArr[0]);
+										}
+										break
 								}
-								let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
-								linkHTML= `(<span class='sclinktext'>${linkText}</span>)`
+								if (linkTextArr[0]) {
+									let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
+									linkHTML= `(<span class='sclinktext'>${linkText}</span>)`
+								}
 							}
 							let quoteHTML =`${scRefHTML}<br><h3>${sesameData[i].sesame} ${linkHTML}</h3><p>${quoteData[blurbKey]}</p>`
 							el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
@@ -2917,11 +2929,7 @@ function toggleSesame (el) {
 							console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 						}
 					);
-
-
 					} else
-
-
 					if ((sesameData[i].type == 'suttaplex') || (sesameData[i].type == 'sutta')) {
 						let strippedSCRef = sesameData[i].file.replace(/\s+/g, '').toLowerCase()
 						let scRefHTML = ''

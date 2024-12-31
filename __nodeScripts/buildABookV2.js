@@ -455,7 +455,7 @@ function buildBook () {
 			let tempHTML = allDivs[i].innerHTML.replaceAll('\r\n', '')
 			let newHTML = `<blockquote><div class='line-block'>${tempHTML}</div></blockquote>`
 			if (tempHTML.substr(0,29) == `<p><span class="list-margin">`) {
-				console.log(tempHTML)
+				//console.log(tempHTML)
 				//find the first closed span
 				let closedSpanIndex = tempHTML.indexOf('</span>')+7
 				if (tempHTML.substr(closedSpanIndex,1) == '“') {

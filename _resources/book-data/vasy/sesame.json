@@ -1,5 +1,12 @@
 [
 {
+	"sesame": "Ajita’s Question Sutta",
+	"type": "scBlurb",
+	"directory": "snp5.2",
+	"file": "snp-blurbs_root-en",
+	"biblio": ""
+},
+{
 	"sesame": "Aṅguttara Nikāya",
 	"type": "scBlurb",
 	"directory": "an",
@@ -8,9 +15,16 @@
 },
 {
 	"sesame": "Baka Brahmā",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"type": "externalQuote",
+	"directory": "wiki-entry",
+	"file": "Brahmā_(Buddhism)-Baka_Brahmā",
+	"biblio": ""
+},
+{
+	"sesame": "Baka",
+	"type": "externalQuote",
+	"directory": "wiki-entry",
+	"file": "Brahmā_(Buddhism)-Baka_Brahmā",
 	"biblio": ""
 },
 {
@@ -42,10 +56,10 @@
 	"biblio": ""
 },
 {
-	"sesame": "Brahmanimantaṇika Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"sesame": "Brahmanimantanika Sutta",
+	"type": "scBlurb",
+	"directory": "mn49",
+	"file": "mn-blurbs_root-en",
 	"biblio": ""
 },
 {
@@ -53,6 +67,13 @@
 	"type": "externalQuote",
 	"directory": "wiki-entry",
 	"file": "Brahmā_(Buddhism)",
+	"biblio": ""
+},
+{
+	"sesame": "Brahmā Baka",
+	"type": "externalQuote",
+	"directory": "wiki-entry",
+	"file": "Brahmā_(Buddhism)-Baka_Brahmā",
 	"biblio": ""
 },
 {
@@ -74,6 +95,13 @@
 	"type": "",
 	"directory": "",
 	"file": "",
+	"biblio": ""
+},
+{
+	"sesame": "Fire Discourse",
+	"type": "scBlurb",
+	"directory": "sn35.28",
+	"file": "sn-blurbs_root-en",
 	"biblio": ""
 },
 {
@@ -172,6 +200,20 @@
 	"type": "scBlurb",
 	"directory": "an9.34",
 	"file": "an-blurbs_root-en",
+	"biblio": ""
+},
+{
+	"sesame": "Nikāyas",
+	"type": "scBlurb",
+	"directory": "sutta",
+	"file": "super-blurbs_root-en",
+	"biblio": ""
+},
+{
+	"sesame": "Pārāyana Vagga",
+	"type": "scBlurb",
+	"directory": "snp-parayanavagga",
+	"file": "snp-blurbs_root-en",
 	"biblio": ""
 },
 {

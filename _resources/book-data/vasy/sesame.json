@@ -141,9 +141,9 @@
 },
 {
 	"sesame": "Mahaparinibbāna Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"type": "scBlurb",
+	"directory": "dn16",
+	"file": "dn-blurbs_root-en",
 	"biblio": ""
 },
 {

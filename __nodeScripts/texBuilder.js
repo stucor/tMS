@@ -6,12 +6,21 @@ const { parse } = require('node-html-parser');
 let bookID = process.argv.slice(2)[0];
 
 let bookRoot = ``;
+
 try {
     const data = fs.readFileSync('../'+bookID+'/'+'index.html', 'utf8');
     bookRoot = parse(data);
 } catch (err) {
     console.error(err);
 }
+
+//Get Info
+let builtInfoData = JSON.parse(fs.readFileSync(`../_resources/built-info-data/${bookID}/info.json`, 'utf8'))
+
+let bookTitle = builtInfoData.BookTitle
+let bookSubtitle = builtInfoData.BookSubtitle
+let bookAuthor = builtInfoData.Authors
+
 
 let preamble = `
 \\documentclass[10pt, openany]{book}
@@ -24,7 +33,7 @@ let preamble = `
 %\\usepackage{sectsty}
 \\usepackage{titlesec}
 \\usepackage{verse}
-\\usepackage[unicode, pdfauthor={Bhikkhu Sunyo}, pdftitle={Viññāṇa Anidassana: the state of boundless consciousness}, pdfsubject={Buddhism}, pdfkeywords={Buddhism, pali, arūpa, jhāna}, pdfcreator={Luatex}, hyperfootnotes=false]{hyperref} 
+\\usepackage[unicode, pdfauthor={${bookAuthor}}, pdftitle={${bookTitle}: ${bookSubtitle}}, pdfsubject={Buddhism}, pdfkeywords={Buddhism}, pdfcreator={Wiswo-texBuilder}, hyperfootnotes=false]{hyperref} 
 
 %links and cites
 \\hypersetup{
@@ -147,15 +156,83 @@ let preamble = `
 \\hyphenation{manu-scripts}
 
 `
+let frontMatter =`
+\\frontmatter
+
+\\pagestyle{empty}
+
+\\includegraphics[scale= 2, trim= 0 0 0 0]{../_resources/book-data/${bookID}/FrontLarge.jpg}
+
+\\newpage~\\newpage~
+
+\\begin{center}
+\\vspace{2em}
+
+\\Huge\\Titlefont\\scshape{${bookTitle}}\\\\
+\\vspace{0.5em}
+\\large\\Titlefont\\scshape{${bookSubtitle}}\\\\
+
+\\begin{Large}
+\\vspace{4em}
+\\Titlefont\scshape{${bookAuthor}}
+\\end{Large}
+
+
+\\vspace*{\\fill}
+\\includegraphics[scale=0.06, trim = 0 13 5 0 ]{../_resources/images/icons/logo-enso-large}\\\\
+\\vspace{4pt}
+\\begin{small}
+\\scshape{Wisdom \\& Wonders\\\\
+Books}
+\\end{small}
+\\end{center}
+`
+
+let copyrightTEX =``
+for (i in builtInfoData.Copyright) {
+    if (!(i == builtInfoData.Copyright.length-1)) {
+        copyrightTEX += `\\noindent ${builtInfoData.Copyright[i].replaceAll('**','')}\\\\`
+    }
+}
+
+let ccLicenceTEXroot = parse(builtInfoData.CCLicense)
+
+let ccLicenceTitle = ccLicenceTEXroot.querySelector('h3').text
+let ccLicenceDetailArr = ccLicenceTEXroot.querySelectorAll('p, li')
+
+copyrightTEX += `\n\r`
+copyrightTEX += `\\noindent\\textbf{${ccLicenceTitle}}\\\\\n\r`
+copyrightTEX += `\n\r`
+
+for (i in ccLicenceDetailArr) {
+    if (ccLicenceDetailArr[i].tagName == 'P') {
+        copyrightTEX += `\n\r\\noindent\\textbf{${ccLicenceDetailArr[i].text}}\n\r`
+    } else {
+        copyrightTEX += `\\noindent ${ccLicenceDetailArr[i].text}\n\r`
+    }
+}
+
+let copyright = `
+\\newpage
+\\begin{small}
+\\begin{sffamily}
+\\noindent Copyright © — ${bookAuthor}\\\\\n\r
+${copyrightTEX}
+\\end{sffamily}
+\\end{small}
+`
+
 const docStart = `\n\\begin{document}\n`
 const docEnd = `\n\\end{document}`
+
 let localTex = preamble
-
 localTex += docStart
-
-localTex += `Hello`
-
+localTex += frontMatter
+localTex += copyright
 localTex+= docEnd
 
 fs.writeFileSync((`../_resources/book-data/${bookID}/${bookID}.tex`), localTex, 'utf8')
+
+exec(`lualatex --output-directory=../_resources/book-data/${bookID}  --aux-directory=../_resources/book-data/${bookID}/texlog -interaction=nonstopmode ../_resources/book-data/${bookID}/${bookID}.tex`)
+
 

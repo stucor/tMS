@@ -35,6 +35,7 @@ function processSpans () {
     }
 }
 
+
 function processEmTags () {
     let allEmTagsArr = bookRoot.querySelectorAll('em')
     for (i in allEmTagsArr) {
@@ -54,8 +55,17 @@ function processParas () {
 function processSups () {
     let allSupsArr = bookRoot.querySelectorAll('sup')
     for (i in allSupsArr) {
-        let tempHTML = allSupsArr[i].innerHTML
-        allSupsArr[i].replaceWith(`\\footnote{footnote goes here}`)
+        let tempFootnoteText = allSupsArr[i].text
+
+        let footnotesData = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/footnotes.json`, 'utf8'))
+        for (j in footnotesData){
+            if (tempFootnoteText == footnotesData[i].fnNumber) {
+                let footnoteRoot = parse(footnotesData[i].fnHTML)
+                tempFootnoteText = footnoteRoot.text
+            }
+        }  
+      
+        allSupsArr[i].replaceWith(`\\footnote{${tempFootnoteText}}`)
     }
 }
 

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  4 JAN 2025 14:54
+This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  4 JAN 2025 15:41
  restricted system commands enabled.
 **../_resources/book-data/vasy/vasy.tex
 (../_resources/book-data/vasy/vasy.tex
@@ -832,6 +832,31 @@ or  <return>  to continue without it.
 [7]
 
 [8]
+! Misplaced alignment tab character &.
+<argument> ...orespaces \leftprotrusion SN 1.27:2.1–2.2 &
+                                                   Ud 1.10:14.1–14.2. Th...
+l.405 ... air find no footing”. Cf. Sujato 2011b.}
+                                                   and one has a similar li...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<argument> ...rotrusion MN 98:11.55–11.58 PTS: M II 121 &
+                                                   Dhp 409\@finalstrut \st...
+l.405 ...98:11.55–11.58 PTS: M II 121 & Dhp 409}
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
 
 [9]
 
@@ -860,6 +885,9 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
+
+[10]
+
 ! LaTeX Error: Too deeply nested.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -871,9 +899,6 @@ l.440
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-
-
-[10]
 
 ! LaTeX Error: \begin{itemize} on input line 439 ended by \end{itemise}.
 
@@ -890,6 +915,19 @@ or  <return>  to continue without it.
 
 
 [11]
+! Misplaced alignment tab character &.
+<argument> ...rotrusion MN 98:11.55–11.58 PTS: M II 121 &
+                                                   Dhp 409\@finalstrut \st...
+l.464 ...98:11.55–11.58 PTS: M II 121 & Dhp 409}
+                                                   so it seems to simply me...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
 
 [12]
 
@@ -914,6 +952,19 @@ or  <return>  to continue without it.
 ]
 
 [20]
+! Misplaced alignment tab character &.
+<argument> ...ignorespaces \leftprotrusion See Ñāṇamoli &
+                                                   Bodhi n.513.\@finalstrut ...
+l.592 ....\footnote{See Ñāṇamoli & Bodhi n.513.}
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
 
 [21]
 
@@ -945,10 +996,10 @@ Here is how much of LuaTeX's memory you used:
  1103 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 59 glue, 3 kern, 1 glyph, 61 attribute, 62 glue_spe
 c, 61 attribute_list, 1 write nodes
-   avail lists: 1:2,2:336,3:169,4:88,5:289,6:60,7:5380,8:2,9:353,10:21,11:325
+   avail lists: 1:1,2:314,3:160,4:88,5:310,6:60,7:6435,8:2,9:355,10:21,11:389
  37503 multiletter control sequences out of 65536+600000
  76 fonts using 25465735 bytes
- 79i,13n,92p,1401b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,13n,92p,2117b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus-itali
 c.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus
 -regular.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumb
@@ -956,7 +1007,7 @@ ookplus-bold.ttf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbio
 linum_rb.otf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbiolinu
 m_r.otf><C:/Users/stuar/AppData/Local/Microsoft/Windows/Fonts/wiswosmallcaps.ttf
 >
-Output written on vasy.pdf (32 pages, 349877 bytes).
+Output written on vasy.pdf (32 pages, 354631 bytes).
 
 PDF statistics: 249 PDF objects out of 1000 (max. 8388607)
  46 named destinations out of 1000 (max. 131072)

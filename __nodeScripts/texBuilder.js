@@ -5,14 +5,161 @@ const { parse } = require('node-html-parser');
 
 let bookID = process.argv.slice(2)[0];
 
-let bookRoot = ``;
+let indexRoot = ``;
 
 try {
     const data = fs.readFileSync('../'+bookID+'/'+'index.html', 'utf8');
-    bookRoot = parse(data);
+    indexRoot = parse(data);
 } catch (err) {
     console.error(err);
 }
+
+
+let bookRoot = parse(indexRoot.querySelector('#thebook').innerHTML)
+
+function processSpans () {
+    let allSpansArr = bookRoot.querySelectorAll('span')
+    for (i in allSpansArr) {
+        if ((allSpansArr[i].getAttribute('lang') == 'pli') ) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`\\textit{${tempText}}`)
+        } else 
+        if ((allSpansArr[i].classList.contains('sesame')) && (!allSpansArr[i].classList.contains('ref'))) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`${tempText}`)
+        } else
+        if (allSpansArr[i].classList.contains('list-margin')) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`\\item[{${tempText}}]`)
+        }
+    }
+}
+
+function processEmTags () {
+    let allEmTagsArr = bookRoot.querySelectorAll('em')
+    for (i in allEmTagsArr) {
+        let tempText = allEmTagsArr[i].text
+        allEmTagsArr[i].replaceWith(`\\textit{${tempText}}`)
+    }
+}
+
+function processParas () {
+    let allParasArr = bookRoot.querySelectorAll('p')
+    for (i in allParasArr) {
+        let tempHTML = allParasArr[i].innerHTML
+        allParasArr[i].replaceWith(`${tempHTML}\n\r`)
+    }
+}
+
+function processSups () {
+    let allSupsArr = bookRoot.querySelectorAll('sup')
+    for (i in allSupsArr) {
+        let tempHTML = allSupsArr[i].innerHTML
+        allSupsArr[i].replaceWith(`\\footnote{footnote goes here}`)
+    }
+}
+
+function processH1s () {
+    let allH1sArr = bookRoot.querySelectorAll ('h1')
+    for (i in allH1sArr) {
+        if (allH1sArr[i].classList.contains('titlepage')) {
+            allH1sArr[i].remove()
+        } else 
+        if (allH1sArr[i].id ==`TOCTarget999999999`) {
+            allH1sArr[i].remove()
+        } else {
+            let tempText = allH1sArr[i].text.replaceAll('\n', ' ')
+            allH1sArr[i].replaceWith(`\\chapter{${tempText}}`)
+        }
+    }
+}
+function processH2s () {
+    let allH2sArr = bookRoot.querySelectorAll ('h2')
+    for (i in allH2sArr) {
+        if (allH2sArr[i].classList.contains('titlepage')) {
+            allH2sArr[i].remove()
+        } else {
+            let tempText = allH2sArr[i].text
+            allH2sArr[i].replaceWith(`\n\r\\section{${tempText}}`)
+        }
+    }
+}
+function processH4s () {
+    let allH4sArr = bookRoot.querySelectorAll ('h4')
+    for (i in allH4sArr) {
+        if (allH4sArr[i].classList.contains('titlepage')) {
+            allH4sArr[i].remove()
+        } else {
+            //let tempText = allH4sArr[i].text
+            allH4sArr[i].replaceWith(`YIKES`)
+        }
+    }
+}
+
+function processUls () {
+    let allUlsArr = bookRoot.querySelectorAll ('ul') 
+    for (i in allUlsArr) {
+        tempHTML = allUlsArr[i].innerHTML.replaceAll('<li>', '\\item' ).replaceAll('</li>', '')
+        allUlsArr[i].replaceWith(`\\begin{itemize}\n\r\\itemsep5pt\\parskip0pt\\parsep0pt\n\r${tempHTML}\n\r\\end{itemize}`)
+    }
+}
+
+function processDls () {
+    let allDlsArr = bookRoot.querySelectorAll ('dl') 
+    for (i in allDlsArr) {
+        allDlsArr[i].remove()
+    }
+}
+
+function processDivs () {
+    let allDivsArr = bookRoot.querySelectorAll ('div')
+    for (i in allDivsArr) {
+        if (allDivsArr[i].classList.contains('eob')) {
+            allDivsArr[i].remove()
+        }
+    }
+}
+
+function processLineBlocks () {
+    let allLineBlocksArr = bookRoot.querySelectorAll('.line-block') 
+    for (i in allLineBlocksArr) {
+        let tempHTML = allLineBlocksArr[i].innerHTML
+        allLineBlocksArr[i].replaceWith(`\n\r\\begin{itemize}\n\r${tempHTML.replaceAll('<br>', ' \\\\ ')}\\end{itemise}`)
+    }
+}
+
+function processBlockquotes () {
+    let allBQArr = bookRoot.querySelectorAll('blockquote')
+    for (i in allBQArr) {
+       let tempHTML = allBQArr[i].innerHTML;
+       //console.log(`XXX—${tempHTML.replaceAll(`\\end{itemise}\n\r\\begin{itemize}`, '')}\n\n`)
+       allBQArr[i].replaceWith (`\\begin{quote}\n\r${tempHTML.replaceAll(`\\end{itemise}\n\r\\begin{itemize}`, '')}\n\r\\end{quote}`) // the replaceAll here cleans up the multiple line-block items in the itemise
+    }
+}
+
+function processHrs () {
+    let allHrsArr = bookRoot.querySelectorAll('hr') 
+    for (i in allHrsArr) {
+        allHrsArr[i].replaceWith (`\\vspace* {1em}\\noindent`)
+    }
+}
+
+
+processSpans ()
+processEmTags ()
+processParas ()
+processSups ()
+processH1s ()
+processH2s ()
+processH4s ()
+processUls ()
+processDls ()
+processDivs ()
+processLineBlocks ()
+processBlockquotes ()
+processHrs ()
+
+
 
 //Get Info
 let builtInfoData = JSON.parse(fs.readFileSync(`../_resources/built-info-data/${bookID}/info.json`, 'utf8'))
@@ -49,6 +196,10 @@ let preamble = `
 \\usepackage{microtype}
 
 \\hyphenpenalty=750
+
+
+\\usepackage{enumitem}
+\\setlist[itemize]{labelsep=1em, leftmargin=10mm}
 
 %LINESPACE%
 \\usepackage{setspace}
@@ -98,7 +249,7 @@ let preamble = `
 {}
 
 \\titleformat{\\section}
-{\\linespread{0.75}\\center\\Large\\scshape\\Secfont}
+{\\vspace{4pt}\\linespread{1}\\center\\Large\\scshape\\Secfont}
 {}
 {0pt}
 {}
@@ -114,7 +265,7 @@ let preamble = `
 \\newfontfamily\\Titlefont[]{Wiswo Small Caps}
 
 %EPIGRAPH%
-\\newenvironment{epigraph}\n
+\\newenvironment{epigraph}\n\r
 
 %HANGING LEFT%
 \\newcommand*{\\vleftofline}[1]{\\leavevmode\\llap{#1}}
@@ -156,6 +307,7 @@ let preamble = `
 \\hyphenation{manu-scripts}
 
 `
+const docStart = `\n\r\\begin{document}\n`
 let frontMatter =`
 \\frontmatter
 
@@ -174,7 +326,7 @@ let frontMatter =`
 
 \\begin{Large}
 \\vspace{4em}
-\\Titlefont\scshape{${bookAuthor}}
+\\Titlefont\\scshape{${bookAuthor}}
 \\end{Large}
 
 
@@ -221,18 +373,22 @@ ${copyrightTEX}
 \\end{sffamily}
 \\end{small}
 `
-
-const docStart = `\n\\begin{document}\n`
-const docEnd = `\n\\end{document}`
+const docTOC = `\n\r\\tableofcontents\n\r`
+const docMain =`\\mainmatter\n\\pagestyle{fancy}\n\r`
+const docEnd = `\n\r\\end{document}`
 
 let localTex = preamble
 localTex += docStart
 localTex += frontMatter
 localTex += copyright
+localTex += docTOC
+localTex += docMain
+localTex += bookRoot
 localTex+= docEnd
 
 fs.writeFileSync((`../_resources/book-data/${bookID}/${bookID}.tex`), localTex, 'utf8')
 
-exec(`lualatex --output-directory=../_resources/book-data/${bookID}  --aux-directory=../_resources/book-data/${bookID}/texlog -interaction=nonstopmode ../_resources/book-data/${bookID}/${bookID}.tex`)
+//exec(`lualatex --output-directory=../_resources/book-data/${bookID}  --aux-directory=../_resources/book-data/${bookID}/texlog -interaction=nonstopmode ../_resources/book-data/${bookID}/${bookID}.tex`)
+exec(`lualatex --output-directory=../_resources/book-data/${bookID}  -interaction=nonstopmode ../_resources/book-data/${bookID}/${bookID}.tex`)
 
 

@@ -17,6 +17,48 @@ try {
 
 let bookRoot = parse(indexRoot.querySelector('#thebook').innerHTML)
 
+
+function suttaCentralIt (suttaReference) {
+    let newTEX = ''
+     let [head,tail] = suttaReference.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0].split(':')
+      if (tail) {
+         tail = '#' + tail
+         newTEX = `\\href{https://suttacentral.net/${head}/en/sujato\\${tail}}{${suttaReference}}`
+     } else {
+         newTEX = `\\href{https://suttacentral.net/${head}/en/sujato}{${suttaReference}}`
+     }
+      return newTEX
+ }
+
+function processInlines (StrHtml) {
+    let localRoot = parse(StrHtml)
+    let allSpansArr = localRoot.querySelectorAll('span')
+    for (let i in allSpansArr) {
+        if ((allSpansArr[i].getAttribute('lang') == 'pli') ) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`\\textit{${tempText}}`)
+        } else 
+        if ((allSpansArr[i].classList.contains('sesame')) && (!allSpansArr[i].classList.contains('ref'))) {
+            let tempText = allSpansArr[i].text.replaceAll(`&`,`&amp;`)
+            allSpansArr[i].replaceWith(`${tempText}`)
+        } else
+        if (allSpansArr[i].classList.contains('ptsref')) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`[${tempText}]`)
+        } else
+        if (allSpansArr[i].classList.contains('list-margin')) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`\\item[{${tempText}}]`)
+        } else
+        if (allSpansArr[i].classList.contains('sclinktext')) {
+            let tempText = suttaCentralIt(allSpansArr[i].text)
+            allSpansArr[i].replaceWith(`${tempText}`)
+        }
+    }
+    return localRoot.innerHTML.replaceAll(`&amp;`,`\\&`)
+}
+
+
 function processSpans () {
     let allSpansArr = bookRoot.querySelectorAll('span')
     for (i in allSpansArr) {
@@ -60,12 +102,11 @@ function processSups () {
         let footnotesData = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/footnotes.json`, 'utf8'))
         for (j in footnotesData){
             if (tempFootnoteText == footnotesData[i].fnNumber) {
-                let footnoteRoot = parse(footnotesData[i].fnHTML)
-                tempFootnoteText = footnoteRoot.text
+                tempFootnoteText = processInlines(footnotesData[i].fnHTML).replaceAll('<p>','').replaceAll('</p>','') //(footnoteRoot.innerHTML)
             }
         }  
       
-        allSupsArr[i].replaceWith(`\\footnote{${tempFootnoteText}}`)
+        allSupsArr[i].replaceWith(`\\footnote {${tempFootnoteText}}`)
     }
 }
 
@@ -134,7 +175,7 @@ function processLineBlocks () {
     let allLineBlocksArr = bookRoot.querySelectorAll('.line-block') 
     for (i in allLineBlocksArr) {
         let tempHTML = allLineBlocksArr[i].innerHTML
-        allLineBlocksArr[i].replaceWith(`\n\r\\begin{itemize}\n\r${tempHTML.replaceAll('<br>', ' \\\\ ')}\\end{itemise}`)
+        allLineBlocksArr[i].replaceWith(`\n\r\\begin{itemize}\n\r${tempHTML.replaceAll('<br>', ' \\\\ ')}\\end{itemize}`)
     }
 }
 
@@ -142,8 +183,7 @@ function processBlockquotes () {
     let allBQArr = bookRoot.querySelectorAll('blockquote')
     for (i in allBQArr) {
        let tempHTML = allBQArr[i].innerHTML;
-       //console.log(`XXX—${tempHTML.replaceAll(`\\end{itemise}\n\r\\begin{itemize}`, '')}\n\n`)
-       allBQArr[i].replaceWith (`\\begin{quote}\n\r${tempHTML.replaceAll(`\\end{itemise}\n\r\\begin{itemize}`, '')}\n\r\\end{quote}`) // the replaceAll here cleans up the multiple line-block items in the itemise
+       allBQArr[i].replaceWith (`\\begin{quote}\n\r${tempHTML.replaceAll(`\\end{itemize}\n\r\\begin{itemize}`, '')}\n\r\\end{quote}`) // the replaceAll here cleans up the multiple line-block items in the itemize
     }
 }
 
@@ -323,7 +363,7 @@ let frontMatter =`
 
 \\pagestyle{empty}
 
-\\includegraphics[scale= 2, trim= 0 0 0 0]{../_resources/book-data/${bookID}/FrontLarge.jpg}
+%\\includegraphics[scale= 2, trim= 0 0 0 0]{../_resources/book-data/${bookID}/FrontLarge.jpg}
 
 \\newpage~\\newpage~
 
@@ -341,7 +381,7 @@ let frontMatter =`
 
 
 \\vspace*{\\fill}
-\\includegraphics[scale=0.06, trim = 0 13 5 0 ]{../_resources/images/icons/logo-enso-large}\\\\
+%\\includegraphics[scale=0.06, trim = 0 13 5 0 ]{../_resources/images/icons/logo-enso-large}\\\\
 \\vspace{4pt}
 \\begin{small}
 \\scshape{Wisdom \\& Wonders\\\\
@@ -385,6 +425,7 @@ ${copyrightTEX}
 `
 const docTOC = `\n\r\\tableofcontents\n\r`
 const docMain =`\\mainmatter\n\\pagestyle{fancy}\n\r`
+const docBib = ``
 const docEnd = `\n\r\\end{document}`
 
 let localTex = preamble
@@ -394,6 +435,7 @@ localTex += copyright
 localTex += docTOC
 localTex += docMain
 localTex += bookRoot
+localTex += docBib
 localTex+= docEnd
 
 fs.writeFileSync((`../_resources/book-data/${bookID}/${bookID}.tex`), localTex, 'utf8')

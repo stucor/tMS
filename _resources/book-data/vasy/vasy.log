@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  4 JAN 2025 15:41
+This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  5 JAN 2025 15:09
  restricted system commands enabled.
 **../_resources/book-data/vasy/vasy.tex
 (../_resources/book-data/vasy/vasy.tex
@@ -666,35 +666,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `GentiumBookPlus' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<../_resources/book-data/vasy/FrontLarge.jpg, id=51, 144.54pt x 216.81pt>
-File: ../_resources/book-data/vasy/FrontLarge.jpg Graphic file (type jpg)
-<use ../_resources/book-data/vasy/FrontLarge.jpg>
-Package luatex.def Info: ../_resources/book-data/vasy/FrontLarge.jpg  used on i
-nput line 147.
-(luatex.def)             Requested size: 289.07925pt x 433.61893pt.
 
 
 [1
 
 
-<../_resources/book-data/vasy/FrontLarge.jpg>]
-
-[2]
+]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `WiswoSmallCaps' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<../_resources/images/icons/logo-enso-large.png, id=61, 437.635pt x 434.62375pt
->
-File: ../_resources/images/icons/logo-enso-large.png Graphic file (type png)
-<use ../_resources/images/icons/logo-enso-large.png>
-Package luatex.def Info: ../_resources/images/icons/logo-enso-large.png  used o
-n input line 165.
-(luatex.def)             Requested size: 25.95584pt x 25.2934pt.
 
 
-[3{C:/Users/stuar/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}<../_resource
-s/images/icons/logo-enso-large.png>]
+[2{C:/Users/stuar/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxBiolinumO' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -716,7 +700,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
 
 
-[4] (C:/Data/tMS/books/_resources/book-data/vasy/vasy.toc
+[3] (C:/Data/tMS/books/_resources/book-data/vasy/vasy.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -731,11 +715,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 \openout4 = vasy.toc
 
 
-[5
-
-]
-
-[6
+[4
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -743,8 +723,21 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 213.
 
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
+[][][]\TU/GentiumBookPlus(0)/m/n/8 <span class=’sesame ref’>Anālayo 2017</s
+pan>, <span class=’sesame ref’>Brah-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
+\TU/GentiumBookPlus(0)/m/n/8 mali</span>, <span class=’sesame ref’>Su-jato 2011a</span>, and
+ <span class=’sesame
+ []
+
+
 
 [1
+
 
 ]
 
@@ -754,180 +747,21 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 
-! LaTeX Error: \begin{itemize} on input line 264 ended by \end{itemise}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.271 \end{itemise}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{itemize} on input line 280 ended by \end{itemise}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.287 \end{itemise}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-
 [4]
-
-! LaTeX Error: \begin{itemize} on input line 300 ended by \end{itemise}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.304 \end{itemise}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
 
 [5]
 
-! LaTeX Error: \begin{itemize} on input line 361 ended by \end{itemise}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.368 \end{itemise}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-
 [6]
-
-! LaTeX Error: \begin{itemize} on input line 380 ended by \end{itemise}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.384 \end{itemise}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
 
 [7]
 
 [8]
-! Misplaced alignment tab character &.
-<argument> ...orespaces \leftprotrusion SN 1.27:2.1–2.2 &
-                                                   Ud 1.10:14.1–14.2. Th...
-l.405 ... air find no footing”. Cf. Sujato 2011b.}
-                                                   and one has a similar li...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced alignment tab character &.
-<argument> ...rotrusion MN 98:11.55–11.58 PTS: M II 121 &
-                                                   Dhp 409\@finalstrut \st...
-l.405 ...98:11.55–11.58 PTS: M II 121 & Dhp 409}
-                                                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
 
 [9]
 
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.418 
-    
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \begin{itemize} on input line 417 ended by \end{itemise}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.424 \end{itemise}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-
 [10]
 
-! LaTeX Error: Too deeply nested.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.440 
-    
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \begin{itemize} on input line 439 ended by \end{itemise}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.443 \end{itemise}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-
 [11]
-! Misplaced alignment tab character &.
-<argument> ...rotrusion MN 98:11.55–11.58 PTS: M II 121 &
-                                                   Dhp 409\@finalstrut \st...
-l.464 ...98:11.55–11.58 PTS: M II 121 & Dhp 409}
-                                                   so it seems to simply me...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
 
 [12]
 
@@ -936,6 +770,12 @@ might try typing `S' now just to see what is salvageable.
 [14
 
 ]
+Underfull \hbox (badness 1466) in paragraph at lines 514--514
+[][][]\TU/GentiumBookPlus(0)/m/n/8 E.g. <span class=’sesame ref’>Ñāṇamol
+i</span> and <span class=’sesame ref’>Ṭhānis-
+ []
+
+
 
 [15]
 
@@ -952,19 +792,6 @@ might try typing `S' now just to see what is salvageable.
 ]
 
 [20]
-! Misplaced alignment tab character &.
-<argument> ...ignorespaces \leftprotrusion See Ñāṇamoli &
-                                                   Bodhi n.513.\@finalstrut ...
-l.592 ....\footnote{See Ñāṇamoli & Bodhi n.513.}
-                                                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
 
 [21]
 
@@ -991,15 +818,15 @@ Package rerunfilecheck Info: File `vasy.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 14820 strings out of 475554
+ 14795 strings out of 475554
  125240,953878 words of node,token memory allocated
  1103 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 59 glue, 3 kern, 1 glyph, 61 attribute, 62 glue_spe
 c, 61 attribute_list, 1 write nodes
-   avail lists: 1:1,2:314,3:160,4:88,5:310,6:60,7:6435,8:2,9:355,10:21,11:389
- 37503 multiletter control sequences out of 65536+600000
- 76 fonts using 25465735 bytes
- 79i,13n,92p,2117b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s
+   avail lists: 2:400,3:161,4:120,5:331,6:60,7:7038,8:3,9:383,10:21,11:402
+ 37486 multiletter control sequences out of 65536+600000
+ 77 fonts using 26155183 bytes
+ 79i,12n,92p,2641b,567s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus-itali
 c.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus
 -regular.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumb
@@ -1007,9 +834,9 @@ ookplus-bold.ttf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbio
 linum_rb.otf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbiolinu
 m_r.otf><C:/Users/stuar/AppData/Local/Microsoft/Windows/Fonts/wiswosmallcaps.ttf
 >
-Output written on vasy.pdf (32 pages, 354631 bytes).
+Output written on vasy.pdf (30 pages, 238854 bytes).
 
-PDF statistics: 249 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 131072)
+PDF statistics: 321 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 131072)
  97 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -149,8 +149,8 @@ function processH1s () {
         if (allH1sArr[i].id ==`TOCTarget999999999`) {
             allH1sArr[i].remove()
         } else {
-            let tempText = allH1sArr[i].text.replaceAll('\n', ' ')
-            allH1sArr[i].replaceWith(`\\chapter{${tempText}}`)
+            let tempTEX = allH1sArr[i].innerHTML.replace(`<span class="chapnum"> `, ``).replace(`</span><br>`, `. `)
+            allH1sArr[i].replaceWith(`\\chapter{${tempTEX}}`)
         }
     }
 }
@@ -441,7 +441,7 @@ let preamble = `
 
 \\makeatletter
 \\renewenvironment{thebibliography}[1]
-     {\\section*{\\bibname}% <-- this line was changed from \\chapter* to \\section*
+     {\\section{\\bibname}% <-- this line was changed from \\chapter* to \\section
       \\@mkboth{\\MakeUppercase\\bibname}{\\MakeUppercase\\bibname}%
       \\list{\\@biblabel{\\@arabic\\c@enumiv}}%
            {\\settowidth\\labelwidth{\\@biblabel{#1}}%

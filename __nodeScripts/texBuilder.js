@@ -42,6 +42,10 @@ function processInlines (StrHtml) {
             let tempText = allSpansArr[i].text.replaceAll(`&`,`&amp;`)
             allSpansArr[i].replaceWith(`${tempText}`)
         } else
+        if ((allSpansArr[i].classList.contains('sesame')) && (allSpansArr[i].classList.contains('ref'))) {
+            let tempText = allSpansArr[i].text.replaceAll(`&`,`&amp;`)
+            allSpansArr[i].replaceWith(`\\cite{${tempText}}`)
+        } else
         if (allSpansArr[i].classList.contains('ptsref')) {
             let tempText = allSpansArr[i].text
             allSpansArr[i].replaceWith(`[${tempText}]`)
@@ -55,9 +59,32 @@ function processInlines (StrHtml) {
             allSpansArr[i].replaceWith(`${tempText}`)
         }
     }
-    return localRoot.innerHTML.replaceAll(`&amp;`,`\\&`)
-}
 
+    let allEmTagsArr = localRoot.querySelectorAll('em')
+    for (i in allEmTagsArr) {
+        let tempText = allEmTagsArr[i].text
+        allEmTagsArr[i].replaceWith(`\\textit{${tempText}}`)
+    }
+
+    let allStrongTagsArr = localRoot.querySelectorAll('strong')
+    for (i in allStrongTagsArr) {
+        let tempText = allStrongTagsArr[i].text
+        allStrongTagsArr[i].replaceWith(`\\textbf{${tempText}}`)
+    }
+
+    let allAnchorsArr = localRoot.querySelectorAll('a') 
+    for (let i in allAnchorsArr) {
+        let tempText = allAnchorsArr[i].text
+        let tempAddress = allAnchorsArr[i].getAttribute('href')
+        allAnchorsArr[i].replaceWith(`\\href{${tempAddress}}{${tempText}}`)
+    }
+    
+
+    return localRoot.innerHTML.replaceAll(`&amp;`,`&`)
+                              .replaceAll(`&nbsp;`,` `)
+                              .replaceAll(`&ndash;`, `—`)
+                              .replaceAll(`&`, `\\&`)
+}
 
 function processSpans () {
     let allSpansArr = bookRoot.querySelectorAll('span')
@@ -70,13 +97,16 @@ function processSpans () {
             let tempText = allSpansArr[i].text
             allSpansArr[i].replaceWith(`${tempText}`)
         } else
+        if ((allSpansArr[i].classList.contains('sesame')) && (allSpansArr[i].classList.contains('ref'))) {
+            let tempText = allSpansArr[i].text.replaceAll(`&`,`&amp;`)
+            allSpansArr[i].replaceWith(`\\cite{${tempText}}`)
+        } else
         if (allSpansArr[i].classList.contains('list-margin')) {
             let tempText = allSpansArr[i].text
             allSpansArr[i].replaceWith(`\\item[{${tempText}}]`)
         }
     }
 }
-
 
 function processEmTags () {
     let allEmTagsArr = bookRoot.querySelectorAll('em')
@@ -124,10 +154,14 @@ function processH1s () {
         }
     }
 }
+
 function processH2s () {
     let allH2sArr = bookRoot.querySelectorAll ('h2')
     for (i in allH2sArr) {
         if (allH2sArr[i].classList.contains('titlepage')) {
+            allH2sArr[i].remove()
+        } else
+        if (allH2sArr[i].text == 'Bibliography') {
             allH2sArr[i].remove()
         } else {
             let tempText = allH2sArr[i].text
@@ -135,6 +169,7 @@ function processH2s () {
         }
     }
 }
+
 function processH4s () {
     let allH4sArr = bookRoot.querySelectorAll ('h4')
     for (i in allH4sArr) {
@@ -194,6 +229,48 @@ function processHrs () {
     }
 }
 
+function processTables () {
+    let allTables = bookRoot.querySelectorAll('.tablewrap')
+
+    for (let i in allTables) {
+        let localTableRoot = parse(allTables[i].innerHTML)
+        let caption = localTableRoot.querySelector('caption').text.replaceAll(`\r\n`, '')
+        let colcount = localTableRoot.querySelector('tr').querySelectorAll('td').length
+        let tabularStr = ``
+        for (let i = 1; i <= colcount; i++) {
+            tabularStr += 'l'
+        }
+        let allTableRows = localTableRoot.querySelectorAll('tr')
+        let allTableRowsTEX = ``
+        for (let i in allTableRows) {
+            allTableRowsTEX += allTableRows[i].innerHTML.replaceAll(`\r\n`, '')
+                                                        .replaceAll(`\n\r`, '')
+                                                        .replaceAll(`</td><td>`, ' & ')
+                                                        .replace(`<td>`, ``)
+                                                        .replace(`</td>`, ``)
+
+            allTableRowsTEX += ` \\\\\r\n`
+
+        }
+       // console.log (allTableRowsTEX)
+
+       let headerTEX = ``
+
+       if (caption == 'Abbreviations') {
+            headerTEX = `\\section{${caption}}\r\n`;
+       }
+
+       let startTEX = `\\bgroup\r\n\\def\\arraystretch{1.2}\r\n\\begin{tabular}{${tabularStr}}\r\n`
+
+       let endTEX = `\r\n\\end{tabular}\\\r\n\\egroup`
+
+       let newTEX = headerTEX + startTEX + allTableRowsTEX + endTEX
+
+
+        //let newTEX = `\\begin{table}[]\r\n\\caption{}\r\n\\label{${caption}}\r\n\\begin{tabular}{${tabularStr}}\r\n${allTableRowsTEX}\\end{tabular}\r\n\\end{table}`
+        allTables[i].replaceWith(newTEX)
+    }
+}
 
 processSpans ()
 processEmTags ()
@@ -208,6 +285,7 @@ processDivs ()
 processLineBlocks ()
 processBlockquotes ()
 processHrs ()
+processTables ()
 
 
 
@@ -356,6 +434,33 @@ let preamble = `
 
 \\hyphenation{manu-scripts}
 
+\\makeatletter
+\\def\\@biblabel#1{}
+\\renewcommand\\@cite[2]{{#1\\if@tempswa,\\nolinebreak[3] #2\\fi}}
+\\makeatother
+
+\\makeatletter
+\\renewenvironment{thebibliography}[1]
+     {\\section*{\\bibname}% <-- this line was changed from \\chapter* to \\section*
+      \\@mkboth{\\MakeUppercase\\bibname}{\\MakeUppercase\\bibname}%
+      \\list{\\@biblabel{\\@arabic\\c@enumiv}}%
+           {\\settowidth\\labelwidth{\\@biblabel{#1}}%
+            \\leftmargin\\labelwidth
+            \\advance\\leftmargin\\labelsep
+            \\@openbib@code
+            \\usecounter{enumiv}%
+            \\let\\p@enumiv\\@empty
+            \\renewcommand\\theenumiv{\\@arabic\\c@enumiv}}%
+      \\sloppy
+      \\clubpenalty4000
+      \\@clubpenalty \\clubpenalty
+      \\widowpenalty4000%
+      \\sfcode\`\\.\\@m}
+     {\\def\\@noitemerr
+       {\\@latex@warning{Empty \`thebibliography' environment}}%
+      \\endlist}
+\\makeatother
+
 `
 const docStart = `\n\r\\begin{document}\n`
 let frontMatter =`
@@ -389,43 +494,82 @@ Books}
 \\end{small}
 \\end{center}
 `
+function buildCopyright () {
 
-let copyrightTEX =``
-for (i in builtInfoData.Copyright) {
-    if (!(i == builtInfoData.Copyright.length-1)) {
-        copyrightTEX += `\\noindent ${builtInfoData.Copyright[i].replaceAll('**','')}\\\\`
+    let copyrightTEX =``
+    for (i in builtInfoData.Copyright) {
+        if (!(i == builtInfoData.Copyright.length-1)) {
+            copyrightTEX += `\\noindent ${builtInfoData.Copyright[i].replaceAll('**','')}\\\\`
+        }
     }
-}
-
-let ccLicenceTEXroot = parse(builtInfoData.CCLicense)
-
-let ccLicenceTitle = ccLicenceTEXroot.querySelector('h3').text
-let ccLicenceDetailArr = ccLicenceTEXroot.querySelectorAll('p, li')
-
-copyrightTEX += `\n\r`
-copyrightTEX += `\\noindent\\textbf{${ccLicenceTitle}}\\\\\n\r`
-copyrightTEX += `\n\r`
-
-for (i in ccLicenceDetailArr) {
-    if (ccLicenceDetailArr[i].tagName == 'P') {
-        copyrightTEX += `\n\r\\noindent\\textbf{${ccLicenceDetailArr[i].text}}\n\r`
-    } else {
-        copyrightTEX += `\\noindent ${ccLicenceDetailArr[i].text}\n\r`
+    
+    let ccLicenceTEXroot = parse(builtInfoData.CCLicense)
+    
+    let ccLicenceTitle = ccLicenceTEXroot.querySelector('h3').text
+    let ccLicenceDetailArr = ccLicenceTEXroot.querySelectorAll('p, li')
+    
+    copyrightTEX += `\n\r`
+    copyrightTEX += `\\noindent\\textbf{${ccLicenceTitle}}\\\\\n\r`
+    copyrightTEX += `\n\r`
+    
+    for (i in ccLicenceDetailArr) {
+        if (ccLicenceDetailArr[i].tagName == 'P') {
+            copyrightTEX += `\n\r\\noindent\\textbf{${ccLicenceDetailArr[i].text}}\n\r`
+        } else {
+            copyrightTEX += `\\noindent ${ccLicenceDetailArr[i].text}\n\r`
+        }
     }
-}
+    return copyrightTEX
 
+}
 let copyright = `
 \\newpage
 \\begin{small}
 \\begin{sffamily}
 \\noindent Copyright © — ${bookAuthor}\\\\\n\r
-${copyrightTEX}
+${buildCopyright()}
 \\end{sffamily}
 \\end{small}
 `
+function buildBiblio () {
+    let biblioMapArr = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/biblioMapArr.json`, 'utf8'))
+    let biblioHTML = parse(fs.readFileSync(`../_resources/book-data/${bookID}/biblio.html`, 'utf8'))
+    let localBiblio =`\\bibliographystyle{apalike}\n\r\\bibliography{biblatex-examples}\n\r\\begin{thebibliography}{${biblioMapArr.length}}`
+
+//remove all linkcontainers
+    let allLinkcontainers = biblioHTML.querySelectorAll('.linkContainer')
+    for (let i in allLinkcontainers) {
+        allLinkcontainers[i].replaceWith('')
+    }
+//remove all bibheads
+    let allBibheads = biblioHTML.querySelectorAll('.bibhead')
+    for (let i in allBibheads) {
+        let tempHTML = allBibheads[i].innerHTML;
+        allBibheads[i].replaceWith(tempHTML)
+    }
+//build the entries
+    let allDTs = biblioHTML.querySelectorAll('dt')
+    let allDDs =biblioHTML.querySelectorAll('dd')
+    let biblioEntriesArr = new Array()
+    for (let i in allDTs) {
+        let newBibTEX = processInlines(allDDs[i].innerHTML)
+        biblioEntriesArr.push ([allDTs[i].innerHTML, newBibTEX])
+    }
+
+    for (let i in biblioMapArr) {
+        for (let j in biblioEntriesArr) {
+            if (biblioMapArr[i][0] == biblioEntriesArr[j][0]) {
+                localBiblio += `\n\r\\bibitem[${biblioMapArr[i][1]}]{${biblioMapArr[i][1]}} ${biblioEntriesArr[j][1]}`
+            }
+        }
+    }
+    localBiblio += `\n\r\\end{thebibliography}`
+    return localBiblio
+}
+
 const docTOC = `\n\r\\tableofcontents\n\r`
 const docMain =`\\mainmatter\n\\pagestyle{fancy}\n\r`
-const docBib = ``
+const docBib = `${buildBiblio()}`
 const docEnd = `\n\r\\end{document}`
 
 let localTex = preamble
@@ -440,7 +584,7 @@ localTex+= docEnd
 
 fs.writeFileSync((`../_resources/book-data/${bookID}/${bookID}.tex`), localTex, 'utf8')
 
-//exec(`lualatex --output-directory=../_resources/book-data/${bookID}  --aux-directory=../_resources/book-data/${bookID}/texlog -interaction=nonstopmode ../_resources/book-data/${bookID}/${bookID}.tex`)
 exec(`lualatex --output-directory=../_resources/book-data/${bookID}  -interaction=nonstopmode ../_resources/book-data/${bookID}/${bookID}.tex`)
 
 
+//exec(`lualatex --output-directory=../_resources/book-data/${bookID}  --aux-directory=../_resources/book-data/${bookID}/texlog -interaction=nonstopmode ../_resources/book-data/${bookID}/${bookID}.tex`)

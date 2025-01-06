@@ -136,6 +136,33 @@
 
 \hyphenation{manu-scripts}
 
+\makeatletter
+\def\@biblabel#1{}
+\renewcommand\@cite[2]{{#1\if@tempswa,\nolinebreak[3] #2\fi}}
+\makeatother
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\section*{\bibname}% <-- this line was changed from \chapter* to \section*
+      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+
 
 \begin{document}
 
@@ -199,7 +226,7 @@ Books}
 			
 
 \chapter{Introduction}
-A wide range of opinions has long surrounded two innocent Pali words: \textit{viññāṇa anidassana}. They are translated variously, as ‘consciousness that is without feature / signless / invisible / non-manifesting / makes no showing / can not be characterized’, et cetera. This variety already indicates that their meaning is somewhat obscure. This obscurity has, however, not stopped interpreters from giving the words a lot of importance, because some see in \textit{viññāṇa} \textit{anidassana} a kind of consciousness essentially equal to nibbāna.\footnote {The first to equate \textit{viññāṇa anidassana} to nibbāna is, to my knowledge, <span class='sesame ref'>Falk</span> 1943. But this and similar ideas are still very alive today.} But there are many problems with this, starting with the following:
+A wide range of opinions has long surrounded two innocent Pali words: \textit{viññāṇa anidassana}. They are translated variously, as ‘consciousness that is without feature / signless / invisible / non-manifesting / makes no showing / can not be characterized’, et cetera. This variety already indicates that their meaning is somewhat obscure. This obscurity has, however, not stopped interpreters from giving the words a lot of importance, because some see in \textit{viññāṇa} \textit{anidassana} a kind of consciousness essentially equal to nibbāna.\footnote {The first to equate \textit{viññāṇa anidassana} to nibbāna is, to my knowledge, \cite{Falk} 1943. But this and similar ideas are still very alive today.} But there are many problems with this, starting with the following:
 
 \begin{itemize}
 \itemsep5pt\parskip0pt\parsep0pt
@@ -218,7 +245,7 @@ There are only two mentions of \textit{viññāṇa anidassana} in the Pali sutt
 
 
 \end{itemize}
-Some things are just best explained in writing—hence this essay. I show here that \textit{viññāṇa anidassana} is not nibbāna, but a poetic description of the state of boundless consciousness, the second “formless” meditation state. Most of the arguments were made before by others.\footnote {<span class='sesame ref'>Anālayo 2017</span>, <span class='sesame ref'>Brahmali</span>, <span class='sesame ref'>Sujato 2011a</span>, and <span class='sesame ref'>Sujato 2011b</span>, among others.} I gathered them here, together with a few thoughts of my own.
+Some things are just best explained in writing—hence this essay. I show here that \textit{viññāṇa anidassana} is not nibbāna, but a poetic description of the state of boundless consciousness, the second “formless” meditation state. Most of the arguments were made before by others.\footnote {\cite{Anālayo 2017}, \cite{Brahmali}, \cite{Sujato 2011a}, and \cite{Sujato 2011b}, among others.} I gathered them here, together with a few thoughts of my own.
 
 This essay analyzes rare terms in abstract texts. However, it also illustrates the nature of Pali verse, and provides a good example of how to apply the Buddha’s advice on deciding what his real teachings were.
 
@@ -317,19 +344,19 @@ In Pali the five words making up the answer are:
 \textit{viññāṇaṁ anidassanaṁ} (consciousness invisible) \\ \textit{anantaṁ sabbato pabhaṁ} (boundless fully shining)
 \end{itemize}
 \end{quote}
-These words seem to be forced into their particular order by the meter of the verse, which requires eight syllables in each line. As A.K. Warder, a leading scholar of Pali verse, wrote: “Poetic licence is most noticeable in the freedom of word order in verse.”\footnote {<span class='sesame ref'>Warder</span>} This means ‘boundless’ can be taken as the central adjective describing ‘consciousness’, with ‘invisible’ and ‘fully shining’ being secondary to it. That is to say, the latter two apply not to ‘consciousness’, but to ‘boundless consciousness’ as a whole. It is not consciousness that is fully shining and invisible, it is \textit{boundless consciousness} that is. I rearranged the words in my translation to clarify this. (Such rearrangement, let it be clear, is done often in translations of Pali.)
+These words seem to be forced into their particular order by the meter of the verse, which requires eight syllables in each line. As A.K. Warder, a leading scholar of Pali verse, wrote: “Poetic licence is most noticeable in the freedom of word order in verse.”\footnote {\cite{Warder}} This means ‘boundless’ can be taken as the central adjective describing ‘consciousness’, with ‘invisible’ and ‘fully shining’ being secondary to it. That is to say, the latter two apply not to ‘consciousness’, but to ‘boundless consciousness’ as a whole. It is not consciousness that is fully shining and invisible, it is \textit{boundless consciousness} that is. I rearranged the words in my translation to clarify this. (Such rearrangement, let it be clear, is done often in translations of Pali.)
 
 The term ‘fully shining’ (\textit{sabbato pabhaṁ}) is a metaphor, of course. The state of boundless consciousness does not literally give off light. It refers to the absence of the five mental hindrances in deep meditation. As the Upakkilesa (Impurities) Sutta in the Aṅguttara Nikāya says: “when the mind is freed from these five impurities [i.e. hindrances] it is \textit{shining}.”\footnote {\href{https://suttacentral.net/an5.23/en/sujato\#2.1}{AN 5.23:2.1–2.6}: \textit{Yato ca kho, bhikkhave, cittaṁ imehi pañcahi upakkilesehi vimuttaṁ hoti […] pabhassarañca}.} The suttas often compare a mind in deep meditation to something that gives off light, most commonly a fire.\footnote {E.g. \href{https://suttacentral.net/mn140/en/sujato\#20.1}{MN 140:20.1–20.3} [PTS: M III 243], \href{https://suttacentral.net/sn51.22/en/sujato\#3.1}{SN 51.22:3.1–4.3}, \href{https://suttacentral.net/an3.102/en/sujato\#1.6}{AN 3.102:1.6, 3.6}, \href{https://suttacentral.net/thag20.1/en/sujato\#59.1}{Thag 20.1:59.1–61.4}, \href{https://suttacentral.net/dhp387/en/sujato}{Dhp 387}}
 
-Aside from the hindrances, another thing that is notably absent in the state of boundless consciousness is perceptions pertaining to ‘form’\footnote {E.g. \href{https://suttacentral.net/an9.31/en/sujato\#1.7}{AN 9.31:1.7–1.8}: “For one who has attained the base of boundless space, the perception of form has ceased. For one who has attained the base of boundless consciousness, the perception present in the base of boundless space has ceased.”. C.f. \href{https://suttacentral.net/an10.6/en/sujato}{AN 10.6} where in a list of (gradual) cessation of perception the formless attainments follows the four elements, i.e. form.} (which I understand to be a subtle mental perception, not a perception of the body). This is addressed by \textit{anidassana}, translated here quite literally as ‘invisible’. Since the meaning of \textit{rūpa} includes ‘appearance’,\footnote {Cf. e.g. Rhys Davids, <span class='sesame ref'>PED</span>: “\textit{Rūpa}: form, figure, appearance, principle of form, etc.”} \textit{arūpa} means ‘without appearance’, thus ‘invisible’. This translation is in accordance with the apparent meaning of \textit{anidassana} in the Saṅgīti Sutta, which mentions visible form and invisible form (i.e. material form and the more subtle types such as in meditation).\footnote {\href{https://suttacentral.net/dn33/en/sujato\#1.10.75}{DN 33:1.10.75–1.10.76} [PTS: D III 217] \textit{Tividhena rūpasaṅgaho: sanidassanasappaṭighaṁ rūpaṁ, anidassanasappaṭighaṁ rūpaṁ, anidassanāppaṭighaṁ rūpaṁ}, “The threefold classification of form: visible tangible form, invisible tangible form, and invisible intangible form.”} The only other text that gives a useful context for \textit{anidassana} is the Kakacūpama Sutta, which says one can not paint the sky because “the sky is without form, invisible” (\textit{ākāso arūpī anidassano}).\footnote {\href{https://suttacentral.net/mn21/en/sujato\#14.1}{MN 21:14.1–14.10}} Here we see \textit{anidassana} indeed as a synonym of \textit{arūpa}.\footnote {Cf. <span class='sesame ref'>Anālayo 2017</span> p.13: “This [\textit{anidassana}] also occurs in a description of space, which is said to be immaterial, \textit{arūpa}, and invisible, \textit{anidassana}, a context where the two terms seem to function as near synonyms.”}
+Aside from the hindrances, another thing that is notably absent in the state of boundless consciousness is perceptions pertaining to ‘form’\footnote {E.g. \href{https://suttacentral.net/an9.31/en/sujato\#1.7}{AN 9.31:1.7–1.8}: “For one who has attained the base of boundless space, the perception of form has ceased. For one who has attained the base of boundless consciousness, the perception present in the base of boundless space has ceased.”. C.f. \href{https://suttacentral.net/an10.6/en/sujato}{AN 10.6} where in a list of (gradual) cessation of perception the formless attainments follows the four elements, i.e. form.} (which I understand to be a subtle mental perception, not a perception of the body). This is addressed by \textit{anidassana}, translated here quite literally as ‘invisible’. Since the meaning of \textit{rūpa} includes ‘appearance’,\footnote {Cf. e.g. Rhys Davids, \cite{PED}: “\textit{Rūpa}: form, figure, appearance, principle of form, etc.”} \textit{arūpa} means ‘without appearance’, thus ‘invisible’. This translation is in accordance with the apparent meaning of \textit{anidassana} in the Saṅgīti Sutta, which mentions visible form and invisible form (i.e. material form and the more subtle types such as in meditation).\footnote {\href{https://suttacentral.net/dn33/en/sujato\#1.10.75}{DN 33:1.10.75–1.10.76} [PTS: D III 217] \textit{Tividhena rūpasaṅgaho: sanidassanasappaṭighaṁ rūpaṁ, anidassanasappaṭighaṁ rūpaṁ, anidassanāppaṭighaṁ rūpaṁ}, “The threefold classification of form: visible tangible form, invisible tangible form, and invisible intangible form.”} The only other text that gives a useful context for \textit{anidassana} is the Kakacūpama Sutta, which says one can not paint the sky because “the sky is without form, invisible” (\textit{ākāso arūpī anidassano}).\footnote {\href{https://suttacentral.net/mn21/en/sujato\#14.1}{MN 21:14.1–14.10}} Here we see \textit{anidassana} indeed as a synonym of \textit{arūpa}.\footnote {Cf. \cite{Anālayo 2017} p.13: “This [\textit{anidassana}] also occurs in a description of space, which is said to be immaterial, \textit{arūpa}, and invisible, \textit{anidassana}, a context where the two terms seem to function as near synonyms.”}
 
-We should not need to look for a deeper meaning behind \textit{anidassana}, because, as accurately stated by <span class="sesame ref">Warder</span> again, in verse “the need to fit the sentence to the meter influences the choice of vocabulary, so that unusual synonyms and rare words may be used.”\footnote {<span class='sesame ref'>Warder</span> p.354} \textit{Anidassanaṁ} fits this perfectly: it is a rare and unusual synonym which supplies the meter \textit{arūpaṁ} and \textit{anantaṁ} could not. In summary, all it does is metaphorically describe the absence of form in the state of boundless consciousness, the second formless state.
+We should not need to look for a deeper meaning behind \textit{anidassana}, because, as accurately stated by \cite{Warder} again, in verse “the need to fit the sentence to the meter influences the choice of vocabulary, so that unusual synonyms and rare words may be used.”\footnote {\cite{Warder} p.354} \textit{Anidassanaṁ} fits this perfectly: it is a rare and unusual synonym which supplies the meter \textit{arūpaṁ} and \textit{anantaṁ} could not. In summary, all it does is metaphorically describe the absence of form in the state of boundless consciousness, the second formless state.
 
 Let's return to the question, “where does form find no footing?” Why is the answer the second formless state and not the first? This is because form can still “find a footing” in the first formless state, the state of boundless space. According to Sariputta in the Nibbānasukha Sutta, a perception pertaining to form can infiltrate this state and bring the mind back to the fourth jhāna: “After the complete transcendence of perceptions of forms, […] focusing on boundless space, a monk attains the state of boundless space. If in that state he begins to perceive or focus back on forms, that will be an affliction to him.”\footnote {\href{https://suttacentral.net/an9.34/en/sujato\#6.1}{AN 9.34:6.1–6.2}} The state of boundless consciousness is the lowest meditative state which can not be directly disturbed by such perceptions, and therefore it is “where form finds no footing”.
 
 The state of boundless consciousness is still just a temporary escape from form, however, which explains why the Buddha changed the monk's question from “where do earth, water, fire, and air [i.e. form] \textit{cease without remnant}?”, which implies permanent cessation, to “where do earth, water, fire, and air \textit{find no footing}?”, which only implies a temporary inability to infiltrate. This change in the question can not be explained if the boundless consciousness of the Kevaddha Sutta were to be a permanent escape from form, like nibbāna.
 
-As a sidenote, two other Pali suttas contain verses with the phrase “where earth, water, fire, and air find no footing”\footnote {\href{https://suttacentral.net/sn1.27/en/sujato\#2.1}{SN 1.27:2.1–2.2} \& \href{https://suttacentral.net/ud1.10/en/sujato\#14.1}{Ud 1.10:14.1–14.2}. The Chinese parallels of \href{https://suttacentral.net/sn1.27/en/sujato}{SN 1.27} (<a href='https://suttacentral.net/sa601' class='extlink'>SĀ 601</a> and <a href='https://suttacentral.net/sa-2.176' class='extlink'>SĀ-2 176</a>) appear not to have “where earth, water, fire, and air find no footing”. Cf. <span class='sesame ref'>Sujato 2011b</span>.} and one has a similar line in an inspired utterance, which is technically prose, but is still very poetical.\footnote {\href{https://suttacentral.net/ud8.1/en/sujato\#3.1}{Ud 8.1:3.1–3.4}} These three suttas all refer to the cessation of the aggregates (\textit{khandhas}) after the death of an enlightened one, often called parinibbāna.\footnote {\href{https://suttacentral.net/sn1.27/en/sujato\#2.5}{SN 1.27:2.5–2.6} mentions the cessation of \textit{nāmarūpa}. In \href{https://suttacentral.net/ud1.10/en/sujato\#12.3}{Ud 1.10:12.3–15.4} the verses were spoken when monks asked about the faith of the arahant Bāhiya who just passed away. \href{https://suttacentral.net/ud8.1/en/sujato}{Ud 8.1} mentions the absence of all form and the formless. All other factors in this inspired utterance describe the end of rebirth from different perspectives. So all three texts are about nibbāna after death.} This does not pose any problems for the ideas laid out above, because form not only finds no footing in the state of boundless consciousness, but after parinibbāna finds no footing anywhere either. In other words: “where earth, water, fire, and air find no footing” is just a partial description of parinibbāna that also applies to the state of boundless consciousness. Just because it refers to parinibbāna in these suttas, does not mean it also does in the Kevaddha Sutta. A line of verse can describe one thing in one context, and another thing in another context. This is quite common in the suttas. An example is found right here in the Kevaddha Sutta. The line “the long and short, the small and gross, the fair and ugly”, which has such a deep meaning here, elsewhere simply refers to things one should not steal.\footnote {\href{https://suttacentral.net/mn98/en/sujato\#11.55}{MN 98:11.55–11.58} [PTS: M II 121] \& \href{https://suttacentral.net/dhp409/en/sujato}{Dhp 409}}
+As a sidenote, two other Pali suttas contain verses with the phrase “where earth, water, fire, and air find no footing”\footnote {\href{https://suttacentral.net/sn1.27/en/sujato\#2.1}{SN 1.27:2.1–2.2} \& \href{https://suttacentral.net/ud1.10/en/sujato\#14.1}{Ud 1.10:14.1–14.2}. The Chinese parallels of \href{https://suttacentral.net/sn1.27/en/sujato}{SN 1.27} (\href{https://suttacentral.net/sa601}{SĀ 601} and \href{https://suttacentral.net/sa-2.176}{SĀ-2 176}) appear not to have “where earth, water, fire, and air find no footing”. Cf. \cite{Sujato 2011b}.} and one has a similar line in an inspired utterance, which is technically prose, but is still very poetical.\footnote {\href{https://suttacentral.net/ud8.1/en/sujato\#3.1}{Ud 8.1:3.1–3.4}} These three suttas all refer to the cessation of the aggregates (\textit{khandhas}) after the death of an enlightened one, often called parinibbāna.\footnote {\href{https://suttacentral.net/sn1.27/en/sujato\#2.5}{SN 1.27:2.5–2.6} mentions the cessation of \textit{nāmarūpa}. In \href{https://suttacentral.net/ud1.10/en/sujato\#12.3}{Ud 1.10:12.3–15.4} the verses were spoken when monks asked about the faith of the arahant Bāhiya who just passed away. \href{https://suttacentral.net/ud8.1/en/sujato}{Ud 8.1} mentions the absence of all form and the formless. All other factors in this inspired utterance describe the end of rebirth from different perspectives. So all three texts are about nibbāna after death.} This does not pose any problems for the ideas laid out above, because form not only finds no footing in the state of boundless consciousness, but after parinibbāna finds no footing anywhere either. In other words: “where earth, water, fire, and air find no footing” is just a partial description of parinibbāna that also applies to the state of boundless consciousness. Just because it refers to parinibbāna in these suttas, does not mean it also does in the Kevaddha Sutta. A line of verse can describe one thing in one context, and another thing in another context. This is quite common in the suttas. An example is found right here in the Kevaddha Sutta. The line “the long and short, the small and gross, the fair and ugly”, which has such a deep meaning here, elsewhere simply refers to things one should not steal.\footnote {\href{https://suttacentral.net/mn98/en/sujato\#11.55}{MN 98:11.55–11.58} [PTS: M II 121] \& \href{https://suttacentral.net/dhp409/en/sujato}{Dhp 409}}
 
 
 \section{The second question}
@@ -371,7 +398,7 @@ The phrase “long, short, small and gross, and fair and ugly” is obviously po
 
 
 \item
-The word \textit{nirujjhati} (‘cease’) of the monk’s original question is not adopted by the Buddha in his second question, but changed for the synonymous \textit{uparujjhati} (‘come to cease’). This is another instance of adjusting to the meter. \textit{Uparujjhati} is one syllable longer, making the line the required eight syllables long. A change of prefix (in this case \textit{upa}- for \textit{ni-}) to make a word fit the meter is common. As Warder states: “[In verse] a prefix may be dropped or added where the meaning of the sentence will tolerate a slight change of nuance.”\footnote {<span class='sesame ref'>Warder</span> p.354} \textit{Uparujjhati} is almost exclusively used in verse, supporting this case.
+The word \textit{nirujjhati} (‘cease’) of the monk’s original question is not adopted by the Buddha in his second question, but changed for the synonymous \textit{uparujjhati} (‘come to cease’). This is another instance of adjusting to the meter. \textit{Uparujjhati} is one syllable longer, making the line the required eight syllables long. A change of prefix (in this case \textit{upa}- for \textit{ni-}) to make a word fit the meter is common. As Warder states: “[In verse] a prefix may be dropped or added where the meaning of the sentence will tolerate a slight change of nuance.”\footnote {\cite{Warder} p.354} \textit{Uparujjhati} is almost exclusively used in verse, supporting this case.
 
 
 \item
@@ -384,7 +411,7 @@ The word ‘here’ (\textit{ettha}) can mean ‘here’ in the widest sense of 
 
 
 \end{itemize}
-On a more speculative note, the search for the cessation of form is reminiscent of certain ideas found in Brahmanism. Put briefly, some brahmins thought that by shedding their own form they could merge with the \textit{Brahman}, the universal consciousness.\footnote {Cf. e.g. <span class='sesame ref'>Falk</span> p.15ff.} This may explain why the Buddha tells Kevaddha a story wherein he shows his knowledge to be superior to Brahmā (who brahmins took as the highest manifestation of \textit{Brahman}), while specifically mentioning the cessation of consciousness. Interestingly, the brahmin texts, the Upaniṣads, also describe \textit{Brahman} as ‘boundless’.\footnote {E.g. Taittirīya Upaniṣad 2.1.1: <span data-custom-style='sanskit'>satyaṁ jñānaṁ anantaṁ brahma, yo veda</span>: “They who know Brahman as Truth, as knowledge, as boundless …”}
+On a more speculative note, the search for the cessation of form is reminiscent of certain ideas found in Brahmanism. Put briefly, some brahmins thought that by shedding their own form they could merge with the \textit{Brahman}, the universal consciousness.\footnote {Cf. e.g. \cite{Falk} p.15ff.} This may explain why the Buddha tells Kevaddha a story wherein he shows his knowledge to be superior to Brahmā (who brahmins took as the highest manifestation of \textit{Brahman}), while specifically mentioning the cessation of consciousness. Interestingly, the brahmin texts, the Upaniṣads, also describe \textit{Brahman} as ‘boundless’.\footnote {E.g. Taittirīya Upaniṣad 2.1.1: <span data-custom-style='sanskit'>satyaṁ jñānaṁ anantaṁ brahma, yo veda</span>: “They who know Brahman as Truth, as knowledge, as boundless …”}
 
 To summarize, the verses of the Kevaddha Sutta poetically rephrase two teachings encountered throughout the suttas: (1) the state of boundless consciousness and (2) the cessation of consciousness along with \textit{nāmarūpa}.
 
@@ -401,9 +428,9 @@ Given the clarity of the phrase in the Kevaddha Sutta, it would make sense for �
 
 First option. Although ‘all’ (\textit{sabba}) elsewhere occasionally refers to the six senses,\footnote {\href{https://suttacentral.net/sn35.23/en/sujato}{SN 35.23}. Cf. \href{https://suttacentral.net/sn35.28/en/sujato}{SN 35.28}.} this does not have to be the case here. ‘All’ is an indefinite word which (in both English and Pali) does not have a single fixed meaning. Here ‘all’ could just refer to the four elements and all the heavenly worlds mentioned before it, which together make up all the form realms. Considering how detailed the enumeration of these worlds is, we could expect a similar enumeration for the formless realms, if these were also included in ‘all’. That this does not happen suggests that ‘all’ here only means all the form realms.
 
-The second option relies on the fact that the different Pali versions disagree on who spoke the words quoted above. Only the Burmese edition attributes them to the Buddha; the Thai, Sri Lankan and PTS editions all attribute them to Brahmā Baka.\footnote {I rely on <span class='sesame ref'>Anālayo 2010</span> p.297 n.158.} Moreover, the Burmese version is broken, missing an \textit{iti} (end quote marker) after the passage, which is needed to give the word back to Baka. So it too does not fully attribute boundless consciousness to the Buddha. In the Chinese parallel in the Madhyama Āgama the exchange is very different, but it also has Baka making a claim to be “conscious of boundless elements”, not the Buddha.\footnote {<a href='https://suttacentral.net/ma78' class='extlink'>MĀ 78</a>. Cf. <span class='sesame ref'>Anālayo 2010</span> pp.296-297: “According to the Madhyama-āgama discourse, in reply to the Buddha's claim to superior knowledge, Brahmā affirmed to have infinite knowledge, an affirmation not recorded in the Majjhima-nikāya version. In this affirmation, Brahmā proclaims to be conscious of infinite [boundless] elements, to have infinite knowledge, and infinite vision.”}
+The second option relies on the fact that the different Pali versions disagree on who spoke the words quoted above. Only the Burmese edition attributes them to the Buddha; the Thai, Sri Lankan and PTS editions all attribute them to Brahmā Baka.\footnote {I rely on \cite{Anālayo 2010} p.297 n.158.} Moreover, the Burmese version is broken, missing an \textit{iti} (end quote marker) after the passage, which is needed to give the word back to Baka. So it too does not fully attribute boundless consciousness to the Buddha. In the Chinese parallel in the Madhyama Āgama the exchange is very different, but it also has Baka making a claim to be “conscious of boundless elements”, not the Buddha.\footnote {\href{https://suttacentral.net/ma78}{MĀ 78}. Cf. \cite{Anālayo 2010} pp.296-297: “According to the Madhyama-āgama discourse, in reply to the Buddha's claim to superior knowledge, Brahmā affirmed to have infinite knowledge, an affirmation not recorded in the Majjhima-nikāya version. In this affirmation, Brahmā proclaims to be conscious of infinite [boundless] elements, to have infinite knowledge, and infinite vision.”}
 
-Some translators follow the majority of editions and attribute the lines to Baka,\footnote {E.g. <span class='sesame ref'>Horner</span> and <span class='sesame ref'>Sujato 2018</span>.} while others follow the unique Burmese edition and attribute them to the Buddha.\footnote {E.g. <span class='sesame ref'>Ñāṇamoli</span> and <span class='sesame ref'>Ṭhānissaro</span>.} The latter might do so because the Buddha spoke the same lines in the Kevaddha Sutta, but there is no reason why Baka could not have spoken them here. Lines of verse continually reoccur throughout the Nikāyas, being spoken by different people. Adopting verses of others seems to have been a common practice of the time.
+Some translators follow the majority of editions and attribute the lines to Baka,\footnote {E.g. \cite{Horner} and \cite{Sujato 2018}.} while others follow the unique Burmese edition and attribute them to the Buddha.\footnote {E.g. \cite{Ñāṇamoli} and \cite{Ṭhānissaro}.} The latter might do so because the Buddha spoke the same lines in the Kevaddha Sutta, but there is no reason why Baka could not have spoken them here. Lines of verse continually reoccur throughout the Nikāyas, being spoken by different people. Adopting verses of others seems to have been a common practice of the time.
 
 There are also some good contextual reasons to attribute the words to Baka:
 
@@ -428,7 +455,7 @@ Just like in the Kevaddha Sutta, the Buddha here too ends the conversation by al
 
 
 \end{itemize}
-To summarize these points, Bhikkhu Anālayo wrote: “A coherent reading of the Brahmanimantanika Sutta is possible with the same reference [to boundless consciousness] being attributed to Baka Brahmā.”\footnote {<span class='sesame ref'>Anālayo 2017</span> p.17}
+To summarize these points, Bhikkhu Anālayo wrote: “A coherent reading of the Brahmanimantanika Sutta is possible with the same reference [to boundless consciousness] being attributed to Baka Brahmā.”\footnote {\cite{Anālayo 2017} p.17}
 
 A third option is that neither the Buddha nor Baka ever spoke these words. After all, the suttas are not a flawless record of facts. The Brahmanimantanika Sutta is also a very esoteric discourse, one of the most abstract in the entire Canon. According to Bhikkhu Bodhi it could be seen “as a dramatic representation of the same ideas set forth by the Mūlapariyāya [Sutta] in abstract philosophical terms”.\footnote {Ñāṇamoli n.499} Someone other than the Buddha may well have been inspired to compose this text. Its anti-brahmanical tone also indicates it to be a piece of later propaganda. The text may have its origin in the Baka Sutta,\footnote {\href{https://suttacentral.net/sn6.4/en/sujato}{SN 6.4}} a discourse in the Saṁyutta Nikāya that portrays the same meeting, but with a much more standard story line.
 
@@ -446,7 +473,7 @@ This addendum discusses two passages that shed further light on the term \textit
 \section{Nidassana in the eight spheres of mastery}
 I thought the original essay exhausted all useful contexts for determining the meaning of \textit{anidassana}, but a list of meditation practices called ‘the eight spheres of mastery’ had slipped under my radar. Although not uncommon in the Pāli canon,\footnote {The eight spheres of mastery (\textit{aṭṭha} \textit{abhibha}-\textit{āyatana}) are found in \href{https://suttacentral.net/dn16/en/sujato\#3.24.1}{DN 16:3.24.1–3.32.6}, \href{https://suttacentral.net/dn33/en/sujato\#3.1.142}{DN 33:3.1.142–3.1.67}, \href{https://suttacentral.net/dn34/en/sujato\#2.1.159}{DN 34:2.1.159–2.1.189}, \href{https://suttacentral.net/mn77/en/sujato\#23.1}{MN 77:23.1–23.33}, \href{https://suttacentral.net/an1.439/en/sujato}{AN 1.439} (\href{https://suttacentral.net/an1.440/en/sujato}{AN 1.440}, \href{https://suttacentral.net/an1.441/en/sujato}{AN 1.441}, \href{https://suttacentral.net/an1.442/en/sujato}{AN 1.442}, \href{https://suttacentral.net/an1.443/en/sujato}{AN 1.443}, \href{https://suttacentral.net/an1.444/en/sujato}{AN 1.444}, \href{https://suttacentral.net/an1.445/en/sujato}{AN 1.445}, \href{https://suttacentral.net/an1.446/en/sujato}{AN 1.446}), \href{https://suttacentral.net/an8.65/en/sujato}{AN 8.65}, and \href{https://suttacentral.net/an10.29/en/sujato\#6.1}{AN 10.29:6.1–13.6}. Compare \href{https://suttacentral.net/mn128/en/sujato}{MN 128}.} these practices are unknown to most people, so a brief explanation will be necessary. Just like the nature of nibbāna, the nature of deep meditation is a topic of debate, so not everybody may agree with my interpretation. However, the exact nature of these practices is irrelevant to the general conclusion about \textit{anidassana}.
 
-The eight spheres of mastery describe perceiving internal form and external form. Venerable Sujato notes: “‘Perceiving form internally’ refers to someone developing meditation based on an aspect of their own body, such as the breath or the parts of the body. The ‘forms’ seen externally are the lights or other meditation phenomena that today are usually called nimitta.”\footnote {<span class='sesame ref'>Sujato 2018</span>, see note at \href{https://suttacentral.net/dn16/en/sujato\#3.25.1}{DN 16:3.25.1}, Pāli terms removed} These nimittas are called “external forms” because to the mind’s eye they can appear just like external lights appear to the physical eye. It is even common for unexperienced meditators to believe such nimittas are burning their eyes. The spheres of mastery mention four colors of light, ordered by what was considered the least pure (blue) to the most pure (white).
+The eight spheres of mastery describe perceiving internal form and external form. Venerable Sujato notes: “‘Perceiving form internally’ refers to someone developing meditation based on an aspect of their own body, such as the breath or the parts of the body. The ‘forms’ seen externally are the lights or other meditation phenomena that today are usually called nimitta.”\footnote {\cite{Sujato 2018}, see note at \href{https://suttacentral.net/dn16/en/sujato\#3.25.1}{DN 16:3.25.1}, Pāli terms removed} These nimittas are called “external forms” because to the mind’s eye they can appear just like external lights appear to the physical eye. It is even common for unexperienced meditators to believe such nimittas are burning their eyes. The spheres of mastery mention four colors of light, ordered by what was considered the least pure (blue) to the most pure (white).
 
 The point is, these forms are described as, for instance, “forms with white color and white appearance (\textit{nidassana})”. Even if the reader disagrees that this describes nimittas, the term \textit{nidassana} here indisputably refers to certain forms in the context of meditation. In my view the form that still exists in the jhānas is even more subtle than these colored lights, so the eight spheres of mastery precede not only the formless states but the jhānas too. Regardless, we can again derive that \textit{a-nidassana} in the state of boundless consciousness refers to the inability for any meditative forms to appear there (or “find a footing” there). So this too indicates that \textit{anidassana} is a synonym for \textit{arūpa}.
 
@@ -456,195 +483,76 @@ With this in mind, instead of ‘invisible’, a better translation for \textit{
 \section{Nibbāna as anidassana}
 Another passage worth addressing attributes \textit{anidassana} to nibbāna.\footnote {\href{https://suttacentral.net/sn43.22/en/sujato}{SN 43.22}} However, we can’t conclude that nibbāna is in all aspects equal to the boundless consciousness of the Kevaddha Sutta simply because the same adjective is used to describe both. Nibbāna is without sensual desire, but so are the jhānas and formless attainments. Likewise, not everything that is without appearances (\textit{anidassana}) is equal to nibbāna. The sky is not nibbāna, for instance, even though it is also said to be without appearances. The passage that attributes \textit{anidassana} to nibbāna describes only one aspect of nibbāna, one which also happens to apply to certain other things. It indicates that nibbāna is without appearances of form, just like the empty sky, and just like the state of boundless consciousness.
 
-But there may be a better explanation why nibbāna is called \textit{anidassana} in this one particular passage. It is part of a repetition series of thirty suttas, which seems to have been expanded over time, since the same series in the Chinese Āgamas is considerably shorter.\footnote {The Pāli series starts at \href{https://suttacentral.net/sn43.14-43/en/sujato}{SN 43.14-43}, the Chinese at <a href='https://suttacentral.net/Sa890' class='extlink'>SĀ 890</a>.} These parallels also appear to contain no equivalent for \textit{anidassana}, so this term is most likely a late addition to the Pāli series.
+But there may be a better explanation why nibbāna is called \textit{anidassana} in this one particular passage. It is part of a repetition series of thirty suttas, which seems to have been expanded over time, since the same series in the Chinese Āgamas is considerably shorter.\footnote {The Pāli series starts at \href{https://suttacentral.net/sn43.14-43/en/sujato}{SN 43.14-43}, the Chinese at \href{https://suttacentral.net/Sa890}{SĀ 890}.} These parallels also appear to contain no equivalent for \textit{anidassana}, so this term is most likely a late addition to the Pāli series.
 
 To hypothesize a reason for this, it might be that the verse of the Kevaddha Sutta at an early time was already misunderstood to in some sense refer to nibbāna, and consequently \textit{anidassana} got added to the series of attributes. It would have been an easy thing to do, since all it basically required was the addition of a single word. The commentary indeed takes the verse to refer to nibbāna, although it interprets \textit{viññāṇa} not as ‘consciousness’ but as ‘to be understood’ (\textit{viññātabba}). The word never means this anywhere else, however, and the commentarial interpretation is uncompelling for other reasons as well.\footnote {See Ñāṇamoli \& Bodhi n.513.}
 
 
 \section{The Brahmanimantanika Sutta parodying Brahmanism}
-In the original essay I included a “speculative note” that the Kevaddha Sutta may be addressing brahmanical ideas on liberation. I since discovered that some statements in the earliest Upaniṣads are remarkably similar to the verses of this sutta. The Bṛhadāraṇyaka Upaniṣad uses the exact same words “boundless consciousness” for the goal that brahmins believed to be reached when \textit{nāma} and \textit{rūpa} are discarded. This goal, the unification of the Ātman and Brahman, is also described as “neither fine nor coarse, neither long nor short”. Among other indications, this made it clear to me that the Kevaddha Sutta and its verses are indeed addressing such brahmanic ideas in particular. I’ve written about this elsewhere before so won’t repeat myself here.\footnote {<span class='sesame ref'>Sunyo 2024</span> Ch.8, ‘Brahmanic beliefs in \textit{nāmarūpa} -less consciousness’}
+In the original essay I included a “speculative note” that the Kevaddha Sutta may be addressing brahmanical ideas on liberation. I since discovered that some statements in the earliest Upaniṣads are remarkably similar to the verses of this sutta. The Bṛhadāraṇyaka Upaniṣad uses the exact same words “boundless consciousness” for the goal that brahmins believed to be reached when \textit{nāma} and \textit{rūpa} are discarded. This goal, the unification of the Ātman and Brahman, is also described as “neither fine nor coarse, neither long nor short”. Among other indications, this made it clear to me that the Kevaddha Sutta and its verses are indeed addressing such brahmanic ideas in particular. I’ve written about this elsewhere before so won’t repeat myself here.\footnote {\cite{Sunyo 2024} Ch.8, ‘Brahmanic beliefs in \textit{nāmarūpa} -less consciousness’}
 
-In the Brahmanimantanika Sutta, a text which in many aspects is similar to the Kevaddha Sutta, the situation appears to be similar. As <span class="sesame ref">Reat</span> already pointed out: “The Buddha seems to be poking fun at [brahmanic] monism when he recounts the story of an encounter with Brahmā.”\footnote {<span class='sesame ref'>Reat</span> p.287} My interpretation of \textit{viññāṇa anidassana} doesn’t hinge on whether this is actually the case, but it is an interesting perspective to consider, as it can make this dense sutta a bit more relatable. <span class="sesame ref">Reat</span> doesn’t expand, so the following are some initial thoughts on this.
+In the Brahmanimantanika Sutta, a text which in many aspects is similar to the Kevaddha Sutta, the situation appears to be similar. As \cite{Reat} already pointed out: “The Buddha seems to be poking fun at [brahmanic] monism when he recounts the story of an encounter with Brahmā.”\footnote {\cite{Reat} p.287} My interpretation of \textit{viññāṇa anidassana} doesn’t hinge on whether this is actually the case, but it is an interesting perspective to consider, as it can make this dense sutta a bit more relatable. \cite{Reat} doesn’t expand, so the following are some initial thoughts on this.
 
 The sutta starts with Baka Brahmā saying: “This is permanent, this is everlasting, this is eternal, this is whole, this is imperishable. For this doesn’t get born, age, die, pass on, and get reborn again. And beyond this there is no further escape.” According to the commentary this refers to his status as a Brahmā. But grammatically it can’t refer directly to himself or his realm (\textit{brahma­loka}), because both require a masculine pronoun while Baka uses the neuter ‘this’ (\textit{idaṃ}). Considering the anti-brahmanic tone of the discourse, this description may (additionally) hint at the Ātman/Brahman, which in the Upaniṣads is referred to in the neuter and also described with terms like ‘eternal’, ‘whole’, ‘imperishable’, and ‘unborn’. The sage Yājñavalkya also describes this Ātman/Brahman as a boundless consciousness.\footnote {BU 2.4.12} Therefore—and since \textit{viññānaṃ} is also neuter—I think Brahmā may actually be referring to the boundless consciousness which he mentions later in the discourse (in all Pāli editions except perhaps for the broken Burmese one). He mistakes this consciousness to be permanent and so forth.
 
 This doesn’t mean that there was a literal Brahmā who spoke these words in the literal state of boundless consciousness, since it’s impossible to speak there. It would instead mean that Brahmā is a literary device, a parody of the goal of brahmins who aimed for a permanent state of boundless consciousness, also called Brahman, ‘the Supreme’. In the Upaniṣads this universal Brahman is also anthropomorphized as a personal god who thinks and speaks, so the Brahmanimantanika Sutta would not be unique in this.
 
-The sutta also has Māra possessing a god in Brahmā’s retinue in order to tell the Buddha: “Don’t attack this being! For this is Brahmā, the Great Brahmā, the Vanquisher, the Unvanquished, the Universal Seer, the Wielder of Power, God Almighty, the Maker, the Creator, the First, the Begetter, the Controller, the Father of those who have been born and those yet to be born.” If this is not an allusion to Brahman, the source of all beings in the Upaniṣads, I do not know what it is. Compare it with the opening of the Muṇḍaka Upaniṣad: “Brahmā arose as the first among gods, as the creator of all […]. He is omniscient, he knows all.”\footnote {MuṇU 1.1, translation <span class='sesame ref'>Olivelle</span>.} Māra’s description of Brahmā also occurs in the Brahmajāla Sutta, in what is unmistakably a parody rebuking brahmanic ideas of eternalism.\footnote {\href{https://suttacentral.net/dn1/en/sujato\#2.5.2}{DN 1:2.5.2, 2.5.9, 2.6.7} also at \href{https://suttacentral.net/dn24/en/sujato\#2.17.2}{DN 24:2.17.2, 2.17.8, 2.17.18}. For a discussion see <span class='sesame ref'>Sunyo 2023</span>.} It also occurs in the Kevaddha Sutta, where Brahmā repeatedly avoids answering the monk’s question by replying he is the Great Brahmā and so forth. By analogy, the Brahmanimantanika Sutta therefore also seems to be parodying brahmanic ideas. When “attacking” Brahmā, the Buddha is actually attacking the ideal which he represents.
+The sutta also has Māra possessing a god in Brahmā’s retinue in order to tell the Buddha: “Don’t attack this being! For this is Brahmā, the Great Brahmā, the Vanquisher, the Unvanquished, the Universal Seer, the Wielder of Power, God Almighty, the Maker, the Creator, the First, the Begetter, the Controller, the Father of those who have been born and those yet to be born.” If this is not an allusion to Brahman, the source of all beings in the Upaniṣads, I do not know what it is. Compare it with the opening of the Muṇḍaka Upaniṣad: “Brahmā arose as the first among gods, as the creator of all […]. He is omniscient, he knows all.”\footnote {MuṇU 1.1, translation \cite{Olivelle}.} Māra’s description of Brahmā also occurs in the Brahmajāla Sutta, in what is unmistakably a parody rebuking brahmanic ideas of eternalism.\footnote {\href{https://suttacentral.net/dn1/en/sujato\#2.5.2}{DN 1:2.5.2, 2.5.9, 2.6.7} also at \href{https://suttacentral.net/dn24/en/sujato\#2.17.2}{DN 24:2.17.2, 2.17.8, 2.17.18}. For a discussion see \cite{Sunyo 2023}.} It also occurs in the Kevaddha Sutta, where Brahmā repeatedly avoids answering the monk’s question by replying he is the Great Brahmā and so forth. By analogy, the Brahmanimantanika Sutta therefore also seems to be parodying brahmanic ideas. When “attacking” Brahmā, the Buddha is actually attacking the ideal which he represents.
 
 That the discourse addresses the ideals of others, not just that of the individual god Brahmā, is indicated when Brahmā explains that before the Buddha’s time there were already brahmins who acknowledged the same permanent escape as him.
 
 One may reasonably object that Brahmā can’t represent the brahmanic ideal of boundless consciousness because in the suttas Brahmā lives in the form realms, not the formless realms including boundless consciousness. Technically this may be true, but the cosmology of the early texts is also very mythological. In many ways it is just a skillful adoption of earlier Vedic concepts. I therefore think it is not impossible that Brahmā here is portrayed as having discovered something beyond the form realms, a boundless consciousness he thinks is permanent.
 
-Lastly, Brahmā is called ‘Baka’. According to <span class="sesame ref">Monier-Williams</span> the word \textit{baka}, literally ‘crane’, also means “cheat, rogue, the crane being regarded as a bird of great cunning and deceit”.\footnote {<span class='sesame ref'>Monier-Williams</span> under baka.} It is what the English-speaking world considers a fox to be. So Baka Brahmā may actually be Brahmā the Fox. Why? Perhaps because many brahmins were deceived by the boundless consciousness they called Brahman.
+Lastly, Brahmā is called ‘Baka’. According to \cite{Monier-Williams} the word \textit{baka}, literally ‘crane’, also means “cheat, rogue, the crane being regarded as a bird of great cunning and deceit”.\footnote {\cite{Monier-Williams} under baka.} It is what the English-speaking world considers a fox to be. So Baka Brahmā may actually be Brahmā the Fox. Why? Perhaps because many brahmins were deceived by the boundless consciousness they called Brahman.
 
 It’s impossible to determine with certainty whether these were the exact original polemics, but that the sutta contains at least \textit{some} refutations of Brahmanism seems beyond doubt. If anything, I hope this may prove to be a fruitful approach for future inquiry.
 
 Be that as it may, the Buddha’s final reply to Brahmā, where he mentions the cessation of existence, still portrays his highest aim. It is specifically this teaching which Brahmā praises after his eventual conversion, not boundless consciousness.
 
 \chapter{References}
-<div class="tablewrap">
-<table>
-<caption>
-Abbreviations
-</caption>
-<tbody>
-<tr>
-<td>
-AN
-
-</td>
-<td>
-Aṅguttara Nikāya
-
-</td>
-</tr>
-<tr>
-<td>
-BU
-
-</td>
-<td>
-Bṛhadāraṇyaka Upaniṣad
-
-</td>
-</tr>
-<tr>
-<td>
-Dhp
-
-</td>
-<td>
-Dhammapada
-
-</td>
-</tr>
-<tr>
-<td>
-DN
-
-</td>
-<td>
-Digha Nikāya
-
-</td>
-</tr>
-<tr>
-<td>
-MĀ
-
-</td>
-<td>
-Madhyama Āgama
-
-</td>
-</tr>
-<tr>
-<td>
-MN
-
-</td>
-<td>
-Majjhima Nikāya
-
-</td>
-</tr>
-<tr>
-<td>
-MN-A
-
-</td>
-<td>
-Papañcasūdanī (MN commentary)
-
-</td>
-</tr>
-<tr>
-<td>
-MuṇU
-
-</td>
-<td>
-Muṇḍaka Upaniṣad
-
-</td>
-</tr>
-<tr>
-<td>
-SĀ
-
-</td>
-<td>
-Saṁyukta Āgama at T 99
-
-</td>
-</tr>
-<tr>
-<td>
-SĀ-2
-
-</td>
-<td>
-Saṁyukta Āgama at T 100
-
-</td>
-</tr>
-<tr>
-<td>
-SN
-
-</td>
-<td>
-Saṁyutta Nikāya
-
-</td>
-</tr>
-<tr>
-<td>
-Snp
-
-</td>
-<td>
-Sutta Nipāta
-
-</td>
-</tr>
-<tr>
-<td>
-Thag
-
-</td>
-<td>
-Theragāthā
-
-</td>
-</tr>
-<tr>
-<td>
-TU
-
-</td>
-<td>
-Taittirīya Upaniṣad
-
-</td>
-</tr>
-<tr>
-<td>
-Ud
-
-</td>
-<td>
-Udāna
-
-</td>
-</tr>
-</tbody>
+\section{Abbreviations}
+\bgroup
+\def\arraystretch{1.2}
+\begin{tabular}{ll}
+AN & Aṅguttara Nikāya \\
+BU & Bṛhadāraṇyaka Upaniṣad \\
+Dhp & Dhammapada \\
+DN & Digha Nikāya \\
+MĀ & Madhyama Āgama \\
+MN & Majjhima Nikāya \\
+MN-A & Papañcasūdanī (MN commentary) \\
+MuṇU & Muṇḍaka Upaniṣad \\
+SĀ & Saṁyukta Āgama at T 99 \\
+SĀ-2 & Saṁyukta Āgama at T 100 \\
+SN & Saṁyutta Nikāya \\
+Snp & Sutta Nipāta \\
+Thag & Theragāthā \\
+TU & Taittirīya Upaniṣad \\
+Ud & Udāna \\
 
-</table>
-</div>
-\section{Bibliography}
+\end{tabular}\
+\egroup
 
 
-
+\bibliographystyle{apalike}
+\bibliography{biblatex-examples}
+\begin{thebibliography}{17}
+\bibitem[Anālayo 2010]{Anālayo 2010} \textbf{Anālayo}, Bhikkhu —  \textit{A Comparative Study of the Majjhima-nikāya}. 2011 
+\bibitem[Anālayo 2017]{Anālayo 2017} \textbf{Anālayo}, Bhikkhu —  \textit{The Luminous Mind in Theravāda and Dharmaguptaka Discourses}. Journal of the Oxford Centre for Buddhist Studies, Vol. 13/0. pp. 10–51. 2017 
+\bibitem[Ñāṇamoli]{Ñāṇamoli} \textbf{Bodhi}, Bhikkhu \& \textbf{Ñāṇamoli}, Bhikkhu \textit{(tr.) }— \textit{The Middle Length Discourses of the Buddha}. 1995 
+\bibitem[Brahmali]{Brahmali} \textbf{Brahmāli}, Bhikkhu —  \textit{What the Nikāyas Say and Do not Say about Nibbāna}. Buddhist Studies Review, Vol. 26/1. pp. 33–66. 2009 
+\bibitem[Monier-Williams]{Monier-Williams} \textbf{Monier-Williams}, Monier —  \textit{Monier-Williams Sanskrit Dictionary 1899 Advanced}.
+\bibitem[PED]{PED} \textbf{Rhys Davids}, T.W. \& \textbf{Stede}, William —  \textit{The Pali Text Society's Pali-English Dictionary}. 1921 
+\bibitem[Falk]{Falk} \textbf{Falk}, Maryla —  \textit{Nāma-rūpa and dharma-rūpa}. 1943 
+\bibitem[Horner]{Horner} \textbf{Horner}, I. B. \textit{(tr.) }—\textbf{Horner}, I. B. \textit{(ed.) }— \textit{The Collection of the Middle Length Sayings (Majjhima-Nikaya)}, Vol. 1 of 3. 1954 
+\bibitem[Olivelle]{Olivelle} \textbf{Olivelle}, Patrick —  \textit{The Early Upanisads}. 1998 
+\bibitem[Reat]{Reat} \textbf{Reat}, N. Ross —  \textit{Origins of Indian Psychology}. 1990 
+\bibitem[Sujato 2011a]{Sujato 2011a} \textbf{Sujato}, Bhikkhu —  \textit{Nibbana is not viññāṇa. Really, it just isn’t.}. Sujato’s Blog. 2011 
+\bibitem[Sujato 2011b]{Sujato 2011b} \textbf{Sujato}, Bhikkhu —  \textit{Nibbana is still not Viññāṇa}. Sujato’s Blog. 2011 
+\bibitem[Sujato 2018]{Sujato 2018} \textbf{Sujato}, Bhikkhu —  \textit{Translations of the Pali Canon at SuttaCentral}. SuttaCentral. 2018 
+\bibitem[Sunyo 2023]{Sunyo 2023} \textbf{Sunyo}, Bhikkhu —  \textit{Is Dependent Origination a parody of Vedic cosmology?}. Discuss \& Discover SuttaCentral. 2023 
+\bibitem[Sunyo 2024]{Sunyo 2024} \textbf{Sunyo}, Bhikkhu —  \textit{Seeds, Paintings and a Beam of Light}.
+\bibitem[Ṭhānissaro]{Ṭhānissaro} \textbf{Ṭhānissaro}, Bhikkhu —  \textit{Translations of the Pali Canon at Access to Insight}. 2014 
+\bibitem[Warder]{Warder} \textbf{Warder}, A. K. —  \textit{Introduction to Pali}. 1991 
+\end{thebibliography}
 \end{document}

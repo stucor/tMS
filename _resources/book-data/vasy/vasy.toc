@@ -9,4 +9,4 @@
 \contentsline {section}{Nibbāna as anidassana}{20}{section*.10}%
 \contentsline {section}{The Brahmanimantanika Sutta parodying Brahmanism}{21}{section*.11}%
 \contentsline {chapter}{References}{25}{chapter*.12}%
-\contentsline {section}{Bibliography}{26}{section*.13}%
+\contentsline {section}{Abbreviations}{25}{section*.13}%

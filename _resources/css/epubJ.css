@@ -176,6 +176,9 @@ li {
 *:lang(pli) {
 	font-style: italic;
 }
+*:lang(sa) {
+	font-style: italic;
+}
 
 .captioned-image {
 	page-break-inside:avoid

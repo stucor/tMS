@@ -38,6 +38,10 @@ function processInlines (StrHtml) {
             let tempText = allSpansArr[i].text
             allSpansArr[i].replaceWith(`\\textit{${tempText}}`)
         } else 
+        if ((allSpansArr[i].getAttribute('lang') == 'sa') ) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`\\textit{${tempText}}`)
+        } else 
         if ((allSpansArr[i].classList.contains('sesame')) && (!allSpansArr[i].classList.contains('ref'))) {
             let tempText = allSpansArr[i].text.replaceAll(`&`,`&amp;`)
             allSpansArr[i].replaceWith(`${tempText}`)
@@ -53,6 +57,14 @@ function processInlines (StrHtml) {
         if (allSpansArr[i].classList.contains('list-margin')) {
             let tempText = allSpansArr[i].text
             allSpansArr[i].replaceWith(`\\item[{${tempText}}]`)
+        } else
+        if (allSpansArr[i].classList.contains('linkseparator')) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`{~${tempText}~}`)
+        } else
+        if (allSpansArr[i].classList.contains('reflink')) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`{${tempText}} `)
         } else
         if (allSpansArr[i].classList.contains('sclinktext')) {
             let tempText = suttaCentralIt(allSpansArr[i].text)
@@ -73,9 +85,31 @@ function processInlines (StrHtml) {
     }
 
     let allAnchorsArr = localRoot.querySelectorAll('a') 
+
     for (let i in allAnchorsArr) {
-        let tempText = allAnchorsArr[i].text
-        let tempAddress = allAnchorsArr[i].getAttribute('href')
+            let tempText =``
+            let tempAddress =``
+        if (allAnchorsArr[i].classList.contains('online')) {
+            tempText = 'online'
+            tempAddress = allAnchorsArr[i].getAttribute('href')
+        } else 
+        if (allAnchorsArr[i].classList.contains('internetArchive')) {
+            tempText = 'Internet Archive'
+            tempAddress = allAnchorsArr[i].getAttribute('href')
+        } else 
+        if (allAnchorsArr[i].classList.contains('library')) {
+            tempText = 'tMS Library'
+            tempAddress = allAnchorsArr[i].getAttribute('href').replace('../', 'https://wiswo.org/books/')
+        } else 
+        if (allAnchorsArr[i].classList.contains('refpdf')) {
+//            tempText = 'PDF'
+            tempText = '{\\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}'
+            tempAddress = allAnchorsArr[i].getAttribute('href').replace('../', 'https://wiswo.org/books/')
+        } else {
+            tempText = allAnchorsArr[i].text
+            tempAddress = allAnchorsArr[i].getAttribute('href')
+        }
+        
         allAnchorsArr[i].replaceWith(`\\href{${tempAddress}}{${tempText}}`)
     }
     
@@ -298,7 +332,7 @@ let bookAuthor = builtInfoData.Authors
 
 
 let preamble = `
-\\documentclass[10pt, openany]{book}
+\\documentclass[10pt, openright]{book}
 
 %PACKAGES%
 
@@ -309,22 +343,22 @@ let preamble = `
 \\usepackage{titlesec}
 \\usepackage{verse}
 \\usepackage[unicode, pdfauthor={${bookAuthor}}, pdftitle={${bookTitle}: ${bookSubtitle}}, pdfsubject={Buddhism}, pdfkeywords={Buddhism}, pdfcreator={Wiswo-texBuilder}, hyperfootnotes=false]{hyperref} 
+\\usepackage{emptypage}
 
 %links and cites
 \\hypersetup{
     colorlinks = true,
     linkcolor = [rgb]{0.1, 0.1, 0.56},
     anchorcolor = blue,
-    citecolor = blue,
+    citecolor = [rgb]{0.1, 0.1, 0.56},
     filecolor = blue,
-    urlcolor = [rgb]{0.4, 0.6, 0.91}
+    urlcolor = [rgb]{0.10, 0.46, 0.94}
     }
 
 %MICROTYPOGRAPHY%
 \\usepackage{microtype}
 
 \\hyphenpenalty=750
-
 
 \\usepackage{enumitem}
 \\setlist[itemize]{labelsep=1em, leftmargin=10mm}
@@ -336,13 +370,12 @@ let preamble = `
 
 %Minimum space before footnotes
 \\setlength{\\skip\\footins}{1\\baselineskip}
-\\setlength{\\footnotesep}{11pt}
+\\setlength{\\footnotesep}{10pt}
 
 %VERSE%
 \\settowidth{\\versewidth}
 {mmmmmmmmmmmmmmmmmmm}%THIS SETS THE GLOBAL DEFAULT WIDTH OF CENTERING. IT IS USUALLY DETERMINED LOCALLY, HOWEVER.%
 %VERSE%
-
 
 %HEADER%
 \\usepackage{fancyhdr}
@@ -352,8 +385,19 @@ let preamble = `
 \\fancyhf{}
 %\\fancyfoot[CE,CO]{– \\thepage \\hspace{0.18em}–}
 
-\\fancyhead[RO]{\\headerfont\\scshape\\small\\textcolor[rgb]{0.5, 0.5, 0.5}{Viññāṇa Anidassana —\\hspace{0.18em}\\thepage}}
-\\fancyhead[LE]{\\headerfont\\scshape\\small\\textcolor[rgb]{0.5, 0.5, 0.5}{\\thepage\\hspace{0.18em}— Bhikkhu Sunyo}}
+\\fancyhead[RO]{\\headerfont\\scshape\\small\\textcolor[rgb]{0.5, 0.5, 0.5}{\\leftmark\\hspace{0.18em}—\\hspace{0.18em}\\thepage}}
+\\fancyhead[LE]{\\headerfont\\scshape\\small\\textcolor[rgb]{0.5, 0.5, 0.5}{\\thepage\\hspace{0.18em}—\\hspace{0.18em}${bookTitle}}}
+
+\\makeatletter
+\\renewcommand{\\chaptermark}[1]{%
+  \\markboth{%
+    \\ifnum\\c@secnumdepth>\\m@ne
+      \\@chapapp\\ {\\footnotesize\\thechapter}. \\ %
+    \\fi
+  #1%
+  }{}%
+}
+\\makeatother
 
 \\renewcommand{\\headrulewidth}{0pt}
 \\fancypagestyle{plain}{ %
@@ -362,7 +406,8 @@ let preamble = `
 \\renewcommand{\\footrulewidth}{0pt}
 }
 
-\\renewcommand\\footnoterule{{\\color[rgb]{0.8, 0.8, 0.8} \\hrule width 1in height 0.2pt}} % a 1 inch gray line 
+%\\renewcommand\\footnoterule{{\\color[rgb]{0.8, 0.8, 0.8} \\hrule width 1in height 0.4pt }} % a 1 inch gray line 
+\\renewcommand\\footnoterule{{\\color[rgb]{0.8, 0.8, 0.8} \\kern-2 \\hrule width 1in \\kern 3 }} % a 1 inch gray line 
 
 
 %FONTS%
@@ -404,22 +449,29 @@ let preamble = `
 
 \\counterwithout{footnote}{chapter}
 \\usepackage[hang,flushmargin,bottom]{footmisc}
-%\\graphicspath{ {./images/} }
+\\setlength{\\footnotemargin}{5mm}
+
+%Make footnote non-superscript
+\\makeatletter%%
+\\patchcmd{\\@makefntext}{%
+\\ifFN@hangfoot
+\\bgroup}%
+{%
+\\ifFN@hangfoot
+\\bgroup\\def\\@makefnmark{\\rlap{\\normalfont\\@thefnmark.}}}{}{}%
+% %%%
+\\patchcmd{\\@makefntext}{%
+\\ifdim\\footnotemargin>\\z@
+\\hb@xt@ \\footnotemargin{\\hss\\@makefnmark}}%
+{%
+\\ifdim\\footnotemargin>\\z@
+\\hb@xt@ \\footnotemargin{\\@makefnmark\\hss}}{}{}%
+\\makeatother
 
 \\newcommand{\\nocontentsline}[3]{}
 \\newcommand{\\tocless}[2]{\\bgroup\\let\\addcontentsline=\\nocontentsline#1{#2}\\egroup}
 
-\\makeatletter
-\\newcommand{\\epubchapter}[1]{%
-  \\begingroup
-  \\let\\@makechapterhead\\@gobble % make \\@makechapterhead do nothing
-  \\tocless \\chapter{#1}
-  \\endgroup
-}
-\\makeatother
-
 \\usepackage{verbatim}
-
 
 \\pretolerance=400
 \\tolerance=800
@@ -442,7 +494,7 @@ let preamble = `
 \\makeatletter
 \\renewenvironment{thebibliography}[1]
      {\\section{\\bibname}% <-- this line was changed from \\chapter* to \\section
-      \\@mkboth{\\MakeUppercase\\bibname}{\\MakeUppercase\\bibname}%
+      %\\@mkboth{\\MakeUppercase\\bibname}{\\MakeUppercase\\bibname}%
       \\list{\\@biblabel{\\@arabic\\c@enumiv}}%
            {\\settowidth\\labelwidth{\\@biblabel{#1}}%
             \\leftmargin\\labelwidth
@@ -468,7 +520,7 @@ let frontMatter =`
 
 \\pagestyle{empty}
 
-%\\includegraphics[scale= 2, trim= 0 0 0 0]{../_resources/book-data/${bookID}/FrontLarge.jpg}
+\\includegraphics[scale= 2, trim= 0 0 0 0]{../_resources/book-data/${bookID}/FrontLarge.jpg}
 
 \\newpage~\\newpage~
 
@@ -486,7 +538,7 @@ let frontMatter =`
 
 
 \\vspace*{\\fill}
-%\\includegraphics[scale=0.06, trim = 0 13 5 0 ]{../_resources/images/icons/logo-enso-large}\\\\
+\\includegraphics[scale=0.06, trim = 0 13 5 0 ]{../_resources/images/icons/logo-enso-large}\\\\
 \\vspace{4pt}
 \\begin{small}
 \\scshape{Wisdom \\& Wonders\\\\
@@ -535,11 +587,11 @@ function buildBiblio () {
     let biblioMapArr = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/biblioMapArr.json`, 'utf8'))
     let biblioHTML = parse(fs.readFileSync(`../_resources/book-data/${bookID}/biblio.html`, 'utf8'))
     let localBiblio =`\\bibliographystyle{apalike}\n\r\\bibliography{biblatex-examples}\n\r\\begin{thebibliography}{${biblioMapArr.length}}`
-
-//remove all linkcontainers
+//remove linkcontainers span tags
     let allLinkcontainers = biblioHTML.querySelectorAll('.linkContainer')
     for (let i in allLinkcontainers) {
-        allLinkcontainers[i].replaceWith('')
+        tempHTML = allLinkcontainers[i].innerHTML
+        allLinkcontainers[i].replaceWith(`\\\\ \\textsc{Links:} ${tempHTML}`)
     }
 //remove all bibheads
     let allBibheads = biblioHTML.querySelectorAll('.bibhead')

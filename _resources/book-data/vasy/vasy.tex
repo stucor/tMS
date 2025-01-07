@@ -1,5 +1,5 @@
 
-\documentclass[10pt, openany]{book}
+\documentclass[10pt, openright]{book}
 
 %PACKAGES%
 
@@ -9,23 +9,23 @@
 %\usepackage{sectsty}
 \usepackage{titlesec}
 \usepackage{verse}
-\usepackage[unicode, pdfauthor={Bhikkhu Sunyo}, pdftitle={Viññāṇa Anidassana: The state of boundless consciousness}, pdfsubject={Buddhism}, pdfkeywords={Buddhism}, pdfcreator={Wiswo-texBuilder}, hyperfootnotes=false]{hyperref} 
+\usepackage[unicode, pdfauthor={Bhikkhu Sunyo}, pdftitle={Viññāṇa Anidassana: the state of boundless consciousness}, pdfsubject={Buddhism}, pdfkeywords={Buddhism}, pdfcreator={Wiswo-texBuilder}, hyperfootnotes=false]{hyperref} 
+\usepackage{emptypage}
 
 %links and cites
 \hypersetup{
     colorlinks = true,
     linkcolor = [rgb]{0.1, 0.1, 0.56},
     anchorcolor = blue,
-    citecolor = blue,
+    citecolor = [rgb]{0.1, 0.1, 0.56},
     filecolor = blue,
-    urlcolor = [rgb]{0.4, 0.6, 0.91}
+    urlcolor = [rgb]{0.10, 0.46, 0.94}
     }
 
 %MICROTYPOGRAPHY%
 \usepackage{microtype}
 
 \hyphenpenalty=750
-
 
 \usepackage{enumitem}
 \setlist[itemize]{labelsep=1em, leftmargin=10mm}
@@ -37,13 +37,12 @@
 
 %Minimum space before footnotes
 \setlength{\skip\footins}{1\baselineskip}
-\setlength{\footnotesep}{11pt}
+\setlength{\footnotesep}{10pt}
 
 %VERSE%
 \settowidth{\versewidth}
 {mmmmmmmmmmmmmmmmmmm}%THIS SETS THE GLOBAL DEFAULT WIDTH OF CENTERING. IT IS USUALLY DETERMINED LOCALLY, HOWEVER.%
 %VERSE%
-
 
 %HEADER%
 \usepackage{fancyhdr}
@@ -53,8 +52,19 @@
 \fancyhf{}
 %\fancyfoot[CE,CO]{– \thepage \hspace{0.18em}–}
 
-\fancyhead[RO]{\headerfont\scshape\small\textcolor[rgb]{0.5, 0.5, 0.5}{Viññāṇa Anidassana —\hspace{0.18em}\thepage}}
-\fancyhead[LE]{\headerfont\scshape\small\textcolor[rgb]{0.5, 0.5, 0.5}{\thepage\hspace{0.18em}— Bhikkhu Sunyo}}
+\fancyhead[RO]{\headerfont\scshape\small\textcolor[rgb]{0.5, 0.5, 0.5}{\leftmark\hspace{0.18em}—\hspace{0.18em}\thepage}}
+\fancyhead[LE]{\headerfont\scshape\small\textcolor[rgb]{0.5, 0.5, 0.5}{\thepage\hspace{0.18em}—\hspace{0.18em}Viññāṇa Anidassana}}
+
+\makeatletter
+\renewcommand{\chaptermark}[1]{%
+  \markboth{%
+    \ifnum\c@secnumdepth>\m@ne
+      \@chapapp\ {\footnotesize\thechapter}. \ %
+    \fi
+  #1%
+  }{}%
+}
+\makeatother
 
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{plain}{ %
@@ -63,7 +73,8 @@
 \renewcommand{\footrulewidth}{0pt}
 }
 
-\renewcommand\footnoterule{{\color[rgb]{0.8, 0.8, 0.8} \hrule width 1in height 0.2pt}} % a 1 inch gray line 
+%\renewcommand\footnoterule{{\color[rgb]{0.8, 0.8, 0.8} \hrule width 1in height 0.4pt }} % a 1 inch gray line 
+\renewcommand\footnoterule{{\color[rgb]{0.8, 0.8, 0.8} \kern-2 \hrule width 1in \kern 3 }} % a 1 inch gray line 
 
 
 %FONTS%
@@ -106,22 +117,29 @@
 
 \counterwithout{footnote}{chapter}
 \usepackage[hang,flushmargin,bottom]{footmisc}
-%\graphicspath{ {./images/} }
+\setlength{\footnotemargin}{5mm}
+
+%Make footnote non-superscript
+\makeatletter%%
+\patchcmd{\@makefntext}{%
+\ifFN@hangfoot
+\bgroup}%
+{%
+\ifFN@hangfoot
+\bgroup\def\@makefnmark{\rlap{\normalfont\@thefnmark.}}}{}{}%
+% %%%
+\patchcmd{\@makefntext}{%
+\ifdim\footnotemargin>\z@
+\hb@xt@ \footnotemargin{\hss\@makefnmark}}%
+{%
+\ifdim\footnotemargin>\z@
+\hb@xt@ \footnotemargin{\@makefnmark\hss}}{}{}%
+\makeatother
 
 \newcommand{\nocontentsline}[3]{}
 \newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
-\makeatletter
-\newcommand{\epubchapter}[1]{%
-  \begingroup
-  \let\@makechapterhead\@gobble % make \@makechapterhead do nothing
-  \tocless \chapter{#1}
-  \endgroup
-}
-\makeatother
-
 \usepackage{verbatim}
-
 
 \pretolerance=400
 \tolerance=800
@@ -144,7 +162,7 @@
 \makeatletter
 \renewenvironment{thebibliography}[1]
      {\section{\bibname}% <-- this line was changed from \chapter* to \section
-      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+      %\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
       \list{\@biblabel{\@arabic\c@enumiv}}%
            {\settowidth\labelwidth{\@biblabel{#1}}%
             \leftmargin\labelwidth
@@ -170,7 +188,7 @@
 
 \pagestyle{empty}
 
-%\includegraphics[scale= 2, trim= 0 0 0 0]{../_resources/book-data/vasy/FrontLarge.jpg}
+\includegraphics[scale= 2, trim= 0 0 0 0]{../_resources/book-data/vasy/FrontLarge.jpg}
 
 \newpage~\newpage~
 
@@ -179,7 +197,7 @@
 
 \Huge\Titlefont\scshape{Viññāṇa Anidassana}\\
 \vspace{0.5em}
-\large\Titlefont\scshape{The state of boundless consciousness}\\
+\large\Titlefont\scshape{the state of boundless consciousness}\\
 
 \begin{Large}
 \vspace{4em}
@@ -188,7 +206,7 @@
 
 
 \vspace*{\fill}
-%\includegraphics[scale=0.06, trim = 0 13 5 0 ]{../_resources/images/icons/logo-enso-large}\\
+\includegraphics[scale=0.06, trim = 0 13 5 0 ]{../_resources/images/icons/logo-enso-large}\\
 \vspace{4pt}
 \begin{small}
 \scshape{Wisdom \& Wonders\\
@@ -411,7 +429,7 @@ The word ‘here’ (\textit{ettha}) can mean ‘here’ in the widest sense of 
 
 
 \end{itemize}
-On a more speculative note, the search for the cessation of form is reminiscent of certain ideas found in Brahmanism. Put briefly, some brahmins thought that by shedding their own form they could merge with the \textit{Brahman}, the universal consciousness.\footnote {Cf. e.g. \cite{Falk} p.15ff.} This may explain why the Buddha tells Kevaddha a story wherein he shows his knowledge to be superior to Brahmā (who brahmins took as the highest manifestation of \textit{Brahman}), while specifically mentioning the cessation of consciousness. Interestingly, the brahmin texts, the Upaniṣads, also describe \textit{Brahman} as ‘boundless’.\footnote {E.g. Taittirīya Upaniṣad 2.1.1: <span data-custom-style='sanskit'>satyaṁ jñānaṁ anantaṁ brahma, yo veda</span>: “They who know Brahman as Truth, as knowledge, as boundless …”}
+On a more speculative note, the search for the cessation of form is reminiscent of certain ideas found in Brahmanism. Put briefly, some brahmins thought that by shedding their own form they could merge with the \textit{Brahman}, the universal consciousness.\footnote {Cf. e.g. \cite{Falk} p.15ff.} This may explain why the Buddha tells Kevaddha a story wherein he shows his knowledge to be superior to Brahmā (who brahmins took as the highest manifestation of \textit{Brahman}), while specifically mentioning the cessation of consciousness. Interestingly, the brahmin texts, the Upaniṣads, also describe \textit{Brahman} as ‘boundless’.\footnote {E.g. Taittirīya Upaniṣad 2.1.1: \textit{satyaṁ jñānaṁ anantaṁ brahma, yo veda}: “They who know Brahman as Truth, as knowledge, as boundless …”}
 
 To summarize, the verses of the Kevaddha Sutta poetically rephrase two teachings encountered throughout the suttas: (1) the state of boundless consciousness and (2) the cessation of consciousness along with \textit{nāmarūpa}.
 
@@ -537,22 +555,22 @@ Ud & Udāna \\
 \bibliographystyle{apalike}
 \bibliography{biblatex-examples}
 \begin{thebibliography}{17}
-\bibitem[Anālayo 2010]{Anālayo 2010} \textbf{Anālayo}, Bhikkhu —  \textit{A Comparative Study of the Majjhima-nikāya}. 2011 
-\bibitem[Anālayo 2017]{Anālayo 2017} \textbf{Anālayo}, Bhikkhu —  \textit{The Luminous Mind in Theravāda and Dharmaguptaka Discourses}. Journal of the Oxford Centre for Buddhist Studies, Vol. 13/0. pp. 10–51. 2017 
-\bibitem[Ñāṇamoli]{Ñāṇamoli} \textbf{Bodhi}, Bhikkhu \& \textbf{Ñāṇamoli}, Bhikkhu \textit{(tr.) }— \textit{The Middle Length Discourses of the Buddha}. 1995 
-\bibitem[Brahmali]{Brahmali} \textbf{Brahmāli}, Bhikkhu —  \textit{What the Nikāyas Say and Do not Say about Nibbāna}. Buddhist Studies Review, Vol. 26/1. pp. 33–66. 2009 
-\bibitem[Monier-Williams]{Monier-Williams} \textbf{Monier-Williams}, Monier —  \textit{Monier-Williams Sanskrit Dictionary 1899 Advanced}.
-\bibitem[PED]{PED} \textbf{Rhys Davids}, T.W. \& \textbf{Stede}, William —  \textit{The Pali Text Society's Pali-English Dictionary}. 1921 
-\bibitem[Falk]{Falk} \textbf{Falk}, Maryla —  \textit{Nāma-rūpa and dharma-rūpa}. 1943 
-\bibitem[Horner]{Horner} \textbf{Horner}, I. B. \textit{(tr.) }—\textbf{Horner}, I. B. \textit{(ed.) }— \textit{The Collection of the Middle Length Sayings (Majjhima-Nikaya)}, Vol. 1 of 3. 1954 
-\bibitem[Olivelle]{Olivelle} \textbf{Olivelle}, Patrick —  \textit{The Early Upanisads}. 1998 
-\bibitem[Reat]{Reat} \textbf{Reat}, N. Ross —  \textit{Origins of Indian Psychology}. 1990 
-\bibitem[Sujato 2011a]{Sujato 2011a} \textbf{Sujato}, Bhikkhu —  \textit{Nibbana is not viññāṇa. Really, it just isn’t.}. Sujato’s Blog. 2011 
-\bibitem[Sujato 2011b]{Sujato 2011b} \textbf{Sujato}, Bhikkhu —  \textit{Nibbana is still not Viññāṇa}. Sujato’s Blog. 2011 
-\bibitem[Sujato 2018]{Sujato 2018} \textbf{Sujato}, Bhikkhu —  \textit{Translations of the Pali Canon at SuttaCentral}. SuttaCentral. 2018 
-\bibitem[Sunyo 2023]{Sunyo 2023} \textbf{Sunyo}, Bhikkhu —  \textit{Is Dependent Origination a parody of Vedic cosmology?}. Discuss \& Discover SuttaCentral. 2023 
-\bibitem[Sunyo 2024]{Sunyo 2024} \textbf{Sunyo}, Bhikkhu —  \textit{Seeds, Paintings and a Beam of Light}.
-\bibitem[Ṭhānissaro]{Ṭhānissaro} \textbf{Ṭhānissaro}, Bhikkhu —  \textit{Translations of the Pali Canon at Access to Insight}. 2014 
-\bibitem[Warder]{Warder} \textbf{Warder}, A. K. —  \textit{Introduction to Pali}. 1991 
+\bibitem[Anālayo 2010]{Anālayo 2010} \textbf{Anālayo}, Bhikkhu —  \textit{A Comparative Study of the Majjhima-nikāya}. 2011 \\ \textsc{Links:} {~•~} {Publisher: } \href{https://www.chancenter.org/chanctr/ddp/ddp.html}{online} {~•~} {Vol1:} \href{https://wiswo.org/books/_resources/zotero-attach/Anālayo_2011_A Comparative Study of the Majjhima-nikāya.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~} {Vol2:} \href{https://wiswo.org/books/_resources/zotero-attach/Anālayo_2011_A Comparative Study of the Majjhima-nikāya2.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Anālayo 2017]{Anālayo 2017} \textbf{Anālayo}, Bhikkhu —  \textit{The Luminous Mind in Theravāda and Dharmaguptaka Discourses}. Journal of the Oxford Centre for Buddhist Studies, Vol. 13/0. pp. 10–51. 2017 \\ \textsc{Links:} {~•~} {Journal: } \href{http://www.jocbs.org/index.php/jocbs/article/view/163}{online} {~•~} \href{https://wiswo.org/books/_resources/zotero-attach/Anālayo_2017_The%20Luminous%20Mind%20in%20Theravāda%20and%20Dharmaguptaka%20Discourses.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Ñāṇamoli]{Ñāṇamoli} \textbf{Bodhi}, Bhikkhu \& \textbf{Ñāṇamoli}, Bhikkhu \textit{(tr.) }— \textit{The Middle Length Discourses of the Buddha}. 1995 \\ \textsc{Links:} {~•~} {Publisher: } \href{https://wisdomexperience.org/product/middle-length-discourses-buddha/}{online} {~•~}
+\bibitem[Brahmali]{Brahmali} \textbf{Brahmāli}, Bhikkhu —  \textit{What the Nikāyas Say and Do not Say about Nibbāna}. Buddhist Studies Review, Vol. 26/1. pp. 33–66. 2009 \\ \textsc{Links:} {~•~} {Journal: } \href{https://journal.equinoxpub.com/BSR/article/view/8891}{online} {~•~} \href{https://wiswo.org/books/niknib}{tMS Library}{~•~} {Original 2009:} \href{https://wiswo.org/books/_resources/zotero-attach/Brahmāli_2009_What the Nikāyas Say and Do not Say about Nibbāna.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Monier-Williams]{Monier-Williams} \textbf{Monier-Williams}, Monier —  \textit{Monier-Williams Sanskrit Dictionary 1899 Advanced}.\\ \textsc{Links:} {~•~} {} \href{https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc2/index.php}{online} {~•~}
+\bibitem[PED]{PED} \textbf{Rhys Davids}, T.W. \& \textbf{Stede}, William —  \textit{The Pali Text Society's Pali-English Dictionary}. 1921 \\ \textsc{Links:} {~•~} {} \href{https://dsal.uchicago.edu/dictionaries/pali/}{online} {~•~} \href{https://wiswo.org/books/_resources/zotero-attach/Rhys%20Davids_Stede_1921_Pāli-English%20Dictionary.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Falk]{Falk} \textbf{Falk}, Maryla —  \textit{Nāma-rūpa and dharma-rūpa}. 1943 \\ \textsc{Links:} {~•~} \href{https://wiswo.org/books/_resources/zotero-attach/Falk_1943_Nāma-rūpa%20and%20Dharma-rūpa.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Horner]{Horner} \textbf{Horner}, I. B. \textit{(tr.) }—\textbf{Horner}, I. B. \textit{(ed.) }— \textit{The Collection of the Middle Length Sayings (Majjhima-Nikaya)}, Vol. 1 of 3. 1954 \\ \textsc{Links:} {~•~} {Publisher: } \href{https://palitextsociety.org/product/middle-length-sayings-3-volume-set/}{online} {~•~} \href{https://wiswo.org/books/_resources/zotero-attach/Horner_1954_The%20Collection%20of%20the%20Middle%20Length%20Sayings%20(Majjhima-Nikaya).pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Olivelle]{Olivelle} \textbf{Olivelle}, Patrick —  \textit{The Early Upanisads}. 1998 \\ \textsc{Links:} {~•~} {Publisher: } \href{https://global.oup.com/academic/product/the-early-upanisads-9780195124354?cc=gb\&lang=en\&}{online} {~•~} \href{https://archive.org/details/TheEarlyUpanisads}{Internet Archive}{~•~} \href{https://wiswo.org/books/_resources/zotero-attach/Olivelle_1998_The%20Early%20Upanisads.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Reat]{Reat} \textbf{Reat}, N. Ross —  \textit{Origins of Indian Psychology}. 1990 \\ \textsc{Links:} {~•~} \href{https://archive.org/details/originsofindianp0000reat}{Internet Archive}{~•~}
+\bibitem[Sujato 2011a]{Sujato 2011a} \textbf{Sujato}, Bhikkhu —  \textit{Nibbana is not viññāṇa. Really, it just isn’t.}. Sujato’s Blog. 2011 \\ \textsc{Links:} {~•~} {Blog Post: } \href{https://sujato.wordpress.com/2011/05/13/vinna%e1%b9%87a-is-not-nibbana-really-it-just-isn%e2%80%99t/}{online} {~•~} \href{https://wiswo.org/books/_resources/zotero-attach/Sujato_2011_Nibbana%20is%20not%20viññāṇa.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Sujato 2011b]{Sujato 2011b} \textbf{Sujato}, Bhikkhu —  \textit{Nibbana is still not Viññāṇa}. Sujato’s Blog. 2011 \\ \textsc{Links:} {~•~} {Blog Post: } \href{https://sujato.wordpress.com/2011/05/18/}{online} {~•~} \href{https://wiswo.org/books/_resources/zotero-attach/Sujato_2011_Nibbana%20is%20not%20Viññāṇa.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Sujato 2018]{Sujato 2018} \textbf{Sujato}, Bhikkhu —  \textit{Translations of the Pali Canon at SuttaCentral}. SuttaCentral. 2018 \\ \textsc{Links:} {~•~} {} \href{https://suttacentral.net/search?query=author:sujato}{online} {~•~}
+\bibitem[Sunyo 2023]{Sunyo 2023} \textbf{Sunyo}, Bhikkhu —  \textit{Is Dependent Origination a parody of Vedic cosmology?}. Discuss \& Discover SuttaCentral. 2023 \\ \textsc{Links:} {~•~} {} \href{https://discourse.suttacentral.net/t/is-dependent-origination-a-parody-of-vedic-cosmology/30841}{online} {~•~} \href{https://wiswo.org/books/_resources/zotero-attach/30841.html}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
+\bibitem[Sunyo 2024]{Sunyo 2024} \textbf{Sunyo}, Bhikkhu —  \textit{Seeds, Paintings and a Beam of Light}.\\ \textsc{Links:} {~•~} \href{https://wiswo.org/books/seeds}{tMS Library}{~•~}
+\bibitem[Ṭhānissaro]{Ṭhānissaro} \textbf{Ṭhānissaro}, Bhikkhu —  \textit{Translations of the Pali Canon at Access to Insight}. 2014 \\ \textsc{Links:} {~•~} {} \href{https://accesstoinsight.org/}{online} {~•~}
+\bibitem[Warder]{Warder} \textbf{Warder}, A. K. —  \textit{Introduction to Pali}. 1991 \\ \textsc{Links:} {~•~} {Publisher: } \href{https://palitextsociety.org/product/introduction-to-pali/}{online} {~•~} \href{https://wiswo.org/books/_resources/zotero-attach/Warder_1991_Introduction%20to%20Pali.pdf}{{\includegraphics[scale = 0.5, trim = 0 5 0 0]{../_resources/images/icons/pdf_24.png}}} {~•~}
 \end{thebibliography}
 \end{document}

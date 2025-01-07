@@ -1,7 +1,7 @@
 {
 	"Authors": "Bhikkhu Sunyo",
 	"BookTitle": "Viññāṇa Anidassana",
-	"BookSubtitle": "The state of boundless consciousness",
+	"BookSubtitle": "the state of boundless consciousness",
 	"ShortAbstract": "<p>A wide range of opinions has long surrounded two innocent Pali words: <span lang='pli'>viññāṇa anidassana</span>. They are translated variously, as ‘consciousness that is without feature / signless / invisible / non-manifesting / makes no showing / can not be characterized’, et cetera. This variety already indicates that their meaning is somewhat obscure. This obscurity has, however, not stopped interpreters from giving the words a lot of importance, because some see in <span lang='pli'>viññāṇa anidassana</span> a kind of consciousness essentially equal to nibbāna. But there are many problems with this. Bhikkhu Sunyo examines these problems and discusses why <span lang='pli'>viññāṇa anidassana</span> is not nibbāna, but rather it is the state of boundless consciousness, the second “formless” meditation state.</p>",
 	"Abstract": "<p>None</p>",
 	"ItemType": "Document",
@@ -14,9 +14,9 @@
 	],
 	"CCLicense": "<div class='cclicense'><h3>CC0 1.0 Universal <span>(CC0 1.0) Public Domain Dedication</span></h3><div id = 'ccDetail'><p><strong>No Copyright</strong></p><ul>    <li>The person who associated a work with this deed has <em>dedicated</em> the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.</li>    <li>You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.</li></ul><p><strong>Other Information</strong></p><ul><li>In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.</li><li>Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.</li><li>When using or citing the work, you should not imply endorsement by the author or the affirmer.</li></ul></div></div>",
 	"FrontCover": "../_resources/book-data/vasy/FrontLarge.jpg",
-	"BackCover": "../_resources/book-data/vasy/BackLarge.jpg",
+	"BackCover": "",
 	"BackMatter": [
-		"<p>None</p>"
+		""
 	],
 	"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
 	"DownloadHTML": "",

@@ -357,6 +357,10 @@ function buildBook () {
 				spans[i].setAttribute('lang','pli')
 				spans[i].removeAttribute ('data-custom-style')
 			break
+			case 'sanskrit':
+				spans[i].setAttribute('lang','sa')
+				spans[i].removeAttribute ('data-custom-style')
+			break
 			default:
 		}
 
@@ -850,10 +854,12 @@ function processPandoc() {
 				downloadHTML +=  `${tokens[i].text.replaceAll('\r\n','')}`
 			} else
 			if (tokens[i].getAttribute('data-custom-style') == "WW-backcover-text") {
-				if (backCoverLocation == '') {
-					backCoverLocation = `../_resources/book-data/${bookID}/BackLarge.jpg`
+				if (tokens[i].innerHTML.replaceAll('\r\n','') != `<p>None</p>`) {
+					if (backCoverLocation == '') {
+						backCoverLocation = `../_resources/book-data/${bookID}/BackLarge.jpg`
+					}
+					backcoverHTML +=  `${tokens[i].innerHTML.replaceAll('\r\n','')}`
 				}
-				backcoverHTML +=  `${tokens[i].innerHTML.replaceAll('\r\n','')}`
 			} 
 		}
 	
@@ -946,6 +952,10 @@ function processPandoc() {
 				break
 				case 'pali':
 					spans[i].setAttribute('lang','pli')
+					spans[i].removeAttribute ('data-custom-style')
+				break
+				case 'sanskrit':
+					spans[i].setAttribute('lang','sa')
 					spans[i].removeAttribute ('data-custom-style')
 				break
 				default:

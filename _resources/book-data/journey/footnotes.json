@@ -9,10 +9,10 @@
 	"fnHTML": "<p>Jhana Grove is the name of the Meditation Centre.</p>"},
 {
 	"fnNumber": "4",
-	"fnHTML": "<p><span lang='pli'>Samādhi</span> means stillness of mind.</p>"},
+	"fnHTML": "<p><span lang='pi'>Samādhi</span> means stillness of mind.</p>"},
 {
 	"fnNumber": "5",
-	"fnHTML": "<p><span lang='pli'>Nimitta</span> is a mental perception before jhāna.</p>"},
+	"fnHTML": "<p><span lang='pi'>Nimitta</span> is a mental perception before jhāna.</p>"},
 {
 	"fnNumber": "6",
 	"fnHTML": "<p>Brahmavaṁso is Ajahn Brahm’s full monastic name.</p>"},
@@ -21,7 +21,7 @@
 	"fnHTML": "<p>Ajahn Mun was a famous Thai Buddhist meditation monk.</p>"},
 {
 	"fnNumber": "8",
-	"fnHTML": "<p>Enlightenment means freedom from suffering. <span lang='pli'>Nibbāna</span> in Pāli.</p>"},
+	"fnHTML": "<p>Enlightenment means freedom from suffering. <span lang='pi'>Nibbāna</span> in Pāli.</p>"},
 {
 	"fnNumber": "9",
 	"fnHTML": "<p>The teaching of the Buddha is known as Dharma, which is spelt Dhamma in Pāli.</p>"},
@@ -36,7 +36,7 @@
 	"fnHTML": "<p>Kamma is the Pāli spelling of karma and means deed. ‘Unfortunate kamma’ here was used to mean ‘bad luck’.</p>"},
 {
 	"fnNumber": "13",
-	"fnHTML": "<p><span lang='pli'>Mettā</span> is loving-kindness or friendliness.</p>"},
+	"fnHTML": "<p><span lang='pi'>Mettā</span> is loving-kindness or friendliness.</p>"},
 {
 	"fnNumber": "14",
 	"fnHTML": "<p>Bodhinyana Monastery is a Buddhist forest monastery in Western Australia. Home to Ajahn Brahm.</p>"},
@@ -45,10 +45,10 @@
 	"fnHTML": "<p>The Paṭisambhidāmagga is known in English as the Path of Analytical Discernment.</p>"},
 {
 	"fnNumber": "16",
-	"fnHTML": "<p><span lang='pli'>Ekaggatā</span> means unification or oneness of mind.</p>"},
+	"fnHTML": "<p><span lang='pi'>Ekaggatā</span> means unification or oneness of mind.</p>"},
 {
 	"fnNumber": "17",
-	"fnHTML": "<p><span lang='pli'>Arūpasamāpatti</span> are the ‘formless’ or ‘immaterial’ attainments</p>"},
+	"fnHTML": "<p><span lang='pi'>Arūpasamāpatti</span> are the ‘formless’ or ‘immaterial’ attainments</p>"},
 {
 	"fnNumber": "18",
 	"fnHTML": "<p>The Vinaya is the monastic law for fully ordained Buddhist monks and nuns</p>"},
@@ -66,7 +66,7 @@
 	"fnHTML": "<p>Ānanda was the Buddha's cousin and attendant</p>"},
 {
 	"fnNumber": "23",
-	"fnHTML": "<p>An <span lang='pli'>arahant</span> is an awakened being</p>"},
+	"fnHTML": "<p>An <span lang='pi'>arahant</span> is an awakened being</p>"},
 {
 	"fnNumber": "24",
 	"fnHTML": "<p>‘Rotten fish curry’ is curry made with fermented freshwater fish.</p>"},
@@ -81,19 +81,19 @@
 	"fnHTML": "<p>Stream-winner is the first stage of enlightenment.</p>"},
 {
 	"fnNumber": "28",
-	"fnHTML": "<p><span lang='pli'>Vedanā</span> means feeling, sensation.</p>"},
+	"fnHTML": "<p><span lang='pi'>Vedanā</span> means feeling, sensation.</p>"},
 {
 	"fnNumber": "29",
-	"fnHTML": "<p><span lang='pli'>Saññā</span> means sense, perception.</p>"},
+	"fnHTML": "<p><span lang='pi'>Saññā</span> means sense, perception.</p>"},
 {
 	"fnNumber": "30",
-	"fnHTML": "<p><span lang='pli'>Saṅkhāra</span> means mental formation.</p>"},
+	"fnHTML": "<p><span lang='pi'>Saṅkhāra</span> means mental formation.</p>"},
 {
 	"fnNumber": "31",
 	"fnHTML": "<p>The origin story of the communal recitation is given in the Khandhaka at Kd 21</p>"},
 {
 	"fnNumber": "32",
-	"fnHTML": "<p>A <span lang='pli'>bhikkhunī</span> is a fully ordained Buddhist nun</p>"},
+	"fnHTML": "<p>A <span lang='pi'>bhikkhunī</span> is a fully ordained Buddhist nun</p>"},
 {
 	"fnNumber": "33",
 	"fnHTML": "<p>For more on Dependent Cessation see the booklet <em>Dependent Liberation</em> by Ajahn Brahmali <a class='library' href='../dlbl'> on theMettāShelf</a></p>"}

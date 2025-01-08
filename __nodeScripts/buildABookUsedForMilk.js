@@ -337,7 +337,7 @@ function buildBook () {
 				spans[i].removeAttribute ('data-custom-style')
 			break
 			case 'pali':
-				spans[i].setAttribute('lang','pli')
+				spans[i].setAttribute('lang','pi')
 				spans[i].removeAttribute ('data-custom-style')
 			break
 			default:
@@ -647,12 +647,12 @@ function processPandoc() {
 		for (i in tokens) {
 			if (tokens[i].getAttribute('data-custom-style') == "AbstractShort") {
 				abstractShort = tokens[i].innerHTML
-					.replaceAll(`<span data-custom-style="pali">`, `<span lang='pli'>`)
+					.replaceAll(`<span data-custom-style="pali">`, `<span lang='pi'>`)
 					.replaceAll(/(\r\n|\n|\r)/gm, "")
 			} else 
 			if (tokens[i].getAttribute('data-custom-style') == "Abstract") {
 				abstract = tokens[i].innerHTML
-				.replaceAll(`<span data-custom-style="pali">`, `<span lang='pli'>`)
+				.replaceAll(`<span data-custom-style="pali">`, `<span lang='pi'>`)
 				.replaceAll(/(\r\n|\n|\r)/gm, "")
 			} else
 			if (tokens[i].classList.contains ('author')) {
@@ -754,7 +754,7 @@ function processPandoc() {
 					sesameArr.push(spans[i].text)
 				break
 				case 'pali':
-					spans[i].setAttribute('lang','pli')
+					spans[i].setAttribute('lang','pi')
 					spans[i].removeAttribute ('data-custom-style')
 				break
 				default:

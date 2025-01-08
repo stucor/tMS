@@ -173,7 +173,7 @@ li {
     list-style-type: '· ';
 }
 
-*:lang(pli) {
+*:lang(pi) {
 	font-style: italic;
 }
 *:lang(sa) {

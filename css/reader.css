@@ -1044,7 +1044,7 @@ table.borderlessTable {
 	margin-right: 10px;
 }
 
-.content div.bob-text {
+/* .content div.bob-text {
 	font-family: 'Source Serif Pro';
 	width:fit-content;
 	max-width: 60%;
@@ -1063,7 +1063,7 @@ table.borderlessTable {
 	font-style: normal;
 	font-size: 0.75em;
 	padding-top: 0;
-}
+} */
 
 /***** SPECIAL MESSAGE *****/
 .special-message {
@@ -1114,6 +1114,7 @@ table.borderlessTable {
 	margin: 10em auto -10em auto;
 	text-align: center;
 }
+/* For centered epigrams with images and citations underneath use epigram */
 .content div.epigram {
 	font-family: 'Source Serif Pro';
 	width:fit-content;
@@ -1134,6 +1135,60 @@ table.borderlessTable {
 	text-align: center;
 	line-height: 115%;
 	margin-bottom: 4em;
+}
+
+/* For impactful epigrams use epigram-2  */
+.content div.epigram-2 {
+	font-family: 'Source Serif Pro';
+	width:fit-content;
+	max-width: 60%;
+	margin: 2em auto 0em auto;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 1.2em;
+	hyphens: none;
+	text-align: left;
+}
+
+.content div.epigram-2-cite {
+	font-family: 'Source Serif Pro';
+	text-align: right;
+	margin-right:20%;
+	margin-top: 0;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 0.9em;
+	padding-top: 0;
+}
+
+.content div.epigram-2-cite > p {
+	margin-top: 0.5em;
+}
+
+/* For longer epigrams that look like blocks of text use epigram-3 */
+.content div.epigram-3 {
+	font-family: 'Source Serif Pro';
+	width:fit-content;
+	max-width: 80%;
+	margin: 2em auto 0em auto;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 1em;
+}
+
+.content div.epigram-3-cite {
+	font-family: 'Source Serif Pro';
+	text-align: right;
+	margin-right:10%;
+	margin-top: 0;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 0.9em;
+	padding-top: 0;
+}
+
+.content div.epigram-3-cite > p {
+	margin-top: 0.5em;
 }
 
 /***** CENTERED TEXT *****/
@@ -1169,9 +1224,9 @@ table.borderlessTable {
 
 
 
-.content div.bob-text + div.bob-text {
+/* .content div.bob-text + div.bob-text {
 	margin-top: -2.6em;
-}
+} */
 
 .content div.quote {
     font-style: italic;
@@ -3217,12 +3272,11 @@ mark.current {
 		font-size: 1em;
 	}
 
-	.content div.bob-text {
+/* 	.content div.bob-text {
 		max-width: 80%;
 		font-weight: 500;
 		margin: 2em 10%;
-
-	}
+	} */
 
 }
 

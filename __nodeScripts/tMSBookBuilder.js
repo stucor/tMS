@@ -349,10 +349,10 @@ function buildBook () {
 				spans[i].removeAttribute ('data-custom-style')
 				sesameArr.push(spans[i].text)
 			break
-			case 'bob-cite':
+/* 			case 'bob-cite':
 				spans[i].classList.add('bob-cite')
 				spans[i].removeAttribute ('data-custom-style')
-			break
+			break */
 			case 'pali':
 				spans[i].setAttribute('lang','pi')
 				spans[i].removeAttribute ('data-custom-style')
@@ -525,6 +525,22 @@ function buildBook () {
 			allDivs[i].classList.add ('epigram-cite')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else 
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-2") {
+			allDivs[i].classList.add ('epigram-2')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-2-cite") {
+			allDivs[i].classList.add ('epigram-2-cite')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else 
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-3") {
+			allDivs[i].classList.add ('epigram-3')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-3-cite") {
+			allDivs[i].classList.add ('epigram-3-cite')
+			allDivs[i].removeAttribute('data-custom-style')
+		} else 
 		// GLOSSARIES
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-gloss-term") {
 			let tempHTML = allDivs[i].innerHTML
@@ -549,11 +565,11 @@ function buildBook () {
 			allDivs[i].tagName = "blockquote"
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
-		if (allDivs[i].getAttribute('data-custom-style') == "BOB-Text") {
+/* 		if (allDivs[i].getAttribute('data-custom-style') == "bob-text") {
 			allDivs[i].classList.add ('bob-text')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
-		if (allDivs[i].getAttribute('data-custom-style') == "sublist-comment") {
+*/		if (allDivs[i].getAttribute('data-custom-style') == "sublist-comment") {
 			allDivs[i].classList.add ('sublist-comment')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else

@@ -1,21 +1,21 @@
 [{
 	"fnNumber": "1",
-	"fnHTML": "<p>For a short biography of Godwin Samararatne, see <span data-custom-style='zot-cite'>Samararatne 2007</span></p>"},
+	"fnHTML": "<p>For a short biography of Godwin Samararatne, see <span class='sesame ref'>Samararatne 2007</span></p>"},
 {
 	"fnNumber": "2",
 	"fnHTML": "<p>1 Corinthians 1, 13</p>"},
 {
 	"fnNumber": "3",
-	"fnHTML": "<p><span lang='pi'>Mitte vā bhavā mittassa vā esā pavattī ti pi mettā</span>, <span data-custom-style='sesame'><em>Culla Niddesa</em></span> 117.</p>"},
+	"fnHTML": "<p><span lang='pi'>Mitte vā bhavā mittassa vā esā pavattī ti pi mettā</span>, <span class='sesame'><em>Culla Niddesa</em></span> 117.</p>"},
 {
 	"fnNumber": "4",
-	"fnHTML": "<p><span data-custom-style='sesame'>Vism</span>. 318.</p>"},
+	"fnHTML": "<p><span class='sesame'>Vism</span>. 318.</p>"},
 {
 	"fnNumber": "5",
-	"fnHTML": "<p><span data-custom-style='zot-cite'>Peck 1997</span>, p.69.</p>"},
+	"fnHTML": "<p><span class='sesame ref'>Peck 1997</span>, p.69.</p>"},
 {
 	"fnNumber": "6",
-	"fnHTML": "<p><span data-custom-style='zot-cite'>Parkes 2009</span>, p.2.</p>"},
+	"fnHTML": "<p><span class='sesame ref'>Parkes 2009</span>, p.2.</p>"},
 {
 	"fnNumber": "7",
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;65:28.1–28.9</span> <span class='ptsref'>PTS: M.I,444</span>.</p>"},
@@ -45,7 +45,7 @@
 	"fnHTML": "<p>1 John 3,17-18.</p>"},
 {
 	"fnNumber": "16",
-	"fnHTML": "<p>See Simon May’s interesting comments on this subject—<span data-custom-style='zot-cite'>May 2012</span> pp.106-118.</p>"},
+	"fnHTML": "<p>See Simon May’s interesting comments on this subject—<span class='sesame ref'>May 2012</span> pp.106-118.</p>"},
 {
 	"fnNumber": "17",
 	"fnHTML": "<p><span lang='pi'>dassana</span>, <span lang='pi'>samsagga</span>, <span lang='pi'>visāsa</span>, <span lang='pi'>otāra</span>, <span class='sclinktext'>AN&#8239;5.55:1.2–1.10</span> <span class='ptsref'>PTS: A.III,67</span>. What is translated here as amorousness (<span lang='pi'>otāra</span>) could also be rendered as “getting a chance.”</p>"},
@@ -54,7 +54,7 @@
 	"fnHTML": "<p><a href='https://suttacentral.net/ja542/en/cowell-rouse?reference=main/pts#pts-vp-pli378' class='extlink tipref'>Ja 542</a> <span class='ptsref'>PTS: Ja.VI,378</span>. A Latin epigram says something similar: “<em>Amantium irae amoris integratio est</em>,” “Lovers quarrels are the renewal of love.”</p>"},
 {
 	"fnNumber": "19",
-	"fnHTML": "<p><span data-custom-style='sesame'><em>Rām</em>āyaṇa</span> V,26;39.</p>"},
+	"fnHTML": "<p><span class='sesame'><em>Rām</em>āyaṇa</span> V,26;39.</p>"},
 {
 	"fnNumber": "20",
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;13:18.2</span> <span class='ptsref'>PTS: M.I,88</span>.</p>"},
@@ -249,7 +249,7 @@
 	"fnHTML": "<p>Drona Parva LXXIX.</p>"},
 {
 	"fnNumber": "84",
-	"fnHTML": "<p><em><span data-custom-style='sesame'>Cūlavaṁsa</span></em> XLVII 1-60.</p>"},
+	"fnHTML": "<p><em><span class='sesame'>Cūlavaṁsa</span></em> XLVII 1-60.</p>"},
 {
 	"fnNumber": "85",
 	"fnHTML": "<p>John 13, 23-5. This does not mean that Jesus loved his other disciples less but only that he had a special affection for this one.</p>"},
@@ -297,7 +297,7 @@
 	"fnHTML": "<p><span class='sclinktext'>SN&#8239;45.2</span> <span class='ptsref'>PTS: S.V,2</span>.</p>"},
 {
 	"fnNumber": "100",
-	"fnHTML": "<p><span class='sclinktext'>MN&#8239;47</span> <span class='ptsref'>PTS: M.I,317-20</span>. Jack Kornfield offers some pertinent comments on problems that sometimes arise in teacher-student relationships and how they might be avoided; <span data-custom-style='zot-cite'>Kornfield 1993</span> pp. 254-269.</p>"},
+	"fnHTML": "<p><span class='sclinktext'>MN&#8239;47</span> <span class='ptsref'>PTS: M.I,317-20</span>. Jack Kornfield offers some pertinent comments on problems that sometimes arise in teacher-student relationships and how they might be avoided; <span class='sesame ref'>Kornfield 1993</span> pp. 254-269.</p>"},
 {
 	"fnNumber": "101",
 	"fnHTML": "<p><span class='sclinktext'>AN&#8239;3.65</span> <span class='ptsref'>PTS: A.I,189</span>.</p>"},
@@ -327,22 +327,22 @@
 	"fnHTML": "<p><span lang='pi'>khanti</span>, <span lang='pi'>mettā</span> and <span lang='pi'>anuddayā</span>, <a href='https://suttacentral.net/ja12/en/chalmers?reference=main/pts#pts-vp-pli151' class='extlink tipref'>Ja 12</a> <span class='ptsref'>PTS: Ja.I,151</span>.</p>"},
 {
 	"fnNumber": "110",
-	"fnHTML": "<p><span class='sclinktext'>MN&#8239;145</span> <span class='ptsref'>PTS: M.III, 268-9</span>; <span data-custom-style='sesame'><em>Divyāvadāna</em></span>, 39.</p>"},
+	"fnHTML": "<p><span class='sclinktext'>MN&#8239;145</span> <span class='ptsref'>PTS: M.III, 268-9</span>; <span class='sesame'><em>Divyāvadāna</em></span>, 39.</p>"},
 {
 	"fnNumber": "111",
 	"fnHTML": "<p><a href='https://suttacentral.net/ja316/en/francis-neil' class='extlink tipref'>Ja 316</a> <span class='ptsref'>PTS: Ja.III,51-6</span>.</p>"},
 {
 	"fnNumber": "112",
-	"fnHTML": "<p><span data-custom-style='zot-cite'>Dayal 1970</span>, p.175.</p>"},
+	"fnHTML": "<p><span class='sesame ref'>Dayal 1970</span>, p.175.</p>"},
 {
 	"fnNumber": "113",
-	"fnHTML": "<p>See <span data-custom-style='zot-cite'>Droge and Tabor 1992</span>. On the Buddhist idea see <span data-custom-style='zot-cite'>Ohnuma 2008</span>.</p>"},
+	"fnHTML": "<p>See <span class='sesame ref'>Droge and Tabor 1992</span>. On the Buddhist idea see <span class='sesame ref'>Ohnuma 2008</span>.</p>"},
 {
 	"fnNumber": "114",
 	"fnHTML": "<p><a href='https://suttacentral.net/ja499/en/rouse' class='extlink tipref'>Ja 499</a> <span class='ptsref'>PTS: Ja.IV,402-ff</span>.</p>"},
 {
 	"fnNumber": "115",
-	"fnHTML": "<p><span data-custom-style='zot-cite'>Titmuss 1970</span>.</p>"},
+	"fnHTML": "<p><span class='sesame ref'>Titmuss 1970</span>.</p>"},
 {
 	"fnNumber": "116",
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;87:22.1–22.9</span> <span class='ptsref'>PTS: M.II,109-10</span>.</p>"},
@@ -357,7 +357,7 @@
 	"fnHTML": "<p>Deuteronomy 23,25.</p>"},
 {
 	"fnNumber": "120",
-	"fnHTML": "<p>Christianity did little to develop these ideas. Jesus said nothing about kindness to animals and St. Paul dismissed the rule against muzzling the ox as pertaining to the welfare of humans not animals (1 Corinthians 9,9- 10). Aquinas took a similar view, saying that cruelty to animals should be discouraged but only because it might encourage cruelty to humans. Of course, “official” theology did not always reflect ordinary people’s attitudes. <span data-custom-style='zot-cite'>Lecky 1890b</span>, pp. 161-73 includes fascinating information about kindness to animals in the pagan West and in mediaeval Christendom.</p>"},
+	"fnHTML": "<p>Christianity did little to develop these ideas. Jesus said nothing about kindness to animals and St. Paul dismissed the rule against muzzling the ox as pertaining to the welfare of humans not animals (1 Corinthians 9,9- 10). Aquinas took a similar view, saying that cruelty to animals should be discouraged but only because it might encourage cruelty to humans. Of course, “official” theology did not always reflect ordinary people’s attitudes. <span class='sesame ref'>Lecky 1890b</span>, pp. 161-73 includes fascinating information about kindness to animals in the pagan West and in mediaeval Christendom.</p>"},
 {
 	"fnNumber": "121",
 	"fnHTML": "<p><span class='sclinktext'>AN&#8239;7.47</span> <span class='ptsref'>PTS: A.IV,41</span>.</p>"},
@@ -369,7 +369,7 @@
 	"fnHTML": "<p><a href='https://suttacentral.net/pli-tv-bu-vb-pc61/en/brahmali' class='extlink tipref'>Bu Pc 61</a> <span class='ptsref'>PTS: Vin.IV,124</span>.</p>"},
 {
 	"fnNumber": "124",
-	"fnHTML": "<p><span data-custom-style='zot-cite'>Jātakamāla</span> 25, 25-6.</p>"},
+	"fnHTML": "<p><span class='sesame ref'>Jātakamāla</span> 25, 25-6.</p>"},
 {
 	"fnNumber": "125",
 	"fnHTML": "<p><span class='sclinktext'>Ud&#8239;5.4</span> <span class='ptsref'>PTS: Ud.51</span>.</p>"},
@@ -393,7 +393,7 @@
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;51:4.11–4.16</span> <span class='ptsref'>PTS: M.I,340</span>.</p>"},
 {
 	"fnNumber": "132",
-	"fnHTML": "<p><em><span data-custom-style='sesame'>Taisho Tripitaka</span></em> Vol. XII, No. 374.</p>"},
+	"fnHTML": "<p><em><span class='sesame'>Taisho Tripitaka</span></em> Vol. XII, No. 374.</p>"},
 {
 	"fnNumber": "133",
 	"fnHTML": "<p><a href='https://suttacentral.net/pli-tv-kd17/en/brahmali#3.11.1' class='extlink tipref'>Kd 17:3.11.1–3.13.4</a> <span class='ptsref'>PTS: Vin.II,195-6</span>.</p>"},
@@ -432,7 +432,7 @@
 	"fnHTML": "<p><span class='sclinktext'>Dhp&#8239;3</span>, <span class='sclinktext'>Dhp&#8239;4</span>, <span class='sclinktext'>Dhp&#8239;5</span></p>"},
 {
 	"fnNumber": "145",
-	"fnHTML": "<p>See <span data-custom-style='zot-cite'>Malalasekera and Jayatilleke 1974</span>.</p>"},
+	"fnHTML": "<p>See <span class='sesame ref'>Malalasekera and Jayatilleke 1974</span>.</p>"},
 {
 	"fnNumber": "146",
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;93:8.4–8.11</span> <span class='ptsref'>PTS: M.II,151</span>.</p>"},
@@ -465,7 +465,7 @@
 	"fnHTML": "<p><a href='https://suttacentral.net/pli-tv-kd8/en/brahmali#26.1.1' class='extlink tipref'>Kd 8:26.1.1–26.3.13</a> <span class='ptsref'>PTS: Vin.I,301-2</span>.</p>"},
 {
 	"fnNumber": "156",
-	"fnHTML": "<p><span data-custom-style='zot-cite'><em>Saddhammopāy</em>ana</span> 557-60.</p>"},
+	"fnHTML": "<p><span class='sesame ref'><em>Saddhammopāy</em>ana</span> 557-60.</p>"},
 {
 	"fnNumber": "157",
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;21:5.7–6.15</span> <span class='ptsref'>PTS: M.I,129</span>.</p>"},
@@ -495,7 +495,7 @@
 	"fnHTML": "<p>Matthew 5,48.</p>"},
 {
 	"fnNumber": "166",
-	"fnHTML": "<p><em><span data-custom-style='sesame'>Mahā Niddesa</span></em> 2.488.</p>"},
+	"fnHTML": "<p><em><span class='sesame'>Mahā Niddesa</span></em> 2.488.</p>"},
 {
 	"fnNumber": "167",
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;8:17.2</span> <span class='ptsref'>PTS: M.I,46</span>.</p>"},
@@ -516,7 +516,7 @@
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;4:21.4–21.5</span> <span class='ptsref'>PTS: M.I,21</span>.</p>"},
 {
 	"fnNumber": "173",
-	"fnHTML": "<p><span data-custom-style='zot-cite'><em>Jātakam</em>āla</span> XXVI,42-44.</p>"},
+	"fnHTML": "<p><span class='sesame ref'><em>Jātakam</em>āla</span> XXVI,42-44.</p>"},
 {
 	"fnNumber": "174",
 	"fnHTML": "<p><span class='sclinktext'>SN&#8239;16.3:3.5</span> <span class='ptsref'>PTS: S.II,198</span>.</p>"},
@@ -525,7 +525,7 @@
 	"fnHTML": "<p><span class='sclinktext'>AN&#8239;3.4:2.1–2.5</span> <span class='ptsref'>PTS: A.I,103</span>.</p>"},
 {
 	"fnNumber": "176",
-	"fnHTML": "<p><span data-custom-style='sesame'>Vism</span>.161.</p>"},
+	"fnHTML": "<p><span class='sesame'>Vism</span>.161.</p>"},
 {
 	"fnNumber": "177",
 	"fnHTML": "<p><span class='sclinktext'>AN&#8239;11.15</span> <span class='ptsref'>PTS: A.V,342</span>.</p>"},
@@ -534,7 +534,7 @@
 	"fnHTML": "<p><span lang='pi'>Pharati</span> or <span lang='pi'>vyāpeti</span>, to pervade, radiate or project.</p>"},
 {
 	"fnNumber": "179",
-	"fnHTML": "<p><span data-custom-style='zot-cite'>Fromm 1956</span> p.57 ff, and <span data-custom-style='zot-cite'>Singer 2009e</span> p.143-4 for some interesting thoughts on this subject.</p>"},
+	"fnHTML": "<p><span class='sesame ref'>Fromm 1956</span> p.57 ff, and <span class='sesame ref'>Singer 2009e</span> p.143-4 for some interesting thoughts on this subject.</p>"},
 {
 	"fnNumber": "180",
 	"fnHTML": "<p>The term for loving oneself here is <span lang='pi'>attanā piyataro</span>, <span class='sclinktext'>SN&#8239;3.8</span> <span class='ptsref'>PTS: S.I,75</span>.</p>"},
@@ -549,7 +549,7 @@
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;19:6.1</span> <span class='ptsref'>PTS: M.I,115</span>.</p>"},
 {
 	"fnNumber": "184",
-	"fnHTML": "<p><span class='sclinktext'>AN&#8239;10.81</span> <span class='ptsref'>PTS: A.V,151</span>;<br><span class='sclinktext'>SN&#8239;14.33:3.1–4.1</span> <span class='ptsref'>PTS: S.II,173</span>;<br><span class='sclinktext'>SN&#8239;22.28:2.1–2.4</span> <span class='ptsref'>PTS: S.III,31</span>;<br><span class='sclinktext'>SN&#8239;35.17:2.1–2.2</span> <span class='ptsref'>PTS: S.IV,11</span>;<br><span data-custom-style='sesame'>Vism</span>.307.</p>"},
+	"fnHTML": "<p><span class='sclinktext'>AN&#8239;10.81</span> <span class='ptsref'>PTS: A.V,151</span>;<br><span class='sclinktext'>SN&#8239;14.33:3.1–4.1</span> <span class='ptsref'>PTS: S.II,173</span>;<br><span class='sclinktext'>SN&#8239;22.28:2.1–2.4</span> <span class='ptsref'>PTS: S.III,31</span>;<br><span class='sclinktext'>SN&#8239;35.17:2.1–2.2</span> <span class='ptsref'>PTS: S.IV,11</span>;<br><span class='sesame'>Vism</span>.307.</p>"},
 {
 	"fnNumber": "185",
 	"fnHTML": "<p><span class='sclinktext'>DN&#8239;16:5.14.5</span> <span class='ptsref'>PTS: D.II,144</span>.</p>"},
@@ -570,7 +570,7 @@
 	"fnHTML": "<p>The others bases of community (<span lang='pi'>saṅgaha vatthū</span>) are generosity (<span lang='pi'>dāna</span>), doing good to others (<span lang='pi'>atthacariyā</span>) and treating them impartially (<span lang='pi'>samānattatā</span>); see<br><span class='sclinktext'>AN&#8239;4.32</span> <span class='ptsref'>PTS: A.II,32</span>;<br><span class='sclinktext'>AN&#8239;8.24</span> <span class='ptsref'>PTS: A.IV,219</span>;<br><span class='sclinktext'>AN&#8239;9.5:4.1–4.9</span> <span class='ptsref'>PTS: A.IV,364</span>;<br><span class='sclinktext'>DN&#8239;30:1.16.2</span> <span class='ptsref'>PTS: D.III,152</span>.</p>"},
 {
 	"fnNumber": "191",
-	"fnHTML": "<p><span data-custom-style='sesame'>Vism</span>.318-9.</p>"},
+	"fnHTML": "<p><span class='sesame'>Vism</span>.318-9.</p>"},
 {
 	"fnNumber": "192",
 	"fnHTML": "<p><span class='sclinktext'>Ud&#8239;5.5:19.1–19.2</span> <span class='ptsref'>PTS: Ud.54</span>.</p>"},
@@ -594,7 +594,7 @@
 	"fnHTML": "<p><span class='sclinktext'>Snp&#8239;1.10</span> <span class='ptsref'>PTS: Sn.181–92</span>.</p>"},
 {
 	"fnNumber": "199",
-	"fnHTML": "<p>Quoted in <span data-custom-style='zot-cite'>Toland 1977</span> p.120 and p.580.</p>"},
+	"fnHTML": "<p>Quoted in <span class='sesame ref'>Toland 1977</span> p.120 and p.580.</p>"},
 {
 	"fnNumber": "200",
 	"fnHTML": "<p>1 Peter 4.8.</p>"},
@@ -603,25 +603,25 @@
 	"fnHTML": "<p><span class='sclinktext'>MN&#8239;119:5.1–6.4</span> <span class='ptsref'>PTS: M.III,89</span>.</p>"},
 {
 	"fnNumber": "202",
-	"fnHTML": "<p><span class='sclinktext'>AN&#8239;1.49</span>, <span class='sclinktext'>AN&#8239;1.50</span> <span class='ptsref'>PTS: A.I,10</span>. For more on this see <span data-custom-style='zot-cite'>Harvey 2012</span>, pp. 166-77.</p>"},
+	"fnHTML": "<p><span class='sclinktext'>AN&#8239;1.49</span>, <span class='sclinktext'>AN&#8239;1.50</span> <span class='ptsref'>PTS: A.I,10</span>. For more on this see <span class='sesame ref'>Harvey 2012</span>, pp. 166-77.</p>"},
 {
 	"fnNumber": "203",
 	"fnHTML": "<p><a href='https://suttacentral.net/mil6.3.3/en/tw_rhysdavids' class='extlink tipref'>Mil 6.3.3</a> <span class='ptsref'>PTS: Mil.81</span>.</p>"},
 {
 	"fnNumber": "204",
-	"fnHTML": "<p><em><span data-custom-style='zot-cite'>The Mencius</span></em> 2A-6.</p>"},
+	"fnHTML": "<p><em><span class='sesame ref'>The Mencius</span></em> 2A-6.</p>"},
 {
 	"fnNumber": "205",
 	"fnHTML": "<p>I John 4,7-21.</p>"},
 {
 	"fnNumber": "206",
-	"fnHTML": "<p>There are some problems with this claim. It implies that the highest love is the exclusive preserve of Christians, which is certainly not the case. It could also be asked why, with the world in such desperate need of it, God chooses to channel his love through so few individuals. Most people would probably admit that the highest love is far from common. Another problem concerns those aspects of God’s nature that seem to be contrary to love. The theologian A. W. Pink correctly said—<span data-custom-style='zot-cite'>Pink 1968</span> p.75, “A study of the concordance will show that there are more references in Scripture to the anger, fury, and wrath of God, than there are to His love and tenderness.” Does God channel these aspects of his nature through believers also?</p>"},
+	"fnHTML": "<p>There are some problems with this claim. It implies that the highest love is the exclusive preserve of Christians, which is certainly not the case. It could also be asked why, with the world in such desperate need of it, God chooses to channel his love through so few individuals. Most people would probably admit that the highest love is far from common. Another problem concerns those aspects of God’s nature that seem to be contrary to love. The theologian A. W. Pink correctly said—<span class='sesame ref'>Pink 1968</span> p.75, “A study of the concordance will show that there are more references in Scripture to the anger, fury, and wrath of God, than there are to His love and tenderness.” Does God channel these aspects of his nature through believers also?</p>"},
 {
 	"fnNumber": "207",
 	"fnHTML": "<p><span class='sclinktext'>AN&#8239;8.33</span> <span class='ptsref'>PTS: A.IV,237</span>.</p>"},
 {
 	"fnNumber": "208",
-	"fnHTML": "<p>For some recent research on this matter see <span data-custom-style='zot-cite'>Germer 2009</span>.</p>"},
+	"fnHTML": "<p>For some recent research on this matter see <span class='sesame ref'>Germer 2009</span>.</p>"},
 {
 	"fnNumber": "209",
 	"fnHTML": "<p><span class='sclinktext'>AN&#8239;5.124:2.5</span> <span class='ptsref'>PTS: A.III,144</span>.</p>"},
@@ -642,7 +642,7 @@
 	"fnHTML": "<p>Luke 6,27-30; Matthew 18,21-2; <span class='sclinktext'>MN&#8239;21:20.1–20.5</span> <span class='ptsref'>PTS: M.I,129</span>.</p>"},
 {
 	"fnNumber": "215",
-	"fnHTML": "<p><span data-custom-style='zot-cite'>Palden 1997</span></p>"},
+	"fnHTML": "<p><span class='sesame ref'>Palden 1997</span></p>"},
 {
 	"fnNumber": "216",
 	"fnHTML": "<p><span class='sclinktext'>AN&#8239;2.19:2.1–2.10</span> <span class='ptsref'>PTS: A.I,58</span>.</p>"},
@@ -654,13 +654,13 @@
 	"fnHTML": "<p><span class='sclinktext'>AN&#8239;10.26:2.1</span> <span class='ptsref'>PTS: A.V,46</span>; <a href='https://suttacentral.net/ja531/en/francis?reference=main/pts#pts-vp-pli310' class='extlink tipref'>Ja 531</a> <span class='ptsref'>PTS: Ja.V,310</span>; <a href='https://suttacentral.net/ja533/en/francis?reference=main/pts#pts-vp-pli343' class='extlink tipref'>Ja 533</a> <span class='ptsref'>PTS: Ja.V,343</span>; <a href='https://suttacentral.net/ja453/en/rouse?reference=main/pts#pts-vp-pli76' class='extlink tipref'>Ja 453</a> <span class='ptsref'>PTS: Ja.IV.76</span>.</p>"},
 {
 	"fnNumber": "219",
-	"fnHTML": "<p>This is a loose paraphrase based on <span data-custom-style='zot-cite'>Mozley 1928</span> Pg. 481ff, which is in rather archaic English.</p>"},
+	"fnHTML": "<p>This is a loose paraphrase based on <span class='sesame ref'>Mozley 1928</span> Pg. 481ff, which is in rather archaic English.</p>"},
 {
 	"fnNumber": "220",
-	"fnHTML": "<p><span data-custom-style='sesame'><em>Taisho Tripitaka</em></span> Vol. 21, No. 1262.</p>"},
+	"fnHTML": "<p><span class='sesame'><em>Taisho Tripitaka</em></span> Vol. 21, No. 1262.</p>"},
 {
 	"fnNumber": "221",
-	"fnHTML": "<p><span data-custom-style='sesame'><em>Mahāv</em>aṁsa</span> XII,21. Being a popular legend that developed several centuries after the Buddha the <span data-custom-style='sesame'>Hariti</span> story is not found in the Pāḷi Tipitaka. Consequently the <span data-custom-style='sesame'>Mahāvaṁsa</span> version of the story attributes her conversion to the monks Sona and Uttara who lived during the time of King Asoka.</p>"},
+	"fnHTML": "<p><span class='sesame'><em>Mahāv</em>aṁsa</span> XII,21. Being a popular legend that developed several centuries after the Buddha the <span class='sesame'>Hariti</span> story is not found in the Pāḷi Tipitaka. Consequently the <span class='sesame'>Mahāvaṁsa</span> version of the story attributes her conversion to the monks Sona and Uttara who lived during the time of King Asoka.</p>"},
 {
 	"fnNumber": "222",
 	"fnHTML": "<p>The Path, i.e., the Noble Eightfold Path, <span class='sclinktext'>SN&#8239;22.58:5.1–5.3</span> <span class='ptsref'>PTS: S.III,66</span>.</p>"},
@@ -672,5 +672,5 @@
 	"fnHTML": "<p><span lang='pi'>Peta</span>, sometimes incorrectly called hell beings.</p>"},
 {
 	"fnNumber": "225",
-	"fnHTML": "<p>In Japan <span data-custom-style='sesame'>Kṣitigarbha</span> is also known as Migawari Jizo, “He Who Takes Upon Himself Our Suffering.” Statues of <span data-custom-style='sesame'>Kṣitigarbha</span> sometimes depict him with scars and wounds, the result of trying to protect purgatorial beings from receiving their just punishment.</p>"}
+	"fnHTML": "<p>In Japan <span class='sesame'>Kṣitigarbha</span> is also known as Migawari Jizo, “He Who Takes Upon Himself Our Suffering.” Statues of <span class='sesame'>Kṣitigarbha</span> sometimes depict him with scars and wounds, the result of trying to protect purgatorial beings from receiving their just punishment.</p>"}
 ]

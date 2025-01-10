@@ -447,7 +447,12 @@ function buildBook () {
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
 		} else
-		// CAPTIONS
+		// BLOCKQUOTES
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-blockquote") {
+			allDivs[i].tagName = "blockquote"
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
+		// CAPTIONS -- Used in conjuction with IMAGE TABLE
  		if (allDivs[i].getAttribute('data-custom-style') == "WW-Caption-Centered-Sans"){
 			let tempHTML = allDivs[i].innerHTML
 			let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-sans'` + tempHTML.slice(4)
@@ -458,7 +463,7 @@ function buildBook () {
 			let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-serif'` + tempHTML.slice(4)
 			allDivs[i].replaceWith(newHTML)
 		} else
-		// VERSES 
+		// VERSES - 2 types one justified to the left, one centered around the longest line
 		//(line-block)
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block") {
 			let tempHTML = allDivs[i].innerHTML.replaceAll('\r\n', '')
@@ -476,20 +481,6 @@ function buildBook () {
 			}
 			allDivs[i].replaceWith(newHTML)
 		} else
-
-/* 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block") {
-			let tempHTML = allDivs[i].innerHTML
-			if (allDivs[i].innerHTML.charAt(5) == '“') {
-				let newHTML = `<blockquote> ${tempHTML.slice(0,4)} class='OAstart' ${tempHTML.slice(4)} </blockquote>`
-				allDivs[i].innerHTML = newHTML	
-			} else {
-				let newHTML = `<blockquote> ${tempHTML} </blockquote>`
-				allDivs[i].innerHTML = newHTML	
-			}
-			allDivs[i].classList.add ('line-block')
-			allDivs[i].removeAttribute('data-custom-style')
-		} else */
-
 		//(line-block-centered)
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block-center") {
 			if (allDivs[i].innerHTML.charAt(5) == '“') {
@@ -500,6 +491,10 @@ function buildBook () {
 			allDivs[i].classList.add ('line-block-center')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-tight-right-cite") {
+			allDivs[i].classList.add('tight-right-cite')
+			allDivs[i].removeAttribute('data-custom-style')
+		} 
 		//IMAGES
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-image") {
 			let [source, altText, width, border] = allDivs[i].text.split("=");
@@ -555,33 +550,32 @@ function buildBook () {
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-author-biography") {
 			allDivs[i].remove()
 		} else 
-		if (allDivs[i].getAttribute('data-custom-style') == "WW-blockquote") {
-			allDivs[i].tagName = "blockquote"
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-instruction-list") {
+			let spacerHTML = ``
+			let tempHTML = allDivs[i].innerHTML
+			let c = tempHTML.charAt(5)
+
+			if (c >= '0' && c <= '9') {
+				spacerHTML = `<hr class='halfspacer'>`
+			}
+			allDivs[i].replaceWith(`${spacerHTML}${tempHTML}`)
+		} else
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-instruction-list-comment") {
+			allDivs[i].classList.add ('list-comment')
 			allDivs[i].removeAttribute('data-custom-style')
 		} else
 
 		//OLD STUFF FROM MILK
-		if (allDivs[i].getAttribute('data-custom-style') == "Quote-Block") {
-			allDivs[i].tagName = "blockquote"
-			allDivs[i].removeAttribute('data-custom-style')
-		} else
-/* 		if (allDivs[i].getAttribute('data-custom-style') == "bob-text") {
-			allDivs[i].classList.add ('bob-text')
-			allDivs[i].removeAttribute('data-custom-style')
-		} else
-*/		if (allDivs[i].getAttribute('data-custom-style') == "sublist-comment") {
+/* 		if (allDivs[i].getAttribute('data-custom-style') == "sublist-comment") {
 			allDivs[i].classList.add ('sublist-comment')
 			allDivs[i].removeAttribute('data-custom-style')
-		} else
-		if (allDivs[i].getAttribute('data-custom-style') == "List-Comment") {
-			allDivs[i].classList.add ('list-comment')
-			allDivs[i].removeAttribute('data-custom-style')
-		} else
+		} else 
 		if ((allDivs[i].getAttribute('data-custom-style') == "Normal") 
 			|| (allDivs[i].getAttribute('data-custom-style') == "Sutta-Text") ){
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
-		} else
+		} else */
+
 		if (allDivs[i].getAttribute('data-custom-style') == "List Paragraph") {
 			let tempHTML = allDivs[i].innerHTML
 			allDivs[i].replaceWith(tempHTML)
@@ -597,17 +591,8 @@ function buildBook () {
 			}
 			allDivs[i].classList.add('list-cite')
 			allDivs[i].removeAttribute('data-custom-style')
-		} else
-		if (allDivs[i].getAttribute('data-custom-style') == "List-Instructions") {
-			let spacerHTML = ``
-			let tempHTML = allDivs[i].innerHTML
-			let c = tempHTML.charAt(5)
-
-			if (c >= '0' && c <= '9') {
-				spacerHTML = `<hr class='halfspacer'>`
-			}
-			allDivs[i].replaceWith(`${spacerHTML}${tempHTML}`)
 		} 
+
 	} 
 
 	// table rows

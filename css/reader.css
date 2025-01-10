@@ -570,6 +570,13 @@ a {
 	font-size: smaller;
 }
 
+.content div.tight-right-cite {
+	display: block;
+	text-align: right;
+	margin-top: -0.8em;
+	margin-bottom: 2em;
+	line-height: 1.3em;
+}
 
 .line-block {
 	margin: 1em 0 0 0;
@@ -828,7 +835,7 @@ figcaption {
 	margin-top: -0.8em;
 	margin-bottom: 2em;
 	line-height: 1em;
-
+background: cornsilk;
 }	
 
 .explainer {

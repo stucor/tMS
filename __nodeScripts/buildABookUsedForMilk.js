@@ -332,10 +332,10 @@ function buildBook () {
 				spans[i].removeAttribute ('data-custom-style')
 				sesameArr.push(spans[i].text)
 			break
-			case 'bob-cite':
+/* 			case 'bob-cite':
 				spans[i].classList.add('bob-cite')
 				spans[i].removeAttribute ('data-custom-style')
-			break
+			break */
 			case 'pali':
 				spans[i].setAttribute('lang','pi')
 				spans[i].removeAttribute ('data-custom-style')

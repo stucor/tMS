@@ -30,9 +30,9 @@ function buildSesameRefStub () {
 }
 
 function buildMyBook () {
-	let docx = path.join(__dirname,'..','_resources','book-data', bookID, bookID+'.docx')
-	let outPandocHTML = path.join(__dirname,'..','_resources','book-data', bookID, 'pandoc.html')
-	exec(`pandoc --from docx+styles ${docx} -s --toc -o ${outPandocHTML} --wrap=none`, 
+	let docxPath = `../_resources/book-data/${bookID}/${bookID}.docx`
+	let pandocHtmlPath = `../_resources/book-data/${bookID}/pandoc.html`
+	exec(`pandoc --from docx+styles ${docxPath} -s --toc -o ${pandocHtmlPath} --wrap=none`, 
 		(error, stdout, stderr) => { 
 		  if (error) { 
 			console.error(`Error: ${error.message}`)
@@ -42,10 +42,10 @@ function buildMyBook () {
 			console.error(`stderr: ${stderr}`)
 			return; 
 		  } 
-		  console.log(`\n✅ pandoc.html created\n`)
+		  console.log(`\n✅✅ pandoc.html created\n`)
 		  processPandoc()
 		  buildCompleteBook() 
-		  console.log(`✅ books/${bookID}/index.html BUILD COMPLETE *\n`)
+		  console.log(`✅✅ books/${bookID}/index.html BUILD COMPLETE *\n`)
 		  buildSesameStub()
 		  //buildSesameRefStub()
 		}); 
@@ -194,7 +194,7 @@ html += `
 `
 // Notes
 html += `			<div id="ModalNotes">
-			<h2>Notes for ${title}</h2>
+			<h2>${title}<br>—Notes—</h2>
 `
 
 
@@ -202,7 +202,7 @@ function buildFootnotes () {
 	let localHTML =``
 	let footnotesData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'footnotes.json'))
 	for (var i in footnotesData){
-		localHTML += `<div class="booknote" data-note="${footnotesData[i].fnNumber}">${footnotesData[i].fnHTML.replaceAll('<p>','').replaceAll('</p>','')}`
+		localHTML += `<div class="booknote" data-note="${footnotesData[i].fnNumber}">${footnotesData[i].fnHTML}`
 		localHTML += '</div>\n'
 	}
 	localHTML += `<div style='margin-top: 2em; background: #7f7f7f50; text-align:center; font-variant:small-caps; margin-bottom: 50%'>End of Notes</div>`
@@ -618,11 +618,7 @@ function buildBook () {
 html += buildBook()
 
 function buildReferences () {
-/* 	if (fs.existsSync(`../_resources/book-data/${bookID}/biblioMapArr.json`)) {
-		console.log(`hereUUUUUUU ${bookID}`)
-	} */
 	let referenceRoot = ``
-
 	let html =`<h2>Bibliography</h2>`
 	try {
 		const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'biblio.html', 'utf8')
@@ -823,10 +819,9 @@ function processPandoc() {
 			} 
 		}
 	
-		authors = authors.slice(0,-1)
 	
 		localJSON += `{
-			"Authors" : [${authors}],
+			"Authors" : [${authors.slice(0,-1)}],
 			"BookTitle" : "${title}",
 			"BookSubtitle" : "${subtitle}",
 			"ShortAbstract" : "${abstractShort}",
@@ -842,16 +837,14 @@ function processPandoc() {
 			"DownloadHTML": "${downloadHTML}"
 		}`
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'meta.json'), localJSON, 'utf8')
-		console.log(`book-data/${bookID}/meta.json has been created`)
+		console.log(`✅ book-data/${bookID}/meta.json has been created`)
 	}
 	
 	function buildTOCJSON () {
 		let localJSON = ``
 		let TOChtml = pandocRoot.querySelectorAll('div')
-
 		localJSON += `[`
 		let count = 0
-
 		for (let i in TOChtml) {
 			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-Chapter') {
 				count += 1
@@ -868,15 +861,12 @@ function processPandoc() {
 				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
 				let newElement = `<h2 id='${nextTOCID}'\>${nextTOCText}</h2>`
 				TOChtml[i].replaceWith(newElement)
-
 			}
 		}
-
 		localJSON = localJSON.substring(0, localJSON.length -2)
 		localJSON += `]`
-
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'TOC.json'), localJSON, 'utf8')
-		console.log(`book-data/${bookID}/TOC.json has been created`)
+		console.log(`✅ book-data/${bookID}/TOC.json has been created`)
 	}
 
 	function buildFootnotesJSON () {
@@ -977,36 +967,45 @@ function processPandoc() {
 			}
 		}
 
-		let outFNPara = footnotesRoot.getElementsByTagName ('p');
-		let localJSON = `[`
-		for (let i in outFNPara) {
-			let footnoteHTML = outFNPara[i].outerHTML.replaceAll('\"','\'')
-													 .replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
-													 .replaceAll('<em>,</em>',',')  // clean up unexpected italics
-													 .replaceAll(' | ','<br>')
-													 .replaceAll('<p> ', '<p>')
-			localJSON +=`{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${footnoteHTML}"}`
-			if (i == outFNPara.length -1) {
-				localJSON += '\n]'
-			} else {
-				localJSON += ',\n'
+		let outFNLi = footnotesRoot.getElementsByTagName ('li')
+		let localJSON = `[\n`
+		for (let i in outFNLi) {
+			if (outFNLi[i].id.substring(0,2) == 'fn' ) {
+				let thisFootnoteRoot = parse(outFNLi[i].innerHTML)
+				let thisFootnoteHTML = ``
+				thisFootnoteParas = thisFootnoteRoot.querySelectorAll('p')
+	
+				for (let j in thisFootnoteParas) {
+					thisFootnoteHTML += thisFootnoteParas[j].outerHTML.replaceAll('\"','\'')
+					.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
+					.replaceAll('<em>,</em>',',')  // clean up unexpected italics
+					.replaceAll(' | ','<br>')
+					.replaceAll('<p> ', '<p>')
+				}
+	
+				localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML}"\n}`
+	
+				if (i == outFNLi.length -1) {
+					localJSON += '\n'
+				} else {
+					localJSON += ',\n'
+				}
 			}
-
 		}
-		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
-		console.log(`book-data/${bookID}/footnotes.json has been created`)
+		localJSON += ']'
 
+		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
+		console.log(`✅ book-data/${bookID}/footnotes.json has been created`)
 	}
 
 	function buildBookInfoJSON () {
-		let metaData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'meta.json'));
+		let metaData = require(`../_resources/book-data/${bookID}/meta.json`)
 		let authors = metaData.Authors;
 		let metaDataStr = JSON.stringify(metaData, null, '\t');
 		let jsonStr = `${metaDataStr.substring(0, metaDataStr.length-1)},`;
-		
 		jsonStr += `"AuthorsData": [`;
 		for (i in authors) {
-			let author = require(path.join(__dirname, '..', '_resources', 'author-data', authors[i], 'bio.json'));
+			let author = require(`../_resources/author-data/${authors[i]}/bio.json`);
 			jsonStr += `${JSON.stringify(author, null, '\t')},`;
 		}
 		jsonStr = jsonStr.substring(0, jsonStr.length - 1);
@@ -1030,7 +1029,7 @@ function processPandoc() {
 		} else {
 			newjson.Authors = newjson.AuthorsData[0].ShortName;
 		}
-		let CCLongLicenses = require(path.join(__dirname, '..', '_resources', 'copyright-data', 'cclicence.json'));
+		let CCLongLicenses = require(`../_resources/copyright-data/cclicence.json`);
 		for (let i = 0; i< Object.keys(CCLongLicenses).length; i++) {
 			if (newjson.CCLicense == Object.keys(CCLongLicenses)[i]) {
 				newjson.CCLicense = Object.values(CCLongLicenses)[i];
@@ -1041,12 +1040,11 @@ function processPandoc() {
 			if (err) throw err;
 		  });
 		fs.writeFileSync(path.join(__dirname, '..', '_resources', 'built-info-data', bookID, 'info.json'), jsonStr);
-		console.log(`built-info-data/${bookID}/info.json has been created`)
+		console.log(`✅ built-info-data/${bookID}/info.json has been created`)
 	}
 
 	function extractBookHTML () {
 		let bookRoot = parse (pandocRoot.querySelector('body'))
-		//bookRoot.querySelector('#TOC').remove()
 		bookRoot.querySelector('#footnotes').remove()
 		bookRoot.querySelector('header').remove()
 		bookRoot.querySelector('#short-abstract').remove()
@@ -1088,7 +1086,7 @@ function processPandoc() {
 	buildFootnotesJSON()
 	buildBookInfoJSON()
 	extractBookHTML()
-	console.log(`✅ pandoc.html PROCESSING COMPLETE\n`);
+	console.log(`\n✅✅ pandoc.html PROCESSING COMPLETE\n`);
 }
 
 console. log('-------------------------------------------------------------------------')

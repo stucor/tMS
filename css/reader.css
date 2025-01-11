@@ -761,6 +761,11 @@ figcaption {
 	margin: 1em 0;
 }
 
+#ModalNotes h2 {
+	font-weight: 100;
+	font-variant: small-caps;
+	font-size: 1.2em;
+}
 
 .citeBQ {
 	text-align:right;
@@ -1172,6 +1177,11 @@ table.borderlessTable {
 	margin-top: 0.5em;
 }
 
+.content div.epigram-2 + .epigram-2 {
+	margin-top: 0;
+}
+
+
 /* For longer epigrams that look like blocks of text use epigram-3 */
 .content div.epigram-3 {
 	font-family: 'Source Serif Pro';
@@ -1304,11 +1314,7 @@ table.borderlessTable {
 	align-items:first baseline;
 }
 
-.booknote p {
-	margin-top: 0;
-	margin-bottom: 0;
-	text-indent: 1em;
-}
+
 .booknote ol, .booknote ul {
 	padding:0 1em; 
 	margin: 1em 2em;
@@ -1336,6 +1342,13 @@ table.borderlessTable {
 
 .booknote ol + p {
 	text-indent: 0;
+}
+
+.booknote p {
+	margin:0;
+}
+.booknote p + p{
+	text-indent: 1em;
 }
 
 
@@ -3219,12 +3232,10 @@ mark.current {
 		display:inline;
 		margin: 0;
 	}
-/* 	div.booknote:has(> div.booknotesText > span.opensesameref) {
-		text-align: left;
-	} */
-/* 	.booknote {
-		text-align: left;
-	} */
+	.booknotesText P {
+		margin:0;
+	}
+
 	.opensesameref:before {
 		content: "\a";
 		white-space: pre;
@@ -3279,11 +3290,6 @@ mark.current {
 		font-size: 1em;
 	}
 
-/* 	.content div.bob-text {
-		max-width: 80%;
-		font-weight: 500;
-		margin: 2em 10%;
-	} */
 
 }
 

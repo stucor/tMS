@@ -550,11 +550,11 @@ function buildInfo () {
 		
 		}
 
-		fetch(`../_resources/built-info-data/${shortCode}/info.json`)
+		fetch(`../_resources/book-data/${shortCode}/info.json`)
 			.then(response => response.json())
 			.then (data => populateInfo(data))
 			.catch(error => {
-			console.log(`ERROR: Can't fetch ../_resources/built-info-data/${shortCode}/info.json`);
+			console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
 			}
 		);
 

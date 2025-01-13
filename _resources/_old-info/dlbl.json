@@ -1,0 +1,15 @@
+{
+  "Authors" : ["brahmali"],
+  "BookTitle" : "Dependent Liberation",
+  "BookSubtitle"  : "",
+  "AddInfo"   : [ ["Series:","This is the second of two booklets in a series by Ajahn Brahmali.\n Part 1 is: [Dependent Origination](../dobl)"], 
+                  ["Overview:","**DEPENDENT LIBERATION:** \n***(lokuttara-paticcasamuppada)***","suffering (*dukkha*) ›\nfaith/confidence (*saddhā*) ›\ngladness (*pāmojja*) ›\njoy (*pīti*) ›\ntranquillity (*passaddhi*) ›\nhappiness (*sukha*) ›\nunification of mind (*samādhi*) ›\nknowledge and vision according to reality (*yathā-bhūta-&ntilde;āṇa-dassana*) ›\nrepulsion (*nibbidā*) ›\ndispassion (*virāga*) ›\nliberation (*vimutti*) ›\nknowledge that you are liberated (*khaye &ntilde;āṇaṁ*)"]
+                ],
+  "Copyright" : ["Originally published in **2013**.",
+    "This edition published in **2021**",
+    "25pp (in pdf format).","Transcribed from a talk by Ajahn Brahmali, Dhammaloka, \n23 March 2012."],
+  "CCLicense": "CC0 1.0",
+  "FrontCover": "../_resources/book-data/dlbl/FrontLarge.jpg",
+  "BackCover": "",
+  "BackMatter": []
+}

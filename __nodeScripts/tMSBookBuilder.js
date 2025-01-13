@@ -837,7 +837,7 @@ function processPandoc() {
 			"DownloadHTML": "${downloadHTML}"
 		}`
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'meta.json'), localJSON, 'utf8')
-		console.log(`✅ book-data/${bookID}/meta.json has been created`)
+		console.log(`✅ meta.json created`)
 	}
 	
 	function buildTOCJSON () {
@@ -866,7 +866,7 @@ function processPandoc() {
 		localJSON = localJSON.substring(0, localJSON.length -2)
 		localJSON += `]`
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'TOC.json'), localJSON, 'utf8')
-		console.log(`✅ book-data/${bookID}/TOC.json has been created`)
+		console.log(`✅ TOC.json created`)
 	}
 
 	function buildFootnotesJSON () {
@@ -912,7 +912,6 @@ function processPandoc() {
 			}
 
 		}
-
 		// anchors
 		let anchors = footnotesRoot.getElementsByTagName ('a') 
 		for (i in anchors) {
@@ -966,7 +965,6 @@ function processPandoc() {
 					}
 			}
 		}
-
 		let outFNLi = footnotesRoot.getElementsByTagName ('li')
 		let localJSON = `[\n`
 		for (let i in outFNLi) {
@@ -995,7 +993,7 @@ function processPandoc() {
 		localJSON += ']'
 
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
-		console.log(`✅ book-data/${bookID}/footnotes.json has been created`)
+		console.log(`✅ footnotes.json created`)
 	}
 
 	function buildBookInfoJSON () {
@@ -1036,11 +1034,8 @@ function processPandoc() {
 			}
 		}
 		jsonStr = JSON.stringify(newjson, null, '\t');
-		fs.mkdirSync(path.join(__dirname, '..', '_resources', 'built-info-data', bookID), { recursive: true }, (err) => {
-			if (err) throw err;
-		  });
-		fs.writeFileSync(path.join(__dirname, '..', '_resources', 'built-info-data', bookID, 'info.json'), jsonStr);
-		console.log(`✅ built-info-data/${bookID}/info.json has been created`)
+		fs.writeFileSync(`../_resources/book-data/${bookID}/info.json`, jsonStr);
+		console.log(`✅ info.json created`)
 	}
 
 	function extractBookHTML () {
@@ -1070,6 +1065,9 @@ function processPandoc() {
 				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadHTML")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-backcover-text")
 				) {
+				allDivs[i].remove();
+			}
+			if ((allDivs[i].getAttribute("data-custom-style") == "WW-special-message") && (allDivs[i].text.replaceAll('\r\n', '') == 'None')) {
 				allDivs[i].remove();
 			}
 		}

@@ -1,0 +1,19 @@
+{
+    "Authors" : ["brahm"],
+    "BookTitle" : "Wisdom of Silence",
+    "BookSubtitle" : "",
+    "AddInfo"   : [["Preface",
+        "This revised edition is produced not only in print but also in an electronic format in order that this valuable insight will be more readily available and accessible, reaching a wider audience.",
+        "*Bodhinyana Volunteer Team<br>Rains Retreat 2018*"
+        ]],
+    "Copyright" : ["Revised edition originally published in **2018**",
+        "This edition published in **2022** by Wisdom & Wonders is based on the 2018 edition with typographic corrections and sutta reference links to SuttaCentral",
+        "54pp (in pdf format).",
+        "Copyright © Ajahn Brahmavamso 2018, 2022",
+        "For enquiry about the book or Ajahn Brahm, please contact [bswa.org]X(https://bswa.org)"
+        ],
+    "CCLicense": "BY-NC-SA 4.0",
+    "FrontCover": "../_resources/book-data/wosb/FrontLarge.jpg",
+    "BackCover": "",
+    "BackMatter": []
+}

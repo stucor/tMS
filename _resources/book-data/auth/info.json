@@ -1,14 +1,40 @@
 {
-    "Authors" : ["sujato", "brahmali"],
-    "BookTitle" : "The Authenticty of Early Buddhist Texts",
-    "BookSubtitle"  :"",
-    "AddInfo"   : [],
-    "Copyright" : ["Originally published in **2014**. \nThis edition published in **2022**.\n158pp (in pdf format).",
-        "First BPS edition: 2014 \nCopyright (©) 2014, Bhikkhu Sujāto and Bhikkhu Brahmāli",
-        "This edition is based on the 2014 BPS edition with minor reference changes and link updates."
-        ],
-    "CCLicense": "CC0 1.0",
-    "FrontCover": "../_resources/book-data/auth/FrontLarge.jpg",
-    "BackCover": "",
-    "BackMatter": []
+	"Authors": "Bhikkhu Sujato and Bhikkhu Brahmāli",
+	"BookTitle": "The Authenticty of Early Buddhist Texts",
+	"BookSubtitle": "",
+	"AddInfo": [],
+	"Copyright": [
+		"Originally published in **2014**. \nThis edition published in **2022**.\n158pp (in pdf format).",
+		"First BPS edition: 2014 \nCopyright (©) 2014, Bhikkhu Sujāto and Bhikkhu Brahmāli",
+		"This edition is based on the 2014 BPS edition with minor reference changes and link updates."
+	],
+	"CCLicense": "<div class='cclicense'><h3>CC0 1.0 Universal <span>(CC0 1.0) Public Domain Dedication</span></h3><div id = 'ccDetail'><p><strong>No Copyright</strong></p><ul>    <li>The person who associated a work with this deed has <em>dedicated</em> the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.</li>    <li>You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.</li></ul><p><strong>Other Information</strong></p><ul><li>In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.</li><li>Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.</li><li>When using or citing the work, you should not imply endorsement by the author or the affirmer.</li></ul></div></div>",
+	"FrontCover": "../_resources/book-data/auth/FrontLarge.jpg",
+	"BackCover": "",
+	"BackMatter": [],
+	"AuthorsData": [
+		{
+			"ShortName": "Bhikkhu Sujato",
+			"InfoImage": "../_resources/author-data/sujato/info.jpg",
+			"ShortBio": [
+				"Bhante Sujato was born in Perth and raised in a liberal Catholic family. ",
+				"After dropping out of University he became a musician. ",
+				"In 1992 he travelled to Thailand in search of a new direction. ",
+				"He entered an intensive meditation retreat at Wat Ram Poeng in Chieng Mai. ",
+				"A year later, he ended up at Wat Nanachat, where he took novice ordination and, on May 5, 1994, full ordination as a bhikkhu in the forest lineage of Ajahn Chah. ",
+				"In 2005, he co-founded the Buddhist website SuttaCentral along with Rod Bucknell and John Kelly, to provide access to early Buddhist texts in their original language and make translations available in modern languages"
+			]
+		},
+		{
+			"ShortName": "Bhikkhu Brahmāli",
+			"InfoImage": "../_resources/author-data/brahmali/info.jpg",
+			"ShortBio": [
+				"Bhikkhu Brahmāli was born in Norway in 1964. ",
+				"He began his monastic training as an anagarika in England at Amaravati and Cittaviveka. ",
+				"After hearing teachings from Ajahn Brahm in 1994 he decided to travel to Australia to train at Bodhinyana Monastery. ",
+				"He was ordained as a Bhikkhu, with Ajahn Brahm as his preceptor, in 1996. ",
+				"In 2015 he entered his 20th Rains Retreat as a fully ordained monastic and received the title Maha Thera (Great Elder)."
+			]
+		}
+	]
 }

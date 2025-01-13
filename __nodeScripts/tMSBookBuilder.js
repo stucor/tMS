@@ -29,7 +29,7 @@ function buildSesameRefStub () {
 	console.log(sesameRefArr)
 }
 
-function buildMyBook () {
+function buildBook () {
 	let docxPath = `../_resources/book-data/${bookID}/${bookID}.docx`
 	let pandocHtmlPath = `../_resources/book-data/${bookID}/pandoc.html`
 	exec(`pandoc --from docx+styles ${docxPath} -s --toc -o ${pandocHtmlPath} --wrap=none`, 
@@ -44,15 +44,15 @@ function buildMyBook () {
 		  } 
 		  console.log(`\n✅✅ pandoc.html created\n`)
 		  processPandoc()
-		  buildCompleteBook() 
-		  console.log(`✅✅ books/${bookID}/index.html BUILD COMPLETE *\n`)
+		  buildBookIndexHTML() 
+		  console.log(`✅✅ ${bookID} index.html BUILD COMPLETE *\n`)
 		  buildSesameStub()
 		  //buildSesameRefStub()
 		}); 
 }
 
 
-function buildCompleteBook () {
+function buildBookIndexHTML () {
 
 let html =``
 let metaData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'meta.json'))
@@ -1075,7 +1075,7 @@ function processPandoc() {
 		let html = ``
 		html += bookRoot.querySelector('body').innerHTML
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'book.html'), html, 'utf8')
-		console.log(`book-data/${bookID}/book.html has been created`)
+		console.log(`✅ book.html created`)
 
 	}
 
@@ -1088,4 +1088,4 @@ function processPandoc() {
 }
 
 console. log('-------------------------------------------------------------------------')
-buildMyBook();
+buildBook();

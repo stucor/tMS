@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  8 JAN 2025 12:44
+This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  13 JAN 2025 11:24
  restricted system commands enabled.
 **../_resources/book-data/vasy/vasy.tex
 (../_resources/book-data/vasy/vasy.tex
@@ -745,8 +745,8 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.287 T
-     his essay analyzes rare terms in abstract texts. However, it also illus...
+l.285 
+    
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -757,8 +757,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.287 T
-     his essay analyzes rare terms in abstract texts. However, it also illus...
+l.285 
+    
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -798,6 +798,11 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [2]
+Overfull \hbox (12.48405pt too wide) in paragraph at lines 294--295
+\TU/GentiumBookPlus(0)/m/n/10 As stated, the sut-tas men-tion <span lang=”pi
+”>viññāṇa anidas-sana</span> twice:
+ []
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
@@ -881,12 +886,23 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [5]
+Underfull \hbox (badness 1509) in paragraph at lines 372--373
+[]\TU/GentiumBookPlus(0)/m/n/10 The first an-swer ends with a main verb (<span 
+lang=”pi”>gād-
+ []
+
+
 
 [6]
+Overfull \hbox (3.32071pt too wide) in paragraph at lines 427--428
+\TU/GentiumBookPlus(0)/m/n/10 <span lang=”pi”>anan-taṁ sab-bato pab-ha
+ṁ</span> (bound-
+ []
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.436 
+l.433 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -898,7 +914,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.436 
+l.433 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -910,10 +926,15 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [7]
+Overfull \hbox (17.35675pt too wide) in paragraph at lines 438--439
+\TU/GentiumBookPlus(0)/m/n/10 quite lit-er-ally as ‘in-vis-i-ble’. Since the
+ mean-ing of <span lang=”pi”>rūpa</span> in-
+ []
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.442 
+l.439 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -925,7 +946,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.442 
+l.439 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -937,10 +958,21 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [8]
+Overfull \hbox (25.97278pt too wide) in paragraph at lines 441--442
+[]\TU/GentiumBookPlus(0)/m/n/10 We should not need to look for a deeper mean-ing
+ be-hind <span lang=”pi”>anidas-
+ []
+
+
+Overfull \hbox (6.36292pt too wide) in paragraph at lines 441--442
+\TU/GentiumBookPlus(0)/m/n/10 syn-onym which sup-plies the me-ter <span lang=
+”pi”>arū-paṁ</span> and <span
+ []
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.451 
+l.448 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -952,7 +984,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.451 
+l.448 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -964,11 +996,16 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [9]
+Underfull \hbox (badness 5388) in paragraph at lines 450--450
+[][][][][]\TU/GentiumBookPlus(0)/m/n/8 SN 1.27:2.5–2.6[][] men-tions the ces
+-sa-tion of <span lang=’pi’>nā-marūpa</span>. In
+ []
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.471 \end{quote}
-               
+l.459 \begin{quote}
+                 
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -979,8 +1016,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.471 \end{quote}
-               
+l.459 \begin{quote}
+                 
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -994,7 +1031,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.495 
+l.492 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1006,7 +1043,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.495 
+l.492 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1021,8 +1058,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.519 C
-     ontrary to what others have argued, \textit{uparujjhati} is simply a ...
+l.514 T
+     he word <span lang="pi">nirujjhati</span> (‘cease’) of the monk’...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1033,8 +1070,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.519 C
-     ontrary to what others have argued, \textit{uparujjhati} is simply a ...
+l.514 T
+     he word <span lang="pi">nirujjhati</span> (‘cease’) of the monk’...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1045,11 +1082,28 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [12]
+Underfull \hbox (badness 1478) in paragraph at lines 514--515
+\TU/GentiumBookPlus(0)/m/n/10 orig-i-nal ques-tion is not adopted by the Bud-dha
+ in his sec-ond
+ []
+
+
+Overfull \hbox (23.97717pt too wide) in paragraph at lines 519--520
+[]\TU/GentiumBookPlus(0)/m/n/10 Con-trary to what oth-ers have ar-gued, <span 
+lang=”pi”>up-aru-jjhati</span> is
+ []
+
+
+Underfull \hbox (badness 3838) in paragraph at lines 519--520
+\TU/GentiumBookPlus(0)/m/n/10 […]”[] Here <span lang=”pi”>up-aru-jjhat
+i</span> of course refers
+ []
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.537 \chapter
-            {2. The Brahmanimantanika Sutta}
+l.532 
+    
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1060,8 +1114,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.537 \chapter
-            {2. The Brahmanimantanika Sutta}
+l.532 
+    
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1072,14 +1126,66 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [13]
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+\hrule 
+l.537 \chapter
+            {2. The Brahmanimantanika Sutta}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-[14
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+}
+l.537 \chapter
+            {2. The Brahmanimantanika Sutta}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+
+[14]
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+\hrule 
+l.551 
+    
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+}
+l.551 
+    
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+
+[15
 
 ]
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.551 
+l.560 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1091,35 +1197,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.551 
+l.560 
     
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-
-[15]
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-\hrule 
-l.562 T
-     here are also some good contextual reasons to attribute the words to Baka:
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-}
-l.562 T
-     here are also some good contextual reasons to attribute the words to Baka:
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1133,8 +1212,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.596 A
-      third option is that neither the Buddha nor Baka ever spoke these word...
+l.592 \end{itemize}
+                 
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1145,8 +1224,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.596 A
-      third option is that neither the Buddha nor Baka ever spoke these word...
+l.592 \end{itemize}
+                 
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1244,6 +1323,11 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [21]
+Underfull \hbox (badness 1838) in paragraph at lines 631--632
+\TU/GentiumBookPlus(0)/m/n/10 An-other pas-sage worth ad-dress-ing at-tributes 
+<span lang=”pi”>anidas-
+ []
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
@@ -1301,7 +1385,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.653 
+l.650 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1313,7 +1397,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.653 
+l.650 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1328,7 +1412,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.665 
+l.659 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1340,7 +1424,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.665 
+l.659 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1380,7 +1464,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 [26]
 No file vasy.bbl.
-<../_resources/images/icons/pdf_24.png, id=350, 24.09pt x 24.09pt>
+<../_resources/images/icons/pdf_24.png, id=351, 24.09pt x 24.09pt>
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
@@ -1469,10 +1553,10 @@ Here is how much of LuaTeX's memory you used:
  1103 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 59 glue, 3 kern, 1 glyph, 61 attribute, 62 glue_spe
 c, 61 attribute_list, 1 write nodes
-   avail lists: 1:1,2:825,3:441,4:155,5:317,6:56,7:6751,8:2,9:474,10:21,11:404
+   avail lists: 1:1,2:825,3:441,4:155,5:289,6:56,7:6723,8:2,9:474,10:16,11:406
  37534 multiletter control sequences out of 65536+600000
  71 fonts using 25781743 bytes
- 79i,13n,92p,2572b,494s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,92p,2597b,563s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus-itali
 c.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus
 -regular.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumb
@@ -1480,9 +1564,9 @@ ookplus-bold.ttf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbio
 linum_rb.otf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbiolinu
 m_r.otf><C:/Users/stuar/AppData/Local/Microsoft/Windows/Fonts/wiswosmallcaps.ttf
 >
-Output written on vasy.pdf (35 pages, 401315 bytes).
+Output written on vasy.pdf (35 pages, 400528 bytes).
 
-PDF statistics: 438 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 439 PDF objects out of 1000 (max. 8388607)
  67 named destinations out of 1000 (max. 131072)
  105 words of extra memory for PDF output out of 10000 (max. 100000000)
 

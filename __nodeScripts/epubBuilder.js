@@ -15,7 +15,7 @@ try {
 
 //Get Info
 
-let builtInfoData = JSON.parse(fs.readFileSync(`../_resources/built-info-data/${bookID}/info.json`, 'utf8'))
+let builtInfoData = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/info.json`, 'utf8'))
 
 // Build Copywrite
 let copyrightHTML = 

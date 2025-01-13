@@ -6,17 +6,13 @@ const { parse } = require('node-html-parser');
 let bookID = process.argv.slice(2)[0];
 
 let indexRoot = ``;
-
 try {
     const data = fs.readFileSync('../'+bookID+'/'+'index.html', 'utf8');
     indexRoot = parse(data);
 } catch (err) {
     console.error(err);
 }
-
-
 let bookRoot = parse(indexRoot.querySelector('#thebook').innerHTML)
-
 
 function suttaCentralIt (suttaReference) {
     let newTEX = ''
@@ -324,7 +320,7 @@ processTables ()
 
 
 //Get Info
-let builtInfoData = JSON.parse(fs.readFileSync(`../_resources/built-info-data/${bookID}/info.json`, 'utf8'))
+let builtInfoData = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/info.json`, 'utf8'))
 
 let bookTitle = builtInfoData.BookTitle
 let bookSubtitle = builtInfoData.BookSubtitle

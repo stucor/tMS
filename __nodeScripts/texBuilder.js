@@ -5,6 +5,8 @@ const { parse } = require('node-html-parser');
 
 let bookID = process.argv.slice(2)[0];
 
+let metaData = require(`../_resources/book-data/${bookID}/meta.json`)
+
 let indexRoot = ``;
 try {
     const data = fs.readFileSync('../'+bookID+'/'+'index.html', 'utf8');
@@ -30,7 +32,7 @@ function processInlines (StrHtml) {
     let localRoot = parse(StrHtml)
     let allSpansArr = localRoot.querySelectorAll('span')
     for (let i in allSpansArr) {
-        if ((allSpansArr[i].getAttribute('lang') == 'pli') ) {
+        if ((allSpansArr[i].getAttribute('lang') == 'pi') ) {
             let tempText = allSpansArr[i].text
             allSpansArr[i].replaceWith(`\\textit{${tempText}}`)
         } else 
@@ -119,7 +121,7 @@ function processInlines (StrHtml) {
 function processSpans () {
     let allSpansArr = bookRoot.querySelectorAll('span')
     for (i in allSpansArr) {
-        if ((allSpansArr[i].getAttribute('lang') == 'pli') ) {
+        if ((allSpansArr[i].getAttribute('lang') == 'pi') ) {
             let tempText = allSpansArr[i].text
             allSpansArr[i].replaceWith(`\\textit{${tempText}}`)
         } else 
@@ -146,6 +148,14 @@ function processEmTags () {
     }
 }
 
+function processStrongTags () {
+    let allStrongTagsArr = bookRoot.querySelectorAll('strong')
+    for (let i in allStrongTagsArr) {
+        let tempText = allStrongTagsArr[i].text
+        allStrongTagsArr[i].replaceWith(`\\textbf{${tempText}}`)
+    }
+}
+
 function processParas () {
     let allParasArr = bookRoot.querySelectorAll('p')
     for (i in allParasArr) {
@@ -156,13 +166,12 @@ function processParas () {
 
 function processSups () {
     let allSupsArr = bookRoot.querySelectorAll('sup')
-    for (i in allSupsArr) {
+    for (let i in allSupsArr) {
         let tempFootnoteText = allSupsArr[i].text
-
         let footnotesData = JSON.parse(fs.readFileSync(`../_resources/book-data/${bookID}/footnotes.json`, 'utf8'))
-        for (j in footnotesData){
-            if (tempFootnoteText == footnotesData[i].fnNumber) {
-                tempFootnoteText = processInlines(footnotesData[i].fnHTML).replaceAll('<p>','').replaceAll('</p>','') //(footnoteRoot.innerHTML)
+        for (let j in footnotesData){
+            if (tempFootnoteText == footnotesData[j].fnNumber) {
+                tempFootnoteText = processInlines(footnotesData[j].fnHTML).replaceAll('<p>','').replaceAll('</p>','') //(footnoteRoot.innerHTML)
             }
         }  
       
@@ -172,15 +181,54 @@ function processSups () {
 
 function processH1s () {
     let allH1sArr = bookRoot.querySelectorAll ('h1')
-    for (i in allH1sArr) {
+    for (let i in allH1sArr) {
+        let headingLabel =``
+        let headingLabelForTOC =``
+        let headingNumber =``
+        let headingName =``
+        let headingNameForToc =``
+        let headingNumberDot =`. `
+        let headingLineBreak =`\\\\`
+
         if (allH1sArr[i].classList.contains('titlepage')) {
             allH1sArr[i].remove()
-        } else 
+        } else
         if (allH1sArr[i].id ==`TOCTarget999999999`) {
             allH1sArr[i].remove()
         } else {
-            let tempTEX = allH1sArr[i].innerHTML.replace(`<span class="chapnum"> `, ``).replace(`</span><br>`, `. `)
-            allH1sArr[i].replaceWith(`\\chapter{${tempTEX}}`)
+            let headingArr = allH1sArr[i].innerHTML.replace(`<span class="chapnum">`,``).split(`</span><br>`)
+            if (!headingArr[1]) {
+                headingName= headingArr[0]
+                headingNumberDot =``
+                headingPageBreak =``
+            } else {
+                if (headingArr[0].substring(0,8) == 'Chapter ') {
+                    headingLabel = 'chapter '
+                    headingNumber = `${headingArr[0].substring(8)}`
+
+                } else 
+                if (headingArr[0].substring(0,9) == 'appendix ') {
+                    headingLabel = 'appendix '
+                    headingLabelForTOC = 'App. '
+                    headingNumber = `${headingArr[0].substring(9)}`
+                } else {
+                    headingNumber =headingArr[0]
+                }
+                headingName = headingArr[1]
+            }
+            headingNameForToc = headingName
+            if (headingName.length > 45) {
+                let headingNameArr = headingName.split(` `)
+                let splitAt = Math.floor(headingNameArr.length/3)
+                headingNameForToc = ``
+                for (let i in headingNameArr) {
+                    headingNameForToc += headingNameArr[i] + ' '
+                    if (i == splitAt) {
+                        headingNameForToc += '\\\\'
+                    }
+                }
+            }
+            allH1sArr[i].replaceWith(`\\chapter[${headingLabelForTOC}${headingNumber}${headingNumberDot}${headingNameForToc}]{${headingLabel}${headingNumber}${headingLineBreak}${headingName}\\markboth{${headingName}}{OOOO}}`)
         }
     }
 }
@@ -232,8 +280,17 @@ function processDivs () {
     for (i in allDivsArr) {
         if (allDivsArr[i].classList.contains('eob')) {
             allDivsArr[i].remove()
+        } else 
+        if (allDivsArr[i].classList.contains('epigram-2')) {
+            let tempText = allDivsArr[i].text.replaceAll(`\r\n`,``).replaceAll(`\n\r`,``)
+            allDivsArr[i].replaceWith (`\\begin{epigram-2}\r\n${tempText}\r\n\\end{epigram-2}\r\n`)
+        } else 
+        if (allDivsArr[i].classList.contains('epigram-2-cite')) {
+            let tempText = allDivsArr[i].text.replaceAll(`\r\n`,``).replaceAll(`\n\r`,``)
+            allDivsArr[i].replaceWith (`\\begin{epigram-2-cite}\r\n${tempText}\r\n\\end{epigram-2-cite}\r\n`)
         }
-    }
+    } 
+
 }
 
 function processLineBlocks () {
@@ -304,6 +361,7 @@ function processTables () {
 
 processSpans ()
 processEmTags ()
+processStrongTags ()
 processParas ()
 processSups ()
 processH1s ()
@@ -316,7 +374,6 @@ processLineBlocks ()
 processBlockquotes ()
 processHrs ()
 processTables ()
-
 
 
 //Get Info
@@ -340,6 +397,7 @@ let preamble = `
 \\usepackage{verse}
 \\usepackage[unicode, pdfauthor={${bookAuthor}}, pdftitle={${bookTitle}: ${bookSubtitle}}, pdfsubject={Buddhism}, pdfkeywords={Buddhism}, pdfcreator={Wiswo-texBuilder}, hyperfootnotes=false]{hyperref} 
 \\usepackage{emptypage}
+\\usepackage{quoting}
 
 %links and cites
 \\hypersetup{
@@ -473,11 +531,23 @@ let preamble = `
 \\tolerance=800
 \\emergencystretch=3pt
 
-\\newenvironment{aphorism}%
+\\newenvironment{epigram-2}%
 {%
-\\begin{center}\\begin{itshape}
+\\vspace{1em}
+\\noindent
+\\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\\begin{itshape}
+\\large
 }%
-{\\end{itshape}\\end{center}
+{\\end{itshape}\\endquoting
+}%
+
+\\newenvironment{epigram-2-cite}%
+{%
+\\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\\noindent\\normal\\hspace*{\\fill} 
+}%
+{\\endquoting\\vspace{1em}
 }%
 
 \\hyphenation{manu-scripts}

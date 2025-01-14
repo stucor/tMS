@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  13 JAN 2025 11:24
+This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  14 JAN 2025 13:03
  restricted system commands enabled.
 **../_resources/book-data/vasy/vasy.tex
 (../_resources/book-data/vasy/vasy.tex
@@ -488,26 +488,26 @@ Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
 (C:/Data/tMS/books/_resources/book-data/vasy/vasy.aux)
 \openout1 = vasy.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 186.
-LaTeX Font Info:    ... okay on input line 186.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 187.
+LaTeX Font Info:    ... okay on input line 187.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -571,67 +571,67 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 186.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 186.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 186.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 186.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 186.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 186.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 186.
-LaTeX Font Info:    Redeclaring math accent \check on input line 186.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 186.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 186.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 186.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 186.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 186.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 187.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 187.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 187.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 187.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 187.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 187.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 187.
+LaTeX Font Info:    Redeclaring math accent \check on input line 187.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 187.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 187.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 187.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 187.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 187.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 186.
+(Font)              `operators' in the math version `normal' on input line 187.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/GentiumBookPlus(0)/m/n on input line
- 186.
+ 187.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 186.
+(Font)              `operators' in the math version `bold' on input line 187.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/GentiumBookPlus(0)/m/n on input lin
-e 186.
+e 187.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/GentiumBookPlus(0)/m/n --> TU/GentiumBookPlus(0)/m/n
- on input line 186.
+ on input line 187.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/GentiumBookPlus(0)/m/it on input li
-ne 186.
+ne 187.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/GentiumBookPlus(0)/b/n on input lin
-e 186.
+e 187.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/LinuxBiolinumO(0)/m/n on input line
- 186.
+ 187.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 186.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 187.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/GentiumBookPlus(0)/m/n --> TU/GentiumBookPlus(0)/b/n
- on input line 186.
+ on input line 187.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/GentiumBookPlus(0)/b/it on input l
-ine 186.
+ine 187.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/LinuxBiolinumO(0)/b/n on input lin
-e 186.
+e 187.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 186.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 187.
 
 ("C:/Program Files/MiKTeX/tex/latex/graphics/color.sty"
 Package: color 2024/06/23 v1.3e Standard LaTeX Color (DPC)
@@ -642,27 +642,27 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: luatex.def on input line 149.
 
 ("C:/Program Files/MiKTeX/tex/latex/graphics/mathcolor.ltx"))
-Package hyperref Info: Link coloring ON on input line 186.
+Package hyperref Info: Link coloring ON on input line 187.
 
 (C:/Data/tMS/books/_resources/book-data/vasy/vasy.out)
 (C:/Data/tMS/books/_resources/book-data/vasy/vasy.out)
 \@outlinefile=\write3
 
 \openout3 = vasy.out
-LaTeX Info: Redefining \microtypecontext on input line 186.
-Package microtype Info: Applying patch `item' on input line 186.
-Package microtype Info: Applying patch `toc' on input line 186.
-Package microtype Info: Applying patch `eqnum' on input line 186.
-Package microtype Info: Applying patch `footnote' on input line 186.
-Package microtype Info: Applying patch `verbatim' on input line 186.
-LaTeX Info: Redefining \microtypesetup on input line 186.
+LaTeX Info: Redefining \microtypecontext on input line 187.
+Package microtype Info: Applying patch `item' on input line 187.
+Package microtype Info: Applying patch `toc' on input line 187.
+Package microtype Info: Applying patch `eqnum' on input line 187.
+Package microtype Info: Applying patch `footnote' on input line 187.
+Package microtype Info: Applying patch `verbatim' on input line 187.
+LaTeX Info: Redefining \microtypesetup on input line 187.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 186.
+LaTeX Info: Redefining \showhyphens on input line 187.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -674,7 +674,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 File: ../_resources/book-data/vasy/FrontLarge.jpg Graphic file (type jpg)
 <use ../_resources/book-data/vasy/FrontLarge.jpg>
 Package luatex.def Info: ../_resources/book-data/vasy/FrontLarge.jpg  used on i
-nput line 192.
+nput line 193.
 (luatex.def)             Requested size: 289.07925pt x 433.61893pt.
 
 
@@ -693,7 +693,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 File: ../_resources/images/icons/logo-enso-large.png Graphic file (type png)
 <use ../_resources/images/icons/logo-enso-large.png>
 Package luatex.def Info: ../_resources/images/icons/logo-enso-large.png  used o
-n input line 210.
+n input line 211.
 (luatex.def)             Requested size: 25.95584pt x 25.2934pt.
 
 
@@ -704,17 +704,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
@@ -742,11 +742,24 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 [6
 
 ]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.258 ...\Introduction\markboth{Introduction}{OOOO}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.285 
-    
+l.288 T
+     his essay analyzes rare terms in abstract texts. However, it also illus...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -757,8 +770,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.285 
-    
+l.288 T
+     his essay analyzes rare terms in abstract texts. However, it also illus...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -774,8 +787,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.293 \chapter
-            {1. The Kevaddha Sutta}
+l.294 \chapter
+            [ 1. The Kevaddha Sutta]{ 1\\The Kevaddha Sutta\markboth{The Kev...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -786,8 +799,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.293 \chapter
-            {1. The Kevaddha Sutta}
+l.294 \chapter
+            [ 1. The Kevaddha Sutta]{ 1\\The Kevaddha Sutta\markboth{The Kev...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -798,15 +811,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [2]
-Overfull \hbox (12.48405pt too wide) in paragraph at lines 294--295
-\TU/GentiumBookPlus(0)/m/n/10 As stated, the sut-tas men-tion <span lang=”pi
-”>viññāṇa anidas-sana</span> twice:
- []
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.301 
+l.302 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -818,7 +826,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.301 
+l.302 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -835,7 +843,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.342 \begin{quote}
+l.343 \begin{quote}
                  
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -847,7 +855,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.342 \begin{quote}
+l.343 \begin{quote}
                  
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -862,7 +870,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.368 
+l.369 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -874,7 +882,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.368 
+l.369 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -886,23 +894,12 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [5]
-Underfull \hbox (badness 1509) in paragraph at lines 372--373
-[]\TU/GentiumBookPlus(0)/m/n/10 The first an-swer ends with a main verb (<span 
-lang=”pi”>gād-
- []
-
-
 
 [6]
-Overfull \hbox (3.32071pt too wide) in paragraph at lines 427--428
-\TU/GentiumBookPlus(0)/m/n/10 <span lang=”pi”>anan-taṁ sab-bato pab-ha
-ṁ</span> (bound-
- []
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.433 
+l.437 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -914,7 +911,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.433 
+l.437 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -926,15 +923,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [7]
-Overfull \hbox (17.35675pt too wide) in paragraph at lines 438--439
-\TU/GentiumBookPlus(0)/m/n/10 quite lit-er-ally as ‘in-vis-i-ble’. Since the
- mean-ing of <span lang=”pi”>rūpa</span> in-
- []
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.439 
+l.443 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -946,7 +938,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.439 
+l.443 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -958,21 +950,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [8]
-Overfull \hbox (25.97278pt too wide) in paragraph at lines 441--442
-[]\TU/GentiumBookPlus(0)/m/n/10 We should not need to look for a deeper mean-ing
- be-hind <span lang=”pi”>anidas-
- []
-
-
-Overfull \hbox (6.36292pt too wide) in paragraph at lines 441--442
-\TU/GentiumBookPlus(0)/m/n/10 syn-onym which sup-plies the me-ter <span lang=
-”pi”>arū-paṁ</span> and <span
- []
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.448 
+l.452 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -984,7 +965,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.448 
+l.452 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -996,16 +977,11 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [9]
-Underfull \hbox (badness 5388) in paragraph at lines 450--450
-[][][][][]\TU/GentiumBookPlus(0)/m/n/8 SN 1.27:2.5–2.6[][] men-tions the ces
--sa-tion of <span lang=’pi’>nā-marūpa</span>. In
- []
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.459 \begin{quote}
-                 
+l.472 \end{quote}
+               
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1016,8 +992,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.459 \begin{quote}
-                 
+l.472 \end{quote}
+               
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1031,7 +1007,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.492 
+l.496 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1043,7 +1019,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.492 
+l.496 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1058,8 +1034,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.514 T
-     he word <span lang="pi">nirujjhati</span> (‘cease’) of the monk’...
+l.520 C
+     ontrary to what others have argued, \textit{uparujjhati} is simply a ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1070,8 +1046,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.514 T
-     he word <span lang="pi">nirujjhati</span> (‘cease’) of the monk’...
+l.520 C
+     ontrary to what others have argued, \textit{uparujjhati} is simply a ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1082,28 +1058,11 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [12]
-Underfull \hbox (badness 1478) in paragraph at lines 514--515
-\TU/GentiumBookPlus(0)/m/n/10 orig-i-nal ques-tion is not adopted by the Bud-dha
- in his sec-ond
- []
-
-
-Overfull \hbox (23.97717pt too wide) in paragraph at lines 519--520
-[]\TU/GentiumBookPlus(0)/m/n/10 Con-trary to what oth-ers have ar-gued, <span 
-lang=”pi”>up-aru-jjhati</span> is
- []
-
-
-Underfull \hbox (badness 3838) in paragraph at lines 519--520
-\TU/GentiumBookPlus(0)/m/n/10 […]”[] Here <span lang=”pi”>up-aru-jjhat
-i</span> of course refers
- []
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.532 
-    
+l.538 \chapter
+            [ 2. The Brahmanimantanika Sutta]{ 2\\The Brahmanimantanika Sutt...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1114,8 +1073,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.532 
-    
+l.538 \chapter
+            [ 2. The Brahmanimantanika Sutta]{ 2\\The Brahmanimantanika Sutt...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1126,66 +1085,14 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [13]
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-\hrule 
-l.537 \chapter
-            {2. The Brahmanimantanika Sutta}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-}
-l.537 \chapter
-            {2. The Brahmanimantanika Sutta}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-
-[14]
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-\hrule 
-l.551 
-    
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-}
-l.551 
-    
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-
-[15
+[14
 
 ]
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.560 
+l.552 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1197,7 +1104,34 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.560 
+l.552 
+    
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+
+[15]
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+\hrule 
+l.561 
+    
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+}
+l.561 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1212,7 +1146,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.592 \end{itemize}
+l.593 \end{itemize}
                  
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1224,7 +1158,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.592 \end{itemize}
+l.593 \end{itemize}
                  
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1239,8 +1173,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.602 \chapter
-            {Conclusion}
+l.603 \chapter
+            [Conclusion]{\\Conclusion\markboth{Conclusion}{OOOO}}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1251,8 +1185,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.602 \chapter
-            {Conclusion}
+l.603 \chapter
+            [Conclusion]{\\Conclusion\markboth{Conclusion}{OOOO}}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1263,11 +1197,24 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [18]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.603 ...n]{\\Conclusion\markboth{Conclusion}{OOOO}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.609 \chapter
-            {Addendum (2024)}
+l.610 \chapter
+            [Addendum (2024)]{\\Addendum (2024)\markboth{Addendum (2024)}{OO...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1278,8 +1225,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.609 \chapter
-            {Addendum (2024)}
+l.610 \chapter
+            [Addendum (2024)]{\\Addendum (2024)\markboth{Addendum (2024)}{OO...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1296,10 +1243,23 @@ two letters. (See Chapter 27 of The TeXbook.)
 [20
 
 ]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.610 ...dum (2024)\markboth{Addendum (2024)}{OOOO}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.620 
+l.621 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1311,7 +1271,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.620 
+l.621 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1323,15 +1283,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [21]
-Underfull \hbox (badness 1838) in paragraph at lines 631--632
-\TU/GentiumBookPlus(0)/m/n/10 An-other pas-sage worth ad-dress-ing at-tributes 
-<span lang=”pi”>anidas-
- []
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.632 
+l.633 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1343,7 +1298,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.632 
+l.633 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1358,7 +1313,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.644 
+l.645 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1370,7 +1325,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.644 
+l.645 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1385,7 +1340,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.650 
+l.654 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1397,7 +1352,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.650 
+l.654 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1412,7 +1367,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.659 
+l.666 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1424,7 +1379,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.659 
+l.666 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1439,8 +1394,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.673 \chapter
-            {References}
+l.674 \chapter
+            [References]{\\References\markboth{References}{OOOO}}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1451,8 +1406,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.673 \chapter
-            {References}
+l.674 \chapter
+            [References]{\\References\markboth{References}{OOOO}}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1463,17 +1418,30 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [26]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.674 ...s]{\\References\markboth{References}{OOOO}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 No file vasy.bbl.
-<../_resources/images/icons/pdf_24.png, id=351, 24.09pt x 24.09pt>
+<../_resources/images/icons/pdf_24.png, id=350, 24.09pt x 24.09pt>
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 704.
+ine 705.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 704.
+ine 705.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 
 Underfull \vbox (badness 1484) has occurred while \output is active []
@@ -1486,37 +1454,37 @@ Underfull \vbox (badness 1484) has occurred while \output is active []
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 706.
+ine 707.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 710.
+ine 711.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 714.
+ine 715.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 716.
+ine 717.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 718.
+ine 719.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 720.
+ine 721.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 724.
+ine 725.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 
 
@@ -1524,17 +1492,17 @@ ine 724.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 726.
+ine 727.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 730.
+ine 731.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 736.
+ine 737.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 
 
@@ -1544,7 +1512,7 @@ LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
 Package rerunfilecheck Info: File `vasy.out' has not changed.
-(rerunfilecheck)             Checksum: 7774C65D9E8C9C60B621C566A312499E;2081.
+(rerunfilecheck)             Checksum: DDD53450451CF5CEDE97FB7A7F1CE5FA;2097.
 )
 
 Here is how much of LuaTeX's memory you used:
@@ -1553,10 +1521,10 @@ Here is how much of LuaTeX's memory you used:
  1103 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 59 glue, 3 kern, 1 glyph, 61 attribute, 62 glue_spe
 c, 61 attribute_list, 1 write nodes
-   avail lists: 1:1,2:825,3:441,4:155,5:289,6:56,7:6723,8:2,9:474,10:16,11:406
+   avail lists: 1:1,2:825,3:441,4:155,5:317,6:56,7:6745,8:2,9:474,10:21,11:404
  37534 multiletter control sequences out of 65536+600000
  71 fonts using 25781743 bytes
- 79i,12n,92p,2597b,563s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,92p,2572b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus-itali
 c.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus
 -regular.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumb
@@ -1564,9 +1532,9 @@ ookplus-bold.ttf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbio
 linum_rb.otf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbiolinu
 m_r.otf><C:/Users/stuar/AppData/Local/Microsoft/Windows/Fonts/wiswosmallcaps.ttf
 >
-Output written on vasy.pdf (35 pages, 400528 bytes).
+Output written on vasy.pdf (35 pages, 401178 bytes).
 
-PDF statistics: 439 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 438 PDF objects out of 1000 (max. 8388607)
  67 named destinations out of 1000 (max. 131072)
  105 words of extra memory for PDF output out of 10000 (max. 100000000)
 

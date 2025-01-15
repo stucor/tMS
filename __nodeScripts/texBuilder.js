@@ -2,10 +2,13 @@
 const fs = require('fs')
 const { exec } = require('child_process'); 
 const { parse } = require('node-html-parser');
+const { json } = require('stream/consumers');
 
 let bookID = process.argv.slice(2)[0];
 
-let metaData = require(`../_resources/book-data/${bookID}/meta.json`)
+// let metaData = require(`../_resources/book-data/${bookID}/meta.json`)
+
+let sesameRefArr = require(`../_resources/book-data/${bookID}/sesameref.json`) 
 
 let indexRoot = ``;
 try {
@@ -46,7 +49,18 @@ function processInlines (StrHtml) {
         } else
         if ((allSpansArr[i].classList.contains('sesame')) && (allSpansArr[i].classList.contains('ref'))) {
             let tempText = allSpansArr[i].text.replaceAll(`&`,`&amp;`)
-            allSpansArr[i].replaceWith(`\\cite{${tempText}}`)
+            let sesamerefText =``
+            for (let i in sesameRefArr) {
+                if (tempText == sesameRefArr[i].sesame) {
+                    tempText = `${sesameRefArr[i].biblio}`
+                    sesamerefText = sesameRefArr[i].sesame
+                }
+            }
+            if (sesamerefText) {
+                allSpansArr[i].replaceWith(`${sesamerefText} (\\cite{${tempText}})`)
+            } else {
+                allSpansArr[i].replaceWith(`\\cite{${tempText}}`)
+            }
         } else
         if (allSpansArr[i].classList.contains('ptsref')) {
             let tempText = allSpansArr[i].text
@@ -116,6 +130,7 @@ function processInlines (StrHtml) {
                               .replaceAll(`&nbsp;`,` `)
                               .replaceAll(`&ndash;`, `—`)
                               .replaceAll(`&`, `\\&`)
+                              .replaceAll(`<br>`, '\\\\\r\n')
 }
 
 function processSpans () {
@@ -136,6 +151,14 @@ function processSpans () {
         if (allSpansArr[i].classList.contains('list-margin')) {
             let tempText = allSpansArr[i].text
             allSpansArr[i].replaceWith(`\\item[{${tempText}}]`)
+        }
+        if (allSpansArr[i].classList.contains('superscript')) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`\\textsuperscript{${tempText}}`)
+        }
+        if (allSpansArr[i].classList.contains('manualLink')) {
+            let tempText = allSpansArr[i].text
+            allSpansArr[i].replaceWith(`${tempText}`)
         }
     }
 }
@@ -159,7 +182,7 @@ function processStrongTags () {
 function processParas () {
     let allParasArr = bookRoot.querySelectorAll('p')
     for (i in allParasArr) {
-        let tempHTML = allParasArr[i].innerHTML
+        let tempHTML = allParasArr[i].innerHTML.replaceAll(`$`, `\\$`)
         allParasArr[i].replaceWith(`${tempHTML}\n\r`)
     }
 }
@@ -212,7 +235,7 @@ function processH1s () {
                     headingLabelForTOC = 'App. '
                     headingNumber = `${headingArr[0].substring(9)}`
                 } else {
-                    headingNumber =headingArr[0]
+                    headingNumber = headingArr[0]
                 }
                 headingName = headingArr[1]
             }
@@ -277,24 +300,34 @@ function processDls () {
 
 function processDivs () {
     let allDivsArr = bookRoot.querySelectorAll ('div')
-    for (i in allDivsArr) {
+    for (let i in allDivsArr) {
         if (allDivsArr[i].classList.contains('eob')) {
             allDivsArr[i].remove()
         } else 
         if (allDivsArr[i].classList.contains('epigram-2')) {
             let tempText = allDivsArr[i].text.replaceAll(`\r\n`,``).replaceAll(`\n\r`,``)
-            allDivsArr[i].replaceWith (`\\begin{epigram-2}\r\n${tempText}\r\n\\end{epigram-2}\r\n`)
+            if ((i > 0) && (allDivsArr[i-1].classList.contains(`epigram-2`))) {
+                allDivsArr[i].replaceWith (`\\begin{epigram-2-followOn}\r\n${tempText}\r\n\\end{epigram-2-followOn}`)
+            } else {
+                allDivsArr[i].replaceWith (`\\begin{epigram-2}\r\n${tempText}\r\n\\end{epigram-2}`)
+            }
         } else 
         if (allDivsArr[i].classList.contains('epigram-2-cite')) {
             let tempText = allDivsArr[i].text.replaceAll(`\r\n`,``).replaceAll(`\n\r`,``)
             allDivsArr[i].replaceWith (`\\begin{epigram-2-cite}\r\n${tempText}\r\n\\end{epigram-2-cite}\r\n`)
+        } else
+        if (allDivsArr[i].classList.contains('tight-right-cite')) {
+            let tempHTML = allDivsArr[i].innerHTML
+            //console.log(JSON.stringify(tempHTML))
+            let tempTEX = processInlines(tempHTML)
+            allDivsArr[i].replaceWith(`\\begin{flushright}${tempTEX}\\end{flushright}`)
         }
     } 
 
 }
 
 function processLineBlocks () {
-    let allLineBlocksArr = bookRoot.querySelectorAll('.line-block') 
+    let allLineBlocksArr = bookRoot.querySelectorAll('.line-block, .line-block-center') 
     for (i in allLineBlocksArr) {
         let tempHTML = allLineBlocksArr[i].innerHTML
         allLineBlocksArr[i].replaceWith(`\n\r\\begin{itemize}\n\r${tempHTML.replaceAll('<br>', ' \\\\ ')}\\end{itemize}`)
@@ -503,7 +536,7 @@ let preamble = `
 
 \\counterwithout{footnote}{chapter}
 \\usepackage[hang,flushmargin,bottom]{footmisc}
-\\setlength{\\footnotemargin}{5mm}
+\\setlength{\\footnotemargin}{6mm}
 
 %Make footnote non-superscript
 \\makeatletter%%
@@ -531,11 +564,27 @@ let preamble = `
 \\tolerance=800
 \\emergencystretch=3pt
 
+\\usepackage{noindentafter}
+\\NoIndentAfterEnv{epigram-2-cite}
+
 \\newenvironment{epigram-2}%
 {%
+\\setstretch{1.4}
 \\vspace{1em}
 \\noindent
-\\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\\quoting[leftmargin=2cm,rightmargin=2cm]%
+\\begin{itshape}
+\\large
+}%
+{\\end{itshape}\\endquoting
+}%
+
+\\newenvironment{epigram-2-followOn}%
+{%
+\\setstretch{1.4}
+\\vspace{-1em}
+\\noindent
+\\quoting[leftmargin=2cm,rightmargin=2cm]%
 \\begin{itshape}
 \\large
 }%
@@ -544,13 +593,15 @@ let preamble = `
 
 \\newenvironment{epigram-2-cite}%
 {%
-\\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\\quoting[leftmargin=2cm,rightmargin=2cm]%
 \\noindent\\normal\\hspace*{\\fill} 
 }%
-{\\endquoting\\vspace{1em}
+{\\endquoting
 }%
 
-\\hyphenation{manu-scripts}
+
+
+%\\hyphenation{manu-scripts}
 
 \\makeatletter
 \\def\\@biblabel#1{}

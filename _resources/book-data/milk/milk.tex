@@ -118,7 +118,7 @@
 
 \counterwithout{footnote}{chapter}
 \usepackage[hang,flushmargin,bottom]{footmisc}
-\setlength{\footnotemargin}{5mm}
+\setlength{\footnotemargin}{6mm}
 
 %Make footnote non-superscript
 \makeatletter%%
@@ -146,11 +146,27 @@
 \tolerance=800
 \emergencystretch=3pt
 
+\usepackage{noindentafter}
+\NoIndentAfterEnv{epigram-2-cite}
+
 \newenvironment{epigram-2}%
 {%
+\setstretch{1.4}
 \vspace{1em}
 \noindent
-\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\quoting[leftmargin=2cm,rightmargin=2cm]%
+\begin{itshape}
+\large
+}%
+{\end{itshape}\endquoting
+}%
+
+\newenvironment{epigram-2-followOn}%
+{%
+\setstretch{1.4}
+\vspace{-1em}
+\noindent
+\quoting[leftmargin=2cm,rightmargin=2cm]%
 \begin{itshape}
 \large
 }%
@@ -159,13 +175,15 @@
 
 \newenvironment{epigram-2-cite}%
 {%
-\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\quoting[leftmargin=2cm,rightmargin=2cm]%
 \noindent\normal\hspace*{\fill} 
 }%
-{\endquoting\vspace{1em}
+{\endquoting
 }%
 
-\hyphenation{manu-scripts}
+
+
+%\hyphenation{manu-scripts}
 
 \makeatletter
 \def\@biblabel#1{}
@@ -306,7 +324,7 @@ So what is this thing we call love? Many descriptions of love are more panegyric
 \end{quote}
 Of the 14 characteristics given here by Paul, more than half are negatives, that is, they tell us what love is not or what it does not do, rather than what it is and does. This is probably no accident. Paul realised, as many have before and since, that it can be easier to define some things by what they are not rather than what they are, and this is particularly true for a multifaceted quality like love. The Buddha occasionally did the same, using words for love such as \textit{avyāpada}, literally hatelessness, or \textit{adosa}, non-ill-will. As for love’s positive qualities mentioned by Paul, most people would agree with him that patience, kindness, humility, and unselfishness are features of love, although I suspect that others would associate believing and hoping everything more with naivety and wishful thinking.
 
-An early Buddhist text, the Culla Niddesa, defines love like this: “Love means having a friendly nature and behaving with friendliness.”\footnote {\textit{Mitte vā bhavā mittassa vā esā pavattī ti pi mettā}, Culla Niddesa 117.} This would seem to discount the depth of feeling that is usually associated with romantic and companionate love and more closely resembles what we might call affection or goodwill. The 5<span class='superscript'>th</span> century Indian Buddhist scholar Buddhaghosa was being more specific when he wrote: “Love is characterised as promoting the welfare of others and its function is to focus on their welfare. It manifests as the removal of annoyance and its proximate cause is seeing the lovable nature of beings. It succeeds when it makes ill-will subside and it fails when it gives rise to clinging attachment.”\footnote {Vism. 318.} Although rather stilted, Buddhaghosa’s understanding here is significant in that it sees love as being primarily about doing something to and for others, as being motivated by concern for their welfare (\textit{hitākārappavattilakkhaṇā mettā}). Interesting too is his idea that by their very nature living beings are lovable or fit objects of love (\textit{manāpabhāva}).
+An early Buddhist text, the Culla Niddesa, defines love like this: “Love means having a friendly nature and behaving with friendliness.”\footnote {\textit{Mitte vā bhavā mittassa vā esā pavattī ti pi mettā}, Culla Niddesa 117.} This would seem to discount the depth of feeling that is usually associated with romantic and companionate love and more closely resembles what we might call affection or goodwill. The 5\textsuperscript{th} century Indian Buddhist scholar Buddhaghosa was being more specific when he wrote: “Love is characterised as promoting the welfare of others and its function is to focus on their welfare. It manifests as the removal of annoyance and its proximate cause is seeing the lovable nature of beings. It succeeds when it makes ill-will subside and it fails when it gives rise to clinging attachment.”\footnote {Vism. 318.} Although rather stilted, Buddhaghosa’s understanding here is significant in that it sees love as being primarily about doing something to and for others, as being motivated by concern for their welfare (\textit{hitākārappavattilakkhaṇā mettā}). Interesting too is his idea that by their very nature living beings are lovable or fit objects of love (\textit{manāpabhāva}).
 
 When we get to modern times we begin to have more penetrating explorations of love. The Oxford Dictionary says love is “an intense feeling of deep affection” or “a deep romantic or sexual attachment to someone.” But surely there is more to love than just attachment and sexual longing. Sigmund Freud observed love with a sceptical and jaundiced eye and dismissed it as “aim-inhibited sex.” For him love was a more refined form of the sexual drive. Martin Luther King called love a “recognition of the fact that all life is interrelated. All humanity is involved in a single process, and all men are brothers.” It is unlikely that anything like this passes through the minds of two people head over heels for each other. The popular writer M. Scott Peck understood love to be “the will to extend one’s self for the purpose of nurturing one’s own or another’s spiritual growth.”\footnote {\cite{Peck 1997}, p.69.}
 
@@ -323,7 +341,6 @@ To be interested in something means having one’s attention engaged by it and w
 \begin{epigram-2}
 There is only one true love but there are many good imitations.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —La Rochefoucauld
 \end{epigram-2-cite}
@@ -361,7 +378,6 @@ Religious teachers, philosophers and moralists are always encouraging us to be k
 \begin{epigram-2}
 What most people call love is just a pleasant feeling.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Ajahn Chah
 \end{epigram-2-cite}
@@ -394,7 +410,6 @@ Of course, not all love starts by suddenly “falling” into it; sometimes it g
 \begin{epigram-2}
 Sensuality makes love grow too quickly, so that the root remains weak and is easy to pull out.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Friedrich Nietzsche
 \end{epigram-2-cite}
@@ -405,7 +420,7 @@ Lovers come to care about each other too, about each other’s happiness and wel
 
 The bliss of new love can be strong enough to affect a person’s appearance and behaviour. It can give them a smiling, dreamy, faraway look or a twinkle in their eyes. It can make them appear preoccupied and uninterested in normal activities or give them a spring in their steps, at least when their relationships are proceeding smoothly.
 
-Apart from possessing the defining characteristics that all loves share, romantic love has its own unique features. It is initially triggered by visual contact. “Love goes to one who is seen, there is no attraction to one who is not seen.”\footnote {Rāmāyaṇa V,26;39.} Its primary focus is the body; for males the face, breasts and hips, and for females the face, shoulders and chest. Certain body shapes evoke more desire than others, depending on cultural norms, and some of these can be very peculiar. In China until the beginning of the 20<span class='superscript'>th</span> century, males found abnormally small female feet intensely erotic. Now most people would be revolted by such deformities. Only a hundred years ago in the West, a pale complexion was thought of as beautiful. Now being tanned is the fashion. In ancient India both men and woman were erotically aroused by what was called the \textit{tanuromaraji}, the line of hair going from the pubis to the navel.
+Apart from possessing the defining characteristics that all loves share, romantic love has its own unique features. It is initially triggered by visual contact. “Love goes to one who is seen, there is no attraction to one who is not seen.”\footnote {Rāmāyaṇa V,26;39.} Its primary focus is the body; for males the face, breasts and hips, and for females the face, shoulders and chest. Certain body shapes evoke more desire than others, depending on cultural norms, and some of these can be very peculiar. In China until the beginning of the 20\textsuperscript{th} century, males found abnormally small female feet intensely erotic. Now most people would be revolted by such deformities. Only a hundred years ago in the West, a pale complexion was thought of as beautiful. Now being tanned is the fashion. In ancient India both men and woman were erotically aroused by what was called the \textit{tanuromaraji}, the line of hair going from the pubis to the navel.
 
 Nowadays men and women are prepared to undergo painful procedures to remove such hair because it is deemed unsightly. In contemporary Western society a rounded profile in a male’s arms will be attractive to a female, although a similarly rounded form in the abdomen will be a turn-off. Full rounded female breasts are desirable to a male but similarly large and rounded buttocks might be perceived as unattractive. Just how particularly romantic love can be about physical features is suggested by this description of female beauty from the scriptures. To be alluring to a man, a woman had to be “fifteen or sixteen, not too tall and not too short, not too thin and not too fat, not too dark and not too fair.”\footnote {\href{https://suttacentral.net/mn13/en/sujato\#18.2}{MN 13:18.2} [PTS: M.I,88].} The presence or absence of even small and otherwise insignificant features or details can make the difference between arousal and disinterest. The pathways of eroticism and romance are not always easy to fathom.
 
@@ -416,7 +431,6 @@ Most of all, romantic love seems to operate outside the will. The term “fallin
 \begin{epigram-2}
 In real love you want the other person’s good. In romantic love you want the other person.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Margaret Anderson
 \end{epigram-2-cite}
@@ -441,12 +455,15 @@ For the Buddha, parents were particularly worthy of their children’s love, res
 \begin{epigram-2}
 There is no doubt that it is around the family and the home that all the greatest virtues, the most dominating virtues of humans, are created, strengthened and maintained.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Winston Churchill
 \end{epigram-2-cite}
 
-A well-known event in the life of the Buddha was his so-called Great Renunciation, when he walked out on his family and career and went off in search of Truth. Some have criticised him for neglecting his marital and parental obligations. However, he, like other great spiritual teachers, recognised that while we must acquiesce in the wishes and expectations of those close to us and support our partner and offspring, the call of the spiritual quest must always take precedence. Jesus never had to abandon his wife and child because he had none, but there is little doubt that he would have unhesitatingly done so for the Kingdom of God. He certainly encouraged his followers to do this. “And anyone who has left houses or brothers or sisters or father or mother or children or fields for my sake will receive a hundred times as much and will inherit eternal life.”\footnote {Matthew 19,29.<br>See also Matthew 10,34-6;<br>Mark 3,31-3;<br>Luke 14,26;<br>John 2,4.}
+A well-known event in the life of the Buddha was his so-called Great Renunciation, when he walked out on his family and career and went off in search of Truth. Some have criticised him for neglecting his marital and parental obligations. However, he, like other great spiritual teachers, recognised that while we must acquiesce in the wishes and expectations of those close to us and support our partner and offspring, the call of the spiritual quest must always take precedence. Jesus never had to abandon his wife and child because he had none, but there is little doubt that he would have unhesitatingly done so for the Kingdom of God. He certainly encouraged his followers to do this. “And anyone who has left houses or brothers or sisters or father or mother or children or fields for my sake will receive a hundred times as much and will inherit eternal life.”\footnote {Matthew 19,29.\\
+See also Matthew 10,34-6;\\
+Mark 3,31-3;\\
+Luke 14,26;\\
+John 2,4.}
 
 For the Buddha, making the choice between being a good family man and discovering the Truth so that he could share it with all humanity must have been heart-wrenching. In the end he chose acting “for the good of the many, for the welfare of the many out of compassion for the world” rather than just for his loved ones. His love expanded from the narrow focus of his world, his immediate family, to love for the whole wide world. This choice was probably made a little easier knowing that his wife and child would be well looked after. This is what makes a great spiritual being, that they are able to give up everything, sacrifice everything, for the Truth. The Jātaka says: “One who would give up wealth to save a limb, or sacrifice a limb to save his life, should be prepared to give up wealth, limb, life, indeed everything for the Truth.”\footnote {\href{https://suttacentral.net/ja537/en/francis?reference=main/pts#pts-vp-pli500}{Ja 537} [PTS: Ja.V,500].}
 
@@ -465,7 +482,6 @@ The Buddhist tradition has tended to draw a sharp distinction between the monast
 \begin{epigram-2}
 If one felt the same compassion for others as one does for oneself or one’s family, who would do things contrary to Dhamma.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Āryaśūra
 \end{epigram-2-cite}
@@ -490,12 +506,13 @@ The Buddha said in the Sigāloavāda Sutta, his famous discourse on human relati
 \begin{epigram-2}
 The value of marriage is not that adults produce children, but that children produce adults.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Peter De Vries
 \end{epigram-2-cite}
 
-The Buddha considered love, tenderness and mutual respect to be the basis for a successful, that is to say a happy and enduring, marriage. He criticised the Brahmans, the heredity priests of Hinduism, for buying their wives rather than “coming together in harmony and out of mutual affection.”\footnote {\textit{sampiyen’eva saṁvāsṁa saṁaggatthāya sampavattenti},<br>\href{https://suttacentral.net/an5.191/en/sujato\#3.1}{AN 5.191:3.1} [PTS: A.III,222];<br>\href{https://suttacentral.net/snp2.7/en/sujato\#8.1}{Snp 2.7:8.1–8.4} [PTS: Sn.290].} Clearly he thought such motives made far better foundations for a lifetime partnership. As the Jātaka says: “In this world, union without love is suffering.”\footnote {\textit{lokismiṁ hi appiyasampayogo va dukkho}, \href{https://suttacentral.net/ja223/en/rouse?reference=main/pts#pts-vp-pli205}{Ja 223} [PTS: Ja.II,205].} The Buddha considered cherishing one’s spouse and child to be a great blessing,\footnote {\href{https://suttacentral.net/snp2.4/en/sujato\#6.1}{Snp 2.4:6.1–6.4} [PTS: Sn.262].} that a loving wife was “the best friend one can have.”\footnote {\textit{bharyā va paramā sakhā}, \href{https://suttacentral.net/sn1.54/en/sujato\#2.2}{SN 1.54:2.2} [PTS: S.I,37].} He said that a couple who were following the Dhamma would “speak loving words to each other,”\footnote {\textit{aññamaññam piyamvādā}, \href{https://suttacentral.net/an4.53/en/sujato\#10.1}{AN 4.53:10.1–10.4} [PTS: A.II,59].} and live together “with joyful minds, of one heart and in harmony.”\footnote {\textit{pamodamānā ekacittā samaggavāsam}, \href{https://suttacentral.net/ja194/en/rouse?reference=main/pts#pts-vp-pli122}{Ja 194} [PTS: Ja.II,122].}
+The Buddha considered love, tenderness and mutual respect to be the basis for a successful, that is to say a happy and enduring, marriage. He criticised the Brahmans, the heredity priests of Hinduism, for buying their wives rather than “coming together in harmony and out of mutual affection.”\footnote {\textit{sampiyen’eva saṁvāsṁa saṁaggatthāya sampavattenti},\\
+\href{https://suttacentral.net/an5.191/en/sujato\#3.1}{AN 5.191:3.1} [PTS: A.III,222];\\
+\href{https://suttacentral.net/snp2.7/en/sujato\#8.1}{Snp 2.7:8.1–8.4} [PTS: Sn.290].} Clearly he thought such motives made far better foundations for a lifetime partnership. As the Jātaka says: “In this world, union without love is suffering.”\footnote {\textit{lokismiṁ hi appiyasampayogo va dukkho}, \href{https://suttacentral.net/ja223/en/rouse?reference=main/pts#pts-vp-pli205}{Ja 223} [PTS: Ja.II,205].} The Buddha considered cherishing one’s spouse and child to be a great blessing,\footnote {\href{https://suttacentral.net/snp2.4/en/sujato\#6.1}{Snp 2.4:6.1–6.4} [PTS: Sn.262].} that a loving wife was “the best friend one can have.”\footnote {\textit{bharyā va paramā sakhā}, \href{https://suttacentral.net/sn1.54/en/sujato\#2.2}{SN 1.54:2.2} [PTS: S.I,37].} He said that a couple who were following the Dhamma would “speak loving words to each other,”\footnote {\textit{aññamaññam piyamvādā}, \href{https://suttacentral.net/an4.53/en/sujato\#10.1}{AN 4.53:10.1–10.4} [PTS: A.II,59].} and live together “with joyful minds, of one heart and in harmony.”\footnote {\textit{pamodamānā ekacittā samaggavāsam}, \href{https://suttacentral.net/ja194/en/rouse?reference=main/pts#pts-vp-pli122}{Ja 194} [PTS: Ja.II,122].}
 
 Although the Buddha did not advocate any particular type of marriage, the evidence suggests that he favoured monogamy, even though polygamy was common at that time. His father, Suddhodana, had two wives and as a layman the Buddha could have had several wives also, but chose to have only one. In a discourse on marriage, he only discussed monogamy, again implying that he accepted this as the best form of conjugal relationship.\footnote {\href{https://suttacentral.net/an7.63/en/sujato}{AN 7.63} [PTS: A.IV,91].} Like many careful observers since, he probably recognised that a woman rarely benefited from a polygamous marriage and preferred to be the sole object of her partner’s affections. The scriptures allude to the disadvantages of polygamy for women. “Being a co-wife is painful.”\footnote {\href{https://suttacentral.net/thig10.1/en/sujato\#4.1}{Thig 10.1:4.1–4.3} [PTS: Thi.216].} “A woman’s worst misery is to quarrel with her co-wives.”\footnote {\href{https://suttacentral.net/ja489/en/rouse?reference=main/pts#pts-vp-pli316}{Ja 489} [PTS: Ja.IV,316].} These and other problems are confirmed by the Kāma Sūtra, the Rāmāyaṇa and other ancient Indian literature which describe the tensions, jealousies and manoeuvrings between several wives in the same household. There seems little doubt that it was for these reasons that the Jātaka counsels “Do not have a wife in common with others.”\footnote {\href{https://suttacentral.net/ja546/en/cowell-rouse?reference=main/pts#pts-vp-pli286}{Ja 546} [PTS: Ja.VI,286].}
 
@@ -506,7 +523,6 @@ The Buddha endorsed this idea, saying that if a couple loved each other deeply a
 \begin{epigram-2}
 Success in marriage is much more than finding the right person, it is a matter of being the right person.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —B. R. Brickner
 \end{epigram-2-cite}
@@ -527,7 +543,6 @@ While the Greeks’ code of hospitality was an unwritten custom, the ancient Heb
 \begin{epigram-2}
 Let not the emphasis of hospitality lie in bed and board; but let truth and love and honor and courtesy flow in all thy deeds.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Ralph Waldo Emerson
 \end{epigram-2-cite}
@@ -546,17 +561,16 @@ Once a man came to the Buddha and said:
 \end{quote}
 When Sīha, a leading citizen of Vesālī and a generous patron of the Jain religion, became a Buddhist, the Buddha asked him to continue offering his hospitality to Jain monks who might come to his door for alms.\footnote {\href{https://suttacentral.net/an8.12/en/sujato\#27.1}{AN 8.12:27.1} [PTS: A.IV,185].} The Buddha made it a rule that when a wayfaring monk turned up at a monastery the resident monks should go out and meet him, prepare a seat for him, bring him water to wash his feet, prepare accommodation for him and do other things to make him feel welcome.\footnote {\href{https://suttacentral.net/pli-tv-kd18/en/brahmali#1.1.1}{Kd 18:1.1.1–2.3.20} [PTS: Vin.II,207-11].}
 
-Amongst the most appropriate times to give a gift, the Buddha said, was when a newcomer turned up and when a guest set out to continue on his or her journey.\footnote {\href{https://suttacentral.net/an5.36/en/sujato}{AN 5.36} [PTS: A.III,41].} He considered failure to reciprocate hospitality to be very bad form. “Whoever goes to another’s house and is fed but does not feed them when they come to his house, consider him an outcast.”\footnote {\href{https://suttacentral.net/snp1.7/en/sujato\#16.1}{Snp 1.7:16.1–16.4} [PTS: Sn.128].} Likewise, to abuse someone’s hospitality is very bad form. “If for even one night one stops in another’s house and receives food and drink, have no evil thought, for to do so would be to burn an extended hand and betray a good friend.”\footnote {\href{https://suttacentral.net/ja546/en/cowell-rouse?reference=main/pts#pts-vp-pli310}{Ja 546} [PTS: Ja.VI,310].} The Milindapañha, a Buddhist work dating from about the 1<span class='superscript'>st</span> century BCE, says that if a stranger turns up at a person’s house and the meal is over, more rice should be cooked in order to feed them and allay their hunger.\footnote {\href{https://suttacentral.net/mil5.1.2/en/tw_rhysdavids?reference=main/pts#pts-vp-pli107}{Mil 5.1.2} [PTS: Mil.107].}
+Amongst the most appropriate times to give a gift, the Buddha said, was when a newcomer turned up and when a guest set out to continue on his or her journey.\footnote {\href{https://suttacentral.net/an5.36/en/sujato}{AN 5.36} [PTS: A.III,41].} He considered failure to reciprocate hospitality to be very bad form. “Whoever goes to another’s house and is fed but does not feed them when they come to his house, consider him an outcast.”\footnote {\href{https://suttacentral.net/snp1.7/en/sujato\#16.1}{Snp 1.7:16.1–16.4} [PTS: Sn.128].} Likewise, to abuse someone’s hospitality is very bad form. “If for even one night one stops in another’s house and receives food and drink, have no evil thought, for to do so would be to burn an extended hand and betray a good friend.”\footnote {\href{https://suttacentral.net/ja546/en/cowell-rouse?reference=main/pts#pts-vp-pli310}{Ja 546} [PTS: Ja.VI,310].} The Milindapañha, a Buddhist work dating from about the 1\textsuperscript{st} century BCE, says that if a stranger turns up at a person’s house and the meal is over, more rice should be cooked in order to feed them and allay their hunger.\footnote {\href{https://suttacentral.net/mil5.1.2/en/tw_rhysdavids?reference=main/pts#pts-vp-pli107}{Mil 5.1.2} [PTS: Mil.107].}
 
 \begin{epigram-2}
 There is an emanation from the heart in genuine hospitality which cannot be described, but is immediately felt and puts the stranger at once at his ease.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Washington Irving
 \end{epigram-2-cite}
 
-Such teachings have had a profound impact on all the societies where Buddhism has spread. When the Chinese pilgrim Xuanzang was in India in the 7<span class='superscript'>th</span> century he was accommodated at the great monastery at Bodh Gaya, which had been built by the king of Sri Lanka. Apparently the monastery displayed a copper plaque with the inscription: “Selfless giving is the highest teachings of all Buddhas. Hospitality to all in need is the instructions of the ancient sages…The monks of Sri Lanka are entitled to accommodation in this establishment as are the people of this country.” Travellers in Buddhist lands have long commented on the openness and friendliness they inevitably encounter. This is still often the case in rural areas and where traditional codes of hospitality have not been eroded by factors such as the pressures of urban living and mass tourism. The Buddha encouraged his disciples to plant shade trees along roads, construct bridges, dig wells and build rest houses for the benefit of travellers, and to provide water for wayfarers.\footnote {\href{https://suttacentral.net/sn1.47/en/sujato}{SN 1.47} [PTS: S.I,33].} In his \textit{Ratanāvalī} the Buddhist philosopher Nāgārjuna encouraged King Gautamiputra to “establish rest houses in temples, towns and cities and set up water pots along lonely roads.”\footnote {\textit{Ratanāvalī} 242.}
+Such teachings have had a profound impact on all the societies where Buddhism has spread. When the Chinese pilgrim Xuanzang was in India in the 7\textsuperscript{th} century he was accommodated at the great monastery at Bodh Gaya, which had been built by the king of Sri Lanka. Apparently the monastery displayed a copper plaque with the inscription: “Selfless giving is the highest teachings of all Buddhas. Hospitality to all in need is the instructions of the ancient sages…The monks of Sri Lanka are entitled to accommodation in this establishment as are the people of this country.” Travellers in Buddhist lands have long commented on the openness and friendliness they inevitably encounter. This is still often the case in rural areas and where traditional codes of hospitality have not been eroded by factors such as the pressures of urban living and mass tourism. The Buddha encouraged his disciples to plant shade trees along roads, construct bridges, dig wells and build rest houses for the benefit of travellers, and to provide water for wayfarers.\footnote {\href{https://suttacentral.net/sn1.47/en/sujato}{SN 1.47} [PTS: S.I,33].} In his \textit{Ratanāvalī} the Buddhist philosopher Nāgārjuna encouraged King Gautamiputra to “establish rest houses in temples, towns and cities and set up water pots along lonely roads.”\footnote {\textit{Ratanāvalī} 242.}
 
 Such types of indirect hospitality were common in the Buddhist world until just recently. People would build rest houses on the edge of villages or towns or along roads where there were long distances between villages. Other devout folk would undertake to supply these rest houses with firewood for cooking and water for drinking and to keep them clean. In Burma even today, groups of friends will form “water-donating societies” and place water pots along roads for the refreshment of passers-by. In a hot country like Burma and in rural areas where public transport is uncommon, the easy availability of clean, cool drinking water is a real blessing.
 
@@ -565,7 +579,7 @@ In the modern world, with its hotels, motels and rapid transportation, hospitali
 It is true that encountering a stranger does not evoke the same delight as meeting up with a parent, sibling, friend or someone already known to us. But in some ways, the love of strangers is more robust and more transformative than familial love or friendship love. These last two come naturally, while the first requires an effort. In fact, it seems to be more natural to ignore strangers, shun them and think of them as odd. Therefore, to be welcoming to a stranger requires noticing and purposefulness, and once done it reinforces these qualities. Hospitality and similar acts of thoughtfulness require us to set aside our wishes and go beyond ordinary patterns of behaviour. This contributes to breaking down old habits and impulses and building new and more wholesome ones
 
 \chapter[6. Firm Friends and True]{chapter 6\\Firm Friends and True\markboth{Firm Friends and True}{OOOO}}
-What the Greeks called \textit{philia} is what the Buddha called \textit{mittata}. Both words mean loving friendship or brotherly love. Until recently, even in Western societies, friendships were much closer and deeper than is expected today. The friendships between Achilles and Patroclus and those from the Bible between Saul and Jonathan and Ruth and Naomi are well-known in the West. In India the mutual devotion of Ajuna and Krishna as depicted in the \textit{Mahābhārata} has long been celebrated as the ideal friendship. Krishna said of Arjuna: “My wives, my kinsmen and my relatives, none amongst them is dearer to me than Arjuna. I shall not be able to cast my eyes, even for a single moment, on the earth bereft of Arjuna … Know that Arjuna is half my body.”\footnote {Drona Parva LXXIX.} Saying this to someone of the same gender might sound inappropriate to the modern Western ear but similarly expressed sentiments were common in our culture until the beginning of the 20<span class='superscript'>th</span> century.
+What the Greeks called \textit{philia} is what the Buddha called \textit{mittata}. Both words mean loving friendship or brotherly love. Until recently, even in Western societies, friendships were much closer and deeper than is expected today. The friendships between Achilles and Patroclus and those from the Bible between Saul and Jonathan and Ruth and Naomi are well-known in the West. In India the mutual devotion of Ajuna and Krishna as depicted in the \textit{Mahābhārata} has long been celebrated as the ideal friendship. Krishna said of Arjuna: “My wives, my kinsmen and my relatives, none amongst them is dearer to me than Arjuna. I shall not be able to cast my eyes, even for a single moment, on the earth bereft of Arjuna … Know that Arjuna is half my body.”\footnote {Drona Parva LXXIX.} Saying this to someone of the same gender might sound inappropriate to the modern Western ear but similarly expressed sentiments were common in our culture until the beginning of the 20\textsuperscript{th} century.
 
 Such a friendship from a Buddhist culture is to be found in the Sri Lankan epic the Cūlavaṁsa. It seems that palace intrigues forced young Prince Mānavamma to flee to south India, where he found employment at the court of King Narasīha. A friendship grew up between the two men which gradually became love. When the kingdom was invaded by a neighbour, Narasīha’s first thought was for his friend. If Mānavamma joined the fighting and was killed, “all that we have planned together would be without result,” and so he marched off to battle and bid Mānavamma to stay in the capital. But Mānavamma thought: “If the king dies while I am alive my life is nothing. I would betray his trust in me if I did so. He has made me his equal and therefore it behoves me to go with him to the battlefield. It is my greatest joy to either live or die with him.” Mānavamma rode off to join Narasīha and the two of them led their troops to victory. After the victory the king “embraced Mānavamma lovingly” saying: “It is you who have given me victory.” Out of gratitude for his devotion, Narasīha gave Mānavamma an army so he could invade Sri Lanka and try to win the crown for himself. The expedition was a failure and Mānavamma remained at Narasīha’s court, serving his friend and biding his time. Eventually Narasīha thought: “With his pride unbroken and honour as his wealth, my friend serves me for the sake of royal dignity and he will become old and grey thereby. When I see this how can I myself rule with joy? If I cannot send him to reclaim his kingdom what is my life to me?” So another army was assembled, Narasīha gave his own armour to Mānavamma and he invaded Lanka and made himself king.\footnote {\textit{Cūlavaṁsa} XLVII 1-60.}
 
@@ -580,7 +594,6 @@ The Buddha spoke about friendship more than any other human relationship and he 
 \begin{epigram-2}
 Wishing to be friends is quick work, but friendship is a slow ripening fruit.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Aristotle
 \end{epigram-2-cite}
@@ -608,7 +621,6 @@ The Indian religious tradition in general sees the teacher (\textit{guru}) as ha
 \begin{epigram-2}
 The only way to have a friend is to be one.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Ralph Waldo Emerson
 \end{epigram-2-cite}
@@ -631,7 +643,6 @@ On seeing the stag, the king asked: “You have been granted immunity from being
 \begin{epigram-2}
 We can offer up much in the large, but to make sacrifices in little things is what we are seldom equal to.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Goethe
 \end{epigram-2-cite}
@@ -675,7 +686,6 @@ In the coming centuries the idea of self-sacrificing love became a leitmotif of 
 \begin{epigram-2}
 Life is made up, not of great sacrifices or duties, but of little things, in which smiles and kindnesses and small obligations, given habitually, are what win and preserve the heart, and secure comfort.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Sir Humphry Davy
 \end{epigram-2-cite}
@@ -702,7 +712,6 @@ Every year in India hundreds of young people of different castes or religions fa
 \begin{epigram-2}
 Love recognizes no barriers. It jumps hurdles, leaps fences, penetrates walls to arrive at its destination full of hope.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Maya Angelou
 \end{epigram-2-cite}
@@ -716,7 +725,6 @@ In much of the Christian world divorce was virtually impossible until recently e
 \begin{epigram-2}
 The more you are motivated by love, the more free and fearless your actions will be.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Dalai Lama
 \end{epigram-2-cite}
@@ -732,17 +740,16 @@ I have met a number of gay people who suffer from shame, self-hatred or depressi
 \chapter[9. Furred and Feathered Friends]{chapter 9\\Furred and Feathered Friends\markboth{Furred and Feathered Friends}{OOOO}}
 People can have deeply felt relationships with animals, their pets or even with animals in general. There is no particular word for the love of animals in any language. In the Buddhist scriptures the feeling and attitude we should cultivate towards animals is usually called compassion (\textit{karuṇā}). However, they occasionally describe certain individuals of having love for animals.\footnote {\textit{Sineha} e.g., \href{https://suttacentral.net/ja413/en/francis-neil?reference=main/pts#pts-vp-pli401}{Ja 413} [PTS: Ja.III,401].} All Indian religions, but particularly Buddhism and Jainism, have long recognised that a tender kindness to animals is not just legitimate but actually a sign of a more all-inclusive love. If not actually love and compassion for animals, then at least some consideration towards them goes back a long way in human history. The Old Testament dictated that even working animals were to rest on the Sabbath.\footnote {Deuteronomy 22,12.} A farmer was not allowed to muzzle the ox treading out his grain so as to allow it to nibble the straw as it laboured.\footnote {Deuteronomy 23,25.} Such ideas probably had their origins in the fondness rural folk sometimes develop towards the animals that share their hardships and help sustain their lives.\footnote {Christianity did little to develop these ideas. Jesus said nothing about kindness to animals and St. Paul dismissed the rule against muzzling the ox as pertaining to the welfare of humans not animals (1 Corinthians 9,9- 10). Aquinas took a similar view, saying that cruelty to animals should be discouraged but only because it might encourage cruelty to humans. Of course, “official” theology did not always reflect ordinary people’s attitudes. \cite{Lecky 1890b}, pp. 161-73 includes fascinating information about kindness to animals in the pagan West and in mediaeval Christendom.}
 
-In India during the Buddha’s time people were generally kindly to animals. One stark exception to this were the Vedic sacrifices at which sometimes large numbers of animals were slaughtered. The scriptures record one such sacrifice at which “five hundred bulls, five hundred steers and numerous heifers, goats and rams were brought to the sacrificial post for slaughter.”\footnote {\href{https://suttacentral.net/an7.47/en/sujato}{AN 7.47} [PTS: A.IV,41].} The Buddha repudiated the killing of animals at such religious rituals, the felling of trees to make the sacrificial posts and the threatening and beating of the slaves as they were driven to do the preparations “with tear-stained faces.”\footnote {\href{https://suttacentral.net/an4.198/en/sujato\#5.1}{AN 4.198:5.1–6.9} [PTS: A.II,207-8].} In time, protests from Buddhists and Jains led to animal sacrifice being phased out of Hinduism. In the West until fairly recently the welfare of animals was given little importance other than for economic reasons. Animal fights and sports such as bull and bear baiting, in which animals were abused and tormented, were popular entertainments well into the 19<span class='superscript'>th</span> century. The first advocates of laws to protect animals from such cruelty were looked upon with ridicule. Such behaviour has never been acceptable in places where Buddhism and Jainism have had an influence.
+In India during the Buddha’s time people were generally kindly to animals. One stark exception to this were the Vedic sacrifices at which sometimes large numbers of animals were slaughtered. The scriptures record one such sacrifice at which “five hundred bulls, five hundred steers and numerous heifers, goats and rams were brought to the sacrificial post for slaughter.”\footnote {\href{https://suttacentral.net/an7.47/en/sujato}{AN 7.47} [PTS: A.IV,41].} The Buddha repudiated the killing of animals at such religious rituals, the felling of trees to make the sacrificial posts and the threatening and beating of the slaves as they were driven to do the preparations “with tear-stained faces.”\footnote {\href{https://suttacentral.net/an4.198/en/sujato\#5.1}{AN 4.198:5.1–6.9} [PTS: A.II,207-8].} In time, protests from Buddhists and Jains led to animal sacrifice being phased out of Hinduism. In the West until fairly recently the welfare of animals was given little importance other than for economic reasons. Animal fights and sports such as bull and bear baiting, in which animals were abused and tormented, were popular entertainments well into the 19\textsuperscript{th} century. The first advocates of laws to protect animals from such cruelty were looked upon with ridicule. Such behaviour has never been acceptable in places where Buddhism and Jainism have had an influence.
 
 \begin{epigram-2}
 It is empathy with all beings that is Dhamma.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Aśvaghoṣa
 \end{epigram-2-cite}
 
-The Buddha considered animals to be inferior to humans in that they did not have the mental capacity to comprehend the Dhamma and that they exhibited only a rudimentary moral sense. Under monastic law, murder is an offence entailing expulsion from the Sangha, while killing an animal has a much less drastic punishment.\footnote {\href{https://suttacentral.net/pli-tv-bu-vb-pc61/en/brahmali}{Bu Pc 61} [PTS: Vin.IV,124].} But this does not mean that animal welfare is unimportant. On the contrary, animals’ inferior condition in such ways makes them extra worthy of sympathy and protection. They are as liable to pain as we are. The \cite{Jātakamāla} highlights both of these points when it says: “Because animals are dull by nature we should therefore have sympathy for them. When it comes to desiring happiness and wishing to avoid pain, all beings are the same. Therefore, if you find something unpleasant you should not inflict it on others.”\footnote {\cite{Jātakamāla} 25, 25-6.}
+The Buddha considered animals to be inferior to humans in that they did not have the mental capacity to comprehend the Dhamma and that they exhibited only a rudimentary moral sense. Under monastic law, murder is an offence entailing expulsion from the Sangha, while killing an animal has a much less drastic punishment.\footnote {\href{https://suttacentral.net/pli-tv-bu-vb-pc61/en/brahmali}{Bu Pc 61} [PTS: Vin.IV,124].} But this does not mean that animal welfare is unimportant. On the contrary, animals’ inferior condition in such ways makes them extra worthy of sympathy and protection. They are as liable to pain as we are. The \cite{Jātakamāla} highlights both of these points when it says: “Because animals are dull by nature we should therefore have sympathy for them. When it comes to desiring happiness and wishing to avoid pain, all beings are the same. Therefore, if you find something unpleasant you should not inflict it on others.”\footnote {Jātakamāla (\cite{Speyer 1895a}) 25, 25-6.}
 
 The Buddha recognised that cruelty, whether to animals or humans, sprung from the same defilements—callousness, spite, vengeance, and lack of empathy—and that it would have similar negative kammic consequences. Once he came across some children tormenting a snake. To make them stop he asked them:
 
@@ -769,7 +776,6 @@ Several incidents of this type are recorded in the Buddhist scriptures, the most
 \begin{epigram-2}
 Our task must be to free ourselves by widening our circle of compassion to embrace all living creatures and the whole of nature and its beauty.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Albert Einstein
 \end{epigram-2-cite}
@@ -796,7 +802,6 @@ The Buddha did not define \textit{mettā} but his many dialogues on the subject 
 \begin{epigram-2}
 You will find as you look back upon your life that the moments when you have really lived are the moments when you have done things in a spirit of love.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Henry Drummond
 \end{epigram-2-cite}
@@ -815,7 +820,7 @@ It seems that while humans have had the potential for \textit{mettā} ever since
 
 Motzu contrasted Confucius’ idea of what love should be with what he called \textit{jian ai} or universal love.\footnote {Sometimes \textit{jian ai} is translated as inclusive care or inclusive love.} This love, Motzu said, should be expressed to all equally and unreservedly, no matter what their relationship with you or their station in life. \textit{Jian ai} should take no account of social conventions, and is unconcerned with reciprocation. “The goal of the humane person is surely to seek to promote the benefit of the world and eliminate harm to the world, and to take this as a standard in all things. Does something benefit people? Then do it. Is something to the detriment of people? Then stop it.”\footnote {Book 32, “Rejecting Music.”} Most of Motzu’s contemporaries and many later Chinese thinkers dismissed his idea of universal love as admirable but impractical. Some even criticised it as contrary to human nature. Consequently, it has had little influence on Chinese culture. This is not to say that no-one ever felt \textit{jian ai} but only it was not held up as the ideal to be aspired to.
 
-By the 2<span class='superscript'>nd</span> and 1<span class='superscript'>st</span> centuries BCE, the great Jewish sages such as Hillel and Simeon the Just were moving towards the realisation of a higher and more universalised love and this had its culmination in the teachings of Jesus of Nazareth. Jesus spoke of the importance of \textit{rakhma}, later translated into Greek as \textit{agape}, a love that is strong, caring and self-sacrificing.\footnote {\textit{Agape} is not used in the Bible only for the highest love. The love between a husband and wife is also called \textit{agape} (Ephesians 5,28; Colossians 3,19). Sometimes the word is even used in a negative sense. You can love darkness (John 3,19), you can love honour and praise (Luke 11,43), you can love the world (1 John 2.15; 2 Timothy 10), you can have a deficient love (Luke 7,47) and your love can even grow cold (Matthew 24,12). \textit{Agape} is used in all these cases. Throughout the Buddhist scriptures \textit{mettā} is used exclusively for the highest love.} \textit{Rakhma} is sometimes described as being “undiscriminating” or “unconditional” but this is not quite what Jesus envisaged. He taught that moral and social outcasts, down-and-outs, the neglected, the poor and the persecuted were more in need of love and thus more worthy of it. The father in the Parable of the Prodigal Son seems to favour his reprobate offspring more than his obedient and responsible one.\footnote {Luke 15,11-32.}
+By the 2\textsuperscript{nd} and 1\textsuperscript{st} centuries BCE, the great Jewish sages such as Hillel and Simeon the Just were moving towards the realisation of a higher and more universalised love and this had its culmination in the teachings of Jesus of Nazareth. Jesus spoke of the importance of \textit{rakhma}, later translated into Greek as \textit{agape}, a love that is strong, caring and self-sacrificing.\footnote {\textit{Agape} is not used in the Bible only for the highest love. The love between a husband and wife is also called \textit{agape} (Ephesians 5,28; Colossians 3,19). Sometimes the word is even used in a negative sense. You can love darkness (John 3,19), you can love honour and praise (Luke 11,43), you can love the world (1 John 2.15; 2 Timothy 10), you can have a deficient love (Luke 7,47) and your love can even grow cold (Matthew 24,12). \textit{Agape} is used in all these cases. Throughout the Buddhist scriptures \textit{mettā} is used exclusively for the highest love.} \textit{Rakhma} is sometimes described as being “undiscriminating” or “unconditional” but this is not quite what Jesus envisaged. He taught that moral and social outcasts, down-and-outs, the neglected, the poor and the persecuted were more in need of love and thus more worthy of it. The father in the Parable of the Prodigal Son seems to favour his reprobate offspring more than his obedient and responsible one.\footnote {Luke 15,11-32.}
 
 The famous Parable of the Good Samaritan is emblematic of Jesus’ idea about love. A man once asked him how he could be saved. Jesus replied: “What does the Law say?” In reply the man quoted two verses from the Old Testament about loving God and loving one’s neighbour. Jesus agreed with this and then the man asked: “And who is my neighbour?” In answer to this Jesus told this story:
 
@@ -855,14 +860,13 @@ Jesus’ answer to his inquirer was that if you act lovingly towards your neighb
 
 \begin{quote}
 
-“Nursing the sick was much praised by the Great Compassionate One and is it a wonder that he would do so? For the Sage sees the welfare of others as his own and thus that he should act as a benefactor to others is no surprise. This is why attending to the sick has been praised by the Buddha. One practising great virtue should have love for others.”\footnote {\cite{Saddhammopāyana} 557-60.}
+“Nursing the sick was much praised by the Great Compassionate One and is it a wonder that he would do so? For the Sage sees the welfare of others as his own and thus that he should act as a benefactor to others is no surprise. This is why attending to the sick has been praised by the Buddha. One practising great virtue should have love for others.”\footnote {Saddhammopāyana (\cite{Hazlewood 1988a}) 557-60.}
 
 
 \end{quote}
 \begin{epigram-2}
 Think of helping yourself but give thought to the needs of others too. Radiate \textit{mettā} towards all beings. Without the foundation of compassion the long trudge of samsāra has no end. Without it how can you enter the city of Nirvana?
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Loveda Sangarava
 \end{epigram-2-cite}
@@ -880,7 +884,7 @@ People with \textit{mettā} or who are cultivating it, do what they can to promo
 \chapter[11. The Brahma Viharas]{chapter 11\\The Brahma Viharas\markboth{The Brahma Viharas}{OOOO}}
 Indians at the time of the Buddha worshipped many gods but the chief of them all was Brahmā, the name simply meaning “the highest.” This deity was conceived as having four arms and four faces and like the god being worshipped at about the same time by the Hebrews, was given various impressive titles. He was called All-Seeing, All-Powerful, the Lord, Maker, Creator and Ruler, Appointer and Controller, and Father of All that Are and All that Shall Be.\footnote {\href{https://suttacentral.net/dn11/en/sujato\#80.7}{DN 11:80.7} [PTS: D.I,220].} However, Brahmā was not an angry vengeful deity; he was thought of as mainly benign. He lived above the clouds from where he looked down upon the world with one of his four faces. When he saw people who were virtuous and kindly he would look upon them with his face of \textit{mettā}. When he saw them in distress, grieving or enduring pain, he would look upon them with compassion. When people were happy and jubilant, Brahmā would turn his face of sympathetic joy towards them and rejoice with them. And when he saw people who were immoral, selfish or cruel, he would not get angry and threaten retribution, but rather he would turn his fourth face towards them and regard them with equanimity. The way people related to Brahmā was to call upon him for help, praise him and try to please him with offerings and sacrifices. The hope was to be protected by Brahmā during life and be reborn in his presence after death.
 
-The 6<span class='superscript'>th</span> to 3<span class='superscript'>rd</span> BCE in India was a time of great transition as it was in several other parts of the world. Old assumptions, including religious ones, were being challenged and new ideas were being debated. The question of how to attain union with Brahmā, how to be reborn in his presence, was top of the list of hot religious topics. Two teachers whose ideas on this subject had attracted attention were the Brahmans Pokkharasāti and Tārukkha. Once two young men, one a disciple of Pokkharasāti and the other of Tārukkha, came to ask the Buddha what he thought of their teachers’ contending views. As a part of his answer the Buddha asked them a series of questions. First he got the young men to acknowledge that Pokkharasāti and Tārukkha, like many priests at the time, had numerous wives, lived very comfortable lives, charged rather high fees for their services, and were not entirely immune from pride and jealousy, impatience and anger. He then had them confirm that Brahmā was nothing like this. Moving the discussion on, the Buddha pointed out that two things completely different from each other, at odds with each other, were hardly likely to come into union with each other. On the other hand, if Brahmā’s nature was loving and compassionate anyone who was like this had something important in common with Brahmā and may well be reborn in his presence. For the Buddha, the only meaningful “union” with Brahmā was to be like Brahmā. For him, rather than praising Brahmā for being loving it was better to be loving yourself.\footnote {\href{https://suttacentral.net/dn13/en/sujato}{DN 13} [PTS: D.I,235-51].} In some ways this mirrors Jesus’ exhortation: “Be perfect as your heavenly Father is perfect.”\footnote {Matthew 5,48.}
+The 6\textsuperscript{th} to 3\textsuperscript{rd} BCE in India was a time of great transition as it was in several other parts of the world. Old assumptions, including religious ones, were being challenged and new ideas were being debated. The question of how to attain union with Brahmā, how to be reborn in his presence, was top of the list of hot religious topics. Two teachers whose ideas on this subject had attracted attention were the Brahmans Pokkharasāti and Tārukkha. Once two young men, one a disciple of Pokkharasāti and the other of Tārukkha, came to ask the Buddha what he thought of their teachers’ contending views. As a part of his answer the Buddha asked them a series of questions. First he got the young men to acknowledge that Pokkharasāti and Tārukkha, like many priests at the time, had numerous wives, lived very comfortable lives, charged rather high fees for their services, and were not entirely immune from pride and jealousy, impatience and anger. He then had them confirm that Brahmā was nothing like this. Moving the discussion on, the Buddha pointed out that two things completely different from each other, at odds with each other, were hardly likely to come into union with each other. On the other hand, if Brahmā’s nature was loving and compassionate anyone who was like this had something important in common with Brahmā and may well be reborn in his presence. For the Buddha, the only meaningful “union” with Brahmā was to be like Brahmā. For him, rather than praising Brahmā for being loving it was better to be loving yourself.\footnote {\href{https://suttacentral.net/dn13/en/sujato}{DN 13} [PTS: D.I,235-51].} In some ways this mirrors Jesus’ exhortation: “Be perfect as your heavenly Father is perfect.”\footnote {Matthew 5,48.}
 
 While the Buddha had no need for the idea of a single supreme being, Brahmā’s supposed four attributes appealed to him and he included them into his teachings and called them the Brahmavihāras. It has already been noted that the name Brahmā simply means the highest, the foremost, the ultimate. The word \textit{vihāra} means to “live” or to “abide.” So the term Brahmavihāra could be translated as the Godly Lifestyles or perhaps better as the Divine Abidings. Thus the Brahmavihāras are not states of mind to be visited from time to time or as and when it is convenient, but what we dwell in and what dwells in us. Let us have a closer look at each of these four Brahmvihāras.
 
@@ -893,12 +897,11 @@ The most noticeable feature of the Buddha’s personality was his compassion, an
 \begin{epigram-2}
 Without jealousy or ill-will, envy or desire to hurt, with a mind delighted by and rejoicing in the good of others, one who appreciates the good actions of others always has strength, beauty, resources, joy and longevity.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Saddhammopāyana
 \end{epigram-2-cite}
 
-In eulogising compassion, the \cite{Jātakamāla} says: “Compassion gives birth to all the other virtues just as cooling rain makes the crops grow. When a person is compassionate he has no desire to harm his neighbour, his body, speech and mind are purified, concern for his neighbour’s welfare increases and states like kindness, patience, happiness and good reputation grow. Being calm, the compassionate person does not arouse fear in the minds of others. He is trusted like a kinsman; he is not agitated by the passions, but quenched by the waters of compassion. The fire of hatred does not blaze in his heart … Remembering this, strive to develop compassion towards others; as if they were yourself or your offspring.”\footnote {\cite{Jātakamāla} XXVI,42-44.}
+In eulogising compassion, the \cite{Jātakamāla} says: “Compassion gives birth to all the other virtues just as cooling rain makes the crops grow. When a person is compassionate he has no desire to harm his neighbour, his body, speech and mind are purified, concern for his neighbour’s welfare increases and states like kindness, patience, happiness and good reputation grow. Being calm, the compassionate person does not arouse fear in the minds of others. He is trusted like a kinsman; he is not agitated by the passions, but quenched by the waters of compassion. The fire of hatred does not blaze in his heart … Remembering this, strive to develop compassion towards others; as if they were yourself or your offspring.”\footnote {Jātakamāla (\cite{Speyer 1895a}) XXVI,42-44.}
 
 The Pāḷi word \textit{mudita} comes from \textit{mudu}, meaning soft or pliable. It is usually rendered in English as appreciative or sympathetic joy and is the quality of being happy in the happiness of others.
 
@@ -927,11 +930,9 @@ Years ago, before becoming a monk, I lived in a block of flats in a large countr
 \begin{epigram-2}
 Did you never notice how joy rouses men to noble aspirations and deeds, exceeding their normal capacity? Did not such experience fill your own heart with joyful bliss?
 \end{epigram-2}
-
-\begin{epigram-2}
+\begin{epigram-2-followOn}
 It is in your power to increase such experience of sympathetic joy, by producing happiness in others, by bringing them happiness and solace.
-\end{epigram-2}
-
+\end{epigram-2-followOn}
 \begin{epigram-2-cite}
 —Nyanaponika
 \end{epigram-2-cite}
@@ -949,7 +950,7 @@ And incidentally, equanimity towards those who have harmed us is not just being 
 \chapter[12. Breaking Down the Barriers]{chapter 12\\Breaking Down the Barriers\markboth{Breaking Down the Barriers}{OOOO}}
 The Pāḷi word \textit{bhāvanā} is usually translated as meditation. For most people the word meditation evokes the idea of going into solitude, closing the eyes, sitting cross-legged and doing some kind of mental exercise. However, \textit{bhāvanā} need not have such associations or conjure up such images. It simply means “to develop,” “to cultivate” or “to increase.” Although the Buddha himself occasionally used the term \textit{mettā} \textit{bhāvanā}, it is more commonly found in the Buddhist tradition and is usually translated as loving-kindness meditation or as \textit{mettā} meditation. These are completely legitimate translations although they could give the impression that the only way to cultivate or enhance \textit{mettā} is to go into solitude, sit crossed-legged with the eyes closed and do something with the mind. If we were to get this idea we might come to think of \textit{mettā} as something passive, a purely contemplative exercise, done in the privacy of our own mind and in isolation from others. In reality, \textit{mettā} can be, as the Buddha said, “practised and developed, emphasised and mastered, made a foundation and set it in motion, firmly established and strengthened”\footnote {\href{https://suttacentral.net/an11.15/en/sujato}{AN 11.15} [PTS: A.V,342].} in several different ways. Two of the most effective things we can do to encourage the flourishing of \textit{mettā} in our hearts are to practise Metta Meditation and to act in ways indicative of \textit{mettā}.
 
-Metta Meditation is practised by sitting quietly and thinking of oneself, a loved one, a neutral person, a disliked person and then either someone in distress or all beings in general, and radiating a blessing towards each of them in turn. “Radiating” means evoking certain thoughts, intentions and wishes and then focusing them on a particular person.\footnote {\textit{Pharati} or \textit{vyāpeti}, to pervade, radiate or project.} In some ways Metta Meditation resembles prayer, although prayer is addressed to a deity while Metta Meditation arouses the power of the positive thoughts and aspirations and these cause the transformation. (See <span class="manualLink" data-target="#TOCTarget19">Appendix I</span>)
+Metta Meditation is practised by sitting quietly and thinking of oneself, a loved one, a neutral person, a disliked person and then either someone in distress or all beings in general, and radiating a blessing towards each of them in turn. “Radiating” means evoking certain thoughts, intentions and wishes and then focusing them on a particular person.\footnote {\textit{Pharati} or \textit{vyāpeti}, to pervade, radiate or project.} In some ways Metta Meditation resembles prayer, although prayer is addressed to a deity while Metta Meditation arouses the power of the positive thoughts and aspirations and these cause the transformation. (See Appendix I)
 
 Being relatively simple and uncomplicated it would be easy to get the impression that Metta Meditation is just a superficial feel-good technique or an exercise in sentimentality. It could well be done in such a manner but when done properly and with sincerity it can bring about the most profound and positive changes. Buddhists have long believed that Metta Meditation not only transforms the person who does it but even the people towards whom it is done. It is believed to bring loved ones closer, cause neutral people to become more approachable and friendly, make annoying or disliked people less so, and sometimes even ease the distress of those who are suffering. The experiences of many people seem to confirm this belief.
 
@@ -966,7 +967,6 @@ Later I found out the background of this case. The woman’s problems had begun 
 \begin{epigram-2}
 To hold all beings in high regard, and render them respectful services, that is the same as revering and serving the Tathāgatas. To make all beings happy is to please the Tathāgatas.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Gandavyuha Sūtra
 \end{epigram-2-cite}
@@ -989,7 +989,11 @@ Self-depreciation and being overly or persistently self-critical are thought hab
 
 The next step in Metta Meditation is calling to mind someone we are close to, a parent or grandparent, sibling, spouse or good friend. Almost everyone finds this easy.
 
-After this we think of a neutral person. This could be a colleague to whom we give a perfunctory greeting or smile when we meet, but nothing more. It could be the people who live two houses from us, the lady at the corner store or the old gentleman we often see at the bus stop. If we are an average person our feelings towards the majority of those we come into contact with could probably be described as neutral or indifferent. We know nothing of them, care nothing for them and until now have never thought that it should be different. The Buddha spoke of endeavouring to have “a mind with the barriers broken down” (\textit{vimariyādikata cetasā}).\footnote {\href{https://suttacentral.net/an10.81/en/sujato}{AN 10.81} [PTS: A.V,151];<br>\href{https://suttacentral.net/sn14.33/en/sujato\#3.1}{SN 14.33:3.1–4.1} [PTS: S.II,173];<br>\href{https://suttacentral.net/sn22.28/en/sujato\#2.1}{SN 22.28:2.1–2.4} [PTS: S.III,31];<br>\href{https://suttacentral.net/sn35.17/en/sujato\#2.1}{SN 35.17:2.1–2.2} [PTS: S.IV,11];<br>Vism.307.} Not all the psychological barriers that keep us from kindly relations with others are the result of ill-will or prejudice, suspicion or self-preoccupation. Sometimes they are there simply because they have developed without us noticing and we have never thought of removing them. Many people have had this experience: having occasional contact with someone for years but never really getting to know them, then having circumstance bring them together (e.g., working on some project or dealing with some emergency), discovering that they have much in common, becoming friends, and then being surprised that they did not really get to know each other earlier.
+After this we think of a neutral person. This could be a colleague to whom we give a perfunctory greeting or smile when we meet, but nothing more. It could be the people who live two houses from us, the lady at the corner store or the old gentleman we often see at the bus stop. If we are an average person our feelings towards the majority of those we come into contact with could probably be described as neutral or indifferent. We know nothing of them, care nothing for them and until now have never thought that it should be different. The Buddha spoke of endeavouring to have “a mind with the barriers broken down” (\textit{vimariyādikata cetasā}).\footnote {\href{https://suttacentral.net/an10.81/en/sujato}{AN 10.81} [PTS: A.V,151];\\
+\href{https://suttacentral.net/sn14.33/en/sujato\#3.1}{SN 14.33:3.1–4.1} [PTS: S.II,173];\\
+\href{https://suttacentral.net/sn22.28/en/sujato\#2.1}{SN 22.28:2.1–2.4} [PTS: S.III,31];\\
+\href{https://suttacentral.net/sn35.17/en/sujato\#2.1}{SN 35.17:2.1–2.2} [PTS: S.IV,11];\\
+Vism.307.} Not all the psychological barriers that keep us from kindly relations with others are the result of ill-will or prejudice, suspicion or self-preoccupation. Sometimes they are there simply because they have developed without us noticing and we have never thought of removing them. Many people have had this experience: having occasional contact with someone for years but never really getting to know them, then having circumstance bring them together (e.g., working on some project or dealing with some emergency), discovering that they have much in common, becoming friends, and then being surprised that they did not really get to know each other earlier.
 
 Sometimes we pay no attention to someone until they are in the midst of a crisis, and only then do we attempt to get closer to them. Just recently a friend told me that in the office where she worked a man in the next department died and there was a collection to buy a wreath for his funeral. Like most others she was glad to make a contribution, but then thought what a pity it was that she had never got to know him in the years they worked so near to each other. She knew him by face and his first name but nothing else. Later she found out that like her, he had been a regular meditator and that they would have probably had much they could have talked about and shared with each other. Sometimes two members of a family become estranged and have no contact with each other for decades. Then one becomes critically ill or is dying, the other comes to see them and a reconciliation takes place. What a pity that a crisis, an impending death or a funeral is needed before the barriers between people are dismantled.
 
@@ -1002,7 +1006,6 @@ Finally, we either call to mind someone we know or know of who is suffering, or 
 \begin{epigram-2}
 Too often we underestimate the power of a touch, a smile, a kind word, a listening ear, an honest compliment, or the smallest act of caring, all of which have the potential to turn a life around.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Leo Buscaglia
 \end{epigram-2-cite}
@@ -1011,7 +1014,7 @@ Having looked at what might be called the contemplative or passive way to cultiv
 
 The Buddha observed that “the mind is bound up with and dependent on” the body,\footnote {\textit{ettha sitaṁ ettha paṭibaddhaṁ}, \href{https://suttacentral.net/dn2/en/sujato\#83.3}{DN 2: 83.3–83.4} [PTS: D.I,76].} which means that the state of one can have an impact on the other. Certain thoughts and attitudes prompt certain types of behaviour. For example, a spiteful attitude is likely to manifest itself as speech and actions others find hurtful. It goes the other way too. Certain behaviours prompt certain thoughts and attitudes. Verbal and bodily actions indicative of kindness encourage and foster kindly thoughts and dispositions. Thus another way we can encourage and awaken \textit{mettā} is by acting towards others in ways usually thought of as kindly and loving.
 
-Here are some examples of how this can be done. Walking down the street you see a driver trying to park his car in a narrow space between two other cars so you stop and help him guide his car into the space. You are at the supermarket checkout counter and notice that the person behind you has only two or three items while you have many. You invite her to go in front of you. Municipal workers are digging up a drain in the street outside your house. It is a hot afternoon so you prepare a jug of ice water or fruit juice and take it out to them. You are at the post office, the woman in the queue in front of you is rummaging through her purse for the extra $1.50 she needs to pay for her purchases, then she goes through her pockets. You can see that she does not have enough so you offer her the extra she needs. A new family moves into the house just down the street so you go and visit them, introduce yourself, welcome them and ask if there is anything you can assist them with. You pass two people in the street scrutinising a map, obviously trying to find their way. You approach them and offer to give them directions.
+Here are some examples of how this can be done. Walking down the street you see a driver trying to park his car in a narrow space between two other cars so you stop and help him guide his car into the space. You are at the supermarket checkout counter and notice that the person behind you has only two or three items while you have many. You invite her to go in front of you. Municipal workers are digging up a drain in the street outside your house. It is a hot afternoon so you prepare a jug of ice water or fruit juice and take it out to them. You are at the post office, the woman in the queue in front of you is rummaging through her purse for the extra \$1.50 she needs to pay for her purchases, then she goes through her pockets. You can see that she does not have enough so you offer her the extra she needs. A new family moves into the house just down the street so you go and visit them, introduce yourself, welcome them and ask if there is anything you can assist them with. You pass two people in the street scrutinising a map, obviously trying to find their way. You approach them and offer to give them directions.
 
 Recently while on a quick trip to Malaysia I met up again with someone I had first got to know several years previously, a well-informed and devout Buddhist. We were talking about meditation and I asked him if he did Metta Meditation. He replied that he did it all the time. “You do it in the standard way I suppose?” I asked. “No, I never do it like that,” he said, and I looked at him inquiringly. “Well, I cultivate \textit{mettā} by acting with \textit{mettā}. I have found that being kind draws more \textit{mettā} out of me than any meditation technique does.” Now I really focused on what he was saying. “That sounds interesting,” I said. “Describe what you mean.”
 
@@ -1021,9 +1024,16 @@ My friend described what he meant. “Well for example, about two weeks ago my w
 
 Hearing my friend’s way of “cultivating” \textit{mettā} was more than just a pleasant surprise; it moved and inspired me. I could see that it was having an effect on him too. He was a softly-spoken, modest and unassuming person. Later, I gave some thought to the effects his actions might have had on others. It may have encouraged the old lady he helped to be less selfish, less cynical, more thankful and kindly. I could imagine that she had told her family about what this stranger had done for her and that it had inspired them to be more kindly and thoughtful too. Perhaps this could be seen as another way of “radiating” \textit{mettā}.
 
-Noticing when we can be of service to others, even in small ways, and then doing what we can for them does not just nudge our \textit{mettā} awake, it also arouses many of the best social virtues too. The Buddha said that thinking, speaking and acting with \textit{mettā} encouraged “cordiality and love, respect and togetherness, agreement, harmony and unity.”\footnote {\textit{piyakaraṇā} \textit{garukaraṇā} \textit{sangahāya} \textit{avivādāya} \textit{sāmaggiyā} \textit{ekībhāvāya}, e.g.,<br>\href{https://suttacentral.net/an6.12/en/sujato}{AN 6.12} [PTS: A.III,289];<br>\href{https://suttacentral.net/mn48/en/sujato\#6.1}{MN 48:6.1–6.16} [PTS: M.I,322];<br>\href{https://suttacentral.net/mn104/en/sujato\#21.1}{MN 104:21.1–21.15} [PTS: M.II,250].}
+Noticing when we can be of service to others, even in small ways, and then doing what we can for them does not just nudge our \textit{mettā} awake, it also arouses many of the best social virtues too. The Buddha said that thinking, speaking and acting with \textit{mettā} encouraged “cordiality and love, respect and togetherness, agreement, harmony and unity.”\footnote {\textit{piyakaraṇā} \textit{garukaraṇā} \textit{sangahāya} \textit{avivādāya} \textit{sāmaggiyā} \textit{ekībhāvāya}, e.g.,\\
+\href{https://suttacentral.net/an6.12/en/sujato}{AN 6.12} [PTS: A.III,289];\\
+\href{https://suttacentral.net/mn48/en/sujato\#6.1}{MN 48:6.1–6.16} [PTS: M.I,322];\\
+\href{https://suttacentral.net/mn104/en/sujato\#21.1}{MN 104:21.1–21.15} [PTS: M.II,250].}
 
-If anything, how we speak can have an even more important role to play than our actions do in cultivating and encouraging \textit{mettā}. Snide comments, put-downs, racial slurs, making fun of people or casting aspersions on them, all create an atmosphere of negativity and exclusion. The Buddha dubbed this sort of thing “stabbing others with the weapon of the tongue.”\footnote {\textit{aññamaññaṁ mukhasattīhi vitudantā}, \href{https://suttacentral.net/mn48/en/sujato\#2.1}{MN 48: 2.1} [PTS: M.I,320].} This colourful idiom is reminiscent of such English phrases as “sharp language,” “cutting speech” and “character assassination.” It is also one that well describes the potentially destructive impact our words can have. By contrast, the Buddha described positive and skillful speech as “gentle, easy on the ear, endearing, going to the heart” and “worthy of being treasured up.”\footnote {\textit{nelā kaṇṇa sukhā pemanīyā hadayaṁ gamā} and \textit{nidhānavatiṁ}, \href{https://suttacentral.net/dn1/en/sujato\#1.9.5}{DN 1:1.9.5} [PTS: D.I,4].} To hold back from vituperation or backbiting when we might otherwise be tempted or provoked to do so, indicates a commitment to kindly restraint. To build others up by encouraging them, praising their genuine strengths and achievements and affirming their value, is love transmitted through sound. More than that, such speech has the ability to bring out the best in people. Beyond one-on-one interaction, positive and skillful speech is significant in the wider society. The Buddha identified loving speech (\textit{peyyavajja} or \textit{piyavācā}) as one of the four bases of community, those qualities that bring people together in harmony and goodwill, and that pre-empt friction between them or sooth it when it does occur.\footnote {The others bases of community (\textit{saṅgaha vatthū}) are generosity (\textit{dāna}), doing good to others (\textit{atthacariyā}) and treating them impartially (\textit{samānattatā}); see<br>\href{https://suttacentral.net/an4.32/en/sujato}{AN 4.32} [PTS: A.II,32];<br>\href{https://suttacentral.net/an8.24/en/sujato}{AN 8.24} [PTS: A.IV,219];<br>\href{https://suttacentral.net/an9.5/en/sujato\#4.1}{AN 9.5:4.1–4.9} [PTS: A.IV,364];<br>\href{https://suttacentral.net/dn30/en/sujato\#1.16.2}{DN 30:1.16.2} [PTS: D.III,152].}
+If anything, how we speak can have an even more important role to play than our actions do in cultivating and encouraging \textit{mettā}. Snide comments, put-downs, racial slurs, making fun of people or casting aspersions on them, all create an atmosphere of negativity and exclusion. The Buddha dubbed this sort of thing “stabbing others with the weapon of the tongue.”\footnote {\textit{aññamaññaṁ mukhasattīhi vitudantā}, \href{https://suttacentral.net/mn48/en/sujato\#2.1}{MN 48: 2.1} [PTS: M.I,320].} This colourful idiom is reminiscent of such English phrases as “sharp language,” “cutting speech” and “character assassination.” It is also one that well describes the potentially destructive impact our words can have. By contrast, the Buddha described positive and skillful speech as “gentle, easy on the ear, endearing, going to the heart” and “worthy of being treasured up.”\footnote {\textit{nelā kaṇṇa sukhā pemanīyā hadayaṁ gamā} and \textit{nidhānavatiṁ}, \href{https://suttacentral.net/dn1/en/sujato\#1.9.5}{DN 1:1.9.5} [PTS: D.I,4].} To hold back from vituperation or backbiting when we might otherwise be tempted or provoked to do so, indicates a commitment to kindly restraint. To build others up by encouraging them, praising their genuine strengths and achievements and affirming their value, is love transmitted through sound. More than that, such speech has the ability to bring out the best in people. Beyond one-on-one interaction, positive and skillful speech is significant in the wider society. The Buddha identified loving speech (\textit{peyyavajja} or \textit{piyavācā}) as one of the four bases of community, those qualities that bring people together in harmony and goodwill, and that pre-empt friction between them or sooth it when it does occur.\footnote {The others bases of community (\textit{saṅgaha vatthū}) are generosity (\textit{dāna}), doing good to others (\textit{atthacariyā}) and treating them impartially (\textit{samānattatā}); see\\
+\href{https://suttacentral.net/an4.32/en/sujato}{AN 4.32} [PTS: A.II,32];\\
+\href{https://suttacentral.net/an8.24/en/sujato}{AN 8.24} [PTS: A.IV,219];\\
+\href{https://suttacentral.net/an9.5/en/sujato\#4.1}{AN 9.5:4.1–4.9} [PTS: A.IV,364];\\
+\href{https://suttacentral.net/dn30/en/sujato\#1.16.2}{DN 30:1.16.2} [PTS: D.III,152].}
 
 In recent years the phrase “random acts of kindness” has become popular and has led to the founding of several organisations promoting the concept and even the designation of certain days for being kind. Some might see such things as well-meaning but cheesy and shallow, self-indulgent even. Buddhaghosa observed that each of the Brahma vihāras had what he called “near enemies” (\textit{āsanna paccatthika})–very good copies of the originals but lacking their depth, strength and authenticity.\footnote {Vism.318-9.} Sentimentality would certainly qualify as a near enemy of \textit{mettā}. However, it is not always easy to determine exactly where genuine efforts to be more loving and kind end and mawkish sentimentality begins. If we are mindful and aware we should be able to distinguish between the two.
 
@@ -1039,7 +1049,6 @@ One day I decided to visit the New Delhi Zoo. When you know how poor people in I
 \begin{epigram-2}
 Speak sincerely, compassionately and with a smile on your face. Look upon everyone you meet with the eyes of joy, whether they be high or low, near or far.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Atisa
 \end{epigram-2-cite}
@@ -1063,7 +1072,6 @@ Once the Buddha was accosted by an extremely belligerent Brahman furious that a 
 \begin{epigram-2}
 Kindness is the language which the deaf can hear and the blind can see.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Mark Twain
 \end{epigram-2-cite}
@@ -1082,7 +1090,6 @@ A mother can genuinely cherish her son but in a way that suffocates and stunts h
 \begin{epigram-2}
 The Dhamma can be explained as abstaining from killing, from stealing and the rest, but being compassionate to all living beings is, I think, the essence of the Dhamma.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Āryaśūra
 \end{epigram-2-cite}
@@ -1099,14 +1106,13 @@ Just as love goes from being projective to becoming pervasive as it transmutes i
 
 Once I was staying with a group of other monks, all of them good Dhamma companions. One very hot afternoon we were sitting together having a discussion about meditation. As I was speaking, a monk who had gone out that morning returned and I invited him to sit and join our discussion, which he did. When he sat down I continued with what I had been saying. A few moments later one of the other monks rose, went outside and returned with a flannel and a glass of cool water for the recently arrived monk. He had been contributing to the conversation and listening to me but this did not prevent him from noticing that the newcomer was hot and thirsty. I, on the other hand, was so absorbed in what I was saying that I had not noticed this.
 
-A great deal of the suffering and unhappiness in the world persists, not because people are necessarily uncaring, selfish or indifferent, but because they just do not notice. Mindfulness allows us to notice, \textit{mettā} compels us to act. Although the capacity for \textit{mettā} is innate within us, it has to be coaxed out and cultivated. Likewise, mindfulness is a naturally occurring ability but it is often deadened by habit and routine and has to be consciously revitalised. Just as \textit{mettā} can be cultivated in two different ways—by practising Metta Meditation and by acting with \textit{mettā}—mindfulness can be cultivated in two ways also, by practising Mindfulness Meditation and by acting mindfully. Different meditation masters teach different techniques of Mindfulness Meditation but all of them involve these elements, arousing a clear-minded awareness of our experience from moment to moment and being detached from it rather than reacting to it. (See <span class="manualLink" data-target="#TOCTarget20">Appendix II</span>)
+A great deal of the suffering and unhappiness in the world persists, not because people are necessarily uncaring, selfish or indifferent, but because they just do not notice. Mindfulness allows us to notice, \textit{mettā} compels us to act. Although the capacity for \textit{mettā} is innate within us, it has to be coaxed out and cultivated. Likewise, mindfulness is a naturally occurring ability but it is often deadened by habit and routine and has to be consciously revitalised. Just as \textit{mettā} can be cultivated in two different ways—by practising Metta Meditation and by acting with \textit{mettā}—mindfulness can be cultivated in two ways also, by practising Mindfulness Meditation and by acting mindfully. Different meditation masters teach different techniques of Mindfulness Meditation but all of them involve these elements, arousing a clear-minded awareness of our experience from moment to moment and being detached from it rather than reacting to it. (See Appendix II)
 
 Of course, if we can only be mindful when we are sitting in meditation we will only ever be mindful of a very small part of our day and the least interesting part of our lives. This leads us to the second way to develop mindfulness—being as mindful as we can during our normal daily activities. In fact, the true purpose of Mindfulness Meditation is to make it more likely that we will have periods of mindfulness when we are not meditating. To help develop this skill we can select some activity that we do every day, perhaps dressing in the morning, preparing breakfast, washing the dishes, tidying our rooms, vacuuming the floor, taking out the garbage, going to the toilet, walking to the bus stop, etc., and make a commitment to try always to do that activity with complete mindfulness.
 
 \begin{epigram-2}
 No one is born hating another person because of the color of his skin, or his background, or his religion. People must learn to hate, and if they can learn to hate, they can be taught to love, for love comes more naturally to the human heart than its opposite.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Nelson Mandela
 \end{epigram-2-cite}
@@ -1124,7 +1130,7 @@ Confucianism took a position similar in some ways to that of Buddhism. Mencius u
 
 \begin{quote}
 
-“No-one can bear to see the sufferings of others. My meaning may be illustrated with this example. If people suddenly see a child about to fall into a well, without exception they will experience alarm and distress. This will not be because they wish to gain some favour from the child’s parents, be praised by their neighbours and friends, or because they fear getting a reputation for callousness. From this example we can say that sympathy is innate in humans.”\footnote {\textit{\cite{The Mencius}} 2A-6.}
+“No-one can bear to see the sufferings of others. My meaning may be illustrated with this example. If people suddenly see a child about to fall into a well, without exception they will experience alarm and distress. This will not be because they wish to gain some favour from the child’s parents, be praised by their neighbours and friends, or because they fear getting a reputation for callousness. From this example we can say that sympathy is innate in humans.”\footnote {\textit{The Mencius (\cite{Mencius 1970a})} 2A-6.}
 
 
 \end{quote}
@@ -1137,7 +1143,6 @@ Some biologists have argued that altruism, the closest they come to discussing l
 \begin{epigram-2}
 We can only learn to love by loving.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Iris Murdock
 \end{epigram-2-cite}
@@ -1156,14 +1161,15 @@ I cannot vouch for the Buddha’s claim that we will be protected by heavenly be
 
 The idea that a loving disposition affects the complexion is an example of this. Popular wisdom says that a person’s heart is written on his or her face, and there is an element of truth in this saying. The complexion is influenced by physical factors such as genetics, health, diet and climate. However, our psychological state has some influence on our complexion and our countenance. Our emotions make the facial muscles expand or contract and this influences blood flow to the skin and thus skin colour. Emotions that have become habitual can cause some muscles to be permanently tight or loose, changing the contours of the face so that the skin becomes smooth or wrinkled. An explosive temper can make the face red and in time cause the capillaries to become visible so that the skin has a blotchy appearance. A persistently angry, critical or haughty outlook can give the skin a dark hue and make the ends of the mouth turn down into a permanent sneer. When love has become a significant part of the personality it gives the eyes and the mouth a particular quality indicative of happiness, contentment and inner peace.
 
-In numerous places throughout the scriptures the Buddha is described as having a golden coloured complexion, exceptionally smooth skin, and clear and radiant features.\footnote {\href{https://suttacentral.net/an3.63/en/sujato\#3.1}{AN 3.63:3.1–3.8} [PTS: A.I,181];<br>\href{https://suttacentral.net/dn30/en/sujato\#1.2.14}{DN 30:1.2.14} [PTS: D.III,143];<br>\href{https://suttacentral.net/snp3.7/en/sujato\#16.1}{Snp 3.7:16.1–16.3} [PTS: Sn.551].} This outer beauty was a direct result of his inner transformation. The experience of awakening had dissolved all the mental defilements creating space for the unrestricted expression of \textit{mettā}, kindness, even-mindedness and clarity. This in turn gave him a beautiful complexion and countenance that lasted even into his old age. He specifically said that being more mindful and practising \textit{mettā} would give the face a radiant colour.\footnote {\href{https://suttacentral.net/sn1.10/en/sujato}{SN 1.10} [PTS: S.I,5].} The iconography of nearly all religions depict saints with halos around their heads, probably a way of suggesting the radiant complexions such individuals actually had.
+In numerous places throughout the scriptures the Buddha is described as having a golden coloured complexion, exceptionally smooth skin, and clear and radiant features.\footnote {\href{https://suttacentral.net/an3.63/en/sujato\#3.1}{AN 3.63:3.1–3.8} [PTS: A.I,181];\\
+\href{https://suttacentral.net/dn30/en/sujato\#1.2.14}{DN 30:1.2.14} [PTS: D.III,143];\\
+\href{https://suttacentral.net/snp3.7/en/sujato\#16.1}{Snp 3.7:16.1–16.3} [PTS: Sn.551].} This outer beauty was a direct result of his inner transformation. The experience of awakening had dissolved all the mental defilements creating space for the unrestricted expression of \textit{mettā}, kindness, even-mindedness and clarity. This in turn gave him a beautiful complexion and countenance that lasted even into his old age. He specifically said that being more mindful and practising \textit{mettā} would give the face a radiant colour.\footnote {\href{https://suttacentral.net/sn1.10/en/sujato}{SN 1.10} [PTS: S.I,5].} The iconography of nearly all religions depict saints with halos around their heads, probably a way of suggesting the radiant complexions such individuals actually had.
 
 For most people loving their parents or children, falling in love, being devoted to their friends, etc. comes easily. It even happens without them trying. What about \textit{mettā}? It might be possible to have a warm nurturing feeling towards all mankind or the whole world in the abstract, when mankind and all beings are at a distance, when they are not making our life difficult or when we are in a good mood. But is it really possible to turn the other cheek when someone strikes us, to keep forgiving wrongdoers up to 77 times, or to feel no hatred towards criminals even as they are cutting us limb from limb?\footnote {Luke 6,27-30; Matthew 18,21-2; \href{https://suttacentral.net/mn21/en/sujato\#20.1}{MN 21:20.1–20.5} [PTS: M.I,129].} Admittedly there have been individuals who have demonstrated an almost superhuman capacity for forgiveness and non-hatred despite terrible cruelty being inflicted on them or their loved ones.
 
 \begin{epigram-2}
 How far you go in life depends on your being tender with the young, compassionate with the aged, sympathetic with the striving and tolerant of the weak and strong. Because someday in life you will have been all of these.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —George Washington Carver
 \end{epigram-2-cite}
@@ -1216,7 +1222,6 @@ However, the highest love and its various expressions have always been given mor
 \begin{epigram-2}
 The Tathāgata’s abode is a mind greatly compassionate towards all beings, his robe is a gentle and forbearing heart, and his seat is concern for all existence.
 \end{epigram-2}
-
 \begin{epigram-2-cite}
 —Saddharmapuṇḍarika Sūtra
 \end{epigram-2-cite}
@@ -1363,41 +1368,47 @@ When you are able to notice as soon as your attention drifts, you are ready to s
 \chapter[App. iii. Love, Kindness and Compassion \\in the Early Buddhist Literature ]{appendix iii\\Love, Kindness and Compassion in the Early Buddhist Literature\markboth{Love, Kindness and Compassion in the Early Buddhist Literature}{OOOO}}
 Quotations with an asterisk are the words of the Buddha’s disciples or of later Buddhist commentators.
 
-<div class="line-block-center">
-\textit{Mettā} should be cultivated<br>
-For oneself and others also.<br>
-All should be suffused with \textit{mettā}<br>
+
+\begin{itemize}
+
+\textit{Mettā} should be cultivated \\ 
+For oneself and others also. \\ 
+All should be suffused with \textit{mettā} \\ 
 This is the teaching of the Buddhas.
 
-</div>
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/mil7.5.5/en/tw_rhysdavids" class="extlink tipref">Mil 7.5.5</a><br>
-<span class="ptsref">PTS: Mil.394</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/mil7.5.5/en/tw_rhysdavids}{Mil 7.5.5}\\
+
+[PTS: Mil.394]
 
-</div>
+\end{flushright}
 Develop the meditation that is \textit{mettā}, for by so doing, hatred will be got rid of. Develop the meditation that is compassion, for by doing so, harming will be got rid of. Develop the meditation that is sympathetic joy, for by doing so, dislike will be got rid of. Develop the meditation that is equanimity, for by doing so, sensory reaction will be got rid of. Develop the meditation on the impure, for by doing so, attachment will be got rid of. Develop the meditation that is the perception of impermanence, for by doing so, the “I am” conceit will be got rid of.
 
-<div class="tight-right-cite">
-<span class="sclinktext">MN&#8239;62:18.1–23.2</span><br>
-<span class="ptsref">PTS: M.I,424</span>
+\begin{flushright}
+\href{https://suttacentral.net/mn62/en/sujato\#18.1}{MN 62:18.1–23.2}\\
+
+[PTS: M.I,424]
 
-</div>
+\end{flushright}
 In whatever place monks dwell in strife and contention, given to arguments and stabbing each other with the weapon of the tongue, I am reluctant to think of going there, let alone actually going there … But wherever monks are dwelling in concord, harmony and agreement, like milk and water mixed, looking upon each other with the eyes of love, I am happy about going there, let alone thinking of going there. I think: “Surely, these monks have given up three things and have cultivated three things. And what three things have they given up? Sensual thoughts, thoughts of ill-will and thoughts of harming. And what three things have they cultivated? Thoughts of letting go, thoughts of love and thoughts of helpfulness.
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;3.124</span><br>
-<span class="ptsref">PTS: A.I,275</span>
+\begin{flushright}
+\href{https://suttacentral.net/an3.124/en/sujato}{AN 3.124}\\
+
+[PTS: A.I,275]
 
-</div>
+\end{flushright}
 Sakka, the ruler of the gods, asked the Lord: “What is it that so constrains gods, humans … and other beings so that despite wanting to live with amity and forgiveness, in harmony, love and without hostility, they nonetheless live with hate and vengeance, conflict, malice and full of hate?”
 
 “Ruler of the gods, it is because gods, humans … and other beings are constrained by jealousy and selfishness so that despite wanting to live with amity and forgiveness, in harmony, love and without hostility, they nonetheless live with hate and vengeance, conflict, malice and full of hate.”
 
-<div class="tight-right-cite">
-<span class="sclinktext">DN&#8239;21:2.1.1–2.1.11</span><br>
-<span class="ptsref">PTS: D.II,276</span>
+\begin{flushright}
+\href{https://suttacentral.net/dn21/en/sujato\#2.1.1}{DN 21:2.1.1–2.1.11}\\
+
+[PTS: D.II,276]
 
-</div>
+\end{flushright}
 Then Venerable Sāriputta said: “There are these five ways of putting away malice that arises. What five? Take the case of a person who is impure in deed but not in word. Suppose a monk who wears rag robes were to see a rag on the road. He would hold it with his left foot, spread it out with his right foot to see if he could make use of it, and then proceed on his way. In the same way, for one who is impure in deed but not in word, his deed ought to be disregarded. Think instead about his ways that are pure.
 
 And concerning one whose words are impure but who is pure in deed, how should malice be put away? Suppose a man, tortured and overcome by heat, exhausted, wearied, craving, and thirsty were to come upon a pond overgrown with mossy slime and water plants. He would dive into the pond, scatter the water plants this way and that, cup his hands, drink, and then go his way refreshed. In the same way, for one whose words are impure but who is pure in deed, his words ought to be disregarded. Think instead about his ways that are pure. And what of one whose words and deeds are both impure, but who occasionally attains mental clarity and calm? Suppose a man, tortured and overcome by heat, exhausted, wearied, craving, and thirsty, were to come upon a puddle in a cow’s footprint.
@@ -1414,220 +1425,248 @@ In the same way, for one whose ways are impure and who cannot even occasionally 
 
 And concerning one whose words and deeds are both pure and who has mental clarity and calm, how should malice be put away? Suppose a man, tortured and overcome by heat, wearied, craving, and thirsty were to come upon a pool of sweet, cool, limpid water, a lovely resting place shaded by all kinds of trees. He would dive into the pond, bathe, drink and then come out and lie in the shade. In the same way, of this person, think about this person’s pure words, deeds and his mental clarity and calm.”
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;5.162</span><br>
-*<span class="ptsref">PTS: A.III,186-7</span>
+\begin{flushright}
+\href{https://suttacentral.net/an5.162/en/sujato}{AN 5.162}\\
+
+*[PTS: A.III,186-7]
 
-</div>
+\end{flushright}
 Speak loving words, words rejoiced at and welcomed, words that bear ill-will to none; always speak lovingly to others.
 
-<div class="tight-right-cite">
-<span class="sclinktext">Snp&#8239;3.3:6.1–6.4</span><br>
-<span class="ptsref">PTS: Sn.452</span>
+\begin{flushright}
+\href{https://suttacentral.net/snp3.3/en/sujato\#6.1}{Snp 3.3:6.1–6.4}\\
+
+[PTS: Sn.452]
 
-</div>
+\end{flushright}
 So long as the monks show bodily acts of \textit{mettā}, verbal acts of \textit{mettā} and mental acts of \textit{mettā} towards each other, both in public and in private, it can be expected that they we will not decline but flourish.
 
-<div class="tight-right-cite">
-<span class="sclinktext">DN&#8239;16:1.11.4–1.11.6</span><br>
-<span class="ptsref">PTS: D.II,80</span>
+\begin{flushright}
+\href{https://suttacentral.net/dn16/en/sujato\#1.11.4}{DN 16:1.11.4–1.11.6}\\
+
+[PTS: D.II,80]
 
-</div>
+\end{flushright}
 A monk should develop \textit{mettā} to himself and to all others, individually and generally. The friendly should be suffused with friendliness, the hostile should be suffused with friendliness, and so should all those in-between. Everyone, individually and generally, should be suffused with \textit{mettā} and compassion, sympathetic joy and equanimity, and one’s behaviour towards them should be motivated by the four Brahmaviharās.
 
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/ja169/en/rouse" class="extlink tipref">Ja 169</a><br>
-*<span class="ptsref">PTS: Ja.II,61</span>
+\begin{flushright}
+\href{https://suttacentral.net/ja169/en/rouse}{Ja 169}\\
+
+*[PTS: Ja.II,61]
 
-</div>
+\end{flushright}
 Practicing \textit{mettā}, equanimity, compassion, freedom (of mind) and sympathetic joy all in good time, you should wander alone like a rhinoceros.
 
-<div class="tight-right-cite">
-<span class="sclinktext">Snp&#8239;1.3:39.1–39.4</span><br>
-<span class="ptsref">PTS: Sn.73</span>
+\begin{flushright}
+\href{https://suttacentral.net/snp1.3/en/sujato\#39.1}{Snp 1.3:39.1–39.4}\\
+
+[PTS: Sn.73]
 
-</div>
+\end{flushright}
 There are these five ways of overcoming resentment which ought to be overcome when it arises. What five? In whomever resentment arises, that one should develop \textit{mettā}. In whomever resentment arises, that one should develop compassion. In whomever resentment arises, that one should develop equanimity. In whomever resentment arises, that one should forget about it, pay no attention to it. In whomever resentment arises, that one should consider the fact that it is of his own making and he should think: “This is of my own making, the outcome of actions; actions are its matrix, actions are its kin and foundation. And whatever one does, good or bad, one will become an heir to that.” In these five ways resentment should be put away.
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;5.161</span><br>
-<span class="ptsref">PTS: A.III,185</span>
+\begin{flushright}
+\href{https://suttacentral.net/an5.161/en/sujato}{AN 5.161}\\
+
+[PTS: A.III,185]
 
-</div>
-<div class="line-block-center">
-Seeing conflict as a danger<br>
-And harmony as peace,<br>
-Abide in unity and kind-heartedness.<br>
+\end{flushright}
+
+\begin{itemize}
+
+Seeing conflict as a danger \\ 
+And harmony as peace, \\ 
+Abide in unity and kind-heartedness. \\ 
 This is the teaching of the Buddhas.
 
-</div>
-<div class="tight-right-cite">
-<span class="sclinktext">Cp&#8239;35:16.1–16.4</span><br>
-*<span class="ptsref">PTS: Cp.371</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/cp35/en/sujato\#16.1}{Cp 35:16.1–16.4}\\
+
+*[PTS: Cp.371]
 
-</div>
+\end{flushright}
 Be unrivalled in \textit{mettā} if you wish to attain awakening.
 
-<div class="tight-right-cite">
-<span class="ptsref">PTS: *Ja.I,24</span>
+\begin{flushright}
+[PTS: *Ja.I,24]
 
-</div>
+\end{flushright}
 There are three types of people in the world. What three? One who is like carving on a rock, one who is like scratching on the ground, and one who is like writing on the water. What sort of person is like carving on a rock? Imagine a certain person who is always getting angry and his anger lasts long, just as carving on a rock is not soon worn off by wind, water or passing time. What sort of person is like scratching on the ground? Imagine a certain person who is always getting angry but his anger does not last long, just as scratching on the ground is soon worn off by the wind, water and passing time. And what sort of person is like writing on the water? Imagine a certain person who, even though spoken to harshly, sharply and roughly, is easily reconciled and becomes agreeable and friendly, just as writing on the water soon disappears.
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;3.132</span><br>
-<span class="ptsref">PTS: A.I,283-84</span>
+\begin{flushright}
+\href{https://suttacentral.net/an3.132/en/sujato}{AN 3.132}\\
+
+[PTS: A.I,283-84]
 
-</div>
+\end{flushright}
 The Venerable Sāriputta said: “When one wishes to correct another, let him establish five things in himself and then do so. What five? He should think: ‘I will speak at an appropriate time, not when it is inappropriate. I will speak about the facts, not fictions. I will speak with gentleness, not with harshness. I will speak meaningfully, not about the meaningless. I will speak with a mind of \textit{mettā}, not with a mind of ill-will.’ When one wishes to instruct another, let him first establish well these five things.”
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;5.167:1.1–2.7</span><br>
-*<span class="ptsref">PTS: A.III.196</span>
+\begin{flushright}
+\href{https://suttacentral.net/an5.167/en/sujato\#1.1}{AN 5.167:1.1–2.7}\\
+
+*[PTS: A.III.196]
 
-</div>
-<div class="line-block-center">
-Always mindful, developing immeasurable \textit{mettā}.<br>
-The fetters are seen to weaken, the defilements destroyed.<br>
-If with a pure mind one has \textit{mettā} for even a single being<br>
-One can be rightfully called skilful.<br>
+\end{flushright}
+
+\begin{itemize}
+
+Always mindful, developing immeasurable \textit{mettā}. \\ 
+The fetters are seen to weaken, the defilements destroyed. \\ 
+If with a pure mind one has \textit{mettā} for even a single being \\ 
+One can be rightfully called skilful. \\ 
 But relating to all beings with sympathy creates abundant merit.
 
-</div>
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;8.1:3.1–4.4</span><br>
-<span class="ptsref">PTS: A.IV.151</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/an8.1/en/sujato\#3.1}{AN 8.1:3.1–4.4}\\
+
+[PTS: A.IV.151]
 
-</div>
+\end{flushright}
 If speech has five qualities it is well-spoken, not ill-spoken, not blamed or condemned by the wise. What five? It is spoken at the appropriate time, truthful, softly, meaningfully, and it is spoken with a mind of \textit{mettā}.
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;5.198</span><br>
-<span class="ptsref">PTS: A.III,243-4</span>
+\begin{flushright}
+\href{https://suttacentral.net/an5.198/en/sujato}{AN 5.198}\\
+
+[PTS: A.III,243-4]
 
-</div>
-<div class="line-block-center">
+\end{flushright}
+
+\begin{itemize}
+
 When with a mind of \textit{mettā}\textit{
 
-}One feels compassion for<br>
-All the world; above, below and across,<br>
-Unlimited and everywhere,<br>
-Filled with infinite kindness,<br>
-Complete and fully developed;<br>
-Any limited actions one may have done<br>
+}One feels compassion for \\ 
+All the world; above, below and across, \\ 
+Unlimited and everywhere, \\ 
+Filled with infinite kindness, \\ 
+Complete and fully developed; \\ 
+Any limited actions one may have done \\ 
 Do not linger in the mind.
 
-</div>
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/ja169/en/rouse" class="extlink tipref">Ja 169</a><br>
-*<span class="ptsref">PTS: Ja.II,61</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/ja169/en/rouse}{Ja 169}\\
+
+*[PTS: Ja.II,61]
 
-</div>
+\end{flushright}
 Thinking about your own welfare is enough to diligently strive for the goal. Thinking about the welfare of others is enough to diligently strive for the goal. Thinking about one’s own and others’ welfare is enough to diligently strive for the goal.
 
-<div class="tight-right-cite">
-<span class="sclinktext">SN&#8239;12.22:3.10–3.12</span><br>
-<span class="ptsref">PTS: S.II,29</span>
+\begin{flushright}
+\href{https://suttacentral.net/sn12.22/en/sujato\#3.10}{SN 12.22:3.10–3.12}\\
+
+[PTS: S.II,29]
 
-</div>
+\end{flushright}
 After fulfilling the Perfections in the past, and sitting at the foot of the Bodhi Tree, they become perfectly awakened Buddhas. Endowed with virtue and concentration, wisdom and freedom, knowledge and insight into freedom, with truth, sympathy, compassion and forbearance, they arouse and develop \textit{mettā} towards all beings.
 
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/ja35/en/chalmers?reference=main/pts#pts-vp-pli213" class="extlink tipref">Ja 35</a><br>
-*<span class="ptsref">PTS: Ja.I,213-14</span>
+\begin{flushright}
+\href{https://suttacentral.net/ja35/en/chalmers?reference=main/pts#pts-vp-pli213}{Ja 35}\\
+
+*[PTS: Ja.I,213-14]
 
-</div>
+\end{flushright}
 Jīvaka said: “Sir, I have heard it said that Brahmā abides to abides in \textit{mettā} but with my eyes I have seen that the Lord abides in \textit{mettā}.” The Lord replied: “Any lust, hatred or delusion which could give rise to ill-will has been abandoned by the Tathāgata, cut off at the root, made like a palm tree stump, finished, unable to grow again in the future. If that is what you are referring to Jīvaka, then I agree with you.”
 
-<div class="tight-right-cite">
-<span class="sclinktext">MN&#8239;55:7.1–7.8</span><br>
-<span class="ptsref">PTS: M.I,369</span>
+\begin{flushright}
+\href{https://suttacentral.net/mn55/en/sujato\#7.1}{MN 55:7.1–7.8}\\
+
+[PTS: M.I,369]
 
-</div>
+\end{flushright}
 Therefore, the Dhamma is well-taught by me, made clear, opened up, made apparent and free from coverings, so that all who have enough faith in me and enough love for me, are bound for heaven.
 
-<div class="tight-right-cite">
-<span class="sclinktext">MN&#8239;22:47.1–47.2</span><br>
-<span class="ptsref">PTS: M.I,142</span>
+\begin{flushright}
+\href{https://suttacentral.net/mn22/en/sujato\#47.1}{MN 22:47.1–47.2}\\
+
+[PTS: M.I,142]
 
-</div>
+\end{flushright}
 As water is poised and naturally cool, even so, the sincere student of meditation, out of compassion for all beings and seeking their welfare, should be possessed of patience, \textit{mettā} and empathy.
 
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/mil7.4.2/en/tw_rhysdavids?reference=main/pts#pts-cs7" class="extlink tipref">Mil 7.4.2</a><br>
-*<span class="ptsref">PTS: Mil.383</span>
+\begin{flushright}
+\href{https://suttacentral.net/mil7.4.2/en/tw_rhysdavids?reference=main/pts#pts-cs7}{Mil 7.4.2}\\
+
+*[PTS: Mil.383]
 
-</div>
-<div class="line-block-center">
-This is what should be done by one skilled in good<br>
-and who aspires to attain that state of peace.<br>
-He should be capable, straightforward,<br>
-  very straightforward,<br>
-easy to speak to, gentle, humble,<br>
-<br>
-Contented, easily supported,<br>
-with few duties and with a simple lifestyle,<br>
-with calmed senses, energetic, not impudent,<br>
-and not greedy about the families he begs from.<br>
-<br>
-He should do nothing mean<br>
-that the wise would rebuke him for,<br>
-and he should think:<br>
-“Let all creatures be safe and happy.”<br>
-<br>
-Whatever beings there be, moving or still,<br>
-long, large, middle-sized or small,<br>
-  significant or insignificant,<br>
-seen or unseen, living near or far,<br>
-  existing or not yet come into existence,<br>
-let them all be happy.<br>
-<br>
-One should not humiliate another,<br>
-or despise anyone anywhere.<br>
-One should not wish pain on another<br>
-out of either anger or disgust.<br>
-<br>
-Just as a mother would protect her<br>
-one and only child with her life,<br>
-so should you cultivate<br>
-an unbounded mind towards all beings,<br>
-<br>
-And \textit{mettā} towards the whole world.<br>
-One should develop an unbounded mind,<br>
-above, below, across, free from obstruction,<br>
-free from hatred, free from rivalry.<br>
-<br>
-And whether standing, walking,<br>
-sitting, or lying down,<br>
-as long as there is no drowsiness,<br>
-one should be mindful.<br>
-This is said to be the highest state here.<br>
-<br>
-Not tangled up in false opinions,<br>
-virtuous, endowed with wisdom,<br>
-no longer greedy for sensual pleasures,<br>
+\end{flushright}
+
+\begin{itemize}
+
+This is what should be done by one skilled in good \\ 
+and who aspires to attain that state of peace. \\ 
+He should be capable, straightforward, \\ 
+  very straightforward, \\ 
+easy to speak to, gentle, humble, \\ 
+ \\ 
+Contented, easily supported, \\ 
+with few duties and with a simple lifestyle, \\ 
+with calmed senses, energetic, not impudent, \\ 
+and not greedy about the families he begs from. \\ 
+ \\ 
+He should do nothing mean \\ 
+that the wise would rebuke him for, \\ 
+and he should think: \\ 
+“Let all creatures be safe and happy.” \\ 
+ \\ 
+Whatever beings there be, moving or still, \\ 
+long, large, middle-sized or small, \\ 
+  significant or insignificant, \\ 
+seen or unseen, living near or far, \\ 
+  existing or not yet come into existence, \\ 
+let them all be happy. \\ 
+ \\ 
+One should not humiliate another, \\ 
+or despise anyone anywhere. \\ 
+One should not wish pain on another \\ 
+out of either anger or disgust. \\ 
+ \\ 
+Just as a mother would protect her \\ 
+one and only child with her life, \\ 
+so should you cultivate \\ 
+an unbounded mind towards all beings, \\ 
+ \\ 
+And \textit{mettā} towards the whole world. \\ 
+One should develop an unbounded mind, \\ 
+above, below, across, free from obstruction, \\ 
+free from hatred, free from rivalry. \\ 
+ \\ 
+And whether standing, walking, \\ 
+sitting, or lying down, \\ 
+as long as there is no drowsiness, \\ 
+one should be mindful. \\ 
+This is said to be the highest state here. \\ 
+ \\ 
+Not tangled up in false opinions, \\ 
+virtuous, endowed with wisdom, \\ 
+no longer greedy for sensual pleasures, \\ 
 such a one does not return to a womb.
 
-</div>
-<div class="tight-right-cite">
-<span class="sclinktext">Snp&#8239;1.8</span><br>
-<span class="ptsref">PTS: Sn.143-152</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/snp1.8/en/sujato}{Snp 1.8}\\
+
+[PTS: Sn.143-152]
 
-</div>
+\end{flushright}
 There is no taste equal to love. The four sweet things given with indifference are not as tasty as coarse millet given with love.
 
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/ja346/en/francis-neil" class="extlink tipref">Ja 346</a><br>
-*<span class="ptsref">PTS: Ja.III,142</span>
+\begin{flushright}
+\href{https://suttacentral.net/ja346/en/francis-neil}{Ja 346}\\
+
+*[PTS: Ja.III,142]
 
-</div>
+\end{flushright}
 Of all the reasons for making merit for the next life, none of them are worth a sixteenth part of the \textit{mettā} that frees the mind. The \textit{mettā} that frees the mind surpasses them and illuminates, glows and shines. Just as the radiance of all stars is not worth a sixteenth part of the moon’s radiance; just as in the last month of the rainy season in the autumn, when the sky is clear and free from clouds, the sun rises into the sky and flashes, radiates and dispels all darkness; just as in the pre-dawn light the healing star shines, flashes and radiates; so too, whatever good deeds one might do for the purpose of a good rebirth, none of them are worth a sixteenth part of that \textit{mettā} which frees the mind. It is the \textit{mettā} that frees the mind which illuminates, glows and shines, surpassing all those good deeds.
 
-<div class="tight-right-cite">
-<span class="sclinktext">Iti&#8239;27</span><br>
-<span class="ptsref">PTS: It.19-20</span>
+\begin{flushright}
+\href{https://suttacentral.net/iti27/en/sujato}{Iti 27}\\
+
+[PTS: It.19-20]
 
-</div>
+\end{flushright}
 \textit{Mettā} is characterised as promoting the welfare of others. Its function is to desire their welfare. It is manifested as the removal of annoyance. Its proximate cause is seeing the lovableness in beings. It succeeds when it makes ill-will subside, and it fails when it gives rise to selfish affection.
 
 Compassion is characterised as removing the suffering of others. Its function is not to be able to beat the suffering of others. It is manifested as kindness. Its proximate cause is seeing helplessness in those overwhelmed by suffering. It succeeds when it makes cruelty subside, and it fails when it gives rise to sorrow.
@@ -1636,42 +1675,47 @@ Sympathetic joy is characterised as joy in the success of others. Its function i
 
 Equanimity is characterised as promoting equipoise towards beings. Its function is to see the equality in beings. It is manifested as quieting like and dislike. Its proximate cause is seeing the ownership of deeds thus: “Beings are heirs to their deeds. Whose, if not theirs, is the choice by which they will become happy, or will be free from suffering, or will not fall away from the success they have reached?” It succeeds when it makes like and dislike subside, and it fails when it gives rise to the indifference of ignorance based on the household life.
 
-<div class="tight-right-cite">
+\begin{flushright}
 *Vism.318
 
-</div>
+\end{flushright}
 With passions gone and faults dispelled, one develops a mind of boundless \textit{mettā}. Fully aware both day and night one suffuses this boundlessness [of mind] in all directions.
 
-<div class="tight-right-cite">
-<span class="sclinktext">Snp&#8239;3.5:25.1–25.4</span><br>
-<span class="ptsref">PTS: Sn.507</span>
+\begin{flushright}
+\href{https://suttacentral.net/snp3.5/en/sujato\#25.1}{Snp 3.5:25.1–25.4}\\
+
+[PTS: Sn.507]
 
-</div>
-<div class="line-block-center">
-Overcome anger with love,<br>
-Evil with good,<br>
-Meanness with generosity,<br>
+\end{flushright}
+
+\begin{itemize}
+
+Overcome anger with love, \\ 
+Evil with good, \\ 
+Meanness with generosity, \\ 
 And lies with truth.
 
-</div>
-<div class="tight-right-cite">
-<span class="sclinktext">Dhp&#8239;223</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/dhp223/en/sujato}{Dhp 223}
 
-</div>
+\end{flushright}
 If one were to give the gift of a hundred coins in the morning, again at noon and once again at night, or instead, if one were to develop the mind of \textit{mettā} in the morning, again at noon and once again at night, even for as long as it takes to pull a cow’s udder, this would be by far the more beneficial of the two. Therefore, you should train yourself thinking: “We will develop the liberation of the mind through \textit{mettā}. We will practice it often. We will make it our vehicle and foundation. We will take our stand upon it, store it up and promote it.”
 
-<div class="tight-right-cite">
-<span class="sclinktext">SN&#8239;20.4</span><br>
-<span class="ptsref">PTS: S.II,264</span>
+\begin{flushright}
+\href{https://suttacentral.net/sn20.4/en/sujato}{SN 20.4}\\
+
+[PTS: S.II,264]
 
-</div>
+\end{flushright}
 As hot water softens anything that can be softened and makes it pliable, so too the words of the Tathāgata even when harsh are for good purpose and are imbued with compassion.
 
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/mil5.3.4/en/tw_rhysdavids?reference=main/pts#pts-vp-pli172" class="extlink tipref">Mil 5.3.4</a><br>
-*<span class="ptsref">PTS: Mil.172</span>
+\begin{flushright}
+\href{https://suttacentral.net/mil5.3.4/en/tw_rhysdavids?reference=main/pts#pts-vp-pli172}{Mil 5.3.4}\\
+
+*[PTS: Mil.172]
 
-</div>
+\end{flushright}
 A noble disciple who is without longing and hatred, who is unconfused and has all-around awareness dwells pervading the four directions with a mind filled with \textit{mettā}, compassion, sympathetic joy, and equanimity. Above, below, across and everywhere, to all as to himself he dwells pervading the whole world with a mind filled with \textit{mettā}, compassion, sympathetic joy and equanimity that is expansive, pervasive, immeasurable and utterly devoid of hatred or enmity. Such a disciple has these four confidences.
 
 He can think: “If there is another world, if good and bad deeds have a result, then when my body disintegrates after death I will be reborn in a good place or in a heaven realm.”
@@ -1682,132 +1726,152 @@ This is the second confidence he has. Or he can think: “If one who is evil is 
 
 This is the third confidence he has. Or he can think: “If one who is evil is not repaid with evil I am pure nonetheless.”
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;3.65:42.1–47.2</span><br>
-<span class="ptsref">PTS: A.I,192</span>
+\begin{flushright}
+\href{https://suttacentral.net/an3.65/en/sujato\#42.1}{AN 3.65:42.1–47.2}\\
+
+[PTS: A.I,192]
 
-</div>
+\end{flushright}
 As a mongoose approaches a snake to seize it only after having supplied his own body with an antidote, so too the sincere student of meditation, on encountering this world abounding as it is in anger and malice, plagued by quarrels, strife, contention and hatred, must first anoint his mind with the antidote of \textit{mettā}.
 
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/mil7.5.5/en/tw_rhysdavids" class="extlink tipref">Mil 7.5.5</a><br>
-*<span class="ptsref">PTS: Mil.394</span>
+\begin{flushright}
+\href{https://suttacentral.net/mil7.5.5/en/tw_rhysdavids}{Mil 7.5.5}\\
+
+*[PTS: Mil.394]
 
-</div>
+\end{flushright}
 The naked ascetic Kassapa said to the Lord: “Good, Gotama, it is hard to be a true monk, it is hard to be a true brahman.” The Lord said: “That is what the world says Kassapa. But if a naked ascetic was to practice all kinds of self-mortification, and if this was the measure of difficulty, then it would not be true to say that it is hard to be a true ascetic or a true brahman. And why? Because anyone—a householder, his son, even a slave girl who draws water, could go naked and practice self-mortification. But there is another type of asceticism about which it is really correct to say that it is hard to be a true ascetic, a true brahman. When one develops a mind free from hatred or ill-will, full of \textit{mettā}, and by the destruction of the defilements dwells with a mind freed through insight, then that one is a really a true ascetic, a true brahman.”
 
-<div class="tight-right-cite">
-<span class="sclinktext">DN&#8239;8:16.1–16.30</span><br>
-<span class="ptsref">PTS: D.I,168</span>
+\begin{flushright}
+\href{https://suttacentral.net/dn8/en/sujato\#16.1}{DN 8:16.1–16.30}\\
+
+[PTS: D.I,168]
 
-</div>
+\end{flushright}
 The monk who abides in \textit{mettā} and has faith in the Buddha’s dispensation will walk the path of peace and attain the happiness of the cessation of conditioned things.
 
-<div class="tight-right-cite">
-<span class="sclinktext">Dhp&#8239;368</span>
+\begin{flushright}
+\href{https://suttacentral.net/dhp368/en/sujato}{Dhp 368}
 
-</div>
+\end{flushright}
 A tree makes no distinction in the shade it gives. So too, the sincere student of meditation must make no distinction between any beings, but must develop \textit{mettā} quite equally towards thieves, murderers, enemies and towards himself, thinking: “How may these beings be without enmity and without harm, how may they be at peace, secure and happy; how may they look after themselves?”
 
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/mil7.7.5/en/tw_rhysdavids?reference=main/pts#pts-vp-pli410" class="extlink tipref">Mil 7.7.5</a><br>
-*<span class="ptsref">PTS: Mil.410</span>
+\begin{flushright}
+\href{https://suttacentral.net/mil7.7.5/en/tw_rhysdavids?reference=main/pts#pts-vp-pli410}{Mil 7.7.5}\\
+
+*[PTS: Mil.410]
 
-</div>
-<div class="line-block-center">
-For the mindful one, there is always good;<br>
-For the mindful one, happiness increases;<br>
-For the mindful one, things go better;<br>
-And yet he is not freed from hate.<br>
-But one who both day and night<br>
-Takes delight in harmlessness,<br>
-Sharing \textit{mettā} with all that lives—<br>
+\end{flushright}
+
+\begin{itemize}
+
+For the mindful one, there is always good; \\ 
+For the mindful one, happiness increases; \\ 
+For the mindful one, things go better; \\ 
+And yet he is not freed from hate. \\ 
+But one who both day and night \\ 
+Takes delight in harmlessness, \\ 
+Sharing \textit{mettā} with all that lives— \\ 
 That one has hate for none.
 
-</div>
-<div class="tight-right-cite">
-<span class="sclinktext">SN&#8239;10.4:2.1–4.4</span><br>
-<span class="ptsref">PTS: S.I,208</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/sn10.4/en/sujato\#2.1}{SN 10.4:2.1–4.4}\\
+
+[PTS: S.I,208]
 
-</div>
+\end{flushright}
 What is a monk’s wealth? Concerning this, one abides with the mind filled with \textit{mettā}, compassion, sympathetic joy and equanimity, suffusing the first, second, third, and fourth quarters of the world with them. One abides suffusing the whole world, upwards, downwards, across, everywhere, with a mind filled with \textit{mettā}, compassion, sympathetic joy and equanimity, abundant, unbounded, without hatred, without ill-will. This is a monk’s wealth.
 
-<div class="tight-right-cite">
-<span class="sclinktext">DN&#8239;26:28.19–28.24</span><br>
-<span class="ptsref">PTS: D.III,78</span>
+\begin{flushright}
+\href{https://suttacentral.net/dn26/en/sujato\#28.19}{DN 26:28.19–28.24}\\
+
+[PTS: D.III,78]
 
-</div>
+\end{flushright}
 The teacher cares for the disciples as a bird inspects her egg, a yak guards her tail, a mother her beloved child or a one-eyed man his only eye.
 
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/ja408/en/francis-neil" class="extlink tipref">Ja 408</a><br>
-*<span class="ptsref">PTS: Ja.III,375</span>
+\begin{flushright}
+\href{https://suttacentral.net/ja408/en/francis-neil}{Ja 408}\\
+
+*[PTS: Ja.III,375]
 
-</div>
-<div class="line-block-center">
-Just as water cools both good and bad,<br>
-And washes away all impurity and dust,<br>
+\end{flushright}
+
+\begin{itemize}
+
+Just as water cools both good and bad, \\ 
+And washes away all impurity and dust, \\ 
 In the same way you should develop thoughts of \textit{mettā}\textit{
 
-}To friend and foe alike,<br>
-And having reached perfection in \textit{mettā},<br>
+}To friend and foe alike, \\ 
+And having reached perfection in \textit{mettā}, \\ 
 You will attain awakening.
 
-</div>
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/bv2/pli/ms#158.1" class="extlink">Bv 2:158.1–159.4</a><br>
-*<span class="ptsref">PTS: Ja.I,24</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/bv2/pli/ms#158.1}{Bv 2:158.1–159.4}\\
+
+*[PTS: Ja.I,24]
 
-</div>
+\end{flushright}
 At that time, the Lord said to the monks: “Once upon a time, a bamboo acrobat set up his pole, called to his pupil, and said: ‘Now, my boy, climb the pole and stand on my shoulders’. ‘Alright, master’, said the pupil, and he did as he was told. Then the master said: ‘Now, my boy, you protect me and I will protect you, and protected and watched by each other we will do our act, get a good fee, and come down safe and sound from the bamboo pole’. But then the pupil said: ‘No master, no! That will not do. You look after yourself, and I will look after myself and thus watched and guarded each by himself, we will do our act, get a good fee, and come down safe and sound from the bamboo pole. That is the way to do it.’” Then the Lord said: “Just as the pupil said to the master ‘I will protect myself’ so should you practise the four foundations of mindfulness, which also means ‘I will protect others’. By protecting oneself, one protects others and by protecting others, one protects oneself. And how does one protect others by protecting oneself? It is by the repeated and frequent practice of meditation. And how does one protect oneself by protecting others? It is by practising patience, harmlessness, \textit{mettā} and empathy.”
 
-<div class="tight-right-cite">
-<span class="sclinktext">SN&#8239;47.19</span><br>
-<span class="ptsref">PTS: S.V,168-9</span>
+\begin{flushright}
+\href{https://suttacentral.net/sn47.19/en/sujato}{SN 47.19}\\
+
+[PTS: S.V,168-9]
 
-</div>
-<div class="line-block-center">
-I am a friend to all, a helper to all.<br>
-I am sympathetic to all beings.<br>
-I develop a mind full of \textit{mettā},<br>
-And delight always in harmlessness.<br>
-<br>
-I gladden my mind.<br>
-I make it immovable and unshakable.<br>
-I develop the Brahmavihāras<br>
+\end{flushright}
+
+\begin{itemize}
+
+I am a friend to all, a helper to all. \\ 
+I am sympathetic to all beings. \\ 
+I develop a mind full of \textit{mettā}, \\ 
+And delight always in harmlessness. \\ 
+ \\ 
+I gladden my mind. \\ 
+I make it immovable and unshakable. \\ 
+I develop the Brahmavihāras \\ 
 Not cultivated by evil people.
 
-</div>
-<div class="tight-right-cite">
-<span class="sclinktext">Thag&#8239;14.1:4.1–5.4</span><br>
-*<span class="ptsref">PTS: Th.645-649</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/thag14.1/en/sujato\#4.1}{Thag 14.1:4.1–5.4}\\
+
+*[PTS: Th.645-649]
 
-</div>
+\end{flushright}
 The noble quality of \textit{mettā} should be thought about like this: “One concerned only with his own welfare, without concern for others, cannot achieve success in this world or happiness in the next. How then can one wishing to help all beings but not having \textit{mettā} for himself succeed in attaining Nirvana? And if you wish to lead all beings to Nirvana, you should begin by wishing for their mundane welfare here and now.” One should think: “I cannot provide for the welfare and happiness of others merely by wishing it. Let me make an effort to accomplish it.” One should think: “Now I support them by promoting their welfare and happiness, and later they will be my companions in sharing the Dhamma.” Then one should think: “Without these beings, I could not perfect the requisites of awakening. Because they are the reason for practicing and perfecting all the Buddha-like qualities, these beings are for me the highest field of merit, the incomparable basis for planting wholesome roots, and thus the ultimate object of reverence.” So one should arouse an especially strong inclination towards promoting the welfare of all beings. And why should \textit{mettā} be developed towards all beings? Because it is the foundation of compassion. For when one delights in providing for the welfare and happiness of other beings with an unbounded heart, the desire to remove their afflictions and suffering becomes strongly and firmly established. And compassion is the pre-eminent quality in Buddhahood; it is its basis, its foundation, its root, its head and its chief.
 
-<div class="tight-right-cite">
-*<span class="ptsref">PTS: Cp-a.292</span>
+\begin{flushright}
+*[PTS: Cp-a.292]
 
-</div>
-<div class="line-block-center">
-With passions gone, faults dispelled<br>
-And with diligence both day and night<br>
-One should suffuse all directions<br>
+\end{flushright}
+
+\begin{itemize}
+
+With passions gone, faults dispelled \\ 
+And with diligence both day and night \\ 
+One should suffuse all directions \\ 
 With a mind of boundless \textit{mettā}.
 
-</div>
-<div class="tight-right-cite">
-<span class="sclinktext">Snp&#8239;3.5:25.1–25.4</span><br>
-<span class="ptsref">PTS: Sn.507</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/snp3.5/en/sujato\#25.1}{Snp 3.5:25.1–25.4}\\
+
+[PTS: Sn.507]
 
-</div>
+\end{flushright}
 Giving up ill-will and hatred, one abides with a mind of kindly compassion for all living beings and purifies the mind of that ill-will and hatred … Giving up the taking of life, and laying aside the stick and the sword, one abides with care, kindness and compassion for all living beings.
 
-<div class="tight-right-cite">
-<span class="sclinktext">DN&#8239;2:43.1–63.6</span><br>
-<span class="ptsref">PTS: D.I,63;71</span>
+\begin{flushright}
+\href{https://suttacentral.net/dn2/en/sujato\#43.1}{DN 2:43.1–63.6}\\
+
+[PTS: D.I,63;71]
 
-</div>
+\end{flushright}
 “That noble disciple who is without longing or hatred, who is unconfused, with all-around awareness and constant mindfulness, dwells pervading the four directions with a mind filled with \textit{mettā}, compassion, sympathetic joy and equanimity. Above, below, across and everywhere, to all as to himself, he dwells pervading the whole world with a mind filled with \textit{mettā}, compassion, sympathetic joy and equanimity that is expansive, pervasive, immeasurable and utterly devoid of hatred or enmity. And he knows: “Previously, my mind was narrow and undeveloped but now it is immeasurable and well developed. No measurable \textit{kamma} remains or lingers in it. Now what do you think monks? If from his childhood a young man were to develop freedom of the mind by either \textit{mettā} or compassion, sympathetic joy or equanimity would he do any bad action?”
 
 “No Lord.”
@@ -1818,106 +1882,123 @@ Giving up ill-will and hatred, one abides with a mind of kindly compassion for a
 
 “Therefore, a man or a woman should develop this liberation of the mind by \textit{mettā} and compassion, sympathetic joy and equanimity. No man or woman can take their body with them when they die. The core of beings is the mind. The noble disciple knows: ‘Whatever bad kamma I did in the past with this deed-born body will have all its results here. When the liberation of the mind by \textit{mettā}, compassion, sympathetic joy and equanimity has been developed in this way, it leads a wise person to non-returning, should he not reach a higher attainment.”
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;10.219</span><br>
-<span class="ptsref">PTS: A,V,299-300</span>
+\begin{flushright}
+\href{https://suttacentral.net/an10.219/en/sujato}{AN 10.219}\\
+
+[PTS: A,V,299-300]
 
-</div>
+\end{flushright}
 Say a person dwells pervading the four directions with a mind filled with \textit{mettā}. Above, below, across and everywhere, to all as to himself, he dwells pervading the whole world with a mind filled with \textit{mettā} that is expansive, pervasive, immeasurable and utterly devoid of hatred or enmity. He savours it, desires it, delights in it. If he makes it stable, emphasises it, and spends time in it without falling away from it by the time he dies, then he is reborn amongst the heavenly host of Brahmā. The lifespan of the heavenly host is an eon. A person not yet awakened will remain there until his heavenly life is over and then he will be reborn maybe in purgatory, in the animal realm, or perhaps as a hungry spirit. A disciple of the Lord would remain there until his heavenly life is over too, but then he will attain complete Nirvana. This is the difference, the dissimilarity, the distinction and between the future and the rebirth of an instructed noble disciple and an uninstructed ordinary person.
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;4.125:1.3–1.9</span><br>
-<span class="ptsref">PTS: A.II,129</span>
+\begin{flushright}
+\href{https://suttacentral.net/an4.125/en/sujato\#1.3}{AN 4.125:1.3–1.9}\\
+
+[PTS: A.II,129]
 
-</div>
+\end{flushright}
 What is a harmonious gathering? It is a gathering in which the monks live in concord, harmony and agreement, like milk and water mixed, looking upon each other with the eyes of \textit{mettā}. This is called a harmonious gathering. And when they live like this they create much merit, they live in the highest manner, that is to say, in the liberation of the mind through sympathetic joy. When one is glad, joy arises, being joyful the body becomes tranquil, when the body is tranquil one feels happiness and when one is happy the mind becomes concentrated.
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;3.95:4.1–5.3</span><br>
-<span class="ptsref">PTS: A.I,243</span>
+\begin{flushright}
+\href{https://suttacentral.net/an3.95/en/sujato\#4.1}{AN 3.95:4.1–5.3}\\
+
+[PTS: A.I,243]
 
-</div>
+\end{flushright}
 Just as it is difficult for bands of robbers to attack those families with few women but many men, so too, it is difficult for non-humans to attack one who had developed and cultivated the liberation of the mind through \textit{mettā}.
 
-<div class="tight-right-cite">
-<span class="sclinktext">SN&#8239;20.3:1.4–1.5</span><br>
-<span class="ptsref">PTS: S.II,264</span>
+\begin{flushright}
+\href{https://suttacentral.net/sn20.3/en/sujato\#1.4}{SN 20.3:1.4–1.5}\\
+
+[PTS: S.II,264]
 
-</div>
+\end{flushright}
 There are these four basis of community. What four? Generosity and loving speech, doing good to others, and treating them impartially.
 
-<div class="line-block-center">
-Generosity and loving speech,<br>
-doing good and impartiality,<br>
-done here and there in the world<br>
-are like the linchpin keeping chariot moving.<br>
-If these community bonds did not exist,<br>
-Neither mother or father would receive<br>
+
+\begin{itemize}
+
+Generosity and loving speech, \\ 
+doing good and impartiality, \\ 
+done here and there in the world \\ 
+are like the linchpin keeping chariot moving. \\ 
+If these community bonds did not exist, \\ 
+Neither mother or father would receive \\ 
 the honor and respect they deserve.
 
-</div>
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;4.32</span><br>
-<span class="ptsref">PTS: A.II,32</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/an4.32/en/sujato}{AN 4.32}\\
+
+[PTS: A.II,32]
 
-</div>
+\end{flushright}
 There are these four types of people found in the world. What four? Those who is concerned with neither their own welfare or the welfare of others; those concerned with the welfare of others but not their own; those concerned with their own welfare but not that of others; and those who is concerned with both his own welfare and that of others. Imagine a fire stick burning at both ends and smeared with cow dung in the middle; it would be useless as timber in either the village or the forest. The first people are like this. Those who are concerned with the welfare of others but not their own are better than this. Those who are concerned with their own welfare but not that of others’ are better and more excellent still. But those who are concerned with both his own and other’s welfare are, of these four types, the best, most excellent, the highest and the supreme. Just as from milk comes cream, from cream comes butter, from butter comes ghee and from ghee comes the skimming of ghee, and that is considered the best; so too, of these four types of people found in the world those who are concerned with both their own and others’ welfare are the best, most excellent, the highest and the supreme.
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;4.95</span><br>
-<span class="ptsref">PTS: A.II,96</span>
+\begin{flushright}
+\href{https://suttacentral.net/an4.95/en/sujato}{AN 4.95}\\
+
+[PTS: A.II,96]
 
-</div>
+\end{flushright}
 Having five qualities one who nurses the sick is qualified to do so. What five? He can prepare the medicine. He knows what medicine is suitable and what is not, and administers only the suitable. He nurses the sick with a mind of \textit{mettā}, not out of desire for gain. He is unmoved when he has to deal with stool and urine, vomit and spittle. And from time to time he is able to instruct, inspire, enthuse and cheer the sick with the Dhamma.
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;5.124</span><br>
-<span class="ptsref">PTS: A.III,144</span>
+\begin{flushright}
+\href{https://suttacentral.net/an5.124/en/sujato}{AN 5.124}\\
+
+[PTS: A.III,144]
 
-</div>
+\end{flushright}
 For the attaining the highest knowledge and conduct reputation based on status, family or such notions as: “You are worthy of me!” or; “You are not worthy of me!” means nothing. Such things are suitable only when giving or taking in marriage. Those who are entranced by reputation based on status, family or such notions as: “You are worthy of me” or: “You are not worthy of me!” are far from attaining the highest knowledge and conduct. Rather, it is by abandoning such notions that one attains the highest knowledge and conduct.
 
-<div class="tight-right-cite">
-<span class="sclinktext">DN&#8239;3:2.1.2–2.1.7</span><br>
-<span class="ptsref">PTS: D.I,99</span>
+\begin{flushright}
+\href{https://suttacentral.net/dn3/en/sujato\#2.1.2}{DN 3:2.1.2–2.1.7}\\
+
+[PTS: D.I,99]
 
-</div>
+\end{flushright}
 With wealth earned by energetic striving, gathered by strength of arm and acquired by sweat of brow, righteously and lawfully, a clansman should honor, revere and worship his parents. And they being so honoured revered and worshipped will relate to him with a beautiful mind and with empathy, saying: “May you live long and may you always be protected!” When a clansman’s parents relate to him with empathy it can be expected that he will flourish and not decline.
 
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;5.58:6.2–6.5</span><br>
-<span class="ptsref">PTS: A.III,76-7</span>
+\begin{flushright}
+\href{https://suttacentral.net/an5.58/en/sujato\#6.2}{AN 5.58:6.2–6.5}\\
+
+[PTS: A.III,76-7]
 
-</div>
-<div class="line-block-center">
-To the gods and those who have passed away,<br>
-to beings everywhere be they but creeping things,<br>
-having respect and \textit{mettā} for them<br>
+\end{flushright}
+
+\begin{itemize}
+
+To the gods and those who have passed away, \\ 
+to beings everywhere be they but creeping things, \\ 
+having respect and \textit{mettā} for them \\ 
 is a true benediction to all living things.
 
-</div>
-<div class="tight-right-cite">
-<a href="https://suttacentral.net/ja453/en/rouse?reference=main/pts#pts-vp-pli75" class="extlink tipref">Ja 453</a><br>
-<span class="ptsref">PTS: Ja.IV,75</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/ja453/en/rouse?reference=main/pts#pts-vp-pli75}{Ja 453}\\
+
+[PTS: Ja.IV,75]
 
-</div>
-<div class="line-block-center">
-All the sacrificial rituals are not worth a sixteenth<br>
-of a mind nourished by \textit{mettā},<br>
-any more than all the stars can match<br>
-the radiance of the moon.<br>
-<br>
-Not killing or encouraging killing,<br>
-not conquering or encouraging conquest,<br>
-and freed from hatred towards anyone,<br>
+\end{flushright}
+
+\begin{itemize}
+
+All the sacrificial rituals are not worth a sixteenth \\ 
+of a mind nourished by \textit{mettā}, \\ 
+any more than all the stars can match \\ 
+the radiance of the moon. \\ 
+ \\ 
+Not killing or encouraging killing, \\ 
+not conquering or encouraging conquest, \\ 
+and freed from hatred towards anyone, \\ 
 are those who have \textit{mettā} for everyone.
 
-</div>
-<div class="tight-right-cite">
-<span class="sclinktext">AN&#8239;8.1:6.1–7.4</span><br>
- <span class="ptsref">PTS: A.IV,151</span>
+\end{itemize}
+\begin{flushright}
+\href{https://suttacentral.net/an8.1/en/sujato\#6.1}{AN 8.1:6.1–7.4}\\
+
+ [PTS: A.IV,151]
 
-</div>
+\end{flushright}
 \chapter[References & Bibliography]{\\References & Bibliography\markboth{References & Bibliography}{OOOO}}
 All references are to the volume number (Roman numerals) and page number (Arabic numerals) or where relevant to verse numbers of the Pali Text Society’s editions of the Pāḷi Buddhist scriptures, their commentaries and the Mahāvastu.
 

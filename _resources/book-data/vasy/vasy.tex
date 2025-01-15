@@ -11,6 +11,7 @@
 \usepackage{verse}
 \usepackage[unicode, pdfauthor={Bhikkhu Sunyo}, pdftitle={Viññāṇa Anidassana: the state of boundless consciousness}, pdfsubject={Buddhism}, pdfkeywords={Buddhism}, pdfcreator={Wiswo-texBuilder}, hyperfootnotes=false]{hyperref} 
 \usepackage{emptypage}
+\usepackage{quoting}
 
 %links and cites
 \hypersetup{
@@ -117,7 +118,7 @@
 
 \counterwithout{footnote}{chapter}
 \usepackage[hang,flushmargin,bottom]{footmisc}
-\setlength{\footnotemargin}{5mm}
+\setlength{\footnotemargin}{6mm}
 
 %Make footnote non-superscript
 \makeatletter%%
@@ -145,12 +146,26 @@
 \tolerance=800
 \emergencystretch=3pt
 
+\usepackage{noindentafter}
+\NoIndentAfterEnv{epigram-2-cite}
+
 \newenvironment{epigram-2}%
 {%
-\begin{center}\begin{itshape}
-\Huge
+\vspace{1em}
+\noindent
+\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\begin{itshape}
+\large
 }%
-{\end{itshape}\end{center}
+{\end{itshape}\endquoting
+}%
+
+\newenvironment{epigram-2-cite}%
+{%
+\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\noindent\normal\hspace*{\fill} 
+}%
+{\endquoting\vspace{1em}
 }%
 
 \hyphenation{manu-scripts}

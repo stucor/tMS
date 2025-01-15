@@ -19,6 +19,6 @@
 \contentsline {chapter}{App. i. Instructions for Metta Meditation}{145}{chapter*.20}%
 \contentsline {chapter}{App. ii. Instructions for Mindfulness Meditation}{149}{chapter*.21}%
 \contentsline {chapter}{App. iii. Love, Kindness and Compassion \\in the Early Buddhist Literature }{153}{chapter*.22}%
-\contentsline {chapter}{References & Bibliography}{171}{chapter*.23}%
-\contentsline {section}{Abbreviations}{172}{section*.24}%
-\contentsline {section}{Bibliography}{172}{section*.25}%
+\contentsline {chapter}{References & Bibliography}{173}{chapter*.23}%
+\contentsline {section}{Abbreviations}{174}{section*.24}%
+\contentsline {section}{Bibliography}{174}{section*.25}%

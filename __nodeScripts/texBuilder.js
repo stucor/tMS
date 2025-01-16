@@ -337,8 +337,14 @@ function processLineBlocks () {
 function processBlockquotes () {
     let allBQArr = bookRoot.querySelectorAll('blockquote')
     for (i in allBQArr) {
-       let tempHTML = allBQArr[i].innerHTML;
-       allBQArr[i].replaceWith (`\\begin{quote}\n\r${tempHTML.replaceAll(`\\end{itemize}\n\r\\begin{itemize}`, '')}\n\r\\end{quote}`) // the replaceAll here cleans up the multiple line-block items in the itemize
+       let tempHTML = allBQArr[i].innerHTML.replaceAll(`\r\n`,``)
+       let doublequoteHang = ``
+       //console.log (JSON.stringify(tempHTML[0]))
+       if (tempHTML[0] == `“`) {
+        doublequoteHang = `\\hspace{-0.4em}`
+       }
+       //console.log(tempHTML)
+       allBQArr[i].replaceWith (`\\begin{quote}\n\r${doublequoteHang}${tempHTML.replaceAll(`\\end{itemize}\n\r\\begin{itemize}`, '')}\n\r\\end{quote}`) // the replaceAll here cleans up the multiple line-block items in the itemize
     }
 }
 
@@ -377,12 +383,12 @@ function processTables () {
        let headerTEX = ``
 
        if (caption == 'Abbreviations') {
-            headerTEX = `\\section{${caption}}\r\n`;
+            headerTEX = `\r\n\\section{${caption}}\r\n`;
        }
 
        let startTEX = `\\bgroup\r\n\\def\\arraystretch{1.2}\r\n\\begin{tabular}{${tabularStr}}\r\n`
 
-       let endTEX = `\r\n\\end{tabular}\\\r\n\\egroup`
+       let endTEX = `\r\n\\end{tabular}\\\\\r\n\\egroup\\\\\r\n`
 
        let newTEX = headerTEX + startTEX + allTableRowsTEX + endTEX
 
@@ -598,8 +604,6 @@ let preamble = `
 }%
 {\\endquoting
 }%
-
-
 
 %\\hyphenation{manu-scripts}
 

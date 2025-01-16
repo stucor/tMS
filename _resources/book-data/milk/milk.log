@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  15 JAN 2025 13:29
+This is LuaHBTeX, Version 1.18.1 (MiKTeX 24.4) (format=lualatex 2025.1.2)  16 JAN 2025 12:45
  restricted system commands enabled.
 **../_resources/book-data/milk/milk.tex
 (../_resources/book-data/milk/milk.tex
@@ -499,26 +499,26 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (C:/Data/tMS/books/_resources/book-data/milk/milk.aux)
 \openout1 = milk.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -582,67 +582,67 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 217.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 217.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 217.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 217.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 217.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 217.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 217.
-LaTeX Font Info:    Redeclaring math accent \check on input line 217.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 217.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 217.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 217.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 217.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 215.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 215.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 215.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 215.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 215.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 215.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 215.
+LaTeX Font Info:    Redeclaring math accent \check on input line 215.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 215.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 215.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 215.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 215.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 215.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 217.
+(Font)              `operators' in the math version `normal' on input line 215.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/GentiumBookPlus(0)/m/n on input line
- 217.
+ 215.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 217.
+(Font)              `operators' in the math version `bold' on input line 215.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/GentiumBookPlus(0)/m/n on input lin
-e 217.
+e 215.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/GentiumBookPlus(0)/m/n --> TU/GentiumBookPlus(0)/m/n
- on input line 217.
+ on input line 215.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/GentiumBookPlus(0)/m/it on input li
-ne 217.
+ne 215.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/GentiumBookPlus(0)/b/n on input lin
-e 217.
+e 215.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/LinuxBiolinumO(0)/m/n on input line
- 217.
+ 215.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 217.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 215.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/GentiumBookPlus(0)/m/n --> TU/GentiumBookPlus(0)/b/n
- on input line 217.
+ on input line 215.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/GentiumBookPlus(0)/b/it on input l
-ine 217.
+ine 215.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/LinuxBiolinumO(0)/b/n on input lin
-e 217.
+e 215.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 217.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 215.
 
 ("C:/Program Files/MiKTeX/tex/latex/graphics/color.sty"
 Package: color 2024/06/23 v1.3e Standard LaTeX Color (DPC)
@@ -653,27 +653,27 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: luatex.def on input line 149.
 
 ("C:/Program Files/MiKTeX/tex/latex/graphics/mathcolor.ltx"))
-Package hyperref Info: Link coloring ON on input line 217.
+Package hyperref Info: Link coloring ON on input line 215.
 
 (C:/Data/tMS/books/_resources/book-data/milk/milk.out)
 (C:/Data/tMS/books/_resources/book-data/milk/milk.out)
 \@outlinefile=\write3
 
 \openout3 = milk.out
-LaTeX Info: Redefining \microtypecontext on input line 217.
-Package microtype Info: Applying patch `item' on input line 217.
-Package microtype Info: Applying patch `toc' on input line 217.
-Package microtype Info: Applying patch `eqnum' on input line 217.
-Package microtype Info: Applying patch `footnote' on input line 217.
-Package microtype Info: Applying patch `verbatim' on input line 217.
-LaTeX Info: Redefining \microtypesetup on input line 217.
+LaTeX Info: Redefining \microtypecontext on input line 215.
+Package microtype Info: Applying patch `item' on input line 215.
+Package microtype Info: Applying patch `toc' on input line 215.
+Package microtype Info: Applying patch `eqnum' on input line 215.
+Package microtype Info: Applying patch `footnote' on input line 215.
+Package microtype Info: Applying patch `verbatim' on input line 215.
+LaTeX Info: Redefining \microtypesetup on input line 215.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 217.
+LaTeX Info: Redefining \showhyphens on input line 215.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -685,7 +685,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 File: ../_resources/book-data/milk/FrontLarge.jpg Graphic file (type jpg)
 <use ../_resources/book-data/milk/FrontLarge.jpg>
 Package luatex.def Info: ../_resources/book-data/milk/FrontLarge.jpg  used on i
-nput line 223.
+nput line 221.
 (luatex.def)             Requested size: 289.07925pt x 433.61893pt.
 
 
@@ -704,7 +704,7 @@ t>
 File: ../_resources/images/icons/logo-enso-large.png Graphic file (type png)
 <use ../_resources/images/icons/logo-enso-large.png>
 Package luatex.def Info: ../_resources/images/icons/logo-enso-large.png  used o
-n input line 241.
+n input line 239.
 (luatex.def)             Requested size: 25.95584pt x 25.2934pt.
 
 
@@ -715,12 +715,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
  []
 
 ! Misplaced alignment tab character &.
-l.254 ...d Edition in 2016.\\\noindent This Wisdom &
+l.252 ...d Edition in 2016.\\\noindent This Wisdom &
                                                   amp; Wonders online editio...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -730,12 +730,12 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
  []
 
@@ -746,23 +746,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 256--257
 [5
 
 ]
-! Misplaced alignment tab character &.
-<argument> \Hy@toclinkstart {References &
-                               Bibliography}\Hy@toclinkend 
-l.22 ...References & Bibliography}{173}{chapter*.23}
-                                                  %
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 23.
-("C:/Program Files/MiKTeX/tex/latex/microtype/mt-cmr.cfg"
+ ("C:/Program Files/MiKTeX/tex/latex/microtype/mt-cmr.cfg"
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 ))
@@ -779,7 +767,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.296 ...edgements\markboth{Acknowledgements}{OOOO}}
+l.294 ...edgements\markboth{Acknowledgements}{OOOO}}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -802,7 +790,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.300 ...\Introduction\markboth{Introduction}{OOOO}}
+l.298 ...\Introduction\markboth{Introduction}{OOOO}}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -814,14 +802,10 @@ Underfull \vbox (badness 1231) has occurred while \output is active []
 
 
 [3]
-
-LaTeX Warning: Citation `Samararatne 2007' on page 4 undefined on input line 31
-0.
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.317 
+l.315 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -833,7 +817,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.317 
+l.315 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -855,57 +839,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [6]
-
-LaTeX Warning: Citation `Singer 2009a' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Singer 2009b' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Singer 2009c' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Singer 2009d' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Sorokin 1954' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Fromm 1956' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `May 2012' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Sternberg and Barnes 1988' on page 7 undefined on inpu
-t line 337.
-
-
-LaTeX Warning: Citation `Phillips and Taylor 2009' on page 7 undefined on input
- line 337.
-
-
-LaTeX Warning: Citation `Nyanaponika 1958' on page 7 undefined on input line 33
-7.
-
-
-LaTeX Warning: Citation `Hanh 1996' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Hanh 1998' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Salzberg 1995' on page 7 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Dalai Lama 2001a' on page 7 undefined on input line 33
-7.
-
-
-LaTeX Warning: Citation `Dalai Lama 2001b' on page 7 undefined on input line 33
-7.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -920,7 +853,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.363 
+l.358 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -932,7 +865,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.363 
+l.358 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -944,16 +877,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [10]
-
-LaTeX Warning: Citation `Peck 1997' on page 11 undefined on input line 365.
-
-
-LaTeX Warning: Citation `Parkes 2009' on page 11 undefined on input line 368.
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.371 S
+l.366 S
      ome modern thinkers see the defining feature of love as “robust conce...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -965,7 +892,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.371 S
+l.366 S
      ome modern thinkers see the defining feature of love as “robust conce...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -985,7 +912,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.386 \begin{epigram-2-cite}
+l.381 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -999,7 +926,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.403 
+l.398 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1011,7 +938,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.403 
+l.398 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1026,7 +953,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.409 
+l.404 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1038,7 +965,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.409 
+l.404 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1063,7 +990,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.438 \begin{epigram-2-cite}
+l.433 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1074,7 +1001,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.443 
+l.438 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1086,7 +1013,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.443 
+l.438 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1101,7 +1028,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.445 ...ts#pts-vp-pli328}{Ja 532} [PTS: Ja.V,328].}
+l.440 ...ts#pts-vp-pli328}{Ja 532} [PTS: Ja.V,328].}
                                                    But this is not the movem...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1110,7 +1037,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.445 ...ts#pts-vp-pli328}{Ja 532} [PTS: Ja.V,328].}
+l.440 ...ts#pts-vp-pli328}{Ja 532} [PTS: Ja.V,328].}
                                                    But this is not the movem...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1119,7 +1046,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.445 ...ts#pts-vp-pli328}{Ja 532} [PTS: Ja.V,328].}
+l.440 ...ts#pts-vp-pli328}{Ja 532} [PTS: Ja.V,328].}
                                                    But this is not the movem...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1128,7 +1055,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.448 P
+l.443 P
      eople often talk about what they call “unconditional love.” If we c...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1140,7 +1067,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.448 P
+l.443 P
      eople often talk about what they call “unconditional love.” If we c...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1152,13 +1079,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [19]
-
-LaTeX Warning: Citation `May 2012' on page 20 undefined on input line 451.
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.455 
+l.450 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1170,7 +1094,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.455 
+l.450 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1198,7 +1122,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.482 \begin{epigram-2-cite}
+l.477 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1209,7 +1133,7 @@ and I'll forget about whatever was undefined.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.489 ...overs quarrels are the renewal of love.”}
+l.484 ...overs quarrels are the renewal of love.”}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1218,7 +1142,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.489 ...overs quarrels are the renewal of love.”}
+l.484 ...overs quarrels are the renewal of love.”}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1227,7 +1151,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.489 ...overs quarrels are the renewal of love.”}
+l.484 ...overs quarrels are the renewal of love.”}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1236,7 +1160,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.490 
+l.485 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1248,7 +1172,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.490 
+l.485 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1263,7 +1187,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.499 
+l.494 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1275,7 +1199,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.499 
+l.494 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1290,7 +1214,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.505 
+l.500 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1302,7 +1226,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.505 
+l.500 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1317,7 +1241,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.510 \begin{epigram-2-cite}
+l.505 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1328,7 +1252,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.518 
+l.513 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1340,7 +1264,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.518 
+l.513 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1355,7 +1279,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.526 \chapter
+l.521 \chapter
             [3. All in the Family]{chapter 3\\All in the Family\markboth{All...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1367,7 +1291,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.526 \chapter
+l.521 \chapter
             [3. All in the Family]{chapter 3\\All in the Family\markboth{All...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1386,7 +1310,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 5
-l.527 ...mali#54.5.2}{Kd 1:54.5.2} [PTS: Vin.I,83].}
+l.522 ...mali#54.5.2}{Kd 1:54.5.2} [PTS: Vin.I,83].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1395,7 +1319,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 5
-l.527 ...mali#54.5.2}{Kd 1:54.5.2} [PTS: Vin.I,83].}
+l.522 ...mali#54.5.2}{Kd 1:54.5.2} [PTS: Vin.I,83].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1404,7 +1328,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 5
-l.527 ...mali#54.5.2}{Kd 1:54.5.2} [PTS: Vin.I,83].}
+l.522 ...mali#54.5.2}{Kd 1:54.5.2} [PTS: Vin.I,83].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1413,7 +1337,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.531 
+l.526 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1425,7 +1349,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.531 
+l.526 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1440,7 +1364,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.533 ...s#pts-vp-pli376}{Ja 542} [PTS: Ja.VI.376].}
+l.528 ...s#pts-vp-pli376}{Ja 542} [PTS: Ja.VI.376].}
                                                    Apart from loving and nur...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1449,7 +1373,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.533 ...s#pts-vp-pli376}{Ja 542} [PTS: Ja.VI.376].}
+l.528 ...s#pts-vp-pli376}{Ja 542} [PTS: Ja.VI.376].}
                                                    Apart from loving and nur...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1458,7 +1382,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.533 ...s#pts-vp-pli376}{Ja 542} [PTS: Ja.VI.376].}
+l.528 ...s#pts-vp-pli376}{Ja 542} [PTS: Ja.VI.376].}
                                                    Apart from loving and nur...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1467,7 +1391,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.537 
+l.532 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1479,7 +1403,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.537 
+l.532 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1494,7 +1418,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.542 \begin{epigram-2-cite}
+l.537 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1505,7 +1429,7 @@ and I'll forget about whatever was undefined.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.553 ...ts#pts-vp-pli500}{Ja 537} [PTS: Ja.V,500].}
+l.548 ...ts#pts-vp-pli500}{Ja 537} [PTS: Ja.V,500].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1514,7 +1438,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.553 ...ts#pts-vp-pli500}{Ja 537} [PTS: Ja.V,500].}
+l.548 ...ts#pts-vp-pli500}{Ja 537} [PTS: Ja.V,500].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1523,7 +1447,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.553 ...ts#pts-vp-pli500}{Ja 537} [PTS: Ja.V,500].}
+l.548 ...ts#pts-vp-pli500}{Ja 537} [PTS: Ja.V,500].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1532,7 +1456,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.554 
+l.549 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1544,7 +1468,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.554 
+l.549 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1559,7 +1483,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 2
-l.562 ....3}{Kd 1:25.6.3–25.6.4} [PTS: Vin.I,45].}
+l.556 ....3}{Kd 1:25.6.3–25.6.4} [PTS: Vin.I,45].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1568,7 +1492,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 2
-l.562 ....3}{Kd 1:25.6.3–25.6.4} [PTS: Vin.I,45].}
+l.556 ....3}{Kd 1:25.6.3–25.6.4} [PTS: Vin.I,45].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1577,7 +1501,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 2
-l.562 ....3}{Kd 1:25.6.3–25.6.4} [PTS: Vin.I,45].}
+l.556 ....3}{Kd 1:25.6.3–25.6.4} [PTS: Vin.I,45].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1586,7 +1510,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.572 
+l.564 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1598,7 +1522,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.572 
+l.564 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1613,7 +1537,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.577 \begin{epigram-2-cite}
+l.569 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1624,7 +1548,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.585 
+l.577 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1636,7 +1560,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.585 
+l.577 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1651,7 +1575,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.591 
+l.583 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1663,7 +1587,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.591 
+l.583 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1678,7 +1602,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.596 \chapter
+l.588 \chapter
             [4. Until the Mountains are Washed to the Sea]{chapter 4\\Until ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1690,7 +1614,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.596 \chapter
+l.588 \chapter
             [4. Until the Mountains are Washed to the Sea]{chapter 4\\Until ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1709,7 +1633,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.600 ...s#pts-vp-pli323}{Ja 546} [PTS: Ja.VI,323].}
+l.592 ...s#pts-vp-pli323}{Ja 546} [PTS: Ja.VI,323].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1718,7 +1642,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.600 ...s#pts-vp-pli323}{Ja 546} [PTS: Ja.VI,323].}
+l.592 ...s#pts-vp-pli323}{Ja 546} [PTS: Ja.VI,323].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1727,7 +1651,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.600 ...s#pts-vp-pli323}{Ja 546} [PTS: Ja.VI,323].}
+l.592 ...s#pts-vp-pli323}{Ja 546} [PTS: Ja.VI,323].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1742,7 +1666,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.609 \begin{epigram-2-cite}
+l.601 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1753,7 +1677,7 @@ and I'll forget about whatever was undefined.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.615 ...s#pts-vp-pli205}{Ja 223} [PTS: Ja.II,205].}
+l.607 ...s#pts-vp-pli205}{Ja 223} [PTS: Ja.II,205].}
                                                    The Buddha considered che...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1762,7 +1686,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.615 ...s#pts-vp-pli205}{Ja 223} [PTS: Ja.II,205].}
+l.607 ...s#pts-vp-pli205}{Ja 223} [PTS: Ja.II,205].}
                                                    The Buddha considered che...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1771,7 +1695,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.615 ...s#pts-vp-pli205}{Ja 223} [PTS: Ja.II,205].}
+l.607 ...s#pts-vp-pli205}{Ja 223} [PTS: Ja.II,205].}
                                                    The Buddha considered che...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1780,7 +1704,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.615 ...s#pts-vp-pli122}{Ja 194} [PTS: Ja.II,122].}
+l.607 ...s#pts-vp-pli122}{Ja 194} [PTS: Ja.II,122].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1789,7 +1713,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.615 ...s#pts-vp-pli122}{Ja 194} [PTS: Ja.II,122].}
+l.607 ...s#pts-vp-pli122}{Ja 194} [PTS: Ja.II,122].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1798,7 +1722,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.615 ...s#pts-vp-pli122}{Ja 194} [PTS: Ja.II,122].}
+l.607 ...s#pts-vp-pli122}{Ja 194} [PTS: Ja.II,122].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1807,7 +1731,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.618 A
+l.610 A
      lthough the Buddha did not advocate any particular type of marriage, th...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1819,7 +1743,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.618 A
+l.610 A
      lthough the Buddha did not advocate any particular type of marriage, th...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1834,7 +1758,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.618 ...s#pts-vp-pli316}{Ja 489} [PTS: Ja.IV,316].}
+l.610 ...s#pts-vp-pli316}{Ja 489} [PTS: Ja.IV,316].}
                                                    These and other problems ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1843,7 +1767,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.618 ...s#pts-vp-pli316}{Ja 489} [PTS: Ja.IV,316].}
+l.610 ...s#pts-vp-pli316}{Ja 489} [PTS: Ja.IV,316].}
                                                    These and other problems ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1852,7 +1776,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.618 ...s#pts-vp-pli316}{Ja 489} [PTS: Ja.IV,316].}
+l.610 ...s#pts-vp-pli316}{Ja 489} [PTS: Ja.IV,316].}
                                                    These and other problems ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1861,7 +1785,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.618 ...s#pts-vp-pli286}{Ja 546} [PTS: Ja.VI,286].}
+l.610 ...s#pts-vp-pli286}{Ja 546} [PTS: Ja.VI,286].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1870,7 +1794,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.618 ...s#pts-vp-pli286}{Ja 546} [PTS: Ja.VI,286].}
+l.610 ...s#pts-vp-pli286}{Ja 546} [PTS: Ja.VI,286].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1879,7 +1803,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.618 ...s#pts-vp-pli286}{Ja 546} [PTS: Ja.VI,286].}
+l.610 ...s#pts-vp-pli286}{Ja 546} [PTS: Ja.VI,286].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1888,7 +1812,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.622 
+l.614 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1900,7 +1824,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.622 
+l.614 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1915,7 +1839,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.630 \begin{epigram-2-cite}
+l.622 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1926,7 +1850,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.635 
+l.627 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1938,7 +1862,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.635 
+l.627 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1953,7 +1877,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.637 ...pts#pts-vp-pli53}{Ja 447} [PTS: Ja.IV,53].}
+l.629 ...pts#pts-vp-pli53}{Ja 447} [PTS: Ja.IV,53].}
                                                    A good wife is praised as...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1962,7 +1886,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.637 ...pts#pts-vp-pli53}{Ja 447} [PTS: Ja.IV,53].}
+l.629 ...pts#pts-vp-pli53}{Ja 447} [PTS: Ja.IV,53].}
                                                    A good wife is praised as...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1971,7 +1895,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.637 ...pts#pts-vp-pli53}{Ja 447} [PTS: Ja.IV,53].}
+l.629 ...pts#pts-vp-pli53}{Ja 447} [PTS: Ja.IV,53].}
                                                    A good wife is praised as...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1980,7 +1904,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.637 ...ts#pts-vp-pli63}{Ja 318} [PTS: Ja.III,63].}
+l.629 ...ts#pts-vp-pli63}{Ja 318} [PTS: Ja.III,63].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1989,7 +1913,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.637 ...ts#pts-vp-pli63}{Ja 318} [PTS: Ja.III,63].}
+l.629 ...ts#pts-vp-pli63}{Ja 318} [PTS: Ja.III,63].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1998,7 +1922,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.637 ...ts#pts-vp-pli63}{Ja 318} [PTS: Ja.III,63].}
+l.629 ...ts#pts-vp-pli63}{Ja 318} [PTS: Ja.III,63].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2007,7 +1931,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.641 
+l.633 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2019,7 +1943,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.641 
+l.633 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2034,7 +1958,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.643 \chapter
+l.635 \chapter
             [5. I Was a Stranger and You Took Me In]{chapter 5\\I Was a Stra...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2046,7 +1970,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.643 \chapter
+l.635 \chapter
             [5. I Was a Stranger and You Took Me In]{chapter 5\\I Was a Stra...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2068,7 +1992,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.656 \begin{epigram-2-cite}
+l.648 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2079,7 +2003,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.661 
+l.653 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2091,7 +2015,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.661 
+l.653 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2106,7 +2030,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 1
-l.678 ...d 18:1.1.1–2.3.20} [PTS: Vin.II,207-11].}
+l.667 ...d 18:1.1.1–2.3.20} [PTS: Vin.II,207-11].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2115,7 +2039,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 1
-l.678 ...d 18:1.1.1–2.3.20} [PTS: Vin.II,207-11].}
+l.667 ...d 18:1.1.1–2.3.20} [PTS: Vin.II,207-11].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2124,7 +2048,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 1
-l.678 ...d 18:1.1.1–2.3.20} [PTS: Vin.II,207-11].}
+l.667 ...d 18:1.1.1–2.3.20} [PTS: Vin.II,207-11].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2133,7 +2057,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.679 
+l.668 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2145,7 +2069,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.679 
+l.668 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2160,7 +2084,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.681 ...s#pts-vp-pli310}{Ja 546} [PTS: Ja.VI,310].}
+l.670 ...s#pts-vp-pli310}{Ja 546} [PTS: Ja.VI,310].}
                                                    The Milindapañha, a Budd...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2169,7 +2093,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.681 ...s#pts-vp-pli310}{Ja 546} [PTS: Ja.VI,310].}
+l.670 ...s#pts-vp-pli310}{Ja 546} [PTS: Ja.VI,310].}
                                                    The Milindapañha, a Budd...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2178,7 +2102,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.681 ...s#pts-vp-pli310}{Ja 546} [PTS: Ja.VI,310].}
+l.670 ...s#pts-vp-pli310}{Ja 546} [PTS: Ja.VI,310].}
                                                    The Milindapañha, a Budd...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2187,7 +2111,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.681 ...#pts-vp-pli107}{Mil 5.1.2} [PTS: Mil.107].}
+l.670 ...#pts-vp-pli107}{Mil 5.1.2} [PTS: Mil.107].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2196,7 +2120,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.681 ...#pts-vp-pli107}{Mil 5.1.2} [PTS: Mil.107].}
+l.670 ...#pts-vp-pli107}{Mil 5.1.2} [PTS: Mil.107].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2205,7 +2129,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.681 ...#pts-vp-pli107}{Mil 5.1.2} [PTS: Mil.107].}
+l.670 ...#pts-vp-pli107}{Mil 5.1.2} [PTS: Mil.107].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2214,7 +2138,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.687 \begin{epigram-2-cite}
+l.676 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2225,7 +2149,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.692 
+l.681 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2237,7 +2161,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.692 
+l.681 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2252,7 +2176,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.698 
+l.687 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2264,7 +2188,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.698 
+l.687 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2281,7 +2205,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.708 
+l.697 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2293,7 +2217,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.708 
+l.697 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2310,7 +2234,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.710 ...#pts-vp-pli335}{Ja 533} [PTS: Ja.V,335-6].}
+l.699 ...#pts-vp-pli335}{Ja 533} [PTS: Ja.V,335-6].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2319,7 +2243,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.710 ...#pts-vp-pli335}{Ja 533} [PTS: Ja.V,335-6].}
+l.699 ...#pts-vp-pli335}{Ja 533} [PTS: Ja.V,335-6].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2328,7 +2252,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.710 ...#pts-vp-pli335}{Ja 533} [PTS: Ja.V,335-6].}
+l.699 ...#pts-vp-pli335}{Ja 533} [PTS: Ja.V,335-6].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2337,7 +2261,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.713 I
+l.702 I
      n the months before the Buddha’s passing, the illness that would even...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2349,7 +2273,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.713 I
+l.702 I
      n the months before the Buddha’s passing, the illness that would even...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2364,7 +2288,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.720 
+l.709 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2376,7 +2300,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.720 
+l.709 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2391,7 +2315,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.725 \begin{epigram-2-cite}
+l.714 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2402,7 +2326,7 @@ and I'll forget about whatever was undefined.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.729 ...pts#pts-vp-pli365}{Ja 83} [PTS: Ja.I,365].}
+l.718 ...pts#pts-vp-pli365}{Ja 83} [PTS: Ja.I,365].}
                                                    These virtues imply kindn...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2411,7 +2335,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.729 ...pts#pts-vp-pli365}{Ja 83} [PTS: Ja.I,365].}
+l.718 ...pts#pts-vp-pli365}{Ja 83} [PTS: Ja.I,365].}
                                                    These virtues imply kindn...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2420,7 +2344,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.729 ...pts#pts-vp-pli365}{Ja 83} [PTS: Ja.I,365].}
+l.718 ...pts#pts-vp-pli365}{Ja 83} [PTS: Ja.I,365].}
                                                    These virtues imply kindn...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2429,7 +2353,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.732 S
+l.721 S
      ometimes shared passions kindle friendship; sometimes it is an unexpect...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2441,7 +2365,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.732 S
+l.721 S
      ometimes shared passions kindle friendship; sometimes it is an unexpect...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2456,7 +2380,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.745 
+l.733 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2468,7 +2392,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.745 
+l.733 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2483,7 +2407,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.759 \begin{epigram-2}
+l.745 \begin{epigram-2}
                      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2495,7 +2419,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.759 \begin{epigram-2}
+l.745 \begin{epigram-2}
                      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2510,7 +2434,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.762 \begin{epigram-2-cite}
+l.748 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2518,14 +2442,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-LaTeX Warning: Citation `Kornfield 1993' on page 57 undefined on input line 766
-.
-
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 2
-l.772 ....1}{Kd 1:25.6.1–25.8.2} [PTS: Vin.I,45].}
+l.758 ....1}{Kd 1:25.6.1–25.8.2} [PTS: Vin.I,45].}
                                                    Likewise, those who share...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2534,7 +2454,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 2
-l.772 ....1}{Kd 1:25.6.1–25.8.2} [PTS: Vin.I,45].}
+l.758 ....1}{Kd 1:25.6.1–25.8.2} [PTS: Vin.I,45].}
                                                    Likewise, those who share...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2543,7 +2463,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 2
-l.772 ....1}{Kd 1:25.6.1–25.8.2} [PTS: Vin.I,45].}
+l.758 ....1}{Kd 1:25.6.1–25.8.2} [PTS: Vin.I,45].}
                                                    Likewise, those who share...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2552,7 +2472,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.773 
+l.759 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2564,7 +2484,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.773 
+l.759 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2579,7 +2499,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.775 \chapter
+l.761 \chapter
             [7. Self-sacrificing Love]{chapter 7\\Self-sacrificing Love\mark...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2591,7 +2511,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.775 \chapter
+l.761 \chapter
             [7. Self-sacrificing Love]{chapter 7\\Self-sacrificing Love\mark...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2606,7 +2526,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.776 ...s#pts-vp-pli587}{Ja 547} [PTS: Ja.VI,587].}
+l.762 ...s#pts-vp-pli587}{Ja 547} [PTS: Ja.VI,587].}
                                                    One is reminded of what J...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2615,7 +2535,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.776 ...s#pts-vp-pli587}{Ja 547} [PTS: Ja.VI,587].}
+l.762 ...s#pts-vp-pli587}{Ja 547} [PTS: Ja.VI,587].}
                                                    One is reminded of what J...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2624,7 +2544,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.776 ...s#pts-vp-pli587}{Ja 547} [PTS: Ja.VI,587].}
+l.762 ...s#pts-vp-pli587}{Ja 547} [PTS: Ja.VI,587].}
                                                    One is reminded of what J...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2633,7 +2553,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.779 T
+l.765 T
      here are numerous stories in the early Buddhist literature lauding lovi...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2645,7 +2565,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.779 T
+l.765 T
      here are numerous stories in the early Buddhist literature lauding lovi...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2667,7 +2587,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.791 \begin{epigram-2-cite}
+l.777 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2678,7 +2598,7 @@ and I'll forget about whatever was undefined.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.798 ...pts#pts-vp-pli151}{Ja 12} [PTS: Ja.I,151].}
+l.784 ...pts#pts-vp-pli151}{Ja 12} [PTS: Ja.I,151].}
                                                    that he was prepared to g...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2687,7 +2607,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.798 ...pts#pts-vp-pli151}{Ja 12} [PTS: Ja.I,151].}
+l.784 ...pts#pts-vp-pli151}{Ja 12} [PTS: Ja.I,151].}
                                                    that he was prepared to g...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2696,7 +2616,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.798 ...pts#pts-vp-pli151}{Ja 12} [PTS: Ja.I,151].}
+l.784 ...pts#pts-vp-pli151}{Ja 12} [PTS: Ja.I,151].}
                                                    that he was prepared to g...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2705,7 +2625,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.799 
+l.785 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2717,7 +2637,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.799 
+l.785 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2732,7 +2652,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.832 
+l.818 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2744,7 +2664,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.832 
+l.818 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2756,13 +2676,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [62]
-
-LaTeX Warning: Citation `Dayal 1970' on page 63 undefined on input line 843.
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.844 
+l.829 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2774,7 +2691,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.844 
+l.829 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2789,7 +2706,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.852 \begin{epigram-2-cite}
+l.835 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2797,17 +2714,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-LaTeX Warning: Citation `Droge and Tabor 1992' on page 64 undefined on input li
-ne 856.
-
-
-LaTeX Warning: Citation `Ohnuma 2008' on page 64 undefined on input line 856.
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.860 
+l.843 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2819,7 +2729,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.860 
+l.843 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2834,7 +2744,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.869 
+l.852 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2846,7 +2756,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.869 
+l.852 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2858,13 +2768,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [65]
-
-LaTeX Warning: Citation `Titmuss 1970' on page 66 undefined on input line 874.
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.877 \chapter
+l.860 \chapter
             [8. Forbidden Love]{chapter 8\\Forbidden Love\markboth{Forbidden...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2876,7 +2783,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.877 \chapter
+l.860 \chapter
             [8. Forbidden Love]{chapter 8\\Forbidden Love\markboth{Forbidden...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2891,7 +2798,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.882 
+l.865 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2903,7 +2810,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.882 
+l.865 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2920,7 +2827,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.887 \begin{epigram-2-cite}
+l.870 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2934,7 +2841,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.903 \begin{epigram-2-cite}
+l.886 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2950,7 +2857,7 @@ and I'll forget about whatever was undefined.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.920 ...#pts-vp-pli401}{Ja 413} [PTS: Ja.III,401].}
+l.903 ...#pts-vp-pli401}{Ja 413} [PTS: Ja.III,401].}
                                                    All Indian religions, but...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2959,7 +2866,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.920 ...#pts-vp-pli401}{Ja 413} [PTS: Ja.III,401].}
+l.903 ...#pts-vp-pli401}{Ja 413} [PTS: Ja.III,401].}
                                                    All Indian religions, but...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -2968,19 +2875,16 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.920 ...#pts-vp-pli401}{Ja 413} [PTS: Ja.III,401].}
+l.903 ...#pts-vp-pli401}{Ja 413} [PTS: Ja.III,401].}
                                                    All Indian religions, but...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
-
-
-LaTeX Warning: Citation `Lecky 1890b' on page 71 undefined on input line 920.
 
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.923 I
+l.906 I
      n India during the Buddha’s time people were generally kindly to anim...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -2992,7 +2896,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.923 I
+l.906 I
      n India during the Buddha’s time people were generally kindly to anim...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3009,7 +2913,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.929 \begin{epigram-2-cite}
+l.912 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3018,15 +2922,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Jātakamāla' on page 72 undefined on input line 933.
-
-
-LaTeX Warning: Citation `Speyer 1895a' on page 72 undefined on input line 933.
+LaTeX Warning: Citation `Jātakamāla' on page 72 undefined on input line 916.
 
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.934 
+l.917 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3038,7 +2939,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.934 
+l.917 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3053,7 +2954,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 7
-l.951 ... Pj 2:7.27.1–7.27.17} [PTS: Vin.III,62].}
+l.931 ... Pj 2:7.27.1–7.27.17} [PTS: Vin.III,62].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3062,7 +2963,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 7
-l.951 ... Pj 2:7.27.1–7.27.17} [PTS: Vin.III,62].}
+l.931 ... Pj 2:7.27.1–7.27.17} [PTS: Vin.III,62].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3071,7 +2972,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 7
-l.951 ... Pj 2:7.27.1–7.27.17} [PTS: Vin.III,62].}
+l.931 ... Pj 2:7.27.1–7.27.17} [PTS: Vin.III,62].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3080,7 +2981,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.952 
+l.932 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3092,7 +2993,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.952 
+l.932 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3107,7 +3008,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 6
-l.954 ...1}{Kd 16:6.1.1–6.4.8} [PTS: Vin.II,162].}
+l.934 ...1}{Kd 16:6.1.1–6.4.8} [PTS: Vin.II,162].}
                                                    On another occasion he ob...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3116,7 +3017,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 6
-l.954 ...1}{Kd 16:6.1.1–6.4.8} [PTS: Vin.II,162].}
+l.934 ...1}{Kd 16:6.1.1–6.4.8} [PTS: Vin.II,162].}
                                                    On another occasion he ob...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3125,7 +3026,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 6
-l.954 ...1}{Kd 16:6.1.1–6.4.8} [PTS: Vin.II,162].}
+l.934 ...1}{Kd 16:6.1.1–6.4.8} [PTS: Vin.II,162].}
                                                    On another occasion he ob...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3134,7 +3035,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.960 T
+l.940 T
      his is one of the reasons some people find it easy to love their pets, ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3146,7 +3047,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.960 T
+l.940 T
      his is one of the reasons some people find it easy to love their pets, ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3161,7 +3062,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 3
-l.966 ...d 17:3.11.1–3.13.4} [PTS: Vin.II,195-6].}
+l.946 ...d 17:3.11.1–3.13.4} [PTS: Vin.II,195-6].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3170,7 +3071,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 3
-l.966 ...d 17:3.11.1–3.13.4} [PTS: Vin.II,195-6].}
+l.946 ...d 17:3.11.1–3.13.4} [PTS: Vin.II,195-6].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3179,7 +3080,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 3
-l.966 ...d 17:3.11.1–3.13.4} [PTS: Vin.II,195-6].}
+l.946 ...d 17:3.11.1–3.13.4} [PTS: Vin.II,195-6].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3188,7 +3089,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.969 \begin{epigram-2}
+l.949 \begin{epigram-2}
                      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3200,7 +3101,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.969 \begin{epigram-2}
+l.949 \begin{epigram-2}
                      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3215,7 +3116,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.972 \begin{epigram-2-cite}
+l.952 \begin{epigram-2-cite}
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3226,7 +3127,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.980 
+l.960 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3238,7 +3139,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.980 
+l.960 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3267,7 +3168,7 @@ Underfull \vbox (badness 1231) has occurred while \output is active []
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.999 
+l.979 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3279,7 +3180,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.999 
+l.979 
     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3294,8 +3195,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1002 
-     
+l.982 
+    
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -3306,8 +3207,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1002 
-     
+l.982 
+    
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -3321,8 +3222,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1007 \begin{epigram-2-cite}
-                           
+l.987 \begin{epigram-2-cite}
+                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -3332,8 +3233,8 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1015 
-     
+l.995 
+    
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -3344,8 +3245,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1015 
-     
+l.995 
+    
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -3359,7 +3260,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1021 
+l.1001 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3371,7 +3272,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1021 
+l.1001 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3383,14 +3284,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [83]
-
-LaTeX Warning: Citation `Malalasekera and Jayatilleke 1974' on page 84 undefine
-d on input line 1023.
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1027 
+l.1007 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3402,7 +3299,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1027 
+l.1007 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3417,7 +3314,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1035 T
+l.1015 T
       he famous Parable of the Good Samaritan is emblematic of Jesus’ idea...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3429,7 +3326,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1035 T
+l.1015 T
       he famous Parable of the Good Samaritan is emblematic of Jesus’ idea...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3444,7 +3341,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1059 ‘
+l.1034 ‘
         I have dysentery, Lord.’
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3456,7 +3353,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1059 ‘
+l.1034 ‘
         I have dysentery, Lord.’
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3471,7 +3368,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 2
-l.1080 ...d 8:26.1.1–26.3.13} [PTS: Vin.I,301-2].}
+l.1048 ...d 8:26.1.1–26.3.13} [PTS: Vin.I,301-2].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3480,7 +3377,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 2
-l.1080 ...d 8:26.1.1–26.3.13} [PTS: Vin.I,301-2].}
+l.1048 ...d 8:26.1.1–26.3.13} [PTS: Vin.I,301-2].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3489,7 +3386,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 2
-l.1080 ...d 8:26.1.1–26.3.13} [PTS: Vin.I,301-2].}
+l.1048 ...d 8:26.1.1–26.3.13} [PTS: Vin.I,301-2].}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3497,16 +3394,12 @@ are all screwed up? I'm going to assume that you meant ##.
 
 
 LaTeX Warning: Citation `Saddhammopāyana' on page 87 undefined on input line 1
-086.
-
-
-LaTeX Warning: Citation `Hazlewood 1988a' on page 87 undefined on input line 10
-92.
+052.
 
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1097 \end{quote}
+l.1060 \end{quote}
                 
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3518,7 +3411,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1097 \end{quote}
+l.1060 \end{quote}
                 
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3533,7 +3426,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1101 \begin{epigram-2-cite}
+l.1064 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3544,7 +3437,7 @@ and I'll forget about whatever was undefined.
 ! You can't use `macro parameter character #' in horizontal mode.
 <argument> ...on See <span class='manualLink' data-target='##
                                                   seg-106'>Chapter 5, Paragr...
-l.1108 ...='#seg-106'>Chapter 5, Paragraph 9</span>}
+l.1071 ...='#seg-106'>Chapter 5, Paragraph 9</span>}
                                                    They repaired the roads, ...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -3554,7 +3447,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1108 ...riends were all saved at the last moment.}
+l.1071 ...riends were all saved at the last moment.}
                                                    Of course the story delib...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3563,7 +3456,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1108 ...riends were all saved at the last moment.}
+l.1071 ...riends were all saved at the last moment.}
                                                    Of course the story delib...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3572,7 +3465,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1108 ...riends were all saved at the last moment.}
+l.1071 ...riends were all saved at the last moment.}
                                                    Of course the story delib...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -3581,7 +3474,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1109 
+l.1072 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3593,7 +3486,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1109 
+l.1072 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3608,7 +3501,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1117 P
+l.1080 P
       eople with \textit{mettā} or who are cultivating it, do what they can...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3620,7 +3513,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1117 P
+l.1080 P
       eople with \textit{mettā} or who are cultivating it, do what they can...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3635,7 +3528,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1120 \chapter
+l.1083 \chapter
              [11. The Brahma Viharas]{chapter 11\\The Brahma Viharas\markbot...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3647,7 +3540,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1120 \chapter
+l.1083 \chapter
              [11. The Brahma Viharas]{chapter 11\\The Brahma Viharas\markbot...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3662,7 +3555,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1125 
+l.1088 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3674,7 +3567,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1125 
+l.1088 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3691,7 +3584,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1131 
+l.1094 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3703,7 +3596,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1131 
+l.1094 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3718,7 +3611,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1139 \begin{epigram-2}
+l.1102 \begin{epigram-2}
                       
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3730,7 +3623,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1139 \begin{epigram-2}
+l.1102 \begin{epigram-2}
                       
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3745,7 +3638,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1142 \begin{epigram-2-cite}
+l.1105 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3754,17 +3647,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Jātakamāla' on page 94 undefined on input line 1146.
-
-
-
-LaTeX Warning: Citation `Speyer 1895a' on page 94 undefined on input line 1146.
+LaTeX Warning: Citation `Jātakamāla' on page 94 undefined on input line 1109.
 
 
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1153 
+l.1116 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3776,7 +3665,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1153 
+l.1116 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3796,7 +3685,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1177 
+l.1137 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3808,7 +3697,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1177 
+l.1137 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3828,7 +3717,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1191 \begin{epigram-2-cite}
+l.1151 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3849,7 +3738,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1215 
+l.1175 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3861,7 +3750,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1215 
+l.1175 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3878,7 +3767,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1224 
+l.1184 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3890,7 +3779,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1224 
+l.1184 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3910,7 +3799,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1238 \begin{epigram-2-cite}
+l.1198 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3919,19 +3808,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Fromm 1956' on page 104 undefined on input line 1245.
-
-
-LaTeX Warning: Citation `Singer 2009e' on page 104 undefined on input line 1245
-.
-
-
 
 [104]
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1258 
+l.1217 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3943,7 +3825,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1258 
+l.1217 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3958,7 +3840,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1274 
+l.1231 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3970,7 +3852,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1274 
+l.1231 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3985,7 +3867,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1283 
+l.1240 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -3997,7 +3879,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1283 
+l.1240 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4015,7 +3897,7 @@ Overfull \vbox (0.12274pt too high) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1291 \begin{epigram-2-cite}
+l.1248 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4026,7 +3908,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1299 
+l.1256 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4038,7 +3920,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1299 
+l.1256 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4063,7 +3945,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1330 
+l.1287 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4075,7 +3957,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1330 
+l.1287 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4090,7 +3972,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1332 \chapter
+l.1289 \chapter
              [13. More About Metta Meditation]{chapter 13\\More About Metta ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4102,7 +3984,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1332 \chapter
+l.1289 \chapter
              [13. More About Metta Meditation]{chapter 13\\More About Metta ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4129,7 +4011,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1348 \begin{epigram-2-cite}
+l.1305 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4146,7 +4028,7 @@ Underfull \vbox (badness 3646) has occurred while \output is active []
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1365 
+l.1322 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4158,7 +4040,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1365 
+l.1322 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4173,7 +4055,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1371 
+l.1328 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4185,7 +4067,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1371 
+l.1328 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4200,7 +4082,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1379 \begin{epigram-2-cite}
+l.1336 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4211,7 +4093,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1386 T
+l.1343 T
       he Buddha’s refusal to be either frightened or to retaliate led to a...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4223,7 +4105,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1386 T
+l.1343 T
       he Buddha’s refusal to be either frightened or to retaliate led to a...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4238,7 +4120,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1392 \chapter
+l.1349 \chapter
              [14. Kind Heart, Clear Mind]{chapter 14\\Kind Heart, Clear Mind...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4250,7 +4132,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1392 \chapter
+l.1349 \chapter
              [14. Kind Heart, Clear Mind]{chapter 14\\Kind Heart, Clear Mind...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4267,16 +4149,11 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 ]
 
-LaTeX Warning: Citation `Toland 1977' on page 121 undefined on input line 1396.
-
-
-
-
 [121]
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1402 \begin{epigram-2-cite}
+l.1359 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4287,7 +4164,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1412 W
+l.1369 W
       hen I was staying in Berlin a few years ago, a friend asked me to meet...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4299,7 +4176,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1412 W
+l.1369 W
       hen I was staying in Berlin a few years ago, a friend asked me to meet...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4324,7 +4201,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1433 \begin{epigram-2-cite}
+l.1390 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4338,7 +4215,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1446 \chapter
+l.1403 \chapter
              [15. An Adorned and Beautified Mind]{chapter 15\\An Adorned and...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4350,7 +4227,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1446 \chapter
+l.1403 \chapter
              [15. An Adorned and Beautified Mind]{chapter 15\\An Adorned and...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4362,14 +4239,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [126]
-
-LaTeX Warning: Citation `Harvey 2012' on page 127 undefined on input line 1447.
-
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1453 \begin{quote}
+l.1410 \begin{quote}
                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4381,7 +4254,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1453 \begin{quote}
+l.1410 \begin{quote}
                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4395,17 +4268,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 [127
 
 ]
-
-LaTeX Warning: Citation `Mencius 1970a' on page 128 undefined on input line 145
-6.
-
-
-LaTeX Warning: Citation `Pink 1968' on page 128 undefined on input line 1465.
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1468 S
+l.1422 S
       ome biologists have argued that altruism, the closest they come to dis...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4417,7 +4283,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1468 S
+l.1422 S
       ome biologists have argued that altruism, the closest they come to dis...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4432,7 +4298,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1474 \begin{epigram-2-cite}
+l.1428 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4443,7 +4309,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1482 
+l.1436 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4455,7 +4321,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1482 
+l.1436 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4467,14 +4333,10 @@ two letters. (See Chapter 27 of The TeXbook.)
 
 
 [129]
-
-LaTeX Warning: Citation `Germer 2009' on page 130 undefined on input line 1487.
-
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1490 I
+l.1444 I
       n one of his discourses the Buddha listed some of the positive things ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4486,7 +4348,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1490 I
+l.1444 I
       n one of his discourses the Buddha listed some of the positive things ...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4501,7 +4363,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1497 
+l.1451 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4513,7 +4375,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1497 
+l.1451 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4528,7 +4390,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1509 \end{epigram-2}
+l.1463 \end{epigram-2}
                     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4540,7 +4402,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1509 \end{epigram-2}
+l.1463 \end{epigram-2}
                     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4555,7 +4417,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1510 \begin{epigram-2-cite}
+l.1464 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4563,14 +4425,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-LaTeX Warning: Citation `Palden 1997' on page 133 undefined on input line 1514.
-
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1524 
+l.1477 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4582,7 +4440,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1524 
+l.1477 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4597,7 +4455,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1529 \chapter
+l.1480 \chapter
              [16. Images of Love]{chapter 16\\Images of Love\markboth{Images...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4609,7 +4467,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1529 \chapter
+l.1480 \chapter
              [16. Images of Love]{chapter 16\\Images of Love\markboth{Images...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4624,7 +4482,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1533 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
+l.1484 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
                                                    Similarly, in English we ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -4633,7 +4491,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1533 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
+l.1484 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
                                                    Similarly, in English we ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -4642,7 +4500,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1533 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
+l.1484 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
                                                    Similarly, in English we ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -4651,7 +4509,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1533 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
+l.1484 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
                                                    Similarly, in English we ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -4660,7 +4518,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1533 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
+l.1484 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
                                                    Similarly, in English we ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -4669,7 +4527,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1533 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
+l.1484 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
                                                    Similarly, in English we ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -4678,7 +4536,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1533 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
+l.1484 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
                                                    Similarly, in English we ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -4687,7 +4545,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1533 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
+l.1484 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
                                                    Similarly, in English we ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -4696,7 +4554,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \Hy@tempa.
 <to be read again> 
 p
-l.1533 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
+l.1484 ...ts#pts-vp-pli76}{Ja 453} [PTS: Ja.IV.76].}
                                                    Similarly, in English we ...
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -4705,7 +4563,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1534 
+l.1485 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4717,7 +4575,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1534 
+l.1485 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4736,14 +4594,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [136]
-
-LaTeX Warning: Citation `Mozley 1928' on page 137 undefined on input line 1551.
-
-
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1563 B
+l.1511 B
       uddhism has long had images of love too. One of the most popular of th...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4755,7 +4609,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1563 B
+l.1511 B
       uddhism has long had images of love too. One of the most popular of th...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4770,8 +4624,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1578 H
-      owever, the highest love and its various expressions have always been ...
+l.1521 
+     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -4782,8 +4636,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1578 H
-      owever, the highest love and its various expressions have always been ...
+l.1521 
+     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -4797,7 +4651,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \epigram-2-cite ...htmargin=2cm]\noindent \normal 
                                                   \hspace *{\fill } 
-l.1584 \begin{epigram-2-cite}
+l.1529 \begin{epigram-2-cite}
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4808,7 +4662,7 @@ and I'll forget about whatever was undefined.
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1592 
+l.1537 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4820,7 +4674,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1592 
+l.1537 
      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4835,8 +4689,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1601 
-     
+l.1545 I
+      n later centuries the symbolism attached to Avalokiteśvara became qui...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -4847,8 +4701,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1601 
-     
+l.1545 I
+      n later centuries the symbolism attached to Avalokiteśvara became qui...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -4867,8 +4721,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 \hrule 
-l.1618 L
-      ikewise, the Dhamma has always existed and always will. Someone who re...
+l.1561 
+     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -4879,14 +4733,17 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 }
-l.1618 L
-      ikewise, the Dhamma has always existed and always will. Someone who re...
+l.1561 
+     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
 To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \vbox (0.12274pt too high) has occurred while \output is active []
 
 
 
@@ -4932,7 +4789,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [152]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 1781.
+(hyperref)                removing `\\' on input line 1726.
 
 
 ! LaTeX Error: Something's wrong--perhaps a missing \item.
@@ -4941,7 +4798,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1796 \end{itemize}
+l.1741 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4967,7 +4824,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1929 \end{itemize}
+l.1874 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4982,7 +4839,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1977 \end{itemize}
+l.1922 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4994,7 +4851,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2010 \end{itemize}
+l.1955 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5011,48 +4868,48 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2123 \end{itemize}
+l.2068 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2073--2123
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2068
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2073--2123
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2068
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2073--2123
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2068
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2073--2123
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2068
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2073--2123
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2068
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2073--2123
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2068
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2073--2123
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2068
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2073--2123
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2068
 
  []
 
@@ -5070,7 +4927,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2189 \end{itemize}
+l.2134 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5087,7 +4944,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2290 \end{itemize}
+l.2235 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5100,7 +4957,7 @@ Runaway argument?
 ! Paragraph ended before \text@command was complete.
 <to be read again> 
 \par 
-l.2327 }
+l.2272 }
       To friend and foe alike, \\
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -5109,7 +4966,7 @@ My plan is to forget the whole thing and hope for the best.
 ! Extra }, or forgotten \endgroup.
 <recently read> \egroup 
         
-l.2327 }
+l.2272 }
       To friend and foe alike, \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5124,7 +4981,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2332 \end{itemize}
+l.2277 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5139,13 +4996,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2366 \end{itemize}
+l.2311 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2355--2366
+Underfull \hbox (badness 10000) in paragraph at lines 2300--2311
 
  []
 
@@ -5159,7 +5016,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2393 \end{itemize}
+l.2338 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5176,7 +5033,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2480 \end{itemize}
+l.2425 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5193,7 +5050,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2539 \end{itemize}
+l.2484 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5205,13 +5062,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2563 \end{itemize}
+l.2508 \end{itemize}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2552--2563
+Underfull \hbox (badness 10000) in paragraph at lines 2497--2508
 
  []
 
@@ -5219,130 +5076,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 2552--2563
 
 [172]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `alignment tab' on input line 2571.
-
-
 ! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2571 ...markboth{References & Bibliography}{OOOO}}
+l.2516 ...]{\\References\markboth{References}{OOOO}}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-! Misplaced alignment tab character &.
-<argument> \\References &
-               Bibliography\markboth {References & Bibliography}{OOOO}
-l.2571 ...markboth{References & Bibliography}{OOOO}}
-                                                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-No file milk.bbl.
+Underfull \hbox (badness 10000) in paragraph at lines 2521--2543
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ []
 
 
 
 [173
 
 ]
-
-[174]
-<../_resources/images/icons/pdf_24.png, id=1217, 24.09pt x 24.09pt>
+No file milk.bbl.
+<../_resources/images/icons/pdf_24.png, id=1294, 24.09pt x 24.09pt>
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2615.
+ine 2564.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2617.
+ine 2566.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2625.
-(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
-File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
-<use ../_resources/images/icons/pdf_24.png>
-Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2627.
-(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
-File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
-<use ../_resources/images/icons/pdf_24.png>
-Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2629.
-(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
-File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
-<use ../_resources/images/icons/pdf_24.png>
-Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2631.
-(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
-File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
-<use ../_resources/images/icons/pdf_24.png>
-Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2633.
-(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
-File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
-<use ../_resources/images/icons/pdf_24.png>
-Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2635.
-(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
-File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
-<use ../_resources/images/icons/pdf_24.png>
-Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2637.
+ine 2574.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 
 
-! Misplaced alignment tab character &.
-<argument> References &
-             Bibliography
-l.2638 
-     
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[174<../_resources/images/icons/pdf_24.png>]
+File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
+<use ../_resources/images/icons/pdf_24.png>
+Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
+ine 2576.
+(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
+File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
+<use ../_resources/images/icons/pdf_24.png>
+Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
+ine 2578.
+(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
+File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
+<use ../_resources/images/icons/pdf_24.png>
+Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
+ine 2580.
+(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
+File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
+<use ../_resources/images/icons/pdf_24.png>
+Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
+ine 2582.
+(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
+File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
+<use ../_resources/images/icons/pdf_24.png>
+Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
+ine 2584.
+(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
+File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
+<use ../_resources/images/icons/pdf_24.png>
+Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
+ine 2586.
+(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
+File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
+<use ../_resources/images/icons/pdf_24.png>
+Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
+ine 2590.
+(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
+File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
+<use ../_resources/images/icons/pdf_24.png>
+Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
+ine 2592.
+(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
+File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
+<use ../_resources/images/icons/pdf_24.png>
+Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
+ine 2594.
+(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 
-[175<../_resources/images/icons/pdf_24.png>]
+
+[175]
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2641.
+ine 2606.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2643.
+ine 2610.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2645.
-(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
-File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
-<use ../_resources/images/icons/pdf_24.png>
-Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2657.
-(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
-File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
-<use ../_resources/images/icons/pdf_24.png>
-Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2661.
+ine 2624.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 
 
@@ -5350,26 +5187,9 @@ ine 2661.
 File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
 <use ../_resources/images/icons/pdf_24.png>
 Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2675.
-(luatex.def)             Requested size: 12.04495pt x 9.53558pt.
-File: ../_resources/images/icons/pdf_24.png Graphic file (type png)
-<use ../_resources/images/icons/pdf_24.png>
-Package luatex.def Info: ../_resources/images/icons/pdf_24.png  used on input l
-ine 2679.
+ine 2628.
 (luatex.def)             Requested size: 12.04495pt x 9.53558pt.
 
-
-! Misplaced alignment tab character &.
-<argument> References &
-             Bibliography
-l.2685 \end{document}
-                   
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
 [177] (C:/Data/tMS/books/_resources/book-data/milk/milk.aux)
  ***********
@@ -5380,23 +5200,20 @@ L3 programming layer <2020/03/25>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `milk.out' has not changed.
-(rerunfilecheck)             Checksum: 18D26D1776F7025861DEEDF6BF6EF112;4819.
+(rerunfilecheck)             Checksum: 6FEB4D1AA4BCE63CC2A3FDAEC04712EA;4743.
 )
 
 Here is how much of LuaTeX's memory you used:
- 15384 strings out of 475554
+ 15382 strings out of 475554
  125205,953878 words of node,token memory allocated
  2979 words of node memory still in use:
    4 hlist, 1 vlist, 1 rule, 227 glue, 3 kern, 1 glyph, 231 attribute, 63 glue_s
 pec, 231 attribute_list, 1 write, 1 pdf_action nodes
-   avail lists: 1:1,2:841,3:443,4:148,5:680,6:58,7:6614,8:2,9:476,10:25,11:505
- 37798 multiletter control sequences out of 65536+600000
- 73 fonts using 27160703 bytes
- 79i,13n,92p,2418b,489s stack positions out of 10000i,1000n,20000p,200000b,200000s
+   avail lists: 1:1,2:849,3:445,4:150,5:680,6:60,7:6666,8:2,9:496,10:25,11:505
+ 37796 multiletter control sequences out of 65536+600000
+ 72 fonts using 26471255 bytes
+ 79i,13n,92p,2418b,487s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus-itali
 c.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumbookplus
 -regular.ttf><C:/Program Files/MiKTeX/fonts/truetype/public/gentium-tug/gentiumb
@@ -5404,9 +5221,9 @@ ookplus-bold.ttf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbio
 linum_rb.otf><C:/Program Files/MiKTeX/fonts/opentype/public/libertine/linbiolinu
 m_r.otf><C:/Users/stuar/AppData/Local/Microsoft/Windows/Fonts/wiswosmallcaps.ttf
 >
-Output written on milk.pdf (183 pages, 859393 bytes).
+Output written on milk.pdf (183 pages, 868428 bytes).
 
-PDF statistics: 1369 PDF objects out of 1440 (max. 8388607)
+PDF statistics: 1419 PDF objects out of 1440 (max. 8388607)
  247 named destinations out of 1000 (max. 131072)
  193 words of extra memory for PDF output out of 10000 (max. 100000000)
 

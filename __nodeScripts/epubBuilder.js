@@ -22,12 +22,6 @@ let copyrightHTML =
 `\n<section class='copyright'>
 <h1 style = 'display:none' title='Copyright' class='chapter'></h1>
 `
-/* let copyrightHTML = 
-`\n<section class='copyright'>
-<h1 style='margin:0; font-size: 0.1em; color: rgba(255, 255, 255, 0);' class='chapter'>Copyright</h1>
-`
- */
-
 for (i in builtInfoData.Copyright) {
     if (!(i == builtInfoData.Copyright.length-1)) {
         copyrightHTML += `<p>${builtInfoData.Copyright[i].replaceAll('**','')}</p>\n`
@@ -37,16 +31,10 @@ copyrightHTML += `
 <p>This electronic edition published by Wisdom & Wonders Books</p>
 <p>Go to <a href='https://wiswo.org/books'>wiswo.org/books</a> for more publications.</p>`
 copyrightHTML += builtInfoData.CCLicense
-/* copyrightHTML += `<p style = 'text-align:center; margin-top: 3em'>The gift of the Dhamma excels all gifts;<br>
-the taste of the Dhamma excels all tastes;<br>
-delight in the Dhamma excels all delights.<br>
-The eradication of craving overcomes all suffering.</p>
-<p style = text-align:'right'>— The Buddha,<br>Dhammapada 354</p>` */
 copyrightHTML += `</section>\n`
 
 
 // Build Author Info
-
 let authorsBio = builtInfoData.AuthorsData
 let authorImgSrc = ``
 let authorShortBio = `<p>`
@@ -81,10 +69,6 @@ let allTitlePage = bookRoot.querySelectorAll('.titlepage')
         allTitlePage[i].remove()
     }
 
-//newTitlePageHTML += `<div class='logo'><img src = '../../../_resources/images/icons/logo-enso-large.png'><div>Wisdom & Wonders<br>Books</div></div>`
-
-
-
 
 
 //HTML
@@ -115,7 +99,6 @@ for (i in allSesames) {
     let tempText = allSesames[i].text
     allSesames[i].innerHTML = `${tempText}`
 }
-
 
 // make suttacentral (sujato) links explicit
 function suttaCentralIt (suttaReference) {
@@ -150,8 +133,10 @@ let allNotes = bookRoot.querySelectorAll('.booknote')
 let newNotesHTML = `<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">\n<h1 class='chapter' >Endnotes</h1>\n`
 for (i in allNotes) {
     let tempInnerHTML = allNotes[i].innerHTML
+    //console.log(JSON.stringify(tempInnerHTML))
     let tempNoteNumber = allNotes[i].getAttribute('data-note')
-    newNotesHTML += `<div id="fn${tempNoteNumber}"><a href="#fnref${tempNoteNumber}" class="footnote-back" role="doc-backlink"><sup>${tempNoteNumber}</sup></a>&#x2005;${tempInnerHTML}</div>\n`
+    newNotesHTML += `<div id="fn${tempNoteNumber}" class="epubFootnote"><a href="#fnref${tempNoteNumber}" class="footnote-back" role="doc-backlink">${tempNoteNumber}</a>&#x2005;${tempInnerHTML}</div>\n`
+    //console.log(newNotesHTML)
 }  
 //HTML
 newNotesHTML += `\n</section>`
@@ -232,9 +217,6 @@ for (i in allh1s) {
     }
 }
 
-
-
-
 // Now build the HTML
 let html = `<!DOCTYPE html>
 <html lang="en">
@@ -254,6 +236,6 @@ html += authorBioHTML
 html += `\n</body>\n</html>`
 
 fs.writeFileSync((`../_resources/book-data/${bookID}/${bookID}.html`), html, 'utf8')
-exec(`ebook-convert ../_resources/book-data/${bookID}/${bookID}.html ../_resources/book-data/${bookID}/${bookID}.azw3 --page-breaks-before "/" --embed-all-fonts --extra-css ../_resources/css/epubJ.css --cover ../_resources/book-data/${bookID}/FrontLarge.jpg --allow-local-files-outside-root --language en`)
-exec(`ebook-convert ../_resources/book-data/${bookID}/${bookID}.html ../_resources/book-data/${bookID}/${bookID}.epub --page-breaks-before "/" --embed-all-fonts --extra-css ../_resources/css/epubJ.css --cover ../_resources/book-data/${bookID}/FrontLarge.jpg --preserve-cover-aspect-ratio --allow-local-files-outside-root --language en`)
+exec(`ebook-convert ../_resources/book-data/${bookID}/${bookID}.html ../_resources/book-data/${bookID}/${bookID}.azw3 --page-breaks-before "/" --embed-all-fonts --extra-css ../_resources/css/epub.css --cover ../_resources/book-data/${bookID}/FrontLarge.jpg --allow-local-files-outside-root --language en`)
+exec(`ebook-convert ../_resources/book-data/${bookID}/${bookID}.html ../_resources/book-data/${bookID}/${bookID}.epub --page-breaks-before "/" --embed-all-fonts --extra-css ../_resources/css/epub.css --cover ../_resources/book-data/${bookID}/FrontLarge.jpg --preserve-cover-aspect-ratio --allow-local-files-outside-root --language en`)
 

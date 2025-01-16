@@ -1,29 +1,6 @@
- @font-face {
-	font-family: Heuristica;
-	font-style: normal;
-	font-weight: normal;
-	src:url("../fonts/Heuristica-Regular.otf");
- }
- @font-face {
-	font-family: Heuristica;
-	font-style: normal;
-	font-weight: bold;
-	src:url("../fonts/Heuristica-Bold.otf");
- }
- @font-face {
-	font-family: Heuristica;
-	font-style: italic;
-	font-weight: normal;
-	src:url("../fonts/Heuristica-Italic.otf");
- }
- @font-face {
-	font-family: Heuristica;
-	font-style: italic;
-	font-weight: bold;
-	src:url("../fonts/Heuristica-BoldItalic.otf");
- } 
 body {
-	font-family: 'Heuristica';
+	font-family: Gentium Book Plus;
+	text-align: justify;
 }
 
 .noshow {
@@ -93,11 +70,21 @@ body {
 
 
 h1 {
+    font-family: Linux Biolinum Capitals;
 	text-align: center;
 	font-weight: 400;
 	font-size: 2.5em;
 	padding-top: 2em;
 	padding-bottom: 1em;
+	font-variant: small-caps;
+}
+
+h2 {
+    font-family: Linux Biolinum Capitals;
+    padding-top: 2em;
+	text-align: center;
+	font-variant: small-caps;
+    font-weight: 400;
 }
 
 .quote {
@@ -149,4 +136,112 @@ h1 {
 }
 a {
 	text-decoration: none;
+}
+
+/* Additional for Journey */
+
+.logo-text {
+    page-break-after: always;
+}
+.epigram {
+	text-align: center;
+	font-style: italic;
+}
+.epigram-cite {
+	text-align: center;
+	font-style: normal;
+	font-variant: small-caps;
+    font-family: Linux Biolinum Capitals;
+    page-break-after: always;
+}
+.epigram-img {
+	text-align: center;
+}
+.epigram-img > img {
+	margin: 0;
+	width:20%;
+}
+
+.epigram-2 {
+	font-weight: bold;
+	font-style: italic;
+	font-size: large;
+	margin: 1em 20% 0 20%;
+	page-break-inside: avoid;
+	break-inside: avoid;
+}
+.epigram-2-cite {
+	text-align: right;
+	font-style: normal;
+	margin: 0 20% 1em 20%;
+}
+
+.line-block-center {
+	margin-left: 2em;
+}
+
+.tight-right-cite {
+	text-align: right;
+}
+
+.ptsref::before {
+	content: "\[";
+}
+.ptsref::after {
+	content: "\]";
+} 
+
+.centered-img {
+	text-align: center;
+}
+
+.centered-img-border > img {
+	border: 1px solid grey;
+}
+
+li {
+    list-style-type: '· ';
+}
+
+*:lang(pi) {
+	font-style: italic;
+}
+*:lang(sa) {
+	font-style: italic;
+}
+
+.captioned-image {
+	page-break-inside: avoid;
+	break-inside: avoid
+}
+
+.caption-centered-sans {
+    text-align: center;
+	font-style: normal;
+	font-variant: small-caps;
+    font-family: Linux Biolinum Capitals;
+    font-size: 1.2em;
+}
+
+.caption-centered-serif {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 2em;
+}
+
+.gloss-term {
+    font-weight: bold;
+}
+
+.gloss-text {
+    margin-left: 1em;
+}
+
+.epubFootnote {
+	page-break-inside: avoid;
+	break-inside: avoid;
+}
+.epubFootnote > p {
+	margin:0 0 1em 0;
+	padding:0;
 }

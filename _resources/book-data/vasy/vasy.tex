@@ -151,9 +151,22 @@
 
 \newenvironment{epigram-2}%
 {%
+\setstretch{1.4}
 \vspace{1em}
 \noindent
-\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\quoting[leftmargin=2cm,rightmargin=2cm]%
+\begin{itshape}
+\large
+}%
+{\end{itshape}\endquoting
+}%
+
+\newenvironment{epigram-2-followOn}%
+{%
+\setstretch{1.4}
+\vspace{-1em}
+\noindent
+\quoting[leftmargin=2cm,rightmargin=2cm]%
 \begin{itshape}
 \large
 }%
@@ -162,13 +175,13 @@
 
 \newenvironment{epigram-2-cite}%
 {%
-\quoting[leftmargin=2.5cm,rightmargin=2.5cm]%
+\quoting[leftmargin=2cm,rightmargin=2cm]%
 \noindent\normal\hspace*{\fill} 
 }%
-{\endquoting\vspace{1em}
+{\endquoting
 }%
 
-\hyphenation{manu-scripts}
+%\hyphenation{manu-scripts}
 
 \makeatletter
 \def\@biblabel#1{}
@@ -453,9 +466,7 @@ To summarize, the verses of the Kevaddha Sutta poetically rephrase two teachings
 The only other occurrence of \textit{viññāṇa anidassana} is found in the Brahmanimantanika Sutta,\footnote {\href{https://suttacentral.net/mn49/en/sujato}{MN 49}} which portrays a discussion between the Buddha and Brahmā Baka. Here too, just like in the Kevaddha Sutta, the Buddha shows his knowledge to be superior to a Brahmā god. The passage we are concerned with is abstract and not easy to translate. It says something like this:
 
 \begin{quote}
-
-“Boundless consciousness, invisible, fully shining: that is outside the solidity of earth, outside the wetness of water, the heat of fire, the movement of air, the being of beings, the godhood of the gods, the Creator-hood of the Creator, the Brahmāhood of Brahmā, the Streaming Radiance of [the Gods of] Streaming Radiance, the Refulgent Glory of [the Gods of] Refulgent Glory, the Great Fruit of [the Gods of] Great Fruit, the Overlordship of the Overlord, and outside the allness of all.”\footnote {\href{https://suttacentral.net/mn49/en/sujato\#25.1}{MN 49:25.1} [PTS: M I 329]}
-
+\hspace{-0.4em}“Boundless consciousness, invisible, fully shining: that is outside the solidity of earth, outside the wetness of water, the heat of fire, the movement of air, the being of beings, the godhood of the gods, the Creator-hood of the Creator, the Brahmāhood of Brahmā, the Streaming Radiance of [the Gods of] Streaming Radiance, the Refulgent Glory of [the Gods of] Refulgent Glory, the Great Fruit of [the Gods of] Great Fruit, the Overlordship of the Overlord, and outside the allness of all.”\footnote {\href{https://suttacentral.net/mn49/en/sujato\#25.1}{MN 49:25.1} [PTS: M I 329]}
 
 \end{quote}
 Given the clarity of the phrase in the Kevaddha Sutta, it would make sense for “boundless consciousness, invisible, fully shining” to refer the state of boundless consciousness here too. The four elements and the various worlds mentioned are indeed all part of the realm of forms, existing outside of this formless state.\footnote {Cf. Bodhi in Ñāṇamoli n.509.} “The allness of all” poses a problem, though, as it can be interpreted to include the formless, and thus the state of boundless consciousness itself. But there are some ways to reconcile this.
@@ -544,6 +555,7 @@ It’s impossible to determine with certainty whether these were the exact origi
 Be that as it may, the Buddha’s final reply to Brahmā, where he mentions the cessation of existence, still portrays his highest aim. It is specifically this teaching which Brahmā praises after his eventual conversion, not boundless consciousness.
 
 \chapter[References]{\\References\markboth{References}{OOOO}}
+
 \section{Abbreviations}
 \bgroup
 \def\arraystretch{1.2}
@@ -564,8 +576,9 @@ Thag & Theragāthā \\
 TU & Taittirīya Upaniṣad \\
 Ud & Udāna \\
 
-\end{tabular}\
-\egroup
+\end{tabular}\\
+\egroup\\
+
 
 
 \bibliographystyle{apalike}

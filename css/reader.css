@@ -259,7 +259,7 @@ strong {
 	text-decoration: none;
 	color: unset;
 	padding: .8em 0;
-	margin-bottom: 1em;
+	margin-bottom: 10px;
 	margin-top:.5em;
 	box-shadow: 1px 2px 6px -1px #000000;
 }	
@@ -278,16 +278,18 @@ strong {
 .eob >  a::before {
 	content: "visit \00000a";
 	white-space: pre; 
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 1.3rem;
+	font-weight: 400;
+	font-family: 'Source Serif Pro', sans-serif;
+	font-size: 16px;
 	color:whitesmoke;
 }	
 
 .eob >  a > span::after {
-	content: "\00000a for more cool stuff";
+	content: "\00000a home of theMettāShelf";
 	white-space: pre; 
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size:.8em;
+	font-weight: 400;
+	font-family: 'Source Serif Pro', sans-serif;
+	font-size:16px;
 	color:whitesmoke;
 }	
 

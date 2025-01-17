@@ -20,8 +20,8 @@
 	"BackMatter": [
 		""
 	],
-	"DownloadsAvailable": "pdf=no,epub=no,azw3=no",
-	"DownloadHTML": "<p>A <strong>free PDF</strong> (Pariyatti Press version) along with <strong>‘paid for’ eBook and printed copies</strong> are available from the Pariyatti Store.</p><a href='https://store.pariyatti.org/like-milk-and-water-mixed'> <img src='../_resources/images/icons/pariyatti-logo.png' alt='pariyatti logo'></a>",
+	"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+	"DownloadHTML": "<p>The <strong>Pariyatti Press</strong> edition of this book (without SuttaCentral reference numbers) is <strong>available in print</strong> from the Pariyatti Store.</p><a href='https://store.pariyatti.org/like-milk-and-water-mixed'> <img src='../_resources/images/icons/pariyatti-logo.png' alt='pariyatti logo'></a>",
 	"AuthorsData": [
 		{
 			"ShortName": "Bhante S. Dhammika",

@@ -32,7 +32,7 @@ function buildSesameRefStub () {
 function buildBook () {
 	let docxPath = `../_resources/book-data/${bookID}/${bookID}.docx`
 	let pandocHtmlPath = `../_resources/book-data/${bookID}/pandoc.html`
-	exec(`pandoc --from docx+styles ${docxPath} -s --toc -o ${pandocHtmlPath} --wrap=none`, 
+	exec(`pandoc --from docx+styles ${docxPath} -s --toc -o ${pandocHtmlPath} --wrap=none --metadata title="Pre-processed Wiswo Book"`, 
 		(error, stdout, stderr) => { 
 		  if (error) { 
 			console.error(`Error: ${error.message}`)
@@ -217,6 +217,7 @@ html += `				</div>
 			<div id="ModalSettings"></div>
 			<div id="ModalDownload">
 				<div>
+					<h4>Wisdom & Wonders publications:</h4>
 					<div class="downloads">`
 
 function buildDownloadInfo () {
@@ -241,7 +242,7 @@ function buildDownloadInfo () {
 	if (noFormatAvaiable) { 
 		tempHTML =``
 	}
-	tempHTML += downloadHTML
+	tempHTML += `<hr>${downloadHTML}`
 	return tempHTML
 }
 					
@@ -763,12 +764,12 @@ function processPandoc() {
 	
 		let tokens = pandocRoot.querySelectorAll('div, p, h1')
 		for (i in tokens) {
-			if (tokens[i].getAttribute('data-custom-style') == "AbstractShort") {
+			if (tokens[i].getAttribute('data-custom-style') == "WW-abstract-short") {
 				abstractShort = tokens[i].innerHTML
 					.replaceAll(`<span data-custom-style="pali">`, `<span lang='pi'>`)
 					.replaceAll(/(\r\n|\n|\r)/gm, "")
 			} else 
-			if (tokens[i].getAttribute('data-custom-style') == "Abstract") {
+			if (tokens[i].getAttribute('data-custom-style') == "WW-abstract") {
 				abstract = tokens[i].innerHTML
 				.replaceAll(`<span data-custom-style="pali">`, `<span lang='pi'>`)
 				.replaceAll(/(\r\n|\n|\r)/gm, "")
@@ -776,14 +777,14 @@ function processPandoc() {
 			if (tokens[i].getAttribute('data-custom-style') ==  ('WW-item-type')) {
 				itemType += `${tokens[i].text.replaceAll(/(\r\n|\n|\r)/gm, "")}`
 			} else 
-			if (tokens[i].classList.contains ('author')) {
-				authors += `"${tokens[i].innerHTML}",`
+			if (tokens[i].getAttribute('data-custom-style') ==  ('WW-authors')) {
+				authors += `"${tokens[i].text.replaceAll(/(\r\n|\n|\r)/gm, "")}",`
 			} else 
-			if (tokens[i].classList.contains ('title')) {
-				title += `${tokens[i].innerHTML}`
+			if (tokens[i].getAttribute('data-custom-style') ==  ('WW-title')) {
+				title += `${tokens[i].text.replaceAll(/(\r\n|\n|\r)/gm, "")}`
 			} else 
-			if (tokens[i].classList.contains ('subtitle')) {
-				subtitle += `${tokens[i].innerHTML}`
+			if (tokens[i].getAttribute('data-custom-style') ==  ('WW-subtitle')) {
+				subtitle += `${tokens[i].text.replaceAll(/(\r\n|\n|\r)/gm, "")}`
 			} else 
 			if (tokens[i].getAttribute('data-custom-style') == "WW-Copyright") {
 				copyrightArr = tokens[i].innerHTML
@@ -800,13 +801,13 @@ function processPandoc() {
 				}
 				copyright = copyright.slice(0, -1)
 			} else
-			if (tokens[i].getAttribute('data-custom-style') == "DownloadsAvailable") {
+			if (tokens[i].getAttribute('data-custom-style') == "WW-downloads-available") {
 				downloadsAvailable +=  `${tokens[i].text.replaceAll('\r\n','').replaceAll('\n',',')}`
 			} else
-			if (tokens[i].getAttribute('data-custom-style') == "DownloadText") {
+			if (tokens[i].getAttribute('data-custom-style') == "WW-download-text") {
 				downloadHTML +=  tokens[i].innerHTML.replaceAll('\r\n','')
 			} else
-			if (tokens[i].getAttribute('data-custom-style') == "DownloadHTML") {
+			if (tokens[i].getAttribute('data-custom-style') == "WW-download-HTML") {
 				downloadHTML +=  `${tokens[i].text.replaceAll('\r\n','')}`
 			} else
 			if (tokens[i].getAttribute('data-custom-style') == "WW-backcover-text") {
@@ -1042,28 +1043,21 @@ function processPandoc() {
 		let bookRoot = parse (pandocRoot.querySelector('body'))
 		bookRoot.querySelector('#footnotes').remove()
 		bookRoot.querySelector('header').remove()
-		bookRoot.querySelector('#short-abstract').remove()
-		bookRoot.querySelector('#abstract').remove()
-		bookRoot.querySelector('#item-type').remove()
-		bookRoot.querySelector('#copyright').remove()
-		bookRoot.querySelector('#downloads').remove()
-		bookRoot.querySelector('#backcover').remove()
-		bookRoot.querySelector('#special-message').remove()
-		if (bookRoot.querySelector('#author-bio')) {
-			bookRoot.querySelector('#author-bio').remove()
-		}
-	
 		let allDivs = bookRoot.querySelectorAll('div')
-	
 		for (i in allDivs) {
-			if ((allDivs[i].getAttribute("data-custom-style") == "AbstractShort") 
-				|| (allDivs[i].getAttribute("data-custom-style") == "Abstract")
+			if (
+				   (allDivs[i].getAttribute("data-custom-style") == "WW-title") 
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-subtitle")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-authors")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-item-type")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-abstract-short") 
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-abstract")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-Copyright")
-				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadsAvailable")
-				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadText")
-				|| (allDivs[i].getAttribute("data-custom-style") == "DownloadHTML")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-downloads-available")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-download-text")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-download-HTML")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-backcover-text")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-meta-heading")
 				) {
 				allDivs[i].remove();
 			}

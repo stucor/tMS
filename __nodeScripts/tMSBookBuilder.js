@@ -459,8 +459,7 @@ function buildBook () {
 		// VERSES - 2 types one justified to the left, one centered around the longest line
 		//(line-block)
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block") {
-			let tempHTML = allDivs[i].innerHTML.replaceAll('^','\&nbsp;').replaceAll('\r\n', '') // replaces ^ with non breaking space for styling poetry
-			console.log(tempHTML)
+			let tempHTML = allDivs[i].innerHTML.replaceAll('\r\n', '') 
 			let newHTML = `<blockquote><div class='line-block'>${tempHTML}</div></blockquote>`
 			if (tempHTML.substr(0,29) == `<p><span class="list-margin">`) {
 				//find the first closed span
@@ -477,7 +476,7 @@ function buildBook () {
 		//(line-block-centered)
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block-center") {
 			if (allDivs[i].innerHTML.charAt(5) == '“') {
-				let tempHTML = allDivs[i].innerHTML
+				let tempHTML = allDivs[i].innerHTML.replaceAll('\r\n', '') 
 				let newHTML = tempHTML.slice(0,4) + ` class='OAstart'` + tempHTML.slice(4)
 				allDivs[i].innerHTML = newHTML	
 			}

@@ -428,7 +428,7 @@ function buildBook () {
 		// SPACE
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
 			let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
-			allDivs[i].replaceWith(`<hr style='border:0; margin-top: -1em; height:${spaceWidth}em'>`)
+			allDivs[i].replaceWith(`<hr style='border:0; margin-top: 0; height:${spaceWidth}em'>`)
 		} else 
 		// PARAGRAPHS
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
@@ -874,7 +874,7 @@ function processPandoc() {
 				let newElement = `<h1 id='${nextTOCID}'\>${nextTOCText}</h1>`
 				TOChtml[i].replaceWith(newElement)
 			} else
-			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-Chap-Section01') {
+			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-chapter-section-1') {
 				count += 1
 				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
 				let nextTOCID = `CHAP-SECTION-01-${nextTOCText.replaceAll(' ','-')}`

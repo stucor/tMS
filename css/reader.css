@@ -917,6 +917,9 @@ td, th {
 td > p {
 	margin: 0;
 }
+th > p {
+	margin: 0;
+}
 tr:nth-child(even){background-color: var(--tableeven);}
 tr:nth-child(odd){background-color: var(--tableodd);}
 th {

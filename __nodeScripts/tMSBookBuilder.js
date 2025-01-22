@@ -281,7 +281,7 @@ function buildBook () {
 	// TOCTarget ids
 	let TOCData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'toc.json', 'utf8'))
 	let chapterPrefix = `Chapter`
-	if (itemType == 'Document') {
+	if (itemType == 'document') {
 		chapterPrefix = ``
 	}
 	let headingArr = bookRoot.querySelectorAll ('h1, h2, h3')
@@ -794,7 +794,7 @@ function processPandoc() {
 				.replaceAll(/(\r\n|\n|\r)/gm, "")
 			} else
 			if (tokens[i].getAttribute('data-custom-style') ==  ('WW-item-type')) {
-				itemType += `${tokens[i].text.replaceAll(/(\r\n|\n|\r)/gm, "")}`
+				itemType += `${tokens[i].text.replaceAll(/(\r\n|\n|\r)/gm, "").toLowerCase()}`
 			} else 
 			if (tokens[i].getAttribute('data-custom-style') ==  ('WW-authors')) {
 				authors += `"${tokens[i].text.replaceAll(/(\r\n|\n|\r)/gm, "")}",`
@@ -805,7 +805,7 @@ function processPandoc() {
 			if (tokens[i].getAttribute('data-custom-style') ==  ('WW-subtitle')) {
 				subtitle += `${tokens[i].text.replaceAll(/(\r\n|\n|\r)/gm, "")}`
 			} else 
-			if (tokens[i].getAttribute('data-custom-style') == "WW-Copyright") {
+			if (tokens[i].getAttribute('data-custom-style') == "WW-copyright") {
 				copyrightArr = tokens[i].innerHTML
 					.replace('<p>', '')
 					.replaceAll('\"', '\'')
@@ -1071,7 +1071,7 @@ function processPandoc() {
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-item-type")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-abstract-short") 
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-abstract")
-				|| (allDivs[i].getAttribute("data-custom-style") == "WW-Copyright")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-copyright")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-downloads-available")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-download-text")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-download-HTML")

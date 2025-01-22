@@ -23,7 +23,7 @@ function buildSesameStub () {
 		}
 	}
 	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameSTUB.json'), localJSON, 'utf8')
-	console.log(`*** A new file: /book-data/${bookID}/sesameSTUB.json has been created ***`);
+	console.log(`* ./book-data/${bookID}/sesameSTUB.json has been created *`);
 }
 
 function buildSesameRefStub () {
@@ -49,6 +49,7 @@ function buildBook () {
 		  console.log(`✅✅ ${bookID} index.html BUILD COMPLETE *`)
 		  buildSesameStub()
 		  //buildSesameRefStub()
+		  console. log('-----------------------------------END-----------------------------------')
 		}); 
 }
 
@@ -719,9 +720,9 @@ function buildReferences () {
 if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.html`)) {
 	console.log(`Attempting to create Bibliography ...`)
 	html += buildReferences()
-	console.log (`✅ Bibliography Added from /book-data/biblio.html`)
+	console.log (`✅ Bibliography Added from /book-data/${bookID}/biblio.html`)
 } else {
-	console.log (`*** NO BIBLIOGRAPHY DATA found at /book-data/biblio.html ***`)
+	console.log (`❎—🛈 NO BIBLIOGRAPHY DATA found at /book-data/${bookID}/biblio.html`)
 }
 
 
@@ -752,10 +753,10 @@ html += `
 const newIndexDirectoryPath = `../${bookID}`
 
 if (fs.existsSync(newIndexDirectoryPath)) {
-  console.log(`\nBook directory already exists - replacing index.html in /books/${bookID}`)
+	console.log(`✅Book directory already exists - replacing  /books/${bookID}/`)
 } else {
-  console.log(`\nCreating new directory /books/${bookID} for index.html`);
-  fs.mkdirSync(newIndexDirectoryPath);
+  	console.log(`✅Creating new directory /books/${bookID}/`);
+  	fs.mkdirSync(newIndexDirectoryPath);
 }
 fs.writeFileSync(path.join(__dirname, '..', bookID, 'index.html'), html)
 }
@@ -1111,8 +1112,8 @@ function processPandoc() {
 	buildFootnotesJSON()
 	buildBookInfoJSON()
 	extractBookHTML()
-	console.log(`\n✅✅ pandoc.html PROCESSING COMPLETE\n`);
+	console.log(`✅✅ pandoc.html PROCESSING COMPLETE`);
 }
 
-console. log('-------------------------------------------------------------------------')
+console. log('----------------------------------START----------------------------------')
 buildBook();

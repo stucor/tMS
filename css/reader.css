@@ -615,7 +615,6 @@ a {
 	margin: 0.1em 0 0 -2.2em;
 }
 
-
 .line-block p {
 	margin-top: 0;
 	padding-left: 0 ;
@@ -1136,13 +1135,16 @@ table.borderlessTable {
 	font-family: 'Source Serif Pro';
 	width:fit-content;
 	max-width: 100%;
-	margin: 1em auto 0 auto;
+	margin: 1em auto 2em auto;
 	font-style: italic;
 	font-weight: 400;
 	font-size: 1em;
 	hyphens: none;
 	text-align: center;
 	line-height: 135%;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
 }
 .content div.epigram-cite {
 	font-family: 'Source Sans Pro';
@@ -1151,7 +1153,12 @@ table.borderlessTable {
 	hyphens: none;
 	text-align: center;
 	line-height: 115%;
+	margin-top: -1em;
 	margin-bottom: 4em;
+}
+
+.content div.epigram-cite > p {
+	margin-top: 0;
 }
 
 /* For impactful epigrams use epigram-2  */

@@ -1,0 +1,16 @@
+{
+			"Authors" : ["chatchai"],
+			"BookTitle" : "A flower called Mettā",
+			"BookSubtitle" : "",
+			"ShortAbstract" : "<p>Ajahn Chatchai gives precise instructions on the cultivation of loving-kindness.</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "book",
+			"AddInfo"   : [],
+			"Copyright" : ["This book is Copyright © Phra Mahā Chatchai Rakkhitacitto 2017","This first edition published by Wisdom and Wonders 2017","","This book is for free distribution only","","Graphics credits: iStock.com / WhiteBarbie / Stiggdriver / rasslava / YuriBBS / number1411 / Olarty / Vadmary",""],
+			"CCLicense": "BY-NC-ND 4.0",
+			"FrontCover": "../_resources/book-data/afcm/FrontLarge.jpg",
+			"BackCover": "../_resources/book-data/afcm/BackLarge.jpg",
+			"BackMatter": ["<p>The Mettā Bunny is jumping for joy.</p>"],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": "<p>If you wish to sponsor a print run of this book, please contact @Dheerayupa on the SuttaCentral Forum</p>"
+		}

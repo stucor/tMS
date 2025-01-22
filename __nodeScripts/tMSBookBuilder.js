@@ -7,6 +7,7 @@ let bookID = process.argv.slice(2)[0];
 
 let sesameArr = []
 let sesameRefArr = []
+let footnotesExist = true;
 
 function buildSesameStub () {
 	let sortedSesames = [...new Set(sesameArr)].sort()
@@ -200,16 +201,21 @@ html += `			<div id="ModalNotes">
 
 function buildFootnotes () {
 	let localHTML =``
-	let footnotesData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'footnotes.json'))
-	for (var i in footnotesData){
-		localHTML += `<div class="booknote" data-note="${footnotesData[i].fnNumber}">${footnotesData[i].fnHTML}`
-		localHTML += '</div>\n'
+	if (footnotesExist) {
+		let footnotesData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'footnotes.json'))
+		for (var i in footnotesData){
+			localHTML += `<div class="booknote" data-note="${footnotesData[i].fnNumber}">${footnotesData[i].fnHTML}`
+			localHTML += '</div>\n'
+		}
+		localHTML += `<div style='margin-top: 2em; background: #7f7f7f50; text-align:center; font-variant:small-caps; margin-bottom: 50%'>End of Notes</div>`
+		return localHTML;
+	} else {
+		return ''
 	}
-	localHTML += `<div style='margin-top: 2em; background: #7f7f7f50; text-align:center; font-variant:small-caps; margin-bottom: 50%'>End of Notes</div>`
-	return localHTML;
 }
 
 html += buildFootnotes()
+
 
 
 // Settings
@@ -890,130 +896,135 @@ function processPandoc() {
 	}
 
 	function buildFootnotesJSON () {
-		let footnotesRoot = parse (pandocRoot.querySelector('#footnotes'))
-		//custom-styles
-		let spans = footnotesRoot.getElementsByTagName ('span')
-		for (i in spans) {
-			let dataCustomStyle = spans[i].getAttribute('data-custom-style')
-			switch(dataCustomStyle) {
-				case 'Footnote Characters':
-					spans[i].remove()
-				break
-				case 'Hyperlink':
-					let tempHTML = spans[i].innerHTML
-					spans[i].replaceWith (tempHTML)
-				break
-				case 'wwc-PTS-reference':
-					spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
-					spans[i].classList.add('ptsref')
-					spans[i].removeAttribute ('data-custom-style')
-					
-				break
-				case 'wwc-sesame-zot-reference':
-					spans[i].classList.add('sesame')
-					spans[i].classList.add('ref')
-					spans[i].removeAttribute ('data-custom-style')
-					sesameRefArr.push(spans[i].text)
-				break
-				case 'wwc-sesame':
-					spans[i].classList.add('sesame')
-					spans[i].removeAttribute ('data-custom-style')
-					sesameArr.push(spans[i].text)
-				break
-				case 'wwc-pali':
-					spans[i].setAttribute('lang','pi')
-					spans[i].removeAttribute ('data-custom-style')
-				break
-				case 'wwc-sanskrit':
-					spans[i].setAttribute('lang','sa')
-					spans[i].removeAttribute ('data-custom-style')
-				break
-				default:
+		if (pandocRoot.querySelector('#footnotes')) {
+			let footnotesRoot = parse (pandocRoot.querySelector('#footnotes'))
+			//custom-styles
+			let spans = footnotesRoot.getElementsByTagName ('span')
+			for (i in spans) {
+				let dataCustomStyle = spans[i].getAttribute('data-custom-style')
+				switch(dataCustomStyle) {
+					case 'Footnote Characters':
+						spans[i].remove()
+					break
+					case 'Hyperlink':
+						let tempHTML = spans[i].innerHTML
+						spans[i].replaceWith (tempHTML)
+					break
+					case 'wwc-PTS-reference':
+						spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
+						spans[i].classList.add('ptsref')
+						spans[i].removeAttribute ('data-custom-style')
+						
+					break
+					case 'wwc-sesame-zot-reference':
+						spans[i].classList.add('sesame')
+						spans[i].classList.add('ref')
+						spans[i].removeAttribute ('data-custom-style')
+						sesameRefArr.push(spans[i].text)
+					break
+					case 'wwc-sesame':
+						spans[i].classList.add('sesame')
+						spans[i].removeAttribute ('data-custom-style')
+						sesameArr.push(spans[i].text)
+					break
+					case 'wwc-pali':
+						spans[i].setAttribute('lang','pi')
+						spans[i].removeAttribute ('data-custom-style')
+					break
+					case 'wwc-sanskrit':
+						spans[i].setAttribute('lang','sa')
+						spans[i].removeAttribute ('data-custom-style')
+					break
+					default:
+				}
+	
 			}
-
-		}
-		// anchors
-		let anchors = footnotesRoot.getElementsByTagName ('a') 
-		for (i in anchors) {
-			let istMSBook = anchors[i].text.slice(0,16) == `wiswo.org/books/`
-			if (istMSBook) {
-				let tMSShortcode = anchors[i].text.slice(16)
-				anchors[i].replaceWith(`<a class='library' href='../${tMSShortcode}'> on theMettāShelf</a>`)
-				break
-			}
-			let firstThree = anchors[i].text.slice(0,3)
-			switch(firstThree) {
-				case 'MN ':
-				case 'AN ':
-				case 'SN ':
-				case 'DN ':
-				case 'Ud ':
-					let tempTop =  anchors[i].text.slice(0, 2)
-					let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
-					let tempText = tempTop + '&#8239;' + tempTail
-					anchors[i].replaceWith(`<span class='sclinktext'>${tempText}</span>`)
-				break
-				case 'Dhp':
-				case 'Snp':
-				case 'Iti':
-					let temp2Top =  anchors[i].text.slice(0, 3)
-					let temp2Tail = anchors[i].text.slice(4,anchors[i].text.length)
-					let temp2Text = temp2Top + '&#8239;' + temp2Tail
-					anchors[i].replaceWith(`<span class='sclinktext'>${temp2Text}</span>`)
-				break
-				case 'Tha':
-				case 'Thi':
-					let temp3Top =  anchors[i].text.slice(0, 4)
-					let temp3Tail = anchors[i].text.slice(5,anchors[i].text.length)
-					let temp3Text = temp3Top + '&#8239;' + temp3Tail
-					anchors[i].replaceWith(`<span class='sclinktext'>${temp3Text}</span>`)
-				break
-				case 'Ja ':
-				case 'Kd ':
-				case 'Mil':
-				case 'Bu ':
-					anchors[i].classList.add('extlink')
-					anchors[i].classList.add('tipref')
-				break
-				default:
-					if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
-						let target = anchors[i].getAttribute('href');
-						let temp4Text = anchors[i].text
-						anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`)
-					} else {
+			// anchors
+			let anchors = footnotesRoot.getElementsByTagName ('a') 
+			for (i in anchors) {
+				let istMSBook = anchors[i].text.slice(0,16) == `wiswo.org/books/`
+				if (istMSBook) {
+					let tMSShortcode = anchors[i].text.slice(16)
+					anchors[i].replaceWith(`<a class='library' href='../${tMSShortcode}'> on theMettāShelf</a>`)
+					break
+				}
+				let firstThree = anchors[i].text.slice(0,3)
+				switch(firstThree) {
+					case 'MN ':
+					case 'AN ':
+					case 'SN ':
+					case 'DN ':
+					case 'Ud ':
+						let tempTop =  anchors[i].text.slice(0, 2)
+						let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
+						let tempText = tempTop + '&#8239;' + tempTail
+						anchors[i].replaceWith(`<span class='sclinktext'>${tempText}</span>`)
+					break
+					case 'Dhp':
+					case 'Snp':
+					case 'Iti':
+						let temp2Top =  anchors[i].text.slice(0, 3)
+						let temp2Tail = anchors[i].text.slice(4,anchors[i].text.length)
+						let temp2Text = temp2Top + '&#8239;' + temp2Tail
+						anchors[i].replaceWith(`<span class='sclinktext'>${temp2Text}</span>`)
+					break
+					case 'Tha':
+					case 'Thi':
+						let temp3Top =  anchors[i].text.slice(0, 4)
+						let temp3Tail = anchors[i].text.slice(5,anchors[i].text.length)
+						let temp3Text = temp3Top + '&#8239;' + temp3Tail
+						anchors[i].replaceWith(`<span class='sclinktext'>${temp3Text}</span>`)
+					break
+					case 'Ja ':
+					case 'Kd ':
+					case 'Mil':
+					case 'Bu ':
 						anchors[i].classList.add('extlink')
+						anchors[i].classList.add('tipref')
+					break
+					default:
+						if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
+							let target = anchors[i].getAttribute('href');
+							let temp4Text = anchors[i].text
+							anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`)
+						} else {
+							anchors[i].classList.add('extlink')
+						}
+				}
+			}
+			let outFNLi = footnotesRoot.getElementsByTagName ('li')
+			let localJSON = `[\n`
+			for (let i in outFNLi) {
+				if (outFNLi[i].id.substring(0,2) == 'fn' ) {
+					let thisFootnoteRoot = parse(outFNLi[i].innerHTML)
+					let thisFootnoteHTML = ``
+					thisFootnoteParas = thisFootnoteRoot.querySelectorAll('p')
+		
+					for (let j in thisFootnoteParas) {
+						thisFootnoteHTML += thisFootnoteParas[j].outerHTML.replaceAll('\"','\'')
+						.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
+						.replaceAll('<em>,</em>',',')  // clean up unexpected italics
+						.replaceAll(' | ','<br>')
+						.replaceAll('<p> ', '<p>')
 					}
-			}
-		}
-		let outFNLi = footnotesRoot.getElementsByTagName ('li')
-		let localJSON = `[\n`
-		for (let i in outFNLi) {
-			if (outFNLi[i].id.substring(0,2) == 'fn' ) {
-				let thisFootnoteRoot = parse(outFNLi[i].innerHTML)
-				let thisFootnoteHTML = ``
-				thisFootnoteParas = thisFootnoteRoot.querySelectorAll('p')
-	
-				for (let j in thisFootnoteParas) {
-					thisFootnoteHTML += thisFootnoteParas[j].outerHTML.replaceAll('\"','\'')
-					.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
-					.replaceAll('<em>,</em>',',')  // clean up unexpected italics
-					.replaceAll(' | ','<br>')
-					.replaceAll('<p> ', '<p>')
-				}
-	
-				localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML}"\n}`
-	
-				if (i == outFNLi.length -1) {
-					localJSON += '\n'
-				} else {
-					localJSON += ',\n'
+		
+					localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML}"\n}`
+		
+					if (i == outFNLi.length -1) {
+						localJSON += '\n'
+					} else {
+						localJSON += ',\n'
+					}
 				}
 			}
-		}
-		localJSON += ']'
-
-		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
-		console.log(`✅ footnotes.json created`)
+			localJSON += ']'
+	
+			fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
+			console.log(`✅ footnotes.json created`)
+			} else {
+				footnotesExist = false
+				console.log (`❎—🛈 NO FOOTNOTES in document`)
+			}
 	}
 
 	function buildBookInfoJSON () {
@@ -1060,7 +1071,10 @@ function processPandoc() {
 
 	function extractBookHTML () {
 		let bookRoot = parse (pandocRoot.querySelector('body'))
-		bookRoot.querySelector('#footnotes').remove()
+		if (bookRoot.querySelector('#footnotes')) {
+			bookRoot.querySelector('#footnotes').remove()
+		}
+
 		bookRoot.querySelector('header').remove()
 		let allDivs = bookRoot.querySelectorAll('div')
 		for (i in allDivs) {

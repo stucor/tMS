@@ -93,8 +93,10 @@ const downloadButtonURL = `${iconsFolder}download.svg`
 const bookURL = installationDirectory + bookID
 const bookFullURL = bookURL + '/index.html'
 
-const mainCSS = '../css/reader.css'
-const suttaCSS = '../css/scsutta.css'
+const uiCSS = `../_resources/css/tMSUI.css`
+const bookCSS = '../_resources/css/tMSBook.css'
+const bookMediaQCSS = '../_resources/css/tMSBookMediaQ.css'
+const suttaCSS = '../_resources/css/scsutta.css'
 
 // Title & Subtitle
 const title = metaData.BookTitle
@@ -115,7 +117,9 @@ html +=`<!DOCTYPE html>
 	<meta name="theme-color" content="#fff">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="${mainCSS}">
+	<link rel="stylesheet" type="text/css" href="${uiCSS}">
+	<link rel="stylesheet" type="text/css" href="${bookCSS}">
+	<link rel="stylesheet" type="text/css" href="${bookMediaQCSS}">
 	<link rel="stylesheet" type="text/css" href="${suttaCSS}">
 	<link rel="shortcut icon" type="image/x-icon"  href="${siteLogoURL}">
 	<title>${title} - ${authorShortname}</title>
@@ -208,7 +212,7 @@ function buildFootnotes () {
 			localHTML += `<div class="booknote" data-note="${footnotesData[i].fnNumber}">${footnotesData[i].fnHTML}`
 			localHTML += '</div>\n'
 		}
-		localHTML += `<div style='margin-top: 2em; background: #7f7f7f50; text-align:center; font-variant:small-caps; margin-bottom: 50%'>End of Notes</div>`
+		localHTML += `<div class='endBar'>End of Notes</div>`
 		return localHTML;
 	} else {
 		return ''
@@ -268,14 +272,18 @@ html +=					`</div>
 <div id="spinbox"><div id="spintext"></div></div>
 `
 // Book
-html += `<div class="wrapper" id="bookwrap"><div></div>
-	<div class="content" id="thecontent">
-		<h1 class="engrave center" id="TOCTarget0">${title}</h1>
-		<p class="center smallEngrave">${authorShortname}</p>
-		<div class="book" id="thebook" data-shortcode="${bookID}">
-			<h1 class="titlepage" id="TOCTarget0-1">${title}</h1>
-			<h4 class="titlepage">${subtitle}</h4>
-			<h2 class="titlepage">${authorShortname}</h2>`
+html += `<div id="bookwrap"><div></div>
+<div class="content" id="thecontent">
+<h1 class="engrave" id="TOCTarget0">${title}</h1>
+<p class="smallEngrave">${authorShortname}</p>
+<div class="book" id="thebook" data-shortcode="${bookID}">
+<h1 class="titlepage" id="TOCTarget0-1">${title}</h1>`
+
+if (subtitle) {
+	html += `<h4 class="titlepage">${subtitle}</h4>`
+}			
+
+html += `<h2 class="titlepage">${authorShortname}</h2>`
 
 function buildBook () {
 	let bookRoot = ``;
@@ -727,24 +735,18 @@ if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.html`)) {
 
 
 
-html += `
-<div class="eob">—END OF BOOK—<br>
-<a href="../..">
-<img src="../_resources/images/icons/logo.png" alt="Wiswo Logo"> 
-<span>Wisdom & Wonders</span>
-</a>
-</div>
+html += `<div class="endBar">End of Book</div>
+
 <h1 id="TOCTarget999999999"></h1>
 </div>	
 </div>
 <div></div></div> 
 
-<script src="../js/jquery-3.6.0.min.js"></script>
-<script src="../js/jquery.mark.min.js"></script>
-<script src="../js/list.js.2.3.1/list.min.js"></script>
-<script src="../js/reader.js"></script>
-<script src="../js/scsutta.js"></script>
-<script src="../js/fslightbox.js"></script>
+<script src="../_resources/js/jquery-3.6.0.min.js"></script>
+<script src="../_resources/js/jquery.mark.min.js"></script>
+<script src="../_resources/js/list.js.2.3.1/list.min.js"></script>
+<script src="../_resources/js/tMS.js"></script>
+<script src="../_resources/js/scsutta.js"></script>
 
 </body>
 </html>`

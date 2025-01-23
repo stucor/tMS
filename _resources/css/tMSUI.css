@@ -1,0 +1,160 @@
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 400 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('../fonts/SourceSans3VF-Roman.ttf.woff2') format('woff2'),
+         url('../fonts/SourceSans3VF-Roman.ttf.woff') format('woff'),
+         url('../fonts/SourceSans3VF-Roman.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 300 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('../fonts/SourceSans3VF-Italic.ttf.woff2') format('woff2'),
+         url('../fonts/SourceSans3VF-Italic.ttf.woff') format('woff'),
+         url('../fonts/SourceSans3VF-Italic.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 400 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('../fonts/SourceSerif4Variable-Roman.ttf.woff2') format('woff2'),
+         url('../fonts/SourceSerif4Variable-Roman.ttf.woff') format('woff'),
+         url('../fonts/SourceSerif4Variable-Roman.ttf') format('truetype'); 
+}
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 300 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('../fonts/SourceSerif4Variable-Italic.ttf.woff2') format('woff2'),
+         url('../fonts/SourceSerif4Variable-Italic.ttf.woff') format('woff'),
+         url('../fonts/SourceSerif4Variable-Italic.ttf') format('truetype');
+}
+
+root {
+	--notused: #ffa600;
+	--fontsize: 1rem;
+	--lineheight: 1.5;
+	--textalign: justify;
+	--fontfamily: 'Source Sans Pro', sans-serif;
+
+	--notehighlighter: #d6630f40;
+	--bdtexthighlighter: #eef0fb;
+	--bdtexthighlightborder: green;
+
+	--TOCprogress: #f7f7f7;
+	--TOChighlighter: #f7f7f7;
+
+	--invisiblecolor: rgba(42, 218, 159, 0);
+	--lightwash:  rgba(239, 239, 239, 0.14);
+
+	--primarycolor: #cea140;
+	--primarytextcolor: #000;
+	--primarybackground:#fff;
+
+	--imgbackground: #1e3454;
+
+	--secondarycolor: #5c0909;
+	--secondarytextcolor: blue;
+
+	--primaryinterfacecolor: green;
+	--listlinkhover: #cea14030;
+	--suphovercolor: #d6630f8F;
+	--buttontext: #000;
+	--buttonbackground: #cea1407e;
+	--sliderbackground: #cea1407e;
+	--pickedtext: #5c0909;
+	--spincentral: #036df7a9;
+	--spinbar: rgb(231, 124, 36) ;
+	--spintextgrad: var(--spinbar);
+	--tablecaption: #ffffff;
+	--tablehead: #eaeaea;
+	--tableodd: #ffffff;
+	--tableeven: #f8f8f8;
+	--tablefoot: #fcfcfc;
+	--tableborder: #b9b9b980;
+	--figureimgborder: #808080;
+	--infoaddonbackground: #afafaf48;
+	--scsegmentnumbercolor: #5278c0;
+	--ascsutta: ">>";
+	--descsutta: "<<";
+	--selfquoteleftmargin: -3em;
+	--selfquotetopmargin: 0;
+	--sidenavboxshadow: 6px 0 6px -3px #888;
+	--sesamebackground: #fffff8;
+}
+
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	background:
+	linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+	linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+	linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+	linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+	linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+	linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
+	max-width:100%;
+	min-width:100%;
+	position:relative;
+	z-index: -20;
+}
+
+::selection {
+	color: var(--primarybackground);
+	background-color: var(--primarytextcolor);
+}
+
+.engrave {
+	padding: 0 1vh;
+	color:#7c7c7c;
+	background-color: #5d8d8900;
+	text-shadow: 0px 1px 0px #ffffff;
+	font-size: 48px !important;
+	font-variant: small-caps;
+	font-style: normal !important;
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+	opacity: 0.4;
+	hyphens: none;
+	text-align: center !important;
+}
+
+.smallEngrave {
+	padding: 0 1vh;
+	color:#7c7c7c;
+	background-color: #5d8d8900;
+	text-shadow: 0px 2px 0px #ffffff;
+	font-size: 32px !important;
+	font-variant: small-caps;
+	font-style: normal !important;
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+	opacity: 0.4;
+	hyphens: none;
+	text-align: center !important;
+}
+
+#bookwrap {
+	position: relative;
+	z-index: -15;
+	display: grid;
+    grid-template-columns: 7% 86% 7%;
+}
+
+.noshow {
+	display:none !important;
+}
+
+.endBar {
+	margin-top: 2em; 
+	background: #7f7f7f50; 
+	text-align:center; 
+	font-variant:small-caps; 
+	margin-bottom: 50%	
+}

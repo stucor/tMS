@@ -667,7 +667,7 @@ table.borderlessTable {
 
 /*PARAGRAPH COUNTING */
 
-.paracounterreset {
+/* .paracounterreset {
 	counter-reset : paragraph;
 }
 
@@ -678,28 +678,8 @@ table.borderlessTable {
 	content : "" counter(paragraph ) "";
 	counter-increment : paragraph;
 	margin-right: 10px;
-}
-
-/* .content div.bob-text {
-	font-family: 'Source Serif Pro';
-	width:fit-content;
-	max-width: 60%;
-	margin: 2em auto 3em auto;
-	font-style: normal;
-	font-style: italic;
-	font-weight: 500;
-	font-size: 1.2em;
-	hyphens: none;
-	text-align: left;
-}
-
-.content span.bob-cite {
-	float:right;
-	text-align: right;
-	font-style: normal;
-	font-size: 0.75em;
-	padding-top: 0;
 } */
+
 
 /***** SPECIAL MESSAGE *****/
 .special-message {

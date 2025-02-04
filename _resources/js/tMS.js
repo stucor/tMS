@@ -124,13 +124,8 @@ function buildSettings (_callback) {
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="hyphenCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
-				<span class ="settingsheadersleft">Show Paragraph numbers:</span>
-				<select class = "select-css" id = "showParaNosList">
-					<option> do not show numbers </option>
-					<option> count by whole book </option>
-					<option> count by section </option>
-					<option> count by subsection </option>
-				</select>
+				<span class ="settingsheadersleft">tms reference:</span>
+				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showtMSIndexCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
 				<span class ="settingsheadersleft">Full Screen Mode:</span>
@@ -292,14 +287,13 @@ function startup () {
 				hideSpinner();
 			});
 		}
-		showParaNosList.onchange = function () {
+		showtMSIndexCheck.onchange = function () {
 			showSpinner(); // show spinner
-			promiseToRunAsync(doParaNosList) 
+			promiseToRunAsync(doTMSIndex) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
-
 		if (!(isBookShelf() || isAudioBook())) {
 			let engrave = document.getElementsByClassName("engrave");
 			let smallEngrave = document.getElementsByClassName("smallEngrave");
@@ -730,17 +724,21 @@ function initialiseBookSettings () {
 			setCookie('wiswobooks_hyphenation',local_wiswobooks_hyphenation,365);
 	}
 	setHyphenation();
-	//SHOW-PARAGRAPH-NUMBERS
-	var local_wiswobooks_paranos_state = parseInt(getCookie("wiswobooks_paranos_state"));
-	if (local_wiswobooks_paranos_state == '') {
-		document.getElementById("showParaNosList").selectedIndex = 0;
-		setCookie('wiswobooks_paranos_state', local_wiswobooks_paranos_state,365);
-	} else {
-		document.getElementById("showParaNosList").selectedIndex = local_wiswobooks_paranos_state;
+	// tMS Index
+	var local_wiswobooks_tMSIndex = getCookie("wiswobooks_tMSIndex");
+	switch (local_wiswobooks_tMSIndex) {
+		case 'true' :
+			document.getElementById("showtMSIndexCheck").checked = true;
+			break;
+		case 'false' :
+			document.getElementById("showtMSIndexCheck").checked = false;
+			break;	
+		default :
+			document.getElementById("showtMSIndexCheck").checked = false;
+			local_wiswobooks_tMSIndex = 'false';
+			setCookie('wiswobooks_tMSIndex',local_wiswobooks_tMSIndex,365);
 	}
-	if (!isBookShelf()) {
-		setParaNumbers();
-	}
+	setTMSIndex();
 
 	//PLACE-IN-BOOK is done after the settings are complete in onload function;
 
@@ -945,9 +943,10 @@ if (!nuclearOption) {
 		//HYPHENATION
 		var local_wiswobooks_hyphenation = document.getElementById("hyphenCheck").checked;
 		setCookie('wiswobooks_hyphenation',local_wiswobooks_hyphenation,365);
-		//SHOW-PARAGRAPH-NUMBERS
-		var local_wiswobooks_paranos_state = document.getElementById("showParaNosList").selectedIndex;
-		setCookie ('wiswobooks_paranos_state',local_wiswobooks_paranos_state,365);
+		//tMS Index
+		var local_wiswobooks_tMSIndex = document.getElementById("showtMSIndexCheck").checked;
+		setCookie('wiswobooks_tMSIndex',local_wiswobooks_tMSIndex,365);
+
 		//Place In Book
 		savePlaceInBook();
 
@@ -1648,91 +1647,41 @@ function setSerif () {
 	
 }	
 
-
-function doParaNosList () {
-	setParaNumbers();
-}	
-
-function setParaNumbers () {
-	var ParaNosList = document.getElementById("showParaNosList");
-	var parastate = ParaNosList.selectedIndex;
-
-	var wholebook = document.getElementById("thecontent");
-	var section  = document.querySelectorAll(".content h1");
-	var subsection  = document.querySelectorAll(".content h2");
-
-	/* THE parastate variable is ...
-			0 = Do not show numbers 
-			1 = Count by whole book
-			2 = Count by section
-			3 = Count by subsection
-	*/
-
-	switch (parastate) {
-		case 0: {
-			wholebook.classList.remove('paracounterreset');
-			for( var i = 0; i < section.length; i++ ) {
-				section[i].classList.remove('paracounterreset');	
-			}
-			for( var i = 0; i < subsection.length; i++ ) {
-				subsection[i].classList.remove('paracounterreset');	
-			}
-			break;
-		}
-		case 1: {
-			wholebook.classList.add('paracounterreset');
-			for( var i = 0; i < section.length; i++ ) {
-				section[i].classList.remove('paracounterreset');	
-			}
-			for( var i = 0; i < subsection.length; i++ ) {
-				subsection[i].classList.remove('paracounterreset');	
-			}
-			break;
-		}
-		case 2: {
-			wholebook.classList.remove('paracounterreset');
-			for( var i = 0; i < section.length; i++ ) {
-				section[i].classList.add('paracounterreset');	
-			}
-			for( var i = 0; i < subsection.length; i++ ) {
-				subsection[i].classList.remove('paracounterreset');	
-			}
-			break;
-		}
-		case 3: {
-			wholebook.classList.remove('paracounterreset');
-			for( var i = 0; i < section.length; i++ ) {
-				section[i].classList.add('paracounterreset');	
-			}
-			for( var i = 0; i < subsection.length; i++ ) {
-				subsection[i].classList.add('paracounterreset');	
-			}
-			break;
-		}
-	}
-	var allpara = document.querySelectorAll(".content p");
-	//var allquotes = document.querySelectorAll(".content div.quote");
-	if (parastate > 0) {
-		for( var i = 0; i < allpara.length; i++ ) {
-			allpara[i].classList.add('parashow');	
-		}
-		/*
-		for( var i = 0; i < allquotes.length; i++ ) {
-			allquotes[i].classList.add('parashow');	
-		}
-		*/
-	} else {
-		for( var i = 0; i < allpara.length; i++ ) {
-			allpara[i].classList.remove('parashow');	
-		}
-		/*
-		for( var i = 0; i < allquotes.length; i++ ) {
-			allquotes[i].classList.remove('parashow');	
-		}
-		*/	
-	}
+function doTMSIndex () {
+	setTMSIndex ()
+	restorePlaceInBook();
 }
 
+function setTMSIndex () {
+	let theBook = document.getElementById('thebook')
+	let paragraphArr = theBook.querySelectorAll('p')
+
+	for (let i in paragraphArr) {
+		let tempID = paragraphArr[i].id
+		if (tempID) {
+			let injectSpan = `<span class="tMSIndex">P ${tempID.slice(4)}</span>`
+			if (document.getElementById('showtMSIndexCheck').checked) {
+				paragraphArr[i].innerHTML = injectSpan + paragraphArr[i].innerHTML
+			} else {
+				paragraphArr[i].innerHTML = paragraphArr[i].innerHTML.replaceAll(injectSpan, '')
+			}
+		}
+	}
+
+	let headingsArr = theBook.querySelectorAll('h1, h2, h3')
+	for (let i in headingsArr) {
+		let tempID = headingsArr[i].id
+		if ((tempID) && (tempID != 'TOCTarget999999999') && (tempID != 'TOCTarget0-1') ) {
+			let injectSpan = `<span class="tMSIndex">H ${tempID.slice(9)}</span>`
+			console.log (injectSpan)
+			if (document.getElementById('showtMSIndexCheck').checked) {
+				headingsArr[i].innerHTML = injectSpan + headingsArr[i].innerHTML
+			} else {
+				headingsArr[i].innerHTML = headingsArr[i].innerHTML.replaceAll(injectSpan, '')
+			}
+		}
+	}
+}
 
 
 window.onpopstate = function (event) {

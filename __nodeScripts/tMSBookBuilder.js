@@ -636,8 +636,8 @@ function buildBook () {
 
 
 	let allSegments = bookRoot.querySelectorAll('p')
-	for (i in allSegments) {
-		allSegments[i].setAttribute('id',`seg-${i}`)
+	for (let i in allSegments) {
+		allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)
 	}
 
 

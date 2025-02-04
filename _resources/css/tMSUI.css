@@ -158,3 +158,42 @@ body {
 	font-variant:small-caps; 
 	margin-bottom: 50%	
 }
+
+p .tMSIndex {
+	position:relative;
+    bottom:0.1em;
+	color: var(--primarybackground);
+	background: var(--primarytextcolor);
+	opacity: 35%;
+	border-radius: 30px;
+	padding:0 0.8em;
+	font-size: 0.8em;
+	margin: -1em 0.5em 0 0;
+	user-select: none;
+	font-style: normal;
+}
+h1 .tMSIndex {
+	position:relative;
+    bottom: 0.6em;
+	color: var(--primarybackground);
+	background: var(--primarytextcolor);
+	opacity: 35%;
+	border-radius: 30px;
+	max-width:fit-content;
+	padding:0 0.8rem;
+	font-size: 0.5em;
+	margin: 0;
+	user-select: none;
+}
+h2 .tMSIndex {
+	position:relative;
+    bottom:0.1em;
+	color: var(--primarybackground);
+	background: var(--primarytextcolor);
+	opacity: 35%;
+	border-radius: 30px;
+	padding:0 0.8em;
+	font-size: 0.7em;
+	margin: -1em 0.5em 0 0;
+	user-select: none;
+}

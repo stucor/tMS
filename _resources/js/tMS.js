@@ -191,11 +191,11 @@ function startup () {
 		if (isAudioBook()) { 
 			initialiseAudioBookSettings();
 			initplayer();
-			document.getElementById('TOCTarget0').style.display='none';
+			document.getElementById('head-0').style.display='none';
 		}
 		if (isBookShelf()) {
 			initialiseBookShelfSettings ();
-			document.getElementById('TOCTarget0').style.display='none';
+			document.getElementById('head-0').style.display='none';
 		}
 		mobileUIAlwaysOnCheck.onclick = function () {
 			var wasSidebarOpen = sidebarIsOpen; //check if the sidebar was open as we have to close it and reopen it in mobile mode
@@ -336,12 +336,6 @@ function buildInfo () {
 		let shortCode = shortcode();
 		let html ='';
 
-/* 		let sections = document.getElementsByClassName('goselfquote');
-		
-		for (let i = 0; i <sections.length; i++) {
-			html += sections[i].innerText.replace('§', '') + "<br>";
-		  }
- */
 		function suttalist () {
 			let suttarefArr = document.getElementsByClassName('sclinktext');
 			if (suttarefArr.length == 0) { return '';}
@@ -566,7 +560,8 @@ window.onload = function () {
 	});
 };
 
-var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
+//var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
+var savedBookElements = thebook.querySelectorAll("h1, h2, h3, p");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
 var savedNotesElements = ModalNotes.querySelectorAll('h2, div.booknote');
@@ -863,26 +858,47 @@ function poptoc0 (xtext) {
 }
 
 function getPlaceInBook () {
-		//PLACE-IN-BOOK - gets the top element and it's top edge
-		var lsTEname, lsTETEname;
-		lsTEname= 'ms' + shortcode() + 'TE';
-		lsTETEname = 'ms' + shortcode() + 'TETE';
-		if ((localStorage.getItem(lsTEname) === null) && (localStorage.getItem(lsTETEname) === null)) {
-			localStorage.setItem(lsTEname, "0");
-			localStorage.setItem(lsTETEname, "0");
-			theTopElement = 0;
-			theTopElementTopEdge = 0;
-		} else {
-			theTopElement = parseInt(localStorage.getItem(lsTEname));
-			theTopElementTopEdge = parseInt(localStorage.getItem(lsTETEname));
-			scrollToNavTarget();
-		}
-		setTimeout(() => {
-			scrollToNavTarget();
-			fillProgressBar();
-		}, 600); 
+	
+	let urlString = window.location.href
+	let url = new URL(urlString);
+	let ref = url.searchParams.get("ref");
 
+	//PLACE-IN-BOOK - gets the top element and it's top edge
+	var lsTEname, lsTETEname;
+	lsTEname= 'ms' + shortcode() + 'TE';
+	lsTETEname = 'ms' + shortcode() + 'TETE';
+	if ((localStorage.getItem(lsTEname) === null) && (localStorage.getItem(lsTETEname) === null)) {
+		localStorage.setItem(lsTEname, "0");
+		localStorage.setItem(lsTETEname, "0");
+		theTopElement = 0;
+		theTopElementTopEdge = 0;
+		if (ref) {
+			for (let i in savedBookElements) {
+				if (savedBookElements[i].id == ref) {
+					theTopElement = i
+					scrollToNavTarget();
+				}
+			}
+		}
+	} else {
+		theTopElement = parseInt(localStorage.getItem(lsTEname));
+		theTopElementTopEdge = parseInt(localStorage.getItem(lsTETEname));
+		if (ref) {
+			if (ref != savedBookElements[theTopElement].id) {
+				console.clear()
+				showAlert (`<p>You are already started to read this book on this device.<br>
+							Your last read tMS-Index was: <b>${savedBookElements[theTopElement].id}</b>.<br>
+							<button id="goParamBtn" data-ref="${ref}">Go to <b>${ref}</b> as asked for in url instead</button></p>`)
+			}
+		}
+		scrollToNavTarget();
 	}
+/* 	setTimeout(() => {
+		scrollToNavTarget();
+		fillProgressBar();
+	}, 600);  */
+
+}
 
 function savePlaceInBook () {
 	//PLACE-IN-BOOK - saves the top element and it's top edge
@@ -1034,12 +1050,7 @@ if (!nuclearOption) {
 
 }
 
-
-
-
 // SETTINGS FUNCTIONS
-
-
 
 function setFFS () {
 	var ffsCheck = document.getElementById("mobileUIAlwaysOnCheck");
@@ -1050,8 +1061,6 @@ function setFFS () {
     }	
 }
 
-
-
 function buildpageBreak(e) {
 	var thepagenumber = e.getAttribute("data-page");
 	var affect = '–';
@@ -1060,7 +1069,6 @@ function buildpageBreak(e) {
 	if (wordcut === null) {wordcut ='';} else {wordcut ='&#x02014;';}
 	e.innerHTML = wordcut + "<div class=pagenumber>"+affect+" " + thepagenumber + " "+affect+"</div><hr class='pagebreak'>";
 }
-
 
 // JUSTIFICATION
 function doJustifyCheck () {
@@ -1333,7 +1341,7 @@ function setTheme(){
 
 			r.style.setProperty('--infoaddonbackground', '#80808008');
 
-			var engrave = document.getElementById('TOCTarget0');
+			var engrave = document.getElementById('head-0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
 
@@ -1455,7 +1463,7 @@ function setTheme(){
 
 			r.style.setProperty('--infoaddonbackground', '#afafaf48');
 
-			var engrave = document.getElementById('TOCTarget0');
+			var engrave = document.getElementById('head-0');
 			engrave.style.color ='#7c7c7c';
 			engrave.style.textShadow ='0px 1px 0px #ffffff';
 
@@ -1582,7 +1590,7 @@ function setTheme(){
 			r.style.setProperty('--infoaddonbackground', '#cea1400a');
 
 
-			var engrave = document.getElementById('TOCTarget0');
+			var engrave = document.getElementById('head-0');
 			engrave.style.color ='#bdbdbd';
 			engrave.style.textShadow ='0px 1px 0px #000000';
 			
@@ -1657,9 +1665,10 @@ function setTMSIndex () {
 	let paragraphArr = theBook.querySelectorAll('p')
 
 	for (let i in paragraphArr) {
-		let tempID = paragraphArr[i].id
-		if (tempID) {
-			let injectSpan = `<span class="tMSIndex">P ${tempID.slice(4)}</span>`
+		//let tempID = paragraphArr[i].id
+		if (paragraphArr[i].id) {
+//			let injectSpan = `<span class="tMSIndex">P${tempID.slice(4)}</span>`
+			let injectSpan = `<span class="tMSIndex">${paragraphArr[i].id}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				paragraphArr[i].innerHTML = injectSpan + paragraphArr[i].innerHTML
 			} else {
@@ -1670,10 +1679,11 @@ function setTMSIndex () {
 
 	let headingsArr = theBook.querySelectorAll('h1, h2, h3')
 	for (let i in headingsArr) {
-		let tempID = headingsArr[i].id
-		if ((tempID) && (tempID != 'TOCTarget999999999') && (tempID != 'TOCTarget0-1') ) {
-			let injectSpan = `<span class="tMSIndex">H ${tempID.slice(9)}</span>`
-			console.log (injectSpan)
+//		let tempID = headingsArr[i].id
+		if ((headingsArr[i].id) && (headingsArr[i].id != 'head-999999999') && (headingsArr[i].id != 'head-0-1') ) {
+//			let injectSpan = `<span class="tMSIndex">H${tempID.slice(9)}</span>`
+			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id}</span>`
+			//console.log (injectSpan)
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				headingsArr[i].innerHTML = injectSpan + headingsArr[i].innerHTML
 			} else {
@@ -1761,7 +1771,7 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 		} else {
 			if (!(e.target.classList.contains('notTOC'))) { // if there isn't a class notTOC on the li
 				var tocNumber = e.target.id.replace("TOC", "");
-				var toctarget = "TOCTarget" + tocNumber;
+				var toctarget = "head-" + tocNumber;
 				goToTarget(toctarget);
 			}
 		}
@@ -1818,6 +1828,7 @@ window.onscroll = function() {
 	// save position
 	getNavTarget();
 	//savePlaceInBook();
+
 }
 
 function setSelfquoteMargins () {
@@ -1853,7 +1864,7 @@ function fillProgressBar() {
 			break;
 		}
 	}
-	var currentTOC = currentTOCTarget.replace('Target', '');
+	var currentTOC = currentTOCTarget.replace('head-', 'TOC');
 
 	if (currentTOC !== '') {
 		for (var i = 0; i < savedTOCElements.length; i++) {
@@ -2185,16 +2196,6 @@ function setModalStyle (heading) {
 			modalcontent.style.padding = "0";
 			break;
 		case 'Notes':
-			/*
-			modalbody.style.maxHeight = "50vh";
-			modalbody.style.padding = "0";
-			modalcontent.style.maxWidth = "80%";
-			modalcontent.style.width = "80%";
-			modalcontent.style.position ="relative";
-			modalcontent.style.right = "0";
-			modalcontent.style.top = "0";	
-			modalcontent.style.padding = "0";
-			*/
 			modalbody.style.height = "65vh";
 			modalbody.style.maxHeight = "65vh";
 			modalbody.style.padding = "0";
@@ -2321,7 +2322,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				toctarget = e.target.getAttribute("data-TOCref");
 			} else {
 				var tocNumber = e.target.id.substring(3);
-				toctarget = "TOCTarget" + tocNumber;
+				toctarget = "head-" + tocNumber;
 			}
 			goToTarget(toctarget);
 			if (true) {e.preventDefault();}
@@ -2390,7 +2391,7 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 
 	if (e.target.parentNode.id == 'LOT') {
 		var tocNumber = e.target.id.replace("TOC", "");
-		var toctarget = "TOCTarget" + tocNumber;
+		var toctarget = "head-" + tocNumber;
 		exitStaticModal();
 		goToTarget(toctarget);
 	}
@@ -2413,27 +2414,44 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 		var gotoID = e.target.id.replace("figlinkto_","");
 		scrollToID(gotoID);
 	}
-
-/* 	if (e.target.classList.contains ('expander')) {
-		if (e.target.classList.contains('expanded')) {
-			e.target.innerHTML = '⊕';
-			e.target.classList.remove('expanded');
-		} else {
-			e.target.innerHTML = '⊗ '; 
-			e.target.classList.add('expanded');
-		}
-	} */
-
 });
 
 
 function showAlert(HTMLToShow) {
 	restorePlaceInBook();
-	//var mda = document.getElementById('ModalDownloadAlert');
 	modalalert.innerHTML = HTMLToShow;
 	setModalStyle ("Alert");
 	showModal ("Alert");
 }
+
+modalalert.addEventListener("click", function(e) {
+	if (e.target.id == 'goParamBtn') {
+		let refTarget = e.target.getAttribute(`data-ref`)
+		exitStaticModal();
+		goToTarget(refTarget);
+	}
+
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+	/****************************************** DO THIS NEXT **********************************************************************************************************************************/
+
+	if (e.target.id == 'shareAtHere') {
+		navigator.clipboard.writeText('https://wiswo.org/books/afcm')
+	}
+	if (e.target.id == 'shareNoParams') {
+		navigator.clipboard.writeText('https://wiswo.org/books/afcm')
+	}
+
+
+
+});
 
 var savedsup = '';
 function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
@@ -2444,7 +2462,6 @@ function formatbooknotes() { // adds the notes numbers to the booknotes - called
 var highlightedNote = 0;
 function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
-//	savedNotesElements[highlightedNote].style.border = "thin solid var(--bdtexthighlightborder)"
 	savedNotesElements[highlightedNote].style.boxShadow = "2px 2px 5px 0px var(--bdtexthighlightborder)"
 	savedNotesElements[highlightedNote].style.background = "var(--bdtexthighlighter)"
 	savedNotesElements[highlightedNote].scrollIntoView({block: "start", inline: "nearest", behavior: "auto"});
@@ -2453,7 +2470,6 @@ function highlightnote (notetohighlight) {
 
 function clearhighlightnote(when='delay', keepSup= false) {
 	savedNotesElements[highlightedNote].style.boxShadow = "unset"
-//	savedNotesElements[highlightedNote].style.border = "unset";
 	savedNotesElements[highlightedNote].style.background = "unset";
 		if (!(savedsup === '')) {
 			if (savedsup.tagName == 'TABLE')  {
@@ -2463,7 +2479,7 @@ function clearhighlightnote(when='delay', keepSup= false) {
 				savedsup.style.background = "var(--notehighlighter)"
 				savedsup.style.opacity = "0.5"
 			} else {
-				savedsup.style.background = "var(--notehighlighter)" //"var(--secondarytextcolor)"
+				savedsup.style.background = "var(--notehighlighter)" 
 				savedsup.style.boxShadow = "0px 0px 10px 10px var(--notehighlighter)"
 				savedsup.style.opacity = "0.7"
 				savedsup.style.color = "crimson"
@@ -2674,7 +2690,7 @@ function decodeBookSegment (anchortext) {
 	} else	{
 		str = anchortext.toLowerCase().replace(/\s/g,'').replace(',','').replace ('chapter', 'c' ).replace ('paragraph', 'p')
 		if ( str.search('p') == -1 ) {
-			str = `TOCTarget${str.substring(1)}`
+			str = `head-${str.substring(1)}`
 		} else {
 			unmarked_paragraph = true
 		}
@@ -3032,6 +3048,59 @@ function displaySelfquote (linktext) {
 	}
 	
 }
+
+
+
+// Selected Text Functions
+selectedTextBtn.onclick = function() {
+	let selection = window.getSelection()
+	let alertStr = ``
+
+	if (selection.toString() != '') {
+
+		let range = selection.getRangeAt(0)
+
+		let startTag = range.startContainer.parentNode.tagName
+		let startID = range.startContainer.parentNode.id
+		let startOff = range.startOffset
+	
+		let endTag = range.endContainer.parentNode.tagName
+		let endID = range.endContainer.parentNode.id
+		let endOff = range.endOffset
+	
+		let starter = startID
+		let ender = endID
+	
+		if ((startTag == 'SPAN') || (startTag == 'SUP')) {
+			starter = range.startContainer.parentNode.parentNode.id
+		} 
+	
+		if ((endTag == 'SPAN') || (endTag == 'SUP')) {
+			ender = range.endContainer.parentNode.parentNode.id
+		}  
+	
+		alertStr = `startTag: ${startTag}\nstartID: ${startID}\nstartOff: ${startOff}\nstarter: ${starter}\n\nendTag ${endTag}\nendID: ${endID}\nendOff: ${endOff}\nender: ${ender}`
+	
+		let copyDiv = document.createElement("div")
+		copyDiv.append(selection.getRangeAt(0).cloneContents())
+	
+		let rawHTML = copyDiv.outerHTML;
+	
+		//console.log (rawHTML)
+		showAlert (`${copyDiv.outerHTML}\n\n${alertStr.replaceAll('\n', '<br>')}`)
+
+	} else {
+		let shareFrom = savedBookElements[theTopElement].id
+		alertStr = `<p>You haven't selected any text to share. You are currently reading <b>${shareFrom}</b> in the book. You can do one of the following:</p>
+					<p>https://wiswo.org/books/${shortcode()}/?ref=${shareFrom}<br>
+					<button id="shareAtHere" data-toShare="https://wiswo.org/books/${shortcode()}/?ref=${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
+					<p>https://wiswo.org/books/${shortcode()}/<br>
+					<button id="shareNoParams" data-toShare="https://wiswo.org/books/${shortcode()}/">Copy the url for book without a specified position.</button></p>`
+		showAlert (`${alertStr}`)
+	}
+	
+}
+
 
 
 

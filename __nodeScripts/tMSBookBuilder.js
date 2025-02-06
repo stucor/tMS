@@ -171,6 +171,7 @@ html += `
 	<div class="topnav2">
 		<div id="tocBtn" class="tocbtn">&#10095; Contents</div>
 		<div class="booktitle">${title}<br>${authorShortname}</div>
+		<div class="topnav2buttons"><button id="selectedTextBtn"></button></div>
 	</div>
 </div>
 `
@@ -274,16 +275,16 @@ html +=					`</div>
 // Book
 html += `<div id="bookwrap"><div></div>
 <div class="content" id="thecontent">
-<h1 class="engrave" id="TOCTarget0">${title}</h1>
+<h1 class="engrave" id="head-0">${title}</h1>
 <p class="smallEngrave">${authorShortname}</p>
 <div class="book" id="thebook" data-shortcode="${bookID}">
-<h1 class="titlepage" id="TOCTarget0-1">${title}</h1>`
+<h1 class="titlepage" id="head-0-1">${title}</h1>`
 
 if (subtitle) {
 	html += `<h4 class="titlepage">${subtitle}</h4>`
 }			
 
-html += `<h2 class="titlepage">${authorShortname}</h2>`
+html += `<h2 class="titlepage">${authorShortname}</h2><hr>`
 
 function buildBook () {
 	let bookRoot = ``;
@@ -293,7 +294,7 @@ function buildBook () {
 	} catch (err) {
 		console.error(err);
 	}
-	// TOCTarget ids
+	// head- ids
 	let TOCData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'toc.json', 'utf8'))
 	let chapterPrefix = `Chapter`
 	if (itemType == 'document') {
@@ -311,7 +312,7 @@ function buildBook () {
 				}
 			}
 		}
-		headingArr[i].setAttribute('id',`TOCTarget${TOCData[i].tocno}`)
+		headingArr[i].setAttribute('id',`head-${TOCData[i].tocno}`)
 	}
 	// superscripts and sups 
 	let suffix = ['st', 'rd', 'nd', 'th']
@@ -438,6 +439,7 @@ function buildBook () {
 			} else {
 				allDivs[i].classList.add(`special-message`)
 				allDivs[i].removeAttribute('data-custom-style')
+				allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll('<p>', '').replaceAll('</p>', '')
 			}
 		} else 
 		// SPACE
@@ -737,7 +739,7 @@ if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.html`)) {
 
 html += `<div class="endBar">End of Book</div>
 
-<h1 id="TOCTarget999999999"></h1>
+<h1 id="head-999999999"></h1>
 </div>	
 </div>
 <div></div></div> 

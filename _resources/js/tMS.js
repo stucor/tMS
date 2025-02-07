@@ -561,11 +561,10 @@ window.onload = function () {
 };
 
 //var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
-var savedBookElements = thebook.querySelectorAll("h1, h2, h3, p");
+var savedBookElements = thebook.querySelectorAll("h1:not(.titlepage):not(#head-999999999), h2:not(.titlepage), h3:not(.titlepage), p");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
 var savedNotesElements = ModalNotes.querySelectorAll('h2, div.booknote');
-
 
 var theTopBar = document.getElementById("topbar");
 
@@ -3044,6 +3043,9 @@ function displaySelfquote (linktext) {
 selectedTextBtn.onclick = function() {
 	let selection = window.getSelection()
 	let alertStr = ``
+	let shareFrom = savedBookElements[theTopElement].id
+	let urlString = window.location.href
+	let bookPath = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/${shortcode()}`
 
 	if (selection.toString() != '') {
 
@@ -3068,23 +3070,50 @@ selectedTextBtn.onclick = function() {
 			ender = range.endContainer.parentNode.parentNode.id
 		}  
 	
-		alertStr = `startTag: ${startTag}\nstartID: ${startID}\nstartOff: ${startOff}\nstarter: ${starter}\n\nendTag ${endTag}\nendID: ${endID}\nendOff: ${endOff}\nender: ${ender}`
+		alertStr = `startTag: ${startTag}<br>startID: ${startID}<br>startOff: ${startOff}<br>starter: ${starter}<br><br>endTag ${endTag}<br>endID: ${endID}<br>endOff: ${endOff}<br>ender: ${ender}`
 	
+
 		let copyDiv = document.createElement("div")
+		copyDiv.id = `copydiv`
+		copyDiv.innerHTML = `<div><p>Text from: <a href='${bookPath}/?ref=${starter}'> ${document.title.replace(`-`, `by`)}, starting at <strong>${starter}</strong></a></p><hr></div>`
+
 		copyDiv.append(selection.getRangeAt(0).cloneContents())
+
+		let allSpans = copyDiv.querySelectorAll('span')
+		for (i in allSpans) {
+			if (allSpans[i].lang == 'pi') {
+				allSpans[i].innerHTML = `<em>${allSpans[i].innerHTML}</em>`
+			}
+			if (allSpans[i].className == 'tMSIndex') {
+				let tempHTML = allSpans[i].innerHTML
+				allSpans[i].style = `font-size:1rem;font-weight:normal;background-color:lightgrey;padding:0 0.5rem;margin:0 1rem`
+				allSpans[i].className = ''
+			}
+		}
+
+		let allDivs = copyDiv.querySelectorAll('div')
+		for (let i in allDivs) {
+			if (allDivs[i].className == 'epigram') {
+				allDivs[i].style = `font-weight:bold;font-style:italic;text-align:center`
+			}
+		}
+
 	
-		let rawHTML = copyDiv.outerHTML;
-	
-		//console.log (rawHTML)
-		showAlert (`${copyDiv.outerHTML}\n\n${alertStr.replaceAll('\n', '<br>')}`)
+/* 		let rawHTML = copyDiv.innerHTML.replaceAll(`class="tMSIndex"`,`style="font-size:1rem;background-color:lightgrey;padding:0 0.5rem; margin:0 1rem"`); */
+
+		navigator.clipboard.writeText(copyDiv.outerHTML)
+
+		showAlert (`<p>A simplied HTML snippet of the following text has been added to your clipboard:</p>${copyDiv.outerHTML}<br>${alertStr}`)
+
 
 	} else {
-		let shareFrom = savedBookElements[theTopElement].id
-		alertStr = `<p>You haven't selected any text to share. You are currently reading <b>${shareFrom}</b> in the book. You can do one of the following:</p>
-					<p>https://wiswo.org/books/${shortcode()}/?ref=${shareFrom}<br>
-					<button id="shareAtHere" data-toShare="https://wiswo.org/books/${shortcode()}/?ref=${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
-					<p>https://wiswo.org/books/${shortcode()}/<br>
-					<button id="shareNoParams" data-toShare="https://wiswo.org/books/${shortcode()}/">Copy the url for book without a specified position.</button></p>`
+		
+		alertStr = `<p>You have not selected any text to share.<br>You are currently reading <b>${shareFrom}</b> in the book.<br>You can do one of the following:</p>
+					<p style="font-family:'Courier New'">${bookPath}/?ref=${shareFrom}<br>
+					<button id="shareAtHere" data-toShare="${bookPath}/?ref=${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
+					<p style="font-family:'Courier New'">${bookPath}/<br>
+					<button id="shareNoParams" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
+
 		showAlert (`${alertStr}`)
 	}
 	

@@ -166,7 +166,7 @@ body {
 	font-style: normal;
 	white-space: nowrap;
 	line-height: 0;
-	padding: 0;
+	padding: 0 0.5em;
 	margin: 0 0.5em 0 0;
 	font-size: 0.85em;
 	font-family: 'Source Sans Pro';
@@ -206,4 +206,12 @@ h2 .tMSIndex {
 	background: url("../images/icons/share.svg");
 	width:29px; 
 	height:29px;
+}
+
+#copydiv {
+	background:rgba(0, 0, 0, 0.03);
+	padding: 1em;
+	border: 1px dotted blue;
+
+
 }

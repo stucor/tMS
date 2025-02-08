@@ -3044,7 +3044,6 @@ selectedTextBtn.onclick = function() {
 	let selection = window.getSelection()
 	let alertStr = ``
 	let shareFrom = savedBookElements[theTopElement].id
-	let urlString = window.location.href
 	let bookPath = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/${shortcode()}`
 
 	if (selection.toString() != '') {
@@ -3070,40 +3069,101 @@ selectedTextBtn.onclick = function() {
 			ender = range.endContainer.parentNode.parentNode.id
 		}  
 	
-		alertStr = `startTag: ${startTag}<br>startID: ${startID}<br>startOff: ${startOff}<br>starter: ${starter}<br><br>endTag ${endTag}<br>endID: ${endID}<br>endOff: ${endOff}<br>ender: ${ender}`
+		//alertStr = `startTag: ${startTag}<br>startID: ${startID}<br>startOff: ${startOff}<br>starter: ${starter}<br><br>endTag ${endTag}<br>endID: ${endID}<br>endOff: ${endOff}<br>ender: ${ender}`
 	
 
 		let copyDiv = document.createElement("div")
 		copyDiv.id = `copydiv`
-		copyDiv.innerHTML = `<div><p>Text from: <a href='${bookPath}/?ref=${starter}'> ${document.title.replace(`-`, `by`)}, starting at <strong>${starter}</strong></a></p><hr></div>`
+		copyDiv.classList.add('copybox')
+		copyDiv.innerHTML = `<p>Text from: <a href='${bookPath}/?ref=${starter}'> ${document.title.replace(`-`, `by`)}, starting at: <strong>[${starter}]</strong></a></p><hr>\n\n`
 
 		copyDiv.append(selection.getRangeAt(0).cloneContents())
 
 		let allSpans = copyDiv.querySelectorAll('span')
 		for (i in allSpans) {
+			if (allSpans[i].innerHTML == '') {
+				allSpans[i].remove()
+			}
 			if (allSpans[i].lang == 'pi') {
 				allSpans[i].innerHTML = `<em>${allSpans[i].innerHTML}</em>`
 			}
 			if (allSpans[i].className == 'tMSIndex') {
-				let tempHTML = allSpans[i].innerHTML
-				allSpans[i].style = `font-size:1rem;font-weight:normal;background-color:lightgrey;padding:0 0.5rem;margin:0 1rem`
+				let tempHTML = `[${allSpans[i].innerHTML}] `
+				allSpans[i].style = `font-size:11pt;font-weight:normal;font-style:normal;background-color:reset;`
+				allSpans[i].className = ''
+				allSpans[i].innerHTML=tempHTML
+			}
+			if (allSpans[i].className == 'chapnum') {
+				allSpans[i].style = `font-size:13pt;font-weight:normal;`
 				allSpans[i].className = ''
 			}
+			if (allSpans[i].className == 'sesame') {
+				allSpans[i].className = ''
+			}
+		}
+
+		let allH1s = copyDiv.querySelectorAll('h1')
+		for (i in allH1s) {
+			allH1s[i].style = `font-size:16pt;font-weight:bold;font-style:normal;font-variant:small-caps;`
+		}
+		let allH2s = copyDiv.querySelectorAll('h2')
+		for (i in allH2s) {
+			allH2s[i].style = `font-size:14pt;font-weight:normal;font-style:normal;font-variant:small-caps;`
 		}
 
 		let allDivs = copyDiv.querySelectorAll('div')
 		for (let i in allDivs) {
 			if (allDivs[i].className == 'epigram') {
-				allDivs[i].style = `font-weight:bold;font-style:italic;text-align:center`
+				allDivs[i].style = `font-weight:bold;font-style:italic;font-size:13pt;text-align:center`
+				allDivs[i].className = ''
 			}
 		}
+console.clear
+		let notesStr =``
+		let allSups = copyDiv.querySelectorAll('sup')
+		console.log(allSups.length)
+		for (let i in allSups) {
+			if (i == 0) {
+				notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
+			}
+			let supNo = allSups[i].innerText
+			let tempText = ` [${allSups[i].innerText}]`
+			allSups[i].innerText = tempText
+			allSups[i].style = 'color:var(--primarytextcolor);'
+
+ 			for (let j in savedNotesElements) {
+				if (savedNotesElements[j].tagName == 'DIV') {
+					if (savedNotesElements[j].dataset.note == supNo) {
+						notesStr += `<p>${savedNotesElements[j].innerHTML.replace(`<div class="booknotesNumber">`,'[')
+																		 .replace(`</div>`, ']: ')
+																		 .replace(`<div class="booknotesText">`,'')
+																		 .replace(`</div>`, '')
+																		 .replace(`<p>`,``)
+																		 .replace(`</p>`,`<br>`)
+																		}</p>`
+					}
+/* 					console.log(savedNotesElements[j].dataset.note)
+					console.log(supNo) */
+				}
+			}
+
+		}
+
+		copyDiv.innerHTML += notesStr
 
 	
 /* 		let rawHTML = copyDiv.innerHTML.replaceAll(`class="tMSIndex"`,`style="font-size:1rem;background-color:lightgrey;padding:0 0.5rem; margin:0 1rem"`); */
 
-		navigator.clipboard.writeText(copyDiv.outerHTML)
+		navigator.clipboard.write([new ClipboardItem({
+			'text/plain': new Blob([copyDiv.innerText], {type: 'text/plain'}),
+			'text/html': new Blob([copyDiv.innerHTML], {type: 'text/html'})
+		})])
 
-		showAlert (`<p>A simplied HTML snippet of the following text has been added to your clipboard:</p>${copyDiv.outerHTML}<br>${alertStr}`)
+		//navigator.clipboard.writeText(copyDiv.outerHTML)
+
+		let pureHTMLStr = `<div class='copybox'><textarea style='width:100%; height:200px'>${copyDiv.innerHTML.replaceAll('</p>', '</p>\n').replaceAll('</h1>', '</h1>\n').replaceAll('</h2>', '</h2>\n').replaceAll('class="" ', '')}</textarea></div>`
+
+		showAlert (`<p><strong>The following (which includes a link to the text) has been copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr><p>Alternatively you can copy it as styled HTML:</p>${pureHTMLStr}`)
 
 
 	} else {

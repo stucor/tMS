@@ -208,10 +208,8 @@ h2 .tMSIndex {
 	height:29px;
 }
 
-#copydiv {
+.copybox {
 	background:rgba(0, 0, 0, 0.03);
 	padding: 1em;
 	border: 1px dotted blue;
-
-
 }

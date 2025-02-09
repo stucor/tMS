@@ -213,3 +213,11 @@ h2 .tMSIndex {
 	padding: 1em;
 	border: 1px dotted blue;
 }
+
+.copybox a {
+	color: blue;
+}
+
+.copybox sup {
+	color: var(--primarytextcolor)
+}

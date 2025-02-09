@@ -85,6 +85,7 @@ const installationDirectory = 'https://wiswo.org/books/'
 const iconsFolder = '../_resources/images/icons/'
 const siteLogoURL = `${iconsFolder}logo.png`
 const homeButtonURL = `${iconsFolder}bookshelf-colour.svg`
+const shareButtonURL = `${iconsFolder}share.svg`
 const searchButtonURL = `${iconsFolder}search.svg`
 const infoButtonURL = `${iconsFolder}info.svg`
 const settingsButtonURL = `${iconsFolder}settings.svg`
@@ -162,6 +163,7 @@ html += `
 			<a id="homebutton"><img class="bookshelfbtn" src="${homeButtonURL}" alt="The Library" title="The Library"><p>Library</p></a>
 		</div>
 		<div class="topnav-right">
+			<a id="shareBtn"><img src="${shareButtonURL}" alt="Share"><p>Share</p></a>
 			<a id="searchBtn"><img src="${searchButtonURL}" alt="Search"><p>Search</p></a>
 			<a id="detailsBtn"><img src="${infoButtonURL}" alt="Info"><p>Info</p></a>
 			<a id="settingsBtn"><img src="${settingsButtonURL}" alt="Settings"><p>Settings</p></a> 
@@ -171,7 +173,6 @@ html += `
 	<div class="topnav2">
 		<div id="tocBtn" class="tocbtn">&#10095; Contents</div>
 		<div class="booktitle">${title}<br>${authorShortname}</div>
-		<div class="topnav2buttons"><button id="selectedTextBtn"></button></div>
 	</div>
 </div>
 `

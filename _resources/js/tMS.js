@@ -3040,7 +3040,8 @@ function displaySelfquote (linktext) {
 
 
 // Selected Text Functions
-selectedTextBtn.onclick = function() {
+shareBtn.onclick = function() {
+//selectedTextBtn.onclick = function() {
 	let selection = window.getSelection()
 	let alertStr = ``
 	let shareFrom = savedBookElements[theTopElement].id
@@ -3070,35 +3071,93 @@ selectedTextBtn.onclick = function() {
 		}  
 	
 		//alertStr = `startTag: ${startTag}<br>startID: ${startID}<br>startOff: ${startOff}<br>starter: ${starter}<br><br>endTag ${endTag}<br>endID: ${endID}<br>endOff: ${endOff}<br>ender: ${ender}`
-	
-
+		
+		//Create the copyDiv
 		let copyDiv = document.createElement("div")
 		copyDiv.id = `copydiv`
 		copyDiv.classList.add('copybox')
+
+		//Add the Link
 		copyDiv.innerHTML = `<p>Text from: <a href='${bookPath}/?ref=${starter}'> ${document.title.replace(`-`, `by`)}, starting at: <strong>[${starter}]</strong></a></p><hr>\n\n`
 
+		//Add the user selection
 		copyDiv.append(selection.getRangeAt(0).cloneContents())
+		
+		//Add the Notes
+		let notesStr =``
+		let allSups = copyDiv.querySelectorAll('sup')
+		for (let i in allSups) {
+			if (i == 0) {
+				notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
+			}
+			let supNo = allSups[i].innerText
+			let tempText = ` [${allSups[i].innerText}]`
+			allSups[i].innerText = tempText
+ 			for (let j in savedNotesElements) {
+				if (savedNotesElements[j].tagName == 'DIV') {
+					if (savedNotesElements[j].dataset.note == supNo) {
+						notesStr += `<p>${savedNotesElements[j].innerHTML.replace(`<div class="booknotesNumber">`,'[')
+																		 .replace(`</div>`, ']: ')
+																		 .replace(`<div class="booknotesText">`,'')
+																		 .replace(`</div>`, '')
+																		 .replace(`<p>`,``)
+																		 .replace(`</p>`,`<br>`)
+																		}</p>`
+					}
+				}
+			}
 
-		let allSpans = copyDiv.querySelectorAll('span')
+		}
+		copyDiv.innerHTML += notesStr
+
+		function suttaCentralIt (suttaReference) {
+			let newlink = ''
+			 let [head,tail] = suttaReference.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0].split(':')
+			  if (tail) {
+				 tail = '#' + tail
+				 newlink = `<a href = "https://suttacentral.net/${head}/en/sujato/${tail}">${suttaReference}</a>`
+			 } else {
+				 newlink = `<a href = "https://suttacentral.net/${head}/en/sujato">${suttaReference}</a>`
+			 }
+			  return newlink
+		 }
+
+		//Process the text
+		let allSpans = copyDiv.getElementsByTagName('span')
 		for (i in allSpans) {
-			if (allSpans[i].innerHTML == '') {
-				allSpans[i].remove()
-			}
-			if (allSpans[i].lang == 'pi') {
-				allSpans[i].innerHTML = `<em>${allSpans[i].innerHTML}</em>`
-			}
-			if (allSpans[i].className == 'tMSIndex') {
-				let tempHTML = `[${allSpans[i].innerHTML}] `
-				allSpans[i].style = `font-size:11pt;font-weight:normal;font-style:normal;background-color:reset;`
-				allSpans[i].className = ''
-				allSpans[i].innerHTML=tempHTML
-			}
-			if (allSpans[i].className == 'chapnum') {
-				allSpans[i].style = `font-size:13pt;font-weight:normal;`
-				allSpans[i].className = ''
-			}
-			if (allSpans[i].className == 'sesame') {
-				allSpans[i].className = ''
+			if (allSpans[i].tagName == 'SPAN') {
+				if (allSpans[i].innerHTML == '') {
+					allSpans[i].remove()
+				}
+				if (allSpans[i].lang == 'pi') {
+					allSpans[i].innerHTML = `<em>${allSpans[i].innerHTML}</em>`
+				}
+				if (allSpans[i].className == 'tMSIndex') {
+					let tempHTML = `[${allSpans[i].innerHTML}] `
+					allSpans[i].style = `font-size:11pt;font-weight:normal;font-style:normal;background-color:reset;`
+					allSpans[i].className = ''
+					allSpans[i].innerHTML=tempHTML
+				}
+				if (allSpans[i].className == 'chapnum') {
+					allSpans[i].style = `font-size:13pt;font-weight:normal;`
+					allSpans[i].className = ''
+				}
+				if (allSpans[i].className == 'sesame') {
+					allSpans[i].className = ''
+				}
+				if (allSpans[i].classList.contains('closebutton')) {
+					allSpans[i].classList.remove('closebutton')
+				}
+				if (allSpans[i].classList.contains('opensesameref')) {
+					allSpans[i].remove()
+				}
+				if (allSpans[i].classList.contains('ref')) {
+					allSpans[i].innerHTML = getFullReference (allSpans[i].innerHTML) // HERE!!!!!!!!!!!!!!!! - YOU MUST check sesameref.json file for things in MILK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				}
+				if (allSpans[i].className == 'sclinktext') {
+					console.log()
+					allSpans[i].innerHTML = suttaCentralIt(allSpans[i].innerText)
+				}
 			}
 		}
 
@@ -3118,38 +3177,7 @@ selectedTextBtn.onclick = function() {
 				allDivs[i].className = ''
 			}
 		}
-console.clear
-		let notesStr =``
-		let allSups = copyDiv.querySelectorAll('sup')
-		console.log(allSups.length)
-		for (let i in allSups) {
-			if (i == 0) {
-				notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
-			}
-			let supNo = allSups[i].innerText
-			let tempText = ` [${allSups[i].innerText}]`
-			allSups[i].innerText = tempText
-			allSups[i].style = 'color:var(--primarytextcolor);'
 
- 			for (let j in savedNotesElements) {
-				if (savedNotesElements[j].tagName == 'DIV') {
-					if (savedNotesElements[j].dataset.note == supNo) {
-						notesStr += `<p>${savedNotesElements[j].innerHTML.replace(`<div class="booknotesNumber">`,'[')
-																		 .replace(`</div>`, ']: ')
-																		 .replace(`<div class="booknotesText">`,'')
-																		 .replace(`</div>`, '')
-																		 .replace(`<p>`,``)
-																		 .replace(`</p>`,`<br>`)
-																		}</p>`
-					}
-/* 					console.log(savedNotesElements[j].dataset.note)
-					console.log(supNo) */
-				}
-			}
-
-		}
-
-		copyDiv.innerHTML += notesStr
 
 	
 /* 		let rawHTML = copyDiv.innerHTML.replaceAll(`class="tMSIndex"`,`style="font-size:1rem;background-color:lightgrey;padding:0 0.5rem; margin:0 1rem"`); */
@@ -3175,6 +3203,16 @@ console.clear
 					<button id="shareNoParams" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
 
 		showAlert (`${alertStr}`)
+/* 
+		if (navigator.share) {
+			navigator.share({
+				title: 'Here is a title',
+				text: 'here is some text',
+				url: `${bookPath}/?ref=${shareFrom}`
+			  });
+		  } else {
+			console.warn('Web Share API not supported on this browser');
+		  } */
 	}
 	
 }

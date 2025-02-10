@@ -1666,7 +1666,6 @@ function setTMSIndex () {
 	for (let i in paragraphArr) {
 		//let tempID = paragraphArr[i].id
 		if (paragraphArr[i].id) {
-//			let injectSpan = `<span class="tMSIndex">P${tempID.slice(4)}</span>`
 			let injectSpan = `<span class="tMSIndex">${paragraphArr[i].id}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				paragraphArr[i].innerHTML = injectSpan + paragraphArr[i].innerHTML
@@ -1678,11 +1677,8 @@ function setTMSIndex () {
 
 	let headingsArr = theBook.querySelectorAll('h1, h2, h3')
 	for (let i in headingsArr) {
-//		let tempID = headingsArr[i].id
 		if ((headingsArr[i].id) && (headingsArr[i].id != 'head-999999999') && (headingsArr[i].id != 'head-0-1') ) {
-//			let injectSpan = `<span class="tMSIndex">H${tempID.slice(9)}</span>`
 			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id}</span>`
-			//console.log (injectSpan)
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				headingsArr[i].innerHTML = injectSpan + headingsArr[i].innerHTML
 			} else {
@@ -3053,33 +3049,30 @@ shareBtn.onclick = function() {
 
 		let startTag = range.startContainer.parentNode.tagName
 		let startID = range.startContainer.parentNode.id
-		let startOff = range.startOffset
-	
-		let endTag = range.endContainer.parentNode.tagName
-		let endID = range.endContainer.parentNode.id
-		let endOff = range.endOffset
-	
 		let starter = startID
-		let ender = endID
-	
 		if ((startTag == 'SPAN') || (startTag == 'SUP')) {
 			starter = range.startContainer.parentNode.parentNode.id
 		} 
-	
-		if ((endTag == 'SPAN') || (endTag == 'SUP')) {
+
+/* 		let startOff = range.startOffset
+		let endTag = range.endContainer.parentNode.tagName
+		let endID = range.endContainer.parentNode.id
+		let endOff = range.endOffset
+		let ender = endID
+ 		if ((endTag == 'SPAN') || (endTag == 'SUP')) {
 			ender = range.endContainer.parentNode.parentNode.id
-		}  
-	
-		//alertStr = `startTag: ${startTag}<br>startID: ${startID}<br>startOff: ${startOff}<br>starter: ${starter}<br><br>endTag ${endTag}<br>endID: ${endID}<br>endOff: ${endOff}<br>ender: ${ender}`
-		
+		}   
+		alertStr = `startTag: ${startTag}<br>startID: ${startID}<br>startOff: ${startOff}<br>starter: ${starter}<br><br>endTag ${endTag}<br>endID: ${endID}<br>endOff: ${endOff}<br>ender: ${ender}`
+ */		
+
 		//Create the copyDiv
 		let copyDiv = document.createElement("div")
 		copyDiv.id = `copydiv`
 		copyDiv.classList.add('copybox')
-
+		
 		//Add the Link
 		copyDiv.innerHTML = `<p>Text from: <a href='${bookPath}/?ref=${starter}'> ${document.title.replace(`-`, `by`)}, starting at: <strong>[${starter}]</strong></a></p><hr>\n\n`
-
+		
 		//Add the user selection
 		copyDiv.append(selection.getRangeAt(0).cloneContents())
 		
@@ -3126,16 +3119,13 @@ shareBtn.onclick = function() {
 		let allSpans = copyDiv.getElementsByTagName('span')
 		for (i in allSpans) {
 			if (allSpans[i].tagName == 'SPAN') {
-				if (allSpans[i].innerHTML == '') {
-					allSpans[i].remove()
-				}
 				if (allSpans[i].lang == 'pi') {
 					allSpans[i].innerHTML = `<em>${allSpans[i].innerHTML}</em>`
 				}
 				if (allSpans[i].className == 'tMSIndex') {
 					let tempHTML = `[${allSpans[i].innerHTML}] `
-					allSpans[i].style = `font-size:11pt;font-weight:normal;font-style:normal;background-color:reset;`
-					allSpans[i].className = ''
+					//allSpans[i].style = `font-size:11pt;font-weight:normal;font-style:normal;background-color:reset;`
+					//allSpans[i].className = ''
 					allSpans[i].innerHTML=tempHTML
 				}
 				if (allSpans[i].className == 'chapnum') {
@@ -3145,18 +3135,31 @@ shareBtn.onclick = function() {
 				if (allSpans[i].className == 'sesame') {
 					allSpans[i].className = ''
 				}
-				if (allSpans[i].classList.contains('closebutton')) {
-					allSpans[i].classList.remove('closebutton')
-				}
-				if (allSpans[i].classList.contains('opensesameref')) {
-					allSpans[i].remove()
-				}
-				if (allSpans[i].classList.contains('ref')) {
-					allSpans[i].innerHTML = getFullReference (allSpans[i].innerHTML) // HERE!!!!!!!!!!!!!!!! - YOU MUST check sesameref.json file for things in MILK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+				if (allSpans[i].className == 'sesame ref') { // STILL NEED TO resolve names in sesame.json file - see Milk
+					let el = document.createElement('div')
+					el.innerHTML = getFullReference (allSpans[i].innerHTML)
+					let allInside = el.querySelectorAll('*')
+					for (let j in allInside) {
+						if (allInside[j].className == 'bibhead') {
+							allInside[j].className = ''
+						} else
+						if (allInside[j].className == 'linkContainer'){
+							allInside[j].remove()
+						} 
+					}
+					allSpans[i].innerHTML = el.innerHTML.replaceAll(`<span class="">`, ``).replaceAll('</span>', '')
+					allSpans[i].className = ''
 				}
 				if (allSpans[i].className == 'sclinktext') {
-					console.log()
 					allSpans[i].innerHTML = suttaCentralIt(allSpans[i].innerText)
+					allSpans[i].classList.remove('sclinktext')
+				}
+ 				if (allSpans[i].classList.contains('closebutton')) {
+					allSpans[i].classList.remove('closebutton')
+				} 
+ 				if (allSpans[i].classList.contains('opensesameref')) {
+					allSpans[i].remove()
 				}
 			}
 		}
@@ -3196,23 +3199,22 @@ shareBtn.onclick = function() {
 
 	} else {
 		
-		alertStr = `<p>You have not selected any text to share.<br>You are currently reading <b>${shareFrom}</b> in the book.<br>You can do one of the following:</p>
-					<p style="font-family:'Courier New'">${bookPath}/?ref=${shareFrom}<br>
-					<button id="shareAtHere" data-toShare="${bookPath}/?ref=${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
-					<p style="font-family:'Courier New'">${bookPath}/<br>
-					<button id="shareNoParams" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
 
-		showAlert (`${alertStr}`)
-/* 
 		if (navigator.share) {
 			navigator.share({
-				title: 'Here is a title',
-				text: 'here is some text',
+				title: `${document.title.replace(`-`, `by`)}`,
+				text: `This link goes directly to tMS Index: [${shareFrom}]`,
 				url: `${bookPath}/?ref=${shareFrom}`
 			  });
 		  } else {
-			console.warn('Web Share API not supported on this browser');
-		  } */
+			alertStr = `<p>You have not selected any text to share.<br>You are currently reading <b>${shareFrom}</b> in the book.<br>You can do one of the following:</p>
+			<p style="font-family:'Courier New'">${bookPath}/?ref=${shareFrom}<br>
+			<button id="shareAtHere" data-toShare="${bookPath}/?ref=${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
+			<p style="font-family:'Courier New'">${bookPath}/<br>
+			<button id="shareNoParams" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
+
+			showAlert (`${alertStr}`)
+		  } 
 	}
 	
 }

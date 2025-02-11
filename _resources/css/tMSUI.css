@@ -185,7 +185,13 @@ h2 .tMSIndex {
 	line-height: 1.2em;
 }
 
-#goParamBtn, #shareAtHere, #shareNoParams {
+#tmsindexBtn {
+	color: gray;
+	pointer-events: none;
+	font-variant: small-caps;
+}
+
+#goHashBtn, #shareAtHere, #shareNoHash {
 	margin: 1em 0;
 	font-weight: 400;
 	color: var(--buttontext);
@@ -197,7 +203,7 @@ h2 .tMSIndex {
 	cursor: pointer;
 }
 
-#goParamBtn:hover, #shareAtHere:hover, #shareNoParams:hover {
+#gohashBtn:hover, #shareAtHere:hover, #shareNohash:hover {
 	border: 3px solid var(--primarycolor);
 	box-shadow: 0 0 5px 1px var(--primarycolor);
 }
@@ -221,3 +227,10 @@ h2 .tMSIndex {
 .copybox sup {
 	color: var(--primarytextcolor)
 }
+
+.icon {
+	width: 1.3em;
+	height: 1.3em;
+	line-height: 0;
+	margin-bottom: -0.3em;
+   }

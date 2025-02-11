@@ -124,7 +124,7 @@ function buildSettings (_callback) {
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="hyphenCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
-				<span class ="settingsheadersleft">tms reference:</span>
+				<span class ="settingsheadersleft">show <span style="text-transform:none;">tMS</span> reference:</span>
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showtMSIndexCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
@@ -185,9 +185,9 @@ function startup () {
 			}
 		}
 
-		var scroller = Math.floor(window.scrollY);
+/* 		var scroller = Math.floor(window.scrollY);
 		history.replaceState({scrollState: scroller},'',''); 
-		history.scrollRestoration = 'manual';
+		history.scrollRestoration = 'manual'; */
 		if (isAudioBook()) { 
 			initialiseAudioBookSettings();
 			initplayer();
@@ -718,7 +718,7 @@ function initialiseBookSettings () {
 			setCookie('wiswobooks_hyphenation',local_wiswobooks_hyphenation,365);
 	}
 	setHyphenation();
-	// tMS Index
+	// tMS Reference
 	var local_wiswobooks_tMSIndex = getCookie("wiswobooks_tMSIndex");
 	switch (local_wiswobooks_tMSIndex) {
 		case 'true' :
@@ -836,7 +836,7 @@ function initialiseBookShelfSettings () {
 		}
 	}
 
-	filterBookSearch();
+	filterBookSearch();lsTEname
 
 	//GRID or LIST
 	if (localStorage.getItem('msgridlist') === null) {
@@ -849,19 +849,24 @@ function initialiseBookShelfSettings () {
 	document.getElementById('shelffooter').classList.remove('noshow');
 }
 
-
-// Debug function for writing info in name of in first line of TOC
-function poptoc0 (xtext) {
-	var x = document.getElementById('TOC0');
-	x.innerHTML= xtext;
+window.onhashchange = function() {
+    getPlaceInBook ()
 }
 
-function getPlaceInBook () {
-	
-	let urlString = window.location.href
-	let url = new URL(urlString);
-	let ref = url.searchParams.get("ref");
 
+function getPlaceInBook () {
+	let hash = ''
+	let hashValidatedIndex = -1;
+	if(window.location.hash) {
+		hash = window.location.hash.substring(1);
+		let bookurl = window.location.href.replace(`#${hash}`,``)
+		history.replaceState( {} , '', bookurl );
+		for (let i in savedBookElements) {
+			if (savedBookElements[i].id == hash) {
+				hashValidatedIndex = i
+			}
+		}
+	}
 	//PLACE-IN-BOOK - gets the top element and it's top edge
 	var lsTEname, lsTETEname;
 	lsTEname= 'ms' + shortcode() + 'TE';
@@ -871,26 +876,33 @@ function getPlaceInBook () {
 		localStorage.setItem(lsTETEname, "0");
 		theTopElement = 0;
 		theTopElementTopEdge = 0;
-		if (ref) {
-			for (let i in savedBookElements) {
-				if (savedBookElements[i].id == ref) {
-					theTopElement = i
-					scrollToNavTarget();
-				}
+		if (hash) {
+			if (hashValidatedIndex >=0) {
+				theTopElement = i
+				scrollToNavTarget();
+				tmsIndexButton.innerHTML =  `tMS ref:<br>${hash}`
+			} else {
+				showAlert(`The tMS Reference you are trying to go to does not exist in this book`)
 			}
 		}
 	} else {
 		theTopElement = parseInt(localStorage.getItem(lsTEname));
 		theTopElementTopEdge = parseInt(localStorage.getItem(lsTETEname));
-		if (ref) {
-			if (ref != savedBookElements[theTopElement].id) {
-				console.clear()
-				showAlert (`<p>You are already started to read this book on this device.<br>
-							Your last read tMS-Index was: <b>${savedBookElements[theTopElement].id}</b>.<br>
-							<button id="goParamBtn" data-ref="${ref}">Go to <b>${ref}</b> as asked for in url instead</button></p>`)
+		
+		if(hash) {
+			if (hashValidatedIndex >=0) {
+				if (hash != savedBookElements[theTopElement].id) {
+					showAlert (`<p>You are already started to read this book on this device.<br>
+								Your last read tMS-Index was: <b>${savedBookElements[theTopElement].id}</b>.<br>
+								<button id="goHashBtn" data-ref="${hash}">Go to <b>${hash}</b> as asked for in url instead</button></p>`)
+				}
+			} else {
+				showAlert(`The tMS Reference you are trying to go to does not exist in this book!!`)
 			}
+
 		}
 		scrollToNavTarget();
+
 	}
 /* 	setTimeout(() => {
 		scrollToNavTarget();
@@ -958,7 +970,7 @@ if (!nuclearOption) {
 		//HYPHENATION
 		var local_wiswobooks_hyphenation = document.getElementById("hyphenCheck").checked;
 		setCookie('wiswobooks_hyphenation',local_wiswobooks_hyphenation,365);
-		//tMS Index
+		//tMS Reference
 		var local_wiswobooks_tMSIndex = document.getElementById("showtMSIndexCheck").checked;
 		setCookie('wiswobooks_tMSIndex',local_wiswobooks_tMSIndex,365);
 
@@ -1689,20 +1701,20 @@ function setTMSIndex () {
 }
 
 
-window.onpopstate = function (event) {
+/* window.onpopstate = function (event) {
 	var scroller = history.state.scrollState;
 	window.scrollTo(0, scroller);
-}
+} */
 
 
 // NAVIGATION FUNCTIONS
 
 function scrollToID (id) {
 	exitStaticModal();
-	var scroller = Math.floor(window.scrollY);
+/* 	var scroller = Math.floor(window.scrollY);
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
-	}
+	} */
 	var elmnt = document.getElementById(id);
 	let noteElmnt = elmnt.closest('.booknote');
 
@@ -1720,15 +1732,15 @@ function scrollToID (id) {
 		savedsup = elmnt;
 		clearhighlightnote();
 	}
-	scroller = Math.floor(window.scrollY);
-	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
+/* 	scroller = Math.floor(window.scrollY);
+	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	 */
 }
 
 function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given either an ID or an Element
-	var scroller = Math.floor(window.scrollY);
+/* 	var scroller = Math.floor(window.scrollY);
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
-	}
+	} */
 	var elmnt;
 	if (IDOrElement == 'ID') {
 		elmnt = document.getElementById(target);
@@ -1738,8 +1750,8 @@ function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given
 	elmnt.scrollIntoView();
 	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
 	window.scrollBy(0, tbHeight-20); // scroll the target below the topnav bar so you can see it
-	scroller = Math.floor(window.scrollY);
-	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
+/* 	scroller = Math.floor(window.scrollY);
+	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	 */
 }
 
 // TOC Navigation - uses event delegation on UL LI
@@ -1776,7 +1788,9 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 // hide and show the top and bottom bars by placing them off canvas when window is scrolled up (show) and down (hide) - 
 // this is a automatic setting mobileUI or the user-setting/cookie forceMobileUI. Then set progress bar
 
+tmsIndexButton = document.getElementById('tmsindexBtn')
 window.onscroll = function() {
+	
 	var currentScrollPos = window.scrollY;
 	if (forceMobileUI) {
 		if (sidebarIsOpen == false){
@@ -1823,7 +1837,8 @@ window.onscroll = function() {
 	// save position
 	getNavTarget();
 	//savePlaceInBook();
-
+	//populate the tMSIndex counter
+	tmsIndexButton.innerHTML =  `tMS ref:<br>${savedBookElements[theTopElement].id}`
 }
 
 function setSelfquoteMargins () {
@@ -2420,7 +2435,7 @@ function showAlert(HTMLToShow) {
 }
 
 modalalert.addEventListener("click", function(e) {
-	if (e.target.id == 'goParamBtn') {
+	if (e.target.id == 'goHashBtn') {
 		let refTarget = e.target.getAttribute(`data-ref`)
 		exitStaticModal();
 		goToTarget(refTarget);
@@ -2430,7 +2445,7 @@ modalalert.addEventListener("click", function(e) {
 		exitStaticModal();
 		navigator.clipboard.writeText(urlTarget)
 	}
-	if (e.target.id == 'shareNoParams') {
+	if (e.target.id == 'shareNoHash') {
 		let urlTarget = e.target.getAttribute(`data-toShare`)
 		exitStaticModal();
 		navigator.clipboard.writeText(urlTarget)
@@ -3071,7 +3086,7 @@ shareBtn.onclick = function() {
 		copyDiv.classList.add('copybox')
 		
 		//Add the Link
-		copyDiv.innerHTML = `<p>Text from: <a href='${bookPath}/?ref=${starter}'> ${document.title.replace(`-`, `by`)}, starting at: <strong>[${starter}]</strong></a></p><hr>\n\n`
+		copyDiv.innerHTML = `<p>Text from: <a href='${bookPath}#${starter}'> ${document.title.replace(`-`, `by`)}, starting at: <strong>[${starter}]</strong></a></p><hr>\n\n`
 		
 		//Add the user selection
 		copyDiv.append(selection.getRangeAt(0).cloneContents())
@@ -3201,17 +3216,18 @@ shareBtn.onclick = function() {
 		
 
 		if (navigator.share) {
+			//console.log(`${bookPath}#${shareFrom}`)
 			navigator.share({
 				title: `${document.title.replace(`-`, `by`)}`,
-				text: `This link goes directly to tMS Index: [${shareFrom}]`,
-				url: `${bookPath}/?ref=${shareFrom}`
+				text: `This link goes directly to tMS Reference: [${shareFrom}]`,
+				url: `${bookPath}#${shareFrom}`
 			  });
 		  } else {
 			alertStr = `<p>You have not selected any text to share.<br>You are currently reading <b>${shareFrom}</b> in the book.<br>You can do one of the following:</p>
-			<p style="font-family:'Courier New'">${bookPath}/?ref=${shareFrom}<br>
-			<button id="shareAtHere" data-toShare="${bookPath}/?ref=${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
+			<p style="font-family:'Courier New'">${bookPath}#${shareFrom}<br>
+			<button id="shareAtHere" data-toShare="${bookPath}#${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
 			<p style="font-family:'Courier New'">${bookPath}/<br>
-			<button id="shareNoParams" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
+			<button id="shareNoHash" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
 
 			showAlert (`${alertStr}`)
 		  } 

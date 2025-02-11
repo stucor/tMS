@@ -173,6 +173,7 @@ html += `
 	<div class="topnav2">
 		<div id="tocBtn" class="tocbtn">&#10095; Contents</div>
 		<div class="booktitle">${title}<br>${authorShortname}</div>
+		<div class="topnav2buttons"><button id="tmsindexBtn">tms Index:<br></button></div>
 	</div>
 </div>
 `

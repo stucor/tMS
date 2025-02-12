@@ -220,12 +220,16 @@ h2 .tMSIndex {
 	border: 1px dotted blue;
 }
 
-.copybox a {
+/* .copybox a {
 	color: blue;
-}
+} */
 
 .copybox sup {
 	color: var(--primarytextcolor)
+}
+
+.copybox p + p {
+	text-indent: 0;
 }
 
 .icon {
@@ -234,3 +238,4 @@ h2 .tMSIndex {
 	line-height: 0;
 	margin-bottom: -0.3em;
    }
+

@@ -447,13 +447,6 @@ figcaption {
 	content: '·';
 }
 
-/* .content .list-comment {
-	margin: 0 2em;
-}
-.content .sublist-comment {
-	margin: 0 6em;
-} */
-
 .content .list-comment {
 	font-style: italic;
 	margin: 1em 2em;
@@ -496,26 +489,6 @@ background: cornsilk;
 	cursor:grab;
 }
 
-/* .tablewrap::-webkit-scrollbar {
-   height: 6px;
-}  
-.tablewrap::-webkit-scrollbar-track {
-   background-color: var(--primarycolor); 
-   border-radius: 8px; 
-}
-.tablewrap::-webkit-scrollbar-thumb {
-	background-color: var(--primarybackground);
-	border-radius: 8px;
-   border: 1px solid var(--primarytextcolor);
-   cursor:grab;
-}  */
-
-/* .tablewrap::-webkit-scrollbar-track {
-	background-color: #dfdfdf; 
-}
-.tablewrap::-webkit-scrollbar-thumb {
-	 background-color: #7e7e7e;
-}  */
 table {
 	min-width:100%;
 	text-align: left;

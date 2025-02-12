@@ -163,8 +163,8 @@ html += `
 			<a id="homebutton"><img class="bookshelfbtn" src="${homeButtonURL}" alt="The Library" title="The Library"><p>Library</p></a>
 		</div>
 		<div class="topnav-right">
-			<a id="shareBtn"><img src="${shareButtonURL}" alt="Share"><p>Share</p></a>
 			<a id="searchBtn"><img src="${searchButtonURL}" alt="Search"><p>Search</p></a>
+			<a id="shareBtn"><img src="${shareButtonURL}" alt="Share"><p>Share</p></a>
 			<a id="detailsBtn"><img src="${infoButtonURL}" alt="Info"><p>Info</p></a>
 			<a id="settingsBtn"><img src="${settingsButtonURL}" alt="Settings"><p>Settings</p></a> 
 			<a id="downloadBtn"><img src="${downloadButtonURL}" alt="Download"><p>Download</p></a>

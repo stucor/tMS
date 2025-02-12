@@ -164,7 +164,6 @@ function startup () {
 	}
 	*/
 
-
 	buildSettings(function(){
 		//the following is done after buildSettings completes:
 		document.getElementById('topbar').style.display='block';
@@ -185,9 +184,9 @@ function startup () {
 			}
 		}
 
-/* 		var scroller = Math.floor(window.scrollY);
+		var scroller = Math.floor(window.scrollY);
 		history.replaceState({scrollState: scroller},'',''); 
-		history.scrollRestoration = 'manual'; */
+		history.scrollRestoration = 'manual';
 		if (isAudioBook()) { 
 			initialiseAudioBookSettings();
 			initplayer();
@@ -849,7 +848,8 @@ function initialiseBookShelfSettings () {
 	document.getElementById('shelffooter').classList.remove('noshow');
 }
 
-window.onhashchange = function() {
+window.onhashchange = function(e) {
+	e.preventDefault();
     getPlaceInBook ()
 }
 
@@ -882,7 +882,7 @@ function getPlaceInBook () {
 				scrollToNavTarget();
 				tmsIndexButton.innerHTML =  `tMS ref:<br>${hash}`
 			} else {
-				showAlert(`The tMS Reference you are trying to go to does not exist in this book`)
+				showAlert(`The tMS Reference <strong>(${hash})</strong> that you are trying to go to does not exist in this book`)
 			}
 		}
 	} else {
@@ -892,15 +892,16 @@ function getPlaceInBook () {
 		if(hash) {
 			if (hashValidatedIndex >=0) {
 				if (hash != savedBookElements[theTopElement].id) {
-					showAlert (`<p>You are already started to read this book on this device.<br>
-								Your last read tMS-Index was: <b>${savedBookElements[theTopElement].id}</b>.<br>
+					showAlert (`<p>You are already reading this book on this device.<br>
+								Your bookmark is currently at tMS Reference <b>${savedBookElements[theTopElement].id}</b>.<br>
 								<button id="goHashBtn" data-ref="${hash}">Go to <b>${hash}</b> as asked for in url instead</button></p>`)
 				}
 			} else {
-				showAlert(`The tMS Reference you are trying to go to does not exist in this book!!`)
+				showAlert(`The tMS Reference <strong>(${hash})</strong> that you are trying to go to does not exist in this book`)
 			}
 
 		}
+
 		scrollToNavTarget();
 
 	}
@@ -1338,6 +1339,7 @@ function setTheme(){
 			r.style.setProperty('--bdtexthighlightborder', '#8f3e00');//'#fc8832C0');
 			r.style.setProperty('--sesamebackground', '#fffff8');
 
+			r.style.setProperty('--tableborder', '#c0c0c0');
 			r.style.setProperty('--tablecaption', '#ffffff');
 			r.style.setProperty('--tablehead', '#eaeaea');
 			r.style.setProperty('--tableodd', '#fefefe');
@@ -1460,6 +1462,7 @@ function setTheme(){
 			r.style.setProperty('--bdtexthighlightborder', 'grey');
 			r.style.setProperty('--sesamebackground', '#000');
 
+			r.style.setProperty('--tableborder', '#c0c0c0');
 			r.style.setProperty('--tablecaption', '#252525');
 			r.style.setProperty('--tablehead', '#363636');
 			r.style.setProperty('--tableodd', '#0d0d0d');
@@ -1586,6 +1589,7 @@ function setTheme(){
 			r.style.setProperty('--sesamebackground', '#ffffff30');
 /* 			r.style.setProperty('--sesamebackground', '#fffddd'); */
 
+			r.style.setProperty('--tableborder', '#c0c0c0');
 			r.style.setProperty('--tablecaption', '#f9edce');
 			r.style.setProperty('--tablehead', '#eadbbf');
 			r.style.setProperty('--tableodd', '#f9f9e4');
@@ -1701,20 +1705,20 @@ function setTMSIndex () {
 }
 
 
-/* window.onpopstate = function (event) {
+window.onpopstate = function (event) {
 	var scroller = history.state.scrollState;
 	window.scrollTo(0, scroller);
-} */
+}
 
 
 // NAVIGATION FUNCTIONS
 
 function scrollToID (id) {
 	exitStaticModal();
-/* 	var scroller = Math.floor(window.scrollY);
+	var scroller = Math.floor(window.scrollY);
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
-	} */
+	}
 	var elmnt = document.getElementById(id);
 	let noteElmnt = elmnt.closest('.booknote');
 
@@ -1732,15 +1736,15 @@ function scrollToID (id) {
 		savedsup = elmnt;
 		clearhighlightnote();
 	}
-/* 	scroller = Math.floor(window.scrollY);
-	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	 */
+	scroller = Math.floor(window.scrollY);
+	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
 
 function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given either an ID or an Element
-/* 	var scroller = Math.floor(window.scrollY);
+	var scroller = Math.floor(window.scrollY);
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
-	} */
+	}
 	var elmnt;
 	if (IDOrElement == 'ID') {
 		elmnt = document.getElementById(target);
@@ -1750,8 +1754,8 @@ function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given
 	elmnt.scrollIntoView();
 	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
 	window.scrollBy(0, tbHeight-20); // scroll the target below the topnav bar so you can see it
-/* 	scroller = Math.floor(window.scrollY);
-	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	 */
+	scroller = Math.floor(window.scrollY);
+	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
 
 // TOC Navigation - uses event delegation on UL LI
@@ -2173,7 +2177,7 @@ function setModalStyle (heading) {
 	switch (heading) {
 		case 'Alert':
 			modalbody.style.height = "unset";
-			modalbody.style.maxHeight = "unset";
+			modalbody.style.maxHeight = "75vh";
 			modalbody.style.padding = "1em";
 			modalcontent.style.width = "80%";
 			modalcontent.style.maxWidth = "1100px";
@@ -3085,15 +3089,18 @@ shareBtn.onclick = function() {
 		copyDiv.id = `copydiv`
 		copyDiv.classList.add('copybox')
 		
-		//Add the Link
-		copyDiv.innerHTML = `<p>Text from: <a href='${bookPath}#${starter}'> ${document.title.replace(`-`, `by`)}, starting at: <strong>[${starter}]</strong></a></p><hr>\n\n`
-		
+		//Make the Link
+		let linkText = `<p>Text from: <strong><em>${document.title.replace(`-`, `by`)}</em></strong>, starting at: <a href='${bookPath}#${starter}'> <strong>[${starter}]</strong></a></p><hr>\n\n`
+
+
+		let copyQuote = document.createElement("blockquote")
 		//Add the user selection
-		copyDiv.append(selection.getRangeAt(0).cloneContents())
+		copyQuote.append(selection.getRangeAt(0).cloneContents())
+		let originalHTML = copyQuote.innerHTML
 		
 		//Add the Notes
 		let notesStr =``
-		let allSups = copyDiv.querySelectorAll('sup')
+		let allSups = copyQuote.querySelectorAll('sup')
 		for (let i in allSups) {
 			if (i == 0) {
 				notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
@@ -3116,7 +3123,9 @@ shareBtn.onclick = function() {
 			}
 
 		}
-		copyDiv.innerHTML += notesStr
+		copyQuote.innerHTML += notesStr
+
+
 
 		function suttaCentralIt (suttaReference) {
 			let newlink = ''
@@ -3131,7 +3140,7 @@ shareBtn.onclick = function() {
 		 }
 
 		//Process the text
-		let allSpans = copyDiv.getElementsByTagName('span')
+		let allSpans = copyQuote.getElementsByTagName('span')
 		for (i in allSpans) {
 			if (allSpans[i].tagName == 'SPAN') {
 				if (allSpans[i].lang == 'pi') {
@@ -3139,18 +3148,24 @@ shareBtn.onclick = function() {
 				}
 				if (allSpans[i].className == 'tMSIndex') {
 					let tempHTML = `[${allSpans[i].innerHTML}] `
-					//allSpans[i].style = `font-size:11pt;font-weight:normal;font-style:normal;background-color:reset;`
-					//allSpans[i].className = ''
+					allSpans[i].className = ''
+					allSpans[i].innerHTML=tempHTML
+				}
+				if (allSpans[i].className == 'ptsref') {
+					let tempHTML = `[${allSpans[i].innerHTML}] `
+					allSpans[i].className = ''
 					allSpans[i].innerHTML=tempHTML
 				}
 				if (allSpans[i].className == 'chapnum') {
-					allSpans[i].style = `font-size:13pt;font-weight:normal;`
 					allSpans[i].className = ''
 				}
 				if (allSpans[i].className == 'sesame') {
 					allSpans[i].className = ''
 				}
-
+				if (allSpans[i].className == 'list-margin') {
+					allSpans[i].innerHTML = allSpans[i].innerHTML + ' ' 
+					allSpans[i].className = ''
+				}
 				if (allSpans[i].className == 'sesame ref') { // STILL NEED TO resolve names in sesame.json file - see Milk
 					let el = document.createElement('div')
 					el.innerHTML = getFullReference (allSpans[i].innerHTML)
@@ -3179,60 +3194,80 @@ shareBtn.onclick = function() {
 			}
 		}
 
-		let allH1s = copyDiv.querySelectorAll('h1')
+		let allH1s = copyQuote.querySelectorAll('h1')
 		for (i in allH1s) {
 			allH1s[i].style = `font-size:16pt;font-weight:bold;font-style:normal;font-variant:small-caps;`
 		}
-		let allH2s = copyDiv.querySelectorAll('h2')
+		let allH2s = copyQuote.querySelectorAll('h2')
 		for (i in allH2s) {
 			allH2s[i].style = `font-size:14pt;font-weight:normal;font-style:normal;font-variant:small-caps;`
 		}
 
-		let allDivs = copyDiv.querySelectorAll('div')
+		let allDivs = copyQuote.querySelectorAll('div')
 		for (let i in allDivs) {
 			if (allDivs[i].className == 'epigram') {
-				allDivs[i].style = `font-weight:bold;font-style:italic;font-size:13pt;text-align:center`
+				allDivs[i].className = ''
+			}
+			if (allDivs[i].className == 'line-block') {
 				allDivs[i].className = ''
 			}
 		}
 
+		let allAs = copyQuote.querySelectorAll('a')
+		for (let i in allAs) {
+			if (allAs[i].className == 'extlink tipref') {
+				allAs[i].className = ''
+			}
+		}
 
-	
-/* 		let rawHTML = copyDiv.innerHTML.replaceAll(`class="tMSIndex"`,`style="font-size:1rem;background-color:lightgrey;padding:0 0.5rem; margin:0 1rem"`); */
+		copyQuote.innerHTML = copyQuote.innerHTML.replaceAll(`class="" `, '')
+											 .replaceAll(`class=""`, '')
+											 .replaceAll(`class="OAstart"`, '' )
+										 
+		copyDiv.innerHTML = `${linkText}${copyQuote.outerHTML}`
+
 
 		navigator.clipboard.write([new ClipboardItem({
 			'text/plain': new Blob([copyDiv.innerText], {type: 'text/plain'}),
 			'text/html': new Blob([copyDiv.innerHTML], {type: 'text/html'})
 		})])
 
-		//navigator.clipboard.writeText(copyDiv.outerHTML)
+	
 
-		let pureHTMLStr = `<div class='copybox'><textarea style='width:100%; height:200px'>${copyDiv.innerHTML.replaceAll('</p>', '</p>\n').replaceAll('</h1>', '</h1>\n').replaceAll('</h2>', '</h2>\n').replaceAll('class="" ', '')}</textarea></div>`
+		let pureHTMLStr = `<div class='copybox'><textarea style='width:100%; height:400px'>${copyDiv.outerHTML.replaceAll('</p>', '</p>\n')
+											  .replaceAll('</h1>', '</h1>\n')
+											  .replaceAll('</h2>', '</h2>\n')
+											  .replaceAll('<hr>', '\n<hr>')
+											  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea><p>XXX</p>
+											  <textarea style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
+											  .replaceAll('</h1>', '</h1>\n')
+											  .replaceAll('</h2>', '</h2>\n')
+											  .replaceAll('<hr>', '\n<hr>')
+											  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
+							</div>`
 
-		showAlert (`<p><strong>The following (which includes a link to the text) has been copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr><p>Alternatively you can copy it as styled HTML:</p>${pureHTMLStr}`)
+		showAlert (`<p>The following (which includes a link to the text, reconstructed Notes and links to suttas) has been <strong>copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr><p>Original HTML:</p>${pureHTMLStr}`)
 
 
 	} else {
-		
-
 		if (navigator.share) {
-			//console.log(`${bookPath}#${shareFrom}`)
+			let navSharetitle= `${document.title.replace(`-`, `by`)}`
+			let navSharetext= `This link goes directly to tMS Reference: [${shareFrom}]`
+			let navShareurl= `${bookPath}#${shareFrom}`
 			navigator.share({
-				title: `${document.title.replace(`-`, `by`)}`,
-				text: `This link goes directly to tMS Reference: [${shareFrom}]`,
-				url: `${bookPath}#${shareFrom}`
-			  });
-		  } else {
+				title: navSharetitle,
+				text: navSharetext,
+				url: navShareurl
+			});
+		} else {
 			alertStr = `<p>You have not selected any text to share.<br>You are currently reading <b>${shareFrom}</b> in the book.<br>You can do one of the following:</p>
-			<p style="font-family:'Courier New'">${bookPath}#${shareFrom}<br>
-			<button id="shareAtHere" data-toShare="${bookPath}#${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
-			<p style="font-family:'Courier New'">${bookPath}/<br>
-			<button id="shareNoHash" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
-
+						<p style="font-family:'Courier New'">${bookPath}#${shareFrom}<br>
+						<button id="shareAtHere" data-toShare="${bookPath}#${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
+						<p style="font-family:'Courier New'">${bookPath}/<br>
+						<button id="shareNoHash" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
 			showAlert (`${alertStr}`)
-		  } 
+		} 
 	}
-	
 }
 
 

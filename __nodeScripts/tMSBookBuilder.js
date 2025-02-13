@@ -267,7 +267,7 @@ html += buildDownloadInfo()
 html +=					`</div>
 				</div>
 			</div>
-			<div id="ModalSutta"><div id="sutta"></div></div><div id="ModalDownloadAlert"></div>
+			<div id="ModalSutta"><div id="sutta"></div></div><div id="ModalAlert"></div>
 			<div id="ModalSelfquote"><div id="selfquotearea"></div></div>
 		</div>
 	</div>

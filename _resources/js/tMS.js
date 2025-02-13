@@ -882,7 +882,7 @@ function getPlaceInBook () {
 				scrollToNavTarget();
 				tmsIndexButton.innerHTML =  `tMS ref:<br>${hash}`
 			} else {
-				showAlert(`The tMS Reference <strong>(${hash})</strong> that you are trying to go to does not exist in this book`)
+				showAlert(`The tMS Reference <strong>${hash}</strong> that you are trying to go to does not exist in this book`, `tMS Reference Error in URL`)
 			}
 		}
 	} else {
@@ -894,10 +894,10 @@ function getPlaceInBook () {
 				if (hash != savedBookElements[theTopElement].id) {
 					showAlert (`<p>You are already reading this book on this device.<br>
 								Your bookmark is currently at tMS Reference <b>${savedBookElements[theTopElement].id}</b>.<br>
-								<button id="goHashBtn" data-ref="${hash}">Go to <b>${hash}</b> as asked for in url instead</button></p>`)
+								<button id="goHashBtn" data-ref="${hash}">Go to <b>${hash}</b> as asked for in url instead</button></p>`,`Bookmark Found!`)
 				}
 			} else {
-				showAlert(`The tMS Reference <strong>(${hash})</strong> that you are trying to go to does not exist in this book`)
+				showAlert(`The tMS Reference—<strong>${hash}</strong>—that you are trying to go to does not exist in this book. Returning you to your last bookmarked tMS Reference <b>${savedBookElements[theTopElement].id}</b>`, `tMS Reference Error in URL`)
 			}
 
 		}
@@ -934,7 +934,7 @@ function finalExit() {
 	saveCookies();
 }
 
-window.onunload = window.onbeforeunload = finalExit;
+window.onbeforeunload = finalExit;
 
 
 function saveCookies () {
@@ -2048,7 +2048,7 @@ var settingsadv = document.getElementById('SettingsAdv');
 var modaldetails = document.getElementById('ModalDetails');
 var modalsettings = document.getElementById('ModalSettings');
 var modaldownload = document.getElementById('ModalDownload');
-var modalalert = document.getElementById('ModalDownloadAlert');
+var modalalert = document.getElementById('ModalAlert');
 var modalnotes = document.getElementById('ModalNotes');
 var modalsutta = document.getElementById('ModalSutta');
 var modalselfquote = document.getElementById('ModalSelfquote');
@@ -2431,11 +2431,12 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 });
 
 
-function showAlert(HTMLToShow) {
-	restorePlaceInBook();
-	modalalert.innerHTML = HTMLToShow;
-	setModalStyle ("Alert");
-	showModal ("Alert");
+function showAlert(HTMLToShow, alertHeader='ALERT') {
+	restorePlaceInBook()
+	modalalert.innerHTML = HTMLToShow
+	setModalStyle ("Alert")
+	showModal ("Alert")
+	document.getElementById('ModalHeaderText').innerText = alertHeader
 }
 
 modalalert.addEventListener("click", function(e) {
@@ -3115,8 +3116,8 @@ shareBtn.onclick = function() {
 																		 .replace(`</div>`, ']: ')
 																		 .replace(`<div class="booknotesText">`,'')
 																		 .replace(`</div>`, '')
-																		 .replace(`<p>`,``)
-																		 .replace(`</p>`,`<br>`)
+																		 .replaceAll(`<p>`,``)
+																		 .replaceAll(`</p>`,`<br>`)
 																		}</p>`
 					}
 				}
@@ -3234,19 +3235,42 @@ shareBtn.onclick = function() {
 
 	
 
-		let pureHTMLStr = `<div class='copybox'><textarea style='width:100%; height:400px'>${copyDiv.outerHTML.replaceAll('</p>', '</p>\n')
+		let pureHTMLStr = `<h1>Original HTML with classes:</h1><div class='copybox'></textarea>
+											  <textarea id='originacopyhtml' style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
 											  .replaceAll('</h1>', '</h1>\n')
 											  .replaceAll('</h2>', '</h2>\n')
 											  .replaceAll('<hr>', '\n<hr>')
-											  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea><p>XXX</p>
-											  <textarea style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
-											  .replaceAll('</h1>', '</h1>\n')
-											  .replaceAll('</h2>', '</h2>\n')
-											  .replaceAll('<hr>', '\n<hr>')
+											  .replaceAll('</ul>', '</ul>\n')
+											  .replaceAll('</li>', '</li>\n')
+											  .replaceAll('</blockquote>', '</blockquote>\n')
+											  .replaceAll('<blockquote>', '\n<blockquote>')
+											  .replaceAll('\n\n', '\n')
 											  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
 							</div>`
+/* 		let pureHTMLStr = `<p>As HTML:</p><div class='copybox'><textarea  id='copyhtml' style='width:100%; height:400px'>${copyDiv.innerHTML.replaceAll('</p>', '</p>\n')
+											  .replaceAll('</h1>', '</h1>\n')
+											  .replaceAll('</h2>', '</h2>\n')
+											  .replaceAll('<hr>', '\n<hr>')
+											  .replaceAll('</ul>', '</ul>\n')
+											  .replaceAll('</li>', '</li>\n')
+											  .replaceAll('</blockquote>', '</blockquote>\n')
+											  .replaceAll('<blockquote>', '\n<blockquote>')
+											  .replaceAll('<br></p>', '</p>')
+											  .replaceAll('\n\n', '\n')
+											  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea><p>Original HTML with classes:</p>
+											  <textarea id='originacopyhtml' style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
+											  .replaceAll('</h1>', '</h1>\n')
+											  .replaceAll('</h2>', '</h2>\n')
+											  .replaceAll('<hr>', '\n<hr>')
+											  .replaceAll('</ul>', '</ul>\n')
+											  .replaceAll('</li>', '</li>\n')
+											  .replaceAll('</blockquote>', '</blockquote>\n')
+											  .replaceAll('<blockquote>', '\n<blockquote>')
+											  .replaceAll('\n\n', '\n')
+											  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
+							</div>` */
 
-		showAlert (`<p>The following (which includes a link to the text, reconstructed Notes and links to suttas) has been <strong>copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr><p>Original HTML:</p>${pureHTMLStr}`)
+		showAlert (`<h1>Copied to your Clipboard:</h1><p>The following (which includes a link to the text, reconstructed Notes and links to suttas) has been <strong>copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
 
 
 	} else {

@@ -3206,12 +3206,12 @@ shareBtn.onclick = function() {
 
 		let allDivs = copyQuote.querySelectorAll('div')
 		for (let i in allDivs) {
-			if (allDivs[i].className == 'epigram') {
+/* 			if (allDivs[i].className == 'epigram') {
 				allDivs[i].className = ''
 			}
 			if (allDivs[i].className == 'line-block') {
 				allDivs[i].className = ''
-			}
+			} */
 		}
 
 		let allAs = copyQuote.querySelectorAll('a')

@@ -220,16 +220,22 @@ h2 .tMSIndex {
 	border: 1px dotted blue;
 }
 
-/* .copybox a {
-	color: blue;
-} */
-
 .copybox sup {
 	color: var(--primarytextcolor)
 }
 
 .copybox p + p {
 	text-indent: 0;
+}
+
+.copybox div.epigram {
+	font-style: italic;
+	text-align: center;
+}
+
+.copybox div.epigram-cite {
+	font-variant: small-caps;
+	text-align: center;
 }
 
 .icon {

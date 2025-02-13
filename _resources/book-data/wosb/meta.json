@@ -1,0 +1,16 @@
+{
+			"Authors" : ["brahm"],
+			"BookTitle" : "Wisdom of Silence",
+			"BookSubtitle" : "",
+			"ShortAbstract" : "<p>The truth is always silent. The lie is always with words. Ajahn Brahm discusses key aspects of Buddhist practice: Acceptance, Meditation, Attachment, The Five Hindrances, The Fourfold Focus of Mindfulness and Offerings.</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "book",
+			"AddInfo"   : [],
+			"Copyright" : ["This book is Copyright © Ajahn Brahmavamso 2018, 2022","This edition published in 2022 by Wisdom and Wonders is based on the 2018 edition with typographic corrections and sutta reference links to SuttaCentral.","","54pp (in pdf format).","","This book is for free distribution only","For enquiry about the book or Ajahn Brahm, please contact <a href='https://bswa.org/'><span data-custom-style='Hyperlink'>BSWA</a>"],
+			"CCLicense": "BY-NC-ND 4.0",
+			"FrontCover": "../_resources/book-data/wosb/FrontLarge.jpg",
+			"BackCover": "",
+			"BackMatter": [""],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": ""
+		}

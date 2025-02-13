@@ -3206,10 +3206,15 @@ shareBtn.onclick = function() {
 
 		let allDivs = copyQuote.querySelectorAll('div')
 		for (let i in allDivs) {
-/* 			if (allDivs[i].className == 'epigram') {
+ 			if (allDivs[i].className == 'epigram') {
 				allDivs[i].className = ''
+				allDivs[i].style = `text-align: center; font-style:italic;`
 			}
-			if (allDivs[i].className == 'line-block') {
+ 			if (allDivs[i].className == 'epigram-cite') {
+				allDivs[i].className = ''
+				allDivs[i].style = `text-align: center; font-variant:small-caps;`
+			}
+/*			if (allDivs[i].className == 'line-block') {
 				allDivs[i].className = ''
 			} */
 		}

@@ -1781,9 +1781,9 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 
 		} else {
 			if (!(e.target.classList.contains('notTOC'))) { // if there isn't a class notTOC on the li
-				var tocNumber = e.target.id.replace("TOC", "");
-				var toctarget = "head-" + tocNumber;
-				goToTarget(toctarget);
+				var tocSegment = e.target.id.replace("TOC", "");
+				//var toctarget = "head-" + tocNumber;
+				goToTarget(tocSegment);
 			}
 		}
 	}
@@ -1878,7 +1878,8 @@ function fillProgressBar() {
 			break;
 		}
 	}
-	var currentTOC = currentTOCTarget.replace('head-', 'TOC');
+	//var currentTOC = currentTOCTarget.replace('head-', 'TOC');
+	var currentTOC = 'TOC' + currentTOCTarget
 
 	if (currentTOC !== '') {
 		for (var i = 0; i < savedTOCElements.length; i++) {
@@ -3096,7 +3097,9 @@ shareBtn.onclick = function() {
 
 		let copyQuote = document.createElement("blockquote")
 		//Add the user selection
-		copyQuote.append(selection.getRangeAt(0).cloneContents())
+		for(let i = 0; i < selection.rangeCount; i++) {
+			copyQuote.append(selection.getRangeAt(i).cloneContents())
+		   }
 		let originalHTML = copyQuote.innerHTML
 		
 		//Add the Notes
@@ -3126,8 +3129,6 @@ shareBtn.onclick = function() {
 		}
 		copyQuote.innerHTML += notesStr
 
-
-
 		function suttaCentralIt (suttaReference) {
 			let newlink = ''
 			 let [head,tail] = suttaReference.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0].split(':')
@@ -3142,8 +3143,8 @@ shareBtn.onclick = function() {
 
 		//Process the text
 		let allSpans = copyQuote.getElementsByTagName('span')
-		for (i in allSpans) {
-			if (allSpans[i].tagName == 'SPAN') {
+		for (let i in allSpans) {
+			if ((allSpans[i]) && (allSpans[i].tagName == 'SPAN')) {
 				if (allSpans[i].lang == 'pi') {
 					allSpans[i].innerHTML = `<em>${allSpans[i].innerHTML}</em>`
 				}
@@ -3196,14 +3197,22 @@ shareBtn.onclick = function() {
 		}
 
 		let allH1s = copyQuote.querySelectorAll('h1')
-		for (i in allH1s) {
-			allH1s[i].style = `font-size:16pt;font-weight:bold;font-style:normal;font-variant:small-caps;`
+		for (let i in allH1s) {
+			allH1s[i].style = `font-weight:bold; font-style:normal; font-variant:small-caps;`
 		}
 		let allH2s = copyQuote.querySelectorAll('h2')
-		for (i in allH2s) {
-			allH2s[i].style = `font-size:14pt;font-weight:normal;font-style:normal;font-variant:small-caps;`
+		for (let i in allH2s) {
+			allH2s[i].style = `font-variant:small-caps;`
 		}
-
+		let allH3s = copyQuote.querySelectorAll('h3')
+		for (let i in allH3s) {
+			allH3s[i].style = `text-align:left`
+		}
+/* 		let allPs = copyQuote.querySelectorAll('p')
+		for (let i in allPs) {
+			allPs[i].style = `font-size: 11pt`
+		}
+ */
 		let allDivs = copyQuote.querySelectorAll('div')
 		for (let i in allDivs) {
  			if (allDivs[i].className == 'epigram') {

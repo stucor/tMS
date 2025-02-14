@@ -149,6 +149,9 @@ for (var i in TOCData){
 	if (TOCData[i].pandocHTMLID.substring(0,15)=='CHAP-SECTION-01') {
 		html += `\t\t<li class='sub' id="TOC${TOCData[i].tocno}">${TOCData[i].heading}</li>\n`
 	}
+	if (TOCData[i].pandocHTMLID.substring(0,15)=='CHAP-SECTION-02') {
+		html += `\t\t<li class='subsub' id="TOC${TOCData[i].tocno}">${TOCData[i].heading}</li>\n`
+	}
 }
 html +=
 `		<li id="TOC999999999" class="noshow">TERMINATOR</li>
@@ -639,22 +642,30 @@ function buildBook () {
 	}
 
 
-	let allSegments = bookRoot.querySelectorAll('p')
+	let allSegments = bookRoot.querySelectorAll('p, h1, h2, h3')
+	let hcounter = 1
 	for (let i in allSegments) {
-		allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)
+		if (allSegments[i].id) {
+			html = html.replace(`id="TOC${hcounter}"`,`id="TOCseg-${parseInt(i) + 1}"`)
+			allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)
+			hcounter++
+		} else {
+			allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)
+		}
 	}
 
 
-	let returnHTML = `\n${bookRoot}`.replaceAll('</blockquote>\r\n<blockquote>','')
+
+	let returnHTML = `${html}\n${bookRoot}`.replaceAll('</blockquote>\r\n<blockquote>','')
 									.replaceAll('</p>\r\n\r\n\r\n<p','</p>\r\n<p')
 									.replaceAll('</p>\r\n\r\n<p','</p>\r\n<p')
 									.replaceAll('\r\n\r\n\r\n','')
 									.replaceAll('\r\n\r\n','\r\n')
 
+
 	return returnHTML
 }
-
-html += buildBook()
+html = buildBook()
 
 function buildReferences () {
 	let referenceRoot = ``
@@ -893,6 +904,14 @@ function processPandoc() {
 				let nextTOCID = `CHAP-SECTION-01-${nextTOCText.replaceAll(' ','-')}`
 				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
 				let newElement = `<h2 id='${nextTOCID}'\>${nextTOCText}</h2>`
+				TOChtml[i].replaceWith(newElement)
+			} else
+			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-chapter-section-2') {
+				count += 1
+				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
+				let nextTOCID = `CHAP-SECTION-02-${nextTOCText.replaceAll(' ','-')}`
+				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
+				let newElement = `<h3 id='${nextTOCID}'\>${nextTOCText}</h3>`
 				TOChtml[i].replaceWith(newElement)
 			}
 		}

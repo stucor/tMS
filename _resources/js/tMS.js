@@ -124,7 +124,7 @@ function buildSettings (_callback) {
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="hyphenCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
-				<span class ="settingsheadersleft">show <span style="text-transform:none;">tMS</span> reference:</span>
+				<span class ="settingsheadersleft">show segments:</span>
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showtMSIndexCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
@@ -183,6 +183,15 @@ function startup () {
 				tabrefArr[i].setAttribute("id", "table_"+ (i+1));
 			}
 		}
+		//populate lastsegcount
+		let lastSegCount = ``
+		for (let i in savedBookElements) {
+			if (savedBookElements[i].id) {
+				lastSegCount = savedBookElements[i].id
+			}
+		}
+		lastSegCount = lastSegCount.replace(`seg-`, `/`)
+		document.getElementById('lastsegcount').innerText = lastSegCount;
 
 		var scroller = Math.floor(window.scrollY);
 		history.replaceState({scrollState: scroller},'',''); 
@@ -560,7 +569,7 @@ window.onload = function () {
 };
 
 //var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
-var savedBookElements = thebook.querySelectorAll("h1:not(.titlepage):not(#head-999999999), h2:not(.titlepage), h3:not(.titlepage), p");
+var savedBookElements = thebook.querySelectorAll("h1:not(.titlepage):not(#head-999999999), h2:not(.titlepage), h3:not(.titlepage), p:not(.tablepara), .tablewrap");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
 var savedNotesElements = ModalNotes.querySelectorAll('h2, div.booknote');
@@ -862,8 +871,14 @@ function getPlaceInBook () {
 		let bookurl = window.location.href.replace(`#${hash}`,``)
 		history.replaceState( {} , '', bookurl );
 		for (let i in savedBookElements) {
-			if (savedBookElements[i].id == hash) {
-				hashValidatedIndex = i
+			if (savedBookElements[i].id) {
+				if (savedBookElements[i].id == hash) {
+					hashValidatedIndex = i
+				} else 
+				if (savedBookElements[i].id == `seg-${hash}`) {
+					hash = `seg-`+ hash
+					hashValidatedIndex = i
+				}
 			}
 		}
 	}
@@ -880,7 +895,7 @@ function getPlaceInBook () {
 			if (hashValidatedIndex >=0) {
 				theTopElement = i
 				scrollToNavTarget();
-				tmsIndexButton.innerHTML =  `tMS ref:<br>${hash}`
+				segCount.innerHTML =  `${hash}`
 			} else {
 				showAlert(`The tMS Reference <strong>${hash}</strong> that you are trying to go to does not exist in this book`, `tMS Reference Error in URL`)
 			}
@@ -894,7 +909,7 @@ function getPlaceInBook () {
 				if (hash != savedBookElements[theTopElement].id) {
 					showAlert (`<p>You are already reading this book on this device.<br>
 								Your bookmark is currently at tMS Reference <b>${savedBookElements[theTopElement].id}</b>.<br>
-								<button id="goHashBtn" data-ref="${hash}">Go to <b>${hash}</b> as asked for in url instead</button></p>`,`Bookmark Found!`)
+								<button id="goHashBtn" data-ref="${hash}">Go to <b>${hash}</b> as asked for in url instead</button></p>`,`Bookmark Found!`,`goHashBtn`)
 				}
 			} else {
 				showAlert(`The tMS Reference—<strong>${hash}</strong>—that you are trying to go to does not exist in this book. Returning you to your last bookmarked tMS Reference <b>${savedBookElements[theTopElement].id}</b>`, `tMS Reference Error in URL`)
@@ -1677,7 +1692,7 @@ function doTMSIndex () {
 
 function setTMSIndex () {
 	let theBook = document.getElementById('thebook')
-	let paragraphArr = theBook.querySelectorAll('p')
+	let paragraphArr = theBook.querySelectorAll('p, .tablewrap')
 
 	for (let i in paragraphArr) {
 		//let tempID = paragraphArr[i].id
@@ -1693,7 +1708,7 @@ function setTMSIndex () {
 
 	let headingsArr = theBook.querySelectorAll('h1, h2, h3')
 	for (let i in headingsArr) {
-		if ((headingsArr[i].id) && (headingsArr[i].id != 'head-999999999') && (headingsArr[i].id != 'head-0-1') ) {
+		if ((headingsArr[i].id) && (headingsArr[i].id != 'head-999999999') && (headingsArr[i].id != 'seg-0-1') ) {
 			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				headingsArr[i].innerHTML = injectSpan + headingsArr[i].innerHTML
@@ -1706,8 +1721,10 @@ function setTMSIndex () {
 
 
 window.onpopstate = function (event) {
-	var scroller = history.state.scrollState;
-	window.scrollTo(0, scroller);
+	if (history.state) {
+		var scroller = history.state.scrollState;
+		window.scrollTo(0, scroller);
+	}
 }
 
 
@@ -1753,7 +1770,7 @@ function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given
 	}
 	elmnt.scrollIntoView();
 	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
-	window.scrollBy(0, tbHeight-20); // scroll the target below the topnav bar so you can see it
+	window.scrollBy(0, tbHeight); // scroll the target below the topnav bar so you can see it
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
@@ -1782,7 +1799,6 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 		} else {
 			if (!(e.target.classList.contains('notTOC'))) { // if there isn't a class notTOC on the li
 				var tocSegment = e.target.id.replace("TOC", "");
-				//var toctarget = "head-" + tocNumber;
 				goToTarget(tocSegment);
 			}
 		}
@@ -1792,7 +1808,7 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 // hide and show the top and bottom bars by placing them off canvas when window is scrolled up (show) and down (hide) - 
 // this is a automatic setting mobileUI or the user-setting/cookie forceMobileUI. Then set progress bar
 
-tmsIndexButton = document.getElementById('tmsindexBtn')
+segCount = document.getElementById('segcount')
 window.onscroll = function() {
 	
 	var currentScrollPos = window.scrollY;
@@ -1840,9 +1856,9 @@ window.onscroll = function() {
 
 	// save position
 	getNavTarget();
-	//savePlaceInBook();
+	savePlaceInBook();
 	//populate the tMSIndex counter
-	tmsIndexButton.innerHTML =  `tMS ref:<br>${savedBookElements[theTopElement].id}`
+	segCount.innerHTML =  `${savedBookElements[theTopElement].id}`
 }
 
 function setSelfquoteMargins () {
@@ -2432,12 +2448,15 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 });
 
 
-function showAlert(HTMLToShow, alertHeader='ALERT') {
+function showAlert(HTMLToShow, alertHeader='ALERT', focusButton = '') {
 	restorePlaceInBook()
 	modalalert.innerHTML = HTMLToShow
 	setModalStyle ("Alert")
 	showModal ("Alert")
 	document.getElementById('ModalHeaderText').innerText = alertHeader
+	if (focusButton) {
+		document.getElementById(`${focusButton}`).focus()
+	}
 }
 
 modalalert.addEventListener("click", function(e) {
@@ -2592,14 +2611,20 @@ var theTopElement = 0;
 var theTopElementTopEdge = 0;
 
 function getNavTarget () {
-	for (var i = 0; i < savedBookElements.length; i++) {
-		if (isElementInViewport (savedBookElements[i])) {
-			theTopElement = i;
-			theTopElementTopEdge = savedBookElements[i].getBoundingClientRect().top;
-			theTopElementTopEdge = Math.floor(theTopElementTopEdge);
-			break;
+	if (isElementInViewport(document.getElementById('seg-0-1'))) {
+		theTopElement = 0
+		theTopElementTopEdge = Math.floor(theTopElementTopEdge);
+	} else {
+		for (var i = 0; i < savedBookElements.length; i++) {
+			if (isElementInViewport (savedBookElements[i])) {
+				theTopElement = i;
+				theTopElementTopEdge = savedBookElements[i].getBoundingClientRect().top;
+				theTopElementTopEdge = Math.floor(theTopElementTopEdge);
+				break;
+			}
 		}
 	}
+
 }	
 
 function scrollToNavTarget () {
@@ -3152,6 +3177,7 @@ shareBtn.onclick = function() {
 					let tempHTML = `[${allSpans[i].innerHTML}] `
 					allSpans[i].className = ''
 					allSpans[i].innerHTML=tempHTML
+					allSpans[i].style = `font-weight: normal; font-size: 11pt; font-variant:normal;`
 				}
 				if (allSpans[i].className == 'ptsref') {
 					let tempHTML = `[${allSpans[i].innerHTML}] `

@@ -49,7 +49,7 @@ function buildBook () {
 		  console.log(`✅✅ ${bookID} index.html BUILD COMPLETE *`)
 		  buildSesameStub()
 		  //buildSesameRefStub()
-		  console. log('-----------------------------------END-----------------------------------')
+		  console.log('-----------------------------------END-----------------------------------')
 		}); 
 }
 
@@ -139,7 +139,7 @@ html += `
 	<div id="tocbtn2" class="tocbtn, no-print" onclick="closeFromTocbtn2 ()">&#10094; Contents</div>
 	<ul id="TOC">
 		<li id="TOC0" class="noshow">Engrave</li>
-		<li id="TOC0-1">Title Page</li>\n`
+		<li id="TOCseg-0-1">Title Page</li>\n`
 
 let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'TOC.json'))
 for (var i in TOCData){
@@ -176,7 +176,7 @@ html += `
 	<div class="topnav2">
 		<div id="tocBtn" class="tocbtn">&#10095; Contents</div>
 		<div class="booktitle">${title}<br>${authorShortname}</div>
-		<div class="topnav2buttons"><button id="tmsindexBtn">tms Index:<br></button></div>
+		<div class="topnav2buttons"><button id="tmsindexBtn">segment:<br><span id="segcount"></span><span id="lastsegcount"</button></div>
 	</div>
 </div>
 `
@@ -283,7 +283,7 @@ html += `<div id="bookwrap"><div></div>
 <h1 class="engrave" id="head-0">${title}</h1>
 <p class="smallEngrave">${authorShortname}</p>
 <div class="book" id="thebook" data-shortcode="${bookID}">
-<h1 class="titlepage" id="head-0-1">${title}</h1>`
+<h1 class="titlepage" id="seg-0-1">${title}</h1>`
 
 if (subtitle) {
 	html += `<h4 class="titlepage">${subtitle}</h4>`
@@ -595,6 +595,8 @@ function buildBook () {
 		}
 		if (newHTML) {
 			allTableRows[i].innerHTML = newHTML
+		} else {
+			allTableRows[i].innerHTML = allTableRows[i].innerHTML.replaceAll(`<p>`,`<p class="tablepara">`)
 		}
 	}
 
@@ -642,7 +644,7 @@ function buildBook () {
 	}
 
 
-	let allSegments = bookRoot.querySelectorAll('p, h1, h2, h3')
+	let allSegments = bookRoot.querySelectorAll('p:not(.tablepara), h1, h2, h3, .tablewrap')
 	let hcounter = 1
 	for (let i in allSegments) {
 		if (allSegments[i].id) {
@@ -650,11 +652,14 @@ function buildBook () {
 			allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)
 			hcounter++
 		} else {
-			allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)
+			if (allSegments[i].classList != `tablepara`) {
+				allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)
+			}
+		}
+		if (allSegments[i].id) {
+			lastSegment = allSegments[i].id
 		}
 	}
-
-
 
 	let returnHTML = `${html}\n${bookRoot}`.replaceAll('</blockquote>\r\n<blockquote>','')
 									.replaceAll('</p>\r\n\r\n\r\n<p','</p>\r\n<p')

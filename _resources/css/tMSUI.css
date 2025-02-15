@@ -164,25 +164,23 @@ body {
 	opacity: 65%;
 	font-variant: normal;
 	font-style: normal;
+	font-weight: normal;
 	white-space: nowrap;
 	line-height: 0;
 	padding: 0 0.5em;
 	margin: 0 0.5em 0 0;
-	font-size: 0.85em;
+	font-size: 1rem;
+	line-height: 1.2rem;
 	font-family: 'Source Sans Pro';
 	background-color: #00000010;
 }
 h1 .tMSIndex {
 	display:block;
 	max-width:fit-content;
-	font-size: 0.55em;
-	line-height: 1.4em;
 }
 h2 .tMSIndex {
 	display:block;
 	max-width:fit-content;
-	font-size: 0.65em;
-	line-height: 1.2em;
 }
 
 #tmsindexBtn {

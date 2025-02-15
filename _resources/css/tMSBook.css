@@ -39,6 +39,8 @@ strong {
 	font-weight: 400;
 	font-variant: small-caps;
 	padding-bottom: 0;
+	padding-top: 10em;
+	margin-top: 0;
 	margin-bottom: 2em;
 	font-size: 2.5em;
 }
@@ -49,7 +51,7 @@ strong {
 	font-style: normal;
 	font-weight: 400;
 	margin-top: 4em;
-	margin-bottom: 10em;
+	margin-bottom: 14em;
 	font-size: 1.5em;
 }
 
@@ -73,7 +75,8 @@ strong {
 	font-variant: small-caps;
 	line-height: 1.2em;
 	padding-bottom: 1em;
-	padding-top: 6em;
+	padding-top: 1em;
+	margin-top: 6em;
 }
 
 .content h2 {

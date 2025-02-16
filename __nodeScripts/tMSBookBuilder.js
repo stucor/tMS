@@ -757,7 +757,7 @@ if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.html`)) {
 
 html += `<div class="endBar">End of Book</div>
 
-<h1 id="head-999999999"></h1>
+<h1 id="999999999"></h1>
 </div>	
 </div>
 <div></div></div> 

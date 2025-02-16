@@ -186,7 +186,7 @@ function startup () {
 		//populate lastsegcount
 		let lastSegCount = ``
 		for (let i in savedBookElements) {
-			if (savedBookElements[i].id) {
+			if (savedBookElements[i].id && savedBookElements[i].id != `999999999`) {
 				lastSegCount = savedBookElements[i].id
 			}
 		}
@@ -569,7 +569,7 @@ window.onload = function () {
 };
 
 //var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
-var savedBookElements = thebook.querySelectorAll("h1:not(.titlepage):not(#head-999999999), h2:not(.titlepage), h3:not(.titlepage), p:not(.tablepara), .tablewrap");
+var savedBookElements = thebook.querySelectorAll("h1:not(.titlepage), h2:not(.titlepage), h3:not(.titlepage), p:not(.tablepara), .tablewrap");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
 var savedNotesElements = ModalNotes.querySelectorAll('h2, div.booknote');
@@ -1708,7 +1708,8 @@ function setTMSIndex () {
 
 	let headingsArr = theBook.querySelectorAll('h1, h2, h3')
 	for (let i in headingsArr) {
-		if ((headingsArr[i].id) && (headingsArr[i].id != 'head-999999999') && (headingsArr[i].id != 'seg-0-1') ) {
+		if ((headingsArr[i].id) && (headingsArr[i].id != '999999999') && (headingsArr[i].id != 'seg-0-1') ) {
+			console.log (headingsArr[i].id)
 			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				headingsArr[i].innerHTML = injectSpan + headingsArr[i].innerHTML
@@ -1886,6 +1887,7 @@ var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");
 
 function fillProgressBar() {
 
+
 	var tbHeight = Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
 	var currentTOCTarget = '';
 	for (var i = 0; i < savedHeadingsElements.length; i++) {
@@ -1896,6 +1898,7 @@ function fillProgressBar() {
 	}
 	//var currentTOC = currentTOCTarget.replace('head-', 'TOC');
 	var currentTOC = 'TOC' + currentTOCTarget
+	//console.log(currentTOC)
 
 	if (currentTOC !== '') {
 		for (var i = 0; i < savedTOCElements.length; i++) {
@@ -1909,7 +1912,6 @@ function fillProgressBar() {
 			if (savedTOCElements[i].id !== currentTOC) {
 				savedTOCElements[i].style.background = 'var(--TOCprogress)';
 				savedTOCElements[i].style.opacity = '0.35';
-
 			} else {
 				savedTOCElements[i-1].style.opacity = '1';
 				savedTOCElements[i-1].style.borderTop = "thin dotted var(--secondarycolor)";//#d6630f8F";

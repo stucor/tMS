@@ -1,0 +1,16 @@
+{
+			"Authors" : ["brahm"],
+			"BookTitle" : "Simply This Moment",
+			"BookSubtitle" : "",
+			"ShortAbstract" : "<p>A collection of edited talks by Ajahn Brahm, in the main given to monks and visitors on rains retreat at Bodhinyana monastery. Ajahn inspires and offers practical advice to attain the beautiful, deeper meditation states. In particular, emphasis is given to jhāna meditation, with insights on the breath meditation as instructed in the Ānāpānasati Sutta (Mindfulness of Breathing).</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "book",
+			"AddInfo"   : [],
+			"Copyright" : ["Copyright © Ajahn Brahmavamso 2005, 2022","Edited talks by Ajahn Brahm originally published in 2005","This edition published in 2022 by Wisdom &amp; Wonders is based on the 2005 edition with typographic corrections and sutta reference links to SuttaCentral.","440pp (in pdf format)."],
+			"CCLicense": "CC0 4.0",
+			"FrontCover": "../_resources/book-data/sitm/FrontLarge.jpg",
+			"BackCover": "",
+			"BackMatter": [""],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": ""
+		}

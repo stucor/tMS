@@ -7,6 +7,12 @@ var marginName = "";
 
 var prevScrollpos = window.scrollY;
 
+document.getElementById(`tmsindexBtn`).onclick = function () {
+	setModalStyle ("Notes");
+	showModal("Notes");
+	stopBookScroll ();
+}
+
 // generic cookie functions
 
 function setCookie(cname, cvalue, exdays) {

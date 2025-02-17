@@ -1,0 +1,16 @@
+{
+			"Authors" : ["brahmali"],
+			"BookTitle" : "Buddhist Cosmology",
+			"BookSubtitle" : "",
+			"ShortAbstract" : "<p>Bhikkhu Brahmali investigates certain aspects of the suttas that appear extraordinary. Examining the Buddhist cosmology of cosmic cycles, solar systems and the fate of the earth, he shows a relationship to modern scientific cosmology.</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "document",
+			"AddInfo"   : [],
+			"Copyright" : ["Originally published in 2015.","This edition published in 2021.","34pp (in pdf format).","Edited version of talk given at Dhammaloka Buddhist Centre on 27th November 2015.","Sourced from bswa.org"],
+			"CCLicense": "CC0 1.0",
+			"FrontCover": "../_resources/book-data/bcbl/FrontLarge.jpg",
+			"BackCover": "",
+			"BackMatter": [""],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": ""
+		}

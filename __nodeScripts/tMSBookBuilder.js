@@ -299,7 +299,7 @@ function buildBook () {
 	} catch (err) {
 		console.error(err);
 	}
-	// head- ids
+	// temp head- ids
 	let TOCData = JSON.parse(fs.readFileSync('../_resources/book-data/'+bookID+'/'+'toc.json', 'utf8'))
 	let chapterPrefix = `Chapter`
 	if (itemType == 'document') {

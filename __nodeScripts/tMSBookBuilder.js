@@ -461,6 +461,26 @@ function buildBook () {
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-blockquote") {
 			allDivs[i].tagName = "blockquote"
 			allDivs[i].removeAttribute('data-custom-style')
+			//OAstart class
+/* 			let newHTML = ''
+			let blockquoteRoot = parse(allDivs[i].innerHTML);
+			let allPs = blockquoteRoot.querySelectorAll('p')
+			console.log(allPs.length)
+
+			for (let apj = 0; apj < allPs.length; apj++ ) {
+				console.log (apj)
+				console.log(allPs[apj].outerHTML)
+				if (allPs[apj].innerHTML.charAt(0)== '“') {
+					if (apj > 0) {
+						newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAbody' `)
+					} else {
+						newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart' `)
+					}
+				} else {
+					newHTML += allPs[apj].outerHTML
+				}
+			}
+			allDivs[i].innerHTML = newHTML */
 		} else
 		// CAPTIONS -- Used in conjuction with IMAGE TABLE
  		if (allDivs[i].getAttribute('data-custom-style') == "WW-caption-centered-sans"){
@@ -494,7 +514,7 @@ function buildBook () {
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block-center") {
 			if (allDivs[i].innerHTML.charAt(5) == '“') {
 				let tempHTML = allDivs[i].innerHTML.replaceAll('\r\n', '') 
-				let newHTML = tempHTML.slice(0,4) + ` class='OAstart'` + tempHTML.slice(4)
+				let newHTML = tempHTML.slice(0,2) + ` class='OAstart'` + tempHTML.slice(2)
 				allDivs[i].innerHTML = newHTML	
 			}
 			allDivs[i].classList.add ('line-block-center')

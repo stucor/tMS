@@ -595,9 +595,15 @@ function buildBook () {
 		} 
 	} 
 
+	// Lists remove any 'start at number #'
+	let allOls = bookRoot.querySelectorAll(`ol`)
+	for (let i in allOls) {
+		allOls[i].setAttribute('start', undefined) 
+	}
+
 	// table rows
 	let allTableRows = bookRoot.querySelectorAll('tr') 
-	for (i in allTableRows) {
+	for (let i in allTableRows) {
 		let newHTML = ``
 		allTableRows[i].classList.remove('odd')
 		allTableRows[i].classList.remove('even')

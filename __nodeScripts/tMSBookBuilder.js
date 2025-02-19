@@ -598,7 +598,9 @@ function buildBook () {
 	// Lists remove any 'start at number #'
 	let allOls = bookRoot.querySelectorAll(`ol`)
 	for (let i in allOls) {
-		allOls[i].setAttribute('start', undefined) 
+		if (allOls[i].getAttribute('start')) {
+			allOls[i].removeAttribute('start')
+		}
 	}
 
 	// table rows

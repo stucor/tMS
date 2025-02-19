@@ -2,26 +2,23 @@
 	"Authors": "Ajahn Brahm",
 	"BookTitle": "Dependent Origination",
 	"BookSubtitle": "",
-	"AddInfo": [
-		[
-			"Addendum:",
-			"In the addendum you will find a short letter by Ajahn Brahm written in May 1994 (some 8 years before the main text) entitled “Some Remarks on Dependent Origination”."
-		],
-		[
-			"Overview:",
-			"**DEPENDENT ORIGINATION:** \n***(paṭiccasamuppāda)***",
-			"ignorance/delusion (*avijjā*) ›\nwilled acts/activities (*saṅkhāra*) ›\nconsciousness (*viññāṇa*) ›\nname and form (*nāmarūpa*) ›\nthe six senses (*saḷāyatana*) ›\ncontact/sense impressions (*phassa*) ›\nsensations/feelings (*vedanā*) ›\ndesire/craving (*taṇhā*) ›\ntaking up (*upādāna*) ›\nlife/existence (*bhava*) ›\nrebirth (*jāti*) ›\nold age and death (*jarāmaraṇa*)"
-		]
-	],
+	"ShortAbstract": "<p>In this essay Ajahn Brahm discusses the meaning of the twelve factors that make up the standard description of dependent origination. He analyses the nature of the causes linking each pair of neighbouring factors, using a Western model of causality. Having explained what the Buddha meant by dependent origination, he then examines perhaps the most interesting question: Why did the Buddha place such importance on dependent origination? What is its purpose? In the final section, Ajahn proposes that the function of dependent origination is threefold:<br>1) To explain how there can be rebirth without a soul.<br>2) To answer the question “What is life?”<br>3) To understand why there is suffering, and where suffering comes to an end.</p>",
+	"Abstract": "<p>None</p>",
+	"ItemType": "document",
+	"AddInfo": [],
 	"Copyright": [
-		"Published in **2002**.",
-		"This edition published in **2021** \nwith minor reference and punctuation changes.",
+		"Originally published in 2002.",
+		"This edition published by Wisdom &amp; Wonders in 2021 with minor reference and punctuation changes.",
 		"43pp (in pdf format)."
 	],
 	"CCLicense": "<div class='cclicense'><h3>CC0 1.0 Universal <span>(CC0 1.0) Public Domain Dedication</span></h3><div id = 'ccDetail'><p><strong>No Copyright</strong></p><ul>    <li>The person who associated a work with this deed has <em>dedicated</em> the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.</li>    <li>You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.</li></ul><p><strong>Other Information</strong></p><ul><li>In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.</li><li>Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.</li><li>When using or citing the work, you should not imply endorsement by the author or the affirmer.</li></ul></div></div>",
 	"FrontCover": "../_resources/book-data/doab/FrontLarge.jpg",
 	"BackCover": "",
-	"BackMatter": [],
+	"BackMatter": [
+		""
+	],
+	"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+	"DownloadHTML": "",
 	"AuthorsData": [
 		{
 			"ShortName": "Ajahn Brahm",

@@ -421,15 +421,6 @@ figcaption {
 	padding: 0;
 }
 
-
-/*  @counter-style paren-decimal {
-	system: extends decimal;
-	prefix: "";
-	suffix: ") ";
-  }
- */
-
-
 .content ol {
 	/* list-style: paren-decimal;  */
 	margin: 1em 3em;

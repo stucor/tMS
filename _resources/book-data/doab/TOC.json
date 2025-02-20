@@ -16,8 +16,8 @@
 	"heading": "1.1 The meaning of the twelve factors, as defined by the Buddha"},
 {
 	"tocno": "5",
-	"pandocHTMLID": "CHAP-SECTION-01-HEEERRREEEE—1.2-Causality-and-the-twelve-factors",
-	"heading": "HEEERRREEEE—1.2 Causality and the twelve factors"},
+	"pandocHTMLID": "CHAP-SECTION-01-1.2-Causality-and-the-twelve-factors",
+	"heading": "1.2 Causality and the twelve factors"},
 {
 	"tocno": "6",
 	"pandocHTMLID": "CHAPTER-2.-On-the-Meaning-of-Sandiṭṭhika-and-Akālika",
@@ -60,5 +60,9 @@
 	"heading": "Some Remarks on Dependent Origination"},
 {
 	"tocno": "16",
+	"pandocHTMLID": "CHAP-SECTION-02-The-meaning-of-the-Terms-in-Paṭicca-Samuppāda",
+	"heading": "The meaning of the Terms in Paṭicca Samuppāda"},
+{
+	"tocno": "17",
 	"pandocHTMLID": "CHAPTER-Bibliography",
 	"heading": "Bibliography"}]

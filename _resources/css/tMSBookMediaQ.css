@@ -267,11 +267,6 @@
 		margin: 0 2%
 	}
 
-	.lotlistitem::before, .figlistitem::before {
-		content: '\00B7 ';
-		margin-left: -0.3em
-	}
-
 	#ModalSelfquote {
 		padding: 1em;
 	}

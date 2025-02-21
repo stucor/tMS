@@ -436,6 +436,7 @@ function buildBook () {
 	
 	// All the divs
 	let allDivs = bookRoot.querySelectorAll('div') 
+	let figureID = 1;
 	for (i in allDivs) {
 		// SPECIAL MESSAGE
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-special-message") {
@@ -447,6 +448,33 @@ function buildBook () {
 				allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll('<p>', '').replaceAll('</p>', '')
 			}
 		} else 
+		// FIGURE (with images)
+		if (allDivs[i].getAttribute('data-custom-style') == "WW-figure") {
+			let figureRoot = parse (allDivs[i].innerHTML)
+
+			let allFigRootSpans = figureRoot.querySelectorAll('span')
+			let figRootSpanHTML =``
+
+			let imageWidth = '100'
+			if (allFigRootSpans.length == 2) {
+				imageWidth = '40'
+			}
+			for (let j in allFigRootSpans) {
+				if (allFigRootSpans[j].getAttribute('data-custom-style') == "wwc-figure-image") {
+					let [fileLoc, alt, bordered] = allFigRootSpans[j].innerText.split('=')
+					//console.log(`<a data-fslightbox href="${fileLoc}"><img src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>`)
+					figRootSpanHTML += `<a data-fslightbox href="${fileLoc}"><img src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>\n`
+				} else { // it's a caption
+					figRootSpanHTML += `<figcaption>${allFigRootSpans[j].innerText}</figcaption>`
+				}
+			}
+			//console.log (figRootSpanHTML)
+			allDivs[i].innerHTML = figRootSpanHTML
+			allDivs[i].tagName = 'figure'
+			allDivs[i].setAttribute('id',`fig${figureID}`)
+			figureID ++
+			allDivs[i].removeAttribute('data-custom-style')
+		} else
 		// SPACE
 		if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
 			let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
@@ -795,6 +823,7 @@ html += `<div class="endBar">End of Book</div>
 <script src="../_resources/js/list.js.2.3.1/list.min.js"></script>
 <script src="../_resources/js/tMS.js"></script>
 <script src="../_resources/js/scsutta.js"></script>
+<script src="../_resources/js/fslightbox.js"></script>
 
 </body>
 </html>`

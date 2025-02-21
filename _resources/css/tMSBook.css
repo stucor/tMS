@@ -1411,7 +1411,15 @@ sup {
 
 .lotlistitem, .figlistitem {
 	text-align: left;
+	margin-left: 1em;
+	text-indent: -1em;
 }
+
+/* .lotlistitem::before, .figlistitem::before {
+	content: '\d067  '
+} */
+
+
 
 /******************************************/
 

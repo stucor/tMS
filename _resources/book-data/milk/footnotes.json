@@ -9,7 +9,7 @@
 },
 {
 	"fnNumber": "3",
-	"fnHTML": "<p><span lang='pi'>Mitte vā bhavā mittassa vā esā pavattī ti pi mettā</span>, <span class='sesame'><em>Culla Niddesa</em></span> 117.</p>"
+	"fnHTML": "<p><span lang='pi'>Mitte</span> <span lang='pi'>vā</span> <span lang='pi'>bhavā</span> <span lang='pi'>mittassa</span> <span lang='pi'>vā</span> <span lang='pi'>esā</span> <span lang='pi'>pavattī</span> <span lang='pi'>ti</span> <span lang='pi'>pi</span> <span lang='pi'>mettā</span>, <span class='sesame'><em>Culla Niddesa</em></span> 117.</p>"
 },
 {
 	"fnNumber": "4",
@@ -33,11 +33,11 @@
 },
 {
 	"fnNumber": "9",
-	"fnHTML": "<p><span lang='pi'>attānaṁ upamaṁ katvā</span>, <span class='sclinktext'>Dhp&#8239;129</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>attānaṁ</span> <span lang='pi'>upamaṁ</span> <span lang='pi'>katvā</span>, <span class='sclinktext'>Dhp&#8239;129</span>.</p>"
 },
 {
 	"fnNumber": "10",
-	"fnHTML": "<p><span lang='pi'>yathā ahaṁ tathā ete, yathā ete tathā ahaṁ</span>, <span class='sclinktext'>Snp&#8239;3.11:27.1–27.4</span> <span class='ptsref'>PTS: Sn.705</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>yathā</span> <span lang='pi'>ahaṁ</span> <span lang='pi'>tathā</span> <span lang='pi'>ete</span>, <span lang='pi'>yathā</span> <span lang='pi'>ete</span> <span lang='pi'>tathā</span> <span lang='pi'>ahaṁ</span>, <span class='sclinktext'>Snp&#8239;3.11:27.1–27.4</span> <span class='ptsref'>PTS: Sn.705</span>.</p>"
 },
 {
 	"fnNumber": "11",
@@ -53,7 +53,7 @@
 },
 {
 	"fnNumber": "14",
-	"fnHTML": "<p><span lang='pi'>mettena kāyakammena</span>, <span class='sclinktext'>DN&#8239;16:5.14.5</span> <span class='ptsref'>PTS: D.II,144</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>mettena</span> <span lang='pi'>kāyakammena</span>, <span class='sclinktext'>DN&#8239;16:5.14.5</span> <span class='ptsref'>PTS: D.II,144</span>.</p>"
 },
 {
 	"fnNumber": "15",
@@ -169,7 +169,7 @@
 },
 {
 	"fnNumber": "43",
-	"fnHTML": "<p><span lang='pi'>Ajeyyam esā tava hotu mettī bhariyāya kaccāna piyāya saddhiṁ</span>, <a href='https://suttacentral.net/ja546/en/cowell-rouse?reference=main/pts#pts-vp-pli323' class='extlink tipref'>Ja 546</a> <span class='ptsref'>PTS: Ja.VI,323</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>Ajeyyam</span> <span lang='pi'>esā</span> <span lang='pi'>tava</span> <span lang='pi'>hotu</span> <span lang='pi'>mettī</span> <span lang='pi'>bhariyāya</span> <span lang='pi'>kaccāna</span> <span lang='pi'>piyāya</span> <span lang='pi'>saddhiṁ</span>, <a href='https://suttacentral.net/ja546/en/cowell-rouse?reference=main/pts#pts-vp-pli323' class='extlink tipref'>Ja 546</a> <span class='ptsref'>PTS: Ja.VI,323</span>.</p>"
 },
 {
 	"fnNumber": "44",
@@ -177,11 +177,11 @@
 },
 {
 	"fnNumber": "45",
-	"fnHTML": "<p><span lang='pi'>sampiyen’eva saṁvāsṁa saṁaggatthāya sampavattenti</span>,<br><span class='sclinktext'>AN&#8239;5.191:3.1</span> <span class='ptsref'>PTS: A.III,222</span>;<br><span class='sclinktext'>Snp&#8239;2.7:8.1–8.4</span> <span class='ptsref'>PTS: Sn.290</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>sampiyen’eva</span> <span lang='pi'>saṁvāsṁa</span> <span lang='pi'>saṁaggatthāya</span> <span lang='pi'>sampavattenti</span>,<br><span class='sclinktext'>AN&#8239;5.191:3.1</span> <span class='ptsref'>PTS: A.III,222</span>;<br><span class='sclinktext'>Snp&#8239;2.7:8.1–8.4</span> <span class='ptsref'>PTS: Sn.290</span>.</p>"
 },
 {
 	"fnNumber": "46",
-	"fnHTML": "<p><span lang='pi'>lokismiṁ hi appiyasampayogo va dukkho</span>, <a href='https://suttacentral.net/ja223/en/rouse?reference=main/pts#pts-vp-pli205' class='extlink tipref'>Ja 223</a> <span class='ptsref'>PTS: Ja.II,205</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>lokismiṁ</span> <span lang='pi'>hi</span> <span lang='pi'>appiyasampayogo</span> <span lang='pi'>va</span> <span lang='pi'>dukkho</span>, <a href='https://suttacentral.net/ja223/en/rouse?reference=main/pts#pts-vp-pli205' class='extlink tipref'>Ja 223</a> <span class='ptsref'>PTS: Ja.II,205</span>.</p>"
 },
 {
 	"fnNumber": "47",
@@ -189,15 +189,15 @@
 },
 {
 	"fnNumber": "48",
-	"fnHTML": "<p><span lang='pi'>bharyā va paramā sakhā</span>, <span class='sclinktext'>SN&#8239;1.54:2.2</span> <span class='ptsref'>PTS: S.I,37</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>bharyā</span> <span lang='pi'>va</span> <span lang='pi'>paramā</span> <span lang='pi'>sakhā</span>, <span class='sclinktext'>SN&#8239;1.54:2.2</span> <span class='ptsref'>PTS: S.I,37</span>.</p>"
 },
 {
 	"fnNumber": "49",
-	"fnHTML": "<p><span lang='pi'>aññamaññam piyamvādā</span>, <span class='sclinktext'>AN&#8239;4.53:10.1–10.4</span> <span class='ptsref'>PTS: A.II,59</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>aññamaññam</span> <span lang='pi'>piyamvādā</span>, <span class='sclinktext'>AN&#8239;4.53:10.1–10.4</span> <span class='ptsref'>PTS: A.II,59</span>.</p>"
 },
 {
 	"fnNumber": "50",
-	"fnHTML": "<p><span lang='pi'>pamodamānā ekacittā samaggavāsam</span>, <a href='https://suttacentral.net/ja194/en/rouse?reference=main/pts#pts-vp-pli122' class='extlink tipref'>Ja 194</a> <span class='ptsref'>PTS: Ja.II,122</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>pamodamānā</span> <span lang='pi'>ekacittā</span> <span lang='pi'>samaggavāsam</span>, <a href='https://suttacentral.net/ja194/en/rouse?reference=main/pts#pts-vp-pli122' class='extlink tipref'>Ja 194</a> <span class='ptsref'>PTS: Ja.II,122</span>.</p>"
 },
 {
 	"fnNumber": "51",
@@ -357,7 +357,7 @@
 },
 {
 	"fnNumber": "90",
-	"fnHTML": "<p><span lang='pi'>kāyā ekañ ca pana maññe cittaṁ</span>, <span class='sclinktext'>MN&#8239;128:12.10</span> <span class='ptsref'>PTS: M.III,156</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>kāyā</span> <span lang='pi'>ekañ</span> <span lang='pi'>ca</span> <span lang='pi'>pana</span> <span lang='pi'>maññe</span> <span lang='pi'>cittaṁ</span>, <span class='sclinktext'>MN&#8239;128:12.10</span> <span class='ptsref'>PTS: M.III,156</span>.</p>"
 },
 {
 	"fnNumber": "91",
@@ -413,11 +413,11 @@
 },
 {
 	"fnNumber": "104",
-	"fnHTML": "<p><span lang='pi'>duddadaṁ dadāti</span>, <span class='sclinktext'>AN&#8239;3.135</span> <span class='ptsref'>PTS: A.I,286</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>duddadaṁ</span> <span lang='pi'>dadāti</span>, <span class='sclinktext'>AN&#8239;3.135</span> <span class='ptsref'>PTS: A.I,286</span>.</p>"
 },
 {
 	"fnNumber": "105",
-	"fnHTML": "<p><span lang='pi'>jivitam pi’ssa atthāya pariccattaṁ hoti</span>, <span class='sclinktext'>DN&#8239;31:23.2</span> <span class='ptsref'>PTS: D.III,187</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>jivitam</span> <span lang='pi'>pi’ssa</span> <span lang='pi'>atthāya</span> <span lang='pi'>pariccattaṁ</span> <span lang='pi'>hoti</span>, <span class='sclinktext'>DN&#8239;31:23.2</span> <span class='ptsref'>PTS: D.III,187</span>.</p>"
 },
 {
 	"fnNumber": "106",
@@ -741,7 +741,7 @@
 },
 {
 	"fnNumber": "186",
-	"fnHTML": "<p><span lang='pi'>ettha sitaṁ ettha paṭibaddhaṁ</span>, <span class='sclinktext'>DN&#8239;2: 83.3–83.4</span> <span class='ptsref'>PTS: D.I,76</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>ettha</span> <span lang='pi'>sitaṁ</span> <span lang='pi'>ettha</span> <span lang='pi'>paṭibaddhaṁ</span>, <span class='sclinktext'>DN&#8239;2: 83.3–83.4</span> <span class='ptsref'>PTS: D.I,76</span>.</p>"
 },
 {
 	"fnNumber": "187",
@@ -749,15 +749,15 @@
 },
 {
 	"fnNumber": "188",
-	"fnHTML": "<p><span lang='pi'>aññamaññaṁ mukhasattīhi vitudantā</span>, <span class='sclinktext'>MN&#8239;48: 2.1</span> <span class='ptsref'>PTS: M.I,320</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>aññamaññaṁ</span> <span lang='pi'>mukhasattīhi</span> <span lang='pi'>vitudantā</span>, <span class='sclinktext'>MN&#8239;48: 2.1</span> <span class='ptsref'>PTS: M.I,320</span>.</p>"
 },
 {
 	"fnNumber": "189",
-	"fnHTML": "<p><span lang='pi'>nelā kaṇṇa sukhā pemanīyā hadayaṁ gamā</span> and <span lang='pi'>nidhānavatiṁ</span>, <span class='sclinktext'>DN&#8239;1:1.9.5</span> <span class='ptsref'>PTS: D.I,4</span>.</p>"
+	"fnHTML": "<p><span lang='pi'>nelā</span> <span lang='pi'>kaṇṇa</span> <span lang='pi'>sukhā</span> <span lang='pi'>pemanīyā</span> <span lang='pi'>hadayaṁ</span> <span lang='pi'>gamā</span> and <span lang='pi'>nidhānavatiṁ</span>, <span class='sclinktext'>DN&#8239;1:1.9.5</span> <span class='ptsref'>PTS: D.I,4</span>.</p>"
 },
 {
 	"fnNumber": "190",
-	"fnHTML": "<p>The others bases of community (<span lang='pi'>saṅgaha vatthū</span>) are generosity (<span lang='pi'>dāna</span>), doing good to others (<span lang='pi'>atthacariyā</span>) and treating them impartially (<span lang='pi'>samānattatā</span>); see<br><span class='sclinktext'>AN&#8239;4.32</span> <span class='ptsref'>PTS: A.II,32</span>;<br><span class='sclinktext'>AN&#8239;8.24</span> <span class='ptsref'>PTS: A.IV,219</span>;<br><span class='sclinktext'>AN&#8239;9.5:4.1–4.9</span> <span class='ptsref'>PTS: A.IV,364</span>;<br><span class='sclinktext'>DN&#8239;30:1.16.2</span> <span class='ptsref'>PTS: D.III,152</span>.</p>"
+	"fnHTML": "<p>The others bases of community (<span lang='pi'>saṅgaha</span> <span lang='pi'>vatthū</span>) are generosity (<span lang='pi'>dāna</span>), doing good to others (<span lang='pi'>atthacariyā</span>) and treating them impartially (<span lang='pi'>samānattatā</span>); see<br><span class='sclinktext'>AN&#8239;4.32</span> <span class='ptsref'>PTS: A.II,32</span>;<br><span class='sclinktext'>AN&#8239;8.24</span> <span class='ptsref'>PTS: A.IV,219</span>;<br><span class='sclinktext'>AN&#8239;9.5:4.1–4.9</span> <span class='ptsref'>PTS: A.IV,364</span>;<br><span class='sclinktext'>DN&#8239;30:1.16.2</span> <span class='ptsref'>PTS: D.III,152</span>.</p>"
 },
 {
 	"fnNumber": "191",

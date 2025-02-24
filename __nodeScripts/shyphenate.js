@@ -25,9 +25,9 @@ function pushPali (bookID) {
         if (allPalis[i].innerText.length > 7 ) {
             paliWords.push (allPalis[i].innerText)//.replaceAll('­',''))
         }
-/*         if (allPalis[i].innerText.slice(0,5) == 'attan') {
+        if (allPalis[i].innerText.slice(0,2) == 'a-') {
             console.log(`${allPalis[i].innerText} :: ${bookID}`)
-        } */
+        }
     }
 }
 

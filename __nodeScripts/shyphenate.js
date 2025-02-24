@@ -12,8 +12,6 @@ function uniq(a) {
     });
 }
 
-
-
 function pushPali (bookID) {
     let bookRoot =``
     try {
@@ -22,13 +20,14 @@ function pushPali (bookID) {
     } catch (err) {
         console.error(err);
     }
-
     let allPalis = bookRoot.querySelectorAll("span[data-custom-style='wwc-pali']")
-
     for (let i in allPalis) {
         if (allPalis[i].innerText.length > 7 ) {
-            paliWords.push (allPalis[i].innerText.replaceAll('­',''))
+            paliWords.push (allPalis[i].innerText)//.replaceAll('­',''))
         }
+/*         if (allPalis[i].innerText.slice(0,5) == 'attan') {
+            console.log(`${allPalis[i].innerText} :: ${bookID}`)
+        } */
     }
 }
 
@@ -39,11 +38,39 @@ for (let i in allBookIds) {
 }
 
 uniquePaliWords = uniq(paliWords)
-for (let i in uniquePaliWords) {
-    console.log(JSON.stringify(uniquePaliWords[i]))
-}
-console.log(uniquePaliWords.length)
 
+let localShyphenMaster =[]
+try {
+    const data = fs.readFileSync('../_resources/build-data/shyphenMaster.json', 'utf8')
+    localShyphenMaster = JSON.parse(data)
+} catch (err) {
+    console.error(err);
+}
+
+//console.log (localShyphenMaster)
+
+for (let i in uniquePaliWords) {
+    for (j in localShyphenMaster) {
+        if (uniquePaliWords[i] == localShyphenMaster[j].replaceAll('-','')) {
+            uniquePaliWords[i] = localShyphenMaster[j]
+        }
+    }
+
+}
+//console.log(uniquePaliWords.length)
+
+let localJSON = `[\n`
+for (let i in uniquePaliWords) {
+    localJSON += `"${uniquePaliWords[i]}"`
+    if (uniquePaliWords.length-1 == i) {
+        localJSON += `\n`
+    } else {
+        localJSON += `, \n`
+    }
+}
+localJSON += `]`
+
+fs.writeFileSync(('../_resources/build-data/shyphenMaster.json'), localJSON, 'utf8')
 
 
 

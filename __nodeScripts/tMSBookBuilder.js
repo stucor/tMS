@@ -87,6 +87,15 @@ function buildBookIndexHTML () {
 	const frontCoverRelativeURL = `${metaData.FrontCover}`
 	const frontCoverfullURl =  installationDirectory + frontCoverRelativeURL.slice(3)
 
+	// Shyphenate data
+	let localShyphenMaster =[]
+	try {
+		const data = fs.readFileSync('../_resources/build-data/shyphenMaster.json', 'utf8')
+		localShyphenMaster = JSON.parse(data)
+	} catch (err) {
+		console.error(err);
+	}
+
 	// Build Header
 	html +=`<!DOCTYPE html>
 	<html lang=en-GB>
@@ -347,6 +356,11 @@ function buildBookIndexHTML () {
 				case 'wwc-pali':
 					spans[i].setAttribute('lang','pi')
 					spans[i].removeAttribute ('data-custom-style')
+					for (let j in localShyphenMaster) {
+						if (spans[i].innerText == localShyphenMaster[j].replaceAll('-','')) {
+							spans[i].replaceWith(`<span lang='pi'>${localShyphenMaster[j].replaceAll('-','&shy;')}</span>`) //localShyphenMaster[j].replaceAll('-','&shy;')
+						}
+					}
 				break
 				case 'wwc-sanskrit':
 					spans[i].setAttribute('lang','sa')

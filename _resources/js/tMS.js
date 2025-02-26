@@ -1608,7 +1608,6 @@ function setTheme(){
 			r.style.setProperty('--bdtexthighlighter', '#fa807210'); 
 			r.style.setProperty('--bdtexthighlightborder', '#ddc9a2');
 			r.style.setProperty('--sesamebackground', '#ffffff30');
-/* 			r.style.setProperty('--sesamebackground', '#fffddd'); */
 
 			r.style.setProperty('--tableborder', '#c0c0c0');
 			r.style.setProperty('--tablecaption', '#f9edce');

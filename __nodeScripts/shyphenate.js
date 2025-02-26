@@ -1,10 +1,8 @@
 const fs = require('fs')
-//const { exec } = require('child_process'); 
 const { parse } = require('node-html-parser');
 
-//let bookID = process.argv.slice(2)[0];
-
-let allBookIds =  ["afcm","bcbl","doab","journey","milk","sitm","vasy","wosb"]
+const wordLength = 7
+const allBookIds =  ["afcm","bcbl","doab","journey","milk","sitm","vasy","wosb"]
 
 function uniq(a) {
     return a.sort().filter(function(item, pos, ary) {
@@ -22,7 +20,7 @@ function pushPali (bookID) {
     }
     let allPalis = bookRoot.querySelectorAll("span[data-custom-style='wwc-pali']")
     for (let i in allPalis) {
-        if (allPalis[i].innerText.length > 7 ) {
+        if (allPalis[i].innerText.length > wordLength ) {
             paliWords.push (allPalis[i].innerText)//.replaceAll('­',''))
         }
 /*         if (allPalis[i].innerText.slice(0,4) == 'pacc') {

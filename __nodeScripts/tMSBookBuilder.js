@@ -13,9 +13,30 @@ function buildSesameStub () {
 	let sortedSesames = [...new Set(sesameArr)].sort()
 	let localJSON = ``
 
+	let localSesameBlurbMaster = []
+	try {
+		const data = fs.readFileSync('../_resources/build-data/sesameBlurbMaster.json', 'utf8')
+		localSesameBlurbMaster = JSON.parse(data)
+	} catch (err) {
+		console.error(err);
+	}
+
+
 	localJSON += `[\n`
 	for (let i in sortedSesames) {
-		localJSON += `{\n\t"sesame": "${sortedSesames[i]}",\n\t"type": "",\n\t"directory": "",\n\t"file": "",\n\t"biblio": ""\n}`
+		//console.log(sortedSesames[i])
+		let localType = ''
+		let localDirectory = ''
+		let localFile = ''
+		for (let j in localSesameBlurbMaster) {
+			//console.log (`${localSesameBlurbMaster[j].sesame}::${sortedSesames[i]}`)
+			if (localSesameBlurbMaster[j].sesame == sortedSesames[i]) {
+				localType = localSesameBlurbMaster[j].type
+				localDirectory = localSesameBlurbMaster[j].directory
+				localFile = localSesameBlurbMaster[j].file
+			}
+		}
+		localJSON += `{\n\t"sesame": "${sortedSesames[i]}",\n\t"type": "${localType}",\n\t"directory": "${localDirectory}",\n\t"file": "${localFile}",\n\t"biblio": ""\n}`
 		if (i == sortedSesames.length -1) {
 			localJSON += '\n]'
 		} else {

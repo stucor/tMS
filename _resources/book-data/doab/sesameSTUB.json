@@ -7,17 +7,10 @@
 	"biblio": ""
 },
 {
-	"sesame": "Anguttara Nikāya",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
-},
-{
-	"sesame": "Aṅguttara collection",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"sesame": "Aṅguttara Nikāya",
+	"type": "scBlurb",
+	"directory": "an",
+	"file": "super-blurbs_root-en",
 	"biblio": ""
 },
 {
@@ -106,9 +99,9 @@
 },
 {
 	"sesame": "Saṁyutta Nikāya",
-	"type": "",
-	"directory": "",
-	"file": "",
+	"type": "scBlurb",
+	"directory": "sn",
+	"file": "super-blurbs_root-en",
 	"biblio": ""
 },
 {

@@ -25,7 +25,7 @@ function pushPali (bookID) {
         if (allPalis[i].innerText.length > 7 ) {
             paliWords.push (allPalis[i].innerText)//.replaceAll('­',''))
         }
-/*         if (allPalis[i].innerText.slice(0,4) == 'brah') {
+/*         if (allPalis[i].innerText.slice(0,4) == 'pacc') {
             console.log(`${allPalis[i].innerText} :: ${bookID}`)
         } */
     }
@@ -66,6 +66,10 @@ for (let i in uniquePaliWords) {
         localJSON += `\n`
     } else {
         localJSON += `, \n`
+    }
+    if (!uniquePaliWords[i].includes('-')) {
+        console.log (`❎— 🛈 Word not yet hyphenated: ${uniquePaliWords[i]}`)
+
     }
 }
 localJSON += `]`

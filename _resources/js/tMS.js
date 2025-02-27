@@ -1714,7 +1714,7 @@ function setTMSIndex () {
 	let headingsArr = theBook.querySelectorAll('h1, h2, h3')
 	for (let i in headingsArr) {
 		if ((headingsArr[i].id) && (headingsArr[i].id != '999999999') && (headingsArr[i].id != 'seg-0-1') ) {
-			console.log (headingsArr[i].id)
+			//console.log (headingsArr[i].id)
 			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				headingsArr[i].innerHTML = injectSpan + headingsArr[i].innerHTML
@@ -2838,7 +2838,8 @@ function toggleSesame (el) {
 		el.classList.remove('closebutton');
 		hideSpinner()
 	} else {
-		function openSesame (sesameData) {
+
+		function openSesameRef (sesameData) {
 			let bibsesame = el.innerText;
 			for (let i in sesameData) {
 				if (sesameData[i].sesame == el.innerText) {
@@ -2967,22 +2968,105 @@ function toggleSesame (el) {
 			}
 		}
 
+		function openSesame (sesameMasterData) {
+	
+
+
+			function decodeSesameKey (sesameKey) {
+				
+				let biblio = ``
+				let fetchPath =  ``
+				
+				let sesameKeyArr = sesameKey.split(':')
+
+				if (sesameKeyArr[2]) {
+					biblio = sesameKeyArr[2]
+				}
+				if (sesameKeyArr[0].includes('-blurbs')) {
+					fetchPath = `../_resources/bilara-data/published/root/en/blurb/${sesameKeyArr[0]}_root-en.json`
+				}
+
+				function populate (quoteData) {
+					let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
+					//let linkHTML = `The link text ${sesameKeyArr[1]}`
+
+					let linkHTML = ``
+					if (sesameKeyArr[0].substr(0,6) != 'super-') {
+						let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
+						switch (linkTextArr[0]) {
+							case "dn":
+							case "an":
+							case "sn":
+							case "mn":
+								linkTextArr[0] = linkTextArr[0].toUpperCase()
+								break
+							case "snp":
+								if (linkTextArr[2]) { // its a vagga
+									linkTextArr[0] = ``
+								} else {
+								linkTextArr[0] = capitalizeFirstLetter(linkTextArr[0]);
+								}
+								break
+						}
+						if (linkTextArr[0]) {
+							let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
+							linkHTML= `(<span class='sclinktext'>${linkText}</span>)`
+						}
+					}
+
+
+
+
+
+					let quoteHTML =`${scRefHTML}<br><h3>${el.innerText}</h3>${linkHTML}<hr><p>${quoteData[sesameKey]}</p>`
+					el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+					el.classList.add('closebutton')
+				
+				}
+
+				if (fetchPath) {
+					fetch(fetchPath)
+						.then(response => response.json())
+						.then (data => populate(data))
+						.catch(error => {
+							console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+						}
+					);
+
+				}
+
+
+
+
+			}
+
+			for (let i in sesameMasterData) {
+				if  (sesameMasterData[i].sesame == el.innerText) {
+					decodeSesameKey (sesameMasterData[i].key)
+				}
+			}
+
+
+
+		}
+
 		if (el.classList.contains('ref')) {
 			fetch(`../_resources/book-data/${shortCode}/sesameref.json`)
 			.then(response => response.json())
-			.then (data => openSesame(data))
+			.then (data => openSesameRef(data))
 			.then (() => hideSpinner())
 			.catch(error => {
 				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesameref.json`);
 			});
 		} else {
-			fetch(`../_resources/book-data/${shortCode}/sesame.json`)
+			fetch(`../_resources/build-data/sesameMaster.json`)
 			.then(response => response.json())
 			.then (data => openSesame(data))
 			.then (() => hideSpinner())
 			.catch(error => {
-				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesame.json`);
+				console.log(`${error}ERROR: Can't fetch ../_resources/build-data/sesameMaster.json`);
 			});
+
 		}
 	}
 }

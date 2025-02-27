@@ -1,0 +1,117 @@
+[
+{
+	"sesame": "Aṅguttara Nikāya",
+	"directory": "an",
+	"file": "super-blurbs_root-en"
+},
+{
+	"sesame": "Chinese Āgamas",
+	"directory": "sutta",
+	"file": "super-blurbs_root-en"
+},
+{
+	"sesame": "Madhyama Āgama",
+	"directory": "ma",
+	"file": "super-blurbs_root-en"
+},
+{
+	"sesame": "Madhyama-āgama",
+	"directory": "ma",
+	"file": "super-blurbs_root-en"
+},
+{
+	"sesame": "Majjhima Nikāya",
+	"directory": "mn",
+	"file": "super-blurbs_root-en"
+},
+{
+	"sesame": "Majjhima-nikāya",
+	"directory": "mn",
+	"file": "super-blurbs_root-en"
+},
+{
+	"sesame": "Nikāyas",
+	"directory": "sutta",
+	"file": "super-blurbs_root-en"
+},
+{
+	"sesame": "Saṁyutta Nikāya",
+	"directory": "sn",
+	"file": "super-blurbs_root-en"
+},
+{
+	"sesame": "Sutta Nipata",
+	"directory": "snp",
+	"file": "super-blurbs_root-en"
+},
+{
+	"sesame": "Ajita’s Question Sutta",
+	"directory": "snp5.2",
+	"file": "snp-blurbs_root-en"
+},
+{
+	"sesame": "Baka Sutta",
+	"directory": "sn6.4",
+	"file": "sn-blurbs_root-en"
+},
+{
+	"sesame": "Brahmajāla Sutta",
+	"directory": "dn1",
+	"file": "dn-blurbs_root-en"
+},
+{
+	"sesame": "Brahmanimantanika Sutta",
+	"directory": "mn49",
+	"file": "mn-blurbs_root-en"
+},
+{
+	"sesame": "Fire Discourse",
+	"directory": "sn35.28",
+	"file": "sn-blurbs_root-en"
+},
+{
+	"sesame": "Kakacūpama Sutta",
+	"directory": "mn21",
+	"file": "mn-blurbs_root-en"
+},
+{
+	"sesame": "Kevaddha (With Kevaddha) Sutta",
+	"directory": "dn11",
+	"file": "dn-blurbs_root-en"
+},
+{
+	"sesame": "Kevaddha Sutta",
+	"directory": "dn11",
+	"file": "dn-blurbs_root-en"
+},
+{
+	"sesame": "Mahaparinibbāna Sutta",
+	"directory": "dn16",
+	"file": "dn-blurbs_root-en"
+},
+{
+	"sesame": "Mūlapariyāya [Sutta]",
+	"directory": "mn1",
+	"file": "mn-blurbs_root-en"
+},
+{
+	"sesame": "Nibbānasukha Sutta",
+	"directory": "an9.34",
+	"file": "an-blurbs_root-en"
+},
+{
+	"sesame": "Pārāyana Vagga",
+	"directory": "snp-parayanavagga",
+	"file": "snp-blurbs_root-en"
+},
+{
+	"sesame": "Saṅgīti Sutta",
+	"directory": "dn33",
+	"file": "dn-blurbs_root-en"
+},
+{
+	"sesame": "Upakkilesa Sutta",
+	"directory": "an5.23",
+	"file": "an-blurbs_root-en"
+}
+]

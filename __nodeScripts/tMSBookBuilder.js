@@ -298,6 +298,14 @@ function buildBookIndexHTML () {
 	html += `<h2 class="titlepage">${authorShortname}</h2><hr>`
 
 	function buildBook () {
+		let localSesameMaster = []
+		try {
+			const data = fs.readFileSync('../_resources/build-data/sesameMaster.json', 'utf8')
+			localSesameMaster = JSON.parse(data)
+		} catch (err) {
+			console.error(err);
+		}
+
 		let bookRoot = ``;
 		try {
 			const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'book.html', 'utf8');
@@ -370,6 +378,13 @@ function buildBookIndexHTML () {
 					sesameRefArr.push(spans[i].text)
 				break
 				case 'wwc-sesame':
+					let localSesameKey = ''
+					for (let j in localSesameMaster) {
+						if (localSesameMaster[j].sesame == spans[i].text) {
+							localSesameKey = localSesameMaster[j].key
+							spans[i].setAttribute('data-sesame-key', localSesameMaster[j].key)
+						}
+					}
 					spans[i].classList.add('sesame')
 					spans[i].removeAttribute ('data-custom-style')
 					sesameArr.push(spans[i].text)
@@ -1231,7 +1246,7 @@ function buildBook () {
 		  processPandoc()
 		  buildBookIndexHTML() 
 		  console.log(`✅✅ ${bookID} index.html BUILD COMPLETE *`)
-		  buildSesameStub()
+		  //buildSesameStub()
 		  //buildSesameRefStub()
 		  console.log('-----------------------------------END-----------------------------------')
 		}); 

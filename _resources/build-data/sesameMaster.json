@@ -1,5 +1,17 @@
 [
 {
+	"sesame": "Sutta",
+	"key": "super-blurbs:sutta"
+},
+{
+	"sesame": "sutta",
+	"key": "super-blurbs:sutta"
+},
+{
+	"sesame": "suttas",
+	"key": "super-blurbs:sutta"
+},
+{
 	"sesame": "Aṅguttara Nikāya",
 	"key": "super-blurbs:an"
 },
@@ -8,7 +20,7 @@
 	"key": "mn-blurbs:mn143"
 },
 {
-	"sesame": "Divyāvadāna’s",
+	"sesame": "Divyāvadāna",
 	"key": "super-blurbs:divy"
 },
 {
@@ -18,5 +30,13 @@
 {
 	"sesame": "Ñāṇamoli n.499",
 	"key": "bodhi-nikaya-notes:MN-499:Bodhi 1995a"
+},
+{
+	"sesame": "Jambudīpa",
+	"key": "DPPN:jambudipa"
+},
+{
+	"sesame": "Aparagoyāna",
+	"key": "DPPN:aparagoyana"
 }
 ]

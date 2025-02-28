@@ -13,38 +13,42 @@ function buildSesameStub () {
 	let sortedSesames = [...new Set(sesameArr)].sort()
 	let localJSON = ``
 
-	let localSesameBlurbMaster = []
+	localJSON += `[\n`
+
+	let localSesameMaster = []
 	try {
-		const data = fs.readFileSync('../_resources/build-data/sesameBlurbMaster.json', 'utf8')
-		localSesameBlurbMaster = JSON.parse(data)
+		const data = fs.readFileSync('../_resources/build-data/sesameMaster.json', 'utf8')
+		localSesameMaster = JSON.parse(data)
 	} catch (err) {
 		console.error(err);
 	}
 
-
-	localJSON += `[\n`
 	for (let i in sortedSesames) {
 		//console.log(sortedSesames[i])
-		let localType = ''
-		let localDirectory = ''
-		let localFile = ''
-		for (let j in localSesameBlurbMaster) {
-			//console.log (`${localSesameBlurbMaster[j].sesame}::${sortedSesames[i]}`)
-			if (localSesameBlurbMaster[j].sesame == sortedSesames[i]) {
-				localType = localSesameBlurbMaster[j].type
-				localDirectory = localSesameBlurbMaster[j].directory
-				localFile = localSesameBlurbMaster[j].file
+		let localkey = 'XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX'
+
+		for (j in localSesameMaster) {
+			if (localSesameMaster[j].sesame == sortedSesames[i]) {
+				localkey = localSesameMaster[j].key
 			}
 		}
-		localJSON += `{\n\t"sesame": "${sortedSesames[i]}",\n\t"type": "${localType}",\n\t"directory": "${localDirectory}",\n\t"file": "${localFile}",\n\t"biblio": ""\n}`
+
+
+
+		localJSON += `{\n\t"sesame": "${sortedSesames[i]}",\n\t"key": "${localkey}"\n}`
 		if (i == sortedSesames.length -1) {
 			localJSON += '\n]'
 		} else {
 			localJSON += ',\n'
 		}
 	}
-	fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameSTUB.json'), localJSON, 'utf8')
-	console.log(`* ./book-data/${bookID}/sesameSTUB.json has been created *`);
+	if (localJSON == "[\n") {
+		console.log(`❎—🛈 No sesames found in this ${bookID}`);
+	} else {
+		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameSTUB.json'), localJSON, 'utf8')
+		console.log(`✅ ./book-data/${bookID}/sesameSTUB.json has been created - PLEASE CHECK THIS FOR ERRORS`);
+	}
+
 }
 
 function buildSesameRefStub () {
@@ -1246,7 +1250,7 @@ function buildBook () {
 		  processPandoc()
 		  buildBookIndexHTML() 
 		  console.log(`✅✅ ${bookID} index.html BUILD COMPLETE *`)
-		  //buildSesameStub()
+		  buildSesameStub()
 		  //buildSesameRefStub()
 		  console.log('-----------------------------------END-----------------------------------')
 		}); 

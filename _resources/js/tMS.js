@@ -2968,31 +2968,39 @@ function toggleSesame (el) {
 			}
 		}
 
-		function openSesame (sesameMasterData) {
-	
-
-
-			function decodeSesameKey (sesameKey) {
-				
-				let biblio = ``
-				let fetchPath =  ``
-				
+		 function openSesame () {
+			async function decodeSesameKey (sesameKey) {
 				let sesameKeyArr = sesameKey.split(':')
+				console.log(`0::${sesameKeyArr[0]}`)
+				console.log(`1::${sesameKeyArr[1]}`)
+				console.log(`2::${sesameKeyArr[2]}`)
 
-				if (sesameKeyArr[2]) {
-					biblio = sesameKeyArr[2]
-				}
 				if (sesameKeyArr[0].includes('-blurbs')) {
-					fetchPath = `../_resources/bilara-data/published/root/en/blurb/${sesameKeyArr[0]}_root-en.json`
-				}
+					
+					let biblio = ``
+					if (sesameKeyArr[2]) {
+						biblio = sesameKeyArr[2]
+					}
+					let rootNamePath = ``
+					let transNamePath = ``
 
-				function populate (quoteData) {
-					let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
-					//let linkHTML = `The link text ${sesameKeyArr[1]}`
+					let fetchPath = `../_resources/bilara-data/published/root/en/blurb/${sesameKeyArr[0]}_root-en.json`
 
+					let rootName = ``
+					let transName =``
 					let linkHTML = ``
-					if (sesameKeyArr[0].substr(0,6) != 'super-') {
+
+
+					if (sesameKeyArr[0].substr(0,6) == 'super-') {
+						rootNamePath = `../_resources/bilara-data/published/root/misc/site/name/super-name_root-misc-site.json`
+						transNamePath = `../_resources/bilara-data/published/translation/en/sujato/name/super-name_translation-en-sujato.json`
+					} else {
+
 						let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
+						transNamePath = `../_resources/bilara-data/published/translation/en/sujato/sutta/${linkTextArr[0]}/${linkTextArr[0]}${linkTextArr[1]}_translation-en-sujato.json`
+						rootNamePath = `../_resources/bilara-data/published/root/pli/ms/sutta/${linkTextArr[0]}/${linkTextArr[0]}${linkTextArr[1]}_root-pli-ms.json`
+
+						// make the sclinktext
 						switch (linkTextArr[0]) {
 							case "dn":
 							case "an":
@@ -3010,44 +3018,125 @@ function toggleSesame (el) {
 						}
 						if (linkTextArr[0]) {
 							let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
-							linkHTML= `(<span class='sclinktext'>${linkText}</span>)`
+							linkHTML= `<span class='sclinktext'>${linkText}</span>`
 						}
 					}
 
 
-
-
-
-					let quoteHTML =`${scRefHTML}<br><h3>${el.innerText}</h3>${linkHTML}<hr><p>${quoteData[sesameKey]}</p>`
-					el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
-					el.classList.add('closebutton')
-				
-				}
-
-				if (fetchPath) {
-					fetch(fetchPath)
-						.then(response => response.json())
-						.then (data => populate(data))
-						.catch(error => {
-							console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+					function popRootName(rootData) {
+						if (sesameKeyArr[0].substr(0,6) == 'super-') {
+							for (let i in rootData) {
+								if (i.split('.')[1] == sesameKeyArr[1]) {
+									rootName = rootData[i]
+								} 
+							}
+						} else  {
+							rootName = ``
+							for (let i = 2; i < 4; i++) {
+								 if (rootData[`${sesameKeyArr[1]}:0.${i}`]) {
+									rootName += rootData[`${sesameKeyArr[1]}:0.${i}`] + `— `
+								 }
+							}
+							rootName = rootName.slice(0,rootName.length-2)
 						}
-					);
+							
+					}
+
+					function popTransName(transData) {
+						if (sesameKeyArr[0].substr(0,6) == 'super-') {
+							for (let i in transData) {
+								if (i.split('.')[1] == sesameKeyArr[1]) {
+									transName = transData[i]
+								}
+							}
+						} else  {
+							transName = ``
+							for (let i = 2; i < 4; i++) {
+								 if (transData[`${sesameKeyArr[1]}:0.${i}`]) {
+									transName += transData[`${sesameKeyArr[1]}:0.${i}`] + `— `
+								 }
+							}
+							transName = transName.slice(0,transName.length-2) 
+						}
+					}
+
+					function populateBlurb (quoteData) {
+						let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
+						let quoteHTML =`${scRefHTML}<br><h3>${rootName} (${transName}) ${linkHTML}</h3><p>${quoteData[sesameKey]}</p>`
+						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+						el.classList.add('closebutton')
+					}
+
+					await fetch(rootNamePath)
+					.then(response => response.json())
+					.then (data => popRootName(data))
+					.catch(error => {
+						console.log(`${error}ERROR: Can't fetch ${rootNamePath}`);
+					});
+
+					await fetch(transNamePath)
+					.then(response => response.json())
+					.then (data => popTransName(data))
+					.catch(error => {
+						console.log(`${error}ERROR: Can't fetch ${transNamePath}`);
+					})
+					
+					await fetch(fetchPath)
+					.then(response => response.json())
+					.then (data => populateBlurb(data))
+					.catch(error => {
+						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+					});
+
+				} else 
+				if (sesameKeyArr[0] == `wiki-entry`) {
+					console.log(`wiki code here`)
+				} else 
+				if (sesameKeyArr[0] == `bodhi-nikaya-notes`) {
+					console.log(`bnn code here`)
+				} else 
+				if (sesameKeyArr[0] == `DPPN`) {
+					let fetchPath = `../_resources/external-quotes/${sesameKeyArr[0]}/${sesameKeyArr[1]}.html`
+					console.log(fetchPath)
+
+					function populateSesame (quoteData) {
+						let sourceHTML = `<a class="extlink" href="https://www.aimwell.org/DPPN/${sesameKeyArr[1]}.html">source: Dictionary of Pāli Proper Names</a>`
+						let quoteHTML =`${sourceHTML}<br>${quoteData}`
+						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+						el.classList.add('closebutton')
+					}
+
+					await fetch(fetchPath)
+					.then(response => response.text())
+					.then (data => populateSesame(data))
+					.catch(error => {
+						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+					});
 
 				}
+/* 				if (sesameKeyArr[0] == `DPPN`) {
+					let fetchPath = `../_resources/external-quotes/${sesameKeyArr[0]}/${sesameKeyArr[1]}.json`
+					console.log(fetchPath)
 
+					function populateSesame (quoteData) {
+						let sourceHTML = `<a class="extlink" href="https://www.aimwell.org/DPPN/${sesameKeyArr[1]}.html">source: Dictionary of Pāli Proper Names</a>`
+						let quoteHTML =`${sourceHTML}<br>${quoteData}`
+						console.log(quoteHTML)
+						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+						el.classList.add('closebutton')
+					}
 
+					await fetch(fetchPath)
+					.then(response => response.json())
+					.then (data => populateSesame(data))
+					.catch(error => {
+						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+					});
 
-
+				} */
 			}
 
-			for (let i in sesameMasterData) {
-				if  (sesameMasterData[i].sesame == el.innerText) {
-					decodeSesameKey (sesameMasterData[i].key)
-				}
-			}
-
-
-
+			decodeSesameKey(el.getAttribute('data-sesame-key'))
 		}
 
 		if (el.classList.contains('ref')) {
@@ -3059,14 +3148,8 @@ function toggleSesame (el) {
 				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesameref.json`);
 			});
 		} else {
-			fetch(`../_resources/build-data/sesameMaster.json`)
-			.then(response => response.json())
-			.then (data => openSesame(data))
-			.then (() => hideSpinner())
-			.catch(error => {
-				console.log(`${error}ERROR: Can't fetch ../_resources/build-data/sesameMaster.json`);
-			});
-
+			openSesame()
+			hideSpinner()
 		}
 	}
 }

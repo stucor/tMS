@@ -3093,24 +3093,37 @@ function toggleSesame (el) {
 					});
 
 				} else 
-				if (sesameKeyArr[0] == `wiki-entry`) {
-					console.log(`wiki code here`)
+				if (sesameKeyArr[0] == `wikipedia`) {
+					let fetchPath = `../_resources/sesame-data/wikipedia/${sesameKeyArr[1]}.json`
+					function populateSesame (quoteData) {
+						let sourceHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameKeyArr[1].replace('-', '#')}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span>`
+						let localHTML = `<h3>${quoteData.Page}<br>${quoteData.Title}</h3>${quoteData.Text}`
+						let quoteHTML =`${sourceHTML}<br>${localHTML}`
+						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+						el.classList.add('closebutton') 
+					}
+					await fetch(fetchPath)
+					.then(response => response.json())
+					.then (data => populateSesame(data))
+					.catch(error => {
+						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+					});
+
 				} else 
 				if (sesameKeyArr[0] == `bodhi-nikaya-notes`) {
 					console.log(`bnn code here`)
 				} else 
 				if (sesameKeyArr[0] == `DPPN`) {
 					let fetchPath = `../_resources/sesame-data/dictionaries/complex/en/pli2en_dppn.json`
-					let localHTML = ``
+
 					function populateSesame (quoteData) {
+						let localHTML = ``
 						for (let i in quoteData) {
 							if (quoteData[i].word == sesameKeyArr[1]) {
 								localHTML = quoteData[i].text
 								break;
 							}
 						}
-
-
  						let sourceHTML = `<a class="extlink" href="https://suttacentral.net/">source: DPPD—<img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral Edition</a>`
 						let quoteHTML =`${sourceHTML}<br>${localHTML}`
 						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);

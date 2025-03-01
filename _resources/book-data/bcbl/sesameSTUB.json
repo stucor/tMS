@@ -1,7 +1,7 @@
 [
 {
 	"sesame": "Aparagoyāna",
-	"key": "DPPN:aparagoyana"
+	"key": "DPPN:aparagoyāna"
 },
 {
 	"sesame": "Early Buddhist",
@@ -9,7 +9,23 @@
 },
 {
 	"sesame": "Jambudīpa",
-	"key": "DPPN:jambudipa"
+	"key": "DPPN:jambudīpa"
+},
+{
+	"sesame": "Pubbavideha",
+	"key": "DPPN:pubbavideha"
+},
+{
+	"sesame": "Sineru",
+	"key": "DPPN:sineru"
+},
+{
+	"sesame": "The Seven Suns Sutta",
+	"key": "an-blurbs:an7.66"
+},
+{
+	"sesame": "Uttarakuru",
+	"key": "DPPN:uttarakuru"
 },
 {
 	"sesame": "early Buddhist texts",

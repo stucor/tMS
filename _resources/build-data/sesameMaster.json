@@ -25,7 +25,7 @@
 },
 {
 	"sesame": "Kāma Sūtra",
-	"key": "wiki-entry:Kama_Sutra"
+	"key": "wikipedia:Kama_Sutra"
 },
 {
 	"sesame": "Ñāṇamoli n.499",
@@ -33,10 +33,26 @@
 },
 {
 	"sesame": "Jambudīpa",
-	"key": "DPPN:jambudipa"
+	"key": "DPPN:jambudīpa"
 },
 {
 	"sesame": "Aparagoyāna",
-	"key": "DPPN:aparagoyana"
+	"key": "DPPN:aparagoyāna"
+},
+{
+	"sesame": "Pubbavideha",
+	"key": "DPPN:pubbavideha"
+},
+{
+	"sesame": "Sineru",
+	"key": "DPPN:sineru"
+},
+{
+	"sesame": "The Seven Suns Sutta",
+	"key": "an-blurbs:an7.66"
+},
+{
+	"sesame": "Uttarakuru",
+	"key": "DPPN:uttarakuru"
 }
 ]

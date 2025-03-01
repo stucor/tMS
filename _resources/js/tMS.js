@@ -2995,11 +2995,15 @@ function toggleSesame (el) {
 						rootNamePath = `../_resources/bilara-data/published/root/misc/site/name/super-name_root-misc-site.json`
 						transNamePath = `../_resources/bilara-data/published/translation/en/sujato/name/super-name_translation-en-sujato.json`
 					} else {
-
 						let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
-						transNamePath = `../_resources/bilara-data/published/translation/en/sujato/sutta/${linkTextArr[0]}/${linkTextArr[0]}${linkTextArr[1]}_translation-en-sujato.json`
-						rootNamePath = `../_resources/bilara-data/published/root/pli/ms/sutta/${linkTextArr[0]}/${linkTextArr[0]}${linkTextArr[1]}_root-pli-ms.json`
 
+						let bookNumberFill = ``
+						if (linkTextArr[0] == `an`) {
+							bookNumberFill = `/an${linkTextArr[1].split('.')[0]}`
+						}
+						transNamePath = `../_resources/bilara-data/published/translation/en/sujato/sutta/${linkTextArr[0]}${bookNumberFill}/${linkTextArr[0]}${linkTextArr[1]}_translation-en-sujato.json`
+						rootNamePath = `../_resources/bilara-data/published/root/pli/ms/sutta/${linkTextArr[0]}${bookNumberFill}/${linkTextArr[0]}${linkTextArr[1]}_root-pli-ms.json`
+						console.log (transNamePath)
 						// make the sclinktext
 						switch (linkTextArr[0]) {
 							case "dn":
@@ -3062,7 +3066,7 @@ function toggleSesame (el) {
 
 					function populateBlurb (quoteData) {
 						let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
-						let quoteHTML =`${scRefHTML}<br><h3>${rootName} (${transName}) ${linkHTML}</h3><p>${quoteData[sesameKey]}</p>`
+						let quoteHTML =`${scRefHTML}<br><h3>${rootName}<br>${transName}<br>${linkHTML}</h3><p>${quoteData[sesameKey]}</p>`
 						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
 						el.classList.add('closebutton')
 					}
@@ -3096,34 +3100,21 @@ function toggleSesame (el) {
 					console.log(`bnn code here`)
 				} else 
 				if (sesameKeyArr[0] == `DPPN`) {
-					let fetchPath = `../_resources/external-quotes/${sesameKeyArr[0]}/${sesameKeyArr[1]}.html`
-					console.log(fetchPath)
-
+					let fetchPath = `../_resources/sesame-data/dictionaries/complex/en/pli2en_dppn.json`
+					let localHTML = ``
 					function populateSesame (quoteData) {
-						let sourceHTML = `<a class="extlink" href="https://www.aimwell.org/DPPN/${sesameKeyArr[1]}.html">source: Dictionary of Pāli Proper Names</a>`
-						let quoteHTML =`${sourceHTML}<br>${quoteData}`
+						for (let i in quoteData) {
+							if (quoteData[i].word == sesameKeyArr[1]) {
+								localHTML = quoteData[i].text
+								break;
+							}
+						}
+
+
+ 						let sourceHTML = `<a class="extlink" href="https://suttacentral.net/">source: DPPD—<img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral Edition</a>`
+						let quoteHTML =`${sourceHTML}<br>${localHTML}`
 						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
-						el.classList.add('closebutton')
-					}
-
-					await fetch(fetchPath)
-					.then(response => response.text())
-					.then (data => populateSesame(data))
-					.catch(error => {
-						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
-					});
-
-				}
-/* 				if (sesameKeyArr[0] == `DPPN`) {
-					let fetchPath = `../_resources/external-quotes/${sesameKeyArr[0]}/${sesameKeyArr[1]}.json`
-					console.log(fetchPath)
-
-					function populateSesame (quoteData) {
-						let sourceHTML = `<a class="extlink" href="https://www.aimwell.org/DPPN/${sesameKeyArr[1]}.html">source: Dictionary of Pāli Proper Names</a>`
-						let quoteHTML =`${sourceHTML}<br>${quoteData}`
-						console.log(quoteHTML)
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
-						el.classList.add('closebutton')
+						el.classList.add('closebutton') 
 					}
 
 					await fetch(fetchPath)
@@ -3132,10 +3123,8 @@ function toggleSesame (el) {
 					.catch(error => {
 						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 					});
-
-				} */
+				}
 			}
-
 			decodeSesameKey(el.getAttribute('data-sesame-key'))
 		}
 

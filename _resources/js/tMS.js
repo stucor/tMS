@@ -2971,166 +2971,56 @@ function toggleSesame (el) {
 		 function openSesame () {
 			async function decodeSesameKey (sesameKey) {
 				let sesameKeyArr = sesameKey.split(':')
-				console.log(`0::${sesameKeyArr[0]}`)
+/* 				console.log(`0::${sesameKeyArr[0]}`)
 				console.log(`1::${sesameKeyArr[1]}`)
-				console.log(`2::${sesameKeyArr[2]}`)
+				console.log(`2::${sesameKeyArr[2]}`) */
 
 				if (sesameKeyArr[0].includes('-blurbs')) {
-					
-					let biblio = ``
+					let biblio = `` // NEED TO WRITE BIBLIO BIT if there's a biblio entry specified
 					if (sesameKeyArr[2]) {
 						biblio = sesameKeyArr[2]
 					}
-					let rootNamePath = ``
-					let transNamePath = ``
-
-					let fetchPath = `../_resources/bilara-data/published/root/en/blurb/${sesameKeyArr[0]}_root-en.json`
-
-					let rootName = ``
-					let transName =``
-					let linkHTML = ``
-
-					let noDotBlurbSutta = false
-
-
-					if (sesameKeyArr[0].substr(0,6) == 'super-') {
-						rootNamePath = `../_resources/bilara-data/published/root/misc/site/name/super-name_root-misc-site.json`
-						transNamePath = `../_resources/bilara-data/published/translation/en/sujato/name/super-name_translation-en-sujato.json`
-					} else {
-						let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
-
-						//console.log(linkTextArr[0])
-
-						if (linkTextArr[1].includes('.')) {
-							let bookNumberFill = ``
-							if (linkTextArr[0] == `an`) {
-								bookNumberFill = `/an${linkTextArr[1].split('.')[0]}`
-							}
-							if (linkTextArr[0] == `sn`) {
-								bookNumberFill = `/sn${linkTextArr[1].split('.')[0]}`
-							}
-							transNamePath = `../_resources/bilara-data/published/translation/en/sujato/sutta/${linkTextArr[0]}${bookNumberFill}/${linkTextArr[0]}${linkTextArr[1]}_translation-en-sujato.json`
-							rootNamePath = `../_resources/bilara-data/published/root/pli/ms/sutta/${linkTextArr[0]}${bookNumberFill}/${linkTextArr[0]}${linkTextArr[1]}_root-pli-ms.json`
-							// make the sclinktext
-							switch (linkTextArr[0]) {
-								case "dn":
-								case "an":
-								case "sn":
-								case "mn":
-									linkTextArr[0] = linkTextArr[0].toUpperCase()
-									break
-								case "snp":
-									if (linkTextArr[2]) { // its a vagga
-										linkTextArr[0] = ``
-									} else {
-									linkTextArr[0] = capitalizeFirstLetter(linkTextArr[0]);
-									}
-									break
-							}
-							if (linkTextArr[0]) {
-								let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
-								linkHTML= `<span class='sclinktext'>${linkText}</span>`
-							}							
-						} else { // It's a Book heading like sn12
-							transNamePath = `../_resources/bilara-data/published/translation/en/sujato/name/sutta/${linkTextArr[0]}-name_translation-en-sujato.json`
-							console.log(`TNP:${transNamePath}`)
-							rootNamePath = `../_resources/bilara-data/published/root/misc/site/name/sutta/${linkTextArr[0]}-name_root-misc-site.json`
-							console.log(`RNP:${rootNamePath}`)
-						}
-
-
-					}
-
-					function popRootName(rootData) {
-						if (sesameKeyArr[0].substr(0,6) == 'super-') {
-							for (let i in rootData) {
-								if (i.split('.')[1] == sesameKeyArr[1]) {
-									rootName = rootData[i]
-								} 
-							}
-						} else  {
-							if (sesameKeyArr[1].includes('.')) {
-								rootName = ``
-								for (let i = 2; i < 4; i++) {
-									 if (rootData[`${sesameKeyArr[1]}:0.${i}`]) {
-										rootName += rootData[`${sesameKeyArr[1]}:0.${i}`] + `— `
-										console.log (`ROOTNAME: ${rootName}`)
-									 }
-								}
-								rootName = rootName.slice(0,rootName.length-2)
-							} else {
-								console.log(`yay`)
-								for (let i in rootData) {
-									let tail = i.substring(i.indexOf('.')+1)
-									if (tail == sesameKeyArr[1]) {
-										rootName = rootData[i]
-										break
-									}
-								}
-							}
-						}
-							
-					}
-
-					function popTransName(transData) {
-						if (sesameKeyArr[0].substr(0,6) == 'super-') {
-							for (let i in transData) {
-								if (i.split('.')[1] == sesameKeyArr[1]) {
-									transName = transData[i]
-								}
-							}
-						} else  {
-							if (sesameKeyArr[1].includes('.')) {
-								//transName = ``
-								for (let i = 2; i < 4; i++) {
-									 if (transData[`${sesameKeyArr[1]}:0.${i}`]) {
-										transName += transData[`${sesameKeyArr[1]}:0.${i}`] + `— `
-									 }
-								}
-								transName = transName.slice(0,transName.length-2) 
-							} else {
-								for (let i in transData) {
-									console.log(`Yo`)
-									let tail = i.substring(i.indexOf('.')+1)
-									console.log(tail)
-									if (tail == sesameKeyArr[1]) {
-										transName = transData[i]
-										break
-									}
-								}
-							}
-
-						}
-					}
+					let fetchPath = `../_resources/sesame-data/blurbs/scblurbs.json`
 
 					function populateBlurb (quoteData) {
-						let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
-						let quoteHTML =`${scRefHTML}<br><h3>${rootName}<br>${transName}<br>${linkHTML}</h3><hr><p>${quoteData[sesameKey]}</p>`
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
-						el.classList.add('closebutton')
+						for (let i in quoteData) {
+							if (quoteData[i].suttaRef == sesameKeyArr[1]) {
+								let linkHTML = ``
+								if (quoteData[i].type == 'leaf') {
+									let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
+									switch (linkTextArr[0]) {
+										case "dn":
+										case "an":
+										case "sn":
+										case "mn":
+											linkTextArr[0] = linkTextArr[0].toUpperCase()
+											break
+										case "snp":
+											if (linkTextArr[2]) { // its a vagga
+												linkTextArr[0] = ``
+											} else {
+											linkTextArr[0] = capitalizeFirstLetter(linkTextArr[0]);
+											}
+											break
+									}
+									if (linkTextArr[0]) {
+										let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
+										linkHTML= `<span class='sclinktext'>${linkText}</span>`
+									}
+								}
+								let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
+								let quoteHTML =`${scRefHTML}<br><h3>${quoteData[i].rootTitle}<br>${quoteData[i].transTitle}<br>${linkHTML}</h3><hr><p>${quoteData[i].blurb}</p>`
+								el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+								el.classList.add('closebutton')
+							}
+						}
 					}
-
-					await fetch(rootNamePath)
-					.then(response => response.json())
-					.then (data => popRootName(data))
-					.catch(error => {
-						console.log(`${error}ERROR: Can't fetch ${rootNamePath}`);
-					});
-
-					await fetch(transNamePath)
-					.then(response => response.json())
-					.then (data => popTransName(data))
-					.catch(error => {
-						console.log(`${error}ERROR: Can't fetch ${transNamePath}`);
-					})
-					
 					await fetch(fetchPath)
 					.then(response => response.json())
 					.then (data => populateBlurb(data))
 					.catch(error => {
 						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 					});
-
 				} else 
 				if (sesameKeyArr[0] == `wikipedia`) {
 					let fetchPath = `../_resources/sesame-data/wikipedia/${sesameKeyArr[1]}.json`

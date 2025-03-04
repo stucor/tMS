@@ -34,6 +34,7 @@ async function scApiCall(suttaref) {
         obj.rootTitle = scData[0].original_title
         obj.transTitle = scData[0].translated_title
         obj.blurb = scData[0].blurb
+        obj.type = scData[0].type
         blurbArr.push(obj)
     }
 

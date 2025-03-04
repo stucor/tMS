@@ -3,42 +3,147 @@
     "suttaRef": "an",
     "rootTitle": "Aṅguttaranikāya",
     "transTitle": "Numbered Discourses Collection ",
-    "blurb": "The “Numbered” or “Numerical” Discourses are usually known as Aṅguttara Nikāya in Pali, abbreviated AN. However, the Pali tradition also knows the form Ekottara (“one-up” or “incremental”), and this is the form usually found in the northern collections. These collections organize texts in numbered sets, from one to eleven. Compared to the other <i lang='pi' translate='no'>nikāyas</i>, they are more oriented to the lay community. The Ekottarikāgama (EA) in Chinese is a highly unusual text, which features a range of variations within itself when it comes even to basic doctrines. It shares considerably less in common with the Pali Aṅguttara than the other collections do with their counterparts. In addition, there is a partial Ekottarikāgama in Chinese, as well as a variety of individual discourses and fragments in Chinese and Sanskrit."
+    "blurb": "The “Numbered” or “Numerical” Discourses are usually known as Aṅguttara Nikāya in Pali, abbreviated AN. However, the Pali tradition also knows the form Ekottara (“one-up” or “incremental”), and this is the form usually found in the northern collections. These collections organize texts in numbered sets, from one to eleven. Compared to the other <i lang='pi' translate='no'>nikāyas</i>, they are more oriented to the lay community. The Ekottarikāgama (EA) in Chinese is a highly unusual text, which features a range of variations within itself when it comes even to basic doctrines. It shares considerably less in common with the Pali Aṅguttara than the other collections do with their counterparts. In addition, there is a partial Ekottarikāgama in Chinese, as well as a variety of individual discourses and fragments in Chinese and Sanskrit.",
+    "type": "branch"
   },
   {
     "suttaRef": "an7.66",
     "rootTitle": "Sattasūriyasutta",
     "transTitle": "The Seven Suns ",
-    "blurb": "A rare discourse on cosmic evolution. The Buddha describes the successive appearance of seven suns and how even the earth will be burned up."
+    "blurb": "A rare discourse on cosmic evolution. The Buddha describes the successive appearance of seven suns and how even the earth will be burned up.",
+    "type": "leaf"
   },
   {
     "suttaRef": "divy",
     "rootTitle": "Divyāvadāna",
     "transTitle": "Divine Legend ",
-    "blurb": "The Divyāvadāna or “Divine Tales” is a Sanskrit anthology of 38 tales, many originating in the Mūlasarvāstivāda Vinaya. Typically the stories illustrate how the consequences of actions in past lives affect the present, with a special emphasis on the merit of making offerings to the Buddha and his disciples. It includes the famous Aśokāvadāna, one of the primary sources for the life of King Ashoka. The text probably dates from around the third century CE, but includes a few parallels to early texts. Modern editions are based on a number of Nepalese manuscripts, mostly quite modern. It was first edited and published in the west by Cowell and Neil in 1884. The digital text on SuttaCentral is from GRETIL, based on the edition by Vaidya (1959), with input by Kensuke Okamoto."
+    "blurb": "The Divyāvadāna or “Divine Tales” is a Sanskrit anthology of 38 tales, many originating in the Mūlasarvāstivāda Vinaya. Typically the stories illustrate how the consequences of actions in past lives affect the present, with a special emphasis on the merit of making offerings to the Buddha and his disciples. It includes the famous Aśokāvadāna, one of the primary sources for the life of King Ashoka. The text probably dates from around the third century CE, but includes a few parallels to early texts. Modern editions are based on a number of Nepalese manuscripts, mostly quite modern. It was first edited and published in the west by Cowell and Neil in 1884. The digital text on SuttaCentral is from GRETIL, based on the edition by Vaidya (1959), with input by Kensuke Okamoto.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "dn",
+    "rootTitle": "Dīghanikāya",
+    "transTitle": "Long Discourses Collection ",
+    "blurb": "A fabulous courtesan, a guilty king, a know-it-all teen, learned sages and earnest fools, a silent meditation in a thunderstorm. The Long Discourses reveal a Buddha in vital engagement with his times, an ideal of humanity in whom the extraordinary comes alive. These thirty-four discourses are set in an age of wonder, when prophecy was fulfilled and the deep truth of humanity was spoken, laid bare with sparkling clarity and relentless insight. In these tales set in the slow paths, chaotic cities, and deep forests of northern India, in the shadowy past or even among the gods themselves, we see the humble monk Gotama, wise and compassionate teacher of mindfulness and morality, begin his long and storied transformation into the Buddha of legend. ",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "dn15",
+    "rootTitle": "Mahānidānasutta",
+    "transTitle": "The Great Discourse on Causation ",
+    "blurb": "Rejecting Venerable Ānanda’s claim to easily understand dependent origination, the Buddha presents a complex and demanding analysis, revealing hidden nuances and implications of this central teaching.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn101",
+    "rootTitle": "Devadahasutta",
+    "transTitle": "At Devadaha ",
+    "blurb": "The Buddha tackles a group of Jain ascetics, pressing them on their claim to be practicing to end all suffering by self-mortification. He points out a series of fallacies in their logic, and explains his own middle way.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn12",
+    "rootTitle": "Mahāsīhanādasutta",
+    "transTitle": "The Longer Discourse on the Lion’s Roar ",
+    "blurb": "A disrobed monk, Sunakkhatta, attacks the Buddha’s teaching because it merely leads to the end of suffering. The Buddha counters that this is, in fact, praise, and goes on to enumerate his many profound and powerful achievements.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn120",
+    "rootTitle": "Saṅkhārupapattisutta",
+    "transTitle": "Rebirth by Choice ",
+    "blurb": "The Buddha explains how one can make a wish to be reborn in different realms.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn13",
+    "rootTitle": "Mahādukkhakkhandhasutta",
+    "transTitle": "The Longer Discourse on the Mass of Suffering ",
+    "blurb": "Challenged to show the difference between his teaching and that of other ascetics, the Buddha points out that they speak of letting go, but do not really understand why. He then explains in great detail the suffering that arises from attachment to sensual stimulation.",
+    "type": "leaf"
   },
   {
     "suttaRef": "mn143",
     "rootTitle": "Anāthapiṇḍikovādasutta",
     "transTitle": "Advice to Anāthapiṇḍika ",
-    "blurb": "As the great lay disciple Anāthapiṇḍika lies dying, Venerable Sāriputta visits him and gives a powerful teaching on non-attachment."
+    "blurb": "As the great lay disciple Anāthapiṇḍika lies dying, Venerable Sāriputta visits him and gives a powerful teaching on non-attachment.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn2",
+    "rootTitle": "Sabbāsavasutta",
+    "transTitle": "All the Defilements ",
+    "blurb": "The diverse problems of the spiritual journey demand a diverse range of responses. Rather than applying the same solution to every problem, the Buddha outlines seven methods of dealing with defilements, each of which works in certain cases.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn38",
+    "rootTitle": "Mahātaṇhāsaṅkhayasutta",
+    "transTitle": "The Longer Discourse on the Ending of Craving ",
+    "blurb": "To counter the wrong view that a self-identical consciousness transmigrates from one life to the next, the Buddha teaches dependent origination, showing that consciousness invariably arises dependent on conditions.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn43",
+    "rootTitle": "Mahāvedallasutta",
+    "transTitle": "The Great Classification ",
+    "blurb": "A series of questions and answers between Sāriputta and Mahākoṭṭhita, examining various subtle and abstruse aspects of the teachings.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn",
+    "rootTitle": "Saṁyuttanikāya",
+    "transTitle": "Linked Discourses Collection ",
+    "blurb": "The “Linked” or “Connected” Discourses (Saṁyutta Nikāya, abbreviated SN) is a collection of over a thousand short discourses in the Pali canon. The word “linked” refers to the fact that the texts are collected and organized by topic. In most cases the organizing principle is a particular theme of Dhamma, for example, the five aggregates, dependent origination, the noble eightfold path, mindfulness meditation, or the four noble truths. This collection contains the most extensive range of texts on these core themes. In other cases chapters are organized according to the person or kind of person who speaks. This collection has a full parallel in the Saṁyuktāgama (SA) of the Sarvāstivāda school in Chinese translation. In addition, there are two partial collections in Chinese (SA-2 and SA-3) as well as a number of miscellaneous or fragmentary texts in Chinese, Sanskrit, and Tibetan. Much of the organizational structure of SN is shared with SA, suggesting that this structure preceded the split between these two collections.",
+    "type": "branch"
   },
   {
     "suttaRef": "sn12",
     "rootTitle": "Nidānasaṁyutta",
     "transTitle": "Linked Discourses on Causation ",
-    "blurb": "The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering originates and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we make choices that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. "
+    "blurb": "The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering originates and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we make choices that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. ",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "sn12.15",
+    "rootTitle": "Kaccānagottasutta",
+    "transTitle": "Kaccānagotta ",
+    "blurb": "Venerable Kaccānagotta asks the Buddha about right view, and the Buddha answers that right view arises when one sees the origin and cessation of the world and is free of attachments. This sutta, brief but profound and difficult, became renowned as the only canonical reference named in Nāgārjuna’s Mūlamadhyamakakārikā, perhaps the most famous philosophical treatise in all Buddhism.",
+    "type": "leaf"
   },
   {
     "suttaRef": "sn12.2",
     "rootTitle": "Vibhaṅgasutta",
     "transTitle": "Analysis ",
-    "blurb": "The Buddha gives definitions for each of the twelve links. These are general definitions that apply wherever the twelve links are mentioned."
+    "blurb": "The Buddha gives definitions for each of the twelve links. These are general definitions that apply wherever the twelve links are mentioned.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn12.25",
+    "rootTitle": "Bhūmijasutta",
+    "transTitle": "With Bhūmija ",
+    "blurb": "Sāriputta is asked by Venerable Bhūmija as to the origin of pleasure and pain. He replies that the Buddha teaches that pleasure and pain originate by conditions. Moreover, all those who offer opinions on this question are themselves part of the web of conditions, as they cannot state their views without contact. Ānanda reports the exchange to the Buddha, who praises Sāriputta’s answer.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn36.6",
+    "rootTitle": "Sallasutta",
+    "transTitle": "An Arrow ",
+    "blurb": "Both ordinary and awakened people experience the three feelings. The difference is that when an ordinary person is stricken with feeling, they react, creating more suffering, whereas an awakened person responds with equanimity.",
+    "type": "leaf"
   },
   {
     "suttaRef": "sutta",
     "rootTitle": "Suttapiṭaka",
     "transTitle": "Basket of Discourses ",
-    "blurb": "The Buddha’s teachings on meditation, morality, the nature of the world, and the path to freedom. These scriptures are our primary sources for the historical Buddha’s life and practice. They depict the Buddha and his students in lively conversation with a diverse range of people."
+    "blurb": "The Buddha’s teachings on meditation, morality, the nature of the world, and the path to freedom. These scriptures are our primary sources for the historical Buddha’s life and practice. They depict the Buddha and his students in lively conversation with a diverse range of people.",
+    "type": "root"
+  },
+  {
+    "suttaRef": "thag",
+    "rootTitle": "Theragāthā",
+    "transTitle": "Verses of the Senior Monks ",
+    "blurb": "The “Verses of the Senior Monks” is a collection of about 1288 verses attributed to 264 of the senior monks alive in the Buddha’s time, or in a few cases, a little later. It is a pair with the Therīgāthā, the “Verses of the Senior Nuns”. These verses celebrate the joy of freedom and the life of meditation in the forest. Together these collections constitute one of the oldest and largest collections of contemplative literature, preserving the unique voices of hundreds of early practitioners. Based on style and content, these collections belong to the early discourses. They are referred to on occasion in the northern canons, but no parallel collections have survived.",
+    "type": "branch"
   }
 ]

@@ -61,43 +61,39 @@
 },
 {
 	"sesame": "Bhumija Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn12.25"
 },
 {
 	"sesame": "Devadaha Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn101"
 },
 {
 	"sesame": "Digha Nikāya",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:dn"
 },
 {
 	"sesame": "Kaccānagotta Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Mahavedella Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn12.15"
 },
 {
 	"sesame": "Mahādukkhakkhandha Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn13"
 },
 {
 	"sesame": "Mahānidāna Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn15"
 },
 {
 	"sesame": "Mahāsīhanāda Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn12"
 },
 {
 	"sesame": "Mahātaṇhāsankhaya Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn38"
 },
 {
 	"sesame": "Mahāvedalla Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn43"
 },
 {
 	"sesame": "Nidāna Saṁyutta",
@@ -105,31 +101,31 @@
 },
 {
 	"sesame": "Sabbāsava Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn2"
 },
 {
 	"sesame": "Saṁyutta Nikāya",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Saṅkhārauppatti Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:sn"
 },
 {
 	"sesame": "Saṅkhārupapatti Sutta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn120"
 },
 {
 	"sesame": "Sutta Piṭaka",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:sutta"
 },
 {
 	"sesame": "Theragātha",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:thag"
+},
+{
+	"sesame": "The Dart",
+	"key": "sn-blurbs:sn36.6"
 },
 {
 	"sesame": "Vibhaṅga",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn12.2"
 },
 {
 	"sesame": "Vibhaṅga Sutta",

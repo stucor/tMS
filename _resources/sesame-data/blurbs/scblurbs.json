@@ -1,0 +1,44 @@
+[
+  {
+    "suttaRef": "an",
+    "rootTitle": "Aṅguttaranikāya",
+    "transTitle": "Numbered Discourses Collection ",
+    "blurb": "The “Numbered” or “Numerical” Discourses are usually known as Aṅguttara Nikāya in Pali, abbreviated AN. However, the Pali tradition also knows the form Ekottara (“one-up” or “incremental”), and this is the form usually found in the northern collections. These collections organize texts in numbered sets, from one to eleven. Compared to the other <i lang='pi' translate='no'>nikāyas</i>, they are more oriented to the lay community. The Ekottarikāgama (EA) in Chinese is a highly unusual text, which features a range of variations within itself when it comes even to basic doctrines. It shares considerably less in common with the Pali Aṅguttara than the other collections do with their counterparts. In addition, there is a partial Ekottarikāgama in Chinese, as well as a variety of individual discourses and fragments in Chinese and Sanskrit."
+  },
+  {
+    "suttaRef": "an7.66",
+    "rootTitle": "Sattasūriyasutta",
+    "transTitle": "The Seven Suns ",
+    "blurb": "A rare discourse on cosmic evolution. The Buddha describes the successive appearance of seven suns and how even the earth will be burned up."
+  },
+  {
+    "suttaRef": "divy",
+    "rootTitle": "Divyāvadāna",
+    "transTitle": "Divine Legend ",
+    "blurb": "The Divyāvadāna or “Divine Tales” is a Sanskrit anthology of 38 tales, many originating in the Mūlasarvāstivāda Vinaya. Typically the stories illustrate how the consequences of actions in past lives affect the present, with a special emphasis on the merit of making offerings to the Buddha and his disciples. It includes the famous Aśokāvadāna, one of the primary sources for the life of King Ashoka. The text probably dates from around the third century CE, but includes a few parallels to early texts. Modern editions are based on a number of Nepalese manuscripts, mostly quite modern. It was first edited and published in the west by Cowell and Neil in 1884. The digital text on SuttaCentral is from GRETIL, based on the edition by Vaidya (1959), with input by Kensuke Okamoto."
+  },
+  {
+    "suttaRef": "mn143",
+    "rootTitle": "Anāthapiṇḍikovādasutta",
+    "transTitle": "Advice to Anāthapiṇḍika ",
+    "blurb": "As the great lay disciple Anāthapiṇḍika lies dying, Venerable Sāriputta visits him and gives a powerful teaching on non-attachment."
+  },
+  {
+    "suttaRef": "sn12",
+    "rootTitle": "Nidānasaṁyutta",
+    "transTitle": "Linked Discourses on Causation ",
+    "blurb": "The “Linked Discourses on Causation” is a major collection containing 93 discourses on the core Buddhist teaching of dependent origination. Dependent origination presents a series of conditional links laying bare how suffering originates and how it ends. As such, it is an extended treatment of the second and third noble truths. It integrates psychological and existential aspects of suffering, showing how when bound by attachment we make choices that bind us to transmigrating into future lives. One of the core purposes is to explain how rebirth takes place without having to invoke metaphysical concepts such as a “soul”. The collection begins by defining each of the terms in the standard 12-linked chain, definitions which are assumed to apply throughout. Remaining discourses iterate on this theme, introducing new perspectives and formulations. "
+  },
+  {
+    "suttaRef": "sn12.2",
+    "rootTitle": "Vibhaṅgasutta",
+    "transTitle": "Analysis ",
+    "blurb": "The Buddha gives definitions for each of the twelve links. These are general definitions that apply wherever the twelve links are mentioned."
+  },
+  {
+    "suttaRef": "sutta",
+    "rootTitle": "Suttapiṭaka",
+    "transTitle": "Basket of Discourses ",
+    "blurb": "The Buddha’s teachings on meditation, morality, the nature of the world, and the path to freedom. These scriptures are our primary sources for the historical Buddha’s life and practice. They depict the Buddha and his students in lively conversation with a diverse range of people."
+  }
+]

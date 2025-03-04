@@ -1058,6 +1058,52 @@ span[class^="sesame ref closebutton"]  {
 	font-size: smaller;
 }
 
+
+.opensesame dl {
+	margin-top: 0;
+}
+.opensesame dt {
+	font-family: 'Source Sans Pro';
+	font-variant: small-caps;
+	font-weight: 400;
+}
+
+.opensesame dt:last-of-type {
+	margin-bottom: 1em;
+}
+
+.opensesame dfn {
+	font-weight: 600;
+	font-style: normal;
+}
+
+.opensesame dd {
+	margin-top: 1em;
+	margin-left: 0;
+}
+
+.opensesame dd.info {
+	display: none;
+}
+
+.opensesame dd > p > a::after {
+	content: url('../images/icons/leave-app-red.svg');
+	filter:hue-rotate(60deg) opacity(0.7);
+	white-space:nowrap;
+}
+
+.opensesame dd > p > a:hover {
+	text-decoration: underline;
+}
+.opensesame dd > p > a:hover::after {
+	filter:hue-rotate(0deg);
+}
+
+
+
+
+
+
 .quotepno {
  	padding: 0 0.5em 0.1em 0.6em;
 	margin: 0 0.5em 0 0;

@@ -2990,6 +2990,8 @@ function toggleSesame (el) {
 					let transName =``
 					let linkHTML = ``
 
+					let noDotBlurbSutta = false
+
 
 					if (sesameKeyArr[0].substr(0,6) == 'super-') {
 						rootNamePath = `../_resources/bilara-data/published/root/misc/site/name/super-name_root-misc-site.json`
@@ -2997,35 +2999,47 @@ function toggleSesame (el) {
 					} else {
 						let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
 
-						let bookNumberFill = ``
-						if (linkTextArr[0] == `an`) {
-							bookNumberFill = `/an${linkTextArr[1].split('.')[0]}`
-						}
-						transNamePath = `../_resources/bilara-data/published/translation/en/sujato/sutta/${linkTextArr[0]}${bookNumberFill}/${linkTextArr[0]}${linkTextArr[1]}_translation-en-sujato.json`
-						rootNamePath = `../_resources/bilara-data/published/root/pli/ms/sutta/${linkTextArr[0]}${bookNumberFill}/${linkTextArr[0]}${linkTextArr[1]}_root-pli-ms.json`
-						console.log (transNamePath)
-						// make the sclinktext
-						switch (linkTextArr[0]) {
-							case "dn":
-							case "an":
-							case "sn":
-							case "mn":
-								linkTextArr[0] = linkTextArr[0].toUpperCase()
-								break
-							case "snp":
-								if (linkTextArr[2]) { // its a vagga
-									linkTextArr[0] = ``
-								} else {
-								linkTextArr[0] = capitalizeFirstLetter(linkTextArr[0]);
-								}
-								break
-						}
-						if (linkTextArr[0]) {
-							let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
-							linkHTML= `<span class='sclinktext'>${linkText}</span>`
-						}
-					}
+						//console.log(linkTextArr[0])
 
+						if (linkTextArr[1].includes('.')) {
+							let bookNumberFill = ``
+							if (linkTextArr[0] == `an`) {
+								bookNumberFill = `/an${linkTextArr[1].split('.')[0]}`
+							}
+							if (linkTextArr[0] == `sn`) {
+								bookNumberFill = `/sn${linkTextArr[1].split('.')[0]}`
+							}
+							transNamePath = `../_resources/bilara-data/published/translation/en/sujato/sutta/${linkTextArr[0]}${bookNumberFill}/${linkTextArr[0]}${linkTextArr[1]}_translation-en-sujato.json`
+							rootNamePath = `../_resources/bilara-data/published/root/pli/ms/sutta/${linkTextArr[0]}${bookNumberFill}/${linkTextArr[0]}${linkTextArr[1]}_root-pli-ms.json`
+							// make the sclinktext
+							switch (linkTextArr[0]) {
+								case "dn":
+								case "an":
+								case "sn":
+								case "mn":
+									linkTextArr[0] = linkTextArr[0].toUpperCase()
+									break
+								case "snp":
+									if (linkTextArr[2]) { // its a vagga
+										linkTextArr[0] = ``
+									} else {
+									linkTextArr[0] = capitalizeFirstLetter(linkTextArr[0]);
+									}
+									break
+							}
+							if (linkTextArr[0]) {
+								let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
+								linkHTML= `<span class='sclinktext'>${linkText}</span>`
+							}							
+						} else { // It's a Book heading like sn12
+							transNamePath = `../_resources/bilara-data/published/translation/en/sujato/name/sutta/${linkTextArr[0]}-name_translation-en-sujato.json`
+							console.log(`TNP:${transNamePath}`)
+							rootNamePath = `../_resources/bilara-data/published/root/misc/site/name/sutta/${linkTextArr[0]}-name_root-misc-site.json`
+							console.log(`RNP:${rootNamePath}`)
+						}
+
+
+					}
 
 					function popRootName(rootData) {
 						if (sesameKeyArr[0].substr(0,6) == 'super-') {
@@ -3035,13 +3049,25 @@ function toggleSesame (el) {
 								} 
 							}
 						} else  {
-							rootName = ``
-							for (let i = 2; i < 4; i++) {
-								 if (rootData[`${sesameKeyArr[1]}:0.${i}`]) {
-									rootName += rootData[`${sesameKeyArr[1]}:0.${i}`] + `— `
-								 }
+							if (sesameKeyArr[1].includes('.')) {
+								rootName = ``
+								for (let i = 2; i < 4; i++) {
+									 if (rootData[`${sesameKeyArr[1]}:0.${i}`]) {
+										rootName += rootData[`${sesameKeyArr[1]}:0.${i}`] + `— `
+										console.log (`ROOTNAME: ${rootName}`)
+									 }
+								}
+								rootName = rootName.slice(0,rootName.length-2)
+							} else {
+								console.log(`yay`)
+								for (let i in rootData) {
+									let tail = i.substring(i.indexOf('.')+1)
+									if (tail == sesameKeyArr[1]) {
+										rootName = rootData[i]
+										break
+									}
+								}
 							}
-							rootName = rootName.slice(0,rootName.length-2)
 						}
 							
 					}
@@ -3054,19 +3080,32 @@ function toggleSesame (el) {
 								}
 							}
 						} else  {
-							transName = ``
-							for (let i = 2; i < 4; i++) {
-								 if (transData[`${sesameKeyArr[1]}:0.${i}`]) {
-									transName += transData[`${sesameKeyArr[1]}:0.${i}`] + `— `
-								 }
+							if (sesameKeyArr[1].includes('.')) {
+								//transName = ``
+								for (let i = 2; i < 4; i++) {
+									 if (transData[`${sesameKeyArr[1]}:0.${i}`]) {
+										transName += transData[`${sesameKeyArr[1]}:0.${i}`] + `— `
+									 }
+								}
+								transName = transName.slice(0,transName.length-2) 
+							} else {
+								for (let i in transData) {
+									console.log(`Yo`)
+									let tail = i.substring(i.indexOf('.')+1)
+									console.log(tail)
+									if (tail == sesameKeyArr[1]) {
+										transName = transData[i]
+										break
+									}
+								}
 							}
-							transName = transName.slice(0,transName.length-2) 
+
 						}
 					}
 
 					function populateBlurb (quoteData) {
 						let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
-						let quoteHTML =`${scRefHTML}<br><h3>${rootName}<br>${transName}<br>${linkHTML}</h3><p>${quoteData[sesameKey]}</p>`
+						let quoteHTML =`${scRefHTML}<br><h3>${rootName}<br>${transName}<br>${linkHTML}</h3><hr><p>${quoteData[sesameKey]}</p>`
 						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
 						el.classList.add('closebutton')
 					}
@@ -3121,6 +3160,8 @@ function toggleSesame (el) {
 						for (let i in quoteData) {
 							if (quoteData[i].word == sesameKeyArr[1]) {
 								localHTML = quoteData[i].text
+								localHTML = localHTML.slice(0, localHTML.lastIndexOf('</dt>')+5) + '<hr>' + localHTML.slice(localHTML.lastIndexOf('</dt>')+5, localHTML.length)
+
 								break;
 							}
 						}

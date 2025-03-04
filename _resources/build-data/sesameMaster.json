@@ -54,5 +54,85 @@
 {
 	"sesame": "Uttarakuru",
 	"key": "DPPN:uttarakuru"
+},
+{
+	"sesame": "Advaita Vedanta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bhumija Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Devadaha Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Digha Nikāya",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Kaccānagotta Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahavedella Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahādukkhakkhandha Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahānidāna Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahāsīhanāda Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahātaṇhāsankhaya Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahāvedalla Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Nidāna Saṁyutta",
+	"key": "sn-blurbs:sn12"
+},
+{
+	"sesame": "Sabbāsava Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saṁyutta Nikāya",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saṅkhārauppatti Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saṅkhārupapatti Sutta",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sutta Piṭaka",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Theragātha",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Vibhaṅga",
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Vibhaṅga Sutta",
+	"key": "sn-blurbs:sn12.2"
 }
 ]

@@ -1,149 +1,86 @@
 [
 {
 	"sesame": "Advaita Vedanta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Aṅguttara Nikāya",
-	"type": "scBlurb",
-	"directory": "an",
-	"file": "super-blurbs_root-en",
-	"biblio": ""
+	"key": "super-blurbs:an"
 },
 {
 	"sesame": "Bhumija Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Devadaha Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Digha Nikāya",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Kaccānagotta Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Mahavedella Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Mahādukkhakkhandha Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Mahānidāna Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Mahāsīhanāda Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Mahātaṇhāsankhaya Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Mahāvedalla Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Nidāna Saṁyutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "sn-blurbs:sn12"
 },
 {
 	"sesame": "Sabbāsava Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Saṁyutta Nikāya",
-	"type": "scBlurb",
-	"directory": "sn",
-	"file": "super-blurbs_root-en",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Saṅkhārauppatti Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Saṅkhārupapatti Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Sutta Piṭaka",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Theragātha",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Vibhaṅga",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Vibhaṅga Sutta",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "sn-blurbs:sn12.2"
 }
 ]

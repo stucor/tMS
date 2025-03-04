@@ -249,34 +249,3 @@ img .bordered {
 }
 
 
-.opensesame dl {
-	margin-top: 0;
-}
-.opensesame dt {
-	margin-bottom: 0.5em;
-}
-
-.opensesame dfn {
-	font-style: normal;
-}
-
-.opensesame dd {
-	margin-left: 0;
-}
-
-.opensesame dd.info {
-	display: none;
-}
-
-.opensesame dd > p > a::after {
-	content: url('../images/icons/leave-app-red.svg');
-	filter:hue-rotate(60deg) opacity(0.7);
-	white-space:nowrap;
-}
-
-.opensesame dd > p > a:hover {
-	text-decoration: underline;
-}
-.opensesame dd > p > a:hover::after {
-	filter:hue-rotate(0deg);
-}

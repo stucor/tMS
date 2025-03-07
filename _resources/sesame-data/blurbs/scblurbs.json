@@ -14,6 +14,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "cnd",
+    "rootTitle": "Cūḷaniddesa",
+    "transTitle": "Shorter Exposition ",
+    "blurb": "The Cūḷaniddesa or “Shorter Exposition” is really one half of a book together with the Mahāniddesa or “Great Exposition”. They offer commentaries on certain portions of the Sutta Nipāta, and lack counterparts in the northern canons. The Cūḷaniddesa comments on the “Way to the Beyond” and the “Rhinoceros Horn Sutta”.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "divy",
     "rootTitle": "Divyāvadāna",
     "transTitle": "Divine Legend ",
@@ -33,6 +40,20 @@
     "transTitle": "The Great Discourse on Causation ",
     "blurb": "Rejecting Venerable Ānanda’s claim to easily understand dependent origination, the Buddha presents a complex and demanding analysis, revealing hidden nuances and implications of this central teaching.",
     "type": "leaf"
+  },
+  {
+    "suttaRef": "ja12",
+    "rootTitle": "Nigrodhamigajātaka",
+    "transTitle": "The Banyan Deer ",
+    "blurb": "“Keep only with the Banyan Deer.”—This story was told by the Master while at Jetavana about the mother of the Elder named Prince Kassapa. The daughter, we learn, of a wealthy merchant of Rajagaha was deeply rooted in goodness and scorned all temporal things; she had reached her final existence, and within her breast, like a lamp in a pitcher, glowed her sure hope of winning Arahatship. As soon as she reached knowledge of herself, she took no joy in a worldly life but yearned to renounce the world. With this aim, she said to her mother and father, “My dear parents, my heart takes no joy in a worldly life; fain would I embrace the saving doctrine of the Buddha. Suffer me to take the vows.”",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mil",
+    "rootTitle": "Milindapañha",
+    "transTitle": "Questions of King Milinda ",
+    "blurb": "The Milindapañha or “Questions of King Milinda” records a series of discussions on points of Dhamma between the monk Nāgasena and the Greek king known as in Pali as Milinda. He is usually identified with Menander I Soter, who ruled an Indo-Greek kingdom from his capital of Sagala around BCE 165–130. While the encounter between Greek and Indian culture is fascinating, the dialogs concern only interpretation of Buddhist ideas, with which the king was evidently very familiar, and does not mention Greek philosophy. The text is lively and dynamic, with the King constantly testing Nāgasena with abstruse questions, to which he responds with ingenious arguments and analogies. The text has a shorter Chinese counterpart in the Nāgasena Bhikṣu Sūtra. The text is not Theravādin in origin, but began among one of the schools in the north-west, perhaps the Sarvāstivādins. Most of the content, however, is not sectarian in nature. The Pali text has been extended over the years, and in addition, portions appear to be missing. It is not universally accepted as canonical; SuttaCentral’s Pali texts, however, stem from the Mahāsaṅgīti edition, which as a Burmese text does include it.",
+    "type": "branch"
   },
   {
     "suttaRef": "mn101",
@@ -89,6 +110,27 @@
     "transTitle": "The Great Classification ",
     "blurb": "A series of questions and answers between Sāriputta and Mahākoṭṭhita, examining various subtle and abstruse aspects of the teachings.",
     "type": "leaf"
+  },
+  {
+    "suttaRef": "mnd",
+    "rootTitle": "Mahāniddesa",
+    "transTitle": "Longer Exposition ",
+    "blurb": "The Mahāniddesa or “Great Exposition” is really one half of a book together with the Cūḷaniddesa, the “Shorter Exposition”. They offer commentaries on certain portions of the Sutta Nipāta, and lack counterparts in the northern canons. The Mahāniddesa comments on the sixteen poems of the fourth chapter, the “Chapter of the Eights” or Aṭṭhakavagga.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "ps",
+    "rootTitle": "Paṭisambhidāmagga",
+    "transTitle": "The Path of Discrimination ",
+    "blurb": "The Paṭisambhidāmagga or “Path of Analytical Discernment” is an advanced critical treatise in thirty chapters on Buddhist practice, which the Pali commentaries attribute to the Buddha’s disciple Sāriputta. Departing from the popular or folksy style of most Khuddaka texts, it is more reminiscent of the Abhidhamma, and indeed, while not included in the Abhidhammapiṭaka, it deserves to be considered part of the Theravādin Abhidhamma system. However, it does not make use of the main Abhidhamma <i lang='pi' translate='no'>mātikās</i>. This text introduces a number of terms and ideas of great importance in later Buddhist philosophy. It does not have any counterparts in the northern canons, but articulates a dictinctly Theravādin perspective on the path.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "san-lo-mvu",
+    "rootTitle": "Mahāvastu",
+    "transTitle": "The Great Story ",
+    "blurb": "The Mahāvastu (“the great story”) is a biography of the Buddha that belongs to the Lokuttaravāda school. It is part of their Vinaya but also includes a large amount of Jātaka and Apadāna stories.",
+    "type": "branch"
   },
   {
     "suttaRef": "sn",

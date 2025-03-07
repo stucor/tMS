@@ -2971,9 +2971,9 @@ function toggleSesame (el) {
 		 function openSesame () {
 			async function decodeSesameKey (sesameKey) {
 				let sesameKeyArr = sesameKey.split(':')
-/* 				console.log(`0::${sesameKeyArr[0]}`)
+				console.log(`0::${sesameKeyArr[0]}`)
 				console.log(`1::${sesameKeyArr[1]}`)
-				console.log(`2::${sesameKeyArr[2]}`) */
+				console.log(`2::${sesameKeyArr[2]}`)
 
 				if (sesameKeyArr[0].includes('-blurbs')) {
 					let biblio = `` // NEED TO WRITE BIBLIO BIT if there's a biblio entry specified
@@ -3002,6 +3002,9 @@ function toggleSesame (el) {
 											linkTextArr[0] = capitalizeFirstLetter(linkTextArr[0]);
 											}
 											break
+										case "ja" :
+											linkTextArr[0] = ``
+											break
 									}
 									if (linkTextArr[0]) {
 										let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
@@ -3022,7 +3025,8 @@ function toggleSesame (el) {
 						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 					});
 				} else 
-				if (sesameKeyArr[0] == `wikipedia`) {
+				if (sesameKeyArr[0] == 'wp') {
+					console.log('HERE')
 					let fetchPath = `../_resources/sesame-data/wikipedia/${sesameKeyArr[1]}.json`
 					function populateSesame (quoteData) {
 						let sourceHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameKeyArr[1].replace('-', '#')}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span>`

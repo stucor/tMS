@@ -1,184 +1,102 @@
 [
 {
 	"sesame": "Avalokiteśvara",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Avalokiteśvara"
 },
 {
 	"sesame": "Confucius",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Confucius"
 },
 {
 	"sesame": "Culla Niddesa",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "super-blurbs:cnd"
 },
 {
 	"sesame": "Cūlavaṁsa",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Cūḷavaṃsa"
 },
 {
 	"sesame": "Divyāvadāna",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
-},
-{
-	"sesame": "Divyāvadāna’s",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "super-blurbs:divy"
 },
 {
 	"sesame": "Hariti",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Hariti"
 },
 {
 	"sesame": "Kāma",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Kamadeva"
 },
 {
 	"sesame": "Kāma Sūtra",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Kama_Sutra"
 },
 {
 	"sesame": "Kṣitigarbha",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Kṣitigarbha"
 },
 {
 	"sesame": "Mahā Niddesa",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "super-blurbs:mnd"
 },
 {
 	"sesame": "Mahābhārata",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Mahabharata"
 },
 {
 	"sesame": "Mahāvastu",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "super-blurbs:san-lo-mvu"
 },
 {
 	"sesame": "Mahāvaṁsa",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Mahāvaṃsa:Geiger 1912a"
 },
 {
 	"sesame": "Maitreya",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Maitreya"
 },
 {
 	"sesame": "Mencius",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Mencius:Mencius 1970a"
 },
 {
 	"sesame": "Metteyya",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Maitreya"
 },
 {
 	"sesame": "Milindapañha",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "super-blurbs:mil"
 },
 {
 	"sesame": "Motzu",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Mozi"
 },
 {
 	"sesame": "Nigrodhamiga Jātaka",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "ja-blurbs:ja12"
 },
 {
 	"sesame": "Nāgārjuna",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Nagarjuna"
 },
 {
 	"sesame": "Pancika",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Pañcika"
 },
 {
 	"sesame": "Rāmāyaṇa",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Ramayana"
 },
 {
 	"sesame": "Taisho Tripitaka",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Taishō_Tripiṭaka"
 },
 {
 	"sesame": "Vism",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Visuddhimagga:Ñanamoli 1956a"
 },
 {
 	"sesame": "Xuanzang",
-	"type": "",
-	"directory": "",
-	"file": "",
-	"biblio": ""
+	"key": "wp:Xuanzang"
 }
 ]

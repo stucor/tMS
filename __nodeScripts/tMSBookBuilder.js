@@ -25,7 +25,7 @@ function buildSesameStub () {
 
 	for (let i in sortedSesames) {
 		//console.log(sortedSesames[i])
-		let localkey = 'XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX'
+		let localkey = 'XXXXXXXXXXXXXXXX'
 
 		for (j in localSesameMaster) {
 			if (localSesameMaster[j].sesame == sortedSesames[i]) {

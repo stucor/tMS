@@ -973,6 +973,9 @@ dd > p {
 	background-color: yellow;
 /* 	border-bottom: solid 1px red; */
 }
+.sesame.ref {
+	background-color: lightcyan;
+}
 
 span[class^="sesame ref closebutton"] {
 	border:none

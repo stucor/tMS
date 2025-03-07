@@ -25,7 +25,7 @@
 },
 {
 	"sesame": "Kāma Sūtra",
-	"key": "wikipedia:Kama_Sutra"
+	"key": "wp:Kama_Sutra"
 },
 {
 	"sesame": "Ñāṇamoli n.499",
@@ -57,7 +57,7 @@
 },
 {
 	"sesame": "Advaita Vedanta",
-	"key": "XXXXXXXXXXXXXXXX — NO KEY FOUND IN MASTER LIST — XXXXXXXXXXXXXXXX"
+	"key": "wp:Advaita_Vedanta"
 },
 {
 	"sesame": "Bhumija Sutta",
@@ -130,5 +130,101 @@
 {
 	"sesame": "Vibhaṅga Sutta",
 	"key": "sn-blurbs:sn12.2"
+},
+{
+	"sesame": "Paṭisambhidāmagga",
+	"key": "super-blurbs:ps"
+},
+{
+	"sesame": "Avalokiteśvara",
+	"key": "wp:Avalokiteśvara"
+},
+{
+	"sesame": "Confucius",
+	"key": "wp:Confucius"
+},
+{
+	"sesame": "Culla Niddesa",
+	"key": "super-blurbs:cnd"
+},
+{
+	"sesame": "Cūlavaṁsa",
+	"key": "wp:Cūḷavaṃsa"
+},
+{
+	"sesame": "Hariti",
+	"key": "wp:Hariti"
+},
+{
+	"sesame": "Kāma",
+	"key": "wp:Kamadeva"
+},
+{
+	"sesame": "Kṣitigarbha",
+	"key": "wp:Kṣitigarbha"
+},
+{
+	"sesame": "Mahā Niddesa",
+	"key": "super-blurbs:mnd"
+},
+{
+	"sesame": "Mahābhārata",
+	"key": "wp:Mahabharata"
+},
+{
+	"sesame": "Mahāvastu",
+	"key": "super-blurbs:san-lo-mvu"
+},
+{
+	"sesame": "Mahāvaṁsa",
+	"key": "wp:Mahāvaṃsa:Geiger 1912a"
+},
+{
+	"sesame": "Maitreya",
+	"key": "wp:Maitreya"
+},
+{
+	"sesame": "Mencius",
+	"key": "wp:Mencius:Mencius 1970a"
+},
+{
+	"sesame": "Metteyya",
+	"key": "wp:Maitreya"
+},
+{
+	"sesame": "Milindapañha",
+	"key": "super-blurbs:mil"
+},
+{
+	"sesame": "Motzu",
+	"key": "wp:Mozi"
+},
+{
+	"sesame": "Nigrodhamiga Jātaka",
+	"key": "ja-blurbs:ja12"
+},
+{
+	"sesame": "Nāgārjuna",
+	"key": "wp:Nagarjuna"
+},
+{
+	"sesame": "Pancika",
+	"key": "wp:Pañcika"
+},
+{
+	"sesame": "Rāmāyaṇa",
+	"key": "wp:Ramayana"
+},
+{
+	"sesame": "Taisho Tripitaka",
+	"key": "wp:Taishō_Tripiṭaka"
+},
+{
+	"sesame": "Vism",
+	"key": "wp:Visuddhimagga:Ñanamoli 1956a"
+},
+{
+	"sesame": "Xuanzang",
+	"key": "wp:Xuanzang"
 }
 ]

@@ -24,16 +24,12 @@ function buildSesameStub () {
 	}
 
 	for (let i in sortedSesames) {
-		//console.log(sortedSesames[i])
 		let localkey = 'XXXXXXXXXXXXXXXX'
-
 		for (j in localSesameMaster) {
 			if (localSesameMaster[j].sesame == sortedSesames[i]) {
 				localkey = localSesameMaster[j].key
 			}
 		}
-
-
 
 		localJSON += `{\n\t"sesame": "${sortedSesames[i]}",\n\t"key": "${localkey}"\n}`
 		if (i == sortedSesames.length -1) {
@@ -392,7 +388,7 @@ function buildBookIndexHTML () {
 					spans[i].classList.add('sesame')
 					spans[i].removeAttribute ('data-custom-style')
 					sesameArr.push(spans[i].text)
-				break
+					break
 				case 'wwc-pali':
 					spans[i].setAttribute('lang','pi')
 					spans[i].removeAttribute ('data-custom-style')
@@ -1014,6 +1010,13 @@ function processPandoc() {
 	}
 
 	function buildFootnotesJSON () {
+		let localSesameMaster = []
+		try {
+			const data = fs.readFileSync('../_resources/build-data/sesameMaster.json', 'utf8')
+			localSesameMaster = JSON.parse(data)
+		} catch (err) {
+			console.error(err);
+		}
 		if (pandocRoot.querySelector('#footnotes')) {
 			let footnotesRoot = parse (pandocRoot.querySelector('#footnotes'))
 			//custom-styles
@@ -1041,6 +1044,17 @@ function processPandoc() {
 						sesameRefArr.push(spans[i].text)
 					break
 					case 'wwc-sesame':
+/* 						spans[i].classList.add('sesame')
+						spans[i].removeAttribute ('data-custom-style')
+						sesameArr.push(spans[i].text) */
+
+						let localSesameKey = ''
+						for (let j in localSesameMaster) {
+							if (localSesameMaster[j].sesame == spans[i].text) {
+								localSesameKey = localSesameMaster[j].key
+								spans[i].setAttribute('data-sesame-key', localSesameMaster[j].key)
+							}
+						}
 						spans[i].classList.add('sesame')
 						spans[i].removeAttribute ('data-custom-style')
 						sesameArr.push(spans[i].text)

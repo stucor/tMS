@@ -2971,21 +2971,26 @@ function toggleSesame (el) {
 		 function openSesame () {
 			async function decodeSesameKey (sesameKey) {
 				let sesameKeyArr = sesameKey.split(':')
-				console.log(`0::${sesameKeyArr[0]}`)
-				console.log(`1::${sesameKeyArr[1]}`)
-				console.log(`2::${sesameKeyArr[2]}`)
+				console.log(`0::${sesameKeyArr[0]}`) // type
+				console.log(`1::${sesameKeyArr[1]}`) // key
+				console.log(`2::${sesameKeyArr[2]}`) // a zotero reference that appears in the biblio for the book
+
+				let biblio = `` // NEED TO WRITE BIBLIO BIT if there's a biblio entry specified
+				if (sesameKeyArr[2]) {
+					biblio = sesameKeyArr[2]
+				}
 
 				if (sesameKeyArr[0].includes('-blurbs')) {
-					let biblio = `` // NEED TO WRITE BIBLIO BIT if there's a biblio entry specified
-					if (sesameKeyArr[2]) {
-						biblio = sesameKeyArr[2]
-					}
-					let fetchPath = `../_resources/sesame-data/blurbs/scblurbs.json`
 
+					let fetchPath = `../_resources/sesame-data/blurbs/scblurbs.json`
 					function populateBlurb (quoteData) {
+						function capitalizeFirstLetter(val) {
+							return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+						}
 						for (let i in quoteData) {
 							if (quoteData[i].suttaRef == sesameKeyArr[1]) {
 								let linkHTML = ``
+								console.log(quoteData[i].type)
 								if (quoteData[i].type == 'leaf') {
 									let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
 									switch (linkTextArr[0]) {
@@ -3013,7 +3018,7 @@ function toggleSesame (el) {
 								}
 								let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
 								let quoteHTML =`${scRefHTML}<br><h3>${quoteData[i].rootTitle}<br>${quoteData[i].transTitle}<br>${linkHTML}</h3><hr><p>${quoteData[i].blurb}</p>`
-								el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+								el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}<br>${biblio}</div>`);
 								el.classList.add('closebutton')
 							}
 						}
@@ -3026,13 +3031,12 @@ function toggleSesame (el) {
 					});
 				} else 
 				if (sesameKeyArr[0] == 'wp') {
-					console.log('HERE')
 					let fetchPath = `../_resources/sesame-data/wikipedia/${sesameKeyArr[1]}.json`
 					function populateSesame (quoteData) {
 						let sourceHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameKeyArr[1].replace('-', '#')}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span>`
 						let localHTML = `<h3>${quoteData.Page}<br>${quoteData.Title}</h3>${quoteData.Text}`
 						let quoteHTML =`${sourceHTML}<br>${localHTML}`
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}<br>${biblio}</div>`);
 						el.classList.add('closebutton') 
 					}
 					await fetch(fetchPath)
@@ -3061,7 +3065,7 @@ function toggleSesame (el) {
 						}
  						let sourceHTML = `<a class="extlink" href="https://suttacentral.net/">source: DPPD—<img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral Edition</a>`
 						let quoteHTML =`${sourceHTML}<br>${localHTML}`
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}<br>${biblio}</div>`);
 						el.classList.add('closebutton') 
 					}
 

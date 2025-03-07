@@ -7,10 +7,24 @@
     "type": "branch"
   },
   {
+    "suttaRef": "an5.23",
+    "rootTitle": "Upakkilesasutta",
+    "transTitle": "Corruptions ",
+    "blurb": "The hindrances are like the corruptions in gold.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "an7.66",
     "rootTitle": "Sattasūriyasutta",
     "transTitle": "The Seven Suns ",
     "blurb": "A rare discourse on cosmic evolution. The Buddha describes the successive appearance of seven suns and how even the earth will be burned up.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "an9.34",
+    "rootTitle": "Nibbānasukhasutta",
+    "transTitle": "Extinguishment is Bliss ",
+    "blurb": "Sāriputta declares that extinguishment is bliss, precisely because nothing is felt there. He explains this apparent paradox with reference to the nine progressive meditations.",
     "type": "leaf"
   },
   {
@@ -35,10 +49,38 @@
     "type": "branch"
   },
   {
+    "suttaRef": "dn1",
+    "rootTitle": "Brahmajālasutta",
+    "transTitle": "The Prime Net ",
+    "blurb": "While others may praise or criticize the Buddha, they tend to focus on trivial details. The Buddha presents an analysis of 62 kinds of wrong view, seeing through which one becomes detached from meaningless speculations.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "dn11",
+    "rootTitle": "Kevaṭṭasutta",
+    "transTitle": "With Kevaddha ",
+    "blurb": "The Buddha refuses to perform miracles, explaining that this is not the right way to inspire faith. He goes on to tell the story of a monk whose misguided quest for answers led him as far as Brahmā.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "dn15",
     "rootTitle": "Mahānidānasutta",
     "transTitle": "The Great Discourse on Causation ",
     "blurb": "Rejecting Venerable Ānanda’s claim to easily understand dependent origination, the Buddha presents a complex and demanding analysis, revealing hidden nuances and implications of this central teaching.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "dn16",
+    "rootTitle": "Mahāparinibbānasutta",
+    "transTitle": "The Great Discourse on the Buddha’s Extinguishment ",
+    "blurb": "The longest of all discourses, this extended narrative tells of the events surrounding the Buddha’s death. Full of vivid and moving details, it is an ideal entry point into knowing the Buddha as a person, and understanding how the Buddhist community coped with his passing.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "dn33",
+    "rootTitle": "Saṅgītisutta",
+    "transTitle": "Reciting in Concert ",
+    "blurb": "The Buddha encourages Venerable Sāriputta to teach the mendicants, and he offers an extended listing of Buddhist doctrines arranged in numerical sequence.",
     "type": "leaf"
   },
   {
@@ -49,11 +91,32 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "ma",
+    "rootTitle": "Madhyamāgama",
+    "transTitle": "Middle Discourses Compilation ",
+    "blurb": "The version of the Middle Discourses found in the Chinese canon is known as the Madhyamāgama (Zhong ahan jing, 中阿含經), and is believed to stem from the Sarvāstivāda school. The original text is believed to have been in a form of Prākrit, probably Gandhārī, with some Sanskrit influence. It was translated in 60 fascicles by Gautama Saṅghadeva (瞿曇僧伽提婆) of the Eastern Jin Dynasty (東晋) at Dongting Monastery (東亭寺) in CE 397–398. It consists of 222 sutras, organized into five <i lang='pi' translate='no'>adhyāyas</i> and eighteen <i lang='pi' translate='no'>vargas</i>. The contents are similar to the Pali Majjhima Nikāya, though the collections are far from identical. In the Taishō edition of the Chinese canon, it is text number 26, located at T vol. 1, 421a.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "mil",
     "rootTitle": "Milindapañha",
     "transTitle": "Questions of King Milinda ",
     "blurb": "The Milindapañha or “Questions of King Milinda” records a series of discussions on points of Dhamma between the monk Nāgasena and the Greek king known as in Pali as Milinda. He is usually identified with Menander I Soter, who ruled an Indo-Greek kingdom from his capital of Sagala around BCE 165–130. While the encounter between Greek and Indian culture is fascinating, the dialogs concern only interpretation of Buddhist ideas, with which the king was evidently very familiar, and does not mention Greek philosophy. The text is lively and dynamic, with the King constantly testing Nāgasena with abstruse questions, to which he responds with ingenious arguments and analogies. The text has a shorter Chinese counterpart in the Nāgasena Bhikṣu Sūtra. The text is not Theravādin in origin, but began among one of the schools in the north-west, perhaps the Sarvāstivādins. Most of the content, however, is not sectarian in nature. The Pali text has been extended over the years, and in addition, portions appear to be missing. It is not universally accepted as canonical; SuttaCentral’s Pali texts, however, stem from the Mahāsaṅgīti edition, which as a Burmese text does include it.",
     "type": "branch"
+  },
+  {
+    "suttaRef": "mn",
+    "rootTitle": "Majjhimanikāya",
+    "transTitle": "Middle Discourses Collection ",
+    "blurb": "The Middle Discourses (Majjhima Nikāya, abbreviated MN) is a collection of 152 discourses in the Pali canon (Tipiṭaka) of the Theravada school of Buddhism. The word “middle” refers to the length of the individual discourses. This is perhaps the most popular collection of early discourses. It contains a wide variety of teachings, many of them presented as narratives between the Buddha and a diverse range of his contemporaries. The collection parallels the Madhyamāgama (MA) of the Sarvāstivāda school, which survives as a translation in the Chinese canon.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "mn1",
+    "rootTitle": "Mūlapariyāyasutta",
+    "transTitle": "The Root of All Things ",
+    "blurb": "The Buddha examines how the notion of a permanent self emerges from the process of perception. A wide range of phenomena are considered, embracing both naturalistic and cosmological dimensions. An unawakened person interprets experience in terms of a self, while those more advanced have the same experiences without attachment.",
+    "type": "leaf"
   },
   {
     "suttaRef": "mn101",
@@ -98,6 +161,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn21",
+    "rootTitle": "Kakacūpamasutta",
+    "transTitle": "The Simile of the Saw ",
+    "blurb": "A discourse full of vibrant and memorable similes, on the importance of patience and love even when faced with abuse and criticism. The Buddha finishes with the simile of the saw, one of the most memorable similes found in the discourses.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn38",
     "rootTitle": "Mahātaṇhāsaṅkhayasutta",
     "transTitle": "The Longer Discourse on the Ending of Craving ",
@@ -109,6 +179,13 @@
     "rootTitle": "Mahāvedallasutta",
     "transTitle": "The Great Classification ",
     "blurb": "A series of questions and answers between Sāriputta and Mahākoṭṭhita, examining various subtle and abstruse aspects of the teachings.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn49",
+    "rootTitle": "Brahmanimantanikasutta",
+    "transTitle": "On the Invitation of Brahmā ",
+    "blurb": "The Buddha ascends to a high heavenly realm where he engages in a cosmic contest with a powerful divinity, who had fallen into the delusion that he was eternal and all-powerful.",
     "type": "leaf"
   },
   {
@@ -168,10 +245,45 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "sn35.28",
+    "rootTitle": "Ādittasutta",
+    "transTitle": "Burning ",
+    "blurb": "The “all” consisting of the six interior and exterior sense fields is burning. This is the famous “third sermon” taught at Gayā’s Head to the followers of the three Kassapa brothers.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "sn36.6",
     "rootTitle": "Sallasutta",
     "transTitle": "An Arrow ",
     "blurb": "Both ordinary and awakened people experience the three feelings. The difference is that when an ordinary person is stricken with feeling, they react, creating more suffering, whereas an awakened person responds with equanimity.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn6.4",
+    "rootTitle": "Bakabrahmasutta",
+    "transTitle": "With Baka the Divinity ",
+    "blurb": "Baka the Brahmā conceives the wrong view that his status is permanent and imperishable. The Buddha goes to dissuade him, and they have an exchange in verse, with the Buddha telling Baka of his past lives. ",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "snp",
+    "rootTitle": "Suttanipāta",
+    "transTitle": "Anthology of Discourses ",
+    "blurb": "The “Group of Discourses” contains 74 mostly short texts in verse or mixed prose and verse, arranged in five chapters. This contains some of the most beloved texts in popular Buddhism, such as the Ratana, Maṅgala, and Mettā Suttas, which are known to all Theravada Buddhists and recited as uplifting and protective chants at auspicious ceremonies. The collection as a whole is somewhat late; it is not found in northern scriptures, and some portions, such as the opening verses of the Nālaka Sutta, belong to the latest strata of the early texts. Nevertheless, certain sections—the “Rhinoceros Horn”, the “Chapter of the Eights”, and the “Way to the Beyond”—appear to have existed before being gathered into the collection, and are regarded as early. While the collection as a whole has no counterpart elsewhere, several portions have parallels in Chinese or Sanskrit.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "snp-parayanavagga",
+    "rootTitle": "Pārāyanavagga",
+    "transTitle": "The Chapter on the Way to the Beyond ",
+    "blurb": "This is perhaps the most sophisticated and moving poetic composition in early Buddhism. It begins with a brahmin, suffering an unwanted curse, who sends his students to seek the Buddha. At the end of a long journey they ask questions, the nature of which indicate their subtle philosophy and deep meditation. It concludes with an emotional declaration of faith and determination.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "snp5.2",
+    "rootTitle": "Ajitamāṇavapucchā",
+    "transTitle": "The Questions of the Student Ajita ",
+    "blurb": "A brahman questions the Buddha about mindfulness, discernment, and the cessation of name-and-form.",
     "type": "leaf"
   },
   {

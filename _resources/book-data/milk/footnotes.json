@@ -9,11 +9,11 @@
 },
 {
 	"fnNumber": "3",
-	"fnHTML": "<p><span lang='pi'>Mitte</span> <span lang='pi'>vā</span> <span lang='pi'>bhavā</span> <span lang='pi'>mittassa</span> <span lang='pi'>vā</span> <span lang='pi'>esā</span> <span lang='pi'>pavattī</span> <span lang='pi'>ti</span> <span lang='pi'>pi</span> <span lang='pi'>mettā</span>, <span class='sesame'><em>Culla Niddesa</em></span> 117.</p>"
+	"fnHTML": "<p><span lang='pi'>Mitte</span> <span lang='pi'>vā</span> <span lang='pi'>bhavā</span> <span lang='pi'>mittassa</span> <span lang='pi'>vā</span> <span lang='pi'>esā</span> <span lang='pi'>pavattī</span> <span lang='pi'>ti</span> <span lang='pi'>pi</span> <span lang='pi'>mettā</span>, <span data-sesame-key='super-blurbs:cnd' class='sesame'><em>Culla Niddesa</em></span> 117.</p>"
 },
 {
 	"fnNumber": "4",
-	"fnHTML": "<p><span class='sesame'>Vism</span>. 318.</p>"
+	"fnHTML": "<p><span data-sesame-key='wp:Visuddhimagga:Ñanamoli 1956a' class='sesame'>Vism</span>. 318.</p>"
 },
 {
 	"fnNumber": "5",
@@ -73,7 +73,7 @@
 },
 {
 	"fnNumber": "19",
-	"fnHTML": "<p><span class='sesame'>Rāmāyaṇa</span> V,26;39.</p>"
+	"fnHTML": "<p><span data-sesame-key='wp:Ramayana' class='sesame'>Rāmāyaṇa</span> V,26;39.</p>"
 },
 {
 	"fnNumber": "20",
@@ -333,7 +333,7 @@
 },
 {
 	"fnNumber": "84",
-	"fnHTML": "<p><em><span class='sesame'>Cūlavaṁsa</span></em> XLVII 1-60.</p>"
+	"fnHTML": "<p><em><span data-sesame-key='wp:Cūḷavaṃsa' class='sesame'>Cūlavaṁsa</span></em> XLVII 1-60.</p>"
 },
 {
 	"fnNumber": "85",
@@ -437,7 +437,7 @@
 },
 {
 	"fnNumber": "110",
-	"fnHTML": "<p><span class='sclinktext'>MN&#8239;145</span> <span class='ptsref'>PTS: M.III, 268-9</span>; <span class='sesame'><em>Divyāvadāna</em></span>, 39.</p>"
+	"fnHTML": "<p><span class='sclinktext'>MN&#8239;145</span> <span class='ptsref'>PTS: M.III, 268-9</span>; <span data-sesame-key='super-blurbs:divy' class='sesame'><em>Divyāvadāna</em></span>, 39.</p>"
 },
 {
 	"fnNumber": "111",
@@ -525,7 +525,7 @@
 },
 {
 	"fnNumber": "132",
-	"fnHTML": "<p><em><span class='sesame'>Taisho Tripitaka</span></em> Vol. XII, No. 374.</p>"
+	"fnHTML": "<p><em><span data-sesame-key='wp:Taishō_Tripiṭaka' class='sesame'>Taisho Tripitaka</span></em> Vol. XII, No. 374.</p>"
 },
 {
 	"fnNumber": "133",
@@ -661,7 +661,7 @@
 },
 {
 	"fnNumber": "166",
-	"fnHTML": "<p><em><span class='sesame'>Mahā Niddesa</span></em> 2.488.</p>"
+	"fnHTML": "<p><em><span data-sesame-key='super-blurbs:mnd' class='sesame'>Mahā Niddesa</span></em> 2.488.</p>"
 },
 {
 	"fnNumber": "167",
@@ -701,7 +701,7 @@
 },
 {
 	"fnNumber": "176",
-	"fnHTML": "<p><span class='sesame'>Vism</span>.161.</p>"
+	"fnHTML": "<p><span data-sesame-key='wp:Visuddhimagga:Ñanamoli 1956a' class='sesame'>Vism</span>.161.</p>"
 },
 {
 	"fnNumber": "177",
@@ -733,7 +733,7 @@
 },
 {
 	"fnNumber": "184",
-	"fnHTML": "<p><span class='sclinktext'>AN&#8239;10.81</span> <span class='ptsref'>PTS: A.V,151</span>;<br><span class='sclinktext'>SN&#8239;14.33:3.1–4.1</span> <span class='ptsref'>PTS: S.II,173</span>;<br><span class='sclinktext'>SN&#8239;22.28:2.1–2.4</span> <span class='ptsref'>PTS: S.III,31</span>;<br><span class='sclinktext'>SN&#8239;35.17:2.1–2.2</span> <span class='ptsref'>PTS: S.IV,11</span>;<br><span class='sesame'>Vism</span>.307.</p>"
+	"fnHTML": "<p><span class='sclinktext'>AN&#8239;10.81</span> <span class='ptsref'>PTS: A.V,151</span>;<br><span class='sclinktext'>SN&#8239;14.33:3.1–4.1</span> <span class='ptsref'>PTS: S.II,173</span>;<br><span class='sclinktext'>SN&#8239;22.28:2.1–2.4</span> <span class='ptsref'>PTS: S.III,31</span>;<br><span class='sclinktext'>SN&#8239;35.17:2.1–2.2</span> <span class='ptsref'>PTS: S.IV,11</span>;<br><span data-sesame-key='wp:Visuddhimagga:Ñanamoli 1956a' class='sesame'>Vism</span>.307.</p>"
 },
 {
 	"fnNumber": "185",
@@ -761,7 +761,7 @@
 },
 {
 	"fnNumber": "191",
-	"fnHTML": "<p><span class='sesame'>Vism</span>.318-9.</p>"
+	"fnHTML": "<p><span data-sesame-key='wp:Visuddhimagga:Ñanamoli 1956a' class='sesame'>Vism</span>.318-9.</p>"
 },
 {
 	"fnNumber": "192",
@@ -877,11 +877,11 @@
 },
 {
 	"fnNumber": "220",
-	"fnHTML": "<p><span class='sesame'><em>Taisho Tripitaka</em></span> Vol. 21, No. 1262.</p>"
+	"fnHTML": "<p><span data-sesame-key='wp:Taishō_Tripiṭaka' class='sesame'><em>Taisho Tripitaka</em></span> Vol. 21, No. 1262.</p>"
 },
 {
 	"fnNumber": "221",
-	"fnHTML": "<p><span class='sesame'><em>Mahāv</em>aṁsa</span> XII,21. Being a popular legend that developed several centuries after the Buddha the <span class='sesame'>Hariti</span> story is not found in the Pāḷi Tipitaka. Consequently the <span class='sesame'>Mahāvaṁsa</span> version of the story attributes her conversion to the monks Sona and Uttara who lived during the time of King Asoka.</p>"
+	"fnHTML": "<p><span data-sesame-key='wp:Mahāvaṃsa:Geiger 1912a' class='sesame'><em>Mahāv</em>aṁsa</span> XII,21. Being a popular legend that developed several centuries after the Buddha the <span data-sesame-key='wp:Hariti' class='sesame'>Hariti</span> story is not found in the Pāḷi Tipitaka. Consequently the <span data-sesame-key='wp:Mahāvaṃsa:Geiger 1912a' class='sesame'>Mahāvaṁsa</span> version of the story attributes her conversion to the monks Sona and Uttara who lived during the time of King Asoka.</p>"
 },
 {
 	"fnNumber": "222",
@@ -897,6 +897,6 @@
 },
 {
 	"fnNumber": "225",
-	"fnHTML": "<p>In Japan <span class='sesame'>Kṣitigarbha</span> is also known as Migawari Jizo, “He Who Takes Upon Himself Our Suffering.” Statues of <span class='sesame'>Kṣitigarbha</span> sometimes depict him with scars and wounds, the result of trying to protect purgatorial beings from receiving their just punishment.</p>"
+	"fnHTML": "<p>In Japan <span data-sesame-key='wp:Kṣitigarbha' class='sesame'>Kṣitigarbha</span> is also known as Migawari Jizo, “He Who Takes Upon Himself Our Suffering.” Statues of <span data-sesame-key='wp:Kṣitigarbha' class='sesame'>Kṣitigarbha</span> sometimes depict him with scars and wounds, the result of trying to protect purgatorial beings from receiving their just punishment.</p>"
 }
 ]

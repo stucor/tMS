@@ -125,7 +125,7 @@
 },
 {
 	"fnNumber": "32",
-	"fnHTML": "<p>E.g. <span class='sesame'>Taittirīya Upaniṣad</span> 2.1.1: <span lang='sa'>satyaṁ jñānaṁ anantaṁ brahma, yo veda</span>: “They who know Brahman as Truth, as knowledge, as boundless …”</p>"
+	"fnHTML": "<p>E.g. <span data-sesame-key='wp:Taittiriya_Upanishad' class='sesame'>Taittirīya Upaniṣad</span> 2.1.1: <span lang='sa'>satyaṁ jñānaṁ anantaṁ brahma, yo veda</span>: “They who know Brahman as Truth, as knowledge, as boundless …”</p>"
 },
 {
 	"fnNumber": "33",
@@ -137,7 +137,7 @@
 },
 {
 	"fnNumber": "35",
-	"fnHTML": "<p>Cf. <span class='sesame'>Bodhi in Ñāṇamoli n.509</span>.</p>"
+	"fnHTML": "<p>Cf. <span data-sesame-key='bodhi-nikaya-notes:MN-509:Bodhi 1995a' class='sesame'>Bodhi in Ñāṇamoli n.509</span>.</p>"
 },
 {
 	"fnNumber": "36",
@@ -149,7 +149,7 @@
 },
 {
 	"fnNumber": "38",
-	"fnHTML": "<p><a href='https://suttacentral.net/ma78' class='extlink'>MĀ 78</a>. Cf. <span class='sesame ref'>Anālayo 2010</span> pp.296-297: “According to the <span class='sesame'>Madhyama-āgama</span> discourse, in reply to the Buddha's claim to superior knowledge, Brahmā affirmed to have infinite knowledge, an affirmation not recorded in the <span class='sesame'>Majjhima-nikāya</span> version. In this affirmation, Brahmā proclaims to be conscious of infinite [boundless] elements, to have infinite knowledge, and infinite vision.”</p>"
+	"fnHTML": "<p><a href='https://suttacentral.net/ma78' class='extlink'>MĀ 78</a>. Cf. <span class='sesame ref'>Anālayo 2010</span> pp.296-297: “According to the <span data-sesame-key='super-blurbs:ma' class='sesame'>Madhyama-āgama</span> discourse, in reply to the Buddha's claim to superior knowledge, Brahmā affirmed to have infinite knowledge, an affirmation not recorded in the <span data-sesame-key='super-blurbs:mn' class='sesame'>Majjhima-nikāya</span> version. In this affirmation, Brahmā proclaims to be conscious of infinite [boundless] elements, to have infinite knowledge, and infinite vision.”</p>"
 },
 {
 	"fnNumber": "39",
@@ -173,7 +173,7 @@
 },
 {
 	"fnNumber": "44",
-	"fnHTML": "<p><span class='sesame'>Ñāṇamoli n.499</span></p>"
+	"fnHTML": "<p><span data-sesame-key='bodhi-nikaya-notes:MN-499:Bodhi 1995a' class='sesame'>Ñāṇamoli n.499</span></p>"
 },
 {
 	"fnNumber": "45",
@@ -201,7 +201,7 @@
 },
 {
 	"fnNumber": "51",
-	"fnHTML": "<p>See <span class='sesame'>Ñāṇamoli &amp; Bodhi n.513.</span></p>"
+	"fnHTML": "<p>See <span data-sesame-key='bodhi-nikaya-notes:MN-513:Bodhi 1995a' class='sesame'>Ñāṇamoli &amp; Bodhi n.513.</span></p>"
 },
 {
 	"fnNumber": "52",
@@ -217,7 +217,7 @@
 },
 {
 	"fnNumber": "55",
-	"fnHTML": "<p><span class='sesame'>MuṇU</span> 1.1, translation <span class='sesame ref'>Olivelle</span>.</p>"
+	"fnHTML": "<p><span data-sesame-key='wp:Mundaka_Upanishad' class='sesame'>MuṇU</span> 1.1, translation <span class='sesame ref'>Olivelle</span>.</p>"
 },
 {
 	"fnNumber": "56",

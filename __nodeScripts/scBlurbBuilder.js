@@ -57,7 +57,7 @@ async function sequentialCall() {
 
     fs.writeFileSync(('../_resources/sesame-data/blurbs/scblurbs.json'), localJSON, 'utf8')
 
-    console.log('finished');
+    console.log('finished ... see ../_resources/sesame-data/blurbs/scblurbs.json');
 }
 
 sequentialCall();

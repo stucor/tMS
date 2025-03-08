@@ -2842,9 +2842,7 @@ function toggleSesame (el) {
 			let bibsesame = el.innerText;
 			for (let i in sesameData) {
 				if (sesameData[i].sesame == el.innerText) {
-					if (el.innerText == sesameData[i].sesame) {
 						bibsesame = sesameData[i].biblio
-					}
 				}
 			}
 			let bibReference = `${getFullReference(bibsesame)}`
@@ -2855,9 +2853,9 @@ function toggleSesame (el) {
 		 function openSesame () {
 			async function decodeSesameKey (sesameKey) {
 				let sesameKeyArr = sesameKey.split(':')
-				console.log(`0::${sesameKeyArr[0]}`) // type
+/* 				console.log(`0::${sesameKeyArr[0]}`) // type
 				console.log(`1::${sesameKeyArr[1]}`) // key
-				console.log(`2::${sesameKeyArr[2]}`) // a zotero reference that appears in the biblio for the book
+				console.log(`2::${sesameKeyArr[2]}`) // a zotero reference that appears in the biblio for the book */
 
 				let biblio = `` // NEED TO WRITE BIBLIO BIT if there's a biblio entry specified
 				if (sesameKeyArr[2]) {
@@ -2867,14 +2865,13 @@ function toggleSesame (el) {
 				if (sesameKeyArr[0].includes('-blurbs')) {
 
 					let fetchPath = `../_resources/sesame-data/blurbs/scblurbs.json`
-					function populateBlurb (quoteData) {
+					function populateSesame (quoteData) {
 						function capitalizeFirstLetter(val) {
 							return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 						}
 						for (let i in quoteData) {
 							if (quoteData[i].suttaRef == sesameKeyArr[1]) {
 								let linkHTML = ``
-								console.log(quoteData[i].type)
 								if (quoteData[i].type == 'leaf') {
 									let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
 									switch (linkTextArr[0]) {
@@ -2909,7 +2906,7 @@ function toggleSesame (el) {
 					}
 					await fetch(fetchPath)
 					.then(response => response.json())
-					.then (data => populateBlurb(data))
+					.then (data => populateSesame(data))
 					.catch(error => {
 						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 					});
@@ -2934,7 +2931,7 @@ function toggleSesame (el) {
 				if (sesameKeyArr[0] == `bodhi-nikaya-notes`) {
 					let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}/${sesameKeyArr[1]}.json`
 
-					function populateQuote(quoteData) {
+					function populateSesame(quoteData) {
 						let subSectionSpacer = ''
 						if (quoteData.SubSection) {
 							subSectionSpacer = '<br>'
@@ -2953,7 +2950,7 @@ function toggleSesame (el) {
 
 					fetch(fetchPath)
 						.then(response => response.json())
-						.then (data => populateQuote(data))
+						.then (data => populateSesame(data))
 						.catch(error => {
 							console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 						}

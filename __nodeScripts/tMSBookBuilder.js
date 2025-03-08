@@ -858,9 +858,9 @@ function buildBookIndexHTML () {
 	const newIndexDirectoryPath = `../${bookID}`
 
 	if (fs.existsSync(newIndexDirectoryPath)) {
-		console.log(`✅Book directory already exists - replacing  /books/${bookID}/`)
+		console.log(`✅ Book directory already exists - replacing index.html in /books/${bookID}/`)
 	} else {
-		console.log(`✅Creating new directory /books/${bookID}/`);
+		console.log(`✅ Creating new directory /books/${bookID}/`);
 		fs.mkdirSync(newIndexDirectoryPath);
 	}
 	fs.writeFileSync(path.join(__dirname, '..', bookID, 'index.html'), html)

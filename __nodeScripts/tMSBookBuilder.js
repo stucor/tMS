@@ -41,16 +41,12 @@ function buildSesameStub () {
 		}
 	}
 	if (localJSON == "[\n") {
-		console.log(`❎—🛈 No sesames found in this ${bookID}`);
+		console.log(`❎—🛈 No sesames found in ${bookID}`);
 	} else {
 		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameSTUB.json'), localJSON, 'utf8')
 		console.log(`✅ ./book-data/${bookID}/sesameSTUB.json has been created - PLEASE CHECK THIS FOR ERRORS`);
 	}
 
-}
-
-function buildSesameRefStub () {
-	console.log(sesameRefArr)
 }
 
 function buildBookIndexHTML () {
@@ -1041,14 +1037,39 @@ function buildBookIndexHTML () {
 			} catch (err) {
 				console.error(err);
 			}
+
+			let additionalMaps = []
+
 			for (let i in allSesameRefs) {
+				let addMap = true
 				for (let k in biblioMap) {
 					if (biblioMap[k].bookref == allSesameRefs[i].innerText) {
 						allSesameRefs[i].setAttribute ('data-sesame-key', `zotref:${biblioMap[k].zotref}`)
 						allSesameRefs[i].classList.remove('ref')
+						addMap = false
 					}
 				}
+				if (addMap) {
+					let obj = new Object();
+					obj.zotref = ""
+					obj.bookref = `${allSesameRefs[i].innerText}`
+					additionalMaps.push(obj)
+				}
 			}
+
+			if (additionalMaps.length > 0) {
+				let datetime = new Date();
+				console.log (`*** PLEASE SEE THE biblioMap.log FILE ***`)
+				let logText = `${datetime}:\nThere are additional maps to add to biblioMap.json\nPlease add the folowing to the file and run the script again\n`
+				logText += JSON.stringify(additionalMaps, null, 2)
+				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMap.log'), logText, 'utf8')
+			} else {
+				let datetime = new Date();
+				let logText = `${datetime}:\nNo additional maps detected in this run`
+				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMap.log'), logText, 'utf8')
+			}
+			
+
 		} else { // create a stub biblioMap.json
 			//get all .sesame.ref and unique sort them
 			let sortedSesamesRefs = []
@@ -1069,9 +1090,13 @@ function buildBookIndexHTML () {
 				obj.bookref = sortedSesamesRefs[k]
 				newBiblioMapArr.push(obj)
 			}
-			let newBiblioMap = JSON.stringify(newBiblioMapArr, null, 2)
-			fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMap.json'), newBiblioMap, 'utf8')
-			console.log (`*** Initial biblioMap.json file created ***\n\tThis file will need to be edited to correspond with the reference entries in the book\n\t"zotref" is the Zotero citation reference, "bookref" is as the reference appears in the book`)
+			if (newBiblioMapArr.length > 0) {
+				let newBiblioMap = JSON.stringify(newBiblioMapArr, null, 2)
+				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMap.json'), newBiblioMap, 'utf8')
+				console.log (`*** Initial biblioMap.json file created ***\n\tThis file will need to be edited to correspond with the reference entries in the book\n\t"zotref" is the Zotero citation reference, "bookref" is as the reference appears in the book`)
+			} else {
+				console.log (`❎—🛈 No sesame-zot-reference(s) found in ${bookID}`)
+			}
 		}
 
 		return `${indexRoot.innerHTML}`
@@ -1486,7 +1511,6 @@ function buildBook () {
 		  buildBookIndexHTML() 
 		  console.log(`✅✅ ${bookID} index.html BUILD COMPLETE *`)
 		  buildSesameStub()
-		  //buildSesameRefStub()
 		  console.log('-----------------------------------END-----------------------------------')
 		}); 
 }

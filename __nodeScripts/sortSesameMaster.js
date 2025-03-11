@@ -10,11 +10,17 @@ try {
     console.error(err);
 }
 
-let keyArr = []
+/* let keyArr = []
 
 for (let i in localSesameMaster) {
     keyArr.push (localSesameMaster[i].key)
-}
+} */
+
+    let sesameArr = []
+
+    for (let i in localSesameMaster) {
+        sesameArr.push (localSesameMaster[i].sesame)
+    }
 
 function uniq(a) {
     return a.sort().filter(function(item, pos, ary) {
@@ -22,15 +28,15 @@ function uniq(a) {
     });
 }
 
-keyArr = uniq(keyArr)
-
+//keyArr = uniq(keyArr)
+sesameArr = uniq(sesameArr)
 
 let sortedSesameArr = []
 
-for (let i in keyArr) {
+ for (let i in sesameArr) {
     let obj = new Object();
     for (let k in localSesameMaster) {
-        if (keyArr[i] == localSesameMaster[k].key) {
+        if (sesameArr[i] == localSesameMaster[k].sesame) {
             obj.sesame = localSesameMaster[k].sesame
             obj.key = localSesameMaster[k].key
             sortedSesameArr.push(obj)
@@ -40,8 +46,8 @@ for (let i in keyArr) {
 
 const localJSON = JSON.stringify(sortedSesameArr, null, 2)
 
-//fs.writeFileSync(('../_resources/build-data/sesameMaster.json'), localJSON, 'utf8')
+fs.writeFileSync(('../_resources/build-data/sesameMaster.json'), localJSON, 'utf8')
 
-//console.log('finished sorting');
+console.log('finished sorting');
 
-console.log(`Nothing written this script needs fixing`)
+//console.log(`Nothing written this script needs fixing`)

@@ -52,7 +52,7 @@
     "key": "dn-blurbs:dn11"
   },
   {
-    "sesame": "Kevaddha Sutta",
+    "sesame": "Kevaddha (With Kevaddha) Sutta",
     "key": "dn-blurbs:dn11"
   },
   {
@@ -124,7 +124,7 @@
     "key": "sn-blurbs:sn12.15"
   },
   {
-    "sesame": "Vibhaṅga Sutta",
+    "sesame": "Vibhaṅga",
     "key": "sn-blurbs:sn12.2"
   },
   {
@@ -172,7 +172,7 @@
     "key": "super-blurbs:dn"
   },
   {
-    "sesame": "Madhyama-āgama",
+    "sesame": "Madhyama Āgama",
     "key": "super-blurbs:ma"
   },
   {
@@ -208,19 +208,19 @@
     "key": "super-blurbs:snp"
   },
   {
-    "sesame": "the Pali suttas, and other early suttas",
+    "sesame": "Chinese Āgamas",
     "key": "super-blurbs:sutta"
   },
   {
-    "sesame": "the Pali suttas, and other early suttas",
+    "sesame": "Nikāyas",
     "key": "super-blurbs:sutta"
   },
   {
-    "sesame": "the Pali suttas, and other early suttas",
+    "sesame": "Sutta Piṭaka",
     "key": "super-blurbs:sutta"
   },
   {
-    "sesame": "the Pali suttas, and other early suttas",
+    "sesame": "suttas",
     "key": "super-blurbs:sutta"
   },
   {
@@ -256,11 +256,11 @@
     "key": "wp:Brahmā_(Buddhism)"
   },
   {
-    "sesame": "Brahmā Baka",
+    "sesame": "Baka",
     "key": "wp:Brahmā_(Buddhism)-Baka_Brahmā"
   },
   {
-    "sesame": "Brahmā Baka",
+    "sesame": "Baka Brahmā",
     "key": "wp:Brahmā_(Buddhism)-Baka_Brahmā"
   },
   {
@@ -308,7 +308,7 @@
     "key": "wp:Maitreya"
   },
   {
-    "sesame": "Metteyya",
+    "sesame": "Maitreya",
     "key": "wp:Maitreya"
   },
   {
@@ -324,7 +324,7 @@
     "key": "wp:Mozi"
   },
   {
-    "sesame": "Muṇḍaka Upaniṣad",
+    "sesame": "MuṇU",
     "key": "wp:Mundaka_Upanishad"
   },
   {

@@ -1,0 +1,82 @@
+[
+{
+	"sesame": "Advaita Vedanta",
+	"key": "wp:Advaita_Vedanta"
+},
+{
+	"sesame": "Aṅguttara Nikāya",
+	"key": "super-blurbs:an"
+},
+{
+	"sesame": "Bhumija Sutta",
+	"key": "sn-blurbs:sn12.25"
+},
+{
+	"sesame": "Devadaha Sutta",
+	"key": "mn-blurbs:mn101"
+},
+{
+	"sesame": "Digha Nikāya",
+	"key": "super-blurbs:dn"
+},
+{
+	"sesame": "Kaccānagotta Sutta",
+	"key": "sn-blurbs:sn12.15"
+},
+{
+	"sesame": "Mahādukkhakkhandha Sutta",
+	"key": "mn-blurbs:mn13"
+},
+{
+	"sesame": "Mahānidāna Sutta",
+	"key": "dn-blurbs:dn15"
+},
+{
+	"sesame": "Mahāsīhanāda Sutta",
+	"key": "mn-blurbs:mn12"
+},
+{
+	"sesame": "Mahātaṇhāsankhaya Sutta",
+	"key": "mn-blurbs:mn38"
+},
+{
+	"sesame": "Mahāvedalla Sutta",
+	"key": "mn-blurbs:mn43"
+},
+{
+	"sesame": "Nidāna Saṁyutta",
+	"key": "sn-blurbs:sn12"
+},
+{
+	"sesame": "Sabbāsava Sutta",
+	"key": "mn-blurbs:mn2"
+},
+{
+	"sesame": "Saṁyutta Nikāya",
+	"key": "super-blurbs:sn"
+},
+{
+	"sesame": "Saṅkhārupapatti Sutta",
+	"key": "mn-blurbs:mn120"
+},
+{
+	"sesame": "Sutta Piṭaka",
+	"key": "super-blurbs:sutta"
+},
+{
+	"sesame": "The Dart",
+	"key": "sn-blurbs:sn36.6"
+},
+{
+	"sesame": "Theragātha",
+	"key": "super-blurbs:thag"
+},
+{
+	"sesame": "Vibhaṅga",
+	"key": "sn-blurbs:sn12.2"
+},
+{
+	"sesame": "Vibhaṅga Sutta",
+	"key": "sn-blurbs:sn12.2"
+}
+]

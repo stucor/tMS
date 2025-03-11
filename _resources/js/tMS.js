@@ -2667,7 +2667,7 @@ function isElementPartiallyInViewport(el)
 }
 
 
-function getFullReference (shortReference = '') {
+/* function getFullReference (shortReference = '') {
 	let references = document.querySelectorAll('.references')
 	let counter = 0
 	let fullHTML = ''
@@ -2696,8 +2696,7 @@ function getFullReference (shortReference = '') {
 	} else {
 		return 'Error: Bibliography reference not found';
 	}
-	
-}
+} */
 
 
 function doOutAppHREF (href) {
@@ -2832,23 +2831,12 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 });
 
 function toggleSesame (el) {
-	let shortCode = shortcode();
+	//let shortCode = shortcode();
 	if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame') || el.nextElementSibling.classList.contains('opensesameref'))) {
 		el.nextElementSibling.remove();
 		el.classList.remove('closebutton');
 		hideSpinner()
 	} else {
-		function openSesameRef (sesameData) {
-			let bibsesame = el.innerText;
-			for (let i in sesameData) {
-				if (sesameData[i].sesame == el.innerText) {
-						bibsesame = sesameData[i].biblio
-				}
-			}
-			let bibReference = `${getFullReference(bibsesame)}`
-			el.insertAdjacentHTML("afterend", `<span class=opensesameref>${bibReference}</span>`);
-			el.classList.add('closebutton')
-		}
 
 		 function openSesame () {
 			async function decodeSesameKey (sesameKey) {
@@ -2982,23 +2970,24 @@ function toggleSesame (el) {
 					.catch(error => {
 						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 					});
+				} else 
+				if (sesameKeyArr[0] == `zotref`) {
+					let zotBiblioEntries = document.querySelectorAll('.zotbiblio > p')
+					let bibReference = ``
+					for (let i in zotBiblioEntries) {
+						if (zotBiblioEntries[i].getAttribute('data-zotref') == sesameKeyArr[1]) {
+							bibReference = zotBiblioEntries[i].innerHTML
+							break
+						}
+					}
+					el.insertAdjacentHTML("afterend", `<span class=opensesame>${bibReference}</span>`);
+					el.classList.add('closebutton')
 				}
 			}
 			decodeSesameKey(el.getAttribute('data-sesame-key'))
 		}
-
-		if (el.classList.contains('ref')) {
-			fetch(`../_resources/book-data/${shortCode}/sesameref.json`)
-			.then(response => response.json())
-			.then (data => openSesameRef(data))
-			.then (() => hideSpinner())
-			.catch(error => {
-				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/sesameref.json`);
-			});
-		} else {
-			openSesame()
-			hideSpinner()
-		}
+		openSesame()
+		hideSpinner()
 	}
 }
 
@@ -3216,21 +3205,6 @@ shareBtn.onclick = function() {
 					allSpans[i].innerHTML = allSpans[i].innerHTML + ' ' 
 					allSpans[i].className = ''
 				}
-				if (allSpans[i].className == 'sesame ref') { // STILL NEED TO resolve names in sesame.json file - see Milk
-					let el = document.createElement('div')
-					el.innerHTML = getFullReference (allSpans[i].innerHTML)
-					let allInside = el.querySelectorAll('*')
-					for (let j in allInside) {
-						if (allInside[j].className == 'bibhead') {
-							allInside[j].className = ''
-						} else
-						if (allInside[j].className == 'linkContainer'){
-							allInside[j].remove()
-						} 
-					}
-					allSpans[i].innerHTML = el.innerHTML.replaceAll(`<span class="">`, ``).replaceAll('</span>', '')
-					allSpans[i].className = ''
-				}
 				if (allSpans[i].className == 'sclinktext') {
 					allSpans[i].innerHTML = suttaCentralIt(allSpans[i].innerText)
 					allSpans[i].classList.remove('sclinktext')
@@ -3238,8 +3212,24 @@ shareBtn.onclick = function() {
  				if (allSpans[i].classList.contains('closebutton')) {
 					allSpans[i].classList.remove('closebutton')
 				} 
- 				if (allSpans[i].classList.contains('opensesameref')) {
-					allSpans[i].remove()
+
+ 				if (allSpans[i].classList.contains('opensesame')) { // just span level opensesame
+
+					let el = document.createElement('div')
+					el.innerHTML = allSpans[i].innerHTML
+					let allInside = el.querySelectorAll('*')
+					for (let j in allInside) {
+						console.log(allInside[j].tagName)
+						if (allInside[j].className == 'bibhead') {
+							allInside[j].className = ''
+						} else
+						if (allInside[j].className == 'linkContainer'){
+							allInside[j].remove()
+						}
+					}
+					allSpans[i].innerHTML = el.innerHTML.replaceAll(`<span class="">`, ``).replaceAll('</span>', '')
+					allSpans[i].className = ''
+					allSpans[i].innerText = ` [${allSpans[i].innerText}]`
 				}
 			}
 		}

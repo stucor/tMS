@@ -247,5 +247,8 @@ h2 .tMSIndex {
 img .bordered {
 	border: 1px solid grey
 }
+.sesame[data-sesame-key^="zot"] {
+	background:lightcyan
+}
 
 

@@ -9,6 +9,8 @@ let sesameArr = []
 let sesameRefArr = []
 let footnotesExist = true;
 
+let lastSegment = 0
+
 function buildSesameStub () {
 	let sortedSesames = [...new Set(sesameArr)].sort()
 	let localJSON = ``
@@ -182,7 +184,7 @@ function buildBookIndexHTML () {
 		<div class="topnav2">
 			<div id="tocBtn" class="tocbtn">&#10095; Contents</div>
 			<div class="booktitle">${title}<br>${authorShortname}</div>
-			<div class="topnav2buttons"><button id="tmsindexBtn">segment:<br><span id="segcount"></span><span id="lastsegcount"</button></div>
+			<div class="topnav2buttons"><button id="tmsindexBtn">segment:<br><span id="segcount"></span><span id="lastsegcount"></span></button></div>
 		</div>
 	</div>
 	`
@@ -739,7 +741,7 @@ function buildBookIndexHTML () {
 				}
 			}
 			if (allSegments[i].id) {
-				lastSegment = allSegments[i].id
+				lastSegment = parseInt(allSegments[i].id.replace('seg-', ''))
 			}
 		}
 
@@ -754,87 +756,259 @@ function buildBookIndexHTML () {
 	}
 	html = buildBook()
 
+
 	function buildReferences () {
-		let referenceRoot = ``
-		let html =`<h2>Bibliography</h2>`
-		try {
-			const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'biblio.html', 'utf8')
-			referenceRoot = parse(data);
-		} catch (err) {
-			console.error(err);
-		}
 
-		let dtArr = referenceRoot.getElementsByTagName('dt')
+		let bookBiblioData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblio.json'))
 
-		if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'biblioMapArr.json')) {
-			console.log ('Using existing biblioMapArr.json')
-			let biblioMapArr =``
-			try {
-				const data =  fs.readFileSync('../_resources/book-data/'+bookID+'/'+'biblioMapArr.json', 'utf8')
-				biblioMapArr = JSON.parse(data);
-			} catch (err) {
-				console.error(err);
-			}
-			for (i in dtArr) {
-				for (k in biblioMapArr ) {
-					if (dtArr[i].innerHTML == biblioMapArr[k][0]) {
-						dtArr[i].set_content(biblioMapArr[k][1])
+		function populateReferences(referencesData) {
+			let html = ``
+			lastSegment ++
+			html += `<section class="zotbiblio">\n<h2 id=seg-${lastSegment}>Bibliography</h2>\n`
+			lastSegment ++
+			for (i in referencesData) {
+				let urlLabel = ''
+				let attachmentLabel = ''
+				let tMSShortcode = ''
+				let tMSAudioShortcode = ''
+				let internetArchiveURL = ''
+				let scaredTextsURL = ''
+				let audioFile = ''
+			
+				// get special values from the notes field 
+				if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
+					noteArray = referencesData[i]["note"].split('\n')
+					for (j in noteArray) {
+						[noteKey, noteValue] = noteArray[j].split(':')
+						switch (noteKey) {
+							case "attachment-label":
+								attachmentLabel = `${noteValue.replace(/ /g, '\u00a0').trim()}`
+								break
+							case "tMS":
+								tMSShortcode = noteValue.trim()
+								break
+							case "tMS-audio":
+								tMSAudioShortcode = noteValue.trim()
+								break
+							case "IACode":
+								internetArchiveURL = `${noteValue.trim()}`
+								break
+							case "sacred-texts":
+								scaredTextsURL = `${noteValue.trim()}`
+								break
+							case "audio-file":
+								audioFile = `${noteValue.trim()}`
+								break
+							}
 					}
 				}
-			}
-		} else {
-			let newBiblioMapArr = `[\n`
-			for (i in dtArr) {
-				newBiblioMapArr += `\t["${dtArr[i].innerHTML}", "${dtArr[i].innerHTML}"]`
-				if (i == dtArr.length -1) {
-					newBiblioMapArr += '\n]'
-				} else {
-					newBiblioMapArr += ',\n'
+
+				switch (referencesData[i].type) {
+					case "book":
+					case "chapter":
+						urlLabel ='Publisher: '
+						break;
+					case "article-journal":
+						urlLabel ='Journal: '
+						break;
+					case "paper-conference":
+						urlLabel ='Publisher: '
+						break;                 
+					case "document":
+						urlLabel ='Publisher: '
+						break;
+					case "post-weblog":
+						urlLabel ='Blog Post: '
+						break;
+					case "post":
+						urlLabel ='Forum Post: '
+						break;
+					case "webpage":
+						urlLabel ='';
+						break;
+					case "thesis":
+						urlLabel ='University: ';
+						break;
+					case "song":
+						urlLabel ='Audio Source: '
+						break;
 				}
+
+				bibSegNos = parseInt(i) + parseInt(lastSegment)
+
+				html += `<p id='seg-${bibSegNos}' data-zotref='${referencesData[i].id}'>`
+
+				// add a class bibhead - this is changed to bibheadhide in getFullReference
+				// when there are multiple volumes referenced once in a citation
+				html += `<span class='bibhead'>`
+
+				// author
+				let authorAfter ='';
+				for (j in referencesData[i].author) {
+					if (j == referencesData[i].author.length-1) {
+						authorAfter =` &ndash; `
+					} else if (j == referencesData[i].author.length-2) {
+						authorAfter =` & `
+					} else {
+						authorAfter =`, `
+					}
+					html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
+				}
+
+				//translator
+				let translatorAfter ='& ';
+				for (j in referencesData[i].translator) {
+					if (j == referencesData[i].translator.length-1) {
+						translatorAfter ='<em>(tr.) </em>&ndash;'
+					}
+					html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
+				}
+
+
+				// contributor - special case where there is no author (or you don't want it to be something like The Buddha) 
+				// but there is a translator such as the Nikayas by Bodhi. In the libray use contributor instead so 
+				// that it shows in creator field.
+
+				if (!referencesData[i].author) {
+					let contributorAfter ='& ';
+					for (j in referencesData[i].contributor) {
+						if (j == referencesData[i].contributor.length-1) {
+							contributorAfter ='<em>(tr.) </em>&ndash;'
+						}
+						html += `<strong>${referencesData[i].contributor[j].family}</strong>, ${referencesData[i].contributor[j].given} ${contributorAfter}`;
+					}
+				}
+
+
+				// editor - add the editor only in case there is no author
+				if (!referencesData[i].author) {
+					let editorAfter ='& ';
+					for (j in referencesData[i].editor) {
+						if (j == referencesData[i].editor.length-1) {
+							editorAfter ='<em>(ed.) </em>&ndash;'
+						}
+						html += `<strong>${referencesData[i].editor[j].family}</strong>, ${referencesData[i].editor[j].given} ${editorAfter}`;
+					}
+				}
+
+				//title
+				if (referencesData[i]["title-short"]) {
+					html += ` <em>${referencesData[i]["title-short"]}</em>`;
+				} else {
+					html += ` <em>${referencesData[i]["title"]}</em>`;
+				}
+
+				//container
+				if (referencesData[i].hasOwnProperty('container-title')) {
+					html += `. ${referencesData[i]["container-title"]}`;
+				}
+
+				html += `</span>`
+				
+
+				if (referencesData[i].hasOwnProperty('volume')) {
+					html += `, Vol. ${referencesData[i]["volume"]}`;
+					if (referencesData[i].hasOwnProperty('issue')) {
+						html += `/${referencesData[i]["issue"]}`;
+					}
+				} else if (referencesData[i].hasOwnProperty('issue')) {
+					html += `, No. ${referencesData[i]["issue"]}`;
+				}
+
+				if (referencesData[i].hasOwnProperty('number-of-volumes')) {
+					html += ` of ${referencesData[i]["number-of-volumes"]}`;
+				}
+
+				if (referencesData[i].hasOwnProperty('page')) {
+					if ((referencesData[i].page.includes("-")) || (referencesData[i].page.includes("–")))   { //is a range of pages
+						html += `. pp.&nbsp;${referencesData[i].page.replace("-","–")}`;
+					} else {
+						html += `. p.&nbsp;${referencesData[i].page}`;
+					}
+				}
+
+				html += `.`;
+
+				// date
+				if (referencesData[i].hasOwnProperty('issued')) {
+					html += ` ${referencesData[i]["issued"]["date-parts"][0][0]} `;
+				}
+
+				//publisher
+	/* 
+				if (referencesData[i].hasOwnProperty('publisher')) {
+					html += ` ${referencesData[i]["publisher"]}`;
+
+					if (referencesData[i].hasOwnProperty('publisher-place')) {
+						html += `, ${referencesData[i]["publisher-place"]}`;
+					}
+
+					html += `.`;
+				}
+	*/
+				//url
+				let linkSeparator = `<span class='linkseparator'>•</span>`;
+				html += `<span class = "linkContainer">`
+
+				if (referencesData[i].hasOwnProperty('URL')) {
+					html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online" href="${referencesData[i].URL}"></a> `;
+				}
+
+				if (tMSShortcode !=='') {
+					html += `${linkSeparator} <a class="library" href="../${tMSShortcode}"></a>`
+				}
+
+				if (tMSAudioShortcode !=='') {
+					html += `${linkSeparator} <a class="refaudio" href="../${tMSAudioShortcode}"></a>`
+				}
+
+				if (internetArchiveURL !== '') {
+					html += `${linkSeparator} <a class="internetArchive" href="https://archive.org/details/${internetArchiveURL}"></a>`
+				}
+
+				if (scaredTextsURL !== '') {
+					html += `${linkSeparator} <a class="sacredTexts" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
+				}
+
+				if (audioFile !=='') {
+					html += `${linkSeparator} <a class="refaudio" href="../_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
+				}
+
+				if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
+					if (attachmentLabel !== '') {
+						let attachmentLabelArray = attachmentLabel.split(';');
+						if (attachmentLabelArray.length > 1) {
+							let fileArray = referencesData[i]
+							.file.split(';');
+							for (k in attachmentLabelArray) {
+								html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" href="../_resources/zotero-attach/${fileArray[k]}"></a> `;
+							}
+						} else {
+							html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+						}
+					} else {
+						html += `${linkSeparator} <a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file.replaceAll(' ','%20')}"></a> `;
+					}
+				}
+
+				html += `${linkSeparator}</span></p>\n`;
+
 			}
-			fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMapArr.json'), newBiblioMapArr, 'utf8')
-			console.log ('*** Initial biblioMapArr.json file created ***\nThis file will need to be edited to correspond with the reference entries in the book\nThe first entry is the Zotero citation reference, the second entry is as it appears in the book')
+
+			html += `</section>\n`
+			return html
 		}
+		return populateReferences(bookBiblioData);
 
-
-
-		let dtArrText = [] // An array for dt Text
-		let uniqSesameRefArr = [...new Set(sesameRefArr)] // remove all duplicates
-		for (i in dtArr) {
-			dtArrText.push(dtArr[i].text)
-		}
-		
-		let nonBiblioReferences = uniqSesameRefArr.filter(x => !dtArrText.includes(x)); //get the differences
-
-		let localJSON = ``
-
-		localJSON += `[\n`
-		for (let i in nonBiblioReferences) {
-			localJSON += `{\n\t"sesame": "${nonBiblioReferences[i]}",\n\t"biblio": ""\n}`
-			if (i == nonBiblioReferences.length -1) {
-				localJSON += '\n]'
-			} else {
-				localJSON += ',\n'
-			}
-		}
-		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameRefSTUB.json'), localJSON, 'utf8')
-		console.log(`*** A new file: /book-data/${bookID}/sesameRefSTUB.json has been created ***`);
-
-		let refs = referenceRoot.querySelectorAll('dl')
-
-		html += refs[0].outerHTML
-		return html
 	}
 
-
-	if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.html`)) {
+	if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.json`)) {
 		console.log(`Attempting to create Bibliography ...`)
 		html += buildReferences()
-		console.log (`✅ Bibliography Added from /book-data/${bookID}/biblio.html`)
+		console.log (`✅ Bibliography Added from /book-data/${bookID}/biblio.json`)
 	} else {
-		console.log (`❎—🛈 NO BIBLIOGRAPHY DATA found at /book-data/${bookID}/biblio.html`)
+		console.log (`❎—🛈 NO BIBLIOGRAPHY DATA found at /book-data/${bookID}/biblio.json`)
 	}
-
 
 
 	html += `<div class="endBar">End of Book</div>
@@ -854,6 +1028,57 @@ function buildBookIndexHTML () {
 	</body>
 	</html>`
 
+ 	function postProcessing () {
+		let indexRoot = parse(html)
+
+		let allSesameRefs = indexRoot.querySelectorAll ('.sesame.ref')
+		if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'biblioMap.json')) {
+			console.log ('Using existing biblioMap.json')
+			let biblioMap =``
+			try {
+				const data =  fs.readFileSync('../_resources/book-data/'+bookID+'/'+'biblioMap.json', 'utf8')
+				biblioMap = JSON.parse(data);
+			} catch (err) {
+				console.error(err);
+			}
+			for (let i in allSesameRefs) {
+				for (let k in biblioMap) {
+					if (biblioMap[k].bookref == allSesameRefs[i].innerText) {
+						allSesameRefs[i].setAttribute ('data-sesame-key', `zotref:${biblioMap[k].zotref}`)
+						allSesameRefs[i].classList.remove('ref')
+					}
+				}
+			}
+		} else { // create a stub biblioMap.json
+			//get all .sesame.ref and unique sort them
+			let sortedSesamesRefs = []
+			for (let i in allSesameRefs) {
+				sortedSesamesRefs.push(allSesameRefs[i].innerText)
+			}
+			function uniq(a) {
+				return a.sort().filter(function(item, pos, ary) {
+					return !pos || item != ary[pos - 1];
+				});
+			}
+			sortedSesamesRefs = uniq(sortedSesamesRefs)
+			//write them to a file
+			let newBiblioMapArr = []
+			for (let k in sortedSesamesRefs) {
+				let obj = new Object();
+				obj.zotref = ""
+				obj.bookref = sortedSesamesRefs[k]
+				newBiblioMapArr.push(obj)
+			}
+			let newBiblioMap = JSON.stringify(newBiblioMapArr, null, 2)
+			fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMap.json'), newBiblioMap, 'utf8')
+			console.log (`*** Initial biblioMap.json file created ***\n\tThis file will need to be edited to correspond with the reference entries in the book\n\t"zotref" is the Zotero citation reference, "bookref" is as the reference appears in the book`)
+		}
+
+		return `${indexRoot.innerHTML}`
+
+	}
+
+	html = postProcessing ()
 
 	const newIndexDirectoryPath = `../${bookID}`
 
@@ -1044,10 +1269,6 @@ function processPandoc() {
 						sesameRefArr.push(spans[i].text)
 					break
 					case 'wwc-sesame':
-/* 						spans[i].classList.add('sesame')
-						spans[i].removeAttribute ('data-custom-style')
-						sesameArr.push(spans[i].text) */
-
 						let localSesameKey = ''
 						for (let j in localSesameMaster) {
 							if (localSesameMaster[j].sesame == spans[i].text) {

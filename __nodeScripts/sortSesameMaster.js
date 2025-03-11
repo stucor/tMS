@@ -38,8 +38,10 @@ for (let i in keyArr) {
     }
 }
 
-const localJSON = JSON.stringify(sortedSesameArr, null, 2);
+const localJSON = JSON.stringify(sortedSesameArr, null, 2)
 
-fs.writeFileSync(('../_resources/build-data/sesameMaster.json'), localJSON, 'utf8')
+//fs.writeFileSync(('../_resources/build-data/sesameMaster.json'), localJSON, 'utf8')
 
-console.log('finished sorting');
+//console.log('finished sorting');
+
+console.log(`Nothing written this script needs fixing`)

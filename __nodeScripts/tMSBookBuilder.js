@@ -13,9 +13,11 @@ let lastSegment = 0
 
 function buildSesameStub () {
 	let sortedSesames = [...new Set(sesameArr)].sort()
-	let localJSON = ``
 
-	localJSON += `[\n`
+	let datetime = new Date()
+	let localHeader = `${datetime}\nPlease check the following entries.\nAny entries with a key of 'XXXXXXXXXXXXXXXX' should be created in\nbuild-data/sesameMaster.json and tMSBookBuilder.js should be run again for ${bookID}\n`
+
+	let localJSON = `[\n`
 
 	let localSesameMaster = []
 	try {
@@ -41,10 +43,13 @@ function buildSesameStub () {
 		}
 	}
 	if (localJSON == "[\n") {
+		let localText = `${datetime}\nNo sesames found in ${bookID} during this run`
+		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesame.log'), localText, 'utf8')
 		console.log(`❎—🛈 No sesames found in ${bookID}`);
 	} else {
-		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesameSTUB.json'), localJSON, 'utf8')
-		console.log(`✅ ./book-data/${bookID}/sesameSTUB.json has been created - PLEASE CHECK THIS FOR ERRORS`);
+		let localText = localHeader + localJSON
+		fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'sesame.log'), localText, 'utf8')
+		console.log(`✅ ./book-data/${bookID}/sesame.log has been created - PLEASE CHECK THIS FOR ERRORS`);
 	}
 
 }
@@ -1095,7 +1100,7 @@ function buildBookIndexHTML () {
 				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'biblioMap.json'), newBiblioMap, 'utf8')
 				console.log (`*** Initial biblioMap.json file created ***\n\tThis file will need to be edited to correspond with the reference entries in the book\n\t"zotref" is the Zotero citation reference, "bookref" is as the reference appears in the book`)
 			} else {
-				console.log (`❎—🛈 No sesame-zot-reference(s) found in ${bookID}`)
+				console.log (`❎—🛈 NO sesame-zot-reference(s) found in ${bookID}`)
 			}
 		}
 

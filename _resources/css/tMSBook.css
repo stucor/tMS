@@ -968,14 +968,11 @@ dd > p {
 */
 
 .sesame {
-	text-decoration: underline dotted cornflowerblue;
+	text-decoration: underline dotted rgba(100, 148, 237, 0.747);
 	cursor:pointer;
-	background-color: rgba(255, 255, 0, 0.155);
-/* 	border-bottom: solid 1px red; */
+/* 	background-color: rgba(255, 255, 0, 0.155); */
 }
-.sesame.ref {
-	background-color: lightcyan;
-}
+
 
 span[class^="sesame ref closebutton"] {
 	border:none
@@ -1142,37 +1139,20 @@ dd > ol > li {
 
 /* Bibliography */
 
-/* bodge because it's not being seen in savedBookElements */
-/* .references > dt {
-	font-variant: small-caps;
-	color:#00000000;
-	user-select: none;
-	max-width: 0;
-	max-height: 0;
-}
-
-.references > dd {
-	text-indent: -2em;
-	margin-left: 2em;
-	margin-bottom: 0.3em;
-	font-size: var(--fontsize);
-	line-height: var(--lineheight);
-	text-align:left;
-} */
- .references {
+.zotbiblio {
 	text-align: left;
  }
 
-.references p {
+.zotbiblio p {
 	margin-left: 1em;
 	text-indent: -1em;
 }
 
-.references > p > span.linkContainer {
+.zotbiblio > p > span.linkContainer {
  	background: rgba(212, 197, 171, 0.09);
 	border: thin dotted rgba(212, 197, 171, 0.2);
 }
-.references > p > span.linkContainer > span.linkseparator{
+.zotbiblio > p > span.linkContainer > span.linkseparator{
 	opacity: 0.25;
 }
 

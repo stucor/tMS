@@ -376,7 +376,7 @@ function buildBookIndexHTML () {
 				break
 				case 'wwc-sesame-zot-reference':
 					spans[i].classList.add('sesame')
-					spans[i].classList.add('ref')
+					spans[i].classList.add('biblioref') // temporary class removed in post processing
 					spans[i].removeAttribute ('data-custom-style')
 					sesameRefArr.push(spans[i].text)
 				break
@@ -1032,7 +1032,7 @@ function buildBookIndexHTML () {
  	function postProcessing () {
 		let indexRoot = parse(html)
 
-		let allSesameRefs = indexRoot.querySelectorAll ('.sesame.ref')
+		let allSesameRefs = indexRoot.querySelectorAll ('.sesame.biblioref')
 		if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'biblioMap.json')) {
 			console.log ('Using existing biblioMap.json')
 			let biblioMap =``
@@ -1050,7 +1050,7 @@ function buildBookIndexHTML () {
 				for (let k in biblioMap) {
 					if (biblioMap[k].bookref == allSesameRefs[i].innerText) {
 						allSesameRefs[i].setAttribute ('data-sesame-key', `zotref:${biblioMap[k].zotref}`)
-						allSesameRefs[i].classList.remove('ref')
+						allSesameRefs[i].classList.remove('biblioref')
 						addMap = false
 					}
 				}
@@ -1294,7 +1294,7 @@ function processPandoc() {
 					break
 					case 'wwc-sesame-zot-reference':
 						spans[i].classList.add('sesame')
-						spans[i].classList.add('ref')
+						spans[i].classList.add('biblioref') // temporary class removed in post processing
 						spans[i].removeAttribute ('data-custom-style')
 						sesameRefArr.push(spans[i].text)
 					break

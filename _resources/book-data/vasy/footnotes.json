@@ -1,7 +1,7 @@
 [
 {
 	"fnNumber": "1",
-	"fnHTML": "<p>The first to equate <span lang='pi'>viññāṇa</span> <span lang='pi'>anidassana</span> to nibbāna is, to my knowledge, <span class='sesame ref'>Falk</span> 1943. But this and similar ideas are still very alive today.</p>"
+	"fnHTML": "<p>The first to equate <span lang='pi'>viññāṇa</span> <span lang='pi'>anidassana</span> to nibbāna is, to my knowledge, <span class='sesame biblioref'>Falk</span> 1943. But this and similar ideas are still very alive today.</p>"
 },
 {
 	"fnNumber": "2",
@@ -13,7 +13,7 @@
 },
 {
 	"fnNumber": "4",
-	"fnHTML": "<p><span class='sesame ref'>Anālayo 2017</span>, <span class='sesame ref'>Brahmali</span>, <span class='sesame ref'>Sujato 2011a</span>, and <span class='sesame ref'>Sujato 2011b</span>, among others.</p>"
+	"fnHTML": "<p><span class='sesame biblioref'>Anālayo 2017</span>, <span class='sesame biblioref'>Brahmali</span>, <span class='sesame biblioref'>Sujato 2011a</span>, and <span class='sesame biblioref'>Sujato 2011b</span>, among others.</p>"
 },
 {
 	"fnNumber": "5",
@@ -41,7 +41,7 @@
 },
 {
 	"fnNumber": "11",
-	"fnHTML": "<p><span class='sesame ref'>Warder</span></p>"
+	"fnHTML": "<p><span class='sesame biblioref'>Warder</span></p>"
 },
 {
 	"fnNumber": "12",
@@ -57,7 +57,7 @@
 },
 {
 	"fnNumber": "15",
-	"fnHTML": "<p>Cf. e.g. Rhys Davids, <span class='sesame ref'>PED</span>: “<span lang='pi'>Rūpa</span>: form, figure, appearance, principle of form, etc.”</p>"
+	"fnHTML": "<p>Cf. e.g. Rhys Davids, <span class='sesame biblioref'>PED</span>: “<span lang='pi'>Rūpa</span>: form, figure, appearance, principle of form, etc.”</p>"
 },
 {
 	"fnNumber": "16",
@@ -69,11 +69,11 @@
 },
 {
 	"fnNumber": "18",
-	"fnHTML": "<p>Cf. <span class='sesame ref'>Anālayo 2017</span> p.13: “This [<span lang='pi'>anidassana</span>] also occurs in a description of space, which is said to be immaterial, <span lang='pi'>arūpa</span>, and invisible, <span lang='pi'>anidassana</span>, a context where the two terms seem to function as near synonyms.”</p>"
+	"fnHTML": "<p>Cf. <span class='sesame biblioref'>Anālayo 2017</span> p.13: “This [<span lang='pi'>anidassana</span>] also occurs in a description of space, which is said to be immaterial, <span lang='pi'>arūpa</span>, and invisible, <span lang='pi'>anidassana</span>, a context where the two terms seem to function as near synonyms.”</p>"
 },
 {
 	"fnNumber": "19",
-	"fnHTML": "<p><span class='sesame ref'>Warder</span> p.354</p>"
+	"fnHTML": "<p><span class='sesame biblioref'>Warder</span> p.354</p>"
 },
 {
 	"fnNumber": "20",
@@ -81,7 +81,7 @@
 },
 {
 	"fnNumber": "21",
-	"fnHTML": "<p><span class='sclinktext'>SN&#8239;1.27:2.1–2.2</span> &amp; <span class='sclinktext'>Ud&#8239;1.10:14.1–14.2</span>. The Chinese parallels of <span class='sclinktext'>SN&#8239;1.27</span> (<a href='https://suttacentral.net/sa601' class='extlink'>SĀ 601</a> and <a href='https://suttacentral.net/sa-2.176' class='extlink'>SĀ-2 176</a>) appear not to have “where earth, water, fire, and air find no footing”. Cf. <span class='sesame ref'>Sujato 2011b</span>.</p>"
+	"fnHTML": "<p><span class='sclinktext'>SN&#8239;1.27:2.1–2.2</span> &amp; <span class='sclinktext'>Ud&#8239;1.10:14.1–14.2</span>. The Chinese parallels of <span class='sclinktext'>SN&#8239;1.27</span> (<a href='https://suttacentral.net/sa601' class='extlink'>SĀ 601</a> and <a href='https://suttacentral.net/sa-2.176' class='extlink'>SĀ-2 176</a>) appear not to have “where earth, water, fire, and air find no footing”. Cf. <span class='sesame biblioref'>Sujato 2011b</span>.</p>"
 },
 {
 	"fnNumber": "22",
@@ -113,7 +113,7 @@
 },
 {
 	"fnNumber": "29",
-	"fnHTML": "<p><span class='sesame ref'>Warder</span> p.354</p>"
+	"fnHTML": "<p><span class='sesame biblioref'>Warder</span> p.354</p>"
 },
 {
 	"fnNumber": "30",
@@ -121,7 +121,7 @@
 },
 {
 	"fnNumber": "31",
-	"fnHTML": "<p>Cf. e.g. <span class='sesame ref'>Falk</span> p.15ff.</p>"
+	"fnHTML": "<p>Cf. e.g. <span class='sesame biblioref'>Falk</span> p.15ff.</p>"
 },
 {
 	"fnNumber": "32",
@@ -145,19 +145,19 @@
 },
 {
 	"fnNumber": "37",
-	"fnHTML": "<p>I rely on <span class='sesame ref'>Anālayo 2010</span> p.297 n.158.</p>"
+	"fnHTML": "<p>I rely on <span class='sesame biblioref'>Anālayo 2010</span> p.297 n.158.</p>"
 },
 {
 	"fnNumber": "38",
-	"fnHTML": "<p><a href='https://suttacentral.net/ma78' class='extlink'>MĀ 78</a>. Cf. <span class='sesame ref'>Anālayo 2010</span> pp.296-297: “According to the <span data-sesame-key='super-blurbs:ma' class='sesame'>Madhyama-āgama</span> discourse, in reply to the Buddha's claim to superior knowledge, Brahmā affirmed to have infinite knowledge, an affirmation not recorded in the <span data-sesame-key='super-blurbs:mn' class='sesame'>Majjhima-nikāya</span> version. In this affirmation, Brahmā proclaims to be conscious of infinite [boundless] elements, to have infinite knowledge, and infinite vision.”</p>"
+	"fnHTML": "<p><a href='https://suttacentral.net/ma78' class='extlink'>MĀ 78</a>. Cf. <span class='sesame biblioref'>Anālayo 2010</span> pp.296-297: “According to the <span data-sesame-key='super-blurbs:ma' class='sesame'>Madhyama-āgama</span> discourse, in reply to the Buddha's claim to superior knowledge, Brahmā affirmed to have infinite knowledge, an affirmation not recorded in the <span data-sesame-key='super-blurbs:mn' class='sesame'>Majjhima-nikāya</span> version. In this affirmation, Brahmā proclaims to be conscious of infinite [boundless] elements, to have infinite knowledge, and infinite vision.”</p>"
 },
 {
 	"fnNumber": "39",
-	"fnHTML": "<p>E.g. <span class='sesame ref'>Horner</span> and <span class='sesame ref'>Sujato 2018</span>.</p>"
+	"fnHTML": "<p>E.g. <span class='sesame biblioref'>Horner</span> and <span class='sesame biblioref'>Sujato 2018</span>.</p>"
 },
 {
 	"fnNumber": "40",
-	"fnHTML": "<p>E.g. <span class='sesame ref'>Ñāṇamoli</span> and <span class='sesame ref'>Ṭhānissaro</span>.</p>"
+	"fnHTML": "<p>E.g. <span class='sesame biblioref'>Ñāṇamoli</span> and <span class='sesame biblioref'>Ṭhānissaro</span>.</p>"
 },
 {
 	"fnNumber": "41",
@@ -169,7 +169,7 @@
 },
 {
 	"fnNumber": "43",
-	"fnHTML": "<p><span class='sesame ref'>Anālayo 2017</span> p.17</p>"
+	"fnHTML": "<p><span class='sesame biblioref'>Anālayo 2017</span> p.17</p>"
 },
 {
 	"fnNumber": "44",
@@ -189,7 +189,7 @@
 },
 {
 	"fnNumber": "48",
-	"fnHTML": "<p><span class='sesame ref'>Sujato 2018</span>, see note at <span class='sclinktext'>DN&#8239;16:3.25.1</span>, Pāli terms removed</p>"
+	"fnHTML": "<p><span class='sesame biblioref'>Sujato 2018</span>, see note at <span class='sclinktext'>DN&#8239;16:3.25.1</span>, Pāli terms removed</p>"
 },
 {
 	"fnNumber": "49",
@@ -205,11 +205,11 @@
 },
 {
 	"fnNumber": "52",
-	"fnHTML": "<p><span class='sesame ref'>Sunyo 2024</span> Ch.8, ‘Brahmanic beliefs in <span lang='pi'>nāmarūpa</span> -less consciousness’</p>"
+	"fnHTML": "<p><span class='sesame biblioref'>Sunyo 2024</span> Ch.8, ‘Brahmanic beliefs in <span lang='pi'>nāmarūpa</span> -less consciousness’</p>"
 },
 {
 	"fnNumber": "53",
-	"fnHTML": "<p><span class='sesame ref'>Reat</span> p.287</p>"
+	"fnHTML": "<p><span class='sesame biblioref'>Reat</span> p.287</p>"
 },
 {
 	"fnNumber": "54",
@@ -217,14 +217,14 @@
 },
 {
 	"fnNumber": "55",
-	"fnHTML": "<p><span data-sesame-key='wp:Mundaka_Upanishad' class='sesame'>MuṇU</span> 1.1, translation <span class='sesame ref'>Olivelle</span>.</p>"
+	"fnHTML": "<p><span data-sesame-key='wp:Mundaka_Upanishad' class='sesame'>MuṇU</span> 1.1, translation <span class='sesame biblioref'>Olivelle</span>.</p>"
 },
 {
 	"fnNumber": "56",
-	"fnHTML": "<p><span class='sclinktext'>DN&#8239;1:2.5.2, 2.5.9, 2.6.7</span> also at <span class='sclinktext'>DN&#8239;24:2.17.2, 2.17.8, 2.17.18</span>. For a discussion see <span class='sesame ref'>Sunyo 2023</span>.</p>"
+	"fnHTML": "<p><span class='sclinktext'>DN&#8239;1:2.5.2, 2.5.9, 2.6.7</span> also at <span class='sclinktext'>DN&#8239;24:2.17.2, 2.17.8, 2.17.18</span>. For a discussion see <span class='sesame biblioref'>Sunyo 2023</span>.</p>"
 },
 {
 	"fnNumber": "57",
-	"fnHTML": "<p><span class='sesame ref'>Monier-Williams</span> under baka.</p>"
+	"fnHTML": "<p><span class='sesame biblioref'>Monier-Williams</span> under baka.</p>"
 }
 ]

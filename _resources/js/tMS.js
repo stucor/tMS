@@ -179,7 +179,7 @@ function startup () {
 		if (!isAudioBook()) {
 			initialiseBookSettings ();
 		} 
-		formatbooknotes();
+		//formatbooknotes();
 		formatSCLinktext();
 
 		// give tables an id starting at table_1
@@ -2346,7 +2346,7 @@ var calledFromNotes = false;
 // use event delagation on the book to show notes or move to internal links
 document.getElementById("thebook").addEventListener("click", function(e) {
 
-	if(e.target && (e.target.nodeName == "SUP" || e.target.className == "suttaref" || e.target.className == "TOCref")) { 
+	if(e.target && (/* e.target.nodeName == "SUP" || */ e.target.className == "suttaref" || e.target.className == "TOCref")) { 
 		if (e.target.className == "suttaref" || e.target.className == "TOCref") {
 			var toctarget ='';
 			if (e.target.className == "TOCref") {
@@ -2478,11 +2478,11 @@ modalalert.addEventListener("click", function(e) {
 });
 
 var savedsup = '';
-function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
+/* function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
 	for (var i = 1; i < savedNotesElements.length; i++) {
 		savedNotesElements[i].innerHTML = "<div class='booknotesNumber'>" + (i) + "</div> <div class='booknotesText'>" + savedNotesElements[i].innerHTML +"</div>";
 	}
-}
+} */
 var highlightedNote = 0;
 function highlightnote (notetohighlight) {
 	highlightedNote = parseInt(notetohighlight);
@@ -2824,7 +2824,7 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 });
 
 function toggleSesame (el) {
-	//let shortCode = shortcode();
+
 	if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame') || el.nextElementSibling.classList.contains('opensesameref'))) {
 		el.nextElementSibling.remove();
 		el.classList.remove('closebutton');
@@ -2832,6 +2832,7 @@ function toggleSesame (el) {
 	} else {
 
 		 function openSesame () {
+
 			async function decodeSesameKey (sesameKey) {
 				let sesameKeyArr = sesameKey.split(':')
 /* 				console.log(`0::${sesameKeyArr[0]}`) // type
@@ -2977,7 +2978,33 @@ function toggleSesame (el) {
 					el.classList.add('closebutton')
 				}
 			}
-			decodeSesameKey(el.getAttribute('data-sesame-key'))
+
+			async function populateFootnote () {
+				let fetchPath = `../_resources/book-data/${shortcode()}/footnotes.json`
+				function populateSesame (noteData) {
+					for (let i in noteData) {
+						if (noteData[i].fnNumber == el.innerText) {
+							let localHTML = noteData[i].fnHTML
+							el.insertAdjacentHTML("afterend", `<div class=opensesame><span>#${el.innerText}</span> ${localHTML}</div>`);
+							el.classList.add('closebutton')
+							break
+						}
+					}
+				}
+
+				await fetch(fetchPath)
+				.then(response => response.json())
+				.then (data => populateSesame(data))
+				.catch(error => {
+					console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+				});
+			}
+
+			if (el.nodeName == 'SUP') {
+				populateFootnote()
+			} else {
+				decodeSesameKey(el.getAttribute('data-sesame-key'))
+			}
 		}
 		openSesame()
 		hideSpinner()
@@ -3314,8 +3341,6 @@ shareBtn.onclick = function() {
 			'text/html': new Blob([copyDiv.innerHTML], {type: 'text/html'})
 		})])
 
-	
-
 		let pureHTMLStr = `<h1>Original HTML with classes:</h1><div class='copybox'></textarea>
 											  <textarea id='originacopyhtml' style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
 											  .replaceAll('</h1>', '</h1>\n')
@@ -3375,7 +3400,9 @@ shareBtn.onclick = function() {
 	}
 }
 
-
+listsBtn.onclick = function() {
+	console.log('here')
+}
 
 
 // SEARCH FUNCTIONALITY

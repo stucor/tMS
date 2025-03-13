@@ -85,8 +85,9 @@ function buildBookIndexHTML () {
 	const iconsFolder = '../_resources/images/icons/'
 	const siteLogoURL = `${iconsFolder}logo.png`
 	const homeButtonURL = `${iconsFolder}bookshelf-colour.svg`
-	const shareButtonURL = `${iconsFolder}share.svg`
 	const searchButtonURL = `${iconsFolder}search.svg`
+	const shareButtonURL = `${iconsFolder}share.svg`
+	const listsButtonURL = `${iconsFolder}lists.svg`
 	const infoButtonURL = `${iconsFolder}info.svg`
 	const settingsButtonURL = `${iconsFolder}settings.svg`
 	const downloadButtonURL = `${iconsFolder}download.svg`
@@ -177,6 +178,7 @@ function buildBookIndexHTML () {
 			<div class="topnav-right">
 				<a id="searchBtn"><img src="${searchButtonURL}" alt="Search"><p>Search</p></a>
 				<a id="shareBtn"><img src="${shareButtonURL}" alt="Share"><p>Share</p></a>
+				<a id="listsBtn"><img src="${listsButtonURL}" alt="Lists"><p>Lists</p></a>
 				<a id="detailsBtn"><img src="${infoButtonURL}" alt="Info"><p>Info</p></a>
 				<a id="settingsBtn"><img src="${settingsButtonURL}" alt="Settings"><p>Settings</p></a> 
 				<a id="downloadBtn"><img src="${downloadButtonURL}" alt="Download"><p>Download</p></a>
@@ -219,7 +221,7 @@ function buildBookIndexHTML () {
 	`
 
 
-	function buildFootnotes () {
+/* 	function buildFootnotes () {
 		let localHTML =``
 		if (footnotesExist) {
 			let footnotesData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'footnotes.json'))
@@ -232,9 +234,9 @@ function buildBookIndexHTML () {
 		} else {
 			return ''
 		}
-	}
+	} */
 
-	html += buildFootnotes()
+	//html += buildFootnotes()
 
 
 
@@ -349,7 +351,7 @@ function buildBookIndexHTML () {
 		let allAnchors = bookRoot.querySelectorAll('a')
 		for (i in allAnchors) {
 			if (allAnchors[i].innerHTML.substring(0, 5) == `<sup>`) {
-				let tempHTML = allAnchors[i].innerHTML
+				let tempHTML = allAnchors[i].innerHTML.substring(0,4) + ' class="sesame">' + allAnchors[i].innerHTML.substring(5)
 				allAnchors[i].replaceWith(tempHTML)
 			}
 		}

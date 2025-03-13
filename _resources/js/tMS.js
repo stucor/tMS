@@ -1639,15 +1639,10 @@ function setTheme(){
 }
 
 //MARGINS
-
 function doSetMargin () {
 	setMargin();
 	restorePlaceInBook();
 }	
-
-
-
-
 function setMargin() {
 	var whatIsPressed = document.querySelector('input[name="marginRadio"]:checked').value;
 	var thebook = document.getElementById("thebook");
@@ -1675,7 +1670,7 @@ function doSetSerif () {
 	setSerif();
 	restorePlaceInBook();
 }
-
+//Font
 function setSerif () {
 
 	if (document.getElementById('serifFont').checked) {
@@ -1689,16 +1684,14 @@ function setSerif () {
 	}
 	
 }	
-
+//tMSIndex
 function doTMSIndex () {
 	setTMSIndex ()
 	restorePlaceInBook();
 }
-
 function setTMSIndex () {
 	let theBook = document.getElementById('thebook')
 	let paragraphArr = theBook.querySelectorAll('p, .tablewrap')
-
 	for (let i in paragraphArr) {
 		//let tempID = paragraphArr[i].id
 		if (paragraphArr[i].id) {
@@ -1710,7 +1703,6 @@ function setTMSIndex () {
 			}
 		}
 	}
-
 	let headingsArr = theBook.querySelectorAll('h1, h2, h3')
 	for (let i in headingsArr) {
 		if ((headingsArr[i].id) && (headingsArr[i].id != '999999999') && (headingsArr[i].id != 'seg-0-1') ) {
@@ -1773,6 +1765,7 @@ function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given
 		elmnt = document.getElementById(target);
 	} else if (IDOrElement == 'ELEMENT'){
 		elmnt = target;
+		//console.log(elmnt)
 	}
 	elmnt.scrollIntoView();
 	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
@@ -3219,7 +3212,7 @@ shareBtn.onclick = function() {
 					el.innerHTML = allSpans[i].innerHTML
 					let allInside = el.querySelectorAll('*')
 					for (let j in allInside) {
-						console.log(allInside[j].tagName)
+						//console.log(allInside[j].tagName)
 						if (allInside[j].className == 'bibhead') {
 							allInside[j].className = ''
 						} else
@@ -3261,6 +3254,42 @@ shareBtn.onclick = function() {
 				allDivs[i].className = ''
 				allDivs[i].style = `text-align: center; font-variant:small-caps;`
 			}
+			if (allDivs[i].className == 'opensesame') { 
+				allDivs[i].classList = ''
+				let el = document.createElement('html')
+				el.innerHTML = allDivs[i].innerHTML
+				let allEls = el.querySelectorAll('*')
+				for (let j in allEls) {
+						if (allEls[j].tagName == 'IMG') {
+							allEls[j].remove()
+						} else
+						if (allEls[j].tagName == 'HR') {
+							allEls[j].remove()
+						}
+						if (allEls[j].tagName == 'BR') {
+							allEls[j].remove()
+						}
+						if (allEls[j].tagName == 'A') {
+							if (allEls[j].innerText.substring(0,7) == `source:`) {
+								let newNode = document.createElement("p")
+								newNode.style = `font-weight:500; font-style:italics; font-variant:small-caps`
+								newNode.innerHTML = 'Definition of term:'
+								allEls[j].parentNode.insertBefore(newNode, allEls[j])
+							}
+						}
+						if (allEls[j].tagName == 'H3') {
+							let [a,b] = allEls[j].innerHTML.split('<br>')
+							allEls[j].outerHTML = `<p style='margin-top:0; margin-bottom:0'><b>${a}—${b}</b></p>` 
+						}
+						
+						else {
+							allEls[j].classList = ''
+						}
+				}
+				allDivs[i].innerHTML = `<blockquote style='font-size:smaller'>${el.innerHTML}</blockquote>`
+			}
+
+
 /*			if (allDivs[i].className == 'line-block') {
 				allDivs[i].className = ''
 			} */

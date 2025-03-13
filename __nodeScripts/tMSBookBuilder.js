@@ -11,7 +11,7 @@ let footnotesExist = true;
 
 let lastSegment = 0
 
-function buildSesameStub () {
+function makeSesameLog () {
 	let sortedSesames = [...new Set(sesameArr)].sort()
 
 	let datetime = new Date()
@@ -1501,6 +1501,7 @@ function processPandoc() {
 function buildBook () {
 	let docxPath = `../_resources/book-data/${bookID}/${bookID}.docx`
 	let pandocHtmlPath = `../_resources/book-data/${bookID}/pandoc.html`
+	console. log(`Running pandoc on ${bookID}.docx ...`)
 	exec(`pandoc --from docx+styles ${docxPath} -s --toc -o ${pandocHtmlPath} --wrap=none --metadata title="Pre-processed Wiswo Book"`, 
 		(error, stdout, stderr) => { 
 		  if (error) { 
@@ -1513,11 +1514,13 @@ function buildBook () {
 		  } 
 		  console.log(`✅✅ pandoc.html created`)
 		  processPandoc()
+		  console.log(`Attempting to create /${bookID}/index.html`)
 		  buildBookIndexHTML() 
 		  console.log(`✅✅ ${bookID} index.html BUILD COMPLETE *`)
-		  buildSesameStub()
+		  makeSesameLog()
 		  console.log('-----------------------------------END-----------------------------------')
 		}); 
 }
 console. log('----------------------------------START----------------------------------')
+
 buildBook();

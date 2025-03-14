@@ -120,11 +120,11 @@ a {
 	text-decoration: none;
 }
 
-.noteinnotes, .noteinnotereturn {
+/* .noteinnotes, .noteinnotereturn {
 	color:cornflowerblue;
 	cursor: pointer;
 	font-variant: small-caps;
-}
+} */
 
 .bookSegment, .manualLink {
 	color:cornflowerblue;
@@ -389,15 +389,15 @@ figcaption {
 	content: "\]";
 } 
 
-#ModalNotes blockquote {
+/* #ModalNotes blockquote {
 	margin: 1em 0;
-}
+} */
 
-#ModalNotes h2 {
+/* #ModalNotes h2 {
 	font-weight: 100;
 	font-variant: small-caps;
 	font-size: 1.2em;
-}
+} */
 
 .citeBQ {
 	text-align:right;
@@ -409,11 +409,11 @@ figcaption {
 	font-variant: normal;
 }
 
-#ModalNotes .citeBQ {
+/* #ModalNotes .citeBQ {
 	margin-top: auto; 
 	margin-right: 0;
 	margin-bottom: 0.5em;
-}
+} */
 
 .content ul {
 	list-style-type: circle;
@@ -874,7 +874,7 @@ table.borderlessTable {
 
 }
 
-.booknote {
+/* .booknote {
 	scroll-margin-block-start: 2em;
 	margin: 1em 10%;
 	padding:0.5em 2em 0.5em 0;
@@ -919,10 +919,10 @@ table.borderlessTable {
 }
 .booknote p + p{
 	text-indent: 1em;
-}
+} */
 
 
-.booknotesNumber {
+/* .booknotesNumber {
 	font-size: 0.8em;
     font-weight: 600;
 	text-align: right;
@@ -933,7 +933,7 @@ table.borderlessTable {
 
 .booknotesNumber::after {
 	content:':';
-}
+} */
 
 
 
@@ -1304,11 +1304,18 @@ sup {
 	text-align: left;
 }
 
-.infocontainer a, .lotlinkref, .figlinkref {
+.infocontainer a, .lotlinkref, .figlinkref, .lonlinkref {
 	text-decoration: none;
 	color:cornflowerblue;
 	cursor: pointer;
 	user-select: none;
+}
+
+.footNoteText {
+	opacity: 60%;
+	user-select: none;
+	cursor:not-allowed;
+	font-size: smaller;
 }
 
 .fifty-fifty-grid {
@@ -1441,13 +1448,13 @@ sup {
 	line-height: 0;
 }
 
-#lotlist, #figlist{
+#lotlist, #figlist, #lonlist{
 	padding:0;
 	margin-left: 1rem;
 	margin-right: 1rem;
 }
 
-.lotlistitem, .figlistitem {
+.lotlistitem, .figlistitem, .lonlistitem {
 	text-align: left;
 	margin-left: 1em;
 	text-indent: -1em;

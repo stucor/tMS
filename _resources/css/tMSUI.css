@@ -185,7 +185,7 @@ h2 .tMSIndex {
 
 #tmsindexBtn {
 	color: gray;
-/* 	pointer-events: none; */
+	pointer-events: none;
 	font-variant: small-caps;
 }
 

@@ -216,9 +216,7 @@ function buildBookIndexHTML () {
 				<div id="ModalDetails"></div>
 	`
 	// Notes
-	html += `			<div id="ModalNotes">
-				<h2>${title}<br>—Notes—</h2>
-	`
+	html += `<div id="ModalNotes"></div>\n`
 
 
 /* 	function buildFootnotes () {
@@ -241,10 +239,7 @@ function buildBookIndexHTML () {
 
 
 	// Settings
-	html += `				</div>
-				<div id="ModalSettings"></div>
-				<div id="ModalDownload">
-					<div>
+	html += `<div id="ModalSettings"></div>\n<div id="ModalDownload"><div>
 						<h4>Wisdom & Wonders publications:</h4>
 						<div class="downloads">`
 
@@ -1032,8 +1027,9 @@ function buildBookIndexHTML () {
 	</html>`
 
  	function postProcessing () {
-		let indexRoot = parse(html)
 
+		// set the data-sesame-key zotref: in the book
+		let indexRoot = parse(html)
 		let allSesameRefs = indexRoot.querySelectorAll ('.sesame.biblioref')
 		if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'biblioMap.json')) {
 			console.log ('Using existing biblioMap.json')
@@ -1044,9 +1040,7 @@ function buildBookIndexHTML () {
 			} catch (err) {
 				console.error(err);
 			}
-
 			let additionalMaps = []
-
 			for (let i in allSesameRefs) {
 				let addMap = true
 				for (let k in biblioMap) {
@@ -1064,6 +1058,58 @@ function buildBookIndexHTML () {
 				}
 			}
 
+		// set the data-sesame-key zotref: in the footnotes.json file
+
+			if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'footnotes.json')) {
+				console.log ('Adding zotref: to footnotes.json')
+				let localFootnotes =``
+				try {
+					const data =  fs.readFileSync('../_resources/book-data/'+bookID+'/'+'footnotes.json', 'utf8')
+					localFootnotes = JSON.parse(data);
+				} catch (err) {
+					console.error(err);
+				}
+
+				let newFootNotesJson = []
+				for (let i in localFootnotes) {
+
+
+					let obj = new Object();
+					obj.fnNumber = localFootnotes[i].fnNumber
+					let localfnHTMLRoot = parse(localFootnotes[i].fnHTML)
+
+					let allBibliorefs = localfnHTMLRoot.querySelectorAll('.biblioref')
+					for (let j in allBibliorefs) {
+						let addMap = true
+						for (let k in biblioMap) {
+							if (biblioMap[k].bookref == allBibliorefs[j].innerText) {
+								allBibliorefs[j].setAttribute ('data-sesame-key', `zotref:${biblioMap[k].zotref}`)
+								allBibliorefs[j].classList.remove('biblioref')
+								addMap = false
+							}
+						}
+						if (addMap) {
+							let obj = new Object();
+							obj.zotref = ""
+							obj.bookref = `${allBibliorefs[j].innerText}`
+							additionalMaps.push(obj)
+						}
+						//allBibliorefs[j].setAttribute('data-sesame-key', `zotref:`)
+					}
+					obj.fnHTML = localfnHTMLRoot.innerHTML.replaceAll('\"', '\'')
+					newFootNotesJson.push(obj)
+				}
+
+				let ammededFootnotes = JSON.stringify(newFootNotesJson, null, 2)
+				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), ammededFootnotes, 'utf8')
+				console.log (`Footnotes file ammended in PostProcessing for biblio`)
+
+//				console.log (newFootNotesJson)
+			} else {
+					console.log (`❎—🛈 NO footnotes.json found in Post Processing`)
+			}
+
+			//write the log
 			if (additionalMaps.length > 0) {
 				let datetime = new Date();
 				console.log (`*** PLEASE SEE THE biblioMap.log FILE ***`)

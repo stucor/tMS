@@ -145,7 +145,6 @@ function buildSettings (_callback) {
 
 function formatSCLinktext () {
 	allSCLinktexts = document.querySelectorAll('.sclinktext, .tipref');
-
 	for (var i = 0; i < allSCLinktexts.length; i++) {
 		let [before,after] = allSCLinktexts[i].innerHTML.split(":");
 		if (typeof after !== "undefined") {
@@ -156,8 +155,6 @@ function formatSCLinktext () {
 			}
 		}
 	}
-
-
 }
 
 function startup () {
@@ -172,7 +169,7 @@ function startup () {
 		//the following is done after buildSettings completes:
 		document.getElementById('topbar').style.display='block';
 		document.getElementById('thebook').style.display='block';
-		hideAllLibNotes();
+		//hideAllLibNotes();
 		initialiseCommonSettings();
 		if (!isAudioBook()) {
 			initialiseBookSettings ();
@@ -343,53 +340,10 @@ function parseInfoText(infoText) {
 // Populates the Info Modal
 function buildInfo () {
 	let parentDiv = document.getElementById('ModalDetails');
-	let longSuttaList = false; // add sort buttons if the list of suttas is long
+
 	if (parentDiv.innerHTML == '') {
 		let shortCode = shortcode();
 		let html ='';
-
-		function suttalist () {
-			let suttarefArr = document.getElementsByClassName('sclinktext');
-			if (suttarefArr.length == 0) { return '';}
-			let html = "";
-			if (suttarefArr.length  > 0) {
-				html = `<section id="sutta-list" class="infocontainer">`;
-				html += `<h3>Sutta References:</h3>`;
-				if (suttarefArr.length  > 7) {
-					longSuttaList = true;
-					html += `<div class="suttasortbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="reflistOrderNo">Book Position</button>`
-					html += `  <button class="sort" data-sort="sclinkref">Sutta Number</button></div>`
-				}
-				html += `<ul id="reflist" class="list">	`
-				for (let i = 0; i < suttarefArr.length; i++) {
-					suttarefArr[i].setAttribute("id", "slt_"+ i);
-					let linktext = `<span class = "reflistOrderNo" >${i+1}. </span><span class='sclinkref' id='screflinkfrom_${i}'>${suttarefArr[i].innerHTML} </span>`;
-					html += `<li class='reflistitem'>${linktext}</li>`;
-				}
-				html += `</ul></section>`;
-				return html;
-			}
-		}
-	
-		function tablelist () {
-			let tabrefArr = document.querySelectorAll('table');
-			if (tabrefArr.length == 0) { return '';}
-	
-			let html = "";
-			if (tabrefArr.length  > 0) {
-				html = `<section class="infocontainer">`;
-				html += `<h3>List of Tables:</h3>`;
-				html += `<div id="lotlist">	`
-				for (let i = 0; i < tabrefArr.length; i++) {
-					if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
-						let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
-						html += `<div class='lotlistitem'>${linktext}</div>`;
-					}
-				}
-				html += `</div></section>`;
-				return html;
-			}
-		}
 
 		function figurelist () {
 			let figArr = document.querySelectorAll('figure');
@@ -439,9 +393,9 @@ function buildInfo () {
 				html += `</section>`
 			}	
 
-			html += tablelist();
+			//html += tablelist();
 			html += figurelist();
-			html += suttalist();
+			//html += suttalist();
 
 			if (isAudioBook()) {
 				html += `
@@ -539,13 +493,6 @@ function buildInfo () {
 			
 			parentDiv.innerHTML = html;
 			
-			if (longSuttaList) {
-				var options = {
-					valueNames: [ 'reflistOrderNo', 'sclinkref' ]
-				};
-				var suttaList = new List('sutta-list', options);
-			}
-
 			setTheme();
 		
 		}
@@ -580,12 +527,12 @@ var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2,
 
 var theTopBar = document.getElementById("topbar");
 
-function hideAllLibNotes () {
+/* function hideAllLibNotes () {
 	var elems = document.getElementsByClassName('libcont');
 	for (var i = 0; i < elems.length; i++) {
 		hideElement(elems[i]);
 	}		
-}
+} */
 
 function initialiseCommonSettings () {
 	//FORCE-FULL-SCREEN
@@ -1733,22 +1680,22 @@ function scrollToID (id) {
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
 	var elmnt = document.getElementById(id);
-	let noteElmnt = elmnt.closest('.booknote');
+	//let noteElmnt = elmnt.closest('.booknote');
 
-	if (noteElmnt) {
+/* 	if (noteElmnt) {
 		setModalStyle ("Notes");
 		showModal("Notes");
 		savedsup = elmnt;
 		//clearhighlightnote();
 		//highlightnote(noteElmnt.dataset.note); 
 		stopBookScroll ();
-	} else {
+	} else { */
 		elmnt.scrollIntoView({block: 'start', behavior: 'auto',});
 		window.scrollBy(0, -150);
 		//bodge for the highlight - needs a better mechanism for highlighting
 		//savedsup = elmnt;
 		//clearhighlightnote();
-	}
+//	}
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
@@ -2064,7 +2011,7 @@ var modaldetails = document.getElementById('ModalDetails');
 var modalsettings = document.getElementById('ModalSettings');
 var modaldownload = document.getElementById('ModalDownload');
 var modalalert = document.getElementById('ModalAlert');
-var modalnotes = document.getElementById('ModalNotes');
+var modallists = document.getElementById('ModalLists');
 var modalsutta = document.getElementById('ModalSutta');
 var modalselfquote = document.getElementById('ModalSelfquote');
 
@@ -2224,7 +2171,7 @@ function setModalStyle (heading) {
 			modalcontent.style.padding = "0";
 			modalcontent.style.padding = "0";
 			break;
-		case 'Notes':
+		case 'Lists':
 			modalbody.style.height = "65vh";
 			modalbody.style.maxHeight = "65vh";
 			modalbody.style.padding = "0";
@@ -2273,7 +2220,7 @@ function showModal (theModal) {
 	switch (theModal) {
 		case 'Info':
 			hideElement(modalsettings);
-			hideElement(modalnotes);
+			hideElement(modallists);
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
@@ -2282,7 +2229,7 @@ function showModal (theModal) {
 			break;
 		case 'Settings':
 			hideElement(modaldetails);
-			hideElement(modalnotes);
+			hideElement(modallists);
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
@@ -2292,7 +2239,7 @@ function showModal (theModal) {
 		case 'Download':
 			hideElement(modaldetails);
 			hideElement(modalsettings);
-			hideElement(modalnotes);
+			hideElement(modallists);
 			hideElement(modalalert);
 			hideElement(modalsutta);
 			hideElement(modalselfquote);
@@ -2301,27 +2248,27 @@ function showModal (theModal) {
 		case 'Alert':
 			hideElement(modaldetails);
 			hideElement(modalsettings);
-			hideElement(modalnotes);
+			hideElement(modallists);
 			hideElement(modaldownload);
 			hideElement(modalsutta);
 			hideElement(modalselfquote);
 			showElement(modalalert);		
 			break;
-		case 'Notes':
+		case 'Lists':
 			hideElement(modaldetails);
 			hideElement(modalsettings);
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
 			hideElement(modalselfquote);
-			showElement(modalnotes);
+			showElement(modallists);
 			break;
 		case 'Sutta':
 			hideElement(modaldetails);
 			hideElement(modalsettings);
 			hideElement(modaldownload);
 			hideElement(modalalert);
-			hideElement(modalnotes);
+			hideElement(modallists);
 			hideElement(modalselfquote);		
 			showElement(modalsutta);
 			break;
@@ -2330,7 +2277,7 @@ function showModal (theModal) {
 			hideElement(modalsettings);
 			hideElement(modaldownload);
 			hideElement(modalalert);
-			hideElement(modalnotes);		
+			hideElement(modallists);		
 			hideElement(modalsutta);
 			showElement(modalselfquote);
 			break;
@@ -2339,7 +2286,7 @@ function showModal (theModal) {
 	showElement(modalcontent);
 }
 
-var calledFromNotes = false;
+//var calledFromNotes = false;
 
 // use event delagation on the book to show notes or move to internal links
 document.getElementById("thebook").addEventListener("click", function(e) {
@@ -2533,29 +2480,29 @@ function clearhighlightnote(when='delay', keepSup= false) {
 
 
 
-function clearAnyNoteInNoteReturn () {
+/* function clearAnyNoteInNoteReturn () {
 	let anyReturnArr = document.getElementsByClassName('noteinnotereturn')
 	for (i = 0; i < anyReturnArr.length; i++) {
 		anyReturnArr[i].remove();
 	}
-}
+} */
 
 function exitStaticModal () {
-	let modalHeaderText = document.getElementById('ModalHeaderText').innerText
-	if (modalHeaderText == 'NOTES') {
+/*	let modalHeaderText = document.getElementById('ModalHeaderText').innerText
+ 	if (modalHeaderText == 'NOTES') {
 		clearAnyNoteInNoteReturn();
 	}
 	if (calledFromNotes) {
-/* 		setModalStyle ("Notes");
+		setModalStyle ("Notes");
 		showModal("Notes");
 		savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
-		calledFromNotes = false; */
-	} else {
+		calledFromNotes = false;
+	} else { */
 		startBookScroll();
 		//clearhighlightnote();
 		hideElement(modal);
 		hideElement(modalcontent);
-	}
+//	}
 }
 
 
@@ -2725,8 +2672,36 @@ function decodeBookSegment (anchortext) {
 	return [str, unmarked_paragraph]
 }
 
-document.getElementById("ModalNotes").addEventListener("click", function(e) {
-	if (e.target.classList.contains ('TOCref')) {
+function blink (element) {
+	element.classList.add ('blink')
+	function removeBlink () {
+		element.classList.remove ('blink')
+	}
+	setTimeout (removeBlink, 2000)
+}
+
+document.getElementById("ModalLists").addEventListener("click", function(e) {
+	if (e.target.classList.contains('segRef')){
+		let bookSeg = e.target.innerText
+		closebtn.click();
+		goToTarget(bookSeg);
+		// open the footnote
+		let fnNumber = e.target.dataset.fnnumber
+		if (fnNumber) {
+			let allSups = document.querySelectorAll ('sup')
+			for (let j in allSups) {
+				if (allSups[j].innerText == fnNumber) {
+					if (!allSups[j].classList.contains('closebutton')) {
+						allSups[j].click()
+					}
+					blink(allSups[j])
+					break
+				}
+			}
+		}
+	}
+
+/* 	if (e.target.classList.contains ('TOCref')) {
 		var toctarget = e.target.getAttribute("data-TOCref");
 		closebtn.click();
 		goToTarget(toctarget);
@@ -2740,7 +2715,7 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		displaySutta(linkNode.innerText);
 		restorePlaceInBook();
 		if (true) {e.preventDefault();}
-	}
+	} */
 /* 	if (e.target.classList.contains ('booknotesNumber')) {
 		var supnumber = e.target.innerHTML;
 		if (supnumber == savedsup.innerHTML) {
@@ -2773,7 +2748,7 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		//clearhighlightnote();
 	}
 
-	if (e.target.classList.contains('noteinnotes')) {
+/* 	if (e.target.classList.contains('noteinnotes')) {
 		//let notesArr = document.getElementsByClassName('booknote')
 		let noteNumber = e.target.innerText
 		let noteFromNumber = '';
@@ -2793,16 +2768,16 @@ document.getElementById("ModalNotes").addEventListener("click", function(e) {
 		const backbtnText = document.createTextNode(` [Return to note ${noteFromNumber}]`);
 		backbtn.appendChild(backbtnText)
 		backbtn.addEventListener('click', (event) => {
-/* 			clearhighlightnote(noteNumber,'immediate', true);
-			highlightnote(noteFromNumber); */
+			clearhighlightnote(noteNumber,'immediate', true);
+			highlightnote(noteFromNumber);
 			event.target.remove();
 		  });
 		scrollToE[0].lastChild.appendChild(backbtn)
-	}
+	} */
 
 	if ((e.target.classList.contains('goselfquote'))) {
 		displaySelfquote(e.target.innerHTML);
-		calledFromNotes = true;
+		//calledFromNotes = true;
 		restorePlaceInBook();
 		if (true) {e.preventDefault();}
 	}
@@ -3031,7 +3006,7 @@ function displaySutta (linkText) {
 
 document.getElementById("ModalSelfquote").addEventListener("click", function(e) {
 	if (e.target.classList.contains('goselfquote')) {
-		calledFromNotes = false
+		//calledFromNotes = false
 		exitStaticModal()
 		goToTarget(`bqseg${e.target.innerText.replace('§','').replace(' in the main text','')}`)
 	}
@@ -3399,60 +3374,141 @@ shareBtn.onclick = function() {
 }
 
 listsBtn.onclick = function() {
-	setModalStyle ("Notes");
-	showModal("Notes");
+	setModalStyle ("Lists");
+	showModal("Lists");
 	stopBookScroll ();
 
+	function tables () {
+		let tabrefArr = document.querySelectorAll('table');
+		let parentDiv = document.getElementById('tablesList');
 
+		if (tabrefArr.length == 0) { return '';}
 
-	function populateNotes (footnotesData) {
-		allSups = document.querySelectorAll ('sup')
-		let parentDiv = document.getElementById('ModalNotes');
-		let html = ``
-		html += `<section class='infocontainer'>`
-		html += `<h3>Notes Tab</h3>`
-		html += `<div id="lonlist" class="list">	` //lon = list of notes
-
-		for (let i in footnotesData) {
-			let fnNumber = footnotesData[i].fnNumber
-			let fnHTML = footnotesData[i].fnHTML
-			let segNo = ``
-			for (let j in allSups) {
-				if (allSups[j].innerText == fnNumber) {
-					segNo = `${allSups[j].parentNode.id}`
+		let html = "";
+		if (tabrefArr.length  > 0) {
+			html = `<section class="infocontainer">`;
+			html += `<h3>List of Tables:</h3>`;
+			html += `<div id="lotlist">	`
+			for (let i = 0; i < tabrefArr.length; i++) {
+				if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
+					let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
+					html += `<div class='lotlistitem'>${linktext}</div>`;
 				}
 			}
+			html += `</div></section>`;
+			parentDiv.innerHTML = html;
+		}
+	}
 
-			const noteText = document.createElement('html')
-			noteText.innerHTML = fnHTML
-			html += `<div class='lonlistitem' 'data-segment-number'= '${segNo}'>#<span class= "footNoteNumber">${fnNumber}</span> at location: <span class='segRef lonlinkref'>${segNo}</span> — <span class="footNoteText">${noteText.innerText}</span></div>`
+	function sctexts () {
+
+		function populateSCTexts (sclinksdata) {
+
+			let parentDiv = document.getElementById('SCTextsList');
+			let longSCTExtList = false
+			let xhtml =``
+
+			xhtml = `<section id="sutta-list" class="infocontainer">`;
+			xhtml += `<h3>SuttaCentral Texts:</h3>`;
+			if (sclinksdata.length  > 7) {
+				longSCTExtList = true;
+				xhtml += `<div class="suttasortbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="segmentref">Book Segment</button>`
+				xhtml += `  <button class="sort" data-sort="sclinktext">SC Reference</button></div>`
+			}
+			xhtml += `<ul id="reflist" class="list">`
+			
+			for (let i in sclinksdata) {
+				let segref = ``
+				let footnote = ``
+				if (sclinksdata[i].location.substring(0,4) == 'seg-') {
+					console.log(sclinksdata[i].sclinktext)
+					segref = sclinksdata[i].location.substring(4)
+				} else { // its a footnote
+					let allSups = document.querySelectorAll('sup') 
+					for (let j in allSups) {
+						if (allSups[j].innerText == sclinksdata[i].location.substring(3)) { 
+							segref = allSups[j].closest('p').id.substring(4)
+							footnote = `<span class='footnoteinlist'>(note:#${sclinksdata[i].location.substring(3)})</span>`
+						}
+					}
+				}
+				let linktext = `<span class = "segmentref" >${segref}</span>${sclinksdata[i].sclinktext}${footnote}`
+				xhtml += `<li class='reflistitem'>${linktext}</li>`;
+			}
+
+			xhtml += `</ul></section>`;
+
+			parentDiv.innerHTML = xhtml
+
+			if (longSCTExtList) {
+				var options = {
+					valueNames: [ 'segmentref', 'sclinktext' ]
+				};
+				var suttaList = new List('sutta-list', options);
+			}
+			hideSpinner()
+
 		}
 
-		html += `</div></section>` 
 
-		parentDiv.innerHTML = html
-		hideSpinner()
+		fetch(`../_resources/book-data/${shortcode()}/sclinks.json`)
+		.then (showSpinner())
+		.then(response => response.json())
+		.then (data => populateSCTexts(data))
+		.catch(error => {
+		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
+		}
+		);
+
 
 	}
 
+	function notes () {
+		function populateNotes (footnotesData) {
+			let allSups = document.querySelectorAll ('sup')
+			let parentDiv = document.getElementById('footnotesList');
+			let html = ``
+			html += `<section class='infocontainer'>`
+			html += `<h3>Notes</h3>`
+			html += `<div id="lonlist" class="list">	` //lon = list of notes
 	
-	fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)
-	.then (showSpinner())
-	.then(response => response.json())
-	.then (data => populateNotes(data))
-	.catch(error => {
-	console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
+			for (let i in footnotesData) {
+				let fnNumber = footnotesData[i].fnNumber
+				let fnHTML = footnotesData[i].fnHTML
+				let segNo = ``
+				for (let j in allSups) {
+					if (allSups[j].innerText == fnNumber) {
+						segNo = `${allSups[j].parentNode.id}`
+					}
+				}
+	
+				const noteText = document.createElement('html')
+				noteText.innerHTML = fnHTML
+				let allNoteEls = noteText.querySelectorAll('*')
+				for (let i in allNoteEls) {
+					allNoteEls[i].classList = ''
+				}
+				html += `<div class='lonlistitem'><span class='segRef'  data-fnnumber='${fnNumber}'>${segNo}</span><div class="footNoteText"><span class= "footNoteNumber">#${fnNumber}</span>${noteText.innerHTML}</div></div>`
+			}
+			html += `</div></section>` 
+			parentDiv.innerHTML = html
+			hideSpinner()
+	
+		}
+	
+		fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)
+		.then (showSpinner())
+		.then(response => response.json())
+		.then (data => populateNotes(data))
+		.catch(error => {
+		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
+		}
+		);
 	}
-);
 
-
-/* function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
-	for (var i = 1; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].innerHTML = "<div class='booknotesNumber'>" + (i) + "</div> <div class='booknotesText'>" + savedNotesElements[i].innerHTML +"</div>";
-	}
-} */
-
-
+	tables()
+	sctexts()
+	notes()
 }
 
 

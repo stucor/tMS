@@ -1304,19 +1304,86 @@ sup {
 	text-align: left;
 }
 
-.infocontainer a, .lotlinkref, .figlinkref, .lonlinkref {
+.infocontainer a, .lotlinkref, .figlinkref, .segRef {
 	text-decoration: none;
 	color:cornflowerblue;
 	cursor: pointer;
 	user-select: none;
+	font-family: 'Source sans Pro';
+}
+
+#listsTabNav {
+	position:absolute;
+	top: -30px;
+	left:-1px;
+	width:calc(100%);
+	background: var(--primarybackground);
+	border-radius: 5px 5px 0 0;
+	border: 1px solid darkgrey;
+	font-family: 'Source Sans Pro';
+	line-height: 24px;
+}
+
+#listsTabNav > button {
+	margin: 2px;
+}
+
+#lotlist, #figlist, #lonlist{
+	padding:0;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.lotlistitem, .figlistitem {
+	text-align: left;
+}
+
+/* .lotlistitem::before, .figlistitem::before {
+	content: '\d067  '
+} */
+
+.lonlistitem {
+	text-align: left;
+	margin-bottom: 1em;
+	border: 1px solid grey;
+	padding:0.5em;
 }
 
 .footNoteText {
-	opacity: 60%;
 	user-select: none;
 	cursor:not-allowed;
-	font-size: smaller;
+	font-size: 0.8em;
+	margin-left: 1em;
+	background-color: #b3b3b329;
+	padding: 0.5em 1em;
 }
+
+.footNoteText > p {
+	margin-top: 0;
+}
+
+/* .footNoteText > p > .sclinktext,
+.footNoteText > p > a {
+	color:unset;
+	cursor:unset !important;
+} */
+
+.footNoteNumber {
+	font-weight: 600;
+}
+
+.blink {
+	animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+	50% {
+	background-color: rgba(255, 0, 0, 0.733);
+	opacity: 0;
+}
+}
+
+
 
 .fifty-fifty-grid {
 	display: grid;
@@ -1393,19 +1460,21 @@ sup {
 
 .reflistitem {
 	display: grid;
-	grid-template-columns: 2em auto;
+	grid-template-columns: 2em auto 3em;
 	text-align: left;
 	line-height: 1.2em;
 	padding: 3px 10px;
 	background-color: rgba(100, 148, 237, 0.043);
 }
 
-.reflistOrderNo {
+.segmentref {
 	display: inline-block;
 	width: 1.9em;
 	text-align: left;
 }
-
+.footnoteinlist {
+	font-size: smaller;
+}
 
 .suttasortbuttons {
 	margin: 0 0 2em 20px;
@@ -1448,21 +1517,7 @@ sup {
 	line-height: 0;
 }
 
-#lotlist, #figlist, #lonlist{
-	padding:0;
-	margin-left: 1rem;
-	margin-right: 1rem;
-}
 
-.lotlistitem, .figlistitem, .lonlistitem {
-	text-align: left;
-	margin-left: 1em;
-	text-indent: -1em;
-}
-
-/* .lotlistitem::before, .figlistitem::before {
-	content: '\d067  '
-} */
 
 
 

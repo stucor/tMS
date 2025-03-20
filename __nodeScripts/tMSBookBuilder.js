@@ -12,6 +12,14 @@ let footnotesExist = true;
 let lastSegment = 0
 
 
+function formatSCLinktext (linkHTML) {
+	let [before,after] = linkHTML.split(":");
+	if (typeof after !== "undefined") {
+		html = before + "<span class='scsegments'>:" + after +"</span>"
+	}
+	return html
+}
+
 function processPandoc() {
 	let pandocRoot =``
 	try {
@@ -232,7 +240,7 @@ function processPandoc() {
 						let tempTop =  anchors[i].text.slice(0, 2)
 						let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
 						let tempText = tempTop + '&#8239;' + tempTail
-						anchors[i].replaceWith(`<span class='sclinktext'>${tempText}</span>`)
+						anchors[i].replaceWith(`<span class='sclinktext'>${formatSCLinktext(tempText)}</span>`)
 					break
 					case 'Dhp':
 					case 'Snp':
@@ -240,14 +248,14 @@ function processPandoc() {
 						let temp2Top =  anchors[i].text.slice(0, 3)
 						let temp2Tail = anchors[i].text.slice(4,anchors[i].text.length)
 						let temp2Text = temp2Top + '&#8239;' + temp2Tail
-						anchors[i].replaceWith(`<span class='sclinktext'>${temp2Text}</span>`)
+						anchors[i].replaceWith(`<span class='sclinktext'>${formatSCLinktext(temp2Text)}</span>`)
 					break
 					case 'Tha':
 					case 'Thi':
 						let temp3Top =  anchors[i].text.slice(0, 4)
 						let temp3Tail = anchors[i].text.slice(5,anchors[i].text.length)
 						let temp3Text = temp3Top + '&#8239;' + temp3Tail
-						anchors[i].replaceWith(`<span class='sclinktext'>${temp3Text}</span>`)
+						anchors[i].replaceWith(`<span class='sclinktext'>${formatSCLinktext(temp3Text)}</span>`)
 					break
 					case 'Ja ':
 					case 'Kd ':
@@ -431,7 +439,7 @@ function buildBookIndexHTML () {
 
 	const uiCSS = `../_resources/css/tMSUI.css`
 	const bookCSS = '../_resources/css/tMSBook.css'
-	const bookMediaQCSS = '../_resources/css/tMSBookMediaQ.css'
+	//const bookMediaQCSS = '../_resources/css/tMSBookMediaQ.css'
 	const suttaCSS = '../_resources/css/scsutta.css'
 
 	// Title & Subtitle
@@ -464,7 +472,6 @@ function buildBookIndexHTML () {
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="${uiCSS}">
 		<link rel="stylesheet" type="text/css" href="${bookCSS}">
-		<link rel="stylesheet" type="text/css" href="${bookMediaQCSS}">
 		<link rel="stylesheet" type="text/css" href="${suttaCSS}">
 		<link rel="shortcut icon" type="image/x-icon"  href="${siteLogoURL}">
 		<title>${title} - ${authorShortname}</title>
@@ -731,7 +738,7 @@ function buildBookIndexHTML () {
 					let tempTop =  anchors[i].text.slice(0, 2)
 					let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
 					let tempText = tempTop + '&#8239;' + tempTail
-					anchors[i].replaceWith(`<span class="sclinktext">${tempText}</span>`)
+					anchors[i].replaceWith(`<span class="sclinktext">${formatSCLinktext(tempText)}</span>`)
 				break
 				case 'Dhp':
 				case 'Snp':
@@ -739,14 +746,14 @@ function buildBookIndexHTML () {
 					let temp2Top =  anchors[i].text.slice(0, 3)
 					let temp2Tail = anchors[i].text.slice(4,anchors[i].text.length)
 					let temp2Text = temp2Top + '&#8239;' + temp2Tail
-					anchors[i].replaceWith(`<span class="sclinktext">${temp2Text}</span>`)
+					anchors[i].replaceWith(`<span class="sclinktext">${formatSCLinktext(temp2Text)}</span>`)
 				break
 				case 'Tha':
 				case 'Thi':
 					let temp3Top =  anchors[i].text.slice(0, 4)
 					let temp3Tail = anchors[i].text.slice(5,anchors[i].text.length)
 					let temp3Text = temp3Top + '&#8239;' + temp3Tail
-					anchors[i].replaceWith(`<span class="sclinktext">${temp3Text}</span>`)
+					anchors[i].replaceWith(`<span class="sclinktext">${formatSCLinktext(temp3Text)}</span>`)
 				break
 				case 'Ja ':
 				case 'Kd ':
@@ -1465,7 +1472,7 @@ function buildBookIndexHTML () {
 			}
 			for (let i in bookSCLinks) {
 				let obj = new Object();
-				obj.sclinktext = `${bookSCLinks[i].outerHTML}`
+				obj.sclinkHTML = `${bookSCLinks[i].outerHTML}`
 				obj.location = `${bookSCLinks[i].closest('p').id}`
 				SCLinks.push(obj)
 			}
@@ -1485,7 +1492,7 @@ function buildBookIndexHTML () {
 					let thisFootnotesSCLinktexts = localfnHTMLRoot.querySelectorAll('.sclinktext')
 					for (let j in thisFootnotesSCLinktexts) {
 						let obj = new Object();
-						obj.sclinktext = `${thisFootnotesSCLinktexts[j].outerHTML}`
+						obj.sclinkHTML = `${thisFootnotesSCLinktexts[j].outerHTML}`
 						obj.location = `fn-${localFootnotes[i].fnNumber}`
 						SCLinks.push(obj)
 					}
@@ -1503,8 +1510,6 @@ function buildBookIndexHTML () {
 
 
 		}
-
-
 
 		function addNavBarForLists () {
 			// make a navigation bar for the Lists modal
@@ -1537,13 +1542,13 @@ function buildBookIndexHTML () {
 			let modalListsHTML = `<nav id='listsTabNav'>`
 			if (hasTables) {modalListsHTML += `<button id='tablesListTab'>Tables</button>`}
 			if (hasFigures) {modalListsHTML += `<button id='figuresListTab'>Figures</button>`}
-			if (hasSCTexts) {modalListsHTML += `<button id='scTextsListTab'>SuttaCentral Texts</button>`}
-			if (hasFootnotes) {modalListsHTML += `<button id='footnotesListTab'>Footnotes</button>`}
+			if (hasSCTexts) {modalListsHTML += `<button id='textsListTab'>Texts</button>`}
+			if (hasFootnotes) {modalListsHTML += `<button id='footnotesListTab'>Notes</button>`}
 			modalListsHTML += `</nav>`
 
 			if (hasTables) {modalListsHTML += `<div id='tablesList'>Tab-LIST</div>`}
 			if (hasFigures) {modalListsHTML += `<div id='figuresList'>Fig-LIST</div>`}
-			if (hasSCTexts) {modalListsHTML += `<div id='SCTextsList'>SCText-LIST</div>`}
+			if (hasSCTexts) {modalListsHTML += `<div id='textsList'>SCText-LIST</div>`}
 			if (hasFootnotes) {modalListsHTML += `<div id='footnotesList'>FootNotes-LIST</div>`}
 
 			modalLists.innerHTML += modalListsHTML

@@ -143,7 +143,7 @@ function buildSettings (_callback) {
 	_callback();
 }
 
-function formatSCLinktext () {
+/* function formatSCLinktext () {
 	allSCLinktexts = document.querySelectorAll('.sclinktext, .tipref');
 	for (var i = 0; i < allSCLinktexts.length; i++) {
 		let [before,after] = allSCLinktexts[i].innerHTML.split(":");
@@ -155,7 +155,7 @@ function formatSCLinktext () {
 			}
 		}
 	}
-}
+} */
 
 function startup () {
 	/*
@@ -175,7 +175,7 @@ function startup () {
 			initialiseBookSettings ();
 		} 
 		//formatbooknotes();
-		formatSCLinktext();
+		//formatSCLinktext();
 
 		// give tables an id starting at table_1
 		let tabrefArr = document.querySelectorAll('table');
@@ -1306,7 +1306,7 @@ function setTheme(){
 			r.style.setProperty('--sesamebackground', '#fffff8');
 
 			r.style.setProperty('--tableborder', '#c0c0c0');
-			r.style.setProperty('--tablecaption', '#ffffff');
+			r.style.setProperty('--tablecaption', '#ffffff50');
 			r.style.setProperty('--tablehead', '#eaeaea');
 			r.style.setProperty('--tableodd', '#fefefe');
 			r.style.setProperty('--tableeven', '#f8f8f8');
@@ -1429,7 +1429,7 @@ function setTheme(){
 			r.style.setProperty('--sesamebackground', '#000');
 
 			r.style.setProperty('--tableborder', '#c0c0c0');
-			r.style.setProperty('--tablecaption', '#252525');
+			r.style.setProperty('--tablecaption', '#25252550');
 			r.style.setProperty('--tablehead', '#363636');
 			r.style.setProperty('--tableodd', '#0d0d0d');
 			r.style.setProperty('--tableeven', '#1e1e1e');
@@ -1555,7 +1555,7 @@ function setTheme(){
 			r.style.setProperty('--sesamebackground', '#ffffff30');
 
 			r.style.setProperty('--tableborder', '#c0c0c0');
-			r.style.setProperty('--tablecaption', '#f9edce');
+			r.style.setProperty('--tablecaption', '#f9edce50');
 			r.style.setProperty('--tablehead', '#eadbbf');
 			r.style.setProperty('--tableodd', '#f9f9e4');
 			r.style.setProperty('--tableeven', '#f9f4d5');
@@ -2677,10 +2677,59 @@ function blink (element) {
 	function removeBlink () {
 		element.classList.remove ('blink')
 	}
-	setTimeout (removeBlink, 2000)
+	setTimeout (removeBlink, 600)
 }
 
 document.getElementById("ModalLists").addEventListener("click", function(e) {
+	if (e.target.id == 'tablesListTab') {
+		console.log('x')
+		tablesList.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" })
+	}
+	if (e.target.id == 'textsListTab') {
+		textsList.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" })
+	}
+	if (e.target.id == 'footnotesListTab') {
+		footnotesList.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" })
+	}
+
+
+
+	if (e.target.closest('.reflistitem')) {
+		let noteNumberToOpen =``
+		let bookSeg = ``
+		if (e.target.closest('#lot-list')) {
+			bookSeg = e.target.closest('.reflistitem').getAttribute('data-segref')
+		} else 
+		if (e.target.closest('#texts-list')) {
+			bookSeg = e.target.closest('.reflistitem').getAttribute('data-segref')
+			noteNumberToOpen = e.target.closest('.reflistitem').getAttribute('data-fnnumber')
+		} else {
+			console.log('Something else')
+		}
+		if (bookSeg) {
+			closebtn.click();
+			goToTarget(bookSeg);
+			if (noteNumberToOpen) {
+				let allSups = document.querySelectorAll ('sup')
+				for (let j in allSups) {
+					if (allSups[j].innerText == noteNumberToOpen) {
+						if (!allSups[j].classList.contains('closebutton')) {
+ 							allSups[j].click()
+						}
+						setTimeout(() => {
+							blink(allSups[j].nextElementSibling)
+						  }, 200); 
+						break
+					}
+				}
+			} else {
+				blink (document.getElementById(bookSeg))
+			}
+		}
+
+	}
+		
+
 	if (e.target.classList.contains('segRef')){
 		let bookSeg = e.target.innerText
 		closebtn.click();
@@ -2775,7 +2824,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 		scrollToE[0].lastChild.appendChild(backbtn)
 	} */
 
-	if ((e.target.classList.contains('goselfquote'))) {
+/* 	if ((e.target.classList.contains('goselfquote'))) {
 		displaySelfquote(e.target.innerHTML);
 		//calledFromNotes = true;
 		restorePlaceInBook();
@@ -2793,7 +2842,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 	} else if (e.target.parentNode.classList.contains('sesame')) {
 		showSpinner()
 		toggleSesame (e.target.parentNode)
-	}
+	} */
 });
 
 function toggleSesame (el) {
@@ -3381,76 +3430,81 @@ listsBtn.onclick = function() {
 	function tables () {
 		let tabrefArr = document.querySelectorAll('table');
 		let parentDiv = document.getElementById('tablesList');
-
 		if (tabrefArr.length == 0) { return '';}
-
 		let html = "";
 		if (tabrefArr.length  > 0) {
-			html = `<section class="infocontainer">`;
-			html += `<h3>List of Tables:</h3>`;
-			html += `<div id="lotlist">	`
+			html = `<section id='lot-list' class="infocontainer">`
+			html += `<h3>Tables:</h3>`;
+			html += `<div class="reflistbuttons"><div class="smallcaps">Sort by:</div>`
+			html += `<button class="sort asc" data-sort="lotSegRef">Segment</button> `
+			html += `<button class="sort" data-sort="lotCaption">Caption</button></div>`
+			html += `<ul class="list reflist">`
 			for (let i = 0; i < tabrefArr.length; i++) {
 				if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
-					let linktext = `<span class='lotlinkref' id='lotlinkfrom_${(i+1)}'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
-					html += `<div class='lotlistitem'>${linktext}</div>`;
+					let segment = `<span class='lotSegRef'>${tabrefArr[i].parentNode.id.substring(4)}</span>`
+					let segRef = tabrefArr[i].parentNode.id
+					let caption = `<span class='lotCaption'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
+					html += `<li class='reflistitem' data-segref='${segRef}'>${segment}${caption}</li>`;
 				}
 			}
-			html += `</div></section>`;
+			html += `</ul></section>`;
 			parentDiv.innerHTML = html;
+
+			var options = {
+				valueNames: [ 'lotSegRef', 'lotCaption' ]
+			};
+			var lotList = new List('lot-list', options);
+
 		}
 	}
 
 	function sctexts () {
-
 		function populateSCTexts (sclinksdata) {
-
-			let parentDiv = document.getElementById('SCTextsList');
+			let parentDiv = document.getElementById('textsList');
 			let longSCTExtList = false
-			let xhtml =``
-
-			xhtml = `<section id="sutta-list" class="infocontainer">`;
-			xhtml += `<h3>SuttaCentral Texts:</h3>`;
+			let html =``
+			html = `<section id="texts-list" class="infocontainer">`;
+			html += `<h3>Texts:</h3>`;
 			if (sclinksdata.length  > 7) {
 				longSCTExtList = true;
-				xhtml += `<div class="suttasortbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="segmentref">Book Segment</button>`
-				xhtml += `  <button class="sort" data-sort="sclinktext">SC Reference</button></div>`
+				html += `<div class="reflistbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="textSegRef">Segment</button>`
+				html += `  <button class="sort" data-sort="sclinktext">Reference</button></div>`
 			}
-			xhtml += `<ul id="reflist" class="list">`
-			
+			html += `<ul class="list reflist">`
 			for (let i in sclinksdata) {
-				let segref = ``
-				let footnote = ``
+				let segRef = ``
+				let segment = ``
+				let data_fnnumber = ``
+				let footnote = `<span class='footnoteinlist'>main</span>`
 				if (sclinksdata[i].location.substring(0,4) == 'seg-') {
-					console.log(sclinksdata[i].sclinktext)
-					segref = sclinksdata[i].location.substring(4)
+					segment = sclinksdata[i].location.substring(4)
+					segRef = sclinksdata[i].location
 				} else { // its a footnote
 					let allSups = document.querySelectorAll('sup') 
 					for (let j in allSups) {
 						if (allSups[j].innerText == sclinksdata[i].location.substring(3)) { 
-							segref = allSups[j].closest('p').id.substring(4)
-							footnote = `<span class='footnoteinlist'>(note:#${sclinksdata[i].location.substring(3)})</span>`
+							segRef = allSups[j].closest('p').id
+							segment = segRef.substring(4)
+							data_fnnumber = `data-fnnumber='${sclinksdata[i].location.substring(3)}'`
+							footnote = `<span class='footnoteinlist'>note:#${sclinksdata[i].location.substring(3)}</span>`
 						}
 					}
 				}
-				let linktext = `<span class = "segmentref" >${segref}</span>${sclinksdata[i].sclinktext}${footnote}`
-				xhtml += `<li class='reflistitem'>${linktext}</li>`;
+				let linktext = `<span class='textSegRef'>${segment}</span>${footnote} ${sclinksdata[i].sclinkHTML}`
+				html += `<li class='reflistitem' data-segref='${segRef}' ${data_fnnumber}>${linktext}</li>`;
 			}
 
-			xhtml += `</ul></section>`;
+			html += `</ul></section>`;
 
-			parentDiv.innerHTML = xhtml
+			parentDiv.innerHTML = html
 
 			if (longSCTExtList) {
 				var options = {
-					valueNames: [ 'segmentref', 'sclinktext' ]
+					valueNames: [ 'textSegRef', 'sclinktext' ]
 				};
-				var suttaList = new List('sutta-list', options);
+				var textList = new List('texts-list', options);
 			}
-			hideSpinner()
-
 		}
-
-
 		fetch(`../_resources/book-data/${shortcode()}/sclinks.json`)
 		.then (showSpinner())
 		.then(response => response.json())
@@ -3459,8 +3513,6 @@ listsBtn.onclick = function() {
 		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
 		}
 		);
-
-
 	}
 
 	function notes () {
@@ -3469,7 +3521,7 @@ listsBtn.onclick = function() {
 			let parentDiv = document.getElementById('footnotesList');
 			let html = ``
 			html += `<section class='infocontainer'>`
-			html += `<h3>Notes</h3>`
+			html += `<h3>Notes:</h3>`
 			html += `<div id="lonlist" class="list">	` //lon = list of notes
 	
 			for (let i in footnotesData) {
@@ -3484,16 +3536,10 @@ listsBtn.onclick = function() {
 	
 				const noteText = document.createElement('html')
 				noteText.innerHTML = fnHTML
-				let allNoteEls = noteText.querySelectorAll('*')
-				for (let i in allNoteEls) {
-					allNoteEls[i].classList = ''
-				}
 				html += `<div class='lonlistitem'><span class='segRef'  data-fnnumber='${fnNumber}'>${segNo}</span><div class="footNoteText"><span class= "footNoteNumber">#${fnNumber}</span>${noteText.innerHTML}</div></div>`
 			}
 			html += `</div></section>` 
 			parentDiv.innerHTML = html
-			hideSpinner()
-	
 		}
 	
 		fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)
@@ -3509,6 +3555,7 @@ listsBtn.onclick = function() {
 	tables()
 	sctexts()
 	notes()
+	hideSpinner()
 }
 
 

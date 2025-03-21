@@ -389,16 +389,6 @@ figcaption {
 	content: "\]";
 } 
 
-/* #ModalNotes blockquote {
-	margin: 1em 0;
-} */
-
-/* #ModalNotes h2 {
-	font-weight: 100;
-	font-variant: small-caps;
-	font-size: 1.2em;
-} */
-
 .citeBQ {
 	text-align:right;
 	margin: -1em 1em 2em auto;
@@ -408,12 +398,6 @@ figcaption {
 .citeBQ > span {
 	font-variant: normal;
 }
-
-/* #ModalNotes .citeBQ {
-	margin-top: auto; 
-	margin-right: 0;
-	margin-bottom: 0.5em;
-} */
 
 .content ul {
 	list-style-type: circle;
@@ -1314,18 +1298,17 @@ sup {
 
 #listsTabNav {
 	position:absolute;
-	top: -30px;
-	left:-1px;
+	top: 25px;
 	width:calc(100%);
 	background: var(--primarybackground);
-	border-radius: 5px 5px 0 0;
-	border: 1px solid darkgrey;
+/* 	border-radius: 5px 5px 0 0; */
+	border-bottom: 1px solid lightgrey;
 	font-family: 'Source Sans Pro';
 	line-height: 24px;
 }
 
 #listsTabNav > button {
-	margin: 2px;
+	margin: 5px;
 }
 
 #lotlist, #figlist, #lonlist{
@@ -1342,20 +1325,20 @@ sup {
 	content: '\d067  '
 } */
 
-.lonlistitem {
+/* .lonlistitem {
 	text-align: left;
 	margin-bottom: 1em;
 	border: 1px solid grey;
 	padding:0.5em;
 	cursor:pointer;
-}
+} */
 
 
 
 .footNoteText {
 	user-select: none;
 	font-size: 0.8em;
-	margin-left: 1em;
+	margin: 1em;
 	background-color: #b3b3b329;
 	padding: 0.5em 1em;
 }
@@ -1503,13 +1486,32 @@ sup {
 	color: unset;
 }
 
-.segmentref {
+#footnotes-list > .reflist {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 100%);
+	grid-gap: 0.6rem 0.5rem;
+	justify-content:space-evenly;
+	padding:0;
+	list-style-type: none;
+}
+
+#footnotes-list > .reflist > .reflistitem {
+	display: grid;
+	grid-template-columns: 2em 5em auto;
+	text-align: left;
+	padding: 0.2em 1em;
+	background-color: rgba(100, 148, 237, 0.043);
+	border: 1px solid #ffffff00;
+}
+
+/* .segmentref {
 	display: inline-block;
 	width: 1.9em;
 	text-align: left;
-}
+} */
 .footnoteinlist {
-	font-size: smaller;
+	font-size: 0.8em;
+	padding-top: 0.3em;
 }
 
 .reflistbuttons {
@@ -1519,9 +1521,10 @@ sup {
 .reflistbuttons > button {
 	font-weight: 400;
 	font-size: 0.9em;
+	font-variant: small-caps;
 	display: inline;
-	min-width:7em;
-	width: 7em;
+	min-width:8em;
+	width: 8em;
 	min-height:1.7em;
 	height:1.7em;
 	border: 2px solid darkgray;
@@ -1533,7 +1536,7 @@ sup {
 }
 
 .sort.asc, .sort.desc {
-	font-weight: 700;
+	font-weight: 500;
 	color: var(--pickedtext);
 	background-color: var(--buttonbackground);
 	border-color: var(--primarycolor);
@@ -1541,6 +1544,22 @@ sup {
 }
 
 .sort.asc::after {
+	display: inline-block;
+	transform: rotate(90deg);
+	position: relative;
+	left: .1em;
+	top: -0.1em;
+	content: '\2794' ;
+}
+.sort.desc::after {
+	display: inline-block;
+	transform: rotate(270deg);
+	position: relative;
+	left: .2em;
+	top: -0.1em;
+	content: '\2794' ;
+}
+/* .sort.asc::after {
 	position: relative;
 	left: 0.6em;
 	content: var(--ascsutta) ;
@@ -1551,7 +1570,7 @@ sup {
 	left: 0.6em;
 	content: var(--descsutta);
 	line-height: 0;
-}
+} */
 
 
 
@@ -2364,14 +2383,28 @@ mark.current {
 	font-weight: 400;
 }
 
-#ModalNotes {
+#ModalLists {
 	margin-bottom: 3em;
 	font-family: var(--fontfamily);
 	font-size: var(--fontsize);
 	text-align: var(--textalign);
 	line-height: var(--lineheight);
+	text-align: left;
 	hyphens: auto;
 	hyphenate-limit-chars: 10 3 4;
+}
+
+#ModalLists h3 {
+	font-weight: 400;
+	font-family: 'Source Sans Pro';
+	font-variant: small-caps;
+}
+#ModalLists h4 {
+	font-weight: 400;
+	font-family: 'Source Sans Pro';
+	font-variant: small-caps;
+	text-align: left;
+	margin: 0;
 }
 
 #ModalDetails {
@@ -3077,7 +3110,8 @@ mark.current {
 		border-color: cornflowerblue;
 	}
 	#lot-list > .reflist > .reflistitem:hover, 
-	#texts-list > .reflist > .reflistitem:hover {
+	#texts-list > .reflist > .reflistitem:hover,
+	#footnotes-list > .reflist > .reflistitem:hover  {
 		border:1px solid cornflowerblue;
 		cursor:pointer
 	}

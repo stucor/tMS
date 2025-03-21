@@ -128,7 +128,7 @@ function buildSettings (_callback) {
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="hyphenCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
-				<span class ="settingsheadersleft">show segments:</span>
+				<span class ="settingsheadersleft">show segments (§):</span>
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showtMSIndexCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
@@ -1640,7 +1640,7 @@ function setTMSIndex () {
 	for (let i in paragraphArr) {
 		//let tempID = paragraphArr[i].id
 		if (paragraphArr[i].id) {
-			let injectSpan = `<span class="tMSIndex">${paragraphArr[i].id}</span>`
+			let injectSpan = `<span class="tMSIndex">${paragraphArr[i].id.replace('seg-', '§')}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				paragraphArr[i].innerHTML = injectSpan + paragraphArr[i].innerHTML
 			} else {
@@ -1652,7 +1652,7 @@ function setTMSIndex () {
 	for (let i in headingsArr) {
 		if ((headingsArr[i].id) && (headingsArr[i].id != '999999999') && (headingsArr[i].id != 'seg-0-1') ) {
 			//console.log (headingsArr[i].id)
-			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id}</span>`
+			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id.replace('seg-', '§')}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				headingsArr[i].innerHTML = injectSpan + headingsArr[i].innerHTML
 			} else {
@@ -1802,7 +1802,7 @@ window.onscroll = function() {
 	getNavTarget();
 	savePlaceInBook();
 	//populate the tMSIndex counter
-	segCount.innerHTML =  `${savedBookElements[theTopElement].id}`
+	segCount.innerHTML =  `${savedBookElements[theTopElement].id.replace('seg-','§')}`
 }
 
 function setSelfquoteMargins () {
@@ -2682,7 +2682,6 @@ function blink (element) {
 
 document.getElementById("ModalLists").addEventListener("click", function(e) {
 	if (e.target.id == 'tablesListTab') {
-		console.log('x')
 		tablesList.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" })
 	}
 	if (e.target.id == 'textsListTab') {
@@ -2700,7 +2699,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 		if (e.target.closest('#lot-list')) {
 			bookSeg = e.target.closest('.reflistitem').getAttribute('data-segref')
 		} else 
-		if (e.target.closest('#texts-list')) {
+		if (e.target.closest('#texts-list') || e.target.closest('#footnotes-list') ) {
 			bookSeg = e.target.closest('.reflistitem').getAttribute('data-segref')
 			noteNumberToOpen = e.target.closest('.reflistitem').getAttribute('data-fnnumber')
 		} else {
@@ -2852,20 +2851,16 @@ function toggleSesame (el) {
 		el.classList.remove('closebutton');
 		hideSpinner()
 	} else {
-
 		 function openSesame () {
-
 			async function decodeSesameKey (sesameKey) {
 				let sesameKeyArr = sesameKey.split(':')
 /* 				console.log(`0::${sesameKeyArr[0]}`) // type
 				console.log(`1::${sesameKeyArr[1]}`) // key
 				console.log(`2::${sesameKeyArr[2]}`) // a zotero reference that appears in the biblio for the book */
-
 				let biblio = `` // NEED TO WRITE BIBLIO BIT if there's a biblio entry specified
 				if (sesameKeyArr[2]) {
 					biblio = sesameKeyArr[2]
 				}
-
 				if (sesameKeyArr[0].includes('-blurbs')) {
 
 					let fetchPath = `../_resources/sesame-data/blurbs/scblurbs.json`
@@ -3007,7 +3002,7 @@ function toggleSesame (el) {
 					for (let i in noteData) {
 						if (noteData[i].fnNumber == el.innerText) {
 							let localHTML = noteData[i].fnHTML
-							el.insertAdjacentHTML("afterend", `<div class=opensesame><span>#${el.innerText}</span> ${localHTML}</div>`);
+							el.insertAdjacentHTML("afterend", `<div class=opensesame><span>note: ${el.innerText}</span> ${localHTML}</div>`);
 							el.classList.add('closebutton')
 							break
 						}
@@ -3170,7 +3165,7 @@ shareBtn.onclick = function() {
 		copyDiv.classList.add('copybox')
 		
 		//Make the Link
-		let linkText = `<p>Text from: <strong><em>${document.title.replace(`-`, `by`)}</em></strong>, starting at: <a href='${bookPath}#${starter}'> <strong>[${starter}]</strong></a></p><hr>\n\n`
+		let linkText = `<p>Text from: <strong><em>${document.title.replace(`-`, `by`)}</em></strong>, starting at: <a href='${bookPath}#${starter}'> <strong>[${starter.replace('seg-','§')}]</strong></a></p><hr>\n\n`
 
 
 		let copyQuote = document.createElement("blockquote")
@@ -3412,9 +3407,9 @@ shareBtn.onclick = function() {
 				url: navShareurl
 			});
 		} else {
-			alertStr = `<p>You have not selected any text to share.<br>You are currently reading <b>${shareFrom}</b> in the book.<br>You can do one of the following:</p>
+			alertStr = `<p>You have not selected any text to share.<br>You are currently reading <b>${shareFrom.replace('seg-','§')}</b> in the book.<br>You can do one of the following:</p>
 						<p style="font-family:'Courier New'">${bookPath}#${shareFrom}<br>
-						<button id="shareAtHere" data-toShare="${bookPath}#${shareFrom}">Copy the url for book to go directly to <b>${shareFrom}</b></button></p>
+						<button id="shareAtHere" data-toShare="${bookPath}#${shareFrom}">Copy the url for book to go directly to <b>${shareFrom.replace('seg-','§')}</b></button></p>
 						<p style="font-family:'Courier New'">${bookPath}/<br>
 						<button id="shareNoHash" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
 			showAlert (`${alertStr}`)
@@ -3435,7 +3430,7 @@ listsBtn.onclick = function() {
 		if (tabrefArr.length  > 0) {
 			html = `<section id='lot-list' class="infocontainer">`
 			html += `<h3>Tables:</h3>`;
-			html += `<div class="reflistbuttons"><div class="smallcaps">Sort by:</div>`
+			html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
 			html += `<button class="sort asc" data-sort="lotSegRef">Segment</button> `
 			html += `<button class="sort" data-sort="lotCaption">Caption</button></div>`
 			html += `<ul class="list reflist">`
@@ -3467,7 +3462,7 @@ listsBtn.onclick = function() {
 			html += `<h3>Texts:</h3>`;
 			if (sclinksdata.length  > 7) {
 				longSCTExtList = true;
-				html += `<div class="reflistbuttons"><div class="smallcaps">Sort by:</div><button class="sort asc" data-sort="textSegRef">Segment</button>`
+				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="textSegRef">Segment</button>`
 				html += `  <button class="sort" data-sort="sclinktext">Reference</button></div>`
 			}
 			html += `<ul class="list reflist">`
@@ -3486,7 +3481,7 @@ listsBtn.onclick = function() {
 							segRef = allSups[j].closest('p').id
 							segment = segRef.substring(4)
 							data_fnnumber = `data-fnnumber='${sclinksdata[i].location.substring(3)}'`
-							footnote = `<span class='footnoteinlist'>note:#${sclinksdata[i].location.substring(3)}</span>`
+							footnote = `<span class='footnoteinlist'>note: ${sclinksdata[i].location.substring(3)}</span>`
 						}
 					}
 				}
@@ -3520,6 +3515,39 @@ listsBtn.onclick = function() {
 			let allSups = document.querySelectorAll ('sup')
 			let parentDiv = document.getElementById('footnotesList');
 			let html = ``
+			html += `<section id='footnotes-list' class='infocontainer'>`
+			html += `<h3>Notes:</h3>`
+			html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="notesSegRef">Segment</button>`
+			html += `  <button class="sort" data-sort="footNoteText">Note Text</button></div>`
+
+			//html += `<div id="lonlist" class="list">	` //lon = list of notes
+	
+			html += `<ul class="list reflist">`
+			for (let i in footnotesData) {
+				let fnNumber = footnotesData[i].fnNumber
+				let fnHTML = footnotesData[i].fnHTML
+				let segNo = ``
+				for (let j in allSups) {
+					if (allSups[j].innerText == fnNumber) {
+						segNo = `${allSups[j].parentNode.id}`
+						break
+					}
+				}
+				let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML}</span>`
+				html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
+				//html += `<div class='lonlistitem'><span class='segRef'  data-fnnumber='${fnNumber}'>${segNo}</span><div class="footNoteText"><span class= "footNoteNumber">#${fnNumber}</span>${fnHTML}</div></div>`
+			}
+			html += `</ul></section>` 
+			parentDiv.innerHTML = html
+			var options = {
+				valueNames: [ 'notesSegRef', 'footNoteText' ]
+			};
+			var footnotesList = new List('footnotes-list', options);
+		}
+/* 		function populateNotes (footnotesData) {
+			let allSups = document.querySelectorAll ('sup')
+			let parentDiv = document.getElementById('footnotesList');
+			let html = ``
 			html += `<section class='infocontainer'>`
 			html += `<h3>Notes:</h3>`
 			html += `<div id="lonlist" class="list">	` //lon = list of notes
@@ -3531,6 +3559,7 @@ listsBtn.onclick = function() {
 				for (let j in allSups) {
 					if (allSups[j].innerText == fnNumber) {
 						segNo = `${allSups[j].parentNode.id}`
+						break
 					}
 				}
 	
@@ -3540,14 +3569,14 @@ listsBtn.onclick = function() {
 			}
 			html += `</div></section>` 
 			parentDiv.innerHTML = html
-		}
+		} */
 	
 		fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)
 		.then (showSpinner())
 		.then(response => response.json())
 		.then (data => populateNotes(data))
 		.catch(error => {
-		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
+		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortcode()}/footnotes.json`);
 		}
 		);
 	}

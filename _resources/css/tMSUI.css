@@ -161,18 +161,18 @@ body {
 
 .tMSIndex {
 	position:relative;
-	opacity: 65%;
+	color: var(--secondarytextcolor);
 	font-variant: normal;
 	font-style: normal;
 	font-weight: normal;
 	white-space: nowrap;
 	line-height: 0;
-	padding: 0 0.5em;
+	padding: 0;
 	margin: 0 0.5em 0 0;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	line-height: 1.2rem;
 	font-family: 'Source Sans Pro';
-	background-color: #00000010;
+
 }
 h1 .tMSIndex {
 	display:block;
@@ -187,6 +187,12 @@ h2 .tMSIndex {
 	color: gray;
 	pointer-events: none;
 	font-variant: small-caps;
+}
+
+#segcount, #lastsegcount{
+	font-family: 'Source Sans Pro';
+	color: var(--secondarytextcolor);
+	font-variant: normal;
 }
 
 #goHashBtn, #shareAtHere, #shareNoHash {

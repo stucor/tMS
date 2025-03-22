@@ -348,6 +348,12 @@ figure {
 	text-align:center; 
 
 }
+
+figure:has(> .tMSIndex) > .tMSIndex {
+	display:block;
+	text-align: left;
+}
+
 figure img { 
 	margin: 0.5em; 
 	border: 2px solid var(--figureimgborder);
@@ -1346,12 +1352,9 @@ sup {
 .footNoteText > p {
 	margin-top: 0;
 }
-
-.footNoteText > p > .sclinktext {
-	color: unset;
-	cursor:unset
-}
-.footNoteText > p > .extlink {
+.footNoteText > p > .sclinktext,
+.footNoteText > p > .extlink,
+.footNoteText > p > span.manualLink  {
 	color: unset;
 	cursor:unset
 }
@@ -1447,7 +1450,8 @@ sup {
 	font-size: 0.8em;
 } 
 
-#lot-list > .reflist {
+#lot-list > .reflist,
+#figures-list > .reflist  {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 100%);
 	grid-gap: 0.6rem 0.5rem;
@@ -1456,7 +1460,8 @@ sup {
 	list-style-type: none;
 }
 
-#lot-list > .reflist > .reflistitem {
+#lot-list > .reflist > .reflistitem,
+#figures-list > .reflist > .reflistitem  {
 	display: grid;
 	grid-template-columns: 8em auto;
 	text-align: left;
@@ -1548,7 +1553,7 @@ sup {
 	transform: rotate(90deg);
 	position: relative;
 	left: .1em;
-	top: -0.1em;
+	top: -0.05em;
 	content: '\2794' ;
 }
 .sort.desc::after {
@@ -1556,7 +1561,7 @@ sup {
 	transform: rotate(270deg);
 	position: relative;
 	left: .2em;
-	top: -0.1em;
+	top: -0.05em;
 	content: '\2794' ;
 }
 /* .sort.asc::after {

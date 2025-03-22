@@ -6,7 +6,6 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../_resources/css/tMSUI.css">
 		<link rel="stylesheet" type="text/css" href="../_resources/css/tMSBook.css">
-		<link rel="stylesheet" type="text/css" href="../_resources/css/tMSBookMediaQ.css">
 		<link rel="stylesheet" type="text/css" href="../_resources/css/scsutta.css">
 		<link rel="shortcut icon" type="image/x-icon"  href="../_resources/images/icons/logo.png">
 		<title>Journey to the Heart of the Lotus - Ajahn Brahm</title>
@@ -102,6 +101,7 @@
 			<div class="topnav-right">
 				<a id="searchBtn"><img src="../_resources/images/icons/search.svg" alt="Search"><p>Search</p></a>
 				<a id="shareBtn"><img src="../_resources/images/icons/share.svg" alt="Share"><p>Share</p></a>
+				<a id="listsBtn"><img src="../_resources/images/icons/lists.svg" alt="Lists"><p>Lists</p></a>
 				<a id="detailsBtn"><img src="../_resources/images/icons/info.svg" alt="Info"><p>Info</p></a>
 				<a id="settingsBtn"><img src="../_resources/images/icons/settings.svg" alt="Settings"><p>Settings</p></a> 
 				<a id="downloadBtn"><img src="../_resources/images/icons/download.svg" alt="Download"><p>Download</p></a>
@@ -132,47 +132,11 @@
 			</div>
 			<div id="ModalBody" class="modal-body">
 				<div id="ModalDetails"></div>
-				<div id="ModalNotes">
-				<h2>Journey to the Heart of the Lotus<br>—Notes—</h2>
-	<div class="booknote" data-note="1"><p>See the <span class='manualLink' data-target='#ThreeQuestions'>Notes</span> section at the back of this book for the full text.</p></div>
-<div class="booknote" data-note="2"><p>Ajahn Chah was Ajahn Brahm’s teacher.</p></div>
-<div class="booknote" data-note="3"><p>Jhana Grove is the name of the Meditation Centre.</p></div>
-<div class="booknote" data-note="4"><p><span lang='pi'>Samādhi</span> means stillness of mind.</p></div>
-<div class="booknote" data-note="5"><p><span lang='pi'>Nimitta</span> is a mental perception before jhāna.</p></div>
-<div class="booknote" data-note="6"><p>Brahmavaṁso is Ajahn Brahm’s full monastic name.</p></div>
-<div class="booknote" data-note="7"><p>Ajahn Mun was a famous Thai Buddhist meditation monk.</p></div>
-<div class="booknote" data-note="8"><p>Enlightenment means freedom from suffering. <span lang='pi'>Nibbāna</span> in Pāli.</p></div>
-<div class="booknote" data-note="9"><p>The teaching of the Buddha is known as Dharma, which is spelt Dhamma in Pāli.</p></div>
-<div class="booknote" data-note="10"><p>The Suttas are the Buddha’s discourses.</p></div>
-<div class="booknote" data-note="11"><p>Māra is the Evil One or the Tempter.</p></div>
-<div class="booknote" data-note="12"><p>Kamma is the Pāli spelling of karma and means deed. ‘Unfortunate kamma’ here was used to mean ‘bad luck’.</p></div>
-<div class="booknote" data-note="13"><p><span lang='pi'>Mettā</span> is loving-kindness or friendliness.</p></div>
-<div class="booknote" data-note="14"><p>Bodhinyana Monastery is a Buddhist forest monastery in Western Australia. Home to Ajahn Brahm.</p></div>
-<div class="booknote" data-note="15"><p>The Paṭisambhidāmagga is known in English as the Path of Analytical Discernment.</p></div>
-<div class="booknote" data-note="16"><p><span lang='pi'>Ekaggatā</span> means unification or oneness of mind.</p></div>
-<div class="booknote" data-note="17"><p><span lang='pi'>Arūpasamāpatti</span> are the ‘formless’ or ‘immaterial’ attainments</p></div>
-<div class="booknote" data-note="18"><p>The Vinaya is the monastic law for fully ordained Buddhist monks and nuns</p></div>
-<div class="booknote" data-note="19"><p>Devadatta was a monk who split the Saṅgha and attempted to kill the Buddha.</p></div>
-<div class="booknote" data-note="20"><p>The term “Saṅgha” refers to the Buddhist monastic community of monks and nuns.</p></div>
-<div class="booknote" data-note="21"><p>See the <span class='manualLink' data-target='#The_letting_loose_of_Nāḷāgiri'>Notes</span> section at the back of this book for the full text.</p></div>
-<div class="booknote" data-note="22"><p>Ānanda was the Buddha's cousin and attendant</p></div>
-<div class="booknote" data-note="23"><p>An <span lang='pi'>arahant</span> is an awakened being</p></div>
-<div class="booknote" data-note="24"><p>‘Rotten fish curry’ is curry made with fermented freshwater fish.</p></div>
-<div class="booknote" data-note="25"><p>Buddha Kassapa was one of the previous Buddhas mentioned in the Pali Canon.</p></div>
-<div class="booknote" data-note="26"><p>Sāriputta was one of the Buddha’s chief disciples and foremost in wisdom.</p></div>
-<div class="booknote" data-note="27"><p>Stream-winner is the first stage of enlightenment.</p></div>
-<div class="booknote" data-note="28"><p><span lang='pi'>Vedanā</span> means feeling, sensation.</p></div>
-<div class="booknote" data-note="29"><p><span lang='pi'>Saññā</span> means sense, perception.</p></div>
-<div class="booknote" data-note="30"><p><span lang='pi'>Saṅkhāra</span> means mental formation.</p></div>
-<div class="booknote" data-note="31"><p>The origin story of the communal recitation is given in the Khandhaka at Kd 21</p></div>
-<div class="booknote" data-note="32"><p>A <span lang='pi'>bhikkhunī</span> is a fully ordained Buddhist nun</p></div>
-<div class="booknote" data-note="33"><p>For more on Dependent Cessation see the booklet <em>Dependent Liberation</em> by Ajahn Brahmali <a class='library' href='../dlbl'> on theMettāShelf</a></p></div>
-<div class='endBar'>End of Notes</div>				</div>
+				<div id="ModalLists"><nav id='listsTabNav'><button id='tablesListTab'>Tables</button><button id='textsListTab'>Texts</button><button id='footnotesListTab'>Notes</button></nav><div id='tablesList'>Tab-LIST</div><div id='textsList'>SCText-LIST</div><div id='footnotesList'>FootNotes-LIST</div></div>
 				<div id="ModalSettings"></div>
-				<div id="ModalDownload">
-					<div>
-						<h4>Wisdom & Wonders publications:</h4>
-						<div class="downloads"><a href="../_resources/book-downloads/journey/journey.pdf" download > <img alt="Journey to the Heart of the Lotus pdf download" src="../_resources/images/icons/pdf_file_icon.svg" ></a><a href="../_resources/book-downloads/journey/journey.epub" download > <img alt="Journey to the Heart of the Lotus epub download" src="../_resources/images/icons/epub_file_icon.svg" ></a><a href="../_resources/book-downloads/journey/journey.azw3" download > <img alt="Journey to the Heart of the Lotus azw3 download" src="../_resources/images/icons/azw3_file_icon.svg" ></a></div>
+				<div id="ModalDownload"><div>
+				<h4>Wisdom & Wonders publications:</h4>
+				<div class="downloads"><a href="../_resources/book-downloads/journey/journey.pdf" download > <img alt="Journey to the Heart of the Lotus pdf download" src="../_resources/images/icons/pdf_file_icon.svg" ></a><a href="../_resources/book-downloads/journey/journey.epub" download > <img alt="Journey to the Heart of the Lotus epub download" src="../_resources/images/icons/epub_file_icon.svg" ></a><a href="../_resources/book-downloads/journey/journey.azw3" download > <img alt="Journey to the Heart of the Lotus azw3 download" src="../_resources/images/icons/azw3_file_icon.svg" ></a></div>
 					</div>
 				</div>
 				<div id="ModalSutta"><div id="sutta"></div></div><div id="ModalAlert"></div>
@@ -278,7 +242,7 @@ This is called<br>
 <h2 id="seg-41">The Emperor’s Three Questions</h2>
 <p id="seg-42">My job as a teacher is to make you trust the process so that you don’t keep interfering with it.</p>
 <p id="seg-43">In the beginning of the meditation, you just sit down, get your body nice and comfortable, establish enough mindfulness by watching what’s going on without interfering, and see what’s happening right now. That’s enough to begin.</p>
-<p id="seg-44">If you want more instructions, you can do the emperor’s three question meditation, which simplifies the path of meditation beautifully. It comes from a story by Leo Tolstoy, called the Emperor’s Three Questions.<sup>1</sup> In this story, an emperor thought that he would not know failure in anything if he knew the answers to the important three questions. I’ve reworded the questions a little. Here they are:</p>
+<p id="seg-44">If you want more instructions, you can do the emperor’s three question meditation, which simplifies the path of meditation beautifully. It comes from a story by Leo Tolstoy, called the Emperor’s Three Questions.<sup class="sesame">1</sup> In this story, an emperor thought that he would not know failure in anything if he knew the answers to the important three questions. I’ve reworded the questions a little. Here they are:</p>
 <ul>
 <li>
 <p id="seg-45">When is the most important time?</p>
@@ -319,7 +283,7 @@ this is the highest blessing.</p>
 </div>
 <div class="epigram-cite">
 <p id="seg-58">Maṅgalasutta<br>
-<span class="sclinktext">Snp&#8239;2.4:9.1–9.4</span></p>
+<span class="sclinktext">Snp&#8239;2.4<span class='scsegments'>:9.1–9.4</span></span></p>
 </div>
 <h2 id="seg-59">With a Laugh and a Smile</h2>
 <p id="seg-60">It’s useful to have humour in our spiritual life.</p>
@@ -350,7 +314,7 @@ this is the highest blessing.</p>
 <p id="seg-85">The body can be tricky at the start of meditation because we may have aches and pains in the body, but I find that if I’m sending kindness to it, the body soon relaxes. After five or ten minutes, my body is like… ‘Wow, there’s no ache or pain anywhere.’ If we let the body be, the body will balance itself out.</p>
 <p id="seg-86">Sometimes you may feel hot spots in your body. People sometimes come to me in meditation interviews and ask what those hot spots are. When that happens, I always smile and say, “Well done.”</p>
 <div class="centered-img"><img src='img/AjahnChah.webp' alt='Ajahn Chah holding a lotus flower and smiling' width='40%'></div>
-<p id="seg-87">When Ajahn Chah<sup>2</sup> was growing up as a monk, there was a lot of malaria in the jungle, and he would often get sick from it. When his body was weak, Ajahn Chah would come down with a fever. One time in his meditation, he decided to direct his mind to go inside the body to where he felt was the hottest, where the fever was raging. Even though the forest around him was cool, he felt like his body was sitting in the middle of a forest fire. Interestingly, where he was sitting in the middle of this rampant fire, in a calm place of awareness, it was very cool. He allowed the heat he felt enveloping him to get so hot that eventually it erupted and exploded.</p>
+<p id="seg-87">When Ajahn Chah<sup class="sesame">2</sup> was growing up as a monk, there was a lot of malaria in the jungle, and he would often get sick from it. When his body was weak, Ajahn Chah would come down with a fever. One time in his meditation, he decided to direct his mind to go inside the body to where he felt was the hottest, where the fever was raging. Even though the forest around him was cool, he felt like his body was sitting in the middle of a forest fire. Interestingly, where he was sitting in the middle of this rampant fire, in a calm place of awareness, it was very cool. He allowed the heat he felt enveloping him to get so hot that eventually it erupted and exploded.</p>
 <p id="seg-88">Bang!</p>
 <p id="seg-89">That was the end of his fever. After that, he never got malaria again. That’s the kind of thing which could happen if we use our mind wisely.</p>
 <p id="seg-90">You could have an incipient cancer in your body. If you’re relaxing the body and just letting it be, the energy of the body would be allowed to go to that spot and might be able to heal it. If we just leave things alone, the body could get healed by itself. After all these years of practising, I’ve got incredible faith in the body’s ability to heal itself. We just need to get out of the way and let it happen.</p>
@@ -370,7 +334,7 @@ this is the highest blessing.</p>
 <p id="seg-104">I don’t know who your favourite friend is. Mine is my mind. Wherever I go, I take my mind with me. We’re kind to each other, so we have a good time.</p>
 <p id="seg-105">I never want to improve my mind. It’s one of the big mistakes in spiritual practice: to want to improve, to become wiser or happier. You’ll find that setting such goals gives you more tension. Instead, please just be happy where you are.</p>
 <p id="seg-106">There’s an old simile relevant to this teaching: a prison simile.</p>
-<p id="seg-107">Are you in prison here at Jhana Grove prison camp?<sup>3</sup> You’ve got to get up at a certain time. You’ve only got a small room to stay in. What happens if you don’t like the food? Can you get a pizza delivered? Yet you know how hard it is to get a booking and how much you want to stay here.</p>
+<p id="seg-107">Are you in prison here at Jhana Grove prison camp?<sup class="sesame">3</sup> You’ve got to get up at a certain time. You’ve only got a small room to stay in. What happens if you don’t like the food? Can you get a pizza delivered? Yet you know how hard it is to get a booking and how much you want to stay here.</p>
 <p id="seg-108">A few kilometres down the road from this meditation centre is Karnet Prison Farm. It doesn’t matter how great the choices of food are on the menu over in the prison, or how much softer their beds are, or even how much more entertainment is provided than what we have here. Even though it seems much more enjoyable in a prison, everybody in prison wants to leave.</p>
 <p id="seg-109">So, what is a prison, and what is freedom?</p>
 <p id="seg-110">What’s the difference?</p>
@@ -384,7 +348,7 @@ this is the highest blessing.</p>
 <p id="seg-118">There was a retreat in Sydney some years ago. A Vietnamese monk was teaching it. As part of the schedule the group was to sit for half an hour of meditation before the evening talk at eight. Eight o’clock came, and the retreatants were waiting for the monk to ring the bell to signal the end of the sit and the beginning of the talk. Minutes went ticking by, but he never rang the bell; he just kept his eyes closed and kept on meditating. Over the next few hours, one by one, the retreatants started filing out of the hall and went back to their rooms to sleep.</p>
 <p id="seg-119">When they came back in the morning, they saw the monk still sitting in meditation. That monk went on for the next seven days without moving. He didn’t go to the toilet, eat food, or drink any water. The retreatants would check on him day and night, but he never moved.</p>
 <p id="seg-120">Now, that’s what you call meditation!</p>
-<p id="seg-121">When he eventually came out of meditation the retreat was almost over. He apologised and said that when he sat down the first day, he meant to meditate just before giving a talk, but he went into <span lang="pi">samādhi</span>.<sup>4</sup> The retreatants said that he didn’t need to apologise at all, as seeing him sitting there was so inspiring that it was better than any talk, and it made them understand that these states are possible.</p>
+<p id="seg-121">When he eventually came out of meditation the retreat was almost over. He apologised and said that when he sat down the first day, he meant to meditate just before giving a talk, but he went into <span lang="pi">samādhi</span>.<sup class="sesame">4</sup> The retreatants said that he didn’t need to apologise at all, as seeing him sitting there was so inspiring that it was better than any talk, and it made them understand that these states are possible.</p>
 <p id="seg-122">Would you like that to happen to you?</p>
 <p id="seg-123">If you want it to happen, it never will.</p>
 <p id="seg-124">When you want something, you’re always tense. The space between where you are and where you want to be is a state of suffering. So, if you’re happy to be here—where you are is where you want to be, you’ll feel free and peaceful. If you’re striving, if you set any goals, I guarantee that you’ll be disappointed. Even if you reach one goal, there’s always another one, and another, and another... It’s endless. Instead of going for goals, go for contentment.</p>
@@ -403,7 +367,7 @@ this is the highest blessing.</p>
 <p id="seg-131">Am I more peaceful?</p>
 </li>
 </ul>
-<p id="seg-132">He may not have experienced a <span lang="pi">nimitta</span><sup>5</sup> or <span lang="pi">samādhi</span>, but he was certainly more peaceful, calm and relaxed. “The progress is slow. You have to look for it; otherwise, you can’t see the progress you’re making,” he told me.</p>
+<p id="seg-132">He may not have experienced a <span lang="pi">nimitta</span><sup class="sesame">5</sup> or <span lang="pi">samādhi</span>, but he was certainly more peaceful, calm and relaxed. “The progress is slow. You have to look for it; otherwise, you can’t see the progress you’re making,” he told me.</p>
 <p id="seg-133">If you really look, you can find that something good has happened to your body and mind.</p>
 <p id="seg-134">That’s a great way of starting meditation.</p>
 <div class="epigram-img"><img src='img/3.webp' alt='Each chapter the lotus gradually opens' width=35%></div>
@@ -446,20 +410,20 @@ And <span lang="pi"><em>samādhi</em></span> gained while walking lasts a long t
 <h2 id="seg-162">Hear Nothing</h2>
 <p id="seg-163">One day while I was a novice monk living in Bangkok, I was walking meditation in the main hall of the monastery. It took me half an hour to walk from one end of the hall to the other. I wasn’t trying to walk slowly, it’s just that when we get into walking meditation, there’s too much going on to rush it.</p>
 <p id="seg-164">I was getting very peaceful. It was delightful, just watching all the intricate feelings in my legs as I moved back and forth in the hall.</p>
-<p id="seg-165">Then, I heard a sound. It was almost like a supernatural sound. My attention was taken away from the feelings in my legs to this weird sound. “What on earth is that?” I wondered. It was quite soft, and I could barely hear it. As I focused my attention on the sound, I realised it was a Thai monk shouting my name, “Brahmavaṁso! Brahmavaṁso!”<sup>6</sup></p>
+<p id="seg-165">Then, I heard a sound. It was almost like a supernatural sound. My attention was taken away from the feelings in my legs to this weird sound. “What on earth is that?” I wondered. It was quite soft, and I could barely hear it. As I focused my attention on the sound, I realised it was a Thai monk shouting my name, “Brahmavaṁso! Brahmavaṁso!”<sup class="sesame">6</sup></p>
 <p id="seg-166">I then remembered I was supposed to be at a meal offering in somebody’s house. I hadn’t turned up because I had lost track of time. The abbot had sent this young monk to fetch me, and even though it sounded like he was a hundred miles away, he was actually standing right next to me, shouting in my ear!</p>
 <p id="seg-167">I knew I had to come out of meditation, but it took me a full minute to move my head around so that I could look at the monk. I was in this beautiful world all to myself. Everything was going so slowly. I was alert to my body, but my sense of hearing was basically turned off.</p>
 <p id="seg-168">That’s what it’s like in walking meditation—you get into your own private world. When you’re finished, you slowly walk to your seat. Then, you sit down for some nice quiet meditation. You’re already halfway there as you’re so aware, so still, and your mind is so peaceful. When you sit down, the breath is clear and delightful, and it’s easy to go into a deep meditation.</p>
 <h2 id="seg-169">Walk a Lot, Sit a Lot</h2>
 <p id="seg-170">Many of you feel stiff, or even have aches or pain after sitting for a long time without getting into a deep meditation. My advice is that if you want to build up a momentum of silence and stillness, then alternate between walking and sitting meditation.</p>
-<p id="seg-171">One of the monks whom I really respect was a farmer in the north-east of Thailand. One day he was doing some business in the town of Sakhon Nakhon when Ajahn Mun’s<sup>7</sup> funeral was taking place. Out of interest, he walked into the proceedings and heard a monk giving a sermon: “If you want to get enlightened,<sup>8</sup> you have to walk a lot and sit a lot.” That’s all he heard.</p>
+<p id="seg-171">One of the monks whom I really respect was a farmer in the north-east of Thailand. One day he was doing some business in the town of Sakhon Nakhon when Ajahn Mun’s<sup class="sesame">7</sup> funeral was taking place. Out of interest, he walked into the proceedings and heard a monk giving a sermon: “If you want to get enlightened,<sup class="sesame">8</sup> you have to walk a lot and sit a lot.” That’s all he heard.</p>
 <p id="seg-172">Since his children had grown up and his wife was happy to let him ordain, he became a monk. He didn’t have any other teaching than this: “Walk a lot and sit a lot.” So that’s what he did.</p>
 <p id="seg-173">When he got up in the morning, he went on alms round, got his one meal of the day, cleaned up, and then walked on his walking path. When he got tired, he sat right there on his walking path. When he came out of sitting meditation, he simply got up and carried on walking. Sometimes at night he would even sleep on his walking path. Being a simple villager, he was used to ascetic conditions, and so he didn’t need blankets or a mattress. That’s how he practised.</p>
 <p id="seg-174">When I went to see him, he was a strong and powerful monk. Some monks believed he was fully enlightened.</p>
 <h2 id="seg-175">Don’t Rush into Contemplation</h2>
-<p id="seg-176">Walking meditation can be beautiful and powerful, but please don’t use walking meditation for contemplation. Some people do that, and it’s a mistake. They’re walking backwards and forwards and trying to contemplate the Four Noble Truths, or Dependent Origination, or some other deep Dhamma.<sup>9</sup></p>
-<p id="seg-177">There’s a sutta<sup>10</sup> called the ‘Paṁsudhovakasutta’, or ‘The Panner’ (<span class="sclinktext">AN&#8239;3.101</span>), which talks about the obstacles to getting enlightened. These include thoughts about family, reputation and so on. It then talks about a lingering obstacle that you have to get through to experience the <span lang="pi">samādhi</span>, which will bring you to enlightenment. It’s <span lang='pi'>dham&shy;ma&shy;vit&shy;ak&shy;ka</span> or thinking about the Dhamma! When I first mentioned that, some of the monks argued that this was what they were supposed to do: think about the Dhamma! I responded with: “Only at the right time.”</p>
-<p id="seg-178">Sometimes I’ve had an experience where my mind is so peaceful that I feel I could give the most brilliant Dhamma discourse, but then I realised this is a last ploy of Māra<sup>11</sup> to stop us becoming enlightened. Our mind hasn’t fully given up the five hindrances yet, and so we’re not seeing the true Dhamma.</p>
+<p id="seg-176">Walking meditation can be beautiful and powerful, but please don’t use walking meditation for contemplation. Some people do that, and it’s a mistake. They’re walking backwards and forwards and trying to contemplate the Four Noble Truths, or Dependent Origination, or some other deep Dhamma.<sup class="sesame">9</sup></p>
+<p id="seg-177">There’s a sutta<sup class="sesame">10</sup> called the ‘Paṁsudhovakasutta’, or ‘The Panner’ (<span class="sclinktext">AN&#8239;3.101</span>), which talks about the obstacles to getting enlightened. These include thoughts about family, reputation and so on. It then talks about a lingering obstacle that you have to get through to experience the <span lang="pi">samādhi</span>, which will bring you to enlightenment. It’s <span lang='pi'>dham&shy;ma&shy;vit&shy;ak&shy;ka</span> or thinking about the Dhamma! When I first mentioned that, some of the monks argued that this was what they were supposed to do: think about the Dhamma! I responded with: “Only at the right time.”</p>
+<p id="seg-178">Sometimes I’ve had an experience where my mind is so peaceful that I feel I could give the most brilliant Dhamma discourse, but then I realised this is a last ploy of Māra<sup class="sesame">11</sup> to stop us becoming enlightened. Our mind hasn’t fully given up the five hindrances yet, and so we’re not seeing the true Dhamma.</p>
 <p id="seg-179">What we’re supposed to do is to get so still and peaceful that jhāna appears. When you come out of jhāna, when the five hindrances are gone for a long period of time, you don’t even need to think about the Dhamma; the Dhamma just appears. That’s the Dhamma which is the most valuable, which will create experiences of enlightenment.</p>
 <p id="seg-180">The insight you think you have during contemplation while the hindrances are active is not real insight, so please don’t contemplate Dhamma on the walking meditation path. Just keep being quiet and observe how still your mind can become. When your mind becomes still, go and sit down and get into deep meditation. Afterwards, your mind will be so strong that you’ll realise the power of the teachings by the Buddha.</p>
 <p id="seg-181">So that’s walking meditation.</p>
@@ -474,7 +438,7 @@ speaking and keeping silent.</p>
 </div>
 <div class="epigram-cite">
 <p id="seg-184">Mahāassapurasutta<br>
-<span class="sclinktext">MN&#8239;39:11.2</span></p>
+<span class="sclinktext">MN&#8239;39<span class='scsegments'>:11.2</span></span></p>
 </div>
 <div class="centered-img-border centered-img"><img src='img/ABReceiving-forWeb.webp' alt='Ajahn Brahm receiving a spoon of rice from some children on alms round' width='60%'></div>
 <h2 id="seg-185">Eating Meditation</h2>
@@ -491,9 +455,9 @@ speaking and keeping silent.</p>
 <p id="seg-196">When you’ve found your best lying position, make your body comfortable as best as you can. Then, you do body-scanning. It’s a great start as you can really relax to the max. After the body scan, you can start watching your breathing.</p>
 <p id="seg-197">This posture is helpful because you don’t get sore from it. It’s a very comfortable posture for your body, which means you can have a nice, peaceful meditation.</p>
 <p id="seg-198">When I was about twenty-four years old, I contracted scrub typhus and was the sickest I’ve ever been. It was over Christmas time, I was in the monks’ ward in a very basic third-world hospital in Ubon Ratchathani in the early seventies, and there was only one nurse on duty.</p>
-<p id="seg-199">When I first got admitted, they put a drip in my arm. The nurse was present during the day, but in the late afternoon, the nurse just disappeared. At six-thirty p.m. the replacement nurse hadn’t shown up, so I asked the monk in the bed next to me where the night nurse was. He told me there was no night nurse. “What happens if somebody gets really sick?” I asked. “It’s just unfortunate kamma,”<sup>12</sup> he replied.</p>
+<p id="seg-199">When I first got admitted, they put a drip in my arm. The nurse was present during the day, but in the late afternoon, the nurse just disappeared. At six-thirty p.m. the replacement nurse hadn’t shown up, so I asked the monk in the bed next to me where the night nurse was. He told me there was no night nurse. “What happens if somebody gets really sick?” I asked. “It’s just unfortunate kamma,”<sup class="sesame">12</sup> he replied.</p>
 <p id="seg-200">That wasn’t reassuring at all!</p>
-<p id="seg-201">I had a fever for weeks and felt really weak. One day Ajahn Chah came to visit me. I was just a young monk, and this great hero monk had come to visit me! I felt so honoured. I was waiting for him to give me an inspiring talk or some nice <span lang="pi">mettā</span>,<sup>13</sup> but instead, he just said, “Brahmavaṁso, you’re either going to get better, or you’re going to die.” Then he left.</p>
+<p id="seg-201">I had a fever for weeks and felt really weak. One day Ajahn Chah came to visit me. I was just a young monk, and this great hero monk had come to visit me! I felt so honoured. I was waiting for him to give me an inspiring talk or some nice <span lang="pi">mettā</span>,<sup class="sesame">13</sup> but instead, he just said, “Brahmavaṁso, you’re either going to get better, or you’re going to die.” Then he left.</p>
 <p id="seg-202">How can you argue with that piece of Dhamma?</p>
 <p id="seg-203">I didn’t get better and didn’t know what to do, so I decided to meditate. There was no way in the world a person in my weak condition with a high fever and no energy could sit up to meditate. So, as I was lying there, I decided just to let go.</p>
 <p id="seg-204">I’m not quite sure exactly what I did or what happened. Maybe it was based on the story of the <em>Emperor’s Three Questions.</em> I may have asked myself:</p>
@@ -534,13 +498,13 @@ is very fruitful and beneficial.</p>
 </div>
 <div class="epigram-cite">
 <p id="seg-224">Ānāpānassatisutta<br>
-<span class="sclinktext">MN&#8239;118:22.1</span></p>
+<span class="sclinktext">MN&#8239;118<span class='scsegments'>:22.1</span></span></p>
 </div>
 <h2 id="seg-225">Don’t Disturb the Noise</h2>
-<p id="seg-226">Many years ago, when I first started teaching at Bodhinyana,<sup>14</sup> I got some advice from the boss at that time, Ajahn Jāgaro. One day he said to me, “Ajahn Brahm, you’re very good at teaching about <span lang="pi">nimitta</span> and jhāna, but not many people can get there easily. Why don’t you focus more on the beginning part of meditation? How can we watch the breath with ease?”</p>
+<p id="seg-226">Many years ago, when I first started teaching at Bodhinyana,<sup class="sesame">14</sup> I got some advice from the boss at that time, Ajahn Jāgaro. One day he said to me, “Ajahn Brahm, you’re very good at teaching about <span lang="pi">nimitta</span> and jhāna, but not many people can get there easily. Why don’t you focus more on the beginning part of meditation? How can we watch the breath with ease?”</p>
 <p id="seg-227">I really took his advice on board.</p>
 <p id="seg-228">As you know, I’m a bit rebellious, and I’ve always found rebellion to be important. I was encouraged to be rebellious when I was at university. When we are doing something like theoretical physics, we have to see things in a different way to get breakthroughs in science. So, when I started meditating and was given some good advice, I questioned it.</p>
-<p id="seg-229">For instance, when the Buddha instructed his followers on <span lang='pi'>ān&shy;āp&shy;ānas&shy;sati</span>, or mindfulness of breathing, in the Ānāpānassatisutta (<span class="sclinktext">MN&#8239;118:17.1</span>), he said to find a secluded, quiet place.</p>
+<p id="seg-229">For instance, when the Buddha instructed his followers on <span lang='pi'>ān&shy;āp&shy;ānas&shy;sati</span>, or mindfulness of breathing, in the Ānāpānassatisutta (<span class="sclinktext">MN&#8239;118<span class='scsegments'>:17.1</span></span>), he said to find a secluded, quiet place.</p>
 <p id="seg-230">First of all, how many secluded, quiet places are there in the world? Even here at a meditation retreat, there’s always somebody telling silly jokes (me?) and people laughing their heads off, making a lot of noise, or somebody coughs, bangs a door, or something. The sound of the door banging finished hours ago, but we keep thinking about it and complaining about it. That's called disturbing the noise.</p>
 <p id="seg-231">It’s hard to find perfect silence anywhere, and when you’re in a town or city, it’s even harder to find a quiet place. So the first thing is to learn how to make the place quiet by not disturbing the noise. It’s one of the skills I learnt from Ajahn Chah that I’ve found very useful when meditating in a less-than-ideal environment.</p>
 <p id="seg-232">A few years ago, the Burmese community here in Western Australia wanted to stage a peaceful protest against the government in Myanmar at that time, and they invited me to join them. Because monks don’t protest, I asked them what they wanted to do, and they said, “We’re just going to sit in meditation opposite the Hay Street Mall in Perth.”</p>
@@ -600,7 +564,7 @@ is very fruitful and beneficial.</p>
 </div>
 <p id="seg-283">It’s moving slowly from left to right, and then right to left. I can notice every time the finger passes my eyes. The next stage of meditation is as if you saw the finger from the very beginning from the left, all the way to the right. You see a pause there, then the finger moves from the right all the way back to the left. You see the whole of the in-breath and the whole of the out-breath. You don’t miss any of it. This is natural. It just happens because you really start to focus in on the breath. When you focus in on it, naturally there’s nothing else disturbing you.</p>
 <p id="seg-284">You start to notice evenness or constancy in the breath because you’re just focusing on the experience of breathing in this moment and there’s hardly any difference between the in-breath and the out-breath. It all becomes quite even.</p>
-<p id="seg-285">The <span data-sesame-key="super-blurbs:ps" class="sesame">Paṭisambhidāmagga</span><sup>15</sup> compares this to sawing a piece of wood. First of all, you can see the handle of the saw as well as the teeth at the beginning and middle of the saw, but as you focus in more and more, you can only see the few saw teeth which are touching the wood. Likewise, all you can see is breath happening, but you don’t know if it’s an in-breath or an out-breath, beginning or end. You just see this particular part here, and that’s important because once that happens, the physical breath starts to disappear.</p>
+<p id="seg-285">The <span data-sesame-key="super-blurbs:ps" class="sesame">Paṭisambhidāmagga</span><sup class="sesame">15</sup> compares this to sawing a piece of wood. First of all, you can see the handle of the saw as well as the teeth at the beginning and middle of the saw, but as you focus in more and more, you can only see the few saw teeth which are touching the wood. Likewise, all you can see is breath happening, but you don’t know if it’s an in-breath or an out-breath, beginning or end. You just see this particular part here, and that’s important because once that happens, the physical breath starts to disappear.</p>
 <p id="seg-286">Anything which is even or constant, such as background sounds, will disappear. You can’t hear it any more. The feeling of your bottom against your seat—a moment ago you couldn’t feel it, but now you can because I’ve just pointed it out to you. So the breath starts to disappear. When you reach this point, don’t worry; it’s supposed to happen. The breath is calming down.</p>
 <p id="seg-287">When you do this properly and you are really with the breath, your mindfulness starts to become powerful and whatever you see after meditation becomes beautiful. Sometimes when you come out of meditation, you open your eyes and feel: “Wow, the room is so interesting with different colours and textures.” Things become beautiful when the mind becomes simplified and strong. That’s the nature of the beautiful mind.</p>
 <h2 id="seg-288">Beautiful Mind</h2>
@@ -635,7 +599,7 @@ and stand with no water clinging to it.</p>
 </div>
 <div class="epigram-cite">
 <p id="seg-311">Pupphasutta<br>
-<span class="sclinktext">SN&#8239;22.94:8.1</span></p>
+<span class="sclinktext">SN&#8239;22.94<span class='scsegments'>:8.1</span></span></p>
 </div>
 <h2 id="seg-312">Anālaya</h2>
 <p id="seg-313">This is a good time to introduce one of my favourite similes. I call it the ‘thousand-petalled lotus’ simile. A lotus has always been a key symbol of Buddhism. There’s always a lotus somewhere in a Buddhist temple, and there are many wonderful similes of lotuses.</p>
@@ -683,7 +647,7 @@ The delightful breath.</p>
 <p id="seg-354">Some people may say, “It’s only a <span lang="pi">nimitta</span>. What about jhāna? I need a jhāna. How do I do that?”</p>
 <p id="seg-355">You don’t do anything. Remember: just be mindful and be kind.</p>
 <p id="seg-356">It’s beautiful being kind. The best description I have of kindness is to be able to open the door of your heart, no matter what you’re observing, whether it’s a beautiful stable <span lang="pi">nimitta</span> or a <span lang="pi">nimitta</span> fading away. Whatever it is, open the door of your heart unconditionally with no judgement. Just let things be. Part of kindness, or <span lang="pi">mettā</span>, is letting things be.</p>
-<p id="seg-357">So we’re observing this <span lang="pi">nimitta</span>, and if we’re just being kind and aware, it opens out, and in you go. Now, you’re going into jhāna. Jhāna hasn’t got any width to it; it is <span lang='pi'>ekag&shy;ga&shy;tā</span>,<sup>16</sup> which is one of the reasons why it’s hard to describe when you’re in there, but easy to describe when you come out afterwards.</p>
+<p id="seg-357">So we’re observing this <span lang="pi">nimitta</span>, and if we’re just being kind and aware, it opens out, and in you go. Now, you’re going into jhāna. Jhāna hasn’t got any width to it; it is <span lang='pi'>ekag&shy;ga&shy;tā</span>,<sup class="sesame">16</sup> which is one of the reasons why it’s hard to describe when you’re in there, but easy to describe when you come out afterwards.</p>
 <p id="seg-358">Jhāna is right inside the <span lang="pi">nimitta</span>.</p>
 <p id="seg-359">Sometimes you’re just on the edge of the jhāna, having a lovely <span lang="pi">nimitta</span> experience. It’s like the jhāna is right in front of you, and you ask yourself: “Shall I go in? Shall I not?” It seems scary at first simply because you don’t know where you’re going or what’s going to happen. Going in is very joyful! Go for it. Let yourself go. Let the joy and the bliss overcome your fear. After a while you’ll go deep into a beautiful meditation.</p>
 <p id="seg-360">Some people may ask which particular jhāna it was. Please don’t worry about such thoughts until after you’ve come out of it. Once a jhāna is complete, you will have a good memory of it. You then can turn the memory around this way and that way to discover whether it was a jhāna. If it was, which particular jhāna. It’s a powerful experience that’s different from what you’ve experienced before, and that’s why it leaves such an indelible memory. Jhāna is powerful, stable, and long-lasting.</p>
@@ -704,7 +668,7 @@ The delightful breath.</p>
 <p id="seg-375">When you get into one of those jhānas, you may think, “Wow! This is it! There’s nothing higher than this.” But there are other kinds of bliss to come. It’s like climbing what you think is the biggest mountain in the world, but once you’re at the top of it, you can see there’s another one that’s even higher. When you go inside the second jhāna, you find the third jhāna right in the middle. And right in the middle of the third jhāna, you find the fourth. The lotus is opening up, petal by petal. It’s amazing what you find inside.  </p>
 <p id="seg-376">The fourth jhāna is contentment, but really, that description does not meet the bliss of such stillness. It is a more refined bliss. It’s the fulfilment and the perfection of mindfulness: <span lang='pi'>sa&shy;ti&shy;pāri&shy;sud&shy;dhi</span>. This mindfulness is the best mindfulness you can ever experience. </p>
 <h2 id="seg-377">Formless Attainments</h2>
-<p id="seg-378">After those four jhānas, we have <span lang='pi'>arūpa&shy;samā&shy;patti</span><sup>17</sup>, or formless attainments, right in the middle of the fourth jhāna. These formless states are where your mind starts to vanish. </p>
+<p id="seg-378">After those four jhānas, we have <span lang='pi'>arūpa&shy;samā&shy;patti</span><sup class="sesame">17</sup>, or formless attainments, right in the middle of the fourth jhāna. These formless states are where your mind starts to vanish. </p>
 <p id="seg-379">Your body is already gone by the first jhāna, but now your mind is vanishing. In the second jhāna, you realise that the part of your sense of self called ‘will’ is gone. In the <span lang='pi'>arūpa&shy;samā&shy;patti</span>, your ‘knowing’ starts to vanish. </p>
 <p id="seg-380">You go stage by stage until you’re in the fourth <span lang='pi'>arūpa&shy;samā&shy;patti</span> —neither perception nor non-perception. What on earth does that mean? Are we aware or are we not? </p>
 <p id="seg-381">The point is: your sense of knowing has almost stopped. From this point on, you’re not knowing anything at all. The mind is gone. Everything which is perceived or experienced ceases. The mind stops. It will start again afterwards, but it stops for a while.  </p>
@@ -719,7 +683,7 @@ and attention to causes.</p>
 </div>
 <div class="epigram-cite">
 <p id="seg-386">Mahāvedallasutta<br>
-<span class="sclinktext">MN&#8239;43:13.2–13.3</span></p>
+<span class="sclinktext">MN&#8239;43<span class='scsegments'>:13.2–13.3</span></span></p>
 </div>
 <h2 id="seg-387">Bare Attention</h2>
 <p id="seg-388">Now that our mind has become peaceful, we think we are ready for insight. So let’s talk about what insight is, how important it is, how it works, and how it’s used.</p>
@@ -759,7 +723,7 @@ and attention to causes.</p>
 <p id="seg-421">It was then that the Inuit said, “…And you think <em>you're</em> lost!”</p>
 <p id="seg-422">I can’t help telling jokes... I just can’t!</p>
 <p id="seg-423">Now, back to doubt. How do you know how to meditate? Yeah, you can listen to me and say, “Ajahn Brahm’s a good meditator. He’s been doing this for such a long time, so it must be true.” But that doesn’t really count, does it?</p>
-<p id="seg-424">The Vinaya,<sup>18</sup> the code for Buddhist monastics, forbids us to go into too much detail about any amazing experience we’ve had, but I’ll tell you a story so that you can see that you can recall your past experiences even though they happened a long time ago.</p>
+<p id="seg-424">The Vinaya,<sup class="sesame">18</sup> the code for Buddhist monastics, forbids us to go into too much detail about any amazing experience we’ve had, but I’ll tell you a story so that you can see that you can recall your past experiences even though they happened a long time ago.</p>
 <p id="seg-425">Once upon a time in a land not so far away, there was a meditation monk who lived in a forest. One day after coming out of a deep meditation, he decided to do a little experiment. He asked himself, “What’s my earliest memory?”</p>
 <p id="seg-426">Straight away, he experienced himself in a pram as a newborn baby. It wasn’t a memory in the same sense as you remember what you had for breakfast this morning; it was more like ‘re-experiencing’—he was back in his pram. He saw the black and white pram, and then he spotted his favourite toy, Porky! It was a blue ceramic pig that his mother had given him. It had some beans inside that made a noise when he rattled it.</p>
 <p id="seg-427">He could remember everything in that pram. He could also recognise his mother, not by how she looked but by how she smelled. At that particular time, as a little baby, he recognised his world by how it smelled.</p>
@@ -877,8 +841,8 @@ Your mind quickly enters <span lang="pi"><em>samādhi</em></span>.</p>
 <p id="seg-529">Another issue is when you’re peaceful while watching the breath and the breath is disappearing, but there’s no ‘oomph’ in the meditation. It’s just flat. I call this a pause or a blockage. What I would do is not to try to put forth any effort because that will mess things up. It’s like you come across a brick wall in your meditation and you keep banging your head against the wall thinking you can break through. That’s a silly response; it’s not going to work.</p>
 <p id="seg-530">I would imagine that I was just standing back a bit and seeing what the problem was. Then, I’d find that to the left there’s a door which is open, and I can just walk through it. To the right, there’s a ladder, and I can climb over. If I stood back even further, I’d find that the government couldn’t afford to finish building the wall. To the right and left, it’s empty—no wall at all!</p>
 <p id="seg-531">I’m not sure about you, but the biggest hindrance I had was ill-will. Kindness is the best antidote. So, whenever I was blocked anywhere, I’d always remember kindness to the whole process. “You don’t have to get enlightened today, Ajahn Brahm. You don’t have to do anything.” I’d shine that kindness all over. Once you see the obstacle, give it kindness and the obstacle will vanish. I call this technique the Nāḷāgiri strategy.</p>
-<p id="seg-532">When Devadatta<sup>19</sup> was trying to take over the Saṅgha,<sup>20</sup> King Ajātasattu helped Devadatta by using a huge elephant called Nāḷāgiri.<sup>21</sup> They got Nāḷāgiri mad with strong drink and let him loose on a path where the Buddha and his monks were walking on an alms round. The elephant was running down this narrow street, smashing everything in its path. In the opposite direction, the Buddha was walking calmly and mindfully.</p>
-<p id="seg-533">According to the story, many of the monks who were with the Buddha jumped into the houses along the sides of the street. Only Ānanda,<sup>22</sup> the Buddha’s faithful disciple, remained with the Buddha. With this huge, powerful and destructive monster of an elephant running at full speed towards them, Ānanda stood in front of the Buddha and said, “Let the elephant take me. I’ll give my life for my teacher.” But the Buddha just brushed Ānanda aside.</p>
+<p id="seg-532">When Devadatta<sup class="sesame">19</sup> was trying to take over the Saṅgha,<sup class="sesame">20</sup> King Ajātasattu helped Devadatta by using a huge elephant called Nāḷāgiri.<sup class="sesame">21</sup> They got Nāḷāgiri mad with strong drink and let him loose on a path where the Buddha and his monks were walking on an alms round. The elephant was running down this narrow street, smashing everything in its path. In the opposite direction, the Buddha was walking calmly and mindfully.</p>
+<p id="seg-533">According to the story, many of the monks who were with the Buddha jumped into the houses along the sides of the street. Only Ānanda,<sup class="sesame">22</sup> the Buddha’s faithful disciple, remained with the Buddha. With this huge, powerful and destructive monster of an elephant running at full speed towards them, Ānanda stood in front of the Buddha and said, “Let the elephant take me. I’ll give my life for my teacher.” But the Buddha just brushed Ānanda aside.</p>
 <p id="seg-534">With his enormous psychic power, the Buddha could have very easily grabbed Nāḷāgiri by the trunk and thrown him over the Ganges River a couple of hundred miles away, but that wasn’t what the Buddha did. The Buddha gave this drunken mad elephant loving-kindness, and Nāḷāgiri stopped and bowed his head down to the Buddha.</p>
 <p id="seg-535">Kindness was what subdued the mad elephant. So, when you have an attack of any of the hindrances, no matter what hindrance it is, no matter how strong it is, employ the Nāḷāgiri strategy: “Hindrances, the door of my heart is open to you.” Kindness is a powerful antidote, and the hindrances can’t harm you.</p>
 <p id="seg-536">One of the insights you will have from meditation is the power of loving-kindness or <span lang="pi">mettā</span>. This means that you get an insight of being kind to your body and your mind when you're meditating. And it's a beautiful way of living, too.</p>
@@ -898,12 +862,12 @@ They are in the presence of nibbāna.</p>
 <p id="seg-541">We’ve talked about insights, but what about the big insights? What are you doing all this for? Let me tell you the story of when I became enlightened.</p>
 <p id="seg-542">It was my fourth rains retreat, so I’d already been meditating a while. I was staying at a very peaceful monastery in the north-east of Thailand with very little work to do. I was senior enough to know the basics, but not senior enough to have any responsibility. It was a wonderful time.</p>
 <p id="seg-543">One evening the moon came up bright, lighting up the forest, so it was easy to do walking meditation under the trees. I’d already had some nice sitting meditation, and my practice was going really well. I had lots of energy and clarity. As I continued doing the walking meditation, great insights started to come in. Every time we have a really nice insight, we see things in a totally different way, and this gives us so much joy and energy. So, even though it was late at night, I didn’t really want to go to sleep. I enjoyed walking and seeing all these different ways of looking at the world.</p>
-<p id="seg-544">It was then that the big one came. “Wow! Amazing!” I was now seeing the world in a totally new way. Straight away I thought the world had another <span lang="pi">arahant</span>.<sup>23</sup> Oh, that was so lovely. Can you imagine what it must be like to become enlightened? Nothing left to worry about in the whole world. Perfect peace and happiness!</p>
+<p id="seg-544">It was then that the big one came. “Wow! Amazing!” I was now seeing the world in a totally new way. Straight away I thought the world had another <span lang="pi">arahant</span>.<sup class="sesame">23</sup> Oh, that was so lovely. Can you imagine what it must be like to become enlightened? Nothing left to worry about in the whole world. Perfect peace and happiness!</p>
 <p id="seg-545">I carried on walking, then went into the hall to do some sitting meditation. At one o’clock in the morning I’d always be a bit sleepy, but this time the body was sitting so straight, and the mind was absolutely clear. Watching my breath was as easy as pie.</p>
 <p id="seg-546">At about two o’clock, I thought I should have a rest before all the monks met just after three. So I went to my hut and laid down, but no way could I go to sleep with so much energy and joy. I got up again and went back to the hall to start meditation, and later the other monks came to do the morning chanting, and I chanted with so much energy and joy, my pitch perfect, my voice strong and clear.</p>
 <p id="seg-547">Afterwards we went on the alms round, and it was like walking on air. Usually, when lay supporters put some rice in our bowls, we weren’t supposed to talk to them. So on that day I just blasted them with loving-kindness, and I thought they didn’t know how lucky they were to be able to give a lump of rice to an <span lang="pi">arahant</span>!</p>
 <div class="centered-img"><img src='img/AB-Smiling.webp' alt='Ajahn Brahm meditating in a bubble round' width='80%'></div>
-<p id="seg-548">For our one meal of the day, we’d usually have one pot of curry to go with the rice. It was always rotten fish curry<sup>24</sup> with fish collected from the paddy fields and fermented in jars. The curry might have some banana shoots or whatever else they could find. It really stank.</p>
+<p id="seg-548">For our one meal of the day, we’d usually have one pot of curry to go with the rice. It was always rotten fish curry<sup class="sesame">24</sup> with fish collected from the paddy fields and fermented in jars. The curry might have some banana shoots or whatever else they could find. It really stank.</p>
 <p id="seg-549">That morning we had the usual pot of rotten fish curry, but next to it was another pot. It was a very rare treat of lovely pork curry! “Ah… the heavenly beings must be celebrating a newly enlightened monk in the world,” I thought.</p>
 <p id="seg-550">In our practice, when food was offered, the head monk would have the first choice. The head monk took one big ladleful of the pork curry and put it in his bowl, and then another one, and another! Three huge servings! “You can’t eat all that!” I found myself thinking, but then I thought, “Oh, it doesn’t matter. There’s plenty left for me.”</p>
 <p id="seg-551">Just as I was thinking that, he lifted up the lovely pork curry pot and poured it into the stinky, rotten fish curry, stirred it all up, and said, “It’s all the same. It’s all the same.” “If it’s all the same, why did you take the nice curry first?! You should have mixed everything up first!” I was fuming. The first decent meal in a month, and it was all wasted.</p>
@@ -938,14 +902,14 @@ They are in the presence of nibbāna.</p>
 <p id="seg-580">Finally, he touched his ear, and this poor student stood up and started singing “God Save the Queen!” at the top of his lungs. He sang the whole national anthem, even though we were wetting ourselves with laughter. When he finished, the hypnotist asked him, “Why did you do that?” and the young man gave what, to him, was an apparently excellent reason.</p>
 <p id="seg-581">That’s when I got chills down my spine. That student was convinced he’d freely chosen to sing, but it was obvious to us that he’d just made up the reason—he sang because the hypnotist told him to.</p>
 <p id="seg-582">How many times did I really make those decisions when I thought I’d freely chosen to do something? How many times was I conditioned to do that?</p>
-<p id="seg-583">It’s one of the reasons why I don’t mind spending a lot of time and effort teaching you. I’m brainwashing you. But in a good way. That’s what the Buddha did. The Buddha Kassapa<sup>25</sup> did that to our Buddha. The Buddha did that to his disciples, like Ānanda and Sāriputta,<sup>26</sup> and they did that to their disciples. Eventually the teachings were passed to Ajahn Chah’s teacher, Ajahn Mun. Ajahn Chah did that to me, and now, I’m doing it to you. It’s good brainwashing because it’s how we learn to let go.</p>
-<p id="seg-584"><span lang="pi">Parato</span> <span lang="pi">ghoso</span>, the words of another. It is one of the most important things to become a stream-winner<sup>27</sup> and to see non-self: to see that there’s no doer in there.</p>
+<p id="seg-583">It’s one of the reasons why I don’t mind spending a lot of time and effort teaching you. I’m brainwashing you. But in a good way. That’s what the Buddha did. The Buddha Kassapa<sup class="sesame">25</sup> did that to our Buddha. The Buddha did that to his disciples, like Ānanda and Sāriputta,<sup class="sesame">26</sup> and they did that to their disciples. Eventually the teachings were passed to Ajahn Chah’s teacher, Ajahn Mun. Ajahn Chah did that to me, and now, I’m doing it to you. It’s good brainwashing because it’s how we learn to let go.</p>
+<p id="seg-584"><span lang="pi">Parato</span> <span lang="pi">ghoso</span>, the words of another. It is one of the most important things to become a stream-winner<sup class="sesame">27</sup> and to see non-self: to see that there’s no doer in there.</p>
 <h2 id="seg-585">Stages of Disappearing</h2>
 <p id="seg-586">When you go deeper into that lotus, deeper into meditation, you can see that this idea of a self is conditioned. It’s not an absolute eternal entity. It’s empty. Nothing there.</p>
 <p id="seg-587">Sometimes people find that hard to accept because of their attachment to the sense of self. People want to do things, want to be the doer, want to be the knower,… And that gives them a huge identity. But the more spiritually advanced you are, the less of you there is.</p>
 <p id="seg-588">Jhāna are stages of disappearing where there’s less and less of you. When there’s less of you, there’s less of a target for suffering. There’s more peace and more happiness. You’re not weighed down by anything any more.</p>
 <p id="seg-589">Success or failure, praise or blame—none of this means anything. Even the Buddha received a lot of blame as well as a lot of praise. He said there’s not one human being in this world who only receives praise and never blame. It’s not what you do; it’s largely the defilements of other people that create criticisms. So, if you keep on practising letting go, you will, after a while, have less and less which you own. You become possession-less. You don’t attach to anything, which means that the whole idea of attainments disappears. Then you understand that the path of freedom is a path of having less.</p>
-<p id="seg-590">If somebody asks you, “Are you enlightened?” you say, “Who?” Is Venerable Khemā sitting here enlightened? Who is Venerable Khemā? Is it her body that gets enlightened? The <span lang="pi">vedanā</span>?<sup>28</sup> The <span lang="pi">saññā</span>?<sup>29</sup> The <span lang='pi'>saṅ&shy;khā&shy;ra</span>?<sup>30</sup> When you put it like that, it shows just how meaningless it is to think of these as attainments. Which of your six senses is enlightened?</p>
+<p id="seg-590">If somebody asks you, “Are you enlightened?” you say, “Who?” Is Venerable Khemā sitting here enlightened? Who is Venerable Khemā? Is it her body that gets enlightened? The <span lang="pi">vedanā</span>?<sup class="sesame">28</sup> The <span lang="pi">saññā</span>?<sup class="sesame">29</sup> The <span lang='pi'>saṅ&shy;khā&shy;ra</span>?<sup class="sesame">30</sup> When you put it like that, it shows just how meaningless it is to think of these as attainments. Which of your six senses is enlightened?</p>
 <p id="seg-591">Thinking you’re enlightened shows you that you’re not.</p>
 <div class="epigram-img"><img src='img/10.webp' alt='Each chapter the lotus gradually opens' width=35%></div>
 <h1 id="seg-592"><span class="chapnum">Chapter 10</span><br>Let The End Come</h1>
@@ -983,7 +947,7 @@ was like the quenching of the lamp.</p>
 <p id="seg-610">With stillness, not thinking, you’ll be able to get an insight by allowing your mind to explore the Dhamma. It’s almost like you let the thing teach you, rather than trying to find out what it means. With meditation—you don’t do anything, but you let the breath come to you. With insights—you don’t go seeking, but you let the wisdom come to you.</p>
 <h2 id="seg-611">Stop Trying</h2>
 <p id="seg-612">One of the things I mentioned but didn’t fully talk about is: you’ve been trying way too hard. You may think you haven’t, but you have. There’s a very famous story of Ānanda’s enlightenment to demonstrate how trying too hard isn’t going to get us anywhere.</p>
-<p id="seg-613">After the Buddha had passed away, the other members of the Saṅgha decided to hold a meeting to collect all of his teachings.<sup>31</sup> They wanted Ānanda to be part of it, even though he wasn’t fully enlightened because he had heard and remembered so many talks given by the Buddha.</p>
+<p id="seg-613">After the Buddha had passed away, the other members of the Saṅgha decided to hold a meeting to collect all of his teachings.<sup class="sesame">31</sup> They wanted Ānanda to be part of it, even though he wasn’t fully enlightened because he had heard and remembered so many talks given by the Buddha.</p>
 <p id="seg-614">Imagine how Ānanda, merely a stream-winner, must have felt when he got invited to join in the meeting with the other four hundred and ninety-nine fully enlightened <span lang='pi'>ara&shy;hants</span>!</p>
 <p id="seg-615">The night before the big meeting, in an effort to break through to the Dhamma, Ānanda meditated all night, watching his breath come in, watching his breath go out. When dawn came up, he was still unenlightened. There are certain things that you can’t rush or force with willpower.</p>
 <p id="seg-616">It was depressing, knowing that in a few hours, he’d have to face all his friends and colleagues, all fully enlightened, except for him. He couldn’t do anything about it now. He’d tried his very best. There was still some time left before the meeting, so he decided to take a nap. He went to his room, and as he lay down, just before his head hit the pillow, he became enlightened.</p>
@@ -1009,10 +973,10 @@ was like the quenching of the lamp.</p>
 <p id="seg-636">Crying out, she rushed back to the shore to try and save her baby. Her elder son waiting on the other side of the river heard his mother’s voice and thought she called him, so he slipped down the riverbank and was swept away by the current and drowned.</p>
 <p id="seg-637">With so much pain, she continued towards Sāvatthī. On the road, she saw a man and asked him about her family. He told her that the previous night, her parent’s house had collapsed, killing her parents and her brothers.</p>
 <p id="seg-638">This means that within twenty-four hours, she lost her husband, children, parents and siblings. The grief was too much for Paṭācārā, and her mind snapped. She cast off her clothes and stumbled around, naked and senseless, through the streets of Sāvatthī. In her aimless wandering, she wandered into Jetavana monastery, where she came across the Buddha. With his words of kindness, she regained her senses and covered herself up. The Buddha then gave her a teaching and at the end of the discourse, she became a stream-winner.</p>
-<p id="seg-639">She joined the order of <span lang='pi'>Bhik&shy;khu&shy;nīs</span><sup>32</sup> and practised well, and one night, after meditation, while she was watching the flame in her oil lamp, the wind blew in through her window and flickered the flame, and the flame went out. She understood the meaning of what she saw: <span lang="pi">anicca</span>. That was the end of all her other defilements.</p>
+<p id="seg-639">She joined the order of <span lang='pi'>Bhik&shy;khu&shy;nīs</span><sup class="sesame">32</sup> and practised well, and one night, after meditation, while she was watching the flame in her oil lamp, the wind blew in through her window and flickered the flame, and the flame went out. She understood the meaning of what she saw: <span lang="pi">anicca</span>. That was the end of all her other defilements.</p>
 <p id="seg-640">When you find out the cause of things, then when those causes disappear, the result disappears. That’s what dependent cessation is. The cause of our mind consciousness is <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> or the objects of consciousness. When the objects of mind consciousness stop, our consciousness ceases.</p>
 <p id="seg-641">When this happens, our consciousness is not just in a dormant or suspended state like a TV screen, but it is as if when the TV program stopped, the TV itself vanished—the TV was not there any more. When there’s nothing on the screen, the screen vanishes too.</p>
-<p id="seg-642">That is a quick glimpse of dependent cessation.<sup>33</sup></p>
+<p id="seg-642">That is a quick glimpse of dependent cessation.<sup class="sesame">33</sup></p>
 <hr style='border:0; margin-top: 0; height:5em'>
 <div class="epigram">
 <p id="seg-643">…Spend time with a true person,<br>
@@ -1024,7 +988,7 @@ would find happiness.</p>
 </div>
 <div class="epigram-cite">
 <p id="seg-644">Nāvāsutta<br>
-<span class="sclinktext">Snp&#8239;2.8:8.1–8.4</span></p>
+<span class="sclinktext">Snp&#8239;2.8<span class='scsegments'>:8.1–8.4</span></span></p>
 </div>
 <h1 id="seg-645">Notes</h1>
 <div class="tablewrap" id="seg-646">

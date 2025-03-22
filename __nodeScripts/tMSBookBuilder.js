@@ -16,6 +16,8 @@ function formatSCLinktext (linkHTML) {
 	let [before,after] = linkHTML.split(":");
 	if (typeof after !== "undefined") {
 		html = before + "<span class='scsegments'>:" + after +"</span>"
+	} else {
+		html = linkHTML
 	}
 	return html
 }
@@ -1043,13 +1045,22 @@ function buildBookIndexHTML () {
 		}
 
 
-		let allSegments = bookRoot.querySelectorAll('p:not(.tablepara), h1, h2, h3, .tablewrap')
+		let allSegments = bookRoot.querySelectorAll('p:not(.tablepara), h1, h2, h3, .tablewrap, figure')
 		let hcounter = 1
+		let figcounter =1
 		for (let i in allSegments) {
 			if (allSegments[i].id) {
-				html = html.replace(`id="TOC${hcounter}"`,`id="TOCseg-${parseInt(i) + 1}"`)
+				if (allSegments[i].id.substring(0,3) == 'hea') { // it's a heading
+					html = html.replace(`id="TOC${hcounter}"`,`id="TOCseg-${parseInt(i) + 1}"`)
+					hcounter++
+				} else
+				if (allSegments[i].id.substring(0,3) == 'fig') { // it's a figure
+					html = html.replace(`id="fig${figcounter}"`,`id="seg-${parseInt(i) + 1}"`)
+					figcounter++
+
+				}
 				allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)
-				hcounter++
+
 			} else {
 				if (allSegments[i].classList != `tablepara`) {
 					allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)

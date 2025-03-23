@@ -142,19 +142,6 @@ function buildSettings (_callback) {
 	_callback();
 }
 
-/* function formatSCLinktext () {
-	allSCLinktexts = document.querySelectorAll('.sclinktext, .tipref');
-	for (var i = 0; i < allSCLinktexts.length; i++) {
-		let [before,after] = allSCLinktexts[i].innerHTML.split(":");
-		if (typeof after !== "undefined") {
-			if (allSCLinktexts[i].classList.contains('tipref')) {
-				allSCLinktexts[i].innerHTML = before + "<span class='tipsegments'>:" + after +"</span>"
-			} else {
-				allSCLinktexts[i].innerHTML = before + "<span class='scsegments'>:" + after +"</span>"
-			}
-		}
-	}
-} */
 
 function startup () {
 	/*
@@ -168,14 +155,10 @@ function startup () {
 		//the following is done after buildSettings completes:
 		document.getElementById('topbar').style.display='block';
 		document.getElementById('thebook').style.display='block';
-		//hideAllLibNotes();
 		initialiseCommonSettings();
 		if (!isAudioBook()) {
 			initialiseBookSettings ();
 		} 
-		//formatbooknotes();
-		//formatSCLinktext();
-
 		// give tables an id starting at table_1
 		let tabrefArr = document.querySelectorAll('table');
 		if (tabrefArr.length  > 0) {
@@ -216,43 +199,43 @@ function startup () {
 			}
 			shadowSearchBar ();
 		}
-		justifyCheck.onclick = function () {
-			showSpinner(); // show spinner
+		document.getElementById("justifyCheck").onclick = function () {
+			showSpinner();
 			promiseToRunAsync(doJustifyCheck) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
-		hyphenCheck.onclick = function () {
-			showSpinner(); // show spinner
+		document.getElementById("hyphenCheck").onclick = function () {
+			showSpinner();
 			promiseToRunAsync(doHyphenCheck) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		document.getElementById("decfont").onclick = function () { // minus button
-				showSpinner(); // show spinner
+				showSpinner();
 				promiseToRunAsync(doDecFont) 
 				.then(() => {
 					hideSpinner();
 				});
 		}
 		document.getElementById("incfont").onclick = function () { //plus button
-			showSpinner(); // show spinner
+			showSpinner();
 			promiseToRunAsync(doIncFont) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		declh.onclick = function () {
-			showSpinner(); // show spinner
+			showSpinner();
 			promiseToRunAsync(doDecLH) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		inclh.onclick = function () {
-			showSpinner(); // show spinner
+			showSpinner();
 			promiseToRunAsync(doIncLH) 
 			.then(() => {
 				hideSpinner();
@@ -268,35 +251,35 @@ function startup () {
 			setTheme ();
 		}
 		radioMargNarrow.onclick = function () {
-			showSpinner(); // show spinner
+			showSpinner();
 			promiseToRunAsync(doSetMargin) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		radioMargMid.onclick = function () {
-			showSpinner(); // show spinner
+			showSpinner();
 			promiseToRunAsync(doSetMargin) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		radioMargWide.onclick = function () {
-			showSpinner(); // show spinner
+			showSpinner();
 			promiseToRunAsync(doSetMargin) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		serifFont.onclick = function () {
-			showSpinner(); // show spinner
+			showSpinner();
 			promiseToRunAsync(doSetSerif) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
 		showtMSIndexCheck.onchange = function () {
-			showSpinner(); // show spinner
+			showSpinner();
 			promiseToRunAsync(doTMSIndex) 
 			.then(() => {
 				hideSpinner();
@@ -343,16 +326,12 @@ function buildInfo () {
 	if (parentDiv.innerHTML == '') {
 		let shortCode = shortcode();
 		let html ='';
-
-
 		function populateInfo (bookInfoData) {
-
 			html += `<h1>${bookInfoData.BookTitle}</h1>`;
 			if (bookInfoData.BookSubtitle) {
 				html += `<h3>${bookInfoData.BookSubtitle}</h3>`;
 			}
 			html += `<h2>${bookInfoData.Authors}</h2>`;
-
 			//Add Ons
 			if (bookInfoData.AddInfo.length > 0) {
 				html += `<section class="infocontainer">`;
@@ -372,10 +351,6 @@ function buildInfo () {
 				}
 				html += `</section>`
 			}	
-
-			//html += tablelist();
-			//html += figurelist();
-			//html += suttalist();
 
 			if (isAudioBook()) {
 				html += `
@@ -491,7 +466,7 @@ function buildInfo () {
 
 //ONLOAD
 window.onload = function () {
-    showSpinner(); // show spinner
+    showSpinner();
     promiseToRunAsync(startup) 
     .then(() => {
         hideSpinner();
@@ -499,20 +474,11 @@ window.onload = function () {
 	});
 };
 
-//var savedBookElements = thebook.querySelectorAll("*:not(.noshow)");
 var savedBookElements = thebook.querySelectorAll("h1:not(.titlepage), h2:not(.titlepage), h3:not(.titlepage), p:not(.tablepara), .tablewrap, figure");
 var savedTOCElements = tocnav.querySelectorAll('li, button');
 var savedDetailsElements = ModalDetails.querySelectorAll('p, figcaption, h1, h2, li, table');
-//var savedNotesElements = ModalNotes.querySelectorAll('h2, div.booknote');
 
 var theTopBar = document.getElementById("topbar");
-
-/* function hideAllLibNotes () {
-	var elems = document.getElementsByClassName('libcont');
-	for (var i = 0; i < elems.length; i++) {
-		hideElement(elems[i]);
-	}		
-} */
 
 function initialiseCommonSettings () {
 	//FORCE-FULL-SCREEN
@@ -847,15 +813,8 @@ function getPlaceInBook () {
 			}
 
 		}
-
 		scrollToNavTarget();
-
 	}
-/* 	setTimeout(() => {
-		scrollToNavTarget();
-		fillProgressBar();
-	}, 600);  */
-
 }
 
 function savePlaceInBook () {
@@ -881,7 +840,6 @@ function finalExit() {
 }
 
 window.onbeforeunload = finalExit;
-
 
 function saveCookies () {
 if (!nuclearOption) {
@@ -1618,7 +1576,6 @@ function setTMSIndex () {
 	let theBook = document.getElementById('thebook')
 	let paragraphArr = theBook.querySelectorAll('p, .tablewrap, figure')
 	for (let i in paragraphArr) {
-		//let tempID = paragraphArr[i].id
 		if (paragraphArr[i].id) {
 			let injectSpan = `<span class="tMSIndex">${paragraphArr[i].id.replace('seg-', '§')}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
@@ -1631,7 +1588,6 @@ function setTMSIndex () {
 	let headingsArr = theBook.querySelectorAll('h1, h2, h3')
 	for (let i in headingsArr) {
 		if ((headingsArr[i].id) && (headingsArr[i].id != '999999999') && (headingsArr[i].id != 'seg-0-1') ) {
-			//console.log (headingsArr[i].id)
 			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id.replace('seg-', '§')}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				headingsArr[i].innerHTML = injectSpan + headingsArr[i].innerHTML
@@ -1660,22 +1616,8 @@ function scrollToID (id) {
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
 	}
 	var elmnt = document.getElementById(id);
-	//let noteElmnt = elmnt.closest('.booknote');
-
-/* 	if (noteElmnt) {
-		setModalStyle ("Notes");
-		showModal("Notes");
-		savedsup = elmnt;
-		//clearhighlightnote();
-		//highlightnote(noteElmnt.dataset.note); 
-		stopBookScroll ();
-	} else { */
-		elmnt.scrollIntoView({block: 'start', behavior: 'auto',});
-		window.scrollBy(0, -150);
-		//bodge for the highlight - needs a better mechanism for highlighting
-		//savedsup = elmnt;
-		//clearhighlightnote();
-//	}
+	elmnt.scrollIntoView({block: 'start', behavior: 'auto',});
+	window.scrollBy(0, -150);
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
@@ -2152,8 +2094,8 @@ function setModalStyle (heading) {
 			modalcontent.style.padding = "0";
 			break;
 		case 'Lists':
-			modalbody.style.height = "90vh";
-			modalbody.style.maxHeight = "90vh";
+			modalbody.style.height = "85vh";
+			modalbody.style.maxHeight = "85vh";
 			modalbody.style.padding = "0";
 			modalcontent.style.width = "95%";
 			modalcontent.style.maxWidth = "65em";
@@ -2344,32 +2286,6 @@ document.getElementById("ModalDetails").addEventListener("click", function(e) {
 			if (true) {e.preventDefault();}
 		}
 	}
-
-	if (e.target.parentNode.id == 'LOT') {
-		var tocNumber = e.target.id.replace("TOC", "");
-		var toctarget = "head-" + tocNumber;
-		exitStaticModal();
-		goToTarget(toctarget);
-	}
-
-	if ((e.target.className == "sclinkref") || (e.target.className == "scsegments")) {
-		let linkNode = e.target;
-		if (e.target.classList.contains('scsegments')) {
-			linkNode = e.target.parentNode;
-		}
-		var gotoID = 'slt_' + linkNode.id.replace("screflinkfrom_","");
-		scrollToID(gotoID);
-	}
-
-	if (e.target.className == "lotlinkref") {
-		var gotoID = 'table_' + e.target.id.replace("lotlinkfrom_","");
-		scrollToID(gotoID);
-	}
-
-	if (e.target.className == "figlinkref") {
-		var gotoID = e.target.id.replace("figlinkto_","");
-		scrollToID(gotoID);
-	}
 });
 
 
@@ -2402,87 +2318,11 @@ modalalert.addEventListener("click", function(e) {
 	}
 });
 
-//var savedsup = '';
-/* function formatbooknotes() { // adds the notes numbers to the booknotes - called once at onload
-	for (var i = 1; i < savedNotesElements.length; i++) {
-		savedNotesElements[i].innerHTML = "<div class='booknotesNumber'>" + (i) + "</div> <div class='booknotesText'>" + savedNotesElements[i].innerHTML +"</div>";
-	}
-} */
-/* var highlightedNote = 0;
-function highlightnote (notetohighlight) {
-	highlightedNote = parseInt(notetohighlight);
-	savedNotesElements[highlightedNote].style.boxShadow = "2px 2px 5px 0px var(--bdtexthighlightborder)"
-	savedNotesElements[highlightedNote].style.background = "var(--bdtexthighlighter)"
-	savedNotesElements[highlightedNote].scrollIntoView({block: "start", inline: "nearest", behavior: "auto"});
-}
-
-
-function clearhighlightnote(when='delay', keepSup= false) {
-	savedNotesElements[highlightedNote].style.boxShadow = "unset"
-	savedNotesElements[highlightedNote].style.background = "unset";
-		if (!(savedsup === '')) {
-			if (savedsup.tagName == 'TABLE')  {
-				savedsup.parentElement.style.boxShadow = "0px -22px 77px -5px var(--notehighlighter)"
-			} else if (savedsup.tagName == 'FIGURE') {
-				savedsup.style.boxShadow = " 0px -22px 77px -5px var(--notehighlighter)"
-				savedsup.style.background = "var(--notehighlighter)"
-				savedsup.style.opacity = "0.5"
-			} else {
-				savedsup.style.background = "var(--notehighlighter)" 
-				savedsup.style.boxShadow = "0px 0px 10px 10px var(--notehighlighter)"
-				savedsup.style.opacity = "0.7"
-				savedsup.style.color = "crimson"
-			}
-			if (when=='immediate') {
-				savedsup.style = null;
-				if (!keepSup) {
-					savedsup='';
-				}
-
-			} else {
-				setTimeout(function() {
-					savedsup.style.transition = "all 0.3s ease-out";
-					savedsup.style.background ="var(--primarybackground)";
-				}, 300); 
-				setTimeout(function() {
-					savedsup.style = null;
-					//console.log (savedsup.parentElement)
-					if (savedsup.parentElement.classList.contains('tablewrap')) {
-						savedsup.parentElement.style = null;
-					}
-					if (!keepSup) {
-						savedsup='';
-					}
-				},400);
-			}
-		}
-} */
-
-
-
-/* function clearAnyNoteInNoteReturn () {
-	let anyReturnArr = document.getElementsByClassName('noteinnotereturn')
-	for (i = 0; i < anyReturnArr.length; i++) {
-		anyReturnArr[i].remove();
-	}
-} */
 
 function exitStaticModal () {
-/*	let modalHeaderText = document.getElementById('ModalHeaderText').innerText
- 	if (modalHeaderText == 'NOTES') {
-		clearAnyNoteInNoteReturn();
-	}
-	if (calledFromNotes) {
-		setModalStyle ("Notes");
-		showModal("Notes");
-		savedNotesElements[highlightedNote].scrollIntoView({block: "start",});
-		calledFromNotes = false;
-	} else { */
-		startBookScroll();
-		//clearhighlightnote();
-		hideElement(modal);
-		hideElement(modalcontent);
-//	}
+	startBookScroll();
+	hideElement(modal);
+	hideElement(modalcontent);
 }
 
 
@@ -2584,39 +2424,6 @@ function isElementPartiallyInViewport(el)
     return (vertInView && horInView);
 }
 
-
-/* function getFullReference (shortReference = '') {
-	let references = document.querySelectorAll('.references')
-	let counter = 0
-	let fullHTML = ''
-
-	for( let i=0; i < references.length; i++) {
-		let referenceLists = references[i].childNodes
-		for (let j = 0; j < referenceLists.length; j++) {
-			if (referenceLists[j].tagName == 'DT') {
-				if (referenceLists[j].innerHTML == shortReference) {
-					if (counter > 0) {
-						//fullHTML += ` &#x2756;&nbsp; `
-						fullHTML += ` &ndash; `
-						fullHTML += `${referenceLists[j].nextElementSibling.innerHTML.replaceAll(', ', '').replace('bibhead', 'bibheadhide')}` 
-					} else {
-						fullHTML += `${referenceLists[j].nextElementSibling.innerHTML}`
-					}
-					
-					counter ++
-				}
-			}
-		}
-	}
-
-	if (fullHTML) {
-		return fullHTML
-	} else {
-		return 'Error: Bibliography reference not found';
-	}
-} */
-
-
 function doOutAppHREF (href) {
 		if (navigator.onLine) {
 			showSpinner();
@@ -2625,9 +2432,6 @@ function doOutAppHREF (href) {
 			showAlert('<p><br>You need to be online to go to: <br>' + href + '<br><br></p>');
 		}
 }
-
-
-var savedSUPElements = thebook.querySelectorAll('sup');
 
 function decodeBookSegment (anchortext) {
 	let str = ''
@@ -2663,6 +2467,9 @@ function blink (element) {
 document.getElementById("ModalLists").addEventListener("click", function(e) {
 	if (e.target.id == 'tablesListTab') {
 		tablesList.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" })
+	}
+	if (e.target.id == 'figuresListTab') {
+		figuresList.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" })
 	}
 	if (e.target.id == 'textsListTab') {
 		textsList.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" })
@@ -2705,101 +2512,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 		}
 
 	}
-		
 
-/* 	if (e.target.classList.contains ('TOCref')) {
-		var toctarget = e.target.getAttribute("data-TOCref");
-		closebtn.click();
-		goToTarget(toctarget);
-	}
-	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
-		calledFromNotes = true;
-		let linkNode = e.target;
-		if (e.target.classList.contains('scsegments')) {
-			linkNode = e.target.parentNode;
-		}
-		displaySutta(linkNode.innerText);
-		restorePlaceInBook();
-		if (true) {e.preventDefault();}
-	} */
-/* 	if (e.target.classList.contains ('booknotesNumber')) {
-		var supnumber = e.target.innerHTML;
-		if (supnumber == savedsup.innerHTML) {
-			closebtn.click();
-		} else {
-			for (let i=0; i < savedSUPElements.length; i++) {
-				if (supnumber == savedSUPElements[i].innerHTML) {
-					savedsup = savedSUPElements[i];
-					closebtn.click();
-				}
-			}
-			goToTarget(savedsup, 'ELEMENT');
-		}
-	} */
-/* 	if (e.target.classList.contains('bookSegment')){
-		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
-		closebtn.click();
-		//clearhighlightnote('immediate');
-		//savedsup = document.getElementById(bookSeg);
-		goToTarget(bookSeg);
-		//clearhighlightnote();
-	}
-
-	if (e.target.classList.contains('manualLink')) {
-		var whereTo = e.target.getAttribute('data-target').substring(1);
-		closebtn.click();
-		//clearhighlightnote('immediate');
-		//savedsup = document.getElementById(whereTo);
-		goToTarget(whereTo);
-		//clearhighlightnote();
-	} */
-
-/* 	if (e.target.classList.contains('noteinnotes')) {
-		//let notesArr = document.getElementsByClassName('booknote')
-		let noteNumber = e.target.innerText
-		let noteFromNumber = '';
-		if (e.target.parentNode.parentNode.hasAttribute("data-note") ) {
-			noteFromNumber = e.target.parentNode.parentNode.dataset.note;
-		} else if (e.target.parentNode.parentNode.parentNode.hasAttribute("data-note") ) {
-			noteFromNumber = e.target.parentNode.parentNode.parentNode.dataset.note;
-		}
-		clearAnyNoteInNoteReturn();
-		let scrollToE = document.querySelectorAll(`[data-note="${noteNumber}"]`);
-		scrollToE[0].scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
-		//clearhighlightnote(noteFromNumber, 'immediate', true);
-		highlightnote(noteNumber);
-		// create a return btn(span)
-		const backbtn = document.createElement("span");
-		backbtn.classList.add('noteinnotereturn')
-		const backbtnText = document.createTextNode(` [Return to note ${noteFromNumber}]`);
-		backbtn.appendChild(backbtnText)
-		backbtn.addEventListener('click', (event) => {
-			clearhighlightnote(noteNumber,'immediate', true);
-			highlightnote(noteFromNumber);
-			event.target.remove();
-		  });
-		scrollToE[0].lastChild.appendChild(backbtn)
-	} */
-
-/* 	if ((e.target.classList.contains('goselfquote'))) {
-		displaySelfquote(e.target.innerHTML);
-		//calledFromNotes = true;
-		restorePlaceInBook();
-		if (true) {e.preventDefault();}
-	}
-
-	if (e.target.nodeName == 'A') {
-		doOutAppHREF (e.target.getAttribute('href'));
-		if (true) {e.preventDefault();}
-	}
-
-	if (e.target.classList.contains('sesame')) {
-		showSpinner();
-		toggleSesame (e.target)
-	} else if (e.target.parentNode.classList.contains('sesame')) {
-		showSpinner()
-		toggleSesame (e.target.parentNode)
-	} */
 });
 
 function toggleSesame (el) {
@@ -3133,33 +2846,6 @@ shareBtn.onclick = function() {
 		   }
 		let originalHTML = copyQuote.innerHTML
 		
-		//Add the Notes
-/* 		let notesStr =``
-		let allSups = copyQuote.querySelectorAll('sup')
-		for (let i in allSups) {
-			if (i == 0) {
-				notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
-			}
-			let supNo = allSups[i].innerText
-			let tempText = ` [${allSups[i].innerText}]`
-			allSups[i].innerText = tempText
- 			for (let j in savedNotesElements) {
-				if (savedNotesElements[j].tagName == 'DIV') {
-					if (savedNotesElements[j].dataset.note == supNo) {
-						notesStr += `<p>${savedNotesElements[j].innerHTML.replace(`<div class="booknotesNumber">`,'[')
-																		 .replace(`</div>`, ']: ')
-																		 .replace(`<div class="booknotesText">`,'')
-																		 .replace(`</div>`, '')
-																		 .replaceAll(`<p>`,``)
-																		 .replaceAll(`</p>`,`<br>`)
-																		}</p>`
-					}
-				}
-			}
-
-		}
-		copyQuote.innerHTML += notesStr
- */
 		function suttaCentralIt (suttaReference) {
 			let newlink = ''
 			 let [head,tail] = suttaReference.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0].split(':')
@@ -3379,13 +3065,14 @@ listsBtn.onclick = function() {
 	setModalStyle ("Lists");
 	showModal("Lists");
 	stopBookScroll ();
+	let atLeastOneListExists = false
 
 	function tables () {
 		let tabrefArr = document.querySelectorAll('table');
 		let parentDiv = document.getElementById('tablesList');
-		if (tabrefArr.length == 0) { return '';}
 		let html = "";
 		if (tabrefArr.length  > 0) {
+			atLeastOneListExists = true
 			html = `<section id='lot-list' class="infocontainer">`
 			html += `<h3>Tables:</h3>`;
 			html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
@@ -3402,23 +3089,17 @@ listsBtn.onclick = function() {
 			}
 			html += `</ul></section>`;
 			parentDiv.innerHTML = html;
-
-			var options = {
-				valueNames: [ 'lotSegRef', 'lotCaption' ]
-			};
+			var options = {valueNames: [ 'lotSegRef', 'lotCaption' ]};
 			var lotList = new List('lot-list', options);
-
 		}
 	}
 	
-
 	function figures () {
 		let figArr = document.querySelectorAll('figure')
 		let parentDiv = document.getElementById('figuresList')
-		if (figArr.length == 0) { return '';}
 		let html = "";
 		if (figArr.length > 0) {
-
+			atLeastOneListExists = true
 			html = `<section id='figures-list' class="infocontainer">`
 			html += `<h3>Figures:</h3>`;
 			html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
@@ -3433,123 +3114,90 @@ listsBtn.onclick = function() {
 			}
 			html += `</ul></section>`;
 			parentDiv.innerHTML = html;
-
-			var options = {
-				valueNames: [ 'figureSegRef', 'figureCaption' ]
-			};
+			var options = {valueNames: [ 'figureSegRef', 'figureCaption' ]};
 			var figuresList = new List('figures-list', options);
-
-
-/* 			html = `<section class="infocontainer">`;
-			html += `<h3>List of Figures:</h3>`;
-			html += `<div id="figlist">	`
-			for (let i = 0; i < figArr.length; i++) {
-				if (figArr[i].getElementsByTagName("figcaption")[0]) {
-					let linktext = `<span class='figlinkref' id='figlinkto_${figArr[i].id}'>${figArr[i].getElementsByTagName("figcaption")[0].innerHTML}</span>`;
-					html += `<div class='figlistitem'>${linktext}</div>`;
-				}
-			}
-			html += `</div></section>`;
-			return html; */
 		}
 	}
 
-
-
-
-
 	function sctexts () {
-		function populateSCTexts (sclinksdata) {
-			let parentDiv = document.getElementById('textsList');
-			let longSCTExtList = false
-			let html =``
-			html = `<section id="texts-list" class="infocontainer">`;
-			html += `<h3>Texts:</h3>`;
-			if (sclinksdata.length  > 7) {
-				longSCTExtList = true;
+		if (document.querySelectorAll('.sclinktext').length > 0) {
+			atLeastOneListExists = true
+			function populateSCTexts (sclinksdata) {
+				let parentDiv = document.getElementById('textsList');
+				let html =``
+				html = `<section id="texts-list" class="infocontainer">`;
+				html += `<h3>Texts:</h3>`;
 				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="textSegRef">Segment</button>`
 				html += `  <button class="sort" data-sort="sclinktext">Reference</button></div>`
-			}
-			html += `<ul class="list reflist">`
-			for (let i in sclinksdata) {
-				let segRef = ``
-				let segment = ``
-				let data_fnnumber = ``
-				let footnote = `<span class='footnoteinlist'></span>`
-				if (sclinksdata[i].location.substring(0,4) == 'seg-') {
-					segment = sclinksdata[i].location.substring(4)
-					segRef = sclinksdata[i].location
-				} else { // its a footnote
-					let allSups = document.querySelectorAll('sup') 
-					for (let j in allSups) {
-						if (allSups[j].innerText == sclinksdata[i].location.substring(3)) { 
-							segRef = allSups[j].closest('p').id
-							segment = segRef.substring(4)
-							data_fnnumber = `data-fnnumber='${sclinksdata[i].location.substring(3)}'`
-							footnote = `<span class='footnoteinlist'>note: ${sclinksdata[i].location.substring(3)}</span>`
+				html += `<ul class="list reflist">`
+				for (let i in sclinksdata) {
+					let segRef = ``
+					let segment = ``
+					let data_fnnumber = ``
+					let footnote = `<span class='footnoteinlist'></span>`
+					if (sclinksdata[i].location.substring(0,4) == 'seg-') {
+						segment = sclinksdata[i].location.substring(4)
+						segRef = sclinksdata[i].location
+					} else { // its a footnote
+						let allSups = document.querySelectorAll('sup') 
+						for (let j in allSups) {
+							if (allSups[j].innerText == sclinksdata[i].location.substring(3)) { 
+								segRef = allSups[j].closest('p').id
+								segment = segRef.substring(4)
+								data_fnnumber = `data-fnnumber='${sclinksdata[i].location.substring(3)}'`
+								footnote = `<span class='footnoteinlist'>note: ${sclinksdata[i].location.substring(3)}</span>`
+							}
 						}
 					}
+					let linktext = `<span class='textSegRef'>${segment}</span>${footnote} ${sclinksdata[i].sclinkHTML}`
+					html += `<li class='reflistitem' data-segref='${segRef}' ${data_fnnumber}>${linktext}</li>`;
 				}
-				let linktext = `<span class='textSegRef'>${segment}</span>${footnote} ${sclinksdata[i].sclinkHTML}`
-				html += `<li class='reflistitem' data-segref='${segRef}' ${data_fnnumber}>${linktext}</li>`;
-			}
-
-			html += `</ul></section>`;
-
-			parentDiv.innerHTML = html
-
-			if (longSCTExtList) {
-				var options = {
-					valueNames: [ 'textSegRef', 'sclinktext' ]
-				};
+				html += `</ul></section>`;
+				parentDiv.innerHTML = html
+				var options = {valueNames: [ 'textSegRef', 'sclinktext' ]};
 				var textList = new List('texts-list', options);
 			}
+			fetch(`../_resources/book-data/${shortcode()}/sclinks.json`)
+			.then (showSpinner())
+			.then(response => response.json())
+			.then (data => populateSCTexts(data))
+			.catch(error => {
+			console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
+			}
+			);
 		}
-		fetch(`../_resources/book-data/${shortcode()}/sclinks.json`)
-		.then (showSpinner())
-		.then(response => response.json())
-		.then (data => populateSCTexts(data))
-		.catch(error => {
-		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
-		}
-		);
 	}
 
 	function notes () {
 		let allSups = document.querySelectorAll ('sup')
-		function populateNotes (footnotesData) {
-			let parentDiv = document.getElementById('footnotesList');
-			let html = ``
-			html += `<section id='footnotes-list' class='infocontainer'>`
-			html += `<h3>Notes:</h3>`
-			html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="notesSegRef">Segment</button>`
-			html += `  <button class="sort" data-sort="footNoteText">Note Text</button></div>`
-
-			//html += `<div id="lonlist" class="list">	` //lon = list of notes
-	
-			html += `<ul class="list reflist">`
-			for (let i in footnotesData) {
-				let fnNumber = footnotesData[i].fnNumber
-				let fnHTML = footnotesData[i].fnHTML
-				let segNo = ``
-				for (let j in allSups) {
-					if (allSups[j].innerText == fnNumber) {
-						segNo = `${allSups[j].parentNode.id}`
-						break
-					}
-				}
-				let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML}</span>`
-				html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
-				//html += `<div class='lonlistitem'><span class='segRef'  data-fnnumber='${fnNumber}'>${segNo}</span><div class="footNoteText"><span class= "footNoteNumber">#${fnNumber}</span>${fnHTML}</div></div>`
-			}
-			html += `</ul></section>` 
-			parentDiv.innerHTML = html
-			var options = {
-				valueNames: [ 'notesSegRef', 'footNoteText' ]
-			};
-			var footnotesList = new List('footnotes-list', options);
-		}
 		if (allSups.length > 0) {
+			atLeastOneListExists = true
+			function populateNotes (footnotesData) {
+				let parentDiv = document.getElementById('footnotesList');
+				let html = ``
+				html += `<section id='footnotes-list' class='infocontainer'>`
+				html += `<h3>Notes:</h3>`
+				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="notesSegRef">Segment</button>`
+				html += `  <button class="sort" data-sort="footNoteText">Note Text</button></div>`
+				html += `<ul class="list reflist">`
+				for (let i in footnotesData) {
+					let fnNumber = footnotesData[i].fnNumber
+					let fnHTML = footnotesData[i].fnHTML
+					let segNo = ``
+					for (let j in allSups) {
+						if (allSups[j].innerText == fnNumber) {
+							segNo = `${allSups[j].parentNode.id}`
+							break
+						}
+					}
+					let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML}</span>`
+					html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
+				}
+				html += `</ul></section>` 
+				parentDiv.innerHTML = html
+				var options = {valueNames: [ 'notesSegRef', 'footNoteText' ]};
+				var footnotesList = new List('footnotes-list', options);
+			}
 			fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)
 			.then (showSpinner())
 			.then(response => response.json())
@@ -3560,14 +3208,17 @@ listsBtn.onclick = function() {
 		}
 
 	}
-
-	
-
-
 	tables()
 	figures()
 	sctexts()
 	notes()
+	if (!atLeastOneListExists) {
+		let parentDiv = document.getElementById('ModalLists');
+		let html = `<section class='infocontainer'>`
+		html += `<p style='font-family: "Source Sans Pro"; font-variant: small-caps; font-size: 1.4em; text-align: center'>There are no lists available for this book</p>`
+		html += `</section>`
+		parentDiv.innerHTML = html
+	}
 	hideSpinner()
 }
 

@@ -265,6 +265,7 @@ function processPandoc() {
 					case 'Bu ':
 						anchors[i].classList.add('extlink')
 						anchors[i].classList.add('tipref')
+						anchors[i].innerHTML = (formatSCLinktext(anchors[i].innerHTML))
 					break
 					default:
 						if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
@@ -763,6 +764,7 @@ function buildBookIndexHTML () {
 				case 'Bu ':
 					anchors[i].classList.add('extlink')
 					anchors[i].classList.add('tipref')
+					anchors[i].innerHTML = (formatSCLinktext(anchors[i].innerHTML))
 				break
 				case 'Seg':
 					let temp4Text =  anchors[i].text

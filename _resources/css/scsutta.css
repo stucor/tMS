@@ -97,7 +97,7 @@ li span.pli-lang .segno {
 
 .button-area > button:active{
 	background-color:var(--primarycolor);
-  color: var(--buttonbackground);
+  color: var(--primarybackground);
 }
 
 .button-area > .checkcontainer{

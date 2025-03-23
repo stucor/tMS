@@ -1307,17 +1307,33 @@ sup {
 	top: 25px;
 	width:calc(100%);
 	background: var(--primarybackground);
-/* 	border-radius: 5px 5px 0 0; */
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 3px double grey;
 	font-family: 'Source Sans Pro';
-	line-height: 24px;
+	z-index: 1;
 }
 
 #listsTabNav > button {
-	margin: 5px;
+	background-color: var(--buttonbackground);
+	color: var(--buttontext);
+	border: 1px solid grey;
+	font-variant: small-caps;
+	width:80px;
+	height:20px;
+	max-height: 20px;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin: 1px 0 1px 1em;
+	cursor: pointer;
+	border-radius: 10px;
+	border: 2px solid rgb(150, 150, 150, 0.5);
 }
 
-#lotlist, #figlist, #lonlist{
+#listsTabNav> button:active{
+	background-color:var(--primarycolor);
+  	color: var(--primarybackground);
+}
+
+#lotlist, #figlist {
 	padding:0;
 	margin-left: 1rem;
 	margin-right: 1rem;
@@ -1326,20 +1342,6 @@ sup {
 .lotlistitem, .figlistitem {
 	text-align: left;
 }
-
-/* .lotlistitem::before, .figlistitem::before {
-	content: '\d067  '
-} */
-
-/* .lonlistitem {
-	text-align: left;
-	margin-bottom: 1em;
-	border: 1px solid grey;
-	padding:0.5em;
-	cursor:pointer;
-} */
-
-
 
 .footNoteText {
 	user-select: none;
@@ -1509,11 +1511,10 @@ sup {
 	border: 1px solid #ffffff00;
 }
 
-/* .segmentref {
-	display: inline-block;
-	width: 1.9em;
-	text-align: left;
-} */
+.figureCaption {
+	font-size: 0.8em;
+}
+
 .footnoteinlist {
 	font-size: 0.8em;
 	padding-top: 0.3em;
@@ -1538,6 +1539,7 @@ sup {
 	border-radius: 10px;
 	line-height: 0;
 	padding-top: 0.2em;
+	margin-right: 1.8em;
 }
 
 .sort.asc, .sort.desc {
@@ -2789,12 +2791,6 @@ mark.current {
 	
 	.reflist {
 		margin: 1em 0;
-/* 		grid-template-columns: repeat(auto-fit, 45%);
- */	}
-
-	.reflistbuttons > button {
-		display: block;
-		margin: 10px;
 	}
 
 	.info-addon {

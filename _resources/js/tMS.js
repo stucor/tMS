@@ -1622,7 +1622,7 @@ function scrollToID (id) {
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
 
-function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given either an ID or an Element
+function goToTarget (target, IDOrElement ='ID', startOrCenter = 'start') { // scrolls to an element given either an ID or an Element
 	var scroller = Math.floor(window.scrollY);
 	if ( history.state.scrollState != scroller) { 
 		history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above
@@ -1632,11 +1632,15 @@ function goToTarget (target, IDOrElement ='ID') { // scrolls to an element given
 		elmnt = document.getElementById(target);
 	} else if (IDOrElement == 'ELEMENT'){
 		elmnt = target;
-		//console.log(elmnt)
 	}
-	elmnt.scrollIntoView();
-	var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
-	window.scrollBy(0, tbHeight); // scroll the target below the topnav bar so you can see it
+	console.log(target.innerHTML)
+	if (startOrCenter == 'center') {
+		elmnt.scrollIntoView({ behavior: "instant", block: `center`, inline: "nearest"});
+	} else {
+		elmnt.scrollIntoView({ behavior: "instant", block: `start`, inline: "nearest"});
+		var tbHeight = -Math.abs(parseFloat(((window.getComputedStyle(document.getElementById("topbar")).height))));
+		window.scrollBy(0, tbHeight); // scroll the target below the topnav bar so you can see it	
+	}
 	scroller = Math.floor(window.scrollY);
 	history.pushState({scrollState: scroller},'',''); // for the back button to work see onpopstate above	
 }
@@ -2259,8 +2263,6 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	if (e.target.classList.contains('bookSegment')){
 		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
 		goToTarget(bookSeg);
-		//savedsup = document.getElementById(bookSeg);
-		//clearhighlightnote();
 	}
 	
 	if (e.target.classList.contains('manualLink')) {
@@ -2492,7 +2494,11 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 		}
 		if (bookSeg) {
 			closebtn.click();
-			goToTarget(bookSeg);
+			if (e.target.closest('#lot-list') || e.target.closest('#figures-list')) {
+				goToTarget(bookSeg, undefined, 'start');
+			} else {
+				goToTarget(bookSeg, undefined, 'center')
+			}
 			if (noteNumberToOpen) {
 				let allSups = document.querySelectorAll ('sup')
 				for (let j in allSups) {
@@ -2500,6 +2506,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 						if (!allSups[j].classList.contains('closebutton')) {
  							allSups[j].click()
 						}
+						goToTarget(allSups[j], 'ELEMENT', 'center')
 						setTimeout(() => {
 							blink(allSups[j].nextElementSibling)
 						  }, 200); 
@@ -2713,7 +2720,6 @@ function displaySutta (linkText) {
 		verses = `<span style='font-size:smaller; font-weight:300'>:${verses}</span>`
 	}
 	document.getElementById('ModalHeaderText').innerHTML = `${slug}${verses}`;
-//	document.getElementById('ModalHeaderText').innerHTML = linkText;
 }
 
 

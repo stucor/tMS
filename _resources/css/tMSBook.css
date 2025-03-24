@@ -3111,6 +3111,7 @@ mark.current {
 		border-color: cornflowerblue;
 	}
 	#lot-list > .reflist > .reflistitem:hover, 
+	#figures-list > .reflist > .reflistitem:hover,
 	#texts-list > .reflist > .reflistitem:hover,
 	#footnotes-list > .reflist > .reflistitem:hover  {
 		border:1px solid cornflowerblue;

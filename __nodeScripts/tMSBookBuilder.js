@@ -561,7 +561,7 @@ function buildBookIndexHTML () {
 				<div id="ModalLists"></div>
 				<div id="ModalSettings"></div>
 				<div id="ModalDownload"><div>
-				<h4>Wisdom & Wonders publications:</h4>
+				<h4>Wisdom & Wonders Editions:</h4>
 				<div class="downloads">`
 
 	function buildDownloadInfo () {

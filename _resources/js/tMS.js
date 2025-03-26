@@ -2851,6 +2851,38 @@ shareBtn.onclick = function() {
 			copyQuote.append(selection.getRangeAt(i).cloneContents())
 		   }
 		let originalHTML = copyQuote.innerHTML
+
+
+		//Add the Notes
+/* 		let notesStr =``
+		let allSups = copyQuote.querySelectorAll('sup')
+		for (let i in allSups) {
+			if (i == 0) {
+				notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
+			}
+			let supNo = allSups[i].innerText
+			let tempText = ` [${allSups[i].innerText}]`
+			allSups[i].innerText = tempText
+ 			for (let j in savedNotesElements) {
+				if (savedNotesElements[j].tagName == 'DIV') {
+					if (savedNotesElements[j].dataset.note == supNo) {
+						notesStr += `<p>${savedNotesElements[j].innerHTML.replace(`<div class="booknotesNumber">`,'[')
+																		 .replace(`</div>`, ']: ')
+																		 .replace(`<div class="booknotesText">`,'')
+																		 .replace(`</div>`, '')
+																		 .replaceAll(`<p>`,``)
+																		 .replaceAll(`</p>`,`<br>`)
+																		}</p>`
+					}
+				}
+			}
+
+		}
+		copyQuote.innerHTML += notesStr */
+
+
+
+
 		
 		function suttaCentralIt (suttaReference) {
 			let newlink = ''
@@ -3126,91 +3158,90 @@ listsBtn.onclick = function() {
 	}
 
 	function sctexts () {
-		if (document.querySelectorAll('.sclinktext').length > 0) {
+		function populateSCTexts (sclinksdata) {
 			atLeastOneListExists = true
-			function populateSCTexts (sclinksdata) {
-				let parentDiv = document.getElementById('textsList');
-				let html =``
-				html = `<section id="texts-list" class="infocontainer">`;
-				html += `<h3>Texts:</h3>`;
-				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="textSegRef">Segment</button>`
-				html += `  <button class="sort" data-sort="sclinktext">Reference</button></div>`
-				html += `<ul class="list reflist">`
-				for (let i in sclinksdata) {
-					let segRef = ``
-					let segment = ``
-					let data_fnnumber = ``
-					let footnote = `<span class='footnoteinlist'></span>`
-					if (sclinksdata[i].location.substring(0,4) == 'seg-') {
-						segment = sclinksdata[i].location.substring(4)
-						segRef = sclinksdata[i].location
-					} else { // its a footnote
-						let allSups = document.querySelectorAll('sup') 
-						for (let j in allSups) {
-							if (allSups[j].innerText == sclinksdata[i].location.substring(3)) { 
-								segRef = allSups[j].closest('p').id
-								segment = segRef.substring(4)
-								data_fnnumber = `data-fnnumber='${sclinksdata[i].location.substring(3)}'`
-								footnote = `<span class='footnoteinlist'>note: ${sclinksdata[i].location.substring(3)}</span>`
-							}
+			let parentDiv = document.getElementById('textsList');
+			let html =``
+			html = `<section id="texts-list" class="infocontainer">`;
+			html += `<h3>Texts:</h3>`;
+			html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="textSegRef">Segment</button>`
+			html += `  <button class="sort" data-sort="sclinktext">Reference</button></div>`
+			html += `<ul class="list reflist">`
+			for (let i in sclinksdata) {
+				let segRef = ``
+				let segment = ``
+				let data_fnnumber = ``
+				let footnote = `<span class='footnoteinlist'></span>`
+				if (sclinksdata[i].location.substring(0,4) == 'seg-') {
+					segment = sclinksdata[i].location.substring(4)
+					segRef = sclinksdata[i].location
+				} else { // its a footnote
+					let allSups = document.querySelectorAll('sup') 
+					for (let j in allSups) {
+						if (allSups[j].innerText == sclinksdata[i].location.substring(3)) { 
+							segRef = allSups[j].closest('p').id
+							segment = segRef.substring(4)
+							data_fnnumber = `data-fnnumber='${sclinksdata[i].location.substring(3)}'`
+							footnote = `<span class='footnoteinlist'>note: ${sclinksdata[i].location.substring(3)}</span>`
 						}
 					}
-					let linktext = `<span class='textSegRef'>${segment}</span>${footnote} ${sclinksdata[i].sclinkHTML}`
-					html += `<li class='reflistitem' data-segref='${segRef}' ${data_fnnumber}>${linktext}</li>`;
 				}
-				html += `</ul></section>`;
-				parentDiv.innerHTML = html
-				var options = {valueNames: [ 'textSegRef', 'sclinktext' ]};
-				var textList = new List('texts-list', options);
+				let linktext = `<span class='textSegRef'>${segment}</span>${footnote} ${sclinksdata[i].sclinkHTML}`
+				html += `<li class='reflistitem' data-segref='${segRef}' ${data_fnnumber}>${linktext}</li>`;
 			}
-			fetch(`../_resources/book-data/${shortcode()}/sclinks.json`)
-			.then (showSpinner())
-			.then(response => response.json())
-			.then (data => populateSCTexts(data))
-			.catch(error => {
-			console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
-			}
-			);
+			html += `</ul></section>`;
+			parentDiv.innerHTML = html
+			var options = {valueNames: [ 'textSegRef', 'sclinktext' ]};
+			var textList = new List('texts-list', options);
 		}
+		fetch(`../_resources/book-data/${shortcode()}/sclinks.json`)
+		.then (showSpinner())
+		.then(response => response.json())
+		.then (data => populateSCTexts(data))
+		.catch(error => {
+		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
+		}
+		);
+
 	}
 
 	function notes () {
 		let allSups = document.querySelectorAll ('sup')
 		if (allSups.length > 0) {
 			atLeastOneListExists = true
-			function populateNotes (footnotesData) {
-				let parentDiv = document.getElementById('footnotesList');
-				let html = ``
-				html += `<section id='footnotes-list' class='infocontainer'>`
-				html += `<h3>Notes:</h3>`
-				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="notesSegRef">Segment</button>`
+		function populateNotes (footnotesData) {
+			let parentDiv = document.getElementById('footnotesList');
+			let html = ``
+			html += `<section id='footnotes-list' class='infocontainer'>`
+			html += `<h3>Notes:</h3>`
+			html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="notesSegRef">Segment</button>`
 				html += `  <button class="sort" data-sort="footNoteText">Note Text</button></div>`
-				html += `<ul class="list reflist">`
-				for (let i in footnotesData) {
-					let fnNumber = footnotesData[i].fnNumber
-					let fnHTML = footnotesData[i].fnHTML
-					let segNo = ``
-					for (let j in allSups) {
-						if (allSups[j].innerText == fnNumber) {
-							segNo = `${allSups[j].parentNode.id}`
-							break
-						}
+			html += `<ul class="list reflist">`
+			for (let i in footnotesData) {
+				let fnNumber = footnotesData[i].fnNumber
+				let fnHTML = footnotesData[i].fnHTML
+				let segNo = ``
+				for (let j in allSups) {
+					if (allSups[j].innerText == fnNumber) {
+						segNo = `${allSups[j].parentNode.id}`
+						break
 					}
-					let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML}</span>`
-					html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
 				}
-				html += `</ul></section>` 
-				parentDiv.innerHTML = html
-				var options = {valueNames: [ 'notesSegRef', 'footNoteText' ]};
-				var footnotesList = new List('footnotes-list', options);
+				let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML}</span>`
+				html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
 			}
-			fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)
-			.then (showSpinner())
-			.then(response => response.json())
-			.then (data => populateNotes(data))
-			.catch(error => {
-			console.log(`ERROR: Can't fetch ../_resources/book-data/${shortcode()}/footnotes.json`);
-			});
+			html += `</ul></section>` 
+			parentDiv.innerHTML = html
+			var options = {valueNames: [ 'notesSegRef', 'footNoteText' ]};
+			var footnotesList = new List('footnotes-list', options);
+		}
+		fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)
+		.then (showSpinner())
+		.then(response => response.json())
+		.then (data => populateNotes(data))
+		.catch(error => {
+		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortcode()}/footnotes.json`);
+		});
 		}
 
 	}

@@ -1559,10 +1559,10 @@ function buildBookIndexHTML () {
 			if (hasFootnotes) {modalListsHTML += `<button id='footnotesListTab'>Notes</button>`}
 			modalListsHTML += `</nav>`
 
-			if (hasTables) {modalListsHTML += `<div id='tablesList'>Tab-LIST</div>`}
-			if (hasFigures) {modalListsHTML += `<div id='figuresList'>Fig-LIST</div>`}
-			if (hasSCTexts) {modalListsHTML += `<div id='textsList'>SCText-LIST</div>`}
-			if (hasFootnotes) {modalListsHTML += `<div id='footnotesList'>FootNotes-LIST</div>`}
+			if (hasTables) {modalListsHTML += `<div id='tablesList'>Error: list of Tables not built</div>`}
+			if (hasFigures) {modalListsHTML += `<div id='figuresList'>Error: list of Figures not built</div>`}
+			if (hasSCTexts) {modalListsHTML += `<div id='textsList'>Error: list of Texts not built</div>`}
+			if (hasFootnotes) {modalListsHTML += `<div id='footnotesList'>Error: list of Footnotes not built</div>`}
 
 			modalLists.innerHTML += modalListsHTML
 

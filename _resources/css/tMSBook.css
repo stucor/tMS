@@ -3060,15 +3060,9 @@ mark.current {
 		background-color: var(--listlinkhover);
 		cursor:pointer;
 	}
-/* 
-	sup:hover, .goselfquote:hover {
-		box-shadow: 0 0 5px 1px var(--suphovercolor);
-	}
- */
 	.select-css:hover {
 		box-shadow: 0 0 5px 1px var(--primarycolor);
 	}
-
 	.radio-toolbar label:hover {
 		border: 3px solid var(--primarycolor);
 		box-shadow: 0 0 5px 1px var(--primarycolor);
@@ -3107,15 +3101,12 @@ mark.current {
 		border: 3px solid var(--primarycolor);
 		box-shadow: 0 0 5px 1px var(--primarycolor);
 	}
+	.reflistitem:hover  {
+		border:1px solid cornflowerblue !important;
+		cursor:pointer
+	}
 	.downloads img:hover {
 		border-color: cornflowerblue;
-	}
-	#lot-list > .reflist > .reflistitem:hover, 
-	#figures-list > .reflist > .reflistitem:hover,
-	#texts-list > .reflist > .reflistitem:hover,
-	#footnotes-list > .reflist > .reflistitem:hover  {
-		border:1px solid cornflowerblue;
-		cursor:pointer
 	}
 }
 

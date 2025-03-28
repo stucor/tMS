@@ -2858,9 +2858,6 @@ shareBtn.onclick = function() {
 			function addnotes () {
 				let notesStr =``
 				let allSups = copyQuote.querySelectorAll('sup')
-	
-				console.log(allSups.length)
-	
 				for (let i = 0; i < allSups.length; i++) {
 					if (i == 0) {
 						notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
@@ -3077,13 +3074,18 @@ shareBtn.onclick = function() {
 	
 		}
 		// Get all the footnotes
-		let fetchPath = `../_resources/book-data/${shortcode()}/footnotes.json`
-		fetch (fetchPath)
-		.then(response => response.json())
-		.then (data => doStuff(data))
-		.catch(error => {
-			console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
-		});
+		if (document.querySelectorAll('sup').length > 0 ) {
+			let fetchPath = `../_resources/book-data/${shortcode()}/footnotes.json`
+			fetch (fetchPath)
+			.then(response => response.json())
+			.then (data => doStuff(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+			});
+		} else {
+			doStuff('')
+		}
+
 
 	} else {
 		if (navigator.share) {

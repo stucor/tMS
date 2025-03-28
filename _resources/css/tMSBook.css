@@ -958,15 +958,10 @@ dd > p {
 */
 
 span.sesame {
-	text-decoration: underline dotted rgba(100, 148, 237, 0.747);
+	border-bottom: dotted thin rgba(100, 148, 237, 0.747);
 	cursor:pointer;
-/* 	background-color: rgba(255, 255, 0, 0.155); */
 }
 
-
-span[class^="sesame ref closebutton"] {
-	border:none
-}
 
 div.opensesame {
 	margin: 0.5em 0em 1em 0em;
@@ -989,7 +984,6 @@ span.opensesame {
 	white-space: normal;
 	font-weight: normal;
  	background-color: var(--sesamebackground); 
-	border-bottom: 1px dotted var(--bdtexthighlightborder);
 	box-sizing: border-box;
 }
 
@@ -998,20 +992,18 @@ span.opensesame {
 	top:-0.05em;
 	color: cornflowerblue;
 	font-style: normal;
-	/* padding: 0 0.4em 0 0.1em; */
-	content: '\00a0\22A0\00a0'; 
+	padding: 0 0.2em 0 0.8em;
+	content: '\22A0'; 
+	background-color: var(--sesamebackground); 
+	border-bottom: 2px solid var(--sesamebackground);
 }
 
 span[class^="sesame closebutton"]  {
 	text-decoration: none;
-	color:var(--secondarytextcolor);
+ 	color:var(--secondarytextcolor);
 	background-color: var(--sesamebackground); 
 }
-span[class^="sesame ref closebutton"]  {
-	text-decoration: none;
-	color:var(--secondarytextcolor);
-	background-color: var(--sesamebackground); 
-}
+
 
 .opensesame h3 {
 	font-variant:small-caps; 
@@ -1255,9 +1247,6 @@ sup {
 	padding: 0 3px;
 	margin: 0 -3px;
 	color: cornflowerblue;
-	/*outline: double 0 var(--notehighlighter); */
-	/*background: var(--primarybackground);*/
-	border-radius: 1em;
 	cursor: pointer;
 	font-style: normal;
 	user-select: none;
@@ -1347,7 +1336,7 @@ sup {
 	user-select: none;
 	font-size: 0.8em;
 	margin: 1em;
-	background-color: #b3b3b329;
+	background-color: #b3b3b319;
 	padding: 0.5em 1em;
 }
 
@@ -1368,6 +1357,7 @@ sup {
 	cursor: unset;
 }
 .footNoteText > p > .sesame {
+	border-bottom: unset;
 	text-decoration: unset;
 	cursor:unset
 }
@@ -1505,7 +1495,6 @@ sup {
 #footnotes-list > .reflist > .reflistitem {
 	display: grid;
 	grid-template-columns: 2em 5em auto;
-	text-align: left;
 	padding: 0.2em 1em;
 	background-color: rgba(100, 148, 237, 0.043);
 	border: 1px solid #ffffff00;
@@ -2396,7 +2385,7 @@ mark.current {
 	font-size: var(--fontsize);
 	text-align: var(--textalign);
 	line-height: var(--lineheight);
-	text-align: left;
+/* 	text-align: left; */
 	hyphens: auto;
 	hyphenate-limit-chars: 10 3 4;
 }

@@ -291,6 +291,9 @@ function processPandoc() {
 						.replaceAll('<em>,</em>',',')  // clean up unexpected italics
 						.replaceAll(' | ','<br>')
 						.replaceAll('<p> ', '<p>')
+
+						//console.log(thisFootnoteHTML)
+
 					}
 		
 					localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML}"\n}`
@@ -809,13 +812,11 @@ function buildBookIndexHTML () {
 				for (let j in allFigRootSpans) {
 					if (allFigRootSpans[j].getAttribute('data-custom-style') == "wwc-figure-image") {
 						let [fileLoc, alt, bordered] = allFigRootSpans[j].innerText.split('=')
-						//console.log(`<a data-fslightbox href="${fileLoc}"><img src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>`)
 						figRootSpanHTML += `<a data-fslightbox href="${fileLoc}"><img src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>\n`
 					} else { // it's a caption
 						figRootSpanHTML += `<figcaption>${allFigRootSpans[j].innerText}</figcaption>`
 					}
 				}
-				//console.log (figRootSpanHTML)
 				allDivs[i].innerHTML = figRootSpanHTML
 				allDivs[i].tagName = 'figure'
 				allDivs[i].setAttribute('id',`fig${figureID}`)
@@ -840,11 +841,7 @@ function buildBookIndexHTML () {
 	/* 			let newHTML = ''
 				let blockquoteRoot = parse(allDivs[i].innerHTML);
 				let allPs = blockquoteRoot.querySelectorAll('p')
-				console.log(allPs.length)
-
 				for (let apj = 0; apj < allPs.length; apj++ ) {
-					console.log (apj)
-					console.log(allPs[apj].outerHTML)
 					if (allPs[apj].innerHTML.charAt(0)== '“') {
 						if (apj > 0) {
 							newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAbody' `)
@@ -1016,9 +1013,7 @@ function buildBookIndexHTML () {
 		for (let i in allTablesAndCaptions) {
 			if (allTablesAndCaptions[i].getAttribute('data-custom-style') == 'WW-table-caption') {
 				let caption = allTablesAndCaptions[i].text.replaceAll(`\r\n`,``)
-				//console.log(JSON.stringify(caption))
 				var tableType = caption.substring(caption.indexOf("{") + 1, caption.indexOf("}"));
-				//console.log(JSON.stringify(tableType))
 				let tableClassLabel = ``
 				if (tableType == `Simple`) {
 					tableClassLabel = ` class="simpletable"`
@@ -1423,6 +1418,30 @@ function buildBookIndexHTML () {
 							}
 							//allBibliorefs[j].setAttribute('data-sesame-key', `zotref:`)
 						}
+
+						let allSpans = localfnHTMLRoot.querySelectorAll('span')
+						for (let j in allSpans) {
+							if (allSpans[j].getAttribute('lang') == 'pi') {
+								for (let k in localShyphenMaster) {
+									if (localShyphenMaster[k].replaceAll('-','') == allSpans[j].text) {
+										//console.log (localShyphenMaster[k].replaceAll('-','&shy;'))
+										let newPiSpan = `<span lang='pi'>${localShyphenMaster[k].replaceAll('-','&shy;')}</span>`
+										allSpans[j].replaceWith (newPiSpan)
+										//allSpans[j].replaceWith = `<span lang='VVVVV'>${localShyphenMaster[k].replaceAll('-','&shy;')}</span>`
+										//console.log(`${localShyphenMaster[k].replaceAll('-','&shy;')}`)
+									}
+								}
+								//console.log(`${allSpans[j].text}`)
+							}
+						}
+						
+
+						//console.log(localfnHTMLRoot.innerHTML)
+
+
+
+
+
 						obj.fnHTML = localfnHTMLRoot.innerHTML.replaceAll('\"', '\'')
 						newFootNotesJson.push(obj)
 					}

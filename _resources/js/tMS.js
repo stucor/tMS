@@ -1633,7 +1633,7 @@ function goToTarget (target, IDOrElement ='ID', startOrCenter = 'start') { // sc
 	} else if (IDOrElement == 'ELEMENT'){
 		elmnt = target;
 	}
-	console.log(target.innerHTML)
+	//console.log(target.innerHTML)
 	if (startOrCenter == 'center') {
 		elmnt.scrollIntoView({ behavior: "instant", block: `center`, inline: "nearest"});
 	} else {
@@ -2540,7 +2540,6 @@ function toggleSesame (el) {
 					biblio = sesameKeyArr[2]
 				}
 				if (sesameKeyArr[0].includes('-blurbs')) {
-
 					let fetchPath = `../_resources/sesame-data/blurbs/scblurbs.json`
 					function populateSesame (quoteData) {
 						function capitalizeFirstLetter(val) {
@@ -2806,9 +2805,10 @@ function displaySelfquote (linktext) {
 
 
 
-// Selected Text Functions
+// Share Functions
 shareBtn.onclick = function() {
-//selectedTextBtn.onclick = function() {
+
+
 	let selection = window.getSelection()
 	let alertStr = ``
 	let shareFrom = savedBookElements[theTopElement].id
@@ -2816,267 +2816,274 @@ shareBtn.onclick = function() {
 
 	if (selection.toString() != '') {
 
-		let range = selection.getRangeAt(0)
-
-		let startTag = range.startContainer.parentNode.tagName
-		let startID = range.startContainer.parentNode.id
-		let starter = startID
-		if ((startTag == 'SPAN') || (startTag == 'SUP')) {
-			starter = range.startContainer.parentNode.parentNode.id
-		} 
-
-/* 		let startOff = range.startOffset
-		let endTag = range.endContainer.parentNode.tagName
-		let endID = range.endContainer.parentNode.id
-		let endOff = range.endOffset
-		let ender = endID
- 		if ((endTag == 'SPAN') || (endTag == 'SUP')) {
-			ender = range.endContainer.parentNode.parentNode.id
-		}   
-		alertStr = `startTag: ${startTag}<br>startID: ${startID}<br>startOff: ${startOff}<br>starter: ${starter}<br><br>endTag ${endTag}<br>endID: ${endID}<br>endOff: ${endOff}<br>ender: ${ender}`
- */		
-
-		//Create the copyDiv
-		let copyDiv = document.createElement("div")
-		copyDiv.id = `copydiv`
-		copyDiv.classList.add('copybox')
+		function doStuff (footnotesData) {
+			let range = selection.getRangeAt(0)
+			let startTag = range.startContainer.parentNode.tagName
+			let startID = range.startContainer.parentNode.id
+			let starter = startID
+			if ((startTag == 'SPAN') || (startTag == 'SUP')) {
+				starter = range.startContainer.parentNode.parentNode.id
+			} 
+	
+	/* 		let startOff = range.startOffset
+			let endTag = range.endContainer.parentNode.tagName
+			let endID = range.endContainer.parentNode.id
+			let endOff = range.endOffset
+			let ender = endID
+			 if ((endTag == 'SPAN') || (endTag == 'SUP')) {
+				ender = range.endContainer.parentNode.parentNode.id
+			}   
+			alertStr = `startTag: ${startTag}<br>startID: ${startID}<br>startOff: ${startOff}<br>starter: ${starter}<br><br>endTag ${endTag}<br>endID: ${endID}<br>endOff: ${endOff}<br>ender: ${ender}`
+	 */		
+	
+			//Create the copyDiv
+			let copyDiv = document.createElement("div")
+			copyDiv.id = `copydiv`
+			copyDiv.classList.add('copybox')
+			
+			//Make the Link
+			let linkText = `<p>Text from: <strong><em>${document.title.replace(`-`, `by`)}</em></strong>, starting at: <a href='${bookPath}#${starter}'> <strong>[${starter.replace('seg-','§')}]:</strong></a></p><hr>\n\n`
+	
+	
+			let copyQuote = document.createElement("blockquote")
+			//Add the user selection
+			for(let i = 0; i < selection.rangeCount; i++) {
+				copyQuote.append(selection.getRangeAt(i).cloneContents())
+			   }
+			let originalHTML = copyQuote.innerHTML
+	
+			//let allElements = copyQuote.querySelectorAll('*')
+	
+			//Add the Notes
+			function addnotes () {
+				let notesStr =``
+				let allSups = copyQuote.querySelectorAll('sup')
+	
+				console.log(allSups.length)
+	
+				for (let i = 0; i < allSups.length; i++) {
+					if (i == 0) {
+						notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
+					}
+					let supNo = allSups[i].innerText
+					let tempText = ` [${allSups[i].innerText}]`
+					allSups[i].innerText = tempText
 		
-		//Make the Link
-		let linkText = `<p>Text from: <strong><em>${document.title.replace(`-`, `by`)}</em></strong>, starting at: <a href='${bookPath}#${starter}'> <strong>[${starter.replace('seg-','§')}]</strong></a></p><hr>\n\n`
-
-
-		let copyQuote = document.createElement("blockquote")
-		//Add the user selection
-		for(let i = 0; i < selection.rangeCount; i++) {
-			copyQuote.append(selection.getRangeAt(i).cloneContents())
-		   }
-		let originalHTML = copyQuote.innerHTML
-
-
-		//Add the Notes
-/* 		let notesStr =``
-		let allSups = copyQuote.querySelectorAll('sup')
-		for (let i in allSups) {
-			if (i == 0) {
-				notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
-			}
-			let supNo = allSups[i].innerText
-			let tempText = ` [${allSups[i].innerText}]`
-			allSups[i].innerText = tempText
- 			for (let j in savedNotesElements) {
-				if (savedNotesElements[j].tagName == 'DIV') {
-					if (savedNotesElements[j].dataset.note == supNo) {
-						notesStr += `<p>${savedNotesElements[j].innerHTML.replace(`<div class="booknotesNumber">`,'[')
-																		 .replace(`</div>`, ']: ')
-																		 .replace(`<div class="booknotesText">`,'')
-																		 .replace(`</div>`, '')
-																		 .replaceAll(`<p>`,``)
-																		 .replaceAll(`</p>`,`<br>`)
-																		}</p>`
+					if (allSups[i].classList.contains('closebutton')) {
+						allSups[i].nextElementSibling.remove()
+						allSups[i].classList.remove('closebutton')
+						console.log (allSups[i].classList)
+					} else {
+						console.log(`sesame is closed`)
+					}
+					for (let i=0; i < footnotesData.length; i++) {
+						if (supNo == footnotesData[i].fnNumber) {
+							let newfnHTML = footnotesData[i].fnHTML.replaceAll(`<p>`,``)
+															.replaceAll(`</p>`,`<br>`)
+							notesStr += `<p style='font-size: smaller'>[${supNo}] ${newfnHTML}</p>`
+						}
 					}
 				}
+				copyQuote.innerHTML += notesStr
 			}
-
-		}
-		copyQuote.innerHTML += notesStr */
-
-
-
-
 		
-		function suttaCentralIt (suttaReference) {
-			let newlink = ''
-			 let [head,tail] = suttaReference.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0].split(':')
-			  if (tail) {
-				 tail = '#' + tail
-				 newlink = `<a href = "https://suttacentral.net/${head}/en/sujato/${tail}">${suttaReference}</a>`
-			 } else {
-				 newlink = `<a href = "https://suttacentral.net/${head}/en/sujato">${suttaReference}</a>`
+			addnotes();
+	
+			function suttaCentralIt (suttaReference) {
+				let newlink = ''
+				 let [head,tail] = suttaReference.replace(/\s+/g, '').toLowerCase().split('–')[0].split(',')[0].split(':')
+				  if (tail) {
+					 tail = '#' + tail
+					 newlink = `<a href = "https://suttacentral.net/${head}/en/sujato/${tail}">${suttaReference}</a>`
+				 } else {
+					 newlink = `<a href = "https://suttacentral.net/${head}/en/sujato">${suttaReference}</a>`
+				 }
+				  return newlink
 			 }
-			  return newlink
-		 }
-
-		//Process the text
-		let allSpans = copyQuote.getElementsByTagName('span')
-		for (let i in allSpans) {
-			if ((allSpans[i]) && (allSpans[i].tagName == 'SPAN')) {
-				if (allSpans[i].lang == 'pi') {
-					allSpans[i].innerHTML = `<em>${allSpans[i].innerHTML}</em>`
-				}
-				if (allSpans[i].className == 'tMSIndex') {
-					let tempHTML = `[${allSpans[i].innerHTML}] `
-					allSpans[i].className = ''
-					allSpans[i].innerHTML=tempHTML
-					allSpans[i].style = `font-weight: normal; font-size: 11pt; font-variant:normal;`
-				}
-				if (allSpans[i].className == 'ptsref') {
-					let tempHTML = `[${allSpans[i].innerHTML}] `
-					allSpans[i].className = ''
-					allSpans[i].innerHTML=tempHTML
-				}
-				if (allSpans[i].className == 'chapnum') {
-					allSpans[i].className = ''
-				}
-				if (allSpans[i].className == 'sesame') {
-					allSpans[i].className = ''
-				}
-				if (allSpans[i].className == 'list-margin') {
-					allSpans[i].innerHTML = allSpans[i].innerHTML + ' ' 
-					allSpans[i].className = ''
-				}
-				if (allSpans[i].className == 'sclinktext') {
-					allSpans[i].innerHTML = suttaCentralIt(allSpans[i].innerText)
-					allSpans[i].classList.remove('sclinktext')
-				}
- 				if (allSpans[i].classList.contains('closebutton')) {
-					allSpans[i].classList.remove('closebutton')
-				} 
-
- 				if (allSpans[i].classList.contains('opensesame')) { // just span level opensesame
-
-					let el = document.createElement('div')
-					el.innerHTML = allSpans[i].innerHTML
-					let allInside = el.querySelectorAll('*')
-					for (let j in allInside) {
-						//console.log(allInside[j].tagName)
-						if (allInside[j].className == 'bibhead') {
-							allInside[j].className = ''
-						} else
-						if (allInside[j].className == 'linkContainer'){
-							allInside[j].remove()
-						}
+	
+			//Process the text
+			let allSpans = copyQuote.getElementsByTagName('span')
+			for (let i in allSpans) {
+				if ((allSpans[i]) && (allSpans[i].tagName == 'SPAN')) {
+					if (allSpans[i].lang == 'pi') {
+						allSpans[i].innerHTML = `<em>${allSpans[i].innerHTML}</em>`
 					}
-					allSpans[i].innerHTML = el.innerHTML.replaceAll(`<span class="">`, ``).replaceAll('</span>', '')
-					allSpans[i].className = ''
-					allSpans[i].innerText = ` [${allSpans[i].innerText}]`
-				}
-			}
-		}
-
-		let allH1s = copyQuote.querySelectorAll('h1')
-		for (let i in allH1s) {
-			allH1s[i].style = `font-weight:bold; font-style:normal; font-variant:small-caps;`
-		}
-		let allH2s = copyQuote.querySelectorAll('h2')
-		for (let i in allH2s) {
-			allH2s[i].style = `font-variant:small-caps;`
-		}
-		let allH3s = copyQuote.querySelectorAll('h3')
-		for (let i in allH3s) {
-			allH3s[i].style = `text-align:left`
-		}
-/* 		let allPs = copyQuote.querySelectorAll('p')
-		for (let i in allPs) {
-			allPs[i].style = `font-size: 11pt`
-		}
- */
-		let allDivs = copyQuote.querySelectorAll('div')
-		for (let i in allDivs) {
- 			if (allDivs[i].className == 'epigram') {
-				allDivs[i].className = ''
-				allDivs[i].style = `text-align: center; font-style:italic;`
-			}
- 			if (allDivs[i].className == 'epigram-cite') {
-				allDivs[i].className = ''
-				allDivs[i].style = `text-align: center; font-variant:small-caps;`
-			}
-			if (allDivs[i].className == 'opensesame') { 
-				allDivs[i].classList = ''
-				let el = document.createElement('html')
-				el.innerHTML = allDivs[i].innerHTML
-				let allEls = el.querySelectorAll('*')
-				for (let j in allEls) {
-						if (allEls[j].tagName == 'IMG') {
-							allEls[j].remove()
-						} else
-						if (allEls[j].tagName == 'HR') {
-							allEls[j].remove()
-						}
-						if (allEls[j].tagName == 'BR') {
-							allEls[j].remove()
-						}
-						if (allEls[j].tagName == 'A') {
-							if (allEls[j].innerText.substring(0,7) == `source:`) {
-								let newNode = document.createElement("p")
-								newNode.style = `font-weight:500; font-style:italics; font-variant:small-caps`
-								newNode.innerHTML = 'Definition of term:'
-								allEls[j].parentNode.insertBefore(newNode, allEls[j])
+					if (allSpans[i].className == 'tMSIndex') {
+						let tempHTML = `[${allSpans[i].innerHTML}] `
+						allSpans[i].className = ''
+						allSpans[i].innerHTML=tempHTML
+						allSpans[i].style = `font-weight: normal; font-size: 11pt; font-variant:normal;`
+					}
+					if (allSpans[i].className == 'ptsref') {
+						let tempHTML = `[${allSpans[i].innerHTML}] `
+						allSpans[i].className = ''
+						allSpans[i].innerHTML=tempHTML
+					}
+					if (allSpans[i].className == 'chapnum') {
+						allSpans[i].className = ''
+					}
+					if (allSpans[i].className == 'sesame') {
+						allSpans[i].className = ''
+					}
+					if (allSpans[i].className == 'list-margin') {
+						allSpans[i].innerHTML = allSpans[i].innerHTML + ' ' 
+						allSpans[i].className = ''
+					}
+					if (allSpans[i].className == 'sclinktext') {
+						allSpans[i].innerHTML = suttaCentralIt(allSpans[i].innerText)
+						allSpans[i].classList.remove('sclinktext')
+					}
+					 if (allSpans[i].classList.contains('closebutton')) {
+						allSpans[i].classList.remove('closebutton')
+					} 
+					 if (allSpans[i].classList.contains('opensesame')) { // just span level opensesame
+						let el = document.createElement('div')
+						el.innerHTML = allSpans[i].innerHTML
+						let allInside = el.querySelectorAll('*')
+						for (let j in allInside) {
+							//console.log(allInside[j].tagName)
+							if (allInside[j].className == 'bibhead') {
+								allInside[j].className = ''
+							} else
+							if (allInside[j].className == 'linkContainer'){
+								allInside[j].remove()
 							}
 						}
-						if (allEls[j].tagName == 'H3') {
-							let [a,b] = allEls[j].innerHTML.split('<br>')
-							allEls[j].outerHTML = `<p style='margin-top:0; margin-bottom:0'><b>${a}—${b}</b></p>` 
-						}
-						
-						else {
-							allEls[j].classList = ''
-						}
+						allSpans[i].innerHTML = el.innerHTML.replaceAll(`<span class="">`, ``).replaceAll('</span>', '')
+						allSpans[i].className = ''
+						allSpans[i].innerText = ` [${allSpans[i].innerText}]`
+					}
 				}
-				allDivs[i].innerHTML = `<blockquote style='font-size:smaller'>${el.innerHTML}</blockquote>`
 			}
-
-
-/*			if (allDivs[i].className == 'line-block') {
-				allDivs[i].className = ''
-			} */
-		}
-
-		let allAs = copyQuote.querySelectorAll('a')
-		for (let i in allAs) {
-			if (allAs[i].className == 'extlink tipref') {
-				allAs[i].className = ''
+	
+			let allH1s = copyQuote.querySelectorAll('h1')
+			for (let i in allH1s) {
+				allH1s[i].style = `font-weight:bold; font-style:normal; font-variant:small-caps;`
 			}
+			let allH2s = copyQuote.querySelectorAll('h2')
+			for (let i in allH2s) {
+				allH2s[i].style = `font-variant:small-caps;`
+			}
+			let allH3s = copyQuote.querySelectorAll('h3')
+			for (let i in allH3s) {
+				allH3s[i].style = `text-align:left`
+			}
+			let allDivs = copyQuote.querySelectorAll('div')
+			for (let i in allDivs) {
+				 if (allDivs[i].className == 'epigram') {
+					allDivs[i].className = ''
+					allDivs[i].style = `text-align: center; font-style:italic;`
+				}
+				 if (allDivs[i].className == 'epigram-cite') {
+					allDivs[i].className = ''
+					allDivs[i].style = `text-align: center; font-variant:small-caps;`
+				}
+				if (allDivs[i].className == 'opensesame') { 
+					allDivs[i].classList = ''
+					let el = document.createElement('html')
+					el.innerHTML = allDivs[i].innerHTML
+					let allEls = el.querySelectorAll('*')
+					for (let j in allEls) {
+							if (allEls[j].tagName == 'IMG') {
+								allEls[j].remove()
+							} else
+							if (allEls[j].tagName == 'HR') {
+								allEls[j].remove()
+							}
+							if (allEls[j].tagName == 'BR') {
+								allEls[j].remove()
+							}
+							if (allEls[j].tagName == 'A') {
+								if (allEls[j].innerText.substring(0,7) == `source:`) {
+									let newNode = document.createElement("p")
+									newNode.style = `font-weight:500; font-style:italics; font-variant:small-caps`
+									newNode.innerHTML = 'Definition of term:'
+									allEls[j].parentNode.insertBefore(newNode, allEls[j])
+								}
+							}
+							if (allEls[j].tagName == 'H3') {
+								let [a,b] = allEls[j].innerHTML.split('<br>')
+								allEls[j].outerHTML = `<p style='margin-top:0; margin-bottom:0'><b>${a}—${b}</b></p>` 
+							}
+							
+							else {
+								allEls[j].classList = ''
+							}
+					}
+					allDivs[i].innerHTML = `<blockquote style='font-size:smaller'>${el.innerHTML}</blockquote>`
+				}
+	
+	
+	/*			if (allDivs[i].className == 'line-block') {
+					allDivs[i].className = ''
+				} */
+			}
+	
+			let allAs = copyQuote.querySelectorAll('a')
+			for (let i in allAs) {
+				if (allAs[i].className == 'extlink tipref') {
+					allAs[i].className = ''
+				}
+			}
+	
+			copyQuote.innerHTML = copyQuote.innerHTML.replaceAll(`class="" `, '')
+												 .replaceAll(`class=""`, '')
+												 .replaceAll(`class="OAstart"`, '' )
+											 
+			copyDiv.innerHTML = `${linkText}${copyQuote.outerHTML}`
+	
+	
+			navigator.clipboard.write([new ClipboardItem({
+				'text/plain': new Blob([copyDiv.innerText], {type: 'text/plain'}),
+				'text/html': new Blob([copyDiv.innerHTML], {type: 'text/html'})
+			})])
+	
+			let pureHTMLStr = `<h1>Original HTML with classes:</h1><div class='copybox'></textarea>
+												  <textarea id='originacopyhtml' style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
+												  .replaceAll('</h1>', '</h1>\n')
+												  .replaceAll('</h2>', '</h2>\n')
+												  .replaceAll('<hr>', '\n<hr>')
+												  .replaceAll('</ul>', '</ul>\n')
+												  .replaceAll('</li>', '</li>\n')
+												  .replaceAll('</blockquote>', '</blockquote>\n')
+												  .replaceAll('<blockquote>', '\n<blockquote>')
+												  .replaceAll('\n\n', '\n')
+												  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
+								</div>`
+	/* 		let pureHTMLStr = `<p>As HTML:</p><div class='copybox'><textarea  id='copyhtml' style='width:100%; height:400px'>${copyDiv.innerHTML.replaceAll('</p>', '</p>\n')
+												  .replaceAll('</h1>', '</h1>\n')
+												  .replaceAll('</h2>', '</h2>\n')
+												  .replaceAll('<hr>', '\n<hr>')
+												  .replaceAll('</ul>', '</ul>\n')
+												  .replaceAll('</li>', '</li>\n')
+												  .replaceAll('</blockquote>', '</blockquote>\n')
+												  .replaceAll('<blockquote>', '\n<blockquote>')
+												  .replaceAll('<br></p>', '</p>')
+												  .replaceAll('\n\n', '\n')
+												  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea><p>Original HTML with classes:</p>
+												  <textarea id='originacopyhtml' style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
+												  .replaceAll('</h1>', '</h1>\n')
+												  .replaceAll('</h2>', '</h2>\n')
+												  .replaceAll('<hr>', '\n<hr>')
+												  .replaceAll('</ul>', '</ul>\n')
+												  .replaceAll('</li>', '</li>\n')
+												  .replaceAll('</blockquote>', '</blockquote>\n')
+												  .replaceAll('<blockquote>', '\n<blockquote>')
+												  .replaceAll('\n\n', '\n')
+												  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
+								</div>` */
+	
+			showAlert (`<h1>Copied to your Clipboard:</h1><p>The following (which includes a link to the text, reconstructed Notes and links to suttas) has been <strong>copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
+	
 		}
-
-		copyQuote.innerHTML = copyQuote.innerHTML.replaceAll(`class="" `, '')
-											 .replaceAll(`class=""`, '')
-											 .replaceAll(`class="OAstart"`, '' )
-										 
-		copyDiv.innerHTML = `${linkText}${copyQuote.outerHTML}`
-
-
-		navigator.clipboard.write([new ClipboardItem({
-			'text/plain': new Blob([copyDiv.innerText], {type: 'text/plain'}),
-			'text/html': new Blob([copyDiv.innerHTML], {type: 'text/html'})
-		})])
-
-		let pureHTMLStr = `<h1>Original HTML with classes:</h1><div class='copybox'></textarea>
-											  <textarea id='originacopyhtml' style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
-											  .replaceAll('</h1>', '</h1>\n')
-											  .replaceAll('</h2>', '</h2>\n')
-											  .replaceAll('<hr>', '\n<hr>')
-											  .replaceAll('</ul>', '</ul>\n')
-											  .replaceAll('</li>', '</li>\n')
-											  .replaceAll('</blockquote>', '</blockquote>\n')
-											  .replaceAll('<blockquote>', '\n<blockquote>')
-											  .replaceAll('\n\n', '\n')
-											  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
-							</div>`
-/* 		let pureHTMLStr = `<p>As HTML:</p><div class='copybox'><textarea  id='copyhtml' style='width:100%; height:400px'>${copyDiv.innerHTML.replaceAll('</p>', '</p>\n')
-											  .replaceAll('</h1>', '</h1>\n')
-											  .replaceAll('</h2>', '</h2>\n')
-											  .replaceAll('<hr>', '\n<hr>')
-											  .replaceAll('</ul>', '</ul>\n')
-											  .replaceAll('</li>', '</li>\n')
-											  .replaceAll('</blockquote>', '</blockquote>\n')
-											  .replaceAll('<blockquote>', '\n<blockquote>')
-											  .replaceAll('<br></p>', '</p>')
-											  .replaceAll('\n\n', '\n')
-											  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea><p>Original HTML with classes:</p>
-											  <textarea id='originacopyhtml' style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
-											  .replaceAll('</h1>', '</h1>\n')
-											  .replaceAll('</h2>', '</h2>\n')
-											  .replaceAll('<hr>', '\n<hr>')
-											  .replaceAll('</ul>', '</ul>\n')
-											  .replaceAll('</li>', '</li>\n')
-											  .replaceAll('</blockquote>', '</blockquote>\n')
-											  .replaceAll('<blockquote>', '\n<blockquote>')
-											  .replaceAll('\n\n', '\n')
-											  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
-							</div>` */
-
-		showAlert (`<h1>Copied to your Clipboard:</h1><p>The following (which includes a link to the text, reconstructed Notes and links to suttas) has been <strong>copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
-
+		// Get all the footnotes
+		let fetchPath = `../_resources/book-data/${shortcode()}/footnotes.json`
+		fetch (fetchPath)
+		.then(response => response.json())
+		.then (data => doStuff(data))
+		.catch(error => {
+			console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+		});
 
 	} else {
 		if (navigator.share) {

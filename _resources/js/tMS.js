@@ -2815,8 +2815,7 @@ shareBtn.onclick = function() {
 	let bookPath = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/${shortcode()}`
 
 	if (selection.toString() != '') {
-
-		function doStuff (footnotesData) {
+		function buildSelection (footnotesData) {
 			let range = selection.getRangeAt(0)
 			let startTag = range.startContainer.parentNode.tagName
 			let startID = range.startContainer.parentNode.id
@@ -2842,7 +2841,7 @@ shareBtn.onclick = function() {
 			copyDiv.classList.add('copybox')
 			
 			//Make the Link
-			let linkText = `<p>Text from: <strong><em>${document.title.replace(`-`, `by`)}</em></strong>, starting at: <a href='${bookPath}#${starter}'> <strong>[${starter.replace('seg-','§')}]:</strong></a></p><hr>\n\n`
+			let linkText = `<p>Text from: <strong><em>${document.title.replace(`-`, `by`)}</em></strong>, starting at: <a href='${bookPath}#${starter}'> ${starter.replace('seg-','§')}:</a></p><hr>\n\n`
 	
 	
 			let copyQuote = document.createElement("blockquote")
@@ -3070,7 +3069,7 @@ shareBtn.onclick = function() {
 												  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
 								</div>` */
 	
-			showAlert (`<h1>Copied to your Clipboard:</h1><p>The following (which includes a link to the text, reconstructed Notes and links to suttas) has been <strong>copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
+			showAlert (`<h1>Copied to your Clipboard!</h1><p>The following should be suitable for sharing on platforms such as <a href='https://discourse.suttacentral.net/'>SuttaCentral Discuss & Discover</a> or word-processors and has been <strong>copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
 	
 		}
 		// Get all the footnotes
@@ -3078,15 +3077,13 @@ shareBtn.onclick = function() {
 			let fetchPath = `../_resources/book-data/${shortcode()}/footnotes.json`
 			fetch (fetchPath)
 			.then(response => response.json())
-			.then (data => doStuff(data))
+			.then (data => buildSelection(data))
 			.catch(error => {
 				console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 			});
 		} else {
-			doStuff('')
+			buildSelection('')
 		}
-
-
 	} else {
 		if (navigator.share) {
 			let navSharetitle= `${document.title.replace(`-`, `by`)}`

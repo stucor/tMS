@@ -151,7 +151,7 @@ function startup () {
 	}
 	*/
 
-	buildSettings(function(){
+	buildSettings (function(){
 		//the following is done after buildSettings completes:
 		document.getElementById('topbar').style.display='block';
 		document.getElementById('thebook').style.display='block';
@@ -227,14 +227,14 @@ function startup () {
 				hideSpinner();
 			});
 		}
-		declh.onclick = function () {
+		document.getElementById("declh").onclick = function () {
 			showSpinner();
 			promiseToRunAsync(doDecLH) 
 			.then(() => {
 				hideSpinner();
 			});
 		}
-		inclh.onclick = function () {
+		document.getElementById("inclh").onclick = function () {
 			showSpinner();
 			promiseToRunAsync(doIncLH) 
 			.then(() => {
@@ -3112,145 +3112,152 @@ listsBtn.onclick = function() {
 	let atLeastOneListExists = false
 
 	function tables () {
-		let tabrefArr = document.querySelectorAll('table');
-		let parentDiv = document.getElementById('tablesList');
-		let html = "";
-		if (tabrefArr.length  > 0) {
-			atLeastOneListExists = true
-			html = `<section id='lot-list' class="infocontainer">`
-			html += `<h3>Tables:</h3>`;
-			html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
-			html += `<button class="sort asc" data-sort="lotSegRef">Segment</button> `
-			html += `<button class="sort" data-sort="lotCaption">Caption</button></div>`
-			html += `<ul class="list reflist">`
-			for (let i = 0; i < tabrefArr.length; i++) {
-				if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
-					let segment = `<span class='lotSegRef'>${tabrefArr[i].parentNode.id.substring(4)}</span>`
-					let segRef = tabrefArr[i].parentNode.id
-					let caption = `<span class='lotCaption'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
-					html += `<li class='reflistitem' data-segref='${segRef}'>${segment}${caption}</li>`;
+		if (document.getElementById('tablesList')) {
+			let tabrefArr = document.querySelectorAll('table');
+			let parentDiv = document.getElementById('tablesList');
+			let html = "";
+			if (tabrefArr.length  > 0) {
+				atLeastOneListExists = true
+				html = `<section id='lot-list' class="infocontainer">`
+				html += `<h3>Tables:</h3>`;
+				html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
+				html += `<button class="sort asc" data-sort="lotSegRef">Segment</button> `
+				html += `<button class="sort" data-sort="lotCaption">Caption</button></div>`
+				html += `<ul class="list reflist">`
+				for (let i = 0; i < tabrefArr.length; i++) {
+					if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
+						let segment = `<span class='lotSegRef'>${tabrefArr[i].parentNode.id.substring(4)}</span>`
+						let segRef = tabrefArr[i].parentNode.id
+						let caption = `<span class='lotCaption'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
+						html += `<li class='reflistitem' data-segref='${segRef}'>${segment}${caption}</li>`;
+					}
 				}
+				html += `</ul></section>`;
+				parentDiv.innerHTML = html;
+				var options = {valueNames: [ 'lotSegRef', 'lotCaption' ]};
+				var lotList = new List('lot-list', options);
 			}
-			html += `</ul></section>`;
-			parentDiv.innerHTML = html;
-			var options = {valueNames: [ 'lotSegRef', 'lotCaption' ]};
-			var lotList = new List('lot-list', options);
 		}
 	}
 	
 	function figures () {
-		let figArr = document.querySelectorAll('figure')
-		let parentDiv = document.getElementById('figuresList')
-		let html = "";
-		if (figArr.length > 0) {
-			atLeastOneListExists = true
-			html = `<section id='figures-list' class="infocontainer">`
-			html += `<h3>Figures:</h3>`;
-			html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
-			html += `<button class="sort asc" data-sort="figureSegRef">Segment</button> `
-			html += `<button class="sort" data-sort="figureCaption">Caption</button></div>`
-			html += `<ul class="list reflist">`
-			for (let i = 0; i < figArr.length; i++) {
-				let segment = `<span class='figureSegRef'>${figArr[i].id.substring(4)}</span>`
-				let segRef = figArr[i].id
-				let caption = `<span class='figureCaption'>${figArr[i].getElementsByTagName("figcaption")[0].innerHTML}</span>`;
-				html += `<li class='reflistitem' data-segref='${segRef}'>${segment}${caption}</li>`;
+		if (document.getElementById('figuresList')) {
+			let figArr = document.querySelectorAll('figure')
+			let parentDiv = document.getElementById('figuresList')
+			let html = "";
+			if (figArr.length > 0) {
+				atLeastOneListExists = true
+				html = `<section id='figures-list' class="infocontainer">`
+				html += `<h3>Figures:</h3>`;
+				html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
+				html += `<button class="sort asc" data-sort="figureSegRef">Segment</button> `
+				html += `<button class="sort" data-sort="figureCaption">Caption</button></div>`
+				html += `<ul class="list reflist">`
+				for (let i = 0; i < figArr.length; i++) {
+					let segment = `<span class='figureSegRef'>${figArr[i].id.substring(4)}</span>`
+					let segRef = figArr[i].id
+					let caption = `<span class='figureCaption'>${figArr[i].getElementsByTagName("figcaption")[0].innerHTML}</span>`;
+					html += `<li class='reflistitem' data-segref='${segRef}'>${segment}${caption}</li>`;
+				}
+				html += `</ul></section>`;
+				parentDiv.innerHTML = html;
+				var options = {valueNames: [ 'figureSegRef', 'figureCaption' ]};
+				var figuresList = new List('figures-list', options);
 			}
-			html += `</ul></section>`;
-			parentDiv.innerHTML = html;
-			var options = {valueNames: [ 'figureSegRef', 'figureCaption' ]};
-			var figuresList = new List('figures-list', options);
 		}
 	}
 
 	function sctexts () {
-		function populateSCTexts (sclinksdata) {
+		if (document.getElementById('textsList')){
 			atLeastOneListExists = true
-			let parentDiv = document.getElementById('textsList');
-			let html =``
-			html = `<section id="texts-list" class="infocontainer">`;
-			html += `<h3>Texts:</h3>`;
-			html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="textSegRef">Segment</button>`
-			html += `  <button class="sort" data-sort="sclinktext">Reference</button></div>`
-			html += `<ul class="list reflist">`
-			for (let i in sclinksdata) {
-				let segRef = ``
-				let segment = ``
-				let data_fnnumber = ``
-				let footnote = `<span class='footnoteinlist'></span>`
-				if (sclinksdata[i].location.substring(0,4) == 'seg-') {
-					segment = sclinksdata[i].location.substring(4)
-					segRef = sclinksdata[i].location
-				} else { // its a footnote
-					let allSups = document.querySelectorAll('sup') 
-					for (let j in allSups) {
-						if (allSups[j].innerText == sclinksdata[i].location.substring(3)) { 
-							segRef = allSups[j].closest('p').id
-							segment = segRef.substring(4)
-							data_fnnumber = `data-fnnumber='${sclinksdata[i].location.substring(3)}'`
-							footnote = `<span class='footnoteinlist'>note: ${sclinksdata[i].location.substring(3)}</span>`
+			function populateSCTexts (sclinksdata) {
+				let parentDiv = document.getElementById('textsList');
+				let html =``
+				html = `<section id="texts-list" class="infocontainer">`;
+				html += `<h3>Texts:</h3>`;
+				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="textSegRef">Segment</button>`
+				html += `  <button class="sort" data-sort="sclinktext">Reference</button></div>`
+				html += `<ul class="list reflist">`
+				for (let i in sclinksdata) {
+					let segRef = ``
+					let segment = ``
+					let data_fnnumber = ``
+					let footnote = `<span class='footnoteinlist'></span>`
+					if (sclinksdata[i].location.substring(0,4) == 'seg-') {
+						segment = sclinksdata[i].location.substring(4)
+						segRef = sclinksdata[i].location
+					} else { // its a footnote
+						let allSups = document.querySelectorAll('sup') 
+						for (let j in allSups) {
+							if (allSups[j].innerText == sclinksdata[i].location.substring(3)) { 
+								segRef = allSups[j].closest('p').id
+								segment = segRef.substring(4)
+								data_fnnumber = `data-fnnumber='${sclinksdata[i].location.substring(3)}'`
+								footnote = `<span class='footnoteinlist'>note: ${sclinksdata[i].location.substring(3)}</span>`
+							}
 						}
 					}
+					let linktext = `<span class='textSegRef'>${segment}</span>${footnote} ${sclinksdata[i].sclinkHTML}`
+					html += `<li class='reflistitem' data-segref='${segRef}' ${data_fnnumber}>${linktext}</li>`;
 				}
-				let linktext = `<span class='textSegRef'>${segment}</span>${footnote} ${sclinksdata[i].sclinkHTML}`
-				html += `<li class='reflistitem' data-segref='${segRef}' ${data_fnnumber}>${linktext}</li>`;
+				html += `</ul></section>`;
+				parentDiv.innerHTML = html
+				var options = {valueNames: [ 'textSegRef', 'sclinktext' ]};
+				var textList = new List('texts-list', options);
 			}
-			html += `</ul></section>`;
-			parentDiv.innerHTML = html
-			var options = {valueNames: [ 'textSegRef', 'sclinktext' ]};
-			var textList = new List('texts-list', options);
+			fetch(`../_resources/book-data/${shortcode()}/sclinks.json`)
+			.then (showSpinner())
+			.then(response => response.json())
+			.then (data => populateSCTexts(data))
+			.catch(error => {
+			console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
+			}
+			);
 		}
-		fetch(`../_resources/book-data/${shortcode()}/sclinks.json`)
-		.then (showSpinner())
-		.then(response => response.json())
-		.then (data => populateSCTexts(data))
-		.catch(error => {
-		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortCode}/info.json`);
-		}
-		);
+
 
 	}
 
 	function notes () {
-		let allSups = document.querySelectorAll ('sup')
-		if (allSups.length > 0) {
+		if (document.getElementById('footnotesList')) {
 			atLeastOneListExists = true
-		function populateNotes (footnotesData) {
-			let parentDiv = document.getElementById('footnotesList');
-			let html = ``
-			html += `<section id='footnotes-list' class='infocontainer'>`
-			html += `<h3>Notes:</h3>`
-			html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="notesSegRef">Segment</button>`
-				html += `  <button class="sort" data-sort="footNoteText">Note Text</button></div>`
-			html += `<ul class="list reflist">`
-			for (let i in footnotesData) {
-				let fnNumber = footnotesData[i].fnNumber
-				let fnHTML = footnotesData[i].fnHTML
-				let segNo = ``
-				for (let j in allSups) {
-					if (allSups[j].innerText == fnNumber) {
-						segNo = `${allSups[j].parentNode.id}`
-						break
+			function populateNotes (footnotesData) {
+				let allSups = document.querySelectorAll ('sup')
+				let parentDiv = document.getElementById('footnotesList');
+				let html = ``
+				html += `<section id='footnotes-list' class='infocontainer'>`
+				html += `<h3>Notes:</h3>`
+				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="notesSegRef">Segment</button>`
+					html += `  <button class="sort" data-sort="footNoteText">Note Text</button></div>`
+				html += `<ul class="list reflist">`
+				for (let i in footnotesData) {
+					let fnNumber = footnotesData[i].fnNumber
+					let fnHTML = footnotesData[i].fnHTML
+					let segNo = ``
+					for (let j in allSups) {
+						if (allSups[j].innerText == fnNumber) {
+							segNo = `${allSups[j].parentNode.id}`
+							break
+						}
 					}
+					let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML}</span>`
+					html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
 				}
-				let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML}</span>`
-				html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
+				html += `</ul></section>` 
+				parentDiv.innerHTML = html
+				var options = {valueNames: [ 'notesSegRef', 'footNoteText' ]};
+				var footnotesList = new List('footnotes-list', options);
 			}
-			html += `</ul></section>` 
-			parentDiv.innerHTML = html
-			var options = {valueNames: [ 'notesSegRef', 'footNoteText' ]};
-			var footnotesList = new List('footnotes-list', options);
+			fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)
+			.then (showSpinner())
+			.then(response => response.json())
+			.then (data => populateNotes(data))
+			.catch(error => {
+			console.log(`ERROR: Can't fetch ../_resources/book-data/${shortcode()}/footnotes.json`);
+			});
 		}
-		fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)
-		.then (showSpinner())
-		.then(response => response.json())
-		.then (data => populateNotes(data))
-		.catch(error => {
-		console.log(`ERROR: Can't fetch ../_resources/book-data/${shortcode()}/footnotes.json`);
-		});
-		}
-
 	}
+
 	tables()
 	figures()
 	sctexts()

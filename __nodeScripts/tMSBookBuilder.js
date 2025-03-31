@@ -5,47 +5,47 @@ const { parse } = require('node-html-parser');
 
 const emojis = [
 	{
-		"filename" : "cry.jpg",
+		"filename" : "cry.png",
 		"emoji" : "😢",
 		"hex" : "1F622"
 	},
 	{
-		"filename" : "openmouth.jpg",
+		"filename" : "openmouth.png",
 		"emoji" : "😀",
 		"hex" : "1F600"
 	},
 	{
-		"filename" : "question.jpg",
+		"filename" : "question.png",
 		"emoji" : "🤔",
 		"hex" : "1F914"
 	},
 	{
-		"filename" : "smile.jpg",
+		"filename" : "smile.png",
 		"emoji" : "🙂",
 		"hex" : "1F642"
 	},
 	{
-		"filename" : "star.jpg",
+		"filename" : "star.png",
 		"emoji" : "🤩",
 		"hex" : "1F929"
 	},
 	{
-		"filename" : "sweat.jpg",
+		"filename" : "sweat.png",
 		"emoji" : "😥",
 		"hex" : "1F613"
 	},
 	{
-		"filename" : "teeth.jpg",
+		"filename" : "teeth.png",
 		"emoji" : "😁",
 		"hex" : "1F601"
 	},
 	{
-		"filename" : "unhappy.jpg",
+		"filename" : "unhappy.png",
 		"emoji" : "🙁",
 		"hex" : "1F641"
 	},
 	{
-		"filename" : "wink.jpg",
+		"filename" : "wink.png",
 		"emoji" : "😉",
 		"hex" : "1F609"
 	},
@@ -880,6 +880,9 @@ function buildBookIndexHTML () {
 			// PARAGRAPHS
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
 				let tempHTML = allDivs[i].innerHTML
+				for(let j=0; j < emojis.length; j++) {
+					tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}">`)
+				}
 				allDivs[i].replaceWith(tempHTML)
 			} else
 			// BLOCKQUOTES
@@ -906,6 +909,9 @@ function buildBookIndexHTML () {
 			// CAPTIONS -- Used in conjuction with IMAGE TABLE
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-caption-centered-sans"){
 				let tempHTML = allDivs[i].innerHTML
+				for(let j=0; j < emojis.length; j++) {
+					tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}">`)
+				}
 				let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-sans'` + tempHTML.slice(4)
 				allDivs[i].replaceWith(newHTML)
 			} else

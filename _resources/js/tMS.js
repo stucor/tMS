@@ -3078,10 +3078,13 @@ shareBtn.onclick = function() {
 							break;
 						}
 					}
-					
 				}
 			}
 
+			let allHrs = copyQuote.querySelectorAll('hr')
+			for (let i=0; i < allHrs.length; i++) {
+				allHrs[i].remove()
+			}
 	
 			copyQuote.innerHTML = copyQuote.innerHTML.replaceAll(`class="" `, '')
 												 .replaceAll(`class=""`, '')

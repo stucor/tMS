@@ -136,6 +136,10 @@
     "key": "wp:Kṣitigarbha"
   },
   {
+    "sesame": "Laṭukikopama Sutta",
+    "key": "mn-blurbs:mn66"
+  },
+  {
     "sesame": "Madhyama Āgama",
     "key": "super-blurbs:ma"
   },
@@ -189,6 +193,10 @@
   },
   {
     "sesame": "Majjhima-nikāya",
+    "key": "super-blurbs:mn"
+  },
+  {
+    "sesame": "Majjhima Nikāya",
     "key": "super-blurbs:mn"
   },
   {
@@ -258,6 +266,10 @@
   {
     "sesame": "Pārāyana Vagga",
     "key": "snp-blurbs:snp-parayanavagga"
+  },
+  {
+    "sesame": "Pāsādika Sutta",
+    "key": "dn-blurbs:dn29"
   },
   {
     "sesame": "Rāmāyaṇa",

@@ -1,0 +1,22 @@
+Mon Mar 31 2025 13:17:09 GMT+0100 (British Summer Time)
+Please check the following entries.
+Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
+build-data/sesameMaster.json and tMSBookBuilder.js should be run again for bmom
+[
+{
+	"sesame": "Digha Nikāya",
+	"key": "super-blurbs:dn"
+},
+{
+	"sesame": "Laṭukikopama Sutta",
+	"key": "mn-blurbs:mn66"
+},
+{
+	"sesame": "Majjhima Nikāya",
+	"key": "super-blurbs:mn"
+},
+{
+	"sesame": "Pāsādika Sutta",
+	"key": "dn-blurbs:dn29"
+}
+]

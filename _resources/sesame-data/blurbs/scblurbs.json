@@ -51,7 +51,7 @@
   {
     "suttaRef": "dn1",
     "rootTitle": "Brahmajālasutta",
-    "transTitle": "The Prime Net ",
+    "transTitle": "The Divine Net ",
     "blurb": "While others may praise or criticize the Buddha, they tend to focus on trivial details. The Buddha presents an analysis of 62 kinds of wrong view, seeing through which one becomes detached from meaningless speculations.",
     "type": "leaf"
   },
@@ -74,6 +74,13 @@
     "rootTitle": "Mahāparinibbānasutta",
     "transTitle": "The Great Discourse on the Buddha’s Extinguishment ",
     "blurb": "The longest of all discourses, this extended narrative tells of the events surrounding the Buddha’s death. Full of vivid and moving details, it is an ideal entry point into knowing the Buddha as a person, and understanding how the Buddhist community coped with his passing.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "dn29",
+    "rootTitle": "Pāsādikasutta",
+    "transTitle": "An Impressive Discourse ",
+    "blurb": "Following the death of Nigaṇṭha Nātaputta, the leader of the Jains, the Buddha emphasizes the stability and maturity of his own community. He encourages the community to come together after his death and recite the teachings in harmony.",
     "type": "leaf"
   },
   {
@@ -184,8 +191,15 @@
   {
     "suttaRef": "mn49",
     "rootTitle": "Brahmanimantanikasutta",
-    "transTitle": "On the Invitation of Brahmā ",
+    "transTitle": "On the Invitation of Divinity ",
     "blurb": "The Buddha ascends to a high heavenly realm where he engages in a cosmic contest with a powerful divinity, who had fallen into the delusion that he was eternal and all-powerful.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn66",
+    "rootTitle": "Laṭukikopamasutta",
+    "transTitle": "The Simile of the Quail ",
+    "blurb": "Again raising the rule regarding eating, but this time as a reflection of gratitude for the Buddha in eliminating things that cause complexity and stress. The Buddha emphasizes how attachment even to little things can be dangerous.",
     "type": "leaf"
   },
   {

@@ -1,0 +1,16 @@
+{
+			"Authors" : ["brahm"],
+			"BookTitle" : "The Basic Method of Meditation",
+			"BookSubtitle" : "",
+			"ShortAbstract" : "<p>Meditation is the way to achieve letting go. In meditation one lets go of the complex world outside in order to reach the serene world inside. In all types of mysticism and in many traditions, this is known as the path to the pure and powerful mind. The experience of this pure mind, released from the world, is very wonderful and blissful.</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "document",
+			"AddInfo"   : [],
+			"Copyright" : ["Originally published in 2002.","This edition published in 2021.","28pp (in pdf format).","Copyright © 2002, 2021 Ajahn Brahm.","Sourced from bswa.org"],
+			"CCLicense": "CC BY-NC-ND 4.0",
+			"FrontCover": "../_resources/book-data/bmom/FrontLarge.jpg",
+			"BackCover": "",
+			"BackMatter": [""],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": ""
+		}

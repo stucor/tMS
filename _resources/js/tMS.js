@@ -2807,7 +2807,53 @@ function displaySelfquote (linktext) {
 
 // Share Functions
 shareBtn.onclick = function() {
-
+	const emojis = [
+		{
+			"filename" : "cry.png",
+			"emoji" : "😢",
+			"hex" : "1F622"
+		},
+		{
+			"filename" : "openmouth.png",
+			"emoji" : "😀",
+			"hex" : "1F600"
+		},
+		{
+			"filename" : "question.png",
+			"emoji" : "🤔",
+			"hex" : "1F914"
+		},
+		{
+			"filename" : "smile.png",
+			"emoji" : "🙂",
+			"hex" : "1F642"
+		},
+		{
+			"filename" : "star.png",
+			"emoji" : "🤩",
+			"hex" : "1F929"
+		},
+		{
+			"filename" : "sweat.png",
+			"emoji" : "😥",
+			"hex" : "1F613"
+		},
+		{
+			"filename" : "teeth.png",
+			"emoji" : "😁",
+			"hex" : "1F601"
+		},
+		{
+			"filename" : "unhappy.png",
+			"emoji" : "🙁",
+			"hex" : "1F641"
+		},
+		{
+			"filename" : "wink.png",
+			"emoji" : "😉",
+			"hex" : "1F609"
+		},
+	]
 
 	let selection = window.getSelection()
 	let alertStr = ``
@@ -3021,6 +3067,21 @@ shareBtn.onclick = function() {
 					allAs[i].className = ''
 				}
 			}
+
+			let allImgs = copyQuote.querySelectorAll ('img') 
+			for (let i=0; i < allImgs.length; i++) {
+				if (allImgs[i].classList.contains('emojify')) {
+					for (let j=0; j<emojis.length; j++) {
+						let imgSrc = allImgs[i].getAttribute('src').split("/").pop()
+						if (emojis[j].filename == imgSrc) {
+							allImgs[i].replaceWith(`${emojis[j].emoji}`)
+							break;
+						}
+					}
+					
+				}
+			}
+
 	
 			copyQuote.innerHTML = copyQuote.innerHTML.replaceAll(`class="" `, '')
 												 .replaceAll(`class=""`, '')

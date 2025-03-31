@@ -881,7 +881,7 @@ function buildBookIndexHTML () {
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
 				let tempHTML = allDivs[i].innerHTML
 				for(let j=0; j < emojis.length; j++) {
-					tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}">`)
+					tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}" alt="${emojis[j].filename.replace('.png', '')} emoji">`)
 				}
 				allDivs[i].replaceWith(tempHTML)
 			} else
@@ -910,7 +910,7 @@ function buildBookIndexHTML () {
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-caption-centered-sans"){
 				let tempHTML = allDivs[i].innerHTML
 				for(let j=0; j < emojis.length; j++) {
-					tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}">`)
+					tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}" alt="${emojis[j].filename.replace('png', '')}: emoji">`)
 				}
 				let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-sans'` + tempHTML.slice(4)
 				allDivs[i].replaceWith(newHTML)

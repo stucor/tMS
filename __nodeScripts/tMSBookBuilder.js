@@ -3,6 +3,55 @@ const fs = require('fs')
 const { exec } = require('child_process'); 
 const { parse } = require('node-html-parser');
 
+const emojis = [
+	{
+		"filename" : "cry.jpg",
+		"emoji" : "😢",
+		"hex" : "1F622"
+	},
+	{
+		"filename" : "openmouth.jpg",
+		"emoji" : "😀",
+		"hex" : "1F600"
+	},
+	{
+		"filename" : "question.jpg",
+		"emoji" : "🤔",
+		"hex" : "1F914"
+	},
+	{
+		"filename" : "smile.jpg",
+		"emoji" : "🙂",
+		"hex" : "1F642"
+	},
+	{
+		"filename" : "star.jpg",
+		"emoji" : "🤩",
+		"hex" : "1F929"
+	},
+	{
+		"filename" : "sweat.jpg",
+		"emoji" : "😥",
+		"hex" : "1F613"
+	},
+	{
+		"filename" : "teeth.jpg",
+		"emoji" : "😁",
+		"hex" : "1F601"
+	},
+	{
+		"filename" : "unhappy.jpg",
+		"emoji" : "🙁",
+		"hex" : "1F641"
+	},
+	{
+		"filename" : "wink.jpg",
+		"emoji" : "😉",
+		"hex" : "1F609"
+	},
+]
+
+
 let bookID = process.argv.slice(2)[0];
 
 let sesameArr = []

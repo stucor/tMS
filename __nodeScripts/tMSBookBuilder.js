@@ -186,25 +186,29 @@ function processPandoc() {
 			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-Chapter') {
 				count += 1
 				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
+				let nextTOCHTML = TOChtml[i].innerHTML.replace(/(\r\n|\n|\r)/gm, "").replaceAll('\"', '\'').replace('<p>','').replace('</p>','')
 				let nextTOCID = `CHAPTER-${nextTOCText.replaceAll(' ','-')}`
 				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
-				let newElement = `<h1 id='${nextTOCID}'\>${nextTOCText}</h1>`
+				let newElement = `<h1 id='${nextTOCID}'\>${nextTOCHTML}</h1>`
 				TOChtml[i].replaceWith(newElement)
 			} else
 			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-chapter-section-1') {
+				//console.log(TOChtml[i].innerHTML)
 				count += 1
 				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
+				let nextTOCHTML = TOChtml[i].innerHTML.replace(/(\r\n|\n|\r)/gm, "").replaceAll('\"', '\'').replace('<p>','').replace('</p>','')
 				let nextTOCID = `CHAP-SECTION-01-${nextTOCText.replaceAll(' ','-')}`
 				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
-				let newElement = `<h2 id='${nextTOCID}'\>${nextTOCText}</h2>`
+				let newElement = `<h2 id='${nextTOCID}'\>${nextTOCHTML}</h2>`
 				TOChtml[i].replaceWith(newElement)
 			} else
 			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-chapter-section-2') {
 				count += 1
 				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
+				let nextTOCHTML = TOChtml[i].innerHTML.replace(/(\r\n|\n|\r)/gm, "").replaceAll('\"', '\'').replace('<p>','').replace('</p>','')
 				let nextTOCID = `CHAP-SECTION-02-${nextTOCText.replaceAll(' ','-')}`
 				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
-				let newElement = `<h3 id='${nextTOCID}'\>${nextTOCText}</h3>`
+				let newElement = `<h3 id='${nextTOCID}'\>${nextTOCHTML}</h3>`
 				TOChtml[i].replaceWith(newElement)
 			}
 		}
@@ -1479,14 +1483,10 @@ function buildBookIndexHTML () {
 							if (allSpans[j].getAttribute('lang') == 'pi') {
 								for (let k in localShyphenMaster) {
 									if (localShyphenMaster[k].replaceAll('-','') == allSpans[j].text) {
-										//console.log (localShyphenMaster[k].replaceAll('-','&shy;'))
 										let newPiSpan = `<span lang='pi'>${localShyphenMaster[k].replaceAll('-','&shy;')}</span>`
 										allSpans[j].replaceWith (newPiSpan)
-										//allSpans[j].replaceWith = `<span lang='VVVVV'>${localShyphenMaster[k].replaceAll('-','&shy;')}</span>`
-										//console.log(`${localShyphenMaster[k].replaceAll('-','&shy;')}`)
 									}
 								}
-								//console.log(`${allSpans[j].text}`)
 							}
 						}
 						

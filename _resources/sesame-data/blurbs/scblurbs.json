@@ -126,10 +126,24 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn10",
+    "rootTitle": "Mahāsatipaṭṭhānasutta",
+    "transTitle": "The Discourse on Mindfulness Meditation ",
+    "blurb": "Here the Buddha details the seventh factor of the noble eightfold path, mindfulness meditation. This collects many of the meditation teachings found throughout the canon, especially the foundational practices focusing on the body, and is regarded as one of the most important meditation discourses.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn101",
     "rootTitle": "Devadahasutta",
     "transTitle": "At Devadaha ",
     "blurb": "The Buddha tackles a group of Jain ascetics, pressing them on their claim to be practicing to end all suffering by self-mortification. He points out a series of fallacies in their logic, and explains his own middle way.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn118",
+    "rootTitle": "Ānāpānassatisutta",
+    "transTitle": "Mindfulness of Breathing ",
+    "blurb": "Surrounded by many well-practiced mendicants, the Buddha teaches mindfulness of breathing in detail, showing how it relates to the four kinds of mindfulness meditation.",
     "type": "leaf"
   },
   {
@@ -249,6 +263,13 @@
     "rootTitle": "Vibhaṅgasutta",
     "transTitle": "Analysis ",
     "blurb": "The Buddha gives definitions for each of the twelve links. These are general definitions that apply wherever the twelve links are mentioned.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn12.23",
+    "rootTitle": "Upanisasutta",
+    "transTitle": "Vital Conditions ",
+    "blurb": "The ending of defilements comes only when the truth is seen. But seeing the truth comes about due to a vital condition. In this way, twelve factors leading to freedom are united with the twelve factors leading to suffering.",
     "type": "leaf"
   },
   {

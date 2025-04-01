@@ -1,0 +1,16 @@
+{
+			"Authors" : ["brahmali"],
+			"BookTitle" : "Dependent Liberation",
+			"BookSubtitle" : "",
+			"ShortAbstract" : "<p>This is a companion booklet to ‘Dependent Origination’ by the same author.</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "document",
+			"AddInfo"   : [],
+			"Copyright" : ["Originally published in 2013.","This edition published in 2021","Transcribed from a talk by Ajahn Brahmali, Dhammaloka, 23 March 2012.","Sourced from samita.be"],
+			"CCLicense": "CC0 1.0",
+			"FrontCover": "../_resources/book-data/dlbl/FrontLarge.jpg",
+			"BackCover": "",
+			"BackMatter": [""],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": ""
+		}

@@ -292,6 +292,10 @@
     "key": "mn-blurbs:mn120"
   },
   {
+    "sesame": "Satipaṭṭhāna Sutta",
+    "key": "mn-blurbs:mn10"
+  },
+  {
     "sesame": "Sineru",
     "key": "DPPN:sineru"
   },
@@ -374,5 +378,13 @@
   {
     "sesame": "Ātman",
     "key": "wp:Ātman_(Hinduism)"
+  },
+  {
+    "sesame": "Ānāpānasati Sutta",
+    "key": "mn-blurbs:mn118"
+  },
+  {
+    "sesame": "Upanisā Sutta",
+    "key": "sn-blurbs:sn12.23"
   }
 ]

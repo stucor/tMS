@@ -1,0 +1,18 @@
+Tue Apr 01 2025 12:36:11 GMT+0100 (British Summer Time)
+Please check the following entries.
+Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
+build-data/sesameMaster.json and tMSBookBuilder.js should be run again for dlbl
+[
+{
+	"sesame": "Satipaṭṭhāna Sutta",
+	"key": "mn-blurbs:mn10"
+},
+{
+	"sesame": "Upanisā Sutta",
+	"key": "sn-blurbs:sn12.23"
+},
+{
+	"sesame": "Ānāpānasati Sutta",
+	"key": "mn-blurbs:mn118"
+}
+]

@@ -322,7 +322,7 @@ function processPandoc() {
 					break
 					default:
 						if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
-							let target = anchors[i].getAttribute('href');
+							let target = anchors[i].getAttribute('href').toLowerCase();
 							let temp4Text = anchors[i].text
 							anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`)
 						} else {
@@ -774,14 +774,17 @@ function buildBookIndexHTML () {
 							spans[i].replaceWith(`<span lang='pi'>${localShyphenMaster[j].replaceAll('-','&shy;')}</span>`) //localShyphenMaster[j].replaceAll('-','&shy;')
 						}
 					}
-				break
+					break
 				case 'wwc-sanskrit':
 					spans[i].setAttribute('lang','sa')
 					spans[i].removeAttribute ('data-custom-style')
-				break
+					break
 				default:
 			}
-
+			if (spans[i].classList.contains('anchor')) {
+				let tempID = spans[i].id.toLowerCase()
+				spans[i].replaceWith(`<span id='${tempID}' class="anchor"></span>`)
+			}
 		}
 
 		let anchors = bookRoot.getElementsByTagName ('a') 
@@ -828,7 +831,7 @@ function buildBookIndexHTML () {
 				break;
 				default:
 					if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
-						let target = anchors[i].getAttribute('href');
+						let target = anchors[i].getAttribute('href').toLowerCase();
 						let temp4Text = anchors[i].text
 						anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`) 
 					} else {
@@ -1646,6 +1649,17 @@ function buildBookIndexHTML () {
 		addDataSesameKeys()
 		buildSCLinksJSON()
 		addNavBarForLists()
+
+/* 		let allspans = indexRoot.querySelectorAll('span')
+		for (i=0;i<allspans.length;i++) {
+			if (allspans[i].classList.contains('anchor')) {
+				let tempID = allspans[i].id.toLowerCase()
+				allspans[i].replaceWith(`<span id='${tempID}' class="anchor"></span>`)
+			}
+		} */
+
+
+
 		return `${indexRoot.innerHTML}`
 	}
 

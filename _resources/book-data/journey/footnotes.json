@@ -1,7 +1,7 @@
 [
 {
 	"fnNumber": "1",
-	"fnHTML": "<p>See the <span class='manualLink' data-target='#Three_questions_by_Leo_Tolstoy'>Notes</span> section at the back of this book for the full text.</p>"
+	"fnHTML": "<p>See the <span class='internalLink' data-target='#three_questions_by_leo_tolstoy'>Notes</span> section at the back of this book for the full text.</p>"
 },
 {
 	"fnNumber": "2",
@@ -81,7 +81,7 @@
 },
 {
 	"fnNumber": "21",
-	"fnHTML": "<p>See the <span class='manualLink' data-target='#The_letting_loose_of_Nāḷāgiri'>Notes</span> section at the back of this book for the full text.</p>"
+	"fnHTML": "<p>See the <span class='internalLink' data-target='#the_letting_loose_of_nāḷāgiri'>Notes</span> section at the back of this book for the full text.</p>"
 },
 {
 	"fnNumber": "22",

@@ -99,6 +99,8 @@ function processPandoc() {
 		let backcoverHTML =``
 	
 		let tokens = pandocRoot.querySelectorAll('div, p, h1')
+		let addInfoArr = `XXX`
+		aitCount = 0
 		for (i in tokens) {
 			if (tokens[i].getAttribute('data-custom-style') == "WW-abstract-short") {
 				abstractShort = tokens[i].innerHTML
@@ -153,10 +155,22 @@ function processPandoc() {
 					}
 					backcoverHTML +=  `${tokens[i].innerHTML.replaceAll('\r\n','')}`
 				}
-			} 
+			} else 
+			if (tokens[i].getAttribute('data-custom-style') == "WW-additional-info-title") {
+				let trimText = tokens[i].innerHTML.replaceAll(/(\r\n|\n|\r)/gm, "").replaceAll(`\"`,`\'`)
+				addInfoArr += `],["${trimText}",`
+			} else 
+			if (tokens[i].getAttribute('data-custom-style') == "WW-additional-info") {
+				let trimText = tokens[i].innerHTML.replaceAll(/(\r\n|\n|\r)/gm, "").replaceAll(`\"`,`\'`)
+				addInfoArr += `"${trimText}",`
+			}
+
 		}
-	
-	
+		addInfoArr += `]`
+		addInfoArr = addInfoArr.replace('XXX],', '').replaceAll(',]', ']')
+													.replaceAll(`<span data-custom-style='wwc-pali'>`, `<span lang='pi'>`)
+		if (addInfoArr == `XXX]`) {addInfoArr = ``}
+
 		localJSON += `{
 			"Authors" : [${authors.slice(0,-1)}],
 			"BookTitle" : "${title}",
@@ -164,7 +178,7 @@ function processPandoc() {
 			"ShortAbstract" : "${abstractShort}",
 			"Abstract" : "${abstract}",
 			"ItemType" : "${itemType}",
-			"AddInfo"   : [],
+			"AddInfo"   : [${addInfoArr}],
 			"Copyright" : [${copyright}],
 			"CCLicense": "${CCLicense}",
 			"FrontCover": "${frontCoverLocation}",
@@ -324,7 +338,7 @@ function processPandoc() {
 						if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
 							let target = anchors[i].getAttribute('href').toLowerCase();
 							let temp4Text = anchors[i].text
-							anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`)
+							anchors[i].replaceWith(`<span class="internalLink" data-target="${target}">${temp4Text}</span>`)
 						} else {
 							anchors[i].classList.add('extlink')
 						}
@@ -833,7 +847,7 @@ function buildBookIndexHTML () {
 					if ((anchors[i].getAttribute('href').substring(0,1) == '#') && (anchors[i].text != '↩︎')) {
 						let target = anchors[i].getAttribute('href').toLowerCase();
 						let temp4Text = anchors[i].text
-						anchors[i].replaceWith(`<span class="manualLink" data-target="${target}">${temp4Text}</span>`) 
+						anchors[i].replaceWith(`<span class="internalLink" data-target="${target}">${temp4Text}</span>`) 
 					} else {
 						anchors[i].classList.add('extlink')
 					}

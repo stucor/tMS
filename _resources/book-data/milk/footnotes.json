@@ -629,7 +629,7 @@
   },
   {
     "fnNumber": "158",
-    "fnHTML": "<p>See <span class='manualLink' data-target='#the_buddha_encouraged_his_disciples_to_p'>Chapter 5</span></p>"
+    "fnHTML": "<p>See <span class='internalLink' data-target='#the_buddha_encouraged_his_disciples_to_p'>Chapter 5</span></p>"
   },
   {
     "fnNumber": "159",

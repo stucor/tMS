@@ -126,7 +126,7 @@ a {
 	font-variant: small-caps;
 } */
 
-.bookSegment, .manualLink {
+.bookSegment, .internalLink {
 	color:cornflowerblue;
 	text-decoration: none;
 	cursor: pointer;
@@ -1345,7 +1345,7 @@ sup {
 }
 .footNoteText > p > .sclinktext,
 .footNoteText > p > .extlink,
-.footNoteText > p > span.manualLink  {
+.footNoteText > p > span.internalLink  {
 	color: unset;
 	cursor:unset
 }

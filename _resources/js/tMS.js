@@ -316,7 +316,7 @@ function parseInfoText(infoText) {
 		.replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>") // markdown style link
 		.replace('lulugraphic', '<img style="max-height: 35px;" alt="Seeds, Paintings and a Beam of Light at Lulu" src="../_resources/images/icons/lulu-logo.svg" ></img>')
 		.replace(/\n/gim, '<br />') //markdown style linebreaks
-	return htmlText.trim()
+	return infoText //htmlText.trim()
 }
 
 // Populates the Info Modal
@@ -2265,9 +2265,10 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		goToTarget(bookSeg);
 	}
 	
-	if (e.target.classList.contains('manualLink')) {
+	if (e.target.classList.contains('internalLink')) {
 		var whereTo = e.target.getAttribute('data-target').substring(1);
-		goToTarget(whereTo);
+		goToTarget(whereTo, undefined, 'center' );
+		blink (document.getElementById(whereTo).parentElement)
 	}
 
 	if (e.target.classList.contains('sesame')) {

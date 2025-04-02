@@ -1287,7 +1287,7 @@ sup {
 	text-decoration: none;
 	color:cornflowerblue;
 	cursor: pointer;
-	user-select: none;
+/* 	user-select: none; */
 	font-family: 'Source sans Pro';
 }
 

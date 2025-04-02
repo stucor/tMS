@@ -1,0 +1,16 @@
+{
+			"Authors" : ["brahmali"],
+			"BookTitle" : "Dependent Origination",
+			"BookSubtitle" : "",
+			"ShortAbstract" : "<p>This is a companion booklet to ‘Dependent Liberation’ by the same author.</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "document",
+			"AddInfo"   : [["<p>Series</p>","<p>This is the first of two booklets in a series by Bhikkhu Brahmali.<br>Part 2 is: <a href='../dlbl'><span data-custom-style='Hyperlink'>Dependent Liberation</span></a></p>"],["<p>Overview</p>","<p>DEPENDENT ORIGINATION:<br>(<span lang='pi'>paṭiccasamuppāda</span>)<br><br>ignorance/delusion (<span lang='pi'>avijjā</span>) ›<br>willed acts/activities (<span lang='pi'>saṅkhāra</span>) ›<br>consciousness (<span lang='pi'>viññāṇa</span>) ›<br>name and form (<span lang='pi'>nāmarūpa</span>) ›<br>the six senses (<span lang='pi'>saḷāyatana</span>) ›<br>contact/sense impressions (<span lang='pi'>phassa</span>) ›<br>sensations/feelings (<span lang='pi'>vedanā</span>) ›<br>desire/craving (<span lang='pi'>taṇhā</span>) ›<br>taking up (<span lang='pi'>upādāna</span>) ›<br>life/existence (<span lang='pi'>bhava</span>) ›<br>rebirth (<span lang='pi'>jāti</span>) ›<br>old age and death (<span lang='pi'>jarāmaraṇa</span>)</p>"]],
+			"Copyright" : ["Originally published in 2013.","This edition published in 2021","Transcribed from a talk by Ajahn Brahmali, Dhammaloka, 17 April 2009.","Sourced from samita.be"],
+			"CCLicense": "CC0 1.0",
+			"FrontCover": "../_resources/book-data/dobl/FrontLarge.jpg",
+			"BackCover": "",
+			"BackMatter": [""],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": ""
+		}

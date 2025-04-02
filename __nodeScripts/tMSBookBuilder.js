@@ -446,6 +446,8 @@ function processPandoc() {
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-download-HTML")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-backcover-text")
 				|| (allDivs[i].getAttribute("data-custom-style") == "WW-meta-heading")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-additional-info-title")
+				|| (allDivs[i].getAttribute("data-custom-style") == "WW-additional-info")
 				) {
 				allDivs[i].remove();
 			}

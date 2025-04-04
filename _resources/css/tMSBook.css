@@ -1023,10 +1023,10 @@ span[class^="sesame closebutton"]  {
 	text-indent: unset;
 }
 
-.opensesame p + p{
+/* .opensesame p + p{
 	margin-top: 0;
 	text-indent: 2em;
-}
+} */
  .opensesame blockquote > p {
 	text-indent: unset;
 }
@@ -1335,9 +1335,9 @@ sup {
 .footNoteText {
 	user-select: none;
 	font-size: 0.8em;
-	margin: 1em;
+	margin: 0;
 	background-color: #b3b3b319;
-	padding: 0.5em 1em;
+	padding: 0.3em 1em;
 }
 
 .footNoteText > p {
@@ -1457,7 +1457,7 @@ sup {
 	display: grid;
 	grid-template-columns: 8em auto;
 	text-align: left;
-	padding: 0.2em 1em;
+	padding: 0 1em;
 	background-color: rgba(100, 148, 237, 0.043);
 	border: 1px solid #ffffff00;
 }
@@ -1474,7 +1474,7 @@ sup {
 	display: grid;
 	grid-template-columns: 2em 6em auto;
 	text-align: left;
-	padding: 0.2em 1em;
+	padding: 0 1em;
 	background-color: rgba(100, 148, 237, 0.043);
 	border: 1px solid #ffffff00;
 }
@@ -1495,7 +1495,7 @@ sup {
 #footnotes-list > .reflist > .reflistitem {
 	display: grid;
 	grid-template-columns: 2em 5em auto;
-	padding: 0.2em 1em;
+	padding: 0 1em;
 	background-color: rgba(100, 148, 237, 0.043);
 	border: 1px solid #ffffff00;
 }

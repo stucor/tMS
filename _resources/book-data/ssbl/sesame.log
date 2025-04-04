@@ -1,0 +1,30 @@
+Fri Apr 04 2025 11:42:56 GMT+0100 (British Summer Time)
+Please check the following entries.
+Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
+build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ssbl
+[
+{
+	"sesame": "Aṅguttara Nikāya",
+	"key": "super-blurbs:an"
+},
+{
+	"sesame": "Dīgha Nikāya",
+	"key": "super-blurbs:dn"
+},
+{
+	"sesame": "Majjhima Nikāya",
+	"key": "super-blurbs:mn"
+},
+{
+	"sesame": "Saṁyutta Nikāya",
+	"key": "super-blurbs:sn"
+},
+{
+	"sesame": "Sutta Piṭaka",
+	"key": "super-blurbs:sutta"
+},
+{
+	"sesame": "Ānāpānasati Sutta",
+	"key": "mn-blurbs:mn118"
+}
+]

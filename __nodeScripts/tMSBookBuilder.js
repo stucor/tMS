@@ -1461,7 +1461,6 @@ function buildBookIndexHTML () {
 						additionalMaps.push(obj)
 					}
 				}
-
 				// set the data-sesame-key zotref: in the footnotes.json file
 				if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'footnotes.json')) {
 					console.log ('Adding zotref: to footnotes.json')

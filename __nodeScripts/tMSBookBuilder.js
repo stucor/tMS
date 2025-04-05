@@ -1496,25 +1496,6 @@ function buildBookIndexHTML () {
 							//allBibliorefs[j].setAttribute('data-sesame-key', `zotref:`)
 						}
 
-						let allSpans = localfnHTMLRoot.querySelectorAll('span')
-						for (let j in allSpans) {
-							if (allSpans[j].getAttribute('lang') == 'pi') {
-								for (let k in localShyphenMaster) {
-									if (localShyphenMaster[k].replaceAll('-','') == allSpans[j].text) {
-										let newPiSpan = `<span lang='pi'>${localShyphenMaster[k].replaceAll('-','&shy;')}</span>`
-										allSpans[j].replaceWith (newPiSpan)
-									}
-								}
-							}
-						}
-						
-
-						//console.log(localfnHTMLRoot.innerHTML)
-
-
-
-
-
 						obj.fnHTML = localfnHTMLRoot.innerHTML.replaceAll('\"', '\'')
 						newFootNotesJson.push(obj)
 					}
@@ -1616,6 +1597,46 @@ function buildBookIndexHTML () {
 
 		}
 
+		function shyphenFootnotes () {
+			if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'footnotes.json')) {
+				console.log ('Shyphenating pali in footnotes.json')
+				let localFootnotes =``
+				try {
+					const data =  fs.readFileSync('../_resources/book-data/'+bookID+'/'+'footnotes.json', 'utf8')
+					localFootnotes = JSON.parse(data);
+				} catch (err) {
+					console.error(err);
+				}
+				let newFootNotesJson = []
+				for (let i in localFootnotes) {
+					let obj = new Object();
+					obj.fnNumber = localFootnotes[i].fnNumber
+					let localfnHTMLRoot = parse(localFootnotes[i].fnHTML)
+
+					let allSpans = localfnHTMLRoot.querySelectorAll('span')
+					for (let j in allSpans) {
+						if (allSpans[j].getAttribute('lang') == 'pi') {
+							for (let k in localShyphenMaster) {
+								if (localShyphenMaster[k].replaceAll('-','') == allSpans[j].text) {
+									let newPiSpan = `<span lang='pi'>${localShyphenMaster[k].replaceAll('-','&shy;')}</span>`
+									allSpans[j].replaceWith (newPiSpan)
+								}
+							}
+						}
+					}
+					
+					obj.fnHTML = localfnHTMLRoot.innerHTML.replaceAll('\"', '\'')
+					newFootNotesJson.push(obj)
+				}
+				let ammededFootnotes = JSON.stringify(newFootNotesJson, null, 2)
+				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), ammededFootnotes, 'utf8')
+				console.log (`Footnotes file ammended in PostProcessing to shyphenate pali`)
+			} else {
+					console.log (`❎—🛈 NO footnotes.json found in Post Processing to shyphenate pali`)
+			}
+
+		}
+
 		function addNavBarForLists () {
 			// make a navigation bar for the Lists modal
 			let modalLists = indexRoot.getElementById('ModalLists')
@@ -1663,6 +1684,7 @@ function buildBookIndexHTML () {
 
 		addDataSesameKeys()
 		buildSCLinksJSON()
+		shyphenFootnotes()
 		addNavBarForLists()
 
 /* 		let allspans = indexRoot.querySelectorAll('span')

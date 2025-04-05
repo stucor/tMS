@@ -2,7 +2,7 @@ const fs = require('fs')
 const { parse } = require('node-html-parser');
 
 const wordLength = 7
-const allBookIds =  ["afcm","bcbl","doab","journey","milk","sitm","vasy","wosb"]
+const allBookIds =  ["afcm","bcbl","bmom","doab","journey","milk","outk","sitm","ssbl","vasy","wosb"]
 
 function uniq(a) {
     return a.sort().filter(function(item, pos, ary) {

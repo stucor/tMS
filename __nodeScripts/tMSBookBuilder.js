@@ -207,7 +207,6 @@ function processPandoc() {
 				TOChtml[i].replaceWith(newElement)
 			} else
 			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-chapter-section-1') {
-				//console.log(TOChtml[i].innerHTML)
 				count += 1
 				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
 				let nextTOCHTML = TOChtml[i].innerHTML.replace(/(\r\n|\n|\r)/gm, "").replaceAll('\"', '\'').replace('<p>','').replace('</p>','')
@@ -342,40 +341,35 @@ function processPandoc() {
 						} else {
 							anchors[i].classList.add('extlink')
 						}
-				}
-			}
-			let outFNLi = footnotesRoot.getElementsByTagName ('li')
-			let localJSON = `[\n`
-			for (let i in outFNLi) {
-				if (outFNLi[i].id.substring(0,2) == 'fn' ) {
-					let thisFootnoteRoot = parse(outFNLi[i].innerHTML)
-					let thisFootnoteHTML = ``
-					thisFootnoteParas = thisFootnoteRoot.querySelectorAll('p')
-		
-					for (let j in thisFootnoteParas) {
-						thisFootnoteHTML += thisFootnoteParas[j].outerHTML.replaceAll('\"','\'')
-						.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
-						.replaceAll('<em>,</em>',',')  // clean up unexpected italics
-						.replaceAll(' | ','<br>')
-						.replaceAll('<p> ', '<p>')
-
-						//console.log(thisFootnoteHTML)
-
-					}
-		
-					localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML}"\n}`
-		
-					if (i == outFNLi.length -1) {
-						localJSON += '\n'
-					} else {
-						localJSON += ',\n'
 					}
 				}
-			}
-			localJSON += ']'
-	
-			fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
-			console.log(`✅ footnotes.json created`)
+				let outFNLi = footnotesRoot.getElementsByTagName ('li')
+				let localJSON = `[\n`
+				for (let i in outFNLi) {
+					if (outFNLi[i].id.substring(0,2) == 'fn' ) {
+						let thisFootnoteRoot = parse(outFNLi[i].innerHTML)
+						let thisFootnoteHTML = ``
+						thisFootnoteParas = thisFootnoteRoot.querySelectorAll('p')
+			
+						for (let j in thisFootnoteParas) {
+							thisFootnoteHTML += thisFootnoteParas[j].outerHTML.replaceAll('\"','\'')
+							.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
+							.replaceAll('<em>,</em>',',')  // clean up unexpected italics
+							.replaceAll(' | ','<br>')
+							.replaceAll('<p> ', '<p>')
+						}
+						localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML}"\n}`
+						if (i == outFNLi.length -1) {
+							localJSON += '\n'
+						} else {
+							localJSON += ',\n'
+						}
+					}
+				}
+				localJSON += ']'
+		
+				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
+				console.log(`✅ footnotes.json created`)
 			} else {
 				footnotesExist = false
 				console.log (`❎—🛈 NO FOOTNOTES in document`)
@@ -1432,6 +1426,11 @@ function buildBookIndexHTML () {
 
 		let indexRoot = parse(html)
 
+		//console.log(sesameRefArr)
+
+		let allSesameRefs = indexRoot.querySelectorAll ('.sesame.biblioref')
+		//console.log(allSesameRefs.length)
+
 		function addDataSesameKeys () {
 			// set the data-sesame-key zotref: in the book
 			let allSesameRefs = indexRoot.querySelectorAll ('.sesame.biblioref')
@@ -1522,6 +1521,25 @@ function buildBookIndexHTML () {
 				let sortedSesamesRefs = []
 				for (let i in allSesameRefs) {
 					sortedSesamesRefs.push(allSesameRefs[i].innerText)
+				}
+				// check if there are any sesameRefs in footnotes and push onto sortedSesamesRefs
+				if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'footnotes.json')) {
+					let localFootnotes =``
+					try {
+						const data =  fs.readFileSync('../_resources/book-data/'+bookID+'/'+'footnotes.json', 'utf8')
+						localFootnotes = JSON.parse(data);
+					} catch (err) {
+						console.error(err);
+					}
+					let newFootNotesJson = []
+					for (let i in localFootnotes) {
+						let localfnHTMLRoot = parse(localFootnotes[i].fnHTML)
+
+						let allBibliorefs = localfnHTMLRoot.querySelectorAll('.biblioref')
+						for (let j in allBibliorefs) {
+							sortedSesamesRefs.push(allBibliorefs[j].innerText)
+						}
+					}
 				}
 				function uniq(a) {
 					return a.sort().filter(function(item, pos, ary) {

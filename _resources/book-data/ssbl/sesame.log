@@ -1,4 +1,4 @@
-Sat Apr 05 2025 15:27:40 GMT+0100 (British Summer Time)
+Mon Apr 07 2025 11:02:44 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ssbl
@@ -16,16 +16,16 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ssbl
 	"key": "super-blurbs:mn"
 },
 {
-	"sesame": "Middle Length Discourses of the Buddha, note 1177",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
 	"sesame": "Saṁyutta Nikāya",
 	"key": "super-blurbs:sn"
 },
 {
 	"sesame": "Sutta Piṭaka",
 	"key": "super-blurbs:sutta"
+},
+{
+	"sesame": "Ñāṇamoli & Bodhi n.1177",
+	"key": "bodhi-nikaya-notes:MN-1177"
 },
 {
 	"sesame": "Ānāpānasati Sutta",

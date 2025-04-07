@@ -2680,7 +2680,7 @@ function toggleSesame (el) {
 					for (let i in noteData) {
 						if (noteData[i].fnNumber == el.innerText) {
 							let localHTML = noteData[i].fnHTML
-							el.insertAdjacentHTML("afterend", `<div class=opensesame><span>note: ${el.innerText}</span> ${localHTML}</div>`);
+							el.insertAdjacentHTML("afterend", `<div class=opensesame><span style='font-variant: small-caps'>note: #${el.innerText}</span> ${localHTML}</div>`);
 							el.classList.add('closebutton')
 							break
 						}

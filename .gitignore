@@ -4,3 +4,14 @@ _resources/zotero-attach
 _resources/bilara-data
 _resources/sesame-data/dictionaries
 _resources/book-data/afcm/*.log
+_resources/book-data/bcbl/*.log
+_resources/book-data/bmom/*.log
+_resources/book-data/dlbl/*.log
+_resources/book-data/doab/*.log
+_resources/book-data/journey/*.log
+_resources/book-data/milk/*.log
+_resources/book-data/outk/*.log
+_resources/book-data/sitm/*.log
+_resources/book-data/ssbl/*.log
+_resources/book-data/vasy/*.log
+_resources/book-data/wosb/*.log

@@ -1428,7 +1428,7 @@ function buildBookIndexHTML () {
 
 		//console.log(sesameRefArr)
 
-		let allSesameRefs = indexRoot.querySelectorAll ('.sesame.biblioref')
+		//let allSesameRefs = indexRoot.querySelectorAll ('.sesame.biblioref')
 		//console.log(allSesameRefs.length)
 
 		function addDataSesameKeys () {

@@ -273,10 +273,6 @@ a {
 	margin-top: 0;
 }
 
-.infocontainer p + p {
-	margin-top: 1em;
-}
-
 blockquote > p > span.list-margin {
 	position:relative;
 	color: var(--secondarytextcolor);
@@ -1121,25 +1117,56 @@ dd > ol > li {
 
 /* Bibliography */
 
-.zotbiblio {
-	text-align: left;
- }
-
-.zotbiblio p {
-	margin-left: 1em;
-	text-indent: -1em;
-}
-
-.zotbiblio > p > span.linkContainer {
- 	background: rgba(212, 197, 171, 0.09);
+.bibTitle > span.linkContainer {
+ 	background: #d4c5ab20;
 	border: thin dotted rgba(212, 197, 171, 0.2);
 }
-.zotbiblio > p > span.linkContainer > span.linkseparator{
+.bibTitle > span.linkContainer > span.linkseparator{
 	opacity: 0.25;
 }
 
-.bibheadhide {
-    display: none;
+.bibAuthor {
+	margin-bottom: 0;
+	font-size: 0.8em;
+}
+.bibTitle {
+	margin-top: 0;
+	margin-bottom: 1em;
+	margin-left: 2em;
+	font-size: unset;
+} 
+
+.bibSeg {
+	font-size: 0.8em;
+	margin-top: -1.2em;
+	margin-left: 3.2em;
+}
+
+.bibSeg > span {
+	color: cornflowerblue;
+	cursor: pointer;
+}
+
+
+.opensesame > .bibAuthor {
+	background: #d4c5ab20;
+	border: thin dotted rgba(212, 197, 171, 0.2);
+	display: inline;
+	font-size: unset;
+}
+
+.opensesame > .bibAuthor > .bibzotref{
+	display: none;
+}
+.opensesame > .bibTitle {
+	background: #d4c5ab20;
+	border: thin dotted rgba(212, 197, 171, 0.2);
+	margin-left: 0;
+	display: inline;
+}
+.opensesame > .bibTitle > span.linkContainer {
+	background: none;
+    border: none;
 }
 
 
@@ -1291,6 +1318,28 @@ sup {
 	font-family: 'Source sans Pro';
 }
 
+.infocontainer .search {
+	font-size: var(--fontsize);
+	background-color: var(--primarybackground);
+	position: relative;
+	top: -0.02em;
+	border-radius: 10px;
+	border: 1px solid rgba(128, 128, 128, 0.422);
+	padding: 0.12em 0.5em;
+	margin-left: -0em;
+}
+
+.infocontainer .search::placeholder {
+	font-variant: small-caps;
+	color : var(--primarytextcolor);
+	opacity: 50%;
+	font-size: smaller;
+}
+
+.infocontainer .search:focus {
+	outline: 1px solid cornflowerblue
+}
+
 #listsTabNav {
 	position:absolute;
 	top: 25px;
@@ -1342,6 +1391,7 @@ sup {
 
 .footNoteText > p {
 	margin-top: 0;
+	text-align: left;
 }
 .footNoteText > p > .sclinktext,
 .footNoteText > p > .extlink,
@@ -1500,6 +1550,37 @@ sup {
 	border: 1px solid #ffffff00;
 }
 
+
+
+#biblio-list > .reflist {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 100%);
+	grid-gap: 0.6rem 0.5rem;
+	justify-content:space-evenly;
+	padding:0;
+	list-style-type: none;
+}
+
+#biblio-list > .reflist > .reflistitem {
+	display: grid;
+	grid-template-columns: auto;
+	padding: 0 1em;
+	background-color: rgba(100, 148, 237, 0.043);
+	border: 1px solid #ffffff00;
+	text-align: left;
+}
+
+/* #biblio-list > .reflist > .reflistitem > p {
+	margin-bottom: 0;
+	font-size: 0.8em;
+}
+#biblio-list > .reflist > .reflistitem > p+p {
+	margin-top: 0;
+	margin-bottom: 1em;
+	margin-left: 2em;
+	font-size: unset;
+} */
+
 .figureCaption {
 	font-size: 0.8em;
 }
@@ -1511,6 +1592,7 @@ sup {
 
 .reflistbuttons {
 	margin: 0;
+	text-align: left;
 }
 
 .reflistbuttons > button {
@@ -3092,7 +3174,12 @@ mark.current {
 	}
 	.reflistitem:hover  {
 		border:1px solid cornflowerblue !important;
-		cursor:pointer
+		background-color: green;
+		cursor:pointer;
+	}
+	#biblio-list > .reflist > .reflistitem:hover  {
+		border:1px solid #ffffff00 !important;
+		cursor:auto;
 	}
 	.downloads img:hover {
 		border-color: cornflowerblue;

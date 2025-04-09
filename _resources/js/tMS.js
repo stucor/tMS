@@ -2468,6 +2468,9 @@ function blink (element) {
 }
 
 document.getElementById("ModalLists").addEventListener("click", function(e) {
+	if (e.target.id == 'biblioListTab') {
+		biblioList.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" })
+	}
 	if (e.target.id == 'tablesListTab') {
 		tablesList.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" })
 	}
@@ -2661,7 +2664,7 @@ function toggleSesame (el) {
 					});
 				} else 
 				if (sesameKeyArr[0] == `zotref`) {
-					let zotBiblioEntries = document.querySelectorAll('.zotbiblio > p')
+					let zotBiblioEntries = document.querySelectorAll('.bibText')
 					let bibReference = ``
 					for (let i in zotBiblioEntries) {
 						if (zotBiblioEntries[i].getAttribute('data-zotref') == sesameKeyArr[1]) {
@@ -3176,6 +3179,13 @@ listsBtn.onclick = function() {
 	stopBookScroll ();
 	let atLeastOneListExists = false
 
+	function biblio () {
+		if (document.getElementById('biblioList')) {
+			var options = {valueNames: [ 'bibAuthor', 'bibTitle' ]};
+			var biblioList = new List('biblio-list', options);
+		}
+	}
+
 	function tables () {
 		if (document.getElementById('tablesList')) {
 			let tabrefArr = document.querySelectorAll('table');
@@ -3187,7 +3197,8 @@ listsBtn.onclick = function() {
 				html += `<h3>Tables:</h3>`;
 				html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
 				html += `<button class="sort asc" data-sort="lotSegRef">Segment</button> `
-				html += `<button class="sort" data-sort="lotCaption">Caption</button></div>`
+				html += `<button class="sort" data-sort="lotCaption">Caption</button>`
+				html += `<input class="search" placeholder="Filter by" /></div>`
 				html += `<ul class="list reflist">`
 				for (let i = 0; i < tabrefArr.length; i++) {
 					if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
@@ -3216,7 +3227,8 @@ listsBtn.onclick = function() {
 				html += `<h3>Figures:</h3>`;
 				html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
 				html += `<button class="sort asc" data-sort="figureSegRef">Segment</button> `
-				html += `<button class="sort" data-sort="figureCaption">Caption</button></div>`
+				html += `<button class="sort" data-sort="figureCaption">Caption</button>`
+				html += `<input class="search" placeholder="Filter by" /></div>`
 				html += `<ul class="list reflist">`
 				for (let i = 0; i < figArr.length; i++) {
 					let segment = `<span class='figureSegRef'>${figArr[i].id.substring(4)}</span>`
@@ -3241,7 +3253,7 @@ listsBtn.onclick = function() {
 				html = `<section id="texts-list" class="infocontainer">`;
 				html += `<h3>Texts:</h3>`;
 				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="textSegRef">Segment</button>`
-				html += `  <button class="sort" data-sort="sclinktext">Reference</button></div>`
+				html += `<button class="sort" data-sort="sclinktext">Reference</button></div>`
 				html += `<ul class="list reflist">`
 				for (let i in sclinksdata) {
 					let segRef = ``
@@ -3293,7 +3305,8 @@ listsBtn.onclick = function() {
 				html += `<section id='footnotes-list' class='infocontainer'>`
 				html += `<h3>Notes:</h3>`
 				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="notesSegRef">Segment</button>`
-					html += `  <button class="sort" data-sort="footNoteText">Note Text</button></div>`
+				html += `<button class="sort" data-sort="footNoteText">Note Text</button>`
+				html += `<input class="search" placeholder="Filter by" /></div>`
 				html += `<ul class="list reflist">`
 				for (let i in footnotesData) {
 					let fnNumber = footnotesData[i].fnNumber
@@ -3305,7 +3318,7 @@ listsBtn.onclick = function() {
 							break
 						}
 					}
-					let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML}</span>`
+					let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML.replaceAll('&shy;','')}</span>`
 					html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
 				}
 				html += `</ul></section>` 
@@ -3323,6 +3336,7 @@ listsBtn.onclick = function() {
 		}
 	}
 
+	biblio()
 	tables()
 	figures()
 	sctexts()

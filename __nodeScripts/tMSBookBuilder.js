@@ -58,7 +58,7 @@ let sesameArr = []
 let sesameRefArr = []
 let footnotesExist = true;
 
-let lastSegment = 0
+
 
 
 function formatSCLinktext (linkHTML) {
@@ -1135,9 +1135,6 @@ function buildBookIndexHTML () {
 					allSegments[i].setAttribute('id',`seg-${parseInt(i) + 1}`)
 				}
 			}
-			if (allSegments[i].id) {
-				lastSegment = parseInt(allSegments[i].id.replace('seg-', ''))
-			}
 		}
 
 		let returnHTML = `${html}\n${bookRoot}`.replaceAll('</blockquote>\r\n<blockquote>','')
@@ -1149,260 +1146,6 @@ function buildBookIndexHTML () {
 		return returnHTML
 	}
 	html = buildBook()
-
-
-	function buildReferences () {
-
-		let bookBiblioData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblio.json'))
-
-		function populateReferences(referencesData) {
-			let html = ``
-			lastSegment ++
-			html += `<section class="zotbiblio">\n<h2 id=seg-${lastSegment}>Bibliography</h2>\n`
-			lastSegment ++
-			for (i in referencesData) {
-				let urlLabel = ''
-				let attachmentLabel = ''
-				let tMSShortcode = ''
-				let tMSAudioShortcode = ''
-				let internetArchiveURL = ''
-				let scaredTextsURL = ''
-				let audioFile = ''
-			
-				// get special values from the notes field 
-				if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
-					noteArray = referencesData[i]["note"].split('\n')
-					for (j in noteArray) {
-						[noteKey, noteValue] = noteArray[j].split(':')
-						switch (noteKey) {
-							case "attachment-label":
-								attachmentLabel = `${noteValue.replace(/ /g, '\u00a0').trim()}`
-								break
-							case "tMS":
-								tMSShortcode = noteValue.trim()
-								break
-							case "tMS-audio":
-								tMSAudioShortcode = noteValue.trim()
-								break
-							case "IACode":
-								internetArchiveURL = `${noteValue.trim()}`
-								break
-							case "sacred-texts":
-								scaredTextsURL = `${noteValue.trim()}`
-								break
-							case "audio-file":
-								audioFile = `${noteValue.trim()}`
-								break
-							}
-					}
-				}
-
-				switch (referencesData[i].type) {
-					case "book":
-					case "chapter":
-						urlLabel ='Publisher: '
-						break;
-					case "article-journal":
-						urlLabel ='Journal: '
-						break;
-					case "paper-conference":
-						urlLabel ='Publisher: '
-						break;                 
-					case "document":
-						urlLabel ='Publisher: '
-						break;
-					case "post-weblog":
-						urlLabel ='Blog Post: '
-						break;
-					case "post":
-						urlLabel ='Forum Post: '
-						break;
-					case "webpage":
-						urlLabel ='';
-						break;
-					case "thesis":
-						urlLabel ='University: ';
-						break;
-					case "song":
-						urlLabel ='Audio Source: '
-						break;
-				}
-
-				bibSegNos = parseInt(i) + parseInt(lastSegment)
-
-				html += `<p id='seg-${bibSegNos}' data-zotref='${referencesData[i].id}'>`
-
-				// add a class bibhead - this is changed to bibheadhide in getFullReference
-				// when there are multiple volumes referenced once in a citation
-				html += `<span class='bibhead'>`
-
-				// author
-				let authorAfter ='';
-				for (j in referencesData[i].author) {
-					if (j == referencesData[i].author.length-1) {
-						authorAfter =` &ndash; `
-					} else if (j == referencesData[i].author.length-2) {
-						authorAfter =` & `
-					} else {
-						authorAfter =`, `
-					}
-					html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
-				}
-
-				//translator
-				let translatorAfter ='& ';
-				for (j in referencesData[i].translator) {
-					if (j == referencesData[i].translator.length-1) {
-						translatorAfter ='<em>(tr.) </em>&ndash;'
-					}
-					html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
-				}
-
-
-				// contributor - special case where there is no author (or you don't want it to be something like The Buddha) 
-				// but there is a translator such as the Nikayas by Bodhi. In the libray use contributor instead so 
-				// that it shows in creator field.
-
-				if (!referencesData[i].author) {
-					let contributorAfter ='& ';
-					for (j in referencesData[i].contributor) {
-						if (j == referencesData[i].contributor.length-1) {
-							contributorAfter ='<em>(tr.) </em>&ndash;'
-						}
-						html += `<strong>${referencesData[i].contributor[j].family}</strong>, ${referencesData[i].contributor[j].given} ${contributorAfter}`;
-					}
-				}
-
-
-				// editor - add the editor only in case there is no author
-				if (!referencesData[i].author) {
-					let editorAfter ='& ';
-					for (j in referencesData[i].editor) {
-						if (j == referencesData[i].editor.length-1) {
-							editorAfter ='<em>(ed.) </em>&ndash;'
-						}
-						html += `<strong>${referencesData[i].editor[j].family}</strong>, ${referencesData[i].editor[j].given} ${editorAfter}`;
-					}
-				}
-
-				//title
-				if (referencesData[i]["title-short"]) {
-					html += ` <em>${referencesData[i]["title-short"]}</em>`;
-				} else {
-					html += ` <em>${referencesData[i]["title"]}</em>`;
-				}
-
-				//container
-				if (referencesData[i].hasOwnProperty('container-title')) {
-					html += `. ${referencesData[i]["container-title"]}`;
-				}
-
-				html += `</span>`
-				
-
-				if (referencesData[i].hasOwnProperty('volume')) {
-					html += `, Vol. ${referencesData[i]["volume"]}`;
-					if (referencesData[i].hasOwnProperty('issue')) {
-						html += `/${referencesData[i]["issue"]}`;
-					}
-				} else if (referencesData[i].hasOwnProperty('issue')) {
-					html += `, No. ${referencesData[i]["issue"]}`;
-				}
-
-				if (referencesData[i].hasOwnProperty('number-of-volumes')) {
-					html += ` of ${referencesData[i]["number-of-volumes"]}`;
-				}
-
-				if (referencesData[i].hasOwnProperty('page')) {
-					if ((referencesData[i].page.includes("-")) || (referencesData[i].page.includes("–")))   { //is a range of pages
-						html += `. pp.&nbsp;${referencesData[i].page.replace("-","–")}`;
-					} else {
-						html += `. p.&nbsp;${referencesData[i].page}`;
-					}
-				}
-
-				html += `.`;
-
-				// date
-				if (referencesData[i].hasOwnProperty('issued')) {
-					html += ` ${referencesData[i]["issued"]["date-parts"][0][0]} `;
-				}
-
-				//publisher
-	/* 
-				if (referencesData[i].hasOwnProperty('publisher')) {
-					html += ` ${referencesData[i]["publisher"]}`;
-
-					if (referencesData[i].hasOwnProperty('publisher-place')) {
-						html += `, ${referencesData[i]["publisher-place"]}`;
-					}
-
-					html += `.`;
-				}
-	*/
-				//url
-				let linkSeparator = `<span class='linkseparator'>•</span>`;
-				html += `<span class = "linkContainer">`
-
-				if (referencesData[i].hasOwnProperty('URL')) {
-					html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online" href="${referencesData[i].URL}"></a> `;
-				}
-
-				if (tMSShortcode !=='') {
-					html += `${linkSeparator} <a class="library" href="../${tMSShortcode}"></a>`
-				}
-
-				if (tMSAudioShortcode !=='') {
-					html += `${linkSeparator} <a class="refaudio" href="../${tMSAudioShortcode}"></a>`
-				}
-
-				if (internetArchiveURL !== '') {
-					html += `${linkSeparator} <a class="internetArchive" href="https://archive.org/details/${internetArchiveURL}"></a>`
-				}
-
-				if (scaredTextsURL !== '') {
-					html += `${linkSeparator} <a class="sacredTexts" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
-				}
-
-				if (audioFile !=='') {
-					html += `${linkSeparator} <a class="refaudio" href="../_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
-				}
-
-				if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
-					if (attachmentLabel !== '') {
-						let attachmentLabelArray = attachmentLabel.split(';');
-						if (attachmentLabelArray.length > 1) {
-							let fileArray = referencesData[i]
-							.file.split(';');
-							for (k in attachmentLabelArray) {
-								html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" href="../_resources/zotero-attach/${fileArray[k]}"></a> `;
-							}
-						} else {
-							html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
-						}
-					} else {
-						html += `${linkSeparator} <a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file.replaceAll(' ','%20')}"></a> `;
-					}
-				}
-
-				html += `${linkSeparator}</span></p>\n`;
-
-			}
-
-			html += `</section>\n`
-			return html
-		}
-		return populateReferences(bookBiblioData);
-
-	}
-
-	if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.json`)) {
-		console.log(`Attempting to create Bibliography ...`)
-		html += buildReferences()
-		console.log (`✅ Bibliography Added from /book-data/${bookID}/biblio.json`)
-	} else {
-		console.log (`❎—🛈 NO BIBLIOGRAPHY DATA found at /book-data/${bookID}/biblio.json`)
-	}
 
 
 	html += `<div class="endBar">End of Book</div>
@@ -1425,11 +1168,6 @@ function buildBookIndexHTML () {
  	function postProcessing () {
 
 		let indexRoot = parse(html)
-
-		//console.log(sesameRefArr)
-
-		//let allSesameRefs = indexRoot.querySelectorAll ('.sesame.biblioref')
-		//console.log(allSesameRefs.length)
 
 		function addDataSesameKeys () {
 			// set the data-sesame-key zotref: in the book
@@ -1655,6 +1393,264 @@ function buildBookIndexHTML () {
 
 		}
 
+
+		function buildReferences () {
+			console.log(`Attempting to create Bibliography ...`)
+			let bookBiblioData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblio.json'))
+			function populateReferences(referencesData) {
+				let html = ``
+				html += `<section id="biblio-list" class="infocontainer">`
+				html += `<h3>Bibliography</h3>`
+				html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
+				html += `<button class="sort asc" data-sort="bibAuthor">Author</button> `
+				html += `<button class="sort" data-sort="bibTitle">Title</button>`
+				html += `<input class="search" placeholder="Filter by" /></div>`
+				html += `<ul class = "list reflist">`
+
+				for (i in referencesData) {
+					html += `<li class="reflistitem bibText" data-zotref='${referencesData[i].id}'>`
+					let urlLabel = ''
+					let attachmentLabel = ''
+					let tMSShortcode = ''
+					let tMSAudioShortcode = ''
+					let internetArchiveURL = ''
+					let scaredTextsURL = ''
+					let audioFile = ''
+				
+					// get special values from the notes field 
+					if ((referencesData[i].hasOwnProperty('note')) && (referencesData[i].note != '')) {
+						noteArray = referencesData[i]["note"].split('\n')
+						for (j in noteArray) {
+							[noteKey, noteValue] = noteArray[j].split(':')
+							switch (noteKey) {
+								case "attachment-label":
+									attachmentLabel = `${noteValue.replace(/ /g, '\u00a0').trim()}`
+									break
+								case "tMS":
+									tMSShortcode = noteValue.trim()
+									break
+								case "tMS-audio":
+									tMSAudioShortcode = noteValue.trim()
+									break
+								case "IACode":
+									internetArchiveURL = `${noteValue.trim()}`
+									break
+								case "sacred-texts":
+									scaredTextsURL = `${noteValue.trim()}`
+									break
+								case "audio-file":
+									audioFile = `${noteValue.trim()}`
+									break
+								}
+						}
+					}
+	
+					switch (referencesData[i].type) {
+						case "book":
+						case "chapter":
+							urlLabel ='Publisher: '
+							break;
+						case "article-journal":
+							urlLabel ='Journal: '
+							break;
+						case "paper-conference":
+							urlLabel ='Publisher: '
+							break;                 
+						case "document":
+							urlLabel ='Publisher: '
+							break;
+						case "post-weblog":
+							urlLabel ='Blog Post: '
+							break;
+						case "post":
+							urlLabel ='Forum Post: '
+							break;
+						case "webpage":
+							urlLabel ='';
+							break;
+						case "thesis":
+							urlLabel ='University: ';
+							break;
+						case "song":
+							urlLabel ='Audio Source: '
+							break;
+					}
+					//html += `<p class ="bibZotRef">${referencesData[i].id}</p>`
+					//html += `<p class="bibText" data-zotref='${referencesData[i].id}'>`
+					html += `<p class='bibAuthor'>`
+					// author
+					let authorAfter ='';
+					for (j in referencesData[i].author) {
+						if (j == referencesData[i].author.length-1) {
+							authorAfter =` &ndash; `
+						} else if (j == referencesData[i].author.length-2) {
+							authorAfter =` & `
+						} else {
+							authorAfter =`, `
+						}
+						html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
+					}
+					//translator
+					let translatorAfter ='& ';
+					for (j in referencesData[i].translator) {
+						if (j == referencesData[i].translator.length-1) {
+							translatorAfter ='<em>(tr.) </em>&ndash;'
+						}
+						html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
+					}
+					// contributor - special case where there is no author (or you don't want it to be something like The Buddha) 
+					// but there is a translator such as the Nikayas by Bodhi. In the libray use contributor instead so 
+					// that it shows in creator field.
+					if (!referencesData[i].author) {
+						let contributorAfter ='& ';
+						for (j in referencesData[i].contributor) {
+							if (j == referencesData[i].contributor.length-1) {
+								contributorAfter ='<em>(tr.) </em>&ndash;'
+							}
+							html += `<strong>${referencesData[i].contributor[j].family}</strong>, ${referencesData[i].contributor[j].given} ${contributorAfter}`;
+						}
+					}
+					// editor - add the editor only in case there is no author
+					if (!referencesData[i].author) {
+						let editorAfter ='& ';
+						for (j in referencesData[i].editor) {
+							if (j == referencesData[i].editor.length-1) {
+								editorAfter ='<em>(ed.) </em>&ndash;'
+							}
+							html += `<strong>${referencesData[i].editor[j].family}</strong>, ${referencesData[i].editor[j].given} ${editorAfter}`;
+						}
+					}
+					html += ` <span class='bibzotref'>[${referencesData[i].id}]</span></p>` //end bibAuthor
+
+					html += `<p class="bibTitle">`
+					//title
+					if (referencesData[i]["title-short"]) {
+						html += ` <em>${referencesData[i]["title-short"]}</em>`;
+					} else {
+						html += ` <em>${referencesData[i]["title"]}</em>`;
+					}
+
+					//container
+					if (referencesData[i].hasOwnProperty('container-title')) {
+						html += `. ${referencesData[i]["container-title"]}`;
+					}
+					if (referencesData[i].hasOwnProperty('volume')) {
+						html += `, Vol. ${referencesData[i]["volume"]}`;
+						if (referencesData[i].hasOwnProperty('issue')) {
+							html += `/${referencesData[i]["issue"]}`;
+						}
+					} else if (referencesData[i].hasOwnProperty('issue')) {
+						html += `, No. ${referencesData[i]["issue"]}`;
+					}
+	
+					if (referencesData[i].hasOwnProperty('number-of-volumes')) {
+						html += ` of ${referencesData[i]["number-of-volumes"]}`;
+					}
+	
+					if (referencesData[i].hasOwnProperty('page')) {
+						if ((referencesData[i].page.includes("-")) || (referencesData[i].page.includes("–")))   { //is a range of pages
+							html += `. pp.&nbsp;${referencesData[i].page.replace("-","–")}`;
+						} else {
+							html += `. p.&nbsp;${referencesData[i].page}`;
+						}
+					}
+	
+					html += `.`;
+	
+					// date
+					if (referencesData[i].hasOwnProperty('issued')) {
+						html += ` ${referencesData[i]["issued"]["date-parts"][0][0]} `;
+					}
+	
+					//publisher
+		/* 
+					if (referencesData[i].hasOwnProperty('publisher')) {
+						html += ` ${referencesData[i]["publisher"]}`;
+	
+						if (referencesData[i].hasOwnProperty('publisher-place')) {
+							html += `, ${referencesData[i]["publisher-place"]}`;
+						}
+	
+						html += `.`;
+					}
+		*/
+					//url
+					let linkSeparator = `<span class='linkseparator'>•</span>`;
+					html += `<span class = "linkContainer">`
+	
+					if (referencesData[i].hasOwnProperty('URL')) {
+						html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online" href="${referencesData[i].URL}"></a> `;
+					}
+	
+					if (tMSShortcode !=='') {
+						html += `${linkSeparator} <a class="library" href="../${tMSShortcode}"></a>`
+					}
+	
+					if (tMSAudioShortcode !=='') {
+						html += `${linkSeparator} <a class="refaudio" href="../${tMSAudioShortcode}"></a>`
+					}
+	
+					if (internetArchiveURL !== '') {
+						html += `${linkSeparator} <a class="internetArchive" href="https://archive.org/details/${internetArchiveURL}"></a>`
+					}
+	
+					if (scaredTextsURL !== '') {
+						html += `${linkSeparator} <a class="sacredTexts" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
+					}
+	
+					if (audioFile !=='') {
+						html += `${linkSeparator} <a class="refaudio" href="../_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
+					}
+	
+					if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
+						if (attachmentLabel !== '') {
+							let attachmentLabelArray = attachmentLabel.split(';');
+							if (attachmentLabelArray.length > 1) {
+								let fileArray = referencesData[i]
+								.file.split(';');
+								for (k in attachmentLabelArray) {
+									html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" href="../_resources/zotero-attach/${fileArray[k]}"></a> `;
+								}
+							} else {
+								html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+							}
+						} else {
+							html += `${linkSeparator} <a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file.replaceAll(' ','%20')}"></a> `;
+						}
+					}
+					html += `${linkSeparator}</span>`
+					html += `</p>`;
+
+					html += `<p class='bibSeg'>`
+					let allsesames =indexRoot.querySelectorAll('.sesame')
+					for (let j=0;j<allsesames.length;j++) {
+						let sesameAttribute = allsesames[j].getAttribute('data-sesame-key')
+						if (sesameAttribute) {
+							let [top, tail] = sesameAttribute.split(':')
+							if (top == 'zotref') {
+								if (tail == referencesData[i].id) {
+									html += `<span> ${allsesames[j].parentNode.id}</span> |`
+								}
+							}
+						}
+					}
+
+////////////////////////////************* NOW THE SAME FOR FOOTNOTES *****************************/
+
+					html += `</p>`;
+
+					html += `</li>`
+	
+				}
+	
+				html += `</ul>\n</section>\n`
+				return html
+			}
+			console.log (`✅ Bibliography Added from /book-data/${bookID}/biblio.json`)
+			return populateReferences(bookBiblioData);
+		}
+	
+
 		function addNavBarForLists () {
 			// make a navigation bar for the Lists modal
 			let modalLists = indexRoot.getElementById('ModalLists')
@@ -1682,15 +1678,23 @@ function buildBookIndexHTML () {
 					}
 				}
 			}
+			let hasBiblio = false
+			if (fs.existsSync(`../_resources/book-data/${bookID}/biblio.json`)) {
+				hasBiblio = true
+			} else {
+				console.log (`❎—🛈 NO BIBLIOGRAPHY DATA found at /book-data/${bookID}/biblio.json`)
+			}
 
 			let modalListsHTML = `<nav id='listsTabNav'>`
-			if (hasTables) {modalListsHTML += `<button id='tablesListTab'>Tables</button>`}
-			if (hasFigures) {modalListsHTML += `<button id='figuresListTab'>Figures</button>`}
-			if (hasSCTexts) {modalListsHTML += `<button id='textsListTab'>Texts</button>`}
-			if (hasFootnotes) {modalListsHTML += `<button id='footnotesListTab'>Notes</button>`}
+			if (hasBiblio) {modalListsHTML += `<button id='biblioListTab'>Biblio</button>`} else {modalListsHTML += `<button id='biblioListTab' class='unavailable'>Biblio</button>`} 
+			if (hasTables) {modalListsHTML += `<button id='tablesListTab'>Tables</button>`} else {modalListsHTML += `<button id='tablesListTab' class='unavailable'>Tables</button>`} 
+			if (hasFigures) {modalListsHTML += `<button id='figuresListTab'>Figures</button>`} else {modalListsHTML += `<button id='figuresListTab' class='unavailable'>Figures</button>`}
+			if (hasSCTexts) {modalListsHTML += `<button id='textsListTab'>Texts</button>`} else {modalListsHTML += `<button id='textsListTab' class='unavailable'>Texts</button>`} 
+			if (hasFootnotes) {modalListsHTML += `<button id='footnotesListTab'>Notes</button>`} else {modalListsHTML += `<button id='footnotesListTab' class='unavailable'>Notes</button>`}
 			modalListsHTML += `</nav>`
 
-			if (hasTables) {modalListsHTML += `<div id='tablesList'>Error: list of Tables not built</div>`}
+			if (hasBiblio) {modalListsHTML += `<div id='biblioList'>${buildReferences()}</div>`} 
+			if (hasTables) {modalListsHTML += `<div id='tablesList'>Error: list of Tables not built</div>`} // default error message if List not built in tMS.js
 			if (hasFigures) {modalListsHTML += `<div id='figuresList'>Error: list of Figures not built</div>`}
 			if (hasSCTexts) {modalListsHTML += `<div id='textsList'>Error: list of Texts not built</div>`}
 			if (hasFootnotes) {modalListsHTML += `<div id='footnotesList'>Error: list of Footnotes not built</div>`}

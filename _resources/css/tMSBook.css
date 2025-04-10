@@ -1117,10 +1117,8 @@ dd > ol > li {
 
 /* Bibliography */
 
-.bibTitle > span.linkContainer {
- 	background: #d4c5ab20;
-	border: thin dotted rgba(212, 197, 171, 0.2);
-}
+
+
 .bibTitle > span.linkContainer > span.linkseparator{
 	opacity: 0.25;
 }
@@ -1139,8 +1137,9 @@ dd > ol > li {
 .bibSeg {
 	font-size: 0.8em;
 	margin-top: -1.2em;
-	margin-left: 3.2em;
+	margin-left: 3em;
 }
+
 
 .bibSeg > span {
 	color: cornflowerblue;
@@ -1165,16 +1164,28 @@ dd > ol > li {
 	display: inline;
 }
 .opensesame > .bibTitle > span.linkContainer {
-	background: none;
+	
     border: none;
+	white-space: wrap;
+
 }
 
+.opensesame > .bibSeg {
+	display: none;
+}
 
 .linkContainer {
+	background: #b7b7b757;
+    border: thin dotted #d4c5ab;
 	box-sizing: border-box;
     white-space: nowrap;
     padding: 0 0.2em;
     border-radius: 5px;
+}
+.linkContainer > a {
+	border-radius: 5px;
+	padding: 2px;
+	border: solid 1px rgba(255, 255, 255, 0)
 }
 .linkseparator {
 	opacity: 0.5;
@@ -3183,6 +3194,9 @@ mark.current {
 	}
 	.downloads img:hover {
 		border-color: cornflowerblue;
+	}
+	.linkContainer > a:hover {
+		border: 1px solid cornflowerblue;
 	}
 }
 

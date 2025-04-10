@@ -2493,8 +2493,15 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 		if (e.target.closest('#texts-list') || e.target.closest('#footnotes-list') ) {
 			bookSeg = e.target.closest('.reflistitem').getAttribute('data-segref')
 			noteNumberToOpen = e.target.closest('.reflistitem').getAttribute('data-fnnumber')
-		} else {
-			console.log('Something else')
+		} else 
+		if ((e.target.closest('.bibSeg')) && (e.target.tagName == 'SPAN')) {
+			let [seg, note] = e.target.innerText.split('—')
+			if (note) {
+				bookSeg = seg.replace('§','seg-')
+				noteNumberToOpen = note.replace('#','')
+			} else {
+				bookSeg = seg.replace('§','seg-')
+			}
 		}
 		if (bookSeg) {
 			closebtn.click();
@@ -3304,7 +3311,7 @@ listsBtn.onclick = function() {
 				let html = ``
 				html += `<section id='footnotes-list' class='infocontainer'>`
 				html += `<h3>Notes:</h3>`
-				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="notesSegRef">Segment</button>`
+				html += `<div class="reflistbuttons"><h4>Sort by:</h4><button class="sort asc" data-sort="footnoteinlist">Segment</button>`
 				html += `<button class="sort" data-sort="footNoteText">Note Text</button>`
 				html += `<input class="search" placeholder="Filter by" /></div>`
 				html += `<ul class="list reflist">`
@@ -3323,7 +3330,7 @@ listsBtn.onclick = function() {
 				}
 				html += `</ul></section>` 
 				parentDiv.innerHTML = html
-				var options = {valueNames: [ 'notesSegRef', 'footNoteText' ]};
+				var options = {valueNames: [ 'footnoteinlist', 'footNoteText' ]};
 				var footnotesList = new List('footnotes-list', options);
 			}
 			fetch(`../_resources/book-data/${shortcode()}/footnotes.json`)

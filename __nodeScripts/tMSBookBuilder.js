@@ -1395,6 +1395,15 @@ function buildBookIndexHTML () {
 
 
 		function buildReferences () {
+			let localFootnotes =``
+			if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'footnotes.json')) {
+				try {
+					const data =  fs.readFileSync('../_resources/book-data/'+bookID+'/'+'footnotes.json', 'utf8')
+					localFootnotes = JSON.parse(data);
+				} catch (err) {
+					console.error(err);
+				}
+			}
 			console.log(`Attempting to create Bibliography ...`)
 			let bookBiblioData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'biblio.json'))
 			function populateReferences(referencesData) {
@@ -1621,21 +1630,58 @@ function buildBookIndexHTML () {
 					html += `${linkSeparator}</span>`
 					html += `</p>`;
 
-					html += `<p class='bibSeg'>`
+					bibSegHTML = `<p class='bibSeg'>|`
 					let allsesames =indexRoot.querySelectorAll('.sesame')
+					let bibSegCount = 0
 					for (let j=0;j<allsesames.length;j++) {
 						let sesameAttribute = allsesames[j].getAttribute('data-sesame-key')
 						if (sesameAttribute) {
 							let [top, tail] = sesameAttribute.split(':')
 							if (top == 'zotref') {
 								if (tail == referencesData[i].id) {
-									html += `<span> ${allsesames[j].parentNode.id}</span> |`
+									console.log(allsesames[j].innerHTML)
+									if(allsesames[j].closest('.tablewrap')) {
+										bibSegHTML += ` <span>${allsesames[j].closest('.tablewrap').id.replace('seg-','§')}</span> |`
+									} else {
+										bibSegHTML += ` <span>${allsesames[j].parentNode.id.replace('seg-','§')}</span> |`
+									}
+									bibSegCount ++
 								}
 							}
 						}
 					}
 
-////////////////////////////************* NOW THE SAME FOR FOOTNOTES *****************************/
+
+					for (let j=0;j<localFootnotes.length;j++) {
+						fnHTMLRoot = parse(localFootnotes[j].fnHTML)
+						let allsesames = fnHTMLRoot.querySelectorAll('.sesame')
+						for (let k=0;k<allsesames.length;k++) {
+							let sesameAttribute = allsesames[k].getAttribute('data-sesame-key')
+							if (sesameAttribute) {
+								let [top, tail] = sesameAttribute.split(':')
+								if (top == 'zotref') {
+									if (tail == referencesData[i].id) {
+										let allSups = indexRoot.querySelectorAll('sup')
+										for (let l=0;l<allSups.length;l++) {
+											if (localFootnotes[j].fnNumber == allSups[l].innerText) {
+												bibSegHTML += ` <span>${allSups[l].parentNode.id.replace('seg-','§')}—#${localFootnotes[j].fnNumber}</span> |`
+												bibSegCount ++
+											}
+										}
+
+									}
+								}
+							}
+						}
+					}
+					
+
+
+
+					if (bibSegCount != 0) {
+						html += bibSegHTML
+					}
+
 
 					html += `</p>`;
 
@@ -1687,17 +1733,17 @@ function buildBookIndexHTML () {
 
 			let modalListsHTML = `<nav id='listsTabNav'>`
 			if (hasBiblio) {modalListsHTML += `<button id='biblioListTab'>Biblio</button>`} else {modalListsHTML += `<button id='biblioListTab' class='unavailable'>Biblio</button>`} 
-			if (hasTables) {modalListsHTML += `<button id='tablesListTab'>Tables</button>`} else {modalListsHTML += `<button id='tablesListTab' class='unavailable'>Tables</button>`} 
 			if (hasFigures) {modalListsHTML += `<button id='figuresListTab'>Figures</button>`} else {modalListsHTML += `<button id='figuresListTab' class='unavailable'>Figures</button>`}
-			if (hasSCTexts) {modalListsHTML += `<button id='textsListTab'>Texts</button>`} else {modalListsHTML += `<button id='textsListTab' class='unavailable'>Texts</button>`} 
 			if (hasFootnotes) {modalListsHTML += `<button id='footnotesListTab'>Notes</button>`} else {modalListsHTML += `<button id='footnotesListTab' class='unavailable'>Notes</button>`}
+			if (hasTables) {modalListsHTML += `<button id='tablesListTab'>Tables</button>`} else {modalListsHTML += `<button id='tablesListTab' class='unavailable'>Tables</button>`} 
+			if (hasSCTexts) {modalListsHTML += `<button id='textsListTab'>Texts</button>`} else {modalListsHTML += `<button id='textsListTab' class='unavailable'>Texts</button>`} 
 			modalListsHTML += `</nav>`
 
 			if (hasBiblio) {modalListsHTML += `<div id='biblioList'>${buildReferences()}</div>`} 
-			if (hasTables) {modalListsHTML += `<div id='tablesList'>Error: list of Tables not built</div>`} // default error message if List not built in tMS.js
 			if (hasFigures) {modalListsHTML += `<div id='figuresList'>Error: list of Figures not built</div>`}
-			if (hasSCTexts) {modalListsHTML += `<div id='textsList'>Error: list of Texts not built</div>`}
 			if (hasFootnotes) {modalListsHTML += `<div id='footnotesList'>Error: list of Footnotes not built</div>`}
+			if (hasTables) {modalListsHTML += `<div id='tablesList'>Error: list of Tables not built</div>`} // default error message if List not built in tMS.js
+			if (hasSCTexts) {modalListsHTML += `<div id='textsList'>Error: list of Texts not built</div>`}
 
 			modalLists.innerHTML += modalListsHTML
 

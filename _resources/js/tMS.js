@@ -1633,7 +1633,6 @@ function goToTarget (target, IDOrElement ='ID', startOrCenter = 'start') { // sc
 	} else if (IDOrElement == 'ELEMENT'){
 		elmnt = target;
 	}
-	//console.log(target.innerHTML)
 	if (startOrCenter == 'center') {
 		elmnt.scrollIntoView({ behavior: "instant", block: `center`, inline: "nearest"});
 	} else {
@@ -1703,13 +1702,13 @@ window.onscroll = function() {
 		if (dataprogArr[i].dataset.progress) {
 			elem = dataprogArr[i].getBoundingClientRect()
 			if (prevScrollpos > currentScrollPos) {
-				//console.log('scrolling up')
+				// scrolling up
 				let elemtop = elem.top-120
 				if (elemtop < 0 ) {
 					dataprogArr[i].parentNode.parentNode.scrollBy({top: elemtop, left: 0, behavior: "smooth" });
 				}
 			} else {
-				//console.log('scrolling down')
+				// scrolling down
 				let elembot = elem.bottom
 				let parentElembot = dataprogArr[i].parentNode.parentNode.getBoundingClientRect().bottom
 				if (elembot > parentElembot)  {
@@ -1767,8 +1766,6 @@ function fillProgressBar() {
 	}
 	//var currentTOC = currentTOCTarget.replace('head-', 'TOC');
 	var currentTOC = 'TOC' + currentTOCTarget
-	//console.log(currentTOC)
-
 	if (currentTOC !== '') {
 		for (var i = 0; i < savedTOCElements.length; i++) {
 			savedTOCElements[i].style.background = 'unset';
@@ -2895,7 +2892,14 @@ shareBtn.onclick = function() {
 			if ((startTag == 'SPAN') || (startTag == 'SUP')) {
 				starter = range.startContainer.parentNode.parentNode.id
 			} 
-	
+			if  (range.startContainer.parentNode.closest('.opensesame')) {
+				// started highlighting inside a sesame - set starter to main paragraph
+				starter = range.startContainer.parentNode.closest('.opensesame').parentElement.id
+				if (starter == '') {
+					// sesame within a sesame - go up another level
+					starter = range.startContainer.parentNode.closest('.opensesame').parentElement.closest('.opensesame').parentElement.id
+				}
+			}
 	/* 		let startOff = range.startOffset
 			let endTag = range.endContainer.parentNode.tagName
 			let endID = range.endContainer.parentNode.id
@@ -2922,9 +2926,7 @@ shareBtn.onclick = function() {
 				copyQuote.append(selection.getRangeAt(i).cloneContents())
 			   }
 			let originalHTML = copyQuote.innerHTML
-	
-			//let allElements = copyQuote.querySelectorAll('*')
-	
+
 			//Add the Notes
 			function addnotes () {
 				let notesStr =``
@@ -2940,9 +2942,7 @@ shareBtn.onclick = function() {
 					if (allSups[i].classList.contains('closebutton')) {
 						allSups[i].nextElementSibling.remove()
 						allSups[i].classList.remove('closebutton')
-						console.log (allSups[i].classList)
-					} else {
-						console.log(`sesame is closed`)
+						//console.log (allSups[i].classList)
 					}
 					for (let i=0; i < footnotesData.length; i++) {
 						if (supNo == footnotesData[i].fnNumber) {
@@ -3009,7 +3009,6 @@ shareBtn.onclick = function() {
 						el.innerHTML = allSpans[i].innerHTML
 						let allInside = el.querySelectorAll('*')
 						for (let j in allInside) {
-							//console.log(allInside[j].tagName)
 							if (allInside[j].className == 'bibhead') {
 								allInside[j].className = ''
 							} else

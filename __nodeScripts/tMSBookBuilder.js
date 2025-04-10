@@ -508,7 +508,6 @@ function buildBookIndexHTML () {
 
 	const uiCSS = `../_resources/css/tMSUI.css`
 	const bookCSS = '../_resources/css/tMSBook.css'
-	//const bookMediaQCSS = '../_resources/css/tMSBookMediaQ.css'
 	const suttaCSS = '../_resources/css/scsutta.css'
 
 	// Title & Subtitle

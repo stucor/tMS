@@ -1639,7 +1639,7 @@ function buildBookIndexHTML () {
 							let [top, tail] = sesameAttribute.split(':')
 							if (top == 'zotref') {
 								if (tail == referencesData[i].id) {
-									console.log(allsesames[j].innerHTML)
+									//console.log(allsesames[j].innerHTML)
 									if(allsesames[j].closest('.tablewrap')) {
 										bibSegHTML += ` <span>${allsesames[j].closest('.tablewrap').id.replace('seg-','§')}</span> |`
 									} else {

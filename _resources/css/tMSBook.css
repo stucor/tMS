@@ -1119,10 +1119,6 @@ dd > ol > li {
 
 
 
-.bibTitle > span.linkContainer > span.linkseparator{
-	opacity: 0.25;
-}
-
 .bibAuthor {
 	margin-bottom: 0;
 	font-size: 0.8em;
@@ -1146,6 +1142,32 @@ dd > ol > li {
 	cursor: pointer;
 }
 
+.zotRefInaSesame > .title {
+	font-variant: small-caps;
+	margin-bottom: 0.5em;
+}
+.zotRefInaSesame > .bibAuthor {
+	display: inline;
+	text-align: left;
+	font-size: unset;
+}
+.zotRefInaSesame > .bibAuthor > .bibzotref{
+	display: none;
+}
+
+.zotRefInaSesame > .bibTitle {
+	margin-left: 0;
+	display: inline;
+}
+.zotRefInaSesame> .bibTitle > span.linkContainer {
+    background: none;
+	border:none;
+}
+
+.zotRefInaSesame > .bibSeg {
+	display:none;
+}
+
 
 .opensesame > .bibAuthor {
 	background: #d4c5ab20;
@@ -1164,10 +1186,8 @@ dd > ol > li {
 	display: inline;
 }
 .opensesame > .bibTitle > span.linkContainer {
-	
     border: none;
 	white-space: wrap;
-
 }
 
 .opensesame > .bibSeg {
@@ -1190,6 +1210,12 @@ dd > ol > li {
 .linkseparator {
 	opacity: 0.5;
 }
+
+
+
+
+
+
 
 .refpdf {
     font-size: smaller;

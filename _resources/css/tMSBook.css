@@ -1171,7 +1171,8 @@ dd > ol > li {
 
 .opensesame > .bibAuthor {
 	background: #d4c5ab20;
-	border: thin dotted rgba(212, 197, 171, 0.2);
+	border: thin dotted #d4c5ab;
+	border-right: none;
 	display: inline;
 	font-size: unset;
 }
@@ -1181,13 +1182,15 @@ dd > ol > li {
 }
 .opensesame > .bibTitle {
 	background: #d4c5ab20;
-	border: thin dotted rgba(212, 197, 171, 0.2);
+	border: thin dotted #d4c5ab;
+	border-left: none;
 	margin-left: 0;
 	display: inline;
 }
 .opensesame > .bibTitle > span.linkContainer {
     border: none;
 	white-space: wrap;
+	background: none;
 }
 
 .opensesame > .bibSeg {

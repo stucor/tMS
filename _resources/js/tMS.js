@@ -3158,7 +3158,7 @@ shareBtn.onclick = function() {
 												  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
 								</div>` */
 	
-			showAlert (`<h1>Copied to your Clipboard!</h1><p>The following should be suitable for sharing on platforms such as <a href='https://discourse.suttacentral.net/'>SuttaCentral Discuss & Discover</a> or word-processors and has been <strong>copied to your clipboard:</strong></p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
+			showAlert (`<h1>Copied to your Clipboard!</h1><p>The following has been <strong>copied to your clipboard</strong>. It should be suitable for sharing on forums such as <a href='https://discourse.suttacentral.net/'>SuttaCentral D&D</a> or pasted into word-processors</p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
 	
 		}
 		// Get all the footnotes

@@ -1,0 +1,35 @@
+{
+	"Authors": "Bhante S. Dhammika",
+	"BookTitle": "Footprints in the Dust",
+	"BookSubtitle": "The Life of the Buddha from the Most Ancient Sources",
+	"ShortAbstract": "<p>“What was the Buddha like as a human being? How did he relate to others? With great care and an eye for detail, Venerable Dhammika pieces together the life events we can 'read' from very early texts. The result is a truly authoritative biography. It shows that as a man, as well as a teacher, the historical Buddha was remarkable indeed. The chapter headings are refreshingly original: a day in the life of, his humour, his debating style, his background. I really enjoyed thinking about Gotama Buddha simply as a person—and clearly an extraordinary one, as Ven Dhammika shows us. I recommend this book to anyone who would like a down-to-earth, accurate and readable appraisal of the founder of this great world religion, seen through modern eyes.”—From the forward by Sarah Shaw.</p>",
+	"Abstract": "<p>None</p>",
+	"ItemType": "book",
+	"AddInfo": [],
+	"Copyright": [
+		"Copyright © 2021, 2023 Bhante S. Dhammika",
+		"Originally published in 2021.",
+		"This edition published by Wisdom &amp; Wonders in 2025",
+		"271pp (in pdf format)."
+	],
+	"CCLicense": "<div class='cclicense'><h3>Attribution-NonCommercial-NoDerivatives 4.0 International <span>(CC BY-NC-ND 4.0)</span></h3><div id = 'ccDetail'><p>You are free to:</p><ul><li><strong>Share</strong> — copy and redistribute the material in any medium or format</li></ul><p>Under the following terms:</p><ul><li><strong>Attribution</strong> — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li><li><strong>NonCommercial</strong> — You may not use the material for commercial purposes.</li><li><strong>NoDerivatives</strong> — If you remix, transform, or build upon the material, you may not distribute the modified material.</li><li><strong>No additional restrictions</strong> — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</li></ul><p><strong>Notices:</strong></p><p>You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.</p><p>No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.</p></div></div>",
+	"FrontCover": "../_resources/book-data/footprints/FrontLarge.jpg",
+	"BackCover": "../_resources/book-data/footprints/BackLarge.jpg",
+	"BackMatter": [
+		"<p>Unlike stiff biographies of the Buddha or biographies that are replete with mystery and magic, <em>Footprints in the Dust</em> enables us to get to know the Buddha as a human being—a deeply compassionate and wise person who not only actualized the path to enlightenment but also shared the way to accomplish that path with countless others so that they too may gain supreme peace. We learn of the challenges Gotama faced—many similar to our own—and how he dealt with them. We see his responses when praised and blamed, when confronted with crises within the Order and disputes among kings and couples. We see how he guided monastic and lay disciples with their diverse personalities and dispositions. In getting an insider’s glimpse into how his wisdom and compassion manifested when engaged in situations that we too may experience, we learn how to work in a constructive way with whatever life brings us. This is an inspiring and engaging book that you will read and reread many times.</p><p>—Bhiksuni Thubten Chodron, Dharma teacher, author and abbess of Sravasti Abbey.</p>"
+	],
+	"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+	"DownloadHTML": "",
+	"AuthorsData": [
+		{
+			"ShortName": "Bhante S. Dhammika",
+			"InfoImage": "../_resources/author-data/sdhammika/info.jpg",
+			"ShortBio": [
+				"Bhante Shravasti Dhammika was born in Australia and took his lower ordination as a Theravada monk in India in 1976. ",
+				"He has written over 25 books. ",
+				"He lived and taught in Singapore where he was spiritual advisor to the Buddha Dhamma Mandala Society. ",
+				"In 2017 he moved back to Australia and still continues to write about the Dhamma."
+			]
+		}
+	]
+}

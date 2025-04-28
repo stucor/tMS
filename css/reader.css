@@ -1535,7 +1535,7 @@ dd > ol > li {
 /* Bibliography */
 
 /* bodge because it's not being seen in savedBookElements */
-.references > dt {
+/* .references > dt {
 	font-variant: small-caps;
 	color:#00000000;
 	user-select: none;
@@ -1550,7 +1550,7 @@ dd > ol > li {
 	font-size: var(--fontsize);
 	line-height: var(--lineheight);
 	text-align:left;
-}
+} */
 
 .references > dd > span.linkContainer {
  	background: rgba(212, 197, 171, 0.09);

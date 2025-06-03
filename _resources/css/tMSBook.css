@@ -958,6 +958,9 @@ span.sesame {
 	cursor:pointer;
 }
 
+[data-sesame-key^='zotref:']{
+	background:greenyellow
+}
 
 div.opensesame {
 	margin: 0.5em 0em 1em 0em;
@@ -1123,6 +1126,9 @@ dd > ol > li {
 	margin-bottom: 0;
 	font-size: 0.8em;
 }
+.bibzotref {
+	color: rgba(128, 128, 128, 0.6);
+}
 .bibTitle {
 	margin-top: 0;
 	margin-bottom: 1em;
@@ -1198,8 +1204,8 @@ dd > ol > li {
 }
 
 .linkContainer {
-	background: #b7b7b757;
-    border: thin dotted #d4c5ab;
+	background: #b7b7b720;
+    border: thin dotted #d4c5ab8a;
 	box-sizing: border-box;
     white-space: nowrap;
     padding: 0 0.2em;
@@ -1211,7 +1217,7 @@ dd > ol > li {
 	border: solid 1px rgba(255, 255, 255, 0)
 }
 .linkseparator {
-	opacity: 0.5;
+	opacity: 0.2;
 }
 
 

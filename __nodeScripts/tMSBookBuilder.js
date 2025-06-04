@@ -1496,7 +1496,11 @@ function buildBookIndexHTML () {
 						} else {
 							authorAfter =`, `
 						}
-						html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
+						if (referencesData[i].author[j].literal) {
+							html += `<strong>${referencesData[i].author[j].literal}</strong>`;
+						} else {
+							html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
+						}
 					}
 					//translator
 					let translatorAfter ='& ';
@@ -1565,6 +1569,19 @@ function buildBookIndexHTML () {
 	
 					html += `.`;
 	
+					//collection
+
+					if (referencesData[i].hasOwnProperty('collection-title')) {
+						html += ` (${referencesData[i]["collection-title"]}`;
+						if (referencesData[i].hasOwnProperty('collection-number')) {
+							html += `, #${referencesData[i]["collection-number"]}`;
+						}
+						html += `). `;
+					}
+					
+
+
+
 					// date
 					if (referencesData[i].hasOwnProperty('issued')) {
 						html += ` ${referencesData[i]["issued"]["date-parts"][0][0]} `;
@@ -1584,30 +1601,30 @@ function buildBookIndexHTML () {
 		*/
 					//url
 					let linkSeparator = `<span class='linkseparator'>•</span>`;
-					html += `<span class = "linkContainer">`
+					let linkContainerHTML = `<span class = "linkContainer">`
 	
 					if (referencesData[i].hasOwnProperty('URL')) {
-						html += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online" href="${referencesData[i].URL}"></a> `;
+						linkContainerHTML += `${linkSeparator} <span class='reflink'>${urlLabel}</span><a class="online" href="${referencesData[i].URL}"></a> `;
 					}
 	
 					if (tMSShortcode !=='') {
-						html += `${linkSeparator} <a class="library" href="../${tMSShortcode}"></a>`
+						linkContainerHTML += `${linkSeparator} <a class="library" href="../${tMSShortcode}"></a>`
 					}
 	
 					if (tMSAudioShortcode !=='') {
-						html += `${linkSeparator} <a class="refaudio" href="../${tMSAudioShortcode}"></a>`
+						linkContainerHTML += `${linkSeparator} <a class="refaudio" href="../${tMSAudioShortcode}"></a>`
 					}
 	
 					if (internetArchiveURL !== '') {
-						html += `${linkSeparator} <a class="internetArchive" href="https://archive.org/details/${internetArchiveURL}"></a>`
+						linkContainerHTML += `${linkSeparator} <a class="internetArchive" href="https://archive.org/details/${internetArchiveURL}"></a>`
 					}
 	
 					if (scaredTextsURL !== '') {
-						html += `${linkSeparator} <a class="sacredTexts" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
+						linkContainerHTML += `${linkSeparator} <a class="sacredTexts" href="https://sacred-texts.com/${scaredTextsURL}"></a>`
 					}
 	
 					if (audioFile !=='') {
-						html += `${linkSeparator} <a class="refaudio" href="../_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
+						linkContainerHTML += `${linkSeparator} <a class="refaudio" href="../_resources/zotero-attach/audio/${audioFile}.mp3"></a>`
 					}
 	
 					if ((referencesData[i].hasOwnProperty('file')) && (referencesData[i].file != '')) {
@@ -1617,16 +1634,22 @@ function buildBookIndexHTML () {
 								let fileArray = referencesData[i]
 								.file.split(';');
 								for (k in attachmentLabelArray) {
-									html += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" href="../_resources/zotero-attach/${fileArray[k]}"></a> `;
+									linkContainerHTML += `${linkSeparator} <span class='reflink'>${attachmentLabelArray[k]}:</span><a class="refpdf" href="../_resources/zotero-attach/${fileArray[k]}"></a> `;
 								}
 							} else {
-								html += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
+								linkContainerHTML += `${linkSeparator} <span class='reflink'>${attachmentLabel}:</span><a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file}"></a> `;
 							}
 						} else {
-							html += `${linkSeparator} <a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file.replaceAll(' ','%20')}"></a> `;
+							linkContainerHTML += `${linkSeparator} <a class="refpdf" href="../_resources/zotero-attach/${referencesData[i].file.replaceAll(' ','%20')}"></a> `;
 						}
 					}
-					html += `${linkSeparator}</span>`
+
+
+					if (linkContainerHTML != `<span class = "linkContainer">`) {
+						html += linkContainerHTML
+						html += `${linkSeparator}</span>`
+					}
+
 					html += `</p>`;
 
 					bibSegHTML = `<p class='bibSeg'>|`

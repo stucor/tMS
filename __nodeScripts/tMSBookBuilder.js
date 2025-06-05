@@ -1499,7 +1499,11 @@ function buildBookIndexHTML () {
 						if (referencesData[i].author[j].literal) {
 							html += `<strong>${referencesData[i].author[j].literal}</strong>`;
 						} else {
-							html += `<strong>${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
+							let ndp =''
+							if (referencesData[i].author[j]["non-dropping-particle"]) {
+								ndp = referencesData[i].author[j]["non-dropping-particle"] + ' '
+							}
+							html += `<strong>${ndp}${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
 						}
 					}
 					//translator

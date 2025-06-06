@@ -1409,6 +1409,7 @@ function buildBookIndexHTML () {
 				let html = ``
 				html += `<section id="biblio-list" class="infocontainer">`
 				html += `<h3>Bibliography</h3>`
+				html += `<p><strong>Note:</strong> The section or sections (§) in the book are given as a link after each Bibliographic entry.<br>The Note number (#) is also given if applicable</p>`
 				html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
 				html += `<button class="sort asc" data-sort="bibAuthor">Author</button> `
 				html += `<button class="sort" data-sort="bibTitle">Title</button>`
@@ -1490,7 +1491,8 @@ function buildBookIndexHTML () {
 					let authorAfter ='';
 					for (j in referencesData[i].author) {
 						if (j == referencesData[i].author.length-1) {
-							authorAfter =` &ndash; `
+							/* authorAfter =` &ndash; ` */
+							authorAfter =``
 						} else if (j == referencesData[i].author.length-2) {
 							authorAfter =` & `
 						} else {
@@ -1510,7 +1512,8 @@ function buildBookIndexHTML () {
 					let translatorAfter ='& ';
 					for (j in referencesData[i].translator) {
 						if (j == referencesData[i].translator.length-1) {
-							translatorAfter ='<em>(tr.) </em>&ndash;'
+							/* translatorAfter ='<em>(tr.) </em>&ndash;' */
+							translatorAfter ='<em>(tr.)</em>'
 						}
 						html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
 					}
@@ -1521,7 +1524,8 @@ function buildBookIndexHTML () {
 						let contributorAfter ='& ';
 						for (j in referencesData[i].contributor) {
 							if (j == referencesData[i].contributor.length-1) {
-								contributorAfter ='<em>(tr.) </em>&ndash;'
+								/* contributorAfter ='<em>(tr.) </em>&ndash;' */
+								contributorAfter ='<em>(tr.)</em>'
 							}
 							html += `<strong>${referencesData[i].contributor[j].family}</strong>, ${referencesData[i].contributor[j].given} ${contributorAfter}`;
 						}
@@ -1531,12 +1535,14 @@ function buildBookIndexHTML () {
 						let editorAfter ='& ';
 						for (j in referencesData[i].editor) {
 							if (j == referencesData[i].editor.length-1) {
-								editorAfter ='<em>(ed.) </em>&ndash;'
+								/* editorAfter ='<em>(ed.) </em>&ndash;' */
+								editorAfter ='<em>(ed.)</em>'
 							}
 							html += `<strong>${referencesData[i].editor[j].family}</strong>, ${referencesData[i].editor[j].given} ${editorAfter}`;
 						}
 					}
-					html += ` <span class='bibzotref'>[${referencesData[i].id}]</span></p>` //end bibAuthor
+					/* html += ` <span class='bibzotref'>[${referencesData[i].id}]</span></p>` //end bibAuthor */
+					html += `</p>` //end bibAuthor
 
 					html += `<p class="bibTitle">`
 					//title

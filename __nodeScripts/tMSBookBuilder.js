@@ -1409,7 +1409,7 @@ function buildBookIndexHTML () {
 				let html = ``
 				html += `<section id="biblio-list" class="infocontainer">`
 				html += `<h3>Bibliography</h3>`
-				html += `<p><strong>Note:</strong> The section or sections (§) in the book are given as a link after each Bibliographic entry.<br>The Note number (#) is also given if applicable</p>`
+				html += `<p>The Sections (§) in the book where the Bibliographic entry is referenced are given as a links after each entry. The Note number (#) is also given if applicable</p>`
 				html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
 				html += `<button class="sort asc" data-sort="bibAuthor">Author</button> `
 				html += `<button class="sort" data-sort="bibTitle">Title</button>`
@@ -1486,63 +1486,121 @@ function buildBookIndexHTML () {
 					}
 					//html += `<p class ="bibZotRef">${referencesData[i].id}</p>`
 					//html += `<p class="bibText" data-zotref='${referencesData[i].id}'>`
-					html += `<p class='bibAuthor'>`
-					// author
-					let authorAfter ='';
+					
+					let creators = []
+
 					for (j in referencesData[i].author) {
-						if (j == referencesData[i].author.length-1) {
-							/* authorAfter =` &ndash; ` */
-							authorAfter =``
-						} else if (j == referencesData[i].author.length-2) {
-							authorAfter =` & `
-						} else {
-							authorAfter =`, `
-						}
-						if (referencesData[i].author[j].literal) {
-							html += `<strong>${referencesData[i].author[j].literal}</strong>`;
-						} else {
+						let authorName = ''
+
+						if (referencesData[i].author[j].family) {
 							let ndp =''
 							if (referencesData[i].author[j]["non-dropping-particle"]) {
 								ndp = referencesData[i].author[j]["non-dropping-particle"] + ' '
 							}
-							html += `<strong>${ndp}${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${authorAfter}`;
+							authorName = `<strong>${ndp}${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}`
+						} else
+						if (referencesData[i].author[j].literal) {
+							authorName =`<strong>${referencesData[i].author[j].literal}</strong>`
 						}
+						let author = {
+							"type" : "author",
+							"name" : `${authorName}`
+						}
+						creators.push (author)
 					}
-					//translator
-					let translatorAfter ='& ';
+
 					for (j in referencesData[i].translator) {
-						if (j == referencesData[i].translator.length-1) {
-							/* translatorAfter ='<em>(tr.) </em>&ndash;' */
-							translatorAfter ='<em>(tr.)</em>'
+						let translatorName = ''
+						if (referencesData[i].translator[j].family) {
+							translatorName = `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given}`
+						} 
+						
+						let translator = {
+							"type" : "translator",
+							"name" : `${translatorName}`
 						}
-						html += `<strong>${referencesData[i].translator[j].family}</strong>, ${referencesData[i].translator[j].given} ${translatorAfter}`;
+						creators.push(translator)
 					}
-					// contributor - special case where there is no author (or you don't want it to be something like The Buddha) 
-					// but there is a translator such as the Nikayas by Bodhi. In the libray use contributor instead so 
-					// that it shows in creator field.
+
+
+
 					if (!referencesData[i].author) {
-						let contributorAfter ='& ';
+						let noContributors = true
+						// contributor - special case where there is no author (or you don't want it to be something like The Buddha) 
+						// but there is a translator such as the Nikayas by Bodhi. In the libray use contributor instead so 
+						// that it shows in creator field.
 						for (j in referencesData[i].contributor) {
-							if (j == referencesData[i].contributor.length-1) {
-								/* contributorAfter ='<em>(tr.) </em>&ndash;' */
-								contributorAfter ='<em>(tr.)</em>'
+							let contributorName =''
+							if (referencesData[i].contributor[j].family) {
+								contributorName = `<strong>${referencesData[i].contributor[j].family}</strong>, ${referencesData[i].contributor[j].given}`
+							} else
+							if (referencesData[i].contributor[j].literal) {
+								contributorName =`<strong>${referencesData[i].contributor[j].literal}</strong>`
 							}
-							html += `<strong>${referencesData[i].contributor[j].family}</strong>, ${referencesData[i].contributor[j].given} ${contributorAfter}`;
+
+							let translator = {
+								"type" : "translator",
+								"name" : `${contributorName}`
+							}
+							creators.push(translator)
 						}
-					}
-					// editor - add the editor only in case there is no author
-					if (!referencesData[i].author) {
-						let editorAfter ='& ';
+
 						for (j in referencesData[i].editor) {
-							if (j == referencesData[i].editor.length-1) {
-								/* editorAfter ='<em>(ed.) </em>&ndash;' */
-								editorAfter ='<em>(ed.)</em>'
+							let editorName =''
+							if (referencesData[i].editor[j].family) {
+								editorName = `<strong>${referencesData[i].editor[j].family}</strong>, ${referencesData[i].editor[j].given}`
 							}
-							html += `<strong>${referencesData[i].editor[j].family}</strong>, ${referencesData[i].editor[j].given} ${editorAfter}`;
+							let editor = {
+								"type" : "editor",
+								"name" : `${editorName}`
+							}
+							creators.push(editor)
 						}
+
 					}
-					/* html += ` <span class='bibzotref'>[${referencesData[i].id}]</span></p>` //end bibAuthor */
-					html += `</p>` //end bibAuthor
+					
+					html += `<p class='bibAuthor'>`
+
+					for (k in creators) {
+						let creatorAfter = `, `
+
+						if (k == creators.length-2) {
+							creatorAfter = ` & `
+						}
+
+						if (k == creators.length-1) {
+							creatorAfter = ``
+						}
+
+
+						if (creators[k].type == 'translator') {
+							html += `${creators[k].name} <em>(tr.)</em>`
+						} else
+						if (creators[k].type == 'editor') {
+							html += `${creators[k].name} <em>(ed.)</em>`
+						} else {
+							html += creators[k].name
+						}
+
+						html += creatorAfter
+
+					}
+
+
+					html+= `</p>`
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 					html += `<p class="bibTitle">`
 					//title
@@ -1721,7 +1779,7 @@ function buildBookIndexHTML () {
 	
 				}
 	
-				html += `</ul>\n</section>\n`
+				html += `</ul></section>`
 				return html
 			}
 			console.log (`✅ Bibliography Added from /book-data/${bookID}/biblio.json`)

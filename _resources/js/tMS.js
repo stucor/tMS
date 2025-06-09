@@ -2237,7 +2237,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 
 	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
 		let linkNode = e.target;
-		if (e.target.classList.contains('scsegments')) {
+		if ((e.target.classList.contains('scsegments')) && (e.target.parentNode.classList.contains('sclinktext')) ) {
 			linkNode = e.target.parentNode;
 		}
 		displaySutta(linkNode.innerText);
@@ -3339,6 +3339,20 @@ listsBtn.onclick = function() {
 							break
 						}
 					}
+					//strip all a hrefs out
+					let HTMLarr = []
+					let tempEl = document.createElement('div')
+					tempEl.innerHTML = fnHTML
+					let allHrefs = tempEl.getElementsByTagName('a')
+					for (let k=0; k < allHrefs.length; k++ ) {
+						HTMLarr.push([allHrefs[k].outerHTML, allHrefs[k].innerHTML])
+					}
+					for (n in HTMLarr) {
+						let from = HTMLarr[n][0].replaceAll('\"','\'')
+						let to = HTMLarr[n][1].replaceAll('\"','\'')
+						fnHTML = fnHTML.replace(from, to)
+					}
+
 					let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML.replaceAll('&shy;','')}</span>`
 					html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
 				}

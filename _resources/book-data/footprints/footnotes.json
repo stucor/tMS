@@ -113,7 +113,7 @@
   },
   {
     "fnNumber": "29",
-    "fnHTML": "<p>D.I,178 (<span class='sclinktext'>DN&#8239;9<span class='scsegments'>:1.3</span></span>); M.II,22 (<span class='sclinktext'>MN&#8239;78<span class='scsegments'>:1.3</span></span>). The Tinduka tree is the Indian Persimmon, <span data-custom-style='wwc-latin'>Diospyros malabarica</span>.</p>"
+    "fnHTML": "<p>D.I,178 (<span class='sclinktext'>DN&#8239;9<span class='scsegments'>:1.3</span></span>); M.II,22 (<span class='sclinktext'>MN&#8239;78<span class='scsegments'>:1.3</span></span>). The Tinduka tree is the Indian Persimmon, <span lang='la'>Diospyros malabarica</span>.</p>"
   },
   {
     "fnNumber": "30",
@@ -469,7 +469,7 @@
   },
   {
     "fnNumber": "118",
-    "fnHTML": "<p>The hide of the blackbuck, <span data-custom-style='wwc-latin'>Antilope cervicapra</span>. This beautiful animal had a particular significance in Vedic thought. The open grasslands of Punjab, Haryana and semi-deserts of Rajasthan where it roamed were part of the sacred land of Brahminism, Manusmṛti [<span class='sesame' data-sesame-key='zotref:OlivelleP 2004a'>Olivelle 2004</span>] 2, 22-3. On the mythology surrounding the blackbuck see <span class='sesame' data-sesame-key='zotref:KramrischS 1981a'>Kramrisch 1981</span> p.40-50.</p>"
+    "fnHTML": "<p>The hide of the blackbuck, <span lang='la'>Antilope cervicapra</span>. This beautiful animal had a particular significance in Vedic thought. The open grasslands of Punjab, Haryana and semi-deserts of Rajasthan where it roamed were part of the sacred land of Brahminism, Manusmṛti [<span class='sesame' data-sesame-key='zotref:OlivelleP 2004a'>Olivelle 2004</span>] 2, 22-3. On the mythology surrounding the blackbuck see <span class='sesame' data-sesame-key='zotref:KramrischS 1981a'>Kramrisch 1981</span> p.40-50.</p>"
   },
   {
     "fnNumber": "119",
@@ -541,7 +541,7 @@
   },
   {
     "fnNumber": "136",
-    "fnHTML": "<p>The sal is <span data-custom-style='wwc-latin'>Shorea robusta</span>.</p>"
+    "fnHTML": "<p>The sal is <span lang='la'>Shorea robusta</span>.</p>"
   },
   {
     "fnNumber": "137",
@@ -1309,7 +1309,7 @@
   },
   {
     "fnNumber": "328",
-    "fnHTML": "<p>A.III,49 (<span class='sclinktext'>AN&#8239;5.44</span>). <span lang='pi'>Sālapupphakaṃ</span> <span lang='pi'>khādanīyaṃ</span>: there is no evidence, ancient or modern, of <span data-custom-style='wwc-latin'>Shorea robusta</span> flowers being used as a food or to flavour food. However, its seeds, dried and ground into a meal, are used to make a gruel. <span lang='pi'>Sampannakolakaṃ</span> <span lang='pi'>sūkaramaṃsaṃ</span>: pork stewed in the slightly tart fruit of the <span lang='pi'>Ziziphus</span> <span lang='pi'>jujube</span>. The meaning of <span lang='pi'>nibaddhatelakaṃ</span> <span lang='pi'>nāliyāsākaṃ</span> is unclear; I follow <span class='sesame' data-sesame-key='zotref:Bodhi 2012a'>Bodhi 2012</span> p.1727, notes 1029 and 1030, who follows the commentary. <span lang='pi'>Sālinaṃ</span> <span lang='pi'>odano</span> <span lang='pi'>vigatakāḷako</span>: on <span lang='pi'>sāli</span> rice, see <span class='sesame' data-sesame-key='zotref:Dhammika 2018b'>Dhammika 2018b</span> p.102. Removing shrivelled, discoloured or broken grains from rice before cooking was time consuming and suggested wealth, i.e. having servants to do such work. It improved the appearance of the rice when served.</p>"
+    "fnHTML": "<p>A.III,49 (<span class='sclinktext'>AN&#8239;5.44</span>). <span lang='pi'>Sālapupphakaṃ</span> <span lang='pi'>khādanīyaṃ</span>: there is no evidence, ancient or modern, of <span lang='la'>Shorea robusta</span> flowers being used as a food or to flavour food. However, its seeds, dried and ground into a meal, are used to make a gruel. <span lang='pi'>Sampannakolakaṃ</span> <span lang='pi'>sūkaramaṃsaṃ</span>: pork stewed in the slightly tart fruit of the <span lang='pi'>Ziziphus</span> <span lang='pi'>jujube</span>. The meaning of <span lang='pi'>nibaddhatelakaṃ</span> <span lang='pi'>nāliyāsākaṃ</span> is unclear; I follow <span class='sesame' data-sesame-key='zotref:Bodhi 2012a'>Bodhi 2012</span> p.1727, notes 1029 and 1030, who follows the commentary. <span lang='pi'>Sālinaṃ</span> <span lang='pi'>odano</span> <span lang='pi'>vigatakāḷako</span>: on <span lang='pi'>sāli</span> rice, see <span class='sesame' data-sesame-key='zotref:Dhammika 2018b'>Dhammika 2018b</span> p.102. Removing shrivelled, discoloured or broken grains from rice before cooking was time consuming and suggested wealth, i.e. having servants to do such work. It improved the appearance of the rice when served.</p>"
   },
   {
     "fnNumber": "329",
@@ -1553,7 +1553,7 @@
   },
   {
     "fnNumber": "389",
-    "fnHTML": "<p>Vin.I,210 (<a href='https://suttacentral.net/pli-tv-kd6/en/brahmali?#17.1.2' class='extlink tipref'>Kd 6<span class='scsegments'>:17.1.2</span></a>). There are different opinions about what these three pungent ingredients are, possibly ginger, long pepper (<span data-custom-style='wwc-latin'>Piper longum</span>) and black pepper.</p>"
+    "fnHTML": "<p>Vin.I,210 (<a href='https://suttacentral.net/pli-tv-kd6/en/brahmali?#17.1.2' class='extlink tipref'>Kd 6<span class='scsegments'>:17.1.2</span></a>). There are different opinions about what these three pungent ingredients are, possibly ginger, long pepper (<span lang='la'>Piper longum</span>) and black pepper.</p>"
   },
   {
     "fnNumber": "390",
@@ -1573,7 +1573,7 @@
   },
   {
     "fnNumber": "394",
-    "fnHTML": "<p>The blue waterlily, <span data-custom-style='wwc-latin'>Nymphaea nouchali</span>, contains apomorphine which can relieve anxiety and induce vomiting, although such affects are probably miniscule when the plant’s perfume is inhaled.</p>"
+    "fnHTML": "<p>The blue waterlily, <span lang='la'>Nymphaea nouchali</span>, contains apomorphine which can relieve anxiety and induce vomiting, although such affects are probably miniscule when the plant’s perfume is inhaled.</p>"
   },
   {
     "fnNumber": "395",
@@ -1937,7 +1937,7 @@
   },
   {
     "fnNumber": "485",
-    "fnHTML": "<p>A.I,181 (<span class='sclinktext'>AN&#8239;3.63<span class='scsegments'>:3.1–3.5</span></span>). The fruit of the <span lang='pi'>Ziziphus</span> <span lang='pi'>jujube</span> is yellow when ripe, gradually turning rusty-brown. The palm fruit mentioned is that of <span data-custom-style='wwc-latin'>Borassus flabellifer</span>, which has a greyish-brown skin and is golden yellow inside.</p>"
+    "fnHTML": "<p>A.I,181 (<span class='sclinktext'>AN&#8239;3.63<span class='scsegments'>:3.1–3.5</span></span>). The fruit of the <span lang='pi'>Ziziphus</span> <span lang='pi'>jujube</span> is yellow when ripe, gradually turning rusty-brown. The palm fruit mentioned is that of <span lang='la'>Borassus flabellifer</span>, which has a greyish-brown skin and is golden yellow inside.</p>"
   },
   {
     "fnNumber": "486",
@@ -2197,7 +2197,7 @@
   },
   {
     "fnNumber": "550",
-    "fnHTML": "<p>D.I,125-126 (<span class='sclinktext'>DN&#8239;4<span class='scsegments'>:26.1–26.13</span></span>). Soṇadaṇḍa was not his personal name but a moniker indicating that he used a staff made of wood from the soṇa tree, <span data-custom-style='wwc-latin'>Oroxylum indicum</span>. Amongst brahmins, staffs had great ritual significance and had to be made from very specific types of wood, mainly <span lang='pi'>palāsa</span>, <span lang='pi'>bilva</span> and <span lang='pi'>udumbara</span>, see <span class='sesame' data-sesame-key='zotref:Dhammika 2018b'>Dhammika 2018b</span> However, I have found no references to soṇa wood being used. On the rules pertaining to making and using staffs in Brahminism, see Śāṅkhāyana Gṛhyasūtra [<span class='sesame' data-sesame-key='zotref:OldenbergH 1886a'>Oldenberg 1886</span>] 2.1.18-24 and Gautama Dharmasūtra [<span class='sesame' data-sesame-key='zotref:OlivelleP 1999a'>Olivelle 1999</span>] 1. 22-26.</p>"
+    "fnHTML": "<p>D.I,125-126 (<span class='sclinktext'>DN&#8239;4<span class='scsegments'>:26.1–26.13</span></span>). Soṇadaṇḍa was not his personal name but a moniker indicating that he used a staff made of wood from the soṇa tree, <span lang='la'>Oroxylum indicum</span>. Amongst brahmins, staffs had great ritual significance and had to be made from very specific types of wood, mainly <span lang='pi'>palāsa</span>, <span lang='pi'>bilva</span> and <span lang='pi'>udumbara</span>, see <span class='sesame' data-sesame-key='zotref:Dhammika 2018b'>Dhammika 2018b</span> However, I have found no references to soṇa wood being used. On the rules pertaining to making and using staffs in Brahminism, see Śāṅkhāyana Gṛhyasūtra [<span class='sesame' data-sesame-key='zotref:OldenbergH 1886a'>Oldenberg 1886</span>] 2.1.18-24 and Gautama Dharmasūtra [<span class='sesame' data-sesame-key='zotref:OlivelleP 1999a'>Olivelle 1999</span>] 1. 22-26.</p>"
   },
   {
     "fnNumber": "551",
@@ -2745,7 +2745,7 @@
   },
   {
     "fnNumber": "687",
-    "fnHTML": "<p>D.II,127 (<span class='sclinktext'>DN&#8239;16<span class='scsegments'>:4.17.1</span></span>). For some of the theories on the identity of <span lang='pi'>sūkaramaddava</span> and its possible role in the Buddha’s death, see <span class='sesame' data-sesame-key='zotref:Mettananda-Hinüber 2000a'>Mettananda and Hinüber 2000</span>, <span class='sesame' data-sesame-key='zotref:Wasson-OFlaherty 1983a'>Wasson and O’Flaherty 1983</span>, <span class='sesame' data-sesame-key='zotref:IrelandJD 1993a'>Ireland 1993</span>, and <span class='sesame' data-sesame-key='zotref:Masefield-Revire 2021a'>Masefield and Revire 2021</span>. Dhammapāla (5th cent. CE) gave the opinions of various ancient authorities on the identity of <span lang='pi'>sūkaramaddava</span>—that it was pork, bamboo shoots, a type of mushroom, or some kind of elixir—indicating that what the original was had been lost by his time. One of the most widespread and persistent theories today is that it was truffles, a theory first put forward by western scholars in the nineteenth century. The Indian truffle, <span lang='pi'>Tuber</span> <span lang='pi'>indicum</span>, grows mainly in parts of the Tibetan and Indian Himalayas and would have been unknown in the Ganges and Yamuna valley where the Buddha lived, and there is no evidence that they were ever eaten in India, or even harvested, until the 1980s. Indian truffles lack the pleasant fragrance of European varieties, have little of their distinctive taste, and are used today mainly as a cheap substitute for them. Nor was <span lang='pi'>sūkaramaddava</span> mushrooms as some maintain, a food that Indians have, along with garlic, always shunned as impure; see Manusmṛti [<span class='internalLink' data-target='#x33ef731ad2df603fa7fc36f2385d2d5c948871f'>Olivelle 2004</span>] 5,5; 11,156; Āpastamba Dharmasūtra [<span class='sesame' data-sesame-key='zotref:OlivelleP 1999a'>Olivelle 1999</span>] I.17,28; Vasiṣṭha Dharmasūtra [<span class='sesame' data-sesame-key='zotref:OlivelleP 1999a'>Olivelle 1999</span>] 14,33, etc.</p>"
+    "fnHTML": "<p>D.II,127 (<span class='sclinktext'>DN&#8239;16<span class='scsegments'>:4.17.1</span></span>). For some of the theories on the identity of <span lang='pi'>sūkaramaddava</span> and its possible role in the Buddha’s death, see <span class='sesame' data-sesame-key='zotref:Mettananda-Hinüber 2000a'>Mettananda and Hinüber 2000</span>, <span class='sesame' data-sesame-key='zotref:Wasson-OFlaherty 1983a'>Wasson and O’Flaherty 1983</span>, <span class='sesame' data-sesame-key='zotref:IrelandJD 1993a'>Ireland 1993</span>, and <span class='sesame' data-sesame-key='zotref:Masefield-Revire 2021a'>Masefield and Revire 2021</span>. Dhammapāla (5th cent. CE) gave the opinions of various ancient authorities on the identity of <span lang='pi'>sūkaramaddava</span>—that it was pork, bamboo shoots, a type of mushroom, or some kind of elixir—indicating that what the original was had been lost by his time. One of the most widespread and persistent theories today is that it was truffles, a theory first put forward by western scholars in the nineteenth century. The Indian truffle, <span lang='pi'>Tuber</span> <span lang='pi'>indicum</span>, grows mainly in parts of the Tibetan and Indian Himalayas and would have been unknown in the Ganges and Yamuna valley where the Buddha lived, and there is no evidence that they were ever eaten in India, or even harvested, until the 1980s. Indian truffles lack the pleasant fragrance of European varieties, have little of their distinctive taste, and are used today mainly as a cheap substitute for them. Nor was <span lang='pi'>sūkaramaddava</span> mushrooms as some maintain, a food that Indians have, along with garlic, always shunned as impure; see Manusmṛti [<span class='sesame' data-sesame-key='zotref:OlivelleP 2004a'>Olivelle 2004</span>] 5,5; 11,156; Āpastamba Dharmasūtra [<span class='sesame' data-sesame-key='zotref:OlivelleP 1999a'>Olivelle 1999</span>] I.17,28; Vasiṣṭha Dharmasūtra [<span class='sesame' data-sesame-key='zotref:OlivelleP 1999a'>Olivelle 1999</span>] 14,33, etc.</p>"
   },
   {
     "fnNumber": "688",
@@ -2821,11 +2821,11 @@
   },
   {
     "fnNumber": "706",
-    "fnHTML": "<p>Tilakaratne [<span class='internalLink' data-target='#x796f4381ec4a0e155295f0e65a786be7b072019'>Tilakaratne 2005</span>] pp.229-257 has some interesting observations on this matter and its possible implications.</p>"
+    "fnHTML": "<p>Tilakaratne [<span class='sesame' data-sesame-key='zotref:TilakaratneA 2005a'>Tilakaratne 2005</span>] pp.229-257 has some interesting observations on this matter and its possible implications.</p>"
   },
   {
     "fnNumber": "707",
-    "fnHTML": "<p>Ud.59 (<span class='sclinktext'>Ud&#8239;5.6<span class='scsegments'>:17.3–18.5</span></span>). See also Chapter 10, Paragraph 22 above.</p>"
+    "fnHTML": "<p>Ud.59 (<span class='sclinktext'>Ud&#8239;5.6<span class='scsegments'>:17.3–18.5</span></span>). See also <span class='internalLink' data-target='#seg455-458'>§455–458.</span></p>"
   },
   {
     "fnNumber": "708",

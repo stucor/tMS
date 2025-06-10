@@ -285,6 +285,10 @@ function processPandoc() {
 						spans[i].setAttribute('lang','sa')
 						spans[i].removeAttribute ('data-custom-style')
 					break
+					case 'wwc-latin':
+						spans[i].setAttribute('lang','la')
+						spans[i].removeAttribute ('data-custom-style')
+					break
 					default:
 				}
 	
@@ -786,6 +790,10 @@ function buildBookIndexHTML () {
 					break
 				case 'wwc-sanskrit':
 					spans[i].setAttribute('lang','sa')
+					spans[i].removeAttribute ('data-custom-style')
+					break
+				case 'wwc-latin':
+					spans[i].setAttribute('lang','la')
 					spans[i].removeAttribute ('data-custom-style')
 					break
 				default:

@@ -4,6 +4,9 @@
 *:lang(sa) {
 	font-style: italic;
 }
+*:lang(la) {
+	font-style: italic;
+}
 #sutta > article > p :lang(pi) {
 	font-style: normal;
 }
@@ -13,10 +16,6 @@
 strong {
 	font-weight: 600;
 }
-
-/* em {
-	background-color: greenyellow;
-} */
 
 /********** General book styling **********/
 

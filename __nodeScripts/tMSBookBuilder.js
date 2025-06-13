@@ -1567,7 +1567,7 @@ function buildBookIndexHTML () {
 
 					}
 					
-					html += `<p class='bibAuthor'>`
+					html += `<span class='bibAuthor'>`
 
 					for (k in creators) {
 						let creatorAfter = `, `
@@ -1595,7 +1595,7 @@ function buildBookIndexHTML () {
 					}
 
 
-					html+= `</p>`
+					html+= `</span>`
 
 
 
@@ -1610,7 +1610,7 @@ function buildBookIndexHTML () {
 
 
 
-					html += `<p class="bibTitle">`
+					html += `<span class="bibTitle">`
 					//title
 					if (referencesData[i]["title-short"]) {
 						html += ` <em>${referencesData[i]["title-short"]}</em>`;
@@ -1726,7 +1726,7 @@ function buildBookIndexHTML () {
 						html += `${linkSeparator}</span>`
 					}
 
-					html += `</p>`;
+					html += `</span>`;
 
 					bibSegHTML = `<p class='bibSeg'>|`
 					let allsesames =indexRoot.querySelectorAll('.sesame')

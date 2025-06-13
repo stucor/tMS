@@ -2688,6 +2688,12 @@ function toggleSesame (el) {
 					for (let i in zotBiblioEntries) {
 						if (zotBiblioEntries[i].getAttribute('data-zotref') == sesameKeyArr[1]) {
 							bibReference = zotBiblioEntries[i].innerHTML
+							let tempEl = document.createElement('div')
+							tempEl.innerHTML = zotBiblioEntries[i].innerHTML
+							bibseq = tempEl.getElementsByClassName('bibSeg')
+							bibReference = bibReference.replace(bibseq[0].outerHTML,'')
+							//console.log(`${bibseq[0].outerHTML}\n\n`)
+							//console.log(bibReference)
 							break
 						}
 					}
@@ -2830,6 +2836,10 @@ function displaySelfquote (linktext) {
 
 // Share Functions
 shareBtn.onclick = function() {
+	makeShare();
+}
+
+function makeShare () {
 	const emojis = [
 		{
 			"filename" : "cry.png",
@@ -2933,24 +2943,22 @@ shareBtn.onclick = function() {
 				let allSups = copyQuote.querySelectorAll('sup')
 				for (let i = 0; i < allSups.length; i++) {
 					if (i == 0) {
-						notesStr += `<hr style="width: 10rem;margin-left:0; "><p>Notes:</p>`
+						notesStr += `<hr data-share='true' style="width: 10rem;margin-left:0; "><p style='font-variant:small-caps; font-size:smaller; font-weight:bold'>Notes Extract:</p>`
 					}
 					let supNo = allSups[i].innerText
 					let tempText = ` [${allSups[i].innerText}]`
 					allSups[i].innerText = tempText
-		
 					if (allSups[i].classList.contains('closebutton')) {
 						allSups[i].nextElementSibling.remove()
 						allSups[i].classList.remove('closebutton')
-						//console.log (allSups[i].classList)
 					}
-					for (let i=0; i < footnotesData.length; i++) {
-						if (supNo == footnotesData[i].fnNumber) {
-							let newfnHTML = footnotesData[i].fnHTML.replaceAll(`<p>`,``)
+ 					for (let j=0; j<footnotesData.length; j++) {
+						if (supNo == footnotesData[j].fnNumber) {
+							let newfnHTML = footnotesData[j].fnHTML.replaceAll(`<p>`,``)
 															.replaceAll(`</p>`,`<br>`)
 							notesStr += `<p style='font-size: smaller'>[${supNo}] ${newfnHTML}</p>`
 						}
-					}
+					} 
 				}
 				copyQuote.innerHTML += notesStr
 			}
@@ -2968,10 +2976,53 @@ shareBtn.onclick = function() {
 				 }
 				  return newlink
 			 }
-	
+			 
+
+			function addBiblio () {
+				let miniBiblio = []
+				let allSesames = copyQuote.getElementsByClassName('sesame') 
+				let allbibText = document.getElementsByClassName('bibText')
+
+				for (let i=0; i<allSesames.length; i++) {
+					if (allSesames[i].hasAttribute('data-sesame-key')) {
+						if (allSesames[i].getAttribute('data-sesame-key').substring(0,6) == 'zotref') {
+							for (let j=0;j<allbibText.length; j++) {
+								if (allbibText[j].getAttribute('data-zotref') == allSesames[i].getAttribute('data-sesame-key').substring(7)) {
+									const tempDiv = document.createElement("div")
+									tempDiv.innerHTML = allbibText[j].innerHTML
+									let linkContainers = tempDiv.getElementsByClassName('linkContainer')
+									if (linkContainers[0]) {linkContainers[0].remove()}
+									let bibSegs = tempDiv.getElementsByClassName('bibSeg')
+									bibSegs[0].remove()
+									let authors = tempDiv.getElementsByClassName('bibAuthor')
+									let titles = tempDiv.getElementsByClassName('bibTitle')
+									let miniBiblioEntry = {
+										bibRef: allSesames[i].innerText,
+										bibAuthor: authors[0].innerText,
+										bibTitle: titles[0].innerHTML
+									}
+									miniBiblio.push(miniBiblioEntry)
+								}
+							}
+							if (allSesames[i].nextElementSibling.classList.contains('opensesame')) {
+								allSesames[i].nextElementSibling.remove()
+							}
+							allSesames[i].classList.remove('closebutton')
+						}
+					}
+				}
+
+				for (let k=0; k<miniBiblio.length; k++) {
+					if (k==0) {copyQuote.innerHTML += `<hr data-share='true' style="width: 10rem;margin-left:0; "><p style='font-variant:small-caps; font-size:smaller; font-weight:bold'>Biblio Extract:</p>`}
+					copyQuote.innerHTML += `<p style='font-size: smaller'><strong>${miniBiblio[k].bibRef}</strong>—${miniBiblio[k].bibAuthor}, ${miniBiblio[k].bibTitle}</p>`
+				}
+			}
+
+			addBiblio()
+
 			//Process the text
 			let allSpans = copyQuote.getElementsByTagName('span')
-			for (let i in allSpans) {
+			for (let i=0; i<allSpans.length; i++) {
 				if ((allSpans[i]) && (allSpans[i].tagName == 'SPAN')) {
 					if (allSpans[i].lang == 'pi') {
 						allSpans[i].innerHTML = `<em>${allSpans[i].innerHTML}</em>`
@@ -2990,9 +3041,6 @@ shareBtn.onclick = function() {
 					if (allSpans[i].className == 'chapnum') {
 						allSpans[i].className = ''
 					}
-					if (allSpans[i].className == 'sesame') {
-						allSpans[i].className = ''
-					}
 					if (allSpans[i].className == 'list-margin') {
 						allSpans[i].innerHTML = allSpans[i].innerHTML + ' ' 
 						allSpans[i].className = ''
@@ -3000,25 +3048,6 @@ shareBtn.onclick = function() {
 					if (allSpans[i].className == 'sclinktext') {
 						allSpans[i].innerHTML = suttaCentralIt(allSpans[i].innerText)
 						allSpans[i].classList.remove('sclinktext')
-					}
-					 if (allSpans[i].classList.contains('closebutton')) {
-						allSpans[i].classList.remove('closebutton')
-					} 
-					 if (allSpans[i].classList.contains('opensesame')) { // just span level opensesame
-						let el = document.createElement('div')
-						el.innerHTML = allSpans[i].innerHTML
-						let allInside = el.querySelectorAll('*')
-						for (let j in allInside) {
-							if (allInside[j].className == 'bibhead') {
-								allInside[j].className = ''
-							} else
-							if (allInside[j].className == 'linkContainer'){
-								allInside[j].remove()
-							}
-						}
-						allSpans[i].innerHTML = el.innerHTML.replaceAll(`<span class="">`, ``).replaceAll('</span>', '')
-						allSpans[i].className = ''
-						allSpans[i].innerText = ` [${allSpans[i].innerText}]`
 					}
 				}
 			}
@@ -3046,8 +3075,7 @@ shareBtn.onclick = function() {
 					allDivs[i].style = `text-align: center; font-variant:small-caps;`
 				}
 				if (allDivs[i].className == 'opensesame') { 
-					allDivs[i].classList = ''
-					let el = document.createElement('html')
+ 					let el = document.createElement('html')
 					el.innerHTML = allDivs[i].innerHTML
 					let allEls = el.querySelectorAll('*')
 					for (let j in allEls) {
@@ -3072,27 +3100,20 @@ shareBtn.onclick = function() {
 								let [a,b] = allEls[j].innerHTML.split('<br>')
 								allEls[j].outerHTML = `<p style='margin-top:0; margin-bottom:0'><b>${a}—${b}</b></p>` 
 							}
-							
 							else {
 								allEls[j].classList = ''
 							}
 					}
 					allDivs[i].innerHTML = `<blockquote style='font-size:smaller'>${el.innerHTML}</blockquote>`
 				}
-	
-	
-	/*			if (allDivs[i].className == 'line-block') {
-					allDivs[i].className = ''
-				} */
+
 			}
-	
 			let allAs = copyQuote.querySelectorAll('a')
 			for (let i in allAs) {
 				if (allAs[i].className == 'extlink tipref') {
 					allAs[i].className = ''
 				}
 			}
-
 			let allImgs = copyQuote.querySelectorAll ('img') 
 			for (let i=0; i < allImgs.length; i++) {
 				if (allImgs[i].classList.contains('emojify')) {
@@ -3105,15 +3126,17 @@ shareBtn.onclick = function() {
 					}
 				}
 			}
-
-			let allHrs = copyQuote.querySelectorAll('hr')
+ 			let allHrs = copyQuote.querySelectorAll('hr')
 			for (let i=0; i < allHrs.length; i++) {
-				allHrs[i].remove()
-			}
+				if (!allHrs[i].hasAttribute('data-share')) {
+					allHrs[i].remove()
+				}
+			} 
 	
 			copyQuote.innerHTML = copyQuote.innerHTML.replaceAll(`class="" `, '')
 												 .replaceAll(`class=""`, '')
 												 .replaceAll(`class="OAstart"`, '' )
+												// .replaceAll(`class="opensesame"`, '' )
 											 
 			copyDiv.innerHTML = `${linkText}${copyQuote.outerHTML}`
 	
@@ -3135,38 +3158,17 @@ shareBtn.onclick = function() {
 												  .replaceAll('\n\n', '\n')
 												  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
 								</div>`
-	/* 		let pureHTMLStr = `<p>As HTML:</p><div class='copybox'><textarea  id='copyhtml' style='width:100%; height:400px'>${copyDiv.innerHTML.replaceAll('</p>', '</p>\n')
-												  .replaceAll('</h1>', '</h1>\n')
-												  .replaceAll('</h2>', '</h2>\n')
-												  .replaceAll('<hr>', '\n<hr>')
-												  .replaceAll('</ul>', '</ul>\n')
-												  .replaceAll('</li>', '</li>\n')
-												  .replaceAll('</blockquote>', '</blockquote>\n')
-												  .replaceAll('<blockquote>', '\n<blockquote>')
-												  .replaceAll('<br></p>', '</p>')
-												  .replaceAll('\n\n', '\n')
-												  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea><p>Original HTML with classes:</p>
-												  <textarea id='originacopyhtml' style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
-												  .replaceAll('</h1>', '</h1>\n')
-												  .replaceAll('</h2>', '</h2>\n')
-												  .replaceAll('<hr>', '\n<hr>')
-												  .replaceAll('</ul>', '</ul>\n')
-												  .replaceAll('</li>', '</li>\n')
-												  .replaceAll('</blockquote>', '</blockquote>\n')
-												  .replaceAll('<blockquote>', '\n<blockquote>')
-												  .replaceAll('\n\n', '\n')
-												  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
-								</div>` */
-	
+
 			showAlert (`<h1>Copied to your Clipboard!</h1><p>The following has been <strong>copied to your clipboard</strong>. It should be suitable for sharing on forums such as <a href='https://discourse.suttacentral.net/'>SuttaCentral D&D</a> or pasted into word-processors</p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
 	
 		}
 		// Get all the footnotes
-		if (document.querySelectorAll('sup').length > 0 ) {
+		if ((document.querySelectorAll('sup')) && (document.querySelectorAll('sup').length > 0 )) {
 			let fetchPath = `../_resources/book-data/${shortcode()}/footnotes.json`
 			fetch (fetchPath)
 			.then(response => response.json())
 			.then (data => buildSelection(data))
+			//.then(console.log(data))
 			.catch(error => {
 				console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 			});
@@ -3192,7 +3194,9 @@ shareBtn.onclick = function() {
 			showAlert (`${alertStr}`)
 		} 
 	}
+
 }
+
 
 listsBtn.onclick = function() {
 	setModalStyle ("Lists");

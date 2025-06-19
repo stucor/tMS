@@ -351,9 +351,9 @@ figure:has(> .tMSIndex) > .tMSIndex {
 
 figure img { 
 	margin: 0.5em; 
-	border: 2px solid var(--figureimgborder);
-	min-width: 100px; 
-	max-width: 250px; 
+/*	border: 2px solid var(--figureimgborder);
+ 	min-width: 100px; 
+	max-width: 250px;  */
 	box-sizing: border-box;
 }
 
@@ -1136,7 +1136,6 @@ dd > ol > li {
 } 
 
 .bibSeg {
-	font-size: 0.8em;
 	margin-top: -1.2em;
 	margin-left: 3em;
 }
@@ -1351,14 +1350,19 @@ sup {
 }
 
 .infocontainer {
-	border-top: 1px solid darkgrey;
-	padding: 2em;
+	padding-top: 2em;
 	margin: 0;
 }
 
-.infocontainer h3 {
+.infocontainer > h3 {
+	padding: 0 1em;
+	background: #00000020;
 	margin-top:0;
 	text-align: left;
+}
+.infocontainer > p {
+	padding: 0 1em;
+
 }
 
 .infocontainer a, .lotlinkref, .figlinkref, .segRef {
@@ -1434,10 +1438,8 @@ sup {
 
 .footNoteText {
 	user-select: none;
-	font-size: 0.8em;
-	margin: 0;
-	background-color: #b3b3b319;
-	padding: 0.3em 1em;
+	margin: 0 20% 0 0;
+	padding: 0.3em 1em 0 2em;
 }
 
 .footNoteText > p {
@@ -1573,7 +1575,7 @@ sup {
 
 #texts-list > .reflist > .reflistitem {
 	display: grid;
-	grid-template-columns: 2em 6em auto;
+	grid-template-columns: 8em auto;
 	text-align: left;
 	padding: 0 1em;
 	background-color: rgba(100, 148, 237, 0.043);
@@ -1595,7 +1597,7 @@ sup {
 
 #footnotes-list > .reflist > .reflistitem {
 	display: grid;
-	grid-template-columns: 2em 5em auto;
+	grid-template-columns: 6em auto;
 	padding: 0 1em;
 	background-color: rgba(100, 148, 237, 0.043);
 	border: 1px solid #ffffff00;
@@ -1622,28 +1624,12 @@ sup {
 }
 
 
-/* #biblio-list > .reflist > .reflistitem > p {
-	margin-bottom: 0;
-	font-size: 0.8em;
-}
-#biblio-list > .reflist > .reflistitem > p+p {
-	margin-top: 0;
-	margin-bottom: 1em;
-	margin-left: 2em;
-	font-size: unset;
-} */
-
 .figureCaption {
-	font-size: 0.8em;
-}
-
-.footnoteinlist {
-	font-size: 0.8em;
-	padding-top: 0.3em;
+	font-size: 1em;
 }
 
 .reflistbuttons {
-	margin: 0;
+	margin: 0 1em;
 	text-align: left;
 }
 
@@ -2893,14 +2879,6 @@ mark.current {
 		display: block;	
 	}
 
-	.infocontainer{
-		padding: 0.5em;
-	}
-
-	.infocontainer h3{
-		margin: 1em 0 0 0;
-	}
-
 	.fifty-fifty-grid {
 		display: block;
 		margin: 20px 0;
@@ -3153,7 +3131,9 @@ mark.current {
 		font-size: 1em;
 	}
 
-
+	.infocontainer {
+		padding-top: 4em;
+	}
 }
 
 /* For Touch media - hide the hover */

@@ -873,19 +873,23 @@ function buildBookIndexHTML () {
 			} else 
 			// FIGURE (with images)
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-figure") {
+
+				//allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}' width='${width.replace('\r\n', '')}%'>`
+
 				let figureRoot = parse (allDivs[i].innerHTML)
 
 				let allFigRootSpans = figureRoot.querySelectorAll('span')
 				let figRootSpanHTML =``
 
-				let imageWidth = '100'
-				if (allFigRootSpans.length == 2) {
-					imageWidth = '40'
-				}
 				for (let j in allFigRootSpans) {
 					if (allFigRootSpans[j].getAttribute('data-custom-style') == "wwc-figure-image") {
-						let [fileLoc, alt, bordered] = allFigRootSpans[j].innerText.split('=')
-						figRootSpanHTML += `<a data-fslightbox href="${fileLoc}"><img src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>\n`
+						let [fileLoc, alt, imageWidth, bordered] = allFigRootSpans[j].innerText.split('=')
+						if (bordered == 'border') {
+							bordered = `style = 'border: 1px solid var(--figureimgborder)'`
+						} else {
+							bordered = ''
+						}
+						figRootSpanHTML += `<a data-fslightbox href="${fileLoc}"><img ${bordered} src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>\n`
 					} else { // it's a caption
 						figRootSpanHTML += `<figcaption>${allFigRootSpans[j].innerText}</figcaption>`
 					}

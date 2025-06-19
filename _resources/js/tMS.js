@@ -2935,7 +2935,7 @@ function makeShare () {
 			for(let i = 0; i < selection.rangeCount; i++) {
 				copyQuote.append(selection.getRangeAt(i).cloneContents())
 			   }
-			let originalHTML = copyQuote.innerHTML
+			//let originalHTML = copyQuote.innerHTML
 
 			//Add the Notes
 			function addnotes () {
@@ -2993,7 +2993,7 @@ function makeShare () {
 									let linkContainers = tempDiv.getElementsByClassName('linkContainer')
 									if (linkContainers[0]) {linkContainers[0].remove()}
 									let bibSegs = tempDiv.getElementsByClassName('bibSeg')
-									bibSegs[0].remove()
+									if (bibSegs[0]) {bibSegs[0].remove()}
 									let authors = tempDiv.getElementsByClassName('bibAuthor')
 									let titles = tempDiv.getElementsByClassName('bibTitle')
 									let miniBiblioEntry = {
@@ -3004,7 +3004,7 @@ function makeShare () {
 									miniBiblio.push(miniBiblioEntry)
 								}
 							}
-							if (allSesames[i].nextElementSibling.classList.contains('opensesame')) {
+							if ((allSesames[i].nextElementSibling) && (allSesames[i].nextElementSibling.classList.contains('opensesame'))) {
 								allSesames[i].nextElementSibling.remove()
 							}
 							allSesames[i].classList.remove('closebutton')
@@ -3146,7 +3146,7 @@ function makeShare () {
 				'text/html': new Blob([copyDiv.innerHTML], {type: 'text/html'})
 			})])
 	
-			let pureHTMLStr = `<h1>Original HTML with classes:</h1><div class='copybox'></textarea>
+/* 			let pureHTMLStr = `<h1>Original HTML with classes:</h1><div class='copybox'></textarea>
 												  <textarea id='originacopyhtml' style='width:100%; height:200px'>${originalHTML.replaceAll('</p>', '</p>\n')
 												  .replaceAll('</h1>', '</h1>\n')
 												  .replaceAll('</h2>', '</h2>\n')
@@ -3157,9 +3157,10 @@ function makeShare () {
 												  .replaceAll('<blockquote>', '\n<blockquote>')
 												  .replaceAll('\n\n', '\n')
 												  .replaceAll('<hr style="width: 10rem;margin-left:0; ">', '\n<hr>')}</textarea>
-								</div>`
+								</div>` */
 
-			showAlert (`<h1>Copied to your Clipboard!</h1><p>The following has been <strong>copied to your clipboard</strong>. It should be suitable for sharing on forums such as <a href='https://discourse.suttacentral.net/'>SuttaCentral D&D</a> or pasted into word-processors</p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
+//			showAlert (`<h1>Copied to your Clipboard!</h1><p>The following has been <strong>copied to your clipboard</strong>. It should be suitable for sharing on forums such as <a href='https://discourse.suttacentral.net/'>SuttaCentral D&D</a> or pasted into word-processors</p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
+			showAlert (`<h1>Copied to your Clipboard!</h1><p>The following has been <strong>copied to your clipboard</strong>. It should be suitable for sharing on forums such as <a href='https://discourse.suttacentral.net/'>SuttaCentral D&D</a> or pasted into word-processors</p>${copyDiv.outerHTML}`, `Clipboard Copy`)
 	
 		}
 		// Get all the footnotes
@@ -3227,7 +3228,7 @@ listsBtn.onclick = function() {
 				html += `<ul class="list reflist">`
 				for (let i = 0; i < tabrefArr.length; i++) {
 					if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
-						let segment = `<span class='lotSegRef'>${tabrefArr[i].parentNode.id.substring(4)}</span>`
+						let segment = `<span class='lotSegRef'>§${tabrefArr[i].parentNode.id.substring(4)}</span>`
 						let segRef = tabrefArr[i].parentNode.id
 						let caption = `<span class='lotCaption'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
 						html += `<li class='reflistitem' data-segref='${segRef}'>${segment}${caption}</li>`;
@@ -3256,7 +3257,7 @@ listsBtn.onclick = function() {
 				html += `<input class="search" placeholder="Filter by" /></div>`
 				html += `<ul class="list reflist">`
 				for (let i = 0; i < figArr.length; i++) {
-					let segment = `<span class='figureSegRef'>${figArr[i].id.substring(4)}</span>`
+					let segment = `<span class='figureSegRef'>§${figArr[i].id.substring(4)}</span>`
 					let segRef = figArr[i].id
 					let caption = `<span class='figureCaption'>${figArr[i].getElementsByTagName("figcaption")[0].innerHTML}</span>`;
 					html += `<li class='reflistitem' data-segref='${segRef}'>${segment}${caption}</li>`;
@@ -3295,11 +3296,11 @@ listsBtn.onclick = function() {
 								segRef = allSups[j].closest('p').id
 								segment = segRef.substring(4)
 								data_fnnumber = `data-fnnumber='${sclinksdata[i].location.substring(3)}'`
-								footnote = `<span class='footnoteinlist'>note: ${sclinksdata[i].location.substring(3)}</span>`
+								footnote = `—<span class='footnoteinlist'>#${sclinksdata[i].location.substring(3)}</span>`
 							}
 						}
 					}
-					let linktext = `<span class='textSegRef'>${segment}</span>${footnote} ${sclinksdata[i].sclinkHTML}`
+					let linktext = `<span class='textSegRef'>§${segment}${footnote}</span> ${sclinksdata[i].sclinkHTML}`
 					html += `<li class='reflistitem' data-segref='${segRef}' ${data_fnnumber}>${linktext}</li>`;
 				}
 				html += `</ul></section>`;
@@ -3357,7 +3358,7 @@ listsBtn.onclick = function() {
 						fnHTML = fnHTML.replace(from, to)
 					}
 
-					let linkHTML = `<span class='notesSegRef'>${segNo.substring(4)}</span> <span class='footnoteinlist'>note: ${fnNumber}</span> <span class='footNoteText'>${fnHTML.replaceAll('&shy;','')}</span>`
+					let linkHTML = `<span class='notesSegRef'>§${segNo.substring(4)}—<span class='footnoteinlist'>#${fnNumber}</span></span> <span class='footNoteText'>${fnHTML.replaceAll('&shy;','')}</span>`
 					html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
 				}
 				html += `</ul></section>` 

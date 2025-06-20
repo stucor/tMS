@@ -1505,11 +1505,14 @@ function buildBookIndexHTML () {
 						let authorName = ''
 
 						if (referencesData[i].author[j].family) {
-							let ndp =''
+							let ndp = dp =''
 							if (referencesData[i].author[j]["non-dropping-particle"]) {
 								ndp = referencesData[i].author[j]["non-dropping-particle"] + ' '
 							}
-							authorName = `<strong>${ndp}${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}`
+							if (referencesData[i].author[j]["dropping-particle"]) {
+								dp = ' ' + referencesData[i].author[j]["dropping-particle"]
+							}
+							authorName = `<strong>${ndp}${referencesData[i].author[j].family}</strong>, ${referencesData[i].author[j].given}${dp}`
 						} else
 						if (referencesData[i].author[j].literal) {
 							authorName =`<strong>${referencesData[i].author[j].literal}</strong>`

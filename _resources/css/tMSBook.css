@@ -1354,6 +1354,7 @@ sup {
 	margin: 0;
 }
 
+
 .infocontainer > h3 {
 	padding: 0 1em;
 	background: #00000020;
@@ -1487,7 +1488,7 @@ sup {
 	display: grid;
     grid-template-columns: 50% 50%;
 	column-gap: 2em;
-	margin:0;
+	margin:0 2em;
 	text-align: center;
 }
 
@@ -1526,6 +1527,7 @@ sup {
 }
 
 .cclicense h3 {
+	margin-top:2em;
 	font-size: 1em;
 }
 
@@ -1540,8 +1542,9 @@ sup {
 	white-space: nowrap;
 }
 
+
 #ccDetail > p, #ccDetail > ul > li{
-	margin: 0 0 0.3em 0;
+	margin: 0.3em;
 	font-size: 0.8em;
 } 
 
@@ -2881,11 +2884,11 @@ mark.current {
 
 	.fifty-fifty-grid {
 		display: block;
-		margin: 20px 0;
+		margin: 0.5em 0;
 	}
 
 	.fifty-fifty-grid p {
-		margin: 0.7em 0;
+		margin: 0.7em 0.2em;
 		text-align: justify;
 	}
 	

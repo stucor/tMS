@@ -3160,7 +3160,7 @@ function makeShare () {
 								</div>` */
 
 //			showAlert (`<h1>Copied to your Clipboard!</h1><p>The following has been <strong>copied to your clipboard</strong>. It should be suitable for sharing on forums such as <a href='https://discourse.suttacentral.net/'>SuttaCentral D&D</a> or pasted into word-processors</p>${copyDiv.outerHTML}<br><hr>${pureHTMLStr}`, `Clipboard Copy`)
-			showAlert (`<h1>Copied to your Clipboard!</h1><p>The following has been <strong>copied to your clipboard</strong>. It should be suitable for sharing on forums such as <a href='https://discourse.suttacentral.net/'>SuttaCentral D&D</a> or pasted into word-processors</p>${copyDiv.outerHTML}`, `Clipboard Copy`)
+			showAlert (`<h1 style='color:rgb(231, 0, 0); text-align:center; background: var(--primarytextcolor)'>Copied to your Clipboard!</h1><p>The following has been <strong>copied to your clipboard</strong>. It should be suitable for sharing on forums such as <a href='https://discourse.suttacentral.net/'>SuttaCentral D&D</a> or pasted into word-processors</p>${copyDiv.outerHTML}`, `Clipboard Copy`)
 	
 		}
 		// Get all the footnotes

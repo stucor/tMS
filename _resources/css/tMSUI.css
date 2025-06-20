@@ -225,6 +225,10 @@ h2 .tMSIndex {
 	font-family: 'Source Serif Pro';
 }
 
+.copybox .sesame{
+	cursor: default;
+	border-bottom: none;
+}
 .copybox sup {
 	color: var(--primarytextcolor)
 }

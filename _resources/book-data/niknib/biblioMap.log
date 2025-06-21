@@ -1,0 +1,37 @@
+Sat Jun 21 2025 13:54:34 GMT+0100 (British Summer Time):
+There are additional maps to add to biblioMap.json
+Please add the folowing to the file and run the script again
+[
+  {
+    "zotref": "",
+    "bookref": "Ṭhānissaro 1993a"
+  },
+  {
+    "zotref": "",
+    "bookref": "Norman 1991"
+  },
+  {
+    "zotref": "",
+    "bookref": "Johansson 1969"
+  },
+  {
+    "zotref": "",
+    "bookref": "Johansson 1969"
+  },
+  {
+    "zotref": "",
+    "bookref": "CPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "DP"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇamoli 2001"
+  },
+  {
+    "zotref": "",
+    "bookref": "Johansson 1969"
+  }
+]

@@ -334,5 +334,12 @@
     "transTitle": "Verses of the Senior Monks ",
     "blurb": "The “Verses of the Senior Monks” is a collection of about 1288 verses attributed to 264 of the senior monks alive in the Buddha’s time, or in a few cases, a little later. It is a pair with the Therīgāthā, the “Verses of the Senior Nuns”. These verses celebrate the joy of freedom and the life of meditation in the forest. Together these collections constitute one of the oldest and largest collections of contemplative literature, preserving the unique voices of hundreds of early practitioners. Based on style and content, these collections belong to the early discourses. They are referred to on occasion in the northern canons, but no parallel collections have survived.",
     "type": "branch"
+  },
+  {
+    "suttaRef": "ud-pataligamiyavagga",
+    "rootTitle": "Pāṭaligāmiyavagga",
+    "transTitle": "The Chapter with the Pāṭali Villagers",
+    "blurb": "The final chapter deals with the Buddha’s final passing away and the crisis of faith that this created. It begins with series of solemn declarations on Nibbana and ends with the spectacular passing of the monk Dabba. ",
+    "type": "branch"
   }
 ]

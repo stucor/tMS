@@ -2,14 +2,23 @@
 	"Authors": "Bhikkhu Brahmāli",
 	"BookTitle": "What the Nikāyas Say and Do not Say about Nibbāna",
 	"BookSubtitle": "",
+	"ShortAbstract": "<p>Ajahn Brahmali gives an overview of the usage of the term <span lang='pi'>Nibbāna</span> in the <span lang='pi'>Nikāyas</span>. He argues that, according to the <span lang='pi'>Nikāyas</span>, <span lang='pi'>Nibbāna</span> cannot be regarded as a self; that the <span lang='pi'>Nikāyas</span> do not see <span lang='pi'>Nibbāna</span> as a form of consciousness, including such exceptional kinds of consciousness as <span lang='pi'>anidassana</span> <span lang='pi'>viññāṇa</span> and <span lang='pi'>appatiṭṭhita</span> <span lang='pi'>viññāṇa</span>; nor can <span lang='pi'>Nibbāna</span> be regarded as equivalent to mind, or any particular state of mind. He aims to show that the most reasonable interpretation of the <span lang='pi'>Nikāyas</span> is that final <span lang='pi'>Nibbāna</span> is no more than the cessation of the five <span lang='pi'>khandhas</span>.</p>",
+	"Abstract": "<p>The only way of moving towards consensus on the controversial subject of the nature of Nibbāna is by appealing to the sole source of authority common to practically all Buddhists: the Nikāyas/Āgamas. In the present paper I will first give an overview of the usage of the term Nibbāna in the Nikāyas. I will then argue that, according to the Nikāyas, Nibbāna cannot be regarded as a self. Next, I will point out that the Nikāyas do not see Nibbāna as a form of consciousness, including such exceptional kinds of consciousness as <span lang='pi'>anidassana</span> <span lang='pi'>viññāṇa</span> and <span lang='pi'>appatiṭṭhita</span> <span lang='pi'>viññāṇa</span>. Nor can Nibbāna be regarded as equivalent to mind, or any particular state of mind. In the final section I aim to show that the most reasonable interpretation of the Nikāyas is that final Nibbāna is no more than the cessation of the five <span lang='pi'>khandhas</span>.</p>",
+	"ItemType": "document",
 	"AddInfo": [],
 	"Copyright": [
-		"Originally published in **2009**, \nBuddhist Studies Review, \nVol.26, No.1, \npages 33–66. \n[exquinoxpub.com]X(https://journal.equinoxpub.com/BSR/article/view/8891/10347).\n\nThis edition published in **2022**.\n34pp (in pdf format - 2009 equinox version)."
+		"Originally published in 2009 in the Buddhist Studies Review, Vol.26, No.1, pages 33–66.",
+		"This edition published by Wisdom &amp; Wonders in 2025",
+		"43pp (in pdf format—2009 Buddhist Studies Review edition)."
 	],
 	"CCLicense": "<div class='cclicense'><h3>CC0 1.0 Universal <span>(CC0 1.0) Public Domain Dedication</span></h3><div id = 'ccDetail'><p><strong>No Copyright</strong></p><ul>    <li>The person who associated a work with this deed has <em>dedicated</em> the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.</li>    <li>You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.</li></ul><p><strong>Other Information</strong></p><ul><li>In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.</li><li>Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.</li><li>When using or citing the work, you should not imply endorsement by the author or the affirmer.</li></ul></div></div>",
 	"FrontCover": "../_resources/book-data/niknib/FrontLarge.jpg",
 	"BackCover": "",
-	"BackMatter": [],
+	"BackMatter": [
+		""
+	],
+	"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+	"DownloadHTML": "",
 	"AuthorsData": [
 		{
 			"ShortName": "Bhikkhu Brahmāli",

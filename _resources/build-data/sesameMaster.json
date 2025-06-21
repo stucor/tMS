@@ -398,5 +398,9 @@
   {
     "sesame": "Upanisā Sutta",
     "key": "sn-blurbs:sn12.23"
-  }
+  },
+  {
+	"sesame": "Ud 8",
+	"key": "ud-blurbs:ud-pataligamiyavagga"
+}
 ]

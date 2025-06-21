@@ -1,0 +1,10 @@
+Sat Jun 21 2025 13:54:35 GMT+0100 (British Summer Time)
+Please check the following entries.
+Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
+build-data/sesameMaster.json and tMSBookBuilder.js should be run again for niknib
+[
+{
+	"sesame": "Ud 8",
+	"key": "ud-blurbs:ud-pataligamiyavagga"
+}
+]

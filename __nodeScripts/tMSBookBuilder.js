@@ -280,6 +280,7 @@ function processPandoc() {
 					case 'wwc-pali':
 						spans[i].setAttribute('lang','pi')
 						spans[i].removeAttribute ('data-custom-style')
+						spans[i].innerHTML = spans[i].innerHTML.replaceAll('\r\n', '')
 					break
 					case 'wwc-sanskrit':
 						spans[i].setAttribute('lang','sa')
@@ -371,7 +372,7 @@ function processPandoc() {
 					}
 				}
 				localJSON += ']'
-		
+				//console.log(JSON.stringify(localJSON))
 				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
 				console.log(`✅ footnotes.json created`)
 			} else {
@@ -1247,6 +1248,7 @@ function buildBookIndexHTML () {
 						obj.fnHTML = localfnHTMLRoot.innerHTML.replaceAll('\"', '\'')
 						newFootNotesJson.push(obj)
 					}
+					
 					let ammededFootnotes = JSON.stringify(newFootNotesJson, null, 2)
 					fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), ammededFootnotes, 'utf8')
 					console.log (`Footnotes file ammended in PostProcessing for biblio`)

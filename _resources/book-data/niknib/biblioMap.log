@@ -1,4 +1,4 @@
-Sat Jun 21 2025 13:54:34 GMT+0100 (British Summer Time):
+Sun Jun 22 2025 13:30:51 GMT+0100 (British Summer Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -33,5 +33,9 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Johansson 1969"
+  },
+  {
+    "zotref": "",
+    "bookref": "Norman 1992"
   }
 ]

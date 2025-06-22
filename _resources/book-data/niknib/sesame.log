@@ -1,10 +1,66 @@
-Sat Jun 21 2025 13:54:35 GMT+0100 (British Summer Time)
+Sun Jun 22 2025 13:30:51 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for niknib
 [
 {
+	"sesame": "Abhidhammattha Saṅgaha",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Anattalakkhaṇa Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Anālayo 2011",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dhammapada",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Itivuttaka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Khuddaka-Nikāya",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Norman 1996",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Pañca Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Theragāthā",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Ud 8",
 	"key": "ud-blurbs:ud-pataligamiyavagga"
+},
+{
+	"sesame": "Udāna",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Vinaya-Piṭaka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Warder 2001",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Yamaka Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
 }
 ]

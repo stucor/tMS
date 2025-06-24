@@ -1017,6 +1017,10 @@ span[class^="sesame closebutton"]  {
 	padding-left: 1em;
 }
 
+.opensesame p.tight-right-cite {
+	text-align: right;
+}
+
 .opensesame p {
 	text-indent: unset;
 }
@@ -1446,6 +1450,9 @@ sup {
 .footNoteText > p {
 	margin-top: 0;
 	text-align: left;
+}
+.footNoteText > p.tight-right-cite {
+	text-align: right;
 }
 .footNoteText > p > .sclinktext,
 .footNoteText > p > .extlink,

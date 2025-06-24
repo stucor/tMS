@@ -348,37 +348,63 @@ function processPandoc() {
 						}
 					}
 				}
-				let outFNLi = footnotesRoot.getElementsByTagName ('li')
-				let localJSON = `[\n`
-				for (let i in outFNLi) {
-					if (outFNLi[i].id.substring(0,2) == 'fn' ) {
-						let thisFootnoteRoot = parse(outFNLi[i].innerHTML)
-						let thisFootnoteHTML = ``
-						thisFootnoteParas = thisFootnoteRoot.querySelectorAll('p')
-			
-						for (let j in thisFootnoteParas) {
-							thisFootnoteHTML += thisFootnoteParas[j].outerHTML.replaceAll('\"','\'')
-							.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
-							.replaceAll('<em>,</em>',',')  // clean up unexpected italics
-							.replaceAll(' | ','<br>')
-							.replaceAll('<p> ', '<p>')
-						}
-						localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML}"\n}`
-						if (i == outFNLi.length -1) {
-							localJSON += '\n'
-						} else {
-							localJSON += ',\n'
-						}
+			let outFNLi = footnotesRoot.getElementsByTagName ('li')
+			let localJSON = `[\n`
+			for (let i in outFNLi) {
+				if (outFNLi[i].id.substring(0,2) == 'fn' ) {
+					let thisFootnoteRoot = parse(outFNLi[i].innerHTML)
+					let thisFootnoteHTML = ``
+
+					let thisFootnoteDivs = thisFootnoteRoot.querySelectorAll('div')
+
+					for (let j in thisFootnoteDivs) {
+						if (thisFootnoteDivs[j].getAttribute('data-custom-style')== 'WW-footnote-blockquote') {
+							thisFootnoteDivs[j].innerHTML = thisFootnoteDivs[j].innerHTML.replaceAll('<p>','<blockquote>')
+																						  .replaceAll('</p>','</blockquote>')
+						} 
+						if (thisFootnoteDivs[j].getAttribute('data-custom-style')== 'WW-footnote-tight-right-cite') {
+							thisFootnoteDivs[j].innerHTML = thisFootnoteDivs[j].innerHTML.replaceAll('<p>','<p class="tight-right-cite">')
+						} 
+						thisFootnoteHTML += thisFootnoteDivs[j].innerHTML.replaceAll('\"','\'')
+						.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
+						.replaceAll('<em>,</em>',',')  // clean up unexpected italics
+						.replaceAll(' | ','<br>')
+
+					}
+
+					localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML.replaceAll('\r\n', '')}"\n}`
+
+/* 					thisFootnoteParas = thisFootnoteRoot.querySelectorAll('p')
+		
+					for (let j in thisFootnoteParas) {
+						thisFootnoteHTML += thisFootnoteParas[j].outerHTML.replaceAll('\"','\'')
+						.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
+						.replaceAll('<em>,</em>',',')  // clean up unexpected italics
+						.replaceAll(' | ','<br>')
+						.replaceAll('<p> ', '<p>')
+					}
+					localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML.replaceAll('\r\n', '')}"\n}` */
+
+
+
+
+
+					if (i == outFNLi.length -1) {
+						localJSON += '\n'
+					} else {
+						localJSON += ',\n'
 					}
 				}
-				localJSON += ']'
-				//console.log(JSON.stringify(localJSON))
-				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
-				console.log(`✅ footnotes.json created`)
-			} else {
-				footnotesExist = false
-				console.log (`❎—🛈 NO FOOTNOTES in document`)
 			}
+			localJSON += ']'
+			//console.log(JSON.stringify(localJSON))
+			//console.log(localJSON)
+			fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), localJSON, 'utf8')
+			console.log(`✅ footnotes.json created`)
+		} else {
+			footnotesExist = false
+			console.log (`❎—🛈 NO FOOTNOTES in document`)
+		}
 	}
 
 	function buildBookInfoJSON () {

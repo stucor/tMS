@@ -1,4 +1,4 @@
-Sun Jun 22 2025 13:30:51 GMT+0100 (British Summer Time)
+Tue Jun 24 2025 14:40:43 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for niknib
@@ -12,6 +12,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Anupada Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Anālayo 2011",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -21,6 +25,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 },
 {
 	"sesame": "Dhammapada",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Harvey 1995",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -38,6 +46,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 {
 	"sesame": "Pañca Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saṁyutta Nikāya",
+	"key": "super-blurbs:sn"
 },
 {
 	"sesame": "Theragāthā",

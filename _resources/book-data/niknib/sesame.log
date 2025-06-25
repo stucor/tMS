@@ -1,8 +1,12 @@
-Tue Jun 24 2025 14:40:43 GMT+0100 (British Summer Time)
+Wed Jun 25 2025 11:42:14 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for niknib
 [
+{
+	"sesame": "Abhidhamma",
+	"key": "XXXXXXXXXXXXXXXX"
+},
 {
 	"sesame": "Abhidhammattha Saṅgaha",
 	"key": "XXXXXXXXXXXXXXXX"
@@ -18,6 +22,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 {
 	"sesame": "Anālayo 2011",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Asaṅkhata Saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Aṅguttara Nikāya",
+	"key": "super-blurbs:an"
 },
 {
 	"sesame": "Bodhi 2000",
@@ -40,11 +52,23 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Manorathapūranī",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Milindapañha",
+	"key": "super-blurbs:mil"
+},
+{
 	"sesame": "Norman 1996",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Pañca Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Salāyatana-Saṁyutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -61,6 +85,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 },
 {
 	"sesame": "Udāna",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Vinaya Piṭaka",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

@@ -6,6 +6,7 @@ node tMSBookBuilder.js doab
 node tMSBookBuilder.js footprints
 node tMSBookBuilder.js journey
 node tMSBookBuilder.js milk
+node tMSBookBuilder.js niknib
 node tMSBookBuilder.js outk
 node tMSBookBuilder.js sitm
 node tMSBookBuilder.js ssbl

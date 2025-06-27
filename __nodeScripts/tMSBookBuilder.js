@@ -372,7 +372,7 @@ function processPandoc() {
 
 					}
 
-					localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML.replaceAll('\r\n', '')}"\n}`
+					localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML.replaceAll('\r\n', '').replaceAll('<p> ', '<p>')}"\n}`
 
 /* 					thisFootnoteParas = thisFootnoteRoot.querySelectorAll('p')
 		

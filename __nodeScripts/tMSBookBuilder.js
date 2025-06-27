@@ -1775,6 +1775,9 @@ function buildBookIndexHTML () {
 									//console.log(allsesames[j].innerHTML)
 									if(allsesames[j].closest('.tablewrap')) {
 										bibSegHTML += ` <span>${allsesames[j].closest('.tablewrap').id.replace('seg-','§')}</span> |`
+									} else
+									if (allsesames[j].parentNode.tagName == 'EM') {
+										bibSegHTML += ` <span>${allsesames[j].parentNode.parentNode.id.replace('seg-','§')}</span> |`
 									} else {
 										bibSegHTML += ` <span>${allsesames[j].parentNode.id.replace('seg-','§')}</span> |`
 									}

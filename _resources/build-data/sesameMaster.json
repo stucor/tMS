@@ -20,12 +20,12 @@
     "key": "snp-blurbs:snp5.2"
   },
   {
-	"sesame": "Anattalakkhaṇa Sutta",
-	"key": "sn-blurbs:sn22.59"
+    "sesame": "Anattalakkhaṇa Sutta",
+    "key": "sn-blurbs:sn22.59"
   },
   {
-	"sesame": "Anupada Sutta",
-	"key": "mn-blurbs:mn111"
+    "sesame": "Anupada Sutta",
+    "key": "mn-blurbs:mn111"
   },
   {
     "sesame": "Aparagoyāna",
@@ -108,16 +108,20 @@
     "key": "mn-blurbs:mn101"
   },
   {
-    "sesame": "Digha Nikāya",
-    "key": "super-blurbs:dn"
+    "sesame": "Dhammapada",
+    "key": "super-blurbs:dhp"
   },
   {
-    "sesame": "Dīgha Nikāya",
+    "sesame": "Digha Nikāya",
     "key": "super-blurbs:dn"
   },
   {
     "sesame": "Divyāvadāna",
     "key": "super-blurbs:divy"
+  },
+  {
+    "sesame": "Dīgha Nikāya",
+    "key": "super-blurbs:dn"
   },
   {
     "sesame": "Fire Discourse",
@@ -126,6 +130,10 @@
   {
     "sesame": "Hariti",
     "key": "wp:Hariti"
+  },
+  {
+    "sesame": "Itivuttaka",
+    "key": "super-blurbs:iti"
   },
   {
     "sesame": "Jambudīpa",
@@ -146,6 +154,10 @@
   {
     "sesame": "Kevaddha Sutta",
     "key": "dn-blurbs:dn11"
+  },
+  {
+    "sesame": "Khuddaka Nikāya",
+    "key": "super-blurbs:kn"
   },
   {
     "sesame": "Kāma",
@@ -172,10 +184,6 @@
     "key": "super-blurbs:ma"
   },
   {
-    "sesame": "Mahānidāna Suttanta",
-    "key": "dn-blurbs:dn15"
-  },
-  {
     "sesame": "Mahaparinibbāna Sutta",
     "key": "dn-blurbs:dn16"
   },
@@ -193,6 +201,10 @@
   },
   {
     "sesame": "Mahānidāna Sutta",
+    "key": "dn-blurbs:dn15"
+  },
+  {
+    "sesame": "Mahānidāna Suttanta",
     "key": "dn-blurbs:dn15"
   },
   {
@@ -220,11 +232,11 @@
     "key": "wp:Maitreya"
   },
   {
-    "sesame": "Majjhima-nikāya",
+    "sesame": "Majjhima Nikāya",
     "key": "super-blurbs:mn"
   },
   {
-    "sesame": "Majjhima Nikāya",
+    "sesame": "Majjhima-nikāya",
     "key": "super-blurbs:mn"
   },
   {
@@ -284,8 +296,8 @@
     "key": "wp:Pañcika"
   },
   {
-	"sesame": "Pañca Sutta",
-	"key": "sn-blurbs:sn22.59"
+    "sesame": "Pañca Sutta",
+    "key": "sn-blurbs:sn22.59"
   },
   {
     "sesame": "Paṭisambhidāmagga",
@@ -312,6 +324,14 @@
     "key": "mn-blurbs:mn2"
   },
   {
+    "sesame": "Salāyatana Saṁyutta",
+    "key": "sn-blurbs:sn35"
+  },
+  {
+    "sesame": "Satipaṭṭhāna Sutta",
+    "key": "mn-blurbs:mn10"
+  },
+  {
     "sesame": "Saṁyutta Nikāya",
     "key": "super-blurbs:sn"
   },
@@ -322,10 +342,6 @@
   {
     "sesame": "Saṅkhārupapatti Sutta",
     "key": "mn-blurbs:mn120"
-  },
-  {
-    "sesame": "Satipaṭṭhāna Sutta",
-    "key": "mn-blurbs:mn10"
   },
   {
     "sesame": "Sineru",
@@ -360,8 +376,24 @@
     "key": "super-blurbs:thag"
   },
   {
+    "sesame": "Theragāthā",
+    "key": "super-blurbs:thag"
+  },
+  {
+    "sesame": "Ud 8",
+    "key": "ud-blurbs:ud-pataligamiyavagga"
+  },
+  {
+    "sesame": "Udāna",
+    "key": "super-blurbs:ud"
+  },
+  {
     "sesame": "Upakkilesa (Impurities) Sutta",
     "key": "an-blurbs:an5.23"
+  },
+  {
+    "sesame": "Upanisā Sutta",
+    "key": "sn-blurbs:sn12.23"
   },
   {
     "sesame": "Upaniṣads",
@@ -380,12 +412,20 @@
     "key": "sn-blurbs:sn12.2"
   },
   {
+    "sesame": "Vinaya Piṭaka",
+    "key": "super-blurbs:vinaya"
+  },
+  {
     "sesame": "Vism",
     "key": "wp:Visuddhimagga:Ñanamoli 1956a"
   },
   {
     "sesame": "Xuanzang",
     "key": "wp:Xuanzang"
+  },
+  {
+    "sesame": "Yamaka Sutta",
+    "key": "sn-blurbs:sn22.85"
   },
   {
     "sesame": "Yājñavalkya",
@@ -400,6 +440,10 @@
     "key": "super-blurbs:sutta"
   },
   {
+    "sesame": "Ñāṇamoli & Bodhi n.1177",
+    "key": "bodhi-nikaya-notes:MN-1177"
+  },
+  {
     "sesame": "Ñāṇamoli & Bodhi n.513.",
     "key": "bodhi-nikaya-notes:MN-513"
   },
@@ -408,55 +452,11 @@
     "key": "bodhi-nikaya-notes:MN-499"
   },
   {
-    "sesame": "Ñāṇamoli & Bodhi n.1177",
-    "key": "bodhi-nikaya-notes:MN-1177"
-  },
-  {
-    "sesame": "Ātman",
-    "key": "wp:Ātman_(Hinduism)"
-  },
-  {
     "sesame": "Ānāpānasati Sutta",
     "key": "mn-blurbs:mn118"
   },
   {
-    "sesame": "Upanisā Sutta",
-    "key": "sn-blurbs:sn12.23"
-  },
-  {
-	"sesame": "Ud 8",
-	"key": "ud-blurbs:ud-pataligamiyavagga"
-},
-{
-	"sesame": "Dhammapada",
-	"key": "super-blurbs:dhp"
-},
-{
-	"sesame": "Itivuttaka",
-	"key": "super-blurbs:iti"
-},
-{
-	"sesame": "Khuddaka Nikāya",
-	"key": "super-blurbs:kn"
-},
-{
-	"sesame": "Salāyatana Saṁyutta",
-	"key": "sn-blurbs:sn35"
-},
-{
-	"sesame": "Theragāthā",
-	"key": "super-blurbs:thag"
-},
-{
-	"sesame": "Udāna",
-	"key": "super-blurbs:ud"
-},
-{
-	"sesame": "Vinaya Piṭaka",
-	"key": "super-blurbs:vinaya"
-},
-{
-	"sesame": "Yamaka Sutta",
-	"key": "sn-blurbs:sn22.85"
-}
+    "sesame": "Ātman",
+    "key": "wp:Ātman_(Hinduism)"
+  }
 ]

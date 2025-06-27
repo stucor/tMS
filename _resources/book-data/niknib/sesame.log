@@ -1,27 +1,27 @@
-Fri Jun 27 2025 09:29:27 GMT+0100 (British Summer Time)
+Fri Jun 27 2025 12:27:28 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for niknib
 [
 {
 	"sesame": "Abhidhamma",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:abhidhamma"
 },
 {
 	"sesame": "Abhidhammattha Saṅgaha",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Abhidhammattha_sangaha"
 },
 {
 	"sesame": "Anattalakkhaṇa Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn22.59"
 },
 {
 	"sesame": "Anupada Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn111"
 },
 {
 	"sesame": "Asaṅkhata Saṁyutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn43"
 },
 {
 	"sesame": "Aṅguttara Nikāya",
@@ -29,19 +29,15 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 },
 {
 	"sesame": "Dhammapada",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:dhp"
 },
 {
 	"sesame": "Itivuttaka",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:iti"
 },
 {
 	"sesame": "Khuddaka Nikāya",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Manorathapūranī",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:kn"
 },
 {
 	"sesame": "Milindapañha",
@@ -49,11 +45,11 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 },
 {
 	"sesame": "Pañca Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn22.59"
 },
 {
-	"sesame": "Salāyatana-Saṁyutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"sesame": "Salāyatana Saṁyutta",
+	"key": "sn-blurbs:sn35"
 },
 {
 	"sesame": "Saṁyutta Nikāya",
@@ -61,7 +57,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 },
 {
 	"sesame": "Theragāthā",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:thag"
 },
 {
 	"sesame": "Ud 8",
@@ -69,14 +65,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for nikni
 },
 {
 	"sesame": "Udāna",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:ud"
 },
 {
 	"sesame": "Vinaya Piṭaka",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:vinaya"
 },
 {
 	"sesame": "Yamaka Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn22.85"
 }
 ]

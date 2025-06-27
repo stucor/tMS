@@ -1,7 +1,11 @@
 [
   {
     "sesame": "Abhidhamma",
-    "key": "super-blurbs:pli-tv-ab"
+    "key": "super-blurbs:abhidhamma"
+  },
+  {
+    "sesame": "Abhidhammattha Saṅgaha",
+    "key": "wp:Abhidhammattha_sangaha"
   },
   {
     "sesame": "Advaita Vedanta",
@@ -16,8 +20,20 @@
     "key": "snp-blurbs:snp5.2"
   },
   {
+	"sesame": "Anattalakkhaṇa Sutta",
+	"key": "sn-blurbs:sn22.59"
+  },
+  {
+	"sesame": "Anupada Sutta",
+	"key": "mn-blurbs:mn111"
+  },
+  {
     "sesame": "Aparagoyāna",
     "key": "DPPN:aparagoyāna"
+  },
+  {
+    "sesame": "Asaṅkhata Saṁyutta",
+    "key": "sn-blurbs:sn43"
   },
   {
     "sesame": "Avalokiteśvara",
@@ -268,6 +284,10 @@
     "key": "wp:Pañcika"
   },
   {
+	"sesame": "Pañca Sutta",
+	"key": "sn-blurbs:sn22.59"
+  },
+  {
     "sesame": "Paṭisambhidāmagga",
     "key": "super-blurbs:ps"
   },
@@ -406,5 +426,37 @@
   {
 	"sesame": "Ud 8",
 	"key": "ud-blurbs:ud-pataligamiyavagga"
+},
+{
+	"sesame": "Dhammapada",
+	"key": "super-blurbs:dhp"
+},
+{
+	"sesame": "Itivuttaka",
+	"key": "super-blurbs:iti"
+},
+{
+	"sesame": "Khuddaka Nikāya",
+	"key": "super-blurbs:kn"
+},
+{
+	"sesame": "Salāyatana Saṁyutta",
+	"key": "sn-blurbs:sn35"
+},
+{
+	"sesame": "Theragāthā",
+	"key": "super-blurbs:thag"
+},
+{
+	"sesame": "Udāna",
+	"key": "super-blurbs:ud"
+},
+{
+	"sesame": "Vinaya Piṭaka",
+	"key": "super-blurbs:vinaya"
+},
+{
+	"sesame": "Yamaka Sutta",
+	"key": "sn-blurbs:sn22.85"
 }
 ]

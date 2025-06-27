@@ -1,5 +1,12 @@
 [
   {
+    "suttaRef": "abhidhamma",
+    "rootTitle": "Abhidhammapiṭaka",
+    "transTitle": "Basket of Systematic Treatises ",
+    "blurb": "Abhidhamma texts are systematic summaries and analyses of the teachings drawn from the earlier discourses. The Abhidhamma (spelled abhidharma in Sanskrit) is intended for advanced students who have mastered the teachings of the discourses.",
+    "type": "root"
+  },
+  {
     "suttaRef": "an",
     "rootTitle": "Aṅguttaranikāya",
     "transTitle": "Numbered Discourses Collection ",
@@ -32,6 +39,13 @@
     "rootTitle": "Cūḷaniddesa",
     "transTitle": "Shorter Exposition ",
     "blurb": "The Cūḷaniddesa or “Shorter Exposition” is really one half of a book together with the Mahāniddesa or “Great Exposition”. They offer commentaries on certain portions of the Sutta Nipāta, and lack counterparts in the northern canons. The Cūḷaniddesa comments on the “Way to the Beyond” and the “Rhinoceros Horn Sutta”.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "dhp",
+    "rootTitle": "Dhammapada",
+    "transTitle": "Sayings of the Dhamma ",
+    "blurb": "The Pali version of this famous text, consisting of 423 verses organized into memorable themes. It is the most widely read of the early texts, and has been translated many times into many languages. Versions of this text are found in Chinese, Tibetan, and several Indic languages, attesting to its timeless, universal appeal.",
     "type": "branch"
   },
   {
@@ -91,11 +105,25 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "iti",
+    "rootTitle": "Itivuttaka",
+    "transTitle": "So It Was Said ",
+    "blurb": "112 short discourses in mixed prose and verse, arranged in the Aṅguttara style of ascending numbered sets, from one to four. Alone among Buddhist texts, its survival is attributed not to the Saṅgha, but to a laywoman named Khujjuttarā. According to the Pali commentaries, she was a maid to the Queen of Kosambi, and memorized these teachings from the Buddha, earning her the title of the most learned of the laywomen disciples.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "ja12",
     "rootTitle": "Nigrodhamigajātaka",
     "transTitle": "The Banyan Deer ",
     "blurb": "“Keep only with the Banyan Deer.”—This story was told by the Master while at Jetavana about the mother of the Elder named Prince Kassapa. The daughter, we learn, of a wealthy merchant of Rajagaha was deeply rooted in goodness and scorned all temporal things; she had reached her final existence, and within her breast, like a lamp in a pitcher, glowed her sure hope of winning Arahatship. As soon as she reached knowledge of herself, she took no joy in a worldly life but yearned to renounce the world. With this aim, she said to her mother and father, “My dear parents, my heart takes no joy in a worldly life; fain would I embrace the saving doctrine of the Buddha. Suffer me to take the vows.”",
     "type": "leaf"
+  },
+  {
+    "suttaRef": "kn",
+    "rootTitle": "Khuddakanikāya",
+    "transTitle": "Minor Collection ",
+    "blurb": "The word <i lang='pi' translate='no'>khuddaka</i> means “lesser” or “minor”, and it seems that this category originally served to collect certain short collections, mostly verse, that were not conveniently assigned to one of the main <i lang='pi' translate='no'>nikāyas</i>. Over time, however, the collection grew, so that the Khuddaka in the Pali canon today is the largest of the <i lang='pi' translate='no'>nikāyas</i>. It includes some of the most popular texts in Theravāda Buddhism, such as the Dhammapada, the Sutta Nipāta, and the Jātakas. There is no closely parallel collection in the other canons, but many of the early texts have parallels in various places.",
+    "type": "branch"
   },
   {
     "suttaRef": "ma",
@@ -137,6 +165,13 @@
     "rootTitle": "Devadahasutta",
     "transTitle": "At Devadaha ",
     "blurb": "The Buddha tackles a group of Jain ascetics, pressing them on their claim to be practicing to end all suffering by self-mortification. He points out a series of fallacies in their logic, and explains his own middle way.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn111",
+    "rootTitle": "Anupadasutta",
+    "transTitle": "One by One ",
+    "blurb": "The Buddha describes in technical detail the process of insight of Venerable Sāriputta. Many ideas and terms in this text anticipate the Abhidhamma.",
     "type": "leaf"
   },
   {
@@ -280,6 +315,27 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "sn22.59",
+    "rootTitle": "Anattalakkhaṇasutta",
+    "transTitle": "The Characteristic of Not-Self ",
+    "blurb": "In the Deer Park at Varanasi the Buddha teaches the famous second discourse, on not-self with regard to the aggregates, to the group of five monks. At the conclusion, they become perfected ones.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn22.85",
+    "rootTitle": "Yamakasutta",
+    "transTitle": "With Yamaka ",
+    "blurb": "Venerable Yamaka had the wrong view that one whose defilements have ended is annihilated at death. The monks ask Sāriputta to help, and he asks Yamaka whether a realized one in this very life may be identified as one of the aggregates, or apart from them. Convinced, Yamaka lets go of his view and sees the Dhamma.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn35",
+    "rootTitle": "Saḷāyatanasaṁyutta",
+    "transTitle": "Linked Discourses on the Six Sense Fields ",
+    "blurb": "The number of discourses in the “Linked Discourses on the Six Sense Fields” varies between editions, mainly due to the way repetitions are counted; SuttaCentral follows Bhikkhu Bodhi’s translation in counting 248 discourses. The six sense fields complement the five aggregates as the summary of the noble truth of suffering. Where the aggregates focus on the functional structure of experience as basis for views of self, the emphasis here is on how sense experience stimulates desire. Despite this difference in orientation, the two collections share much in common, and often the exact same template is applied in both cases. The six sense fields are the means through which the world is known, and so each of them has an “inner” and an “outer” aspect—the “eye” and “sights”, etc. Though common, it’s best to avoid thinking of the external sense field as the “object”, since in the suttas they are depicted in relation to the observing mind, and not as independently existing entities. This is straightforward until we come to the last sense, the “mind” and “thoughts” or “mental phenomena”. Just to clear up a possible confusion, this “sixth sense” is simply the mental faculty, and has nothing to do with psychic powers. The outer aspect is <i lang='pi' translate='no'>dhammā</i>, a term so ambiguous its translation is always difficult. Here it refers to anything that may be known directly by the mind, distinct from the five senses. The most technically correct translation is probably “mental phenomena”, but “thought’ may be used as a more colloquial rendering, so long as it includes ideas, imagination, and so on, not just verbalized cognition.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "sn35.28",
     "rootTitle": "Ādittasutta",
     "transTitle": "Burning ",
@@ -292,6 +348,13 @@
     "transTitle": "An Arrow ",
     "blurb": "Both ordinary and awakened people experience the three feelings. The difference is that when an ordinary person is stricken with feeling, they react, creating more suffering, whereas an awakened person responds with equanimity.",
     "type": "leaf"
+  },
+  {
+    "suttaRef": "sn43",
+    "rootTitle": "Asaṅkhatasaṁyutta",
+    "transTitle": "Linked Discourses on the Unconditioned ",
+    "blurb": "The “Linked Discourses on the Unconditioned” contains 44 discourses on the theme of the unconditioned, i.e. <i lang='pi' translate='no'>nibbāna</i> or “extinguishment”. They focus on the various practices that lead to the unconditioned. This chapter includes an extensive range of terms and idioms describing the final goal of Buddhist practice.",
+    "type": "branch"
   },
   {
     "suttaRef": "sn6.4",
@@ -336,10 +399,24 @@
     "type": "branch"
   },
   {
+    "suttaRef": "ud",
+    "rootTitle": "Udāna",
+    "transTitle": "Heartfelt Sayings ",
+    "blurb": "Eighty short discourses in mixed prose and verse. These take the form of a simple prose narrative, which serves to frame an inspired saying, usually in verse. The <i lang='pi' translate='no'>udāna</i> and <i lang='pi' translate='no'>dhammapada</i> literature appear to overlap, and can be considered as one genre. The Dhammapada verses also have associated narratives, but these are found in the commentary. There are some indications that some of the narratives in the Udāna may be a little later than most of the material in the four main <i lang='pi' translate='no'>nikāyas</i>.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "ud-pataligamiyavagga",
     "rootTitle": "Pāṭaligāmiyavagga",
     "transTitle": "The Chapter with the Pāṭali Villagers",
     "blurb": "The final chapter deals with the Buddha’s final passing away and the crisis of faith that this created. It begins with series of solemn declarations on Nibbana and ends with the spectacular passing of the monk Dabba. ",
     "type": "branch"
+  },
+  {
+    "suttaRef": "vinaya",
+    "rootTitle": "Vinayapiṭaka",
+    "transTitle": "Basket of Monastic Law ",
+    "blurb": "The texts on Monastic Law (vinaya) detail the lifestyle, rules, and procedures for Buddhist monks and nuns. They provide the guidelines for Buddhist monastics to this day, and in addition, paint a detailed and vivid picture of everyday life in ancient India.",
+    "type": "root"
   }
 ]

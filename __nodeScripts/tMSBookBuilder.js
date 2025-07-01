@@ -72,6 +72,18 @@ function formatSCLinktext (linkHTML) {
 }
 
 function processPandoc() {
+
+	let localShyphenMaster =[]
+	try {
+		const data = fs.readFileSync('../_resources/build-data/shyphenMaster.json', 'utf8')
+		localShyphenMaster = JSON.parse(data)
+	} catch (err) {
+		console.error(err);
+	}
+
+
+
+
 	let pandocRoot =``
 	try {
 		const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'pandoc.html', 'utf8')
@@ -281,6 +293,29 @@ function processPandoc() {
 						spans[i].setAttribute('lang','pi')
 						spans[i].removeAttribute ('data-custom-style')
 						spans[i].innerHTML = spans[i].innerHTML.replaceAll('\r\n', '')
+						console.log('\n' +spans[i].innerText)
+
+						let allPaliWords = spans[i].innerText.split(' ')
+						let newInnerHTML = ''	
+						for (let j in allPaliWords) {
+							let thisPaliWord = allPaliWords[j]
+							console.log(thisPaliWord)
+							let punctuationMark = ''
+							if(['.','?',',',';',':'].indexOf(thisPaliWord.slice(-1)) > -1) {
+								punctuationMark = thisPaliWord.slice(-1)
+								thisPaliWord = thisPaliWord.slice(0, -1)
+								console.log(thisPaliWord)
+							}
+
+							for (let k in localShyphenMaster) {
+								if (thisPaliWord == localShyphenMaster[k].replaceAll('-','')) {
+									thisPaliWord = localShyphenMaster[k].replaceAll('-','&shy;')
+								} 
+							}
+							newInnerHTML += `${thisPaliWord}${punctuationMark} `
+							
+						}
+						spans[i].innerHTML = newInnerHTML.slice(0, -1)
 					break
 					case 'wwc-sanskrit':
 						spans[i].setAttribute('lang','sa')
@@ -809,11 +844,20 @@ function buildBookIndexHTML () {
 				case 'wwc-pali':
 					spans[i].setAttribute('lang','pi')
 					spans[i].removeAttribute ('data-custom-style')
-					for (let j in localShyphenMaster) {
-						if (spans[i].innerText == localShyphenMaster[j].replaceAll('-','')) {
-							spans[i].replaceWith(`<span lang='pi'>${localShyphenMaster[j].replaceAll('-','&shy;')}</span>`) //localShyphenMaster[j].replaceAll('-','&shy;')
+					//console.log(spans[i].innerText)
+					let allPaliWords = spans[i].innerText.split(' ')
+					let newInnerHTML = ''	
+					for (let j in allPaliWords) {
+						let thisPaliWord = allPaliWords[j]
+						for (let k in localShyphenMaster) {
+							if (thisPaliWord == localShyphenMaster[k].replaceAll('-','')) {
+								thisPaliWord = localShyphenMaster[k].replaceAll('-','&shy;')
+							} 
 						}
+						newInnerHTML += `${thisPaliWord} `
 					}
+					//console.log(newInnerHTML)
+					spans[i].replaceWith(`<span lang='pi'>${newInnerHTML.slice(0, -1)}</span>`) 
 					break
 				case 'wwc-sanskrit':
 					spans[i].setAttribute('lang','sa')

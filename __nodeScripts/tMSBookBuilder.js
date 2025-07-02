@@ -58,7 +58,56 @@ let sesameArr = []
 let sesameRefArr = []
 let footnotesExist = true;
 
+	function shyphenatePali (paliStr) {
+		paliStr = paliStr.replaceAll('\r\n','')
+		let localShyphenMaster =[]
+		try {
+			const data = fs.readFileSync('../_resources/build-data/shyphenMaster.json', 'utf8')
+			localShyphenMaster = JSON.parse(data)
+		} catch (err) {
+			console.error(err);
+		}
+/* if (paliStr.split(' ').length >6)  {
+	console.log(`${paliStr}\n`)
+} */
+		let allPaliWords = paliStr.replaceAll('<br>', '~ ').split(' ') //any linebreaks are replaced by a tilda. The linebreaks are reinstated at the end
+		let newInnerHTML = ''	
+		for (let j in allPaliWords) {
+			let thisPaliWord = allPaliWords[j]
 
+			//console.log(thisPaliWord)
+			let punctuationMark = ''
+			if(['~','.','?',',',';',':','…','!'].indexOf(thisPaliWord.slice(-1)) > -1) {
+				punctuationMark = thisPaliWord.slice(-1)
+				thisPaliWord = thisPaliWord.slice(0, -1)
+				//console.log(thisPaliWord)
+			}
+			let openQuote = ''
+			if ('‘' == Array.from(thisPaliWord)[0]) {
+				openQuote = '‘'
+				thisPaliWord = thisPaliWord.slice(1)
+			}
+
+/* if (paliStr.split(' ').length >6)  {
+	console.log(`XXX${thisPaliWord}XXX`)
+} */
+
+
+
+			for (let k in localShyphenMaster) {
+				if (thisPaliWord == localShyphenMaster[k].replaceAll('-','')) {
+
+/* 					if (paliStr.split(' ').length >6)  {
+	console.log(`${thisPaliWord}`)
+} */
+					thisPaliWord = localShyphenMaster[k].replaceAll('-','&shy;')
+				} 
+			}
+			newInnerHTML += `${openQuote}${thisPaliWord}${punctuationMark} `
+			
+		}
+		return newInnerHTML.slice(0, -1).replaceAll('~ ', '<br>')
+	}
 
 
 function formatSCLinktext (linkHTML) {
@@ -73,13 +122,7 @@ function formatSCLinktext (linkHTML) {
 
 function processPandoc() {
 
-	let localShyphenMaster =[]
-	try {
-		const data = fs.readFileSync('../_resources/build-data/shyphenMaster.json', 'utf8')
-		localShyphenMaster = JSON.parse(data)
-	} catch (err) {
-		console.error(err);
-	}
+
 
 
 
@@ -243,6 +286,8 @@ function processPandoc() {
 		console.log(`✅ TOC.json created`)
 	}
 
+
+
 	function buildFootnotesJSON () {
 		let localSesameMaster = []
 		try {
@@ -293,29 +338,7 @@ function processPandoc() {
 						spans[i].setAttribute('lang','pi')
 						spans[i].removeAttribute ('data-custom-style')
 						spans[i].innerHTML = spans[i].innerHTML.replaceAll('\r\n', '')
-						console.log('\n' +spans[i].innerText)
-
-						let allPaliWords = spans[i].innerText.split(' ')
-						let newInnerHTML = ''	
-						for (let j in allPaliWords) {
-							let thisPaliWord = allPaliWords[j]
-							console.log(thisPaliWord)
-							let punctuationMark = ''
-							if(['.','?',',',';',':'].indexOf(thisPaliWord.slice(-1)) > -1) {
-								punctuationMark = thisPaliWord.slice(-1)
-								thisPaliWord = thisPaliWord.slice(0, -1)
-								console.log(thisPaliWord)
-							}
-
-							for (let k in localShyphenMaster) {
-								if (thisPaliWord == localShyphenMaster[k].replaceAll('-','')) {
-									thisPaliWord = localShyphenMaster[k].replaceAll('-','&shy;')
-								} 
-							}
-							newInnerHTML += `${thisPaliWord}${punctuationMark} `
-							
-						}
-						spans[i].innerHTML = newInnerHTML.slice(0, -1)
+						spans[i].innerHTML = shyphenatePali(spans[i].innerHTML)
 					break
 					case 'wwc-sanskrit':
 						spans[i].setAttribute('lang','sa')
@@ -588,15 +611,6 @@ function buildBookIndexHTML () {
 	const frontCoverRelativeURL = `${metaData.FrontCover}`
 	const frontCoverfullURl =  installationDirectory + frontCoverRelativeURL.slice(3)
 
-	// Shyphenate data
-	let localShyphenMaster =[]
-	try {
-		const data = fs.readFileSync('../_resources/build-data/shyphenMaster.json', 'utf8')
-		localShyphenMaster = JSON.parse(data)
-	} catch (err) {
-		console.error(err);
-	}
-
 	// Build Header
 	html +=`<!DOCTYPE html>
 	<html lang=en-GB>
@@ -844,20 +858,7 @@ function buildBookIndexHTML () {
 				case 'wwc-pali':
 					spans[i].setAttribute('lang','pi')
 					spans[i].removeAttribute ('data-custom-style')
-					//console.log(spans[i].innerText)
-					let allPaliWords = spans[i].innerText.split(' ')
-					let newInnerHTML = ''	
-					for (let j in allPaliWords) {
-						let thisPaliWord = allPaliWords[j]
-						for (let k in localShyphenMaster) {
-							if (thisPaliWord == localShyphenMaster[k].replaceAll('-','')) {
-								thisPaliWord = localShyphenMaster[k].replaceAll('-','&shy;')
-							} 
-						}
-						newInnerHTML += `${thisPaliWord} `
-					}
-					//console.log(newInnerHTML)
-					spans[i].replaceWith(`<span lang='pi'>${newInnerHTML.slice(0, -1)}</span>`) 
+					spans[i].innerHTML = shyphenatePali(spans[i].innerHTML)
 					break
 				case 'wwc-sanskrit':
 					spans[i].setAttribute('lang','sa')
@@ -1436,7 +1437,7 @@ function buildBookIndexHTML () {
 
 		}
 
-		function shyphenFootnotes () {
+/* 		function shyphenFootnotes () {
 			if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'footnotes.json')) {
 				console.log ('Shyphenating pali in footnotes.json')
 				let localFootnotes =``
@@ -1474,7 +1475,7 @@ function buildBookIndexHTML () {
 					console.log (`❎—🛈 NO footnotes.json found in Post Processing to shyphenate pali`)
 			}
 
-		}
+		} */
 
 
 		function buildReferences () {
@@ -1932,7 +1933,7 @@ function buildBookIndexHTML () {
 
 		addDataSesameKeys()
 		buildSCLinksJSON()
-		shyphenFootnotes()
+		//shyphenFootnotes()
 		addNavBarForLists()
 
 /* 		let allspans = indexRoot.querySelectorAll('span')

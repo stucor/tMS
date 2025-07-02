@@ -9,7 +9,7 @@
   },
   {
     "fnNumber": "3",
-    "fnHTML": "<p><span lang='pi'>Mitte</span> <span lang='pi'>vā</span> <span lang='pi'>bhavā</span> <span lang='pi'>mit&shy;tas&shy;sa</span> <span lang='pi'>vā</span> <span lang='pi'>esā</span> <span lang='pi'>pavattī</span> <span lang='pi'>ti</span> <span lang='pi'>pi</span> <span lang='pi'>mettā</span>, <span data-sesame-key='super-blurbs:cnd' class='sesame'><em>Culla Niddesa</em></span> 117.</p>"
+    "fnHTML": "<p><span lang='pi'>Mitte vā bhavā mit&shy;tas&shy;sa vā esā pavattī ti pi mettā</span>, <span data-sesame-key='super-blurbs:cnd' class='sesame'><em>Culla Niddesa</em></span> 117.</p>"
   },
   {
     "fnNumber": "4",
@@ -33,11 +33,11 @@
   },
   {
     "fnNumber": "9",
-    "fnHTML": "<p><span lang='pi'>attānaṁ</span> <span lang='pi'>upamaṁ</span> <span lang='pi'>katvā</span>, <span class='sclinktext'>Dhp&#8239;129</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>attānaṁ upamaṁ katvā</span>, <span class='sclinktext'>Dhp&#8239;129</span>.</p>"
   },
   {
     "fnNumber": "10",
-    "fnHTML": "<p><span lang='pi'>yathā</span> <span lang='pi'>ahaṁ</span> <span lang='pi'>tathā</span> <span lang='pi'>ete</span>, <span lang='pi'>yathā</span> <span lang='pi'>ete</span> <span lang='pi'>tathā</span> <span lang='pi'>ahaṁ</span>, <span class='sclinktext'>Snp&#8239;3.11<span class='scsegments'>:27.1–27.4</span></span> <span class='ptsref'>PTS: Sn.705</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>yathā ahaṁ tathā ete, yathā ete tathā ahaṁ</span>, <span class='sclinktext'>Snp&#8239;3.11<span class='scsegments'>:27.1–27.4</span></span> <span class='ptsref'>PTS: Sn.705</span>.</p>"
   },
   {
     "fnNumber": "11",
@@ -53,7 +53,7 @@
   },
   {
     "fnNumber": "14",
-    "fnHTML": "<p><span lang='pi'>mettena</span> <span lang='pi'>kā&shy;ya&shy;kam&shy;me&shy;na</span>, <span class='sclinktext'>DN&#8239;16<span class='scsegments'>:5.14.5</span></span> <span class='ptsref'>PTS: D.II,144</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>mettena kā&shy;ya&shy;kam&shy;me&shy;na</span>, <span class='sclinktext'>DN&#8239;16<span class='scsegments'>:5.14.5</span></span> <span class='ptsref'>PTS: D.II,144</span>.</p>"
   },
   {
     "fnNumber": "15",
@@ -69,7 +69,7 @@
   },
   {
     "fnNumber": "18",
-    "fnHTML": "<p><a href='https://suttacentral.net/ja542/en/cowell-rouse?reference=main/pts#pts-vp-pli378' class='extlink tipref'>Ja 542</a> <span class='ptsref'>PTS: Ja.VI,378</span>. A Latin epigram says something similar: “<em>Amantium irae amoris integratio est</em>,” “Lovers quarrels are the renewal of love.”</p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/ja542/en/cowell-rouse?reference=main/pts#pts-vp-pli378' class='extlink tipref'>Ja 542</a> <span class='ptsref'>PTS: Ja.VI,378</span>. A Latin epigram says something similar: <span lang='la'>“Amantium irae amoris integratio est,”</span>—“Lovers quarrels are the renewal of love.”</p>"
   },
   {
     "fnNumber": "19",
@@ -161,7 +161,7 @@
   },
   {
     "fnNumber": "41",
-    "fnHTML": "<p><span class='sclinktext'>Snp&#8239;1.7<span class='scsegments'>:13.1–13.4</span></span> <span class='ptsref'>PTS: Sn.125</span>. In ancient times a man had the right to sell his wife and children and sometimes did during famines or when in debt. Buddhists looked upon such things with horror and the <span lang='pi'>Upā&shy;sa&shy;ka&shy;śīla</span> <span lang='pi'>Sūtra</span> (circa 3rd century CE) expressly forbids a man from doing this.</p>"
+    "fnHTML": "<p><span class='sclinktext'>Snp&#8239;1.7<span class='scsegments'>:13.1–13.4</span></span> <span class='ptsref'>PTS: Sn.125</span>. In ancient times a man had the right to sell his wife and children and sometimes did during famines or when in debt. Buddhists looked upon such things with horror and the Upāsakaśīla Sūtra (circa 3rd century CE) expressly forbids a man from doing this.</p>"
   },
   {
     "fnNumber": "42",
@@ -169,7 +169,7 @@
   },
   {
     "fnNumber": "43",
-    "fnHTML": "<p><span lang='pi'>Ajeyyam</span> <span lang='pi'>esā</span> <span lang='pi'>tava</span> <span lang='pi'>hotu</span> <span lang='pi'>mettī</span> <span lang='pi'>bha&shy;ri&shy;yā&shy;ya</span> <span lang='pi'>kaccāna</span> <span lang='pi'>piyāya</span> <span lang='pi'>saddhiṁ</span>, <a href='https://suttacentral.net/ja546/en/cowell-rouse?reference=main/pts#pts-vp-pli323' class='extlink tipref'>Ja 546</a> <span class='ptsref'>PTS: Ja.VI,323</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>Ajeyyam esā tava hotu mettī bha&shy;ri&shy;yā&shy;ya kaccāna piyāya saddhiṁ</span>, <a href='https://suttacentral.net/ja546/en/cowell-rouse?reference=main/pts#pts-vp-pli323' class='extlink tipref'>Ja 546</a> <span class='ptsref'>PTS: Ja.VI,323</span>.</p>"
   },
   {
     "fnNumber": "44",
@@ -177,11 +177,11 @@
   },
   {
     "fnNumber": "45",
-    "fnHTML": "<p><span lang='pi'>sam&shy;pi&shy;yen’eva</span> <span lang='pi'>saṁ&shy;vās&shy;ṁa</span> <span lang='pi'>saṁ&shy;ag&shy;gat&shy;thā&shy;ya</span> <span lang='pi'>sam&shy;pa&shy;vat&shy;ten&shy;ti</span>,<br><span class='sclinktext'>AN&#8239;5.191<span class='scsegments'>:3.1</span></span> <span class='ptsref'>PTS: A.III,222</span>;<br><span class='sclinktext'>Snp&#8239;2.7<span class='scsegments'>:8.1–8.4</span></span> <span class='ptsref'>PTS: Sn.290</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>sam&shy;pi&shy;yen’eva saṁ&shy;vās&shy;ṁa saṁ&shy;ag&shy;gat&shy;thā&shy;ya sam&shy;pa&shy;vat&shy;ten&shy;ti</span>,<br><span class='sclinktext'>AN&#8239;5.191<span class='scsegments'>:3.1</span></span> <span class='ptsref'>PTS: A.III,222</span>;<br><span class='sclinktext'>Snp&#8239;2.7<span class='scsegments'>:8.1–8.4</span></span> <span class='ptsref'>PTS: Sn.290</span>.</p>"
   },
   {
     "fnNumber": "46",
-    "fnHTML": "<p><span lang='pi'>lo&shy;ki&shy;smiṁ</span> <span lang='pi'>hi</span> <span lang='pi'>ap&shy;piya&shy;sam&shy;pay&shy;ogo</span> <span lang='pi'>va</span> <span lang='pi'>dukkho</span>, <a href='https://suttacentral.net/ja223/en/rouse?reference=main/pts#pts-vp-pli205' class='extlink tipref'>Ja 223</a> <span class='ptsref'>PTS: Ja.II,205</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>lo&shy;ki&shy;smiṁ hi ap&shy;piya&shy;sam&shy;pay&shy;ogo va dukkho</span>, <a href='https://suttacentral.net/ja223/en/rouse?reference=main/pts#pts-vp-pli205' class='extlink tipref'>Ja 223</a> <span class='ptsref'>PTS: Ja.II,205</span>.</p>"
   },
   {
     "fnNumber": "47",
@@ -189,15 +189,15 @@
   },
   {
     "fnNumber": "48",
-    "fnHTML": "<p><span lang='pi'>bharyā</span> <span lang='pi'>va</span> <span lang='pi'>paramā</span> <span lang='pi'>sakhā</span>, <span class='sclinktext'>SN&#8239;1.54<span class='scsegments'>:2.2</span></span> <span class='ptsref'>PTS: S.I,37</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>bharyā va paramā sakhā</span>, <span class='sclinktext'>SN&#8239;1.54<span class='scsegments'>:2.2</span></span> <span class='ptsref'>PTS: S.I,37</span>.</p>"
   },
   {
     "fnNumber": "49",
-    "fnHTML": "<p><span lang='pi'>añ&shy;ñamañ&shy;ñam</span> <span lang='pi'>pi&shy;yam&shy;vā&shy;dā</span>, <span class='sclinktext'>AN&#8239;4.53<span class='scsegments'>:10.1–10.4</span></span> <span class='ptsref'>PTS: A.II,59</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>añ&shy;ñamañ&shy;ñam pi&shy;yam&shy;vā&shy;dā</span>, <span class='sclinktext'>AN&#8239;4.53<span class='scsegments'>:10.1–10.4</span></span> <span class='ptsref'>PTS: A.II,59</span>.</p>"
   },
   {
     "fnNumber": "50",
-    "fnHTML": "<p><span lang='pi'>pamo&shy;da&shy;mā&shy;nā</span> <span lang='pi'>eka&shy;cit&shy;tā</span> <span lang='pi'>sam&shy;ag&shy;ga&shy;vā&shy;sam</span>, <a href='https://suttacentral.net/ja194/en/rouse?reference=main/pts#pts-vp-pli122' class='extlink tipref'>Ja 194</a> <span class='ptsref'>PTS: Ja.II,122</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>pamo&shy;da&shy;mā&shy;nā eka&shy;cit&shy;tā sam&shy;ag&shy;ga&shy;vā&shy;sam</span>, <a href='https://suttacentral.net/ja194/en/rouse?reference=main/pts#pts-vp-pli122' class='extlink tipref'>Ja 194</a> <span class='ptsref'>PTS: Ja.II,122</span>.</p>"
   },
   {
     "fnNumber": "51",
@@ -357,7 +357,7 @@
   },
   {
     "fnNumber": "90",
-    "fnHTML": "<p><span lang='pi'>kāyā</span> <span lang='pi'>ekañ</span> <span lang='pi'>ca</span> <span lang='pi'>pana</span> <span lang='pi'>maññe</span> <span lang='pi'>cittaṁ</span>, <span class='sclinktext'>MN&#8239;128<span class='scsegments'>:12.10</span></span> <span class='ptsref'>PTS: M.III,156</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>kāyā ekañ ca pana maññe cittaṁ</span>, <span class='sclinktext'>MN&#8239;128<span class='scsegments'>:12.10</span></span> <span class='ptsref'>PTS: M.III,156</span>.</p>"
   },
   {
     "fnNumber": "91",
@@ -413,11 +413,11 @@
   },
   {
     "fnNumber": "104",
-    "fnHTML": "<p><span lang='pi'>dud&shy;da&shy;daṁ</span> <span lang='pi'>dadāti</span>, <span class='sclinktext'>AN&#8239;3.135</span> <span class='ptsref'>PTS: A.I,286</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>dud&shy;da&shy;daṁ dadāti</span>, <span class='sclinktext'>AN&#8239;3.135</span> <span class='ptsref'>PTS: A.I,286</span>.</p>"
   },
   {
     "fnNumber": "105",
-    "fnHTML": "<p><span lang='pi'>jivitam</span> <span lang='pi'>pi’ssa</span> <span lang='pi'>atthāya</span> <span lang='pi'>paric&shy;cat&shy;taṁ</span> <span lang='pi'>hoti</span>, <span class='sclinktext'>DN&#8239;31<span class='scsegments'>:23.2</span></span> <span class='ptsref'>PTS: D.III,187</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>jivitam pi’ssa atthāya paric&shy;cat&shy;taṁ hoti</span>, <span class='sclinktext'>DN&#8239;31<span class='scsegments'>:23.2</span></span> <span class='ptsref'>PTS: D.III,187</span>.</p>"
   },
   {
     "fnNumber": "106",
@@ -717,7 +717,7 @@
   },
   {
     "fnNumber": "180",
-    "fnHTML": "<p>The term for loving oneself here is <span lang='pi'>attanā</span> <span lang='pi'>pi&shy;ya&shy;ta&shy;ro</span>, <span class='sclinktext'>SN&#8239;3.8</span> <span class='ptsref'>PTS: S.I,75</span>.</p>"
+    "fnHTML": "<p>The term for loving oneself here is <span lang='pi'>attanā pi&shy;ya&shy;ta&shy;ro</span>, <span class='sclinktext'>SN&#8239;3.8</span> <span class='ptsref'>PTS: S.I,75</span>.</p>"
   },
   {
     "fnNumber": "181",
@@ -741,23 +741,23 @@
   },
   {
     "fnNumber": "186",
-    "fnHTML": "<p><span lang='pi'>ettha</span> <span lang='pi'>sitaṁ</span> <span lang='pi'>ettha</span> <span lang='pi'>paṭi&shy;bad&shy;dhaṁ</span>, <span class='sclinktext'>DN&#8239;2<span class='scsegments'>: 83.3–83.4</span></span> <span class='ptsref'>PTS: D.I,76</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>ettha sitaṁ ettha paṭi&shy;bad&shy;dhaṁ</span>, <span class='sclinktext'>DN&#8239;2<span class='scsegments'>: 83.3–83.4</span></span> <span class='ptsref'>PTS: D.I,76</span>.</p>"
   },
   {
     "fnNumber": "187",
-    "fnHTML": "<p><span lang='pi'>pi&shy;ya&shy;ka&shy;ra&shy;ṇā</span> <span lang='pi'>ga&shy;ru&shy;kar&shy;aṇā</span> <span lang='pi'>san&shy;ga&shy;hā&shy;ya</span> <span lang='pi'>avi&shy;vā&shy;dāya</span> <span lang='pi'>sām&shy;ag&shy;giyā</span> <span lang='pi'>ekī&shy;bhā&shy;vāya</span>, e.g.,<br><span class='sclinktext'>AN&#8239;6.12</span> <span class='ptsref'>PTS: A.III,289</span>;<br><span class='sclinktext'>MN&#8239;48<span class='scsegments'>:6.1–6.16</span></span> <span class='ptsref'>PTS: M.I,322</span>;<br><span class='sclinktext'>MN&#8239;104<span class='scsegments'>:21.1–21.15</span></span> <span class='ptsref'>PTS: M.II,250</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>pi&shy;ya&shy;ka&shy;ra&shy;ṇā ga&shy;ru&shy;kar&shy;aṇā san&shy;ga&shy;hā&shy;ya avi&shy;vā&shy;dāya sām&shy;ag&shy;giyā ekī&shy;bhā&shy;vāya</span>, e.g.,<br><span class='sclinktext'>AN&#8239;6.12</span> <span class='ptsref'>PTS: A.III,289</span>;<br><span class='sclinktext'>MN&#8239;48<span class='scsegments'>:6.1–6.16</span></span> <span class='ptsref'>PTS: M.I,322</span>;<br><span class='sclinktext'>MN&#8239;104<span class='scsegments'>:21.1–21.15</span></span> <span class='ptsref'>PTS: M.II,250</span>.</p>"
   },
   {
     "fnNumber": "188",
-    "fnHTML": "<p><span lang='pi'>añ&shy;ñamañ&shy;ñaṁ</span> <span lang='pi'>muk&shy;ha&shy;sat&shy;tī&shy;hi</span> <span lang='pi'>vi&shy;tu&shy;dan&shy;tā</span>, <span class='sclinktext'>MN&#8239;48<span class='scsegments'>: 2.1</span></span> <span class='ptsref'>PTS: M.I,320</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>añ&shy;ñamañ&shy;ñaṁ muk&shy;ha&shy;sat&shy;tī&shy;hi vi&shy;tu&shy;dan&shy;tā</span>, <span class='sclinktext'>MN&#8239;48<span class='scsegments'>: 2.1</span></span> <span class='ptsref'>PTS: M.I,320</span>.</p>"
   },
   {
     "fnNumber": "189",
-    "fnHTML": "<p><span lang='pi'>nelā</span> <span lang='pi'>kaṇṇa</span> <span lang='pi'>sukhā</span> <span lang='pi'>pe&shy;man&shy;īyā</span> <span lang='pi'>hadayaṁ</span> <span lang='pi'>gamā</span> and <span lang='pi'>ni&shy;dhā&shy;na&shy;vat&shy;iṁ</span>, <span class='sclinktext'>DN&#8239;1<span class='scsegments'>:1.9.5</span></span> <span class='ptsref'>PTS: D.I,4</span>.</p>"
+    "fnHTML": "<p><span lang='pi'>nelā kaṇṇa sukhā pe&shy;man&shy;īyā hadayaṁ gamā</span> and <span lang='pi'>ni&shy;dhā&shy;na&shy;vat&shy;iṁ</span>, <span class='sclinktext'>DN&#8239;1<span class='scsegments'>:1.9.5, 1.9.7</span></span> <span class='ptsref'>PTS: D.I,4</span>.</p>"
   },
   {
     "fnNumber": "190",
-    "fnHTML": "<p>The others bases of community (<span lang='pi'>saṅgaha</span> <span lang='pi'>vatthū</span>) are generosity (<span lang='pi'>dāna</span>), doing good to others (<span lang='pi'>at&shy;tha&shy;cari&shy;yā</span>) and treating them impartially (<span lang='pi'>sam&shy;ān&shy;at&shy;ta&shy;tā</span>); see<br><span class='sclinktext'>AN&#8239;4.32</span> <span class='ptsref'>PTS: A.II,32</span>;<br><span class='sclinktext'>AN&#8239;8.24</span> <span class='ptsref'>PTS: A.IV,219</span>;<br><span class='sclinktext'>AN&#8239;9.5<span class='scsegments'>:4.1–4.9</span></span> <span class='ptsref'>PTS: A.IV,364</span>;<br><span class='sclinktext'>DN&#8239;30<span class='scsegments'>:1.16.2</span></span> <span class='ptsref'>PTS: D.III,152</span>.</p>"
+    "fnHTML": "<p>The others bases of community (<span lang='pi'>saṅgaha vatthū</span>) are generosity (<span lang='pi'>dāna</span>), doing good to others (<span lang='pi'>at&shy;tha&shy;cari&shy;yā</span>) and treating them impartially (<span lang='pi'>sam&shy;ān&shy;at&shy;ta&shy;tā</span>); see<br><span class='sclinktext'>AN&#8239;4.32</span> <span class='ptsref'>PTS: A.II,32</span>;<br><span class='sclinktext'>AN&#8239;8.24</span> <span class='ptsref'>PTS: A.IV,219</span>;<br><span class='sclinktext'>AN&#8239;9.5<span class='scsegments'>:4.1–4.9</span></span> <span class='ptsref'>PTS: A.IV,364</span>;<br><span class='sclinktext'>DN&#8239;30<span class='scsegments'>:1.16.2</span></span> <span class='ptsref'>PTS: D.III,152</span>.</p>"
   },
   {
     "fnNumber": "191",

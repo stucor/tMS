@@ -2,7 +2,8 @@ const fs = require('fs')
 const { parse } = require('node-html-parser');
 
 const wordLength = 7
-const allBookIds =  ["afcm","bcbl","bmom","doab","journey","milk","outk","sitm","ssbl","vasy","wosb"]
+//const allBookIds =  ["afcm","bcbl","bmom","doab","journey","milk","outk","sitm","ssbl","vasy","wosb"]
+const allBookIds =  ["journey"]
 
 function uniq(a) {
     return a.sort().filter(function(item, pos, ary) {
@@ -20,14 +21,23 @@ function pushPali (bookID) {
     }
     let allPalis = bookRoot.querySelectorAll("span[data-custom-style='wwc-pali']")
     for (let i in allPalis) {
-        if (allPalis[i].innerText.length > wordLength ) {
-            paliWords.push (allPalis[i].innerText)//.replaceAll('­',''))
+        //console.log(allPalis[i].innerText)
+        let allPaliWords = allPalis[i].innerHTML.replaceAll('\r\n','').replaceAll('<br>',' ').split(' ')
+        for (let j in allPaliWords) {
+            let thisPaliWord = allPaliWords[j]
+            if(['.','?',',',';',':','…','!'].indexOf(thisPaliWord.slice(-1)) > -1) {
+                thisPaliWord = thisPaliWord.slice(0, -1)
+            }
+            if('‘' == Array.from(thisPaliWord)[0]) {
+                thisPaliWord = thisPaliWord.slice(1)
+            }
+            if (thisPaliWord.length > wordLength) {
+                paliWords.push(thisPaliWord)
+            }
         }
-/*         if (allPalis[i].innerText.slice(0,4) == 'pacc') {
-            console.log(`${allPalis[i].innerText} :: ${bookID}`)
-        } */
     }
 }
+
 
 let paliWords = []
 
@@ -67,12 +77,19 @@ for (let i in uniquePaliWords) {
     }
     if (!uniquePaliWords[i].includes('-')) {
         console.log (`❎— 🛈 Word not yet hyphenated: ${uniquePaliWords[i]}`)
-
+    } else {
+        let wordArr = uniquePaliWords[i].split('-')
+        for (let j in wordArr) {
+            if (wordArr[j].length > wordLength) {
+                console.log(`❎— 🛈 Pre-hyphenated word requires further hyphenation at ${wordArr[j]}: ${uniquePaliWords[i]}`)
+            }
+        }
     }
 }
 localJSON += `]`
+//console.log(localJSON)
 
-fs.writeFileSync(('../_resources/build-data/shyphenMaster.json'), localJSON, 'utf8')
+//fs.writeFileSync(('../_resources/build-data/shyphenMaster.json'), localJSON, 'utf8')
 
 
 

@@ -3,6 +3,7 @@ node tMSBookBuilder.js bcbl
 node tMSBookBuilder.js bmom
 node tMSBookBuilder.js dlbl
 node tMSBookBuilder.js doab
+node tMSBookBuilder.js dobl
 node tMSBookBuilder.js footprints
 node tMSBookBuilder.js journey
 node tMSBookBuilder.js milk

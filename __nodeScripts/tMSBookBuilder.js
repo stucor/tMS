@@ -77,7 +77,7 @@ let footnotesExist = true;
 
 			//console.log(thisPaliWord)
 			let punctuationMark = ''
-			if(['~','.','?',',',';',':','…','!'].indexOf(thisPaliWord.slice(-1)) > -1) {
+			if(['~','.','?',',',';',':','…','!','’'].indexOf(thisPaliWord.slice(-1)) > -1) {
 				punctuationMark = thisPaliWord.slice(-1)
 				thisPaliWord = thisPaliWord.slice(0, -1)
 				//console.log(thisPaliWord)

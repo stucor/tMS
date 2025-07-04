@@ -2,8 +2,8 @@ const fs = require('fs')
 const { parse } = require('node-html-parser');
 
 const wordLength = 7
-//const allBookIds =  ["afcm","bcbl","bmom","doab","journey","milk","outk","sitm","ssbl","vasy","wosb"]
-const allBookIds =  ["journey"]
+//const allBookIds =  ["afcm","bcbl","bmom","dlbl","doab","dobl","footprints","journey","milk","niknib","outk","sitm","ssbl","vasy","wosb"]
+const allBookIds =  ["niknib"]
 
 function uniq(a) {
     return a.sort().filter(function(item, pos, ary) {
@@ -25,15 +25,26 @@ function pushPali (bookID) {
         let allPaliWords = allPalis[i].innerHTML.replaceAll('\r\n','').replaceAll('<br>',' ').split(' ')
         for (let j in allPaliWords) {
             let thisPaliWord = allPaliWords[j]
-            if(['.','?',',',';',':','…','!'].indexOf(thisPaliWord.slice(-1)) > -1) {
+            if(['.','?',',',';',':','…','!','’'].indexOf(thisPaliWord.slice(-1)) > -1) {
                 thisPaliWord = thisPaliWord.slice(0, -1)
             }
             if('‘' == Array.from(thisPaliWord)[0]) {
                 thisPaliWord = thisPaliWord.slice(1)
             }
-            if (thisPaliWord.length > wordLength) {
-                paliWords.push(thisPaliWord)
+
+            let multiPaliWord = thisPaliWord.split('/')
+            if (multiPaliWord.length > 1) {
+                for (let k in multiPaliWord) {
+                    if (multiPaliWord[k].length > wordLength) {
+                        paliWords.push(multiPaliWord[k])
+                    }
+                }
+            } else {
+                if (thisPaliWord.length > wordLength) {
+                    paliWords.push(thisPaliWord)
+                }
             }
+
         }
     }
 }

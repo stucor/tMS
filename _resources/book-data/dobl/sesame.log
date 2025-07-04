@@ -1,0 +1,18 @@
+Fri Jul 04 2025 14:09:25 GMT+0100 (British Summer Time)
+Please check the following entries.
+Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
+build-data/sesameMaster.json and tMSBookBuilder.js should be run again for dobl
+[
+{
+	"sesame": "Dīgha Nikāya",
+	"key": "super-blurbs:dn"
+},
+{
+	"sesame": "Mahānidāna Suttanta",
+	"key": "dn-blurbs:dn15"
+},
+{
+	"sesame": "Saṁyutta Nikāya",
+	"key": "super-blurbs:sn"
+}
+]

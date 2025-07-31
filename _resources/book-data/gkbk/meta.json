@@ -1,0 +1,16 @@
+{
+			"Authors" : ["sdhammika"],
+			"BookTitle" : "Good Kamma! Bad Kamma! What Exactly is Kamma?",
+			"BookSubtitle" : "",
+			"ShortAbstract" : "<p>Bhante S. Dhammika deals with <span lang='pi'>kamma</span> and its related doctrine of rebirth exclusively as they were explained by the Siddhattha Gotama, known to history as the Buddha and the founder of the religion called Buddhism.</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "document",
+			"AddInfo"   : [],
+			"Copyright" : ["Copyright © 2015 Bhante S. Dhammika","Originally published in 2015.","This edition published in 2025.","56pp (in pdf format)."],
+			"CCLicense": "BY-NC-ND 4.0",
+			"FrontCover": "../_resources/book-data/gkbk/FrontLarge.jpg",
+			"BackCover": "",
+			"BackMatter": [""],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": ""
+		}

@@ -88,6 +88,10 @@
     "key": "wp:Brihadaranyaka_Upanishad"
   },
   {
+    "sesame": "Bṛhadāraṇyaka",
+    "key": "wp:Brihadaranyaka_Upanishad"
+  },
+  {
     "sesame": "Chinese Āgamas",
     "key": "super-blurbs:sutta"
   },
@@ -348,6 +352,10 @@
     "key": "mn-blurbs:mn120"
   },
   {
+    "sesame": "Satapatha Brāhmaṇa",
+    "key": "wp:Shatapatha_Brahmana"
+  },
+  {
     "sesame": "Sineru",
     "key": "DPPN:sineru"
   },
@@ -462,5 +470,9 @@
   {
     "sesame": "Ātman",
     "key": "wp:Ātman_(Hinduism)"
+  },
+  {
+    "sesame": "Pāḷi Tipiṭaka",
+    "key": "wp:Pali_Canon"
   }
 ]

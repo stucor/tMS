@@ -1,0 +1,162 @@
+Thu Jul 31 2025 15:45:19 GMT+0100 (British Summer Time)
+Please check the following entries.
+Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
+build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
+[
+{
+	"sesame": "Abhidhamma",
+	"key": "super-blurbs:abhidhamma"
+},
+{
+	"sesame": "Abhidhammattha Saṅgaha",
+	"key": "wp:Abhidhammattha_sangaha"
+},
+{
+	"sesame": "Abhidharmakośabhāsya",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Atthasālinī",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bṛhadāraṇyaka",
+	"key": "wp:Brihadaranyaka_Upanishad"
+},
+{
+	"sesame": "Bṛhadāraṇyaka Upanisad",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Carvaka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Chāndogya",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Chāndogya Upaniṣad",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Cūḷa Kammavibaṅgha Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Devadaha Sutta",
+	"key": "mn-blurbs:mn101"
+},
+{
+	"sesame": "Dhammapada Atthakathā",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dhammapada Aṭṭhakathā",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Fo Shuo San-shi Yinguo Jing",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Jātaka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Jātakas",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Kammavibhaṅga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Kauṣītaki",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Kauṣītaki Upaniṣad",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Kaṭha Upaniṣad",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Kumārajīva",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Lakkhaṇa Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahāvaṁsa Ṭīkā",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Makkhali Gosala",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Milindapañha",
+	"key": "super-blurbs:mil"
+},
+{
+	"sesame": "Petavatthu",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Pāḷi Tipiṭaka",
+	"key": "wp:Pali_Canon"
+},
+{
+	"sesame": "Samaññaphala Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Satapatha Brāhmaṇa",
+	"key": "wp:Shatapatha_Brahmana"
+},
+{
+	"sesame": "Sivaka Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sutta Nipāta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Taittirīya Upaniṣad",
+	"key": "wp:Taittiriya_Upanishad"
+},
+{
+	"sesame": "Tipiṭaka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Upaniṣads",
+	"key": "wp:Upanishads"
+},
+{
+	"sesame": "Vimānavatthu",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Vism.",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Visuddhimagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Visudhimagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Yājnavalkya",
+	"key": "XXXXXXXXXXXXXXXX"
+}
+]

@@ -24,10 +24,6 @@
     "bookref": "Dawkins 2006"
   },
   {
-    "zotref": "",
-    "bookref": "Dharmaśāstras"
-  },
-  {
     "zotref": "DucasseC 1961a",
     "bookref": "Ducasse 1961"
   },
@@ -99,6 +95,10 @@
     "zotref": "McTaggartJ 1916a",
     "bookref": "McTaggart 1916"
   },
+    {
+    "zotref": "OlivelleP 1998a",
+    "bookref": "Olivelle 1998"
+  },
   {
     "zotref": "OnkomS 1999a",
     "bookref": "Onkom 1994"
@@ -154,9 +154,5 @@
   {
     "zotref": "",
     "bookref": "Śs."
-  },
-  {
-    "zotref": "",
-    "bookref": "Śvetāsvatara Upaniṣad"
   }
 ]

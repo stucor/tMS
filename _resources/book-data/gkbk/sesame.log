@@ -1,4 +1,4 @@
-Thu Jul 31 2025 15:45:19 GMT+0100 (British Summer Time)
+Fri Aug 01 2025 13:14:10 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
@@ -21,11 +21,11 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Bṛhadāraṇyaka",
-	"key": "wp:Brihadaranyaka_Upanishad"
+	"key": "wp:Brihadaranyaka_Upanishad:OlivelleP 1998a"
 },
 {
-	"sesame": "Bṛhadāraṇyaka Upanisad",
-	"key": "XXXXXXXXXXXXXXXX"
+	"sesame": "Bṛhadāraṇyaka Upaniṣad",
+	"key": "wp:Brihadaranyaka_Upanishad:OlivelleP 1998a"
 },
 {
 	"sesame": "Carvaka",
@@ -33,11 +33,11 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Chāndogya",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Chandogya_Upanishad:OlivelleP 1998a"
 },
 {
 	"sesame": "Chāndogya Upaniṣad",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Chandogya_Upanishad:OlivelleP 1998a"
 },
 {
 	"sesame": "Cūḷa Kammavibaṅgha Sutta",
@@ -54,6 +54,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 {
 	"sesame": "Dhammapada Aṭṭhakathā",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dharmaśāstras",
+	"key": "wp:Dharmaśāstra"
 },
 {
 	"sesame": "Fo Shuo San-shi Yinguo Jing",
@@ -73,15 +77,15 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Kauṣītaki",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Kaushitaki_Upanishad:OlivelleP 1998a"
 },
 {
 	"sesame": "Kauṣītaki Upaniṣad",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Kaushitaki_Upanishad:OlivelleP 1998a"
 },
 {
 	"sesame": "Kaṭha Upaniṣad",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Katha_Upanishad:OlivelleP 1998a"
 },
 {
 	"sesame": "Kumārajīva",
@@ -96,8 +100,12 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Mahāvīra",
+	"key": "DPPN:nigaṇṭha nāṭaputta"
+},
+{
 	"sesame": "Makkhali Gosala",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "DPPN:makkhali"
 },
 {
 	"sesame": "Milindapañha",
@@ -108,12 +116,16 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Pāyāsi",
+	"key": "DPPN:pāyāsi"
+},
+{
 	"sesame": "Pāḷi Tipiṭaka",
 	"key": "wp:Pali_Canon"
 },
 {
 	"sesame": "Samaññaphala Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn2"
 },
 {
 	"sesame": "Satapatha Brāhmaṇa",
@@ -157,6 +169,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Yājnavalkya",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Yajnavalkya"
+},
+{
+	"sesame": "Śvetāsvatara Upaniṣad",
+	"key": "wp:Shvetashvatara_Upanishad:OlivelleP 1998a"
 }
 ]

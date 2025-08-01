@@ -85,11 +85,11 @@
   },
   {
     "sesame": "Bṛhadāraṇyaka Upaniṣad",
-    "key": "wp:Brihadaranyaka_Upanishad"
+    "key": "wp:Brihadaranyaka_Upanishad:OlivelleP 1998a"
   },
   {
     "sesame": "Bṛhadāraṇyaka",
-    "key": "wp:Brihadaranyaka_Upanishad"
+    "key": "wp:Brihadaranyaka_Upanishad:OlivelleP 1998a"
   },
   {
     "sesame": "Chinese Āgamas",
@@ -474,5 +474,54 @@
   {
     "sesame": "Pāḷi Tipiṭaka",
     "key": "wp:Pali_Canon"
-  }
+  },
+{
+	"sesame": "Chāndogya",
+	"key": "wp:Chandogya_Upanishad:OlivelleP 1998a"
+},
+{
+	"sesame": "Chāndogya Upaniṣad",
+	"key": "wp:Chandogya_Upanishad:OlivelleP 1998a"
+},
+{
+	"sesame": "Kauṣītaki",
+	"key": "wp:Kaushitaki_Upanishad:OlivelleP 1998a"
+},
+{
+	"sesame": "Kauṣītaki Upaniṣad",
+	"key": "wp:Kaushitaki_Upanishad:OlivelleP 1998a"
+},
+{
+	"sesame": "Yājnavalkya",
+	"key": "wp:Yajnavalkya"
+},
+{
+	"sesame": "Kaṭha Upaniṣad",
+	"key": "wp:Katha_Upanishad:OlivelleP 1998a"
+},
+{
+	"sesame": "Samaññaphala Sutta",
+	"key": "dn-blurbs:dn2"
+},
+{
+	"sesame": "Makkhali Gosala",
+	"key": "DPPN:makkhali"
+}
+,
+{
+	"sesame": "Pāyāsi",
+	"key": "DPPN:pāyāsi"
+},
+{
+	"sesame": "Mahāvīra",
+	"key": "DPPN:nigaṇṭha nāṭaputta"
+},
+{
+	"sesame": "Śvetāsvatara Upaniṣad",
+	"key": "wp:Shvetashvatara_Upanishad:OlivelleP 1998a"
+},
+{
+	"sesame": "Dharmaśāstras",
+	"key": "wp:Dharmaśāstra"
+}
 ]

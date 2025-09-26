@@ -955,7 +955,7 @@ dd > p {
 span.sesame {
 	border-bottom: dotted thin rgba(100, 148, 237, 0.747);
 	cursor:pointer;
-	background:lightcyan;
+	background:rgba(255, 224, 252, 0.274);
 }
 
 /* [data-sesame-key^='zotref:']{
@@ -1149,6 +1149,9 @@ dd > ol > li {
 .bibSeg > span {
 	color: cornflowerblue;
 	cursor: pointer;
+}
+.zotRefInaSesame {
+	text-align: left;
 }
 
 .zotRefInaSesame > .title {

@@ -36,6 +36,10 @@
     "key": "sn-blurbs:sn43"
   },
   {
+	  "sesame": "Atthasālinī",
+	  "key": "wp:Atthasālinī:PeMaungTin1920a"
+  },
+  {
     "sesame": "Avalokiteśvara",
     "key": "wp:Avalokiteśvara"
   },
@@ -102,6 +106,10 @@
   {
     "sesame": "Culla Niddesa",
     "key": "super-blurbs:cnd"
+  },
+  {
+    "sesame": "Cūḷa Kammavibaṅgha Sutta",
+    "key": "mn-blurbs:mn135"
   },
   {
     "sesame": "Cūlavaṁsa",
@@ -506,8 +514,7 @@
 {
 	"sesame": "Makkhali Gosala",
 	"key": "DPPN:makkhali"
-}
-,
+},
 {
 	"sesame": "Pāyāsi",
 	"key": "DPPN:pāyāsi"

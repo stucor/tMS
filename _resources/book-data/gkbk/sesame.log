@@ -1,4 +1,4 @@
-Fri Sep 26 2025 10:15:55 GMT+0100 (British Summer Time)
+Mon Sep 29 2025 10:14:03 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
@@ -93,7 +93,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Lakkhaṇa Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn30"
 },
 {
 	"sesame": "Mahāvaṁsa Ṭīkā",

@@ -249,7 +249,8 @@ p:has(> .sc-mark), p:has(> span.verse-line > .sc-mark) {
   background-color: var(--bdtexthighlighter);
   box-shadow: 1px 1px 3px 1px var(--bdtexthighlightborder);
   padding: 0.5em;
-  border-radius: 1em;
+  margin: 0.5em -0.5em !important;
+  border-radius: 0.1em;
 }
 /* 
 p:has(> span.verse-line > .sc-mark) {
@@ -327,6 +328,10 @@ p:has(> span.verse-line > .sc-mark) {
       right: 10px;
     }
 
+  p:has(> .sc-mark), p:has(> span.verse-line > .sc-mark) {
+    background-color: var(--bdtexthighlighter);
+    box-shadow: none;
+  }
 
   #messagecontainer {
     font-size: 0.8em;

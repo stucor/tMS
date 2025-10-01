@@ -1,4 +1,4 @@
-Tue Sep 30 2025 11:44:17 GMT+0100 (British Summer Time)
+Wed Oct 01 2025 12:56:34 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
@@ -13,7 +13,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Abhidharmakośabhāsya",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Abhidharmakośa-bhāsya"
 },
 {
 	"sesame": "Atthasālinī",
@@ -96,10 +96,6 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 	"key": "dn-blurbs:dn30"
 },
 {
-	"sesame": "Mahāvaṁsa Ṭīkā",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
 	"sesame": "Mahāvīra",
 	"key": "DPPN:nigaṇṭha nāṭaputta"
 },
@@ -157,15 +153,11 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Vism.",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Visuddhimagga:Ñanamoli 1956a"
 },
 {
 	"sesame": "Visuddhimagga",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Visudhimagga",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Visuddhimagga:Ñanamoli 1956a"
 },
 {
 	"sesame": "Yājnavalkya",

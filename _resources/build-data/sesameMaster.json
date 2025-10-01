@@ -444,6 +444,14 @@
     "key": "wp:Visuddhimagga:Ñanamoli 1956a"
   },
   {
+    "sesame": "Vism.",
+    "key": "wp:Visuddhimagga:Ñanamoli 1956a"
+  },
+  {
+    "sesame": "Visuddhimagga",
+    "key": "wp:Visuddhimagga:Ñanamoli 1956a"
+  },
+  {
     "sesame": "Xuanzang",
     "key": "wp:Xuanzang"
   },
@@ -534,5 +542,9 @@
 {
 	"sesame": "Dharmaśāstras",
 	"key": "wp:Dharmaśāstra"
+},
+{
+	"sesame": "Abhidharmakośabhāsya",
+	"key": "wp:Abhidharmakośa-bhāsya"
 }
 ]

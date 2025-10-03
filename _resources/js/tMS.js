@@ -2626,7 +2626,35 @@ function toggleSesame (el) {
 						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 					});
 
-				} else 
+				} else
+
+				if (sesameKeyArr[0] == 'wiswo') {
+					let fetchPath = `../_resources/sesame-data/wiswo/${sesameKeyArr[1]}.json`
+
+					function populateSesame (entryData) {
+						let biblio = ''
+						if (entryData.citationKey) {biblio = decodeZotref(entryData.citationKey)}
+						let sourceHTML = `source: <span class='extlink'><a href = '${entryData.siteURL}'>${entryData.site}</a></span>`
+						let entryHTML =`<h3>${entryData.termRoot} (${entryData.abbr})<br>${entryData.termEng}<br>${entryData.type}</h3><p>${entryData.textTitle}</p>${sourceHTML}<hr>${entryData.text}<br><div class="tight-right-cite">${entryData.textAuthor}<br>${entryData.textDate}</div>${biblio}`
+						el.insertAdjacentHTML("afterend", `<div class=opensesame>${entryHTML}</div>`);
+						el.classList.add('closebutton') 
+					}
+
+
+					await fetch(fetchPath)
+					.then(response => response.json())
+					.then (data => populateSesame(data))
+					.catch(error => {
+						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+					});
+
+
+				} else
+
+
+
+
+
 				if (sesameKeyArr[0] == `bodhi-nikaya-notes`) {
 					let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}/${sesameKeyArr[1]}.json`
 

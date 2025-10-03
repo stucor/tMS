@@ -1,4 +1,4 @@
-Wed Oct 01 2025 12:56:34 GMT+0100 (British Summer Time)
+Fri Oct 03 2025 11:26:46 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
@@ -48,20 +48,12 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 	"key": "mn-blurbs:mn101"
 },
 {
-	"sesame": "Dhammapada Atthakathā",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
 	"sesame": "Dhammapada Aṭṭhakathā",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wiswo:dhpa"
 },
 {
 	"sesame": "Dharmaśāstras",
 	"key": "wp:Dharmaśāstra"
-},
-{
-	"sesame": "Fo Shuo San-shi Yinguo Jing",
-	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Jātaka",
@@ -73,7 +65,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Kammavibhaṅga",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wiswo:karmavibhaṅga"
 },
 {
 	"sesame": "Kauṣītaki",
@@ -89,7 +81,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Kumārajīva",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Kumārajīva"
 },
 {
 	"sesame": "Lakkhaṇa Sutta",
@@ -109,7 +101,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Petavatthu",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:pv"
 },
 {
 	"sesame": "Pāyāsi",
@@ -149,7 +141,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for gkbk
 },
 {
 	"sesame": "Vimānavatthu",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:vv"
 },
 {
 	"sesame": "Vism.",

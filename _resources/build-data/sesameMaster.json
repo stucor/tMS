@@ -546,5 +546,25 @@
 {
 	"sesame": "Abhidharmakośabhāsya",
 	"key": "wp:Abhidharmakośa-bhāsya"
+},
+{
+	"sesame": "Vimānavatthu",
+	"key": "super-blurbs:vv"
+},
+{
+	"sesame": "Petavatthu",
+	"key": "super-blurbs:pv"
+},
+{
+	"sesame": "Dhammapada Aṭṭhakathā",
+	"key": "wiswo:dhpa"
+},
+{
+	"sesame": "Kammavibhaṅga",
+	"key": "wiswo:karmavibhaṅga"
+},
+{
+	"sesame": "Kumārajīva",
+	"key": "wp:Kumārajīva"
 }
 ]

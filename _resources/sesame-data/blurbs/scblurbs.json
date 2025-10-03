@@ -287,6 +287,13 @@
     "type": "branch"
   },
   {
+    "suttaRef": "pv",
+    "rootTitle": "Petavatthu",
+    "transTitle": "Stories of Hungry Ghosts ",
+    "blurb": "The Stories of Hungry Ghosts” contains fifty-one stories in verse that illustrate rebirth as a hungry ghost as a result of bad deeds. It is a counterpart to the Vimānavatthu. These are late devotional and moralistic texts with no direct counterparts in other collections.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "san-lo-mvu",
     "rootTitle": "Mahāvastu",
     "transTitle": "The Great Story ",
@@ -439,5 +446,12 @@
     "transTitle": "Basket of Monastic Law ",
     "blurb": "The texts on Monastic Law (vinaya) detail the lifestyle, rules, and procedures for Buddhist monks and nuns. They provide the guidelines for Buddhist monastics to this day, and in addition, paint a detailed and vivid picture of everyday life in ancient India.",
     "type": "root"
+  },
+  {
+    "suttaRef": "vv",
+    "rootTitle": "Vimānavatthu",
+    "transTitle": "Stories of Heavenly Mansions ",
+    "blurb": "The “Stories of Celestial Mansions” contains eighty-five stories in verse that illustrate the heavenly rewards of virtuous deeds, especially making offerings to the Buddha or the Saṅgha. It is a counterpart to the Petavatthu. These are late devotional texts with no direct counterparts in other collections.",
+    "type": "branch"
   }
 ]

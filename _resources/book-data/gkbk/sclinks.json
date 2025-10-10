@@ -397,39 +397,39 @@
   },
   {
     "sclinkHTML": "<span class=\"sclinktext\">DN&#8239;2<span class='scsegments'>:83.1</span></span>",
-    "location": "seg-434"
+    "location": "seg-435"
   },
   {
     "sclinkHTML": "<span class=\"sclinktext\">SN&#8239;12.46</span>",
-    "location": "seg-443"
+    "location": "seg-444"
   },
   {
     "sclinkHTML": "<span class=\"sclinktext\">AN&#8239;6.12</span>",
-    "location": "seg-447"
+    "location": "seg-448"
   },
   {
     "sclinkHTML": "<span class=\"sclinktext\">MN&#8239;15<span class='scsegments'>:6.1–6.4</span></span>",
-    "location": "seg-450"
+    "location": "seg-451"
   },
   {
     "sclinkHTML": "<span class=\"sclinktext\">Snp&#8239;3.11<span class='scsegments'>:27.1–27.4</span></span>",
-    "location": "seg-453"
-  },
-  {
-    "sclinkHTML": "<span class=\"sclinktext\">AN&#8239;3.18</span>",
     "location": "seg-454"
   },
   {
+    "sclinkHTML": "<span class=\"sclinktext\">AN&#8239;3.18</span>",
+    "location": "seg-455"
+  },
+  {
     "sclinkHTML": "<span class=\"sclinktext\">MN&#8239;101</span>",
-    "location": "seg-465"
+    "location": "seg-466"
   },
   {
     "sclinkHTML": "<span class=\"sclinktext\">AN&#8239;3.61</span>",
-    "location": "seg-465"
+    "location": "seg-466"
   },
   {
     "sclinkHTML": "<span class=\"sclinktext\">SN&#8239;36.21<span class='scsegments'>:3.1–3.15</span></span>",
-    "location": "seg-465"
+    "location": "seg-466"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;1.268-277</span>",

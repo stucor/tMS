@@ -1003,29 +1003,20 @@ function buildBookIndexHTML () {
 							} else {
 								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart' `)
 							}
-						} else {
+						} else 
+						if (allPs[apj].innerHTML.charAt(0)== '‘') {
+							if (apj > 0) {
+								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAbody-little' `)
+							} else {
+								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart-little' `)
+							}
+						} else	
+						{
 							newHTML += allPs[apj].outerHTML
 						}
 					}
 					allDivs[i].innerHTML = newHTML
 				}
-				
-				//OAstart class
-	/* 			let newHTML = ''
-				let blockquoteRoot = parse(allDivs[i].innerHTML);
-				let allPs = blockquoteRoot.querySelectorAll('p')
-				for (let apj = 0; apj < allPs.length; apj++ ) {
-					if (allPs[apj].innerHTML.charAt(0)== '“') {
-						if (apj > 0) {
-							newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAbody' `)
-						} else {
-							newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart' `)
-						}
-					} else {
-						newHTML += allPs[apj].outerHTML
-					}
-				}
-				allDivs[i].innerHTML = newHTML */
 			} else
 			// CAPTIONS -- Used in conjuction with IMAGE TABLE
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-caption-centered-sans"){

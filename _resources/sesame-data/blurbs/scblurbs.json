@@ -126,6 +126,13 @@
     "type": "branch"
   },
   {
+    "suttaRef": "ja",
+    "rootTitle": "Jātaka",
+    "transTitle": "Past Life Stories of the Buddha ",
+    "blurb": "A collection of 547 sets of verses telling stories of the Buddha’s past lives. The canonical Pali collection consists of verses arranged in numbered sets in the Aṅguttara fashion. The shorter sets illustrate a high point of a story, while the longer sets tell a complete story. These verses would have been passed down from the beginning with prose narrative to flesh out the story, which in the Pali is now found in the commentary. It is in the commentary that we find the explicit connection between the stories of the past and the present day, identifying the hero of the tale with the <i lang='pi' translate='no'>bodhisattva</i> and the major protagonists with the Buddha’s contemporaries. This collection is the main source of Jātakas, but there are many similar stories found elsewhere in the Pali canon (a few in the four <i lang='pi' translate='no'>nikāyas</i>, others in the Cariyapiṭaka) and throughout the Chinese, Tibetan, and Sanskrit texts. Most of the Jātakas began life as folk tales or myths, drops from the vast ocean of story in oral culture. Several Jātakas record versions of famous Hindu myths, while others share a common basis with European folk tales. The verse forms in the Jātakas are mostly of the earlier kinds, and the social and political reflect historical realities in the centuries before the Buddha, where, for example, Varanasi was an independent kingdom. The Jātakas are the oldest, largest, and best-preserved collection of ancient stories found anywhere in the world. One of the central themes is renunciation, with multiple stories depicting the hero going-forth from the home, each time from a different perspective. Jātakas generally illustrate moral messages, but since the hero is supposed to be imperfect, it is not unusual for him to be portrayed as making dubious choices, even breaking precepts. Taken as a whole, the Jātaka literature is a vast tapestry of story illustrating the twisting and uncertain path to Awakening. The Jātaka genre proved a popular and effective framework for incorporating popular tales into a Buddhist context. They feature prominently in Buddhist art both ancient and modern, and are a primary means of introducing Buddhism to children in modern Theravāda.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "ja12",
     "rootTitle": "Nigrodhamigajātaka",
     "transTitle": "The Banyan Deer ",

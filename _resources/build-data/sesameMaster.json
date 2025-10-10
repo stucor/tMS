@@ -376,6 +376,10 @@
     "key": "super-blurbs:snp"
   },
   {
+    "sesame": "Sutta Nipāta",
+    "key": "super-blurbs:snp"
+  },
+  {
     "sesame": "Sutta Piṭaka",
     "key": "super-blurbs:sutta"
   },
@@ -566,5 +570,17 @@
 {
 	"sesame": "Kumārajīva",
 	"key": "wp:Kumārajīva"
+},
+{
+	"sesame": "Carvaka",
+	"key": "wp:Charvaka"
+},
+{
+	"sesame": "Jātaka",
+	"key": "super-blurbs:ja"
+},
+{
+	"sesame": "Jātakas",
+	"key": "super-blurbs:ja"
 }
 ]

@@ -131,7 +131,7 @@ function buildSettings (_callback) {
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showtMSIndexCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
-				<span class ="settingsheadersleft">Full Screen Mode:</span>
+				<span class ="settingsheadersleft">hide menus on scroll:</span>
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="mobileUIAlwaysOnCheck"><span class="slider round"></span></label></span>
 			</div>
 		`;
@@ -1727,7 +1727,12 @@ window.onscroll = function() {
 	getNavTarget();
 	savePlaceInBook();
 	//populate the tMSIndex counter
-	segCount.innerHTML =  `${savedBookElements[theTopElement].id.replace('seg-','§')}`
+	if (savedBookElements[theTopElement].id != '999999999') {
+		segCount.innerHTML =  `${savedBookElements[theTopElement].id.replace('seg-','§')}`
+	} else {
+		segCount.innerHTML =  `${document.getElementById('lastsegcount').innerText.replace('/','§')}`
+	}
+	
 }
 
 function setSelfquoteMargins () {

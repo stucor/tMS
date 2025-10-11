@@ -582,5 +582,13 @@
 {
 	"sesame": "Jātakas",
 	"key": "super-blurbs:ja"
+},
+{
+	"sesame": "Sivaka Sutta",
+	"key": "sn-blurbs:sn36.21"
+},
+{
+	"sesame": "Tipiṭaka",
+	"key": "wp:Pali_Canon"
 }
 ]

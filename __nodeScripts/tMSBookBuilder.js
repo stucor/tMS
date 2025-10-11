@@ -788,12 +788,17 @@ function buildBookIndexHTML () {
 		let headingArr = bookRoot.querySelectorAll ('h1, h2, h3')
 		for (let i in headingArr) {
 			if (headingArr[i].tagName == 'H1') {
-				let [number, heading] = headingArr[i].innerHTML.split('. ')
-				if (heading) {
-					if (number.length < 3 ) { //it's a chapter (1-99)
-						headingArr[i].set_content(`<span class="chapnum">${chapterPrefix} ${number}</span><br>${heading}`)
-					} else { // it's something like an appendix
-						headingArr[i].set_content(`<span class="chapnum">${number.toLowerCase()}</span><br>${heading}`)
+				let [top, tail] = headingArr[i].innerHTML.split(': ')
+				if (tail) {
+					headingArr[i].set_content(`<span class="chapnum">${top.toLowerCase()}:</span><br>${tail}`)
+				} else {
+					let [number, heading] = headingArr[i].innerHTML.split('. ')
+					if (heading) {
+						if (number.length < 3 ) { //it's a chapter (1-99)
+							headingArr[i].set_content(`<span class="chapnum">${chapterPrefix} ${number}</span><br>${heading}`)
+						} else { // it's something like an appendix
+							headingArr[i].set_content(`<span class="chapnum">${number.toLowerCase()}</span><br>${heading}`)
+						}
 					}
 				}
 			}

@@ -953,9 +953,9 @@ dd > p {
 */
 
 span.sesame {
-	border-bottom: dotted thin rgba(100, 148, 237, 0.747);
+	border-bottom: dotted thin rgba(100, 148, 237, 0.474);
 	cursor:pointer;
-	background:rgba(255, 224, 252, 0.274);
+	/* background:rgba(255, 224, 252, 0.274); */
 }
 
 /* [data-sesame-key^='zotref:']{

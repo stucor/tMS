@@ -100,10 +100,22 @@ strong {
 	margin-bottom: -.5em;
 }
 
+.content h1.part {
+	text-align: center;
+	font-size: 2em;
+	font-style: normal;
+	font-variant: small-caps;
+	padding-top: 0;
+	margin-top: 6em;	
+}
+
+.part > .chapnum {
+	font-size: 1em;
+}
+
 .chapnum {
 	font-size: 0.7em;
 }
-
 
 .content p {
 	margin-bottom: 0;
@@ -1335,6 +1347,7 @@ sup {
 	cursor: pointer;
 	font-style: normal;
 	user-select: none;
+	background: rgb(222, 193, 250);
 }
 
 

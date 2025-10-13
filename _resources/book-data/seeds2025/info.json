@@ -1,0 +1,38 @@
+{
+	"Authors": "Bhikkhu Sunyo",
+	"BookTitle": "Seeds, Paintings and a Beam of Light",
+	"BookSubtitle": "Similes for Dependent Arising",
+	"ShortAbstract": "<p>Dependent Arising is one of the Buddha’s most important and central doctrines, but in recent decades it has been interpreted in a large variety of ways. This book illustrates that the early Buddhist texts support the traditional multiple-lifetime interpretation of this teaching, taking a particular interest in the factor of consciousness. Centered around three similes, it connects this factor to rebirth and explains how it relates to the other factors of Dependent Arising. It also explains that <span lang='pi'>appatiṭṭhita viññāṇa</span>, a term used in the similes, refers to the cessation of consciousness.</p>",
+	"Abstract": "<p>None</p>",
+	"ItemType": "book",
+	"AddInfo": [
+		[
+			"<p>Alternate Media</p>",
+			"<p>For PDF, EPUB and Kindle formats click the Download icon in the top right-hand corner of the main screen.<br>For screen readers see the <a href='./simple.html'><span data-custom-style='Hyperlink'>simplified html</span></a> version.<br>Print on demand at: <a href='https://www.lulu.com/shop/bhikkhu-sunyo/seeds-paintings-and-a-beam-of-light/paperback/product-q66nwq2.html'><span data-custom-style='Hyperlink'>lulu.com</span></a></p>"
+		]
+	],
+	"Copyright": [
+		"Originally published in 2024.",
+		"This web edition published in 2025.",
+		"311pp (in pdf format)."
+	],
+	"CCLicense": "<div class='cclicense'><h3>CC0 1.0 Universal <span>(CC0 1.0) Public Domain Dedication</span></h3><div id = 'ccDetail'><p><strong>No Copyright</strong></p><ul>    <li>The person who associated a work with this deed has <em>dedicated</em> the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.</li>    <li>You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See Other Information below.</li></ul><p><strong>Other Information</strong></p><ul><li>In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.</li><li>Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.</li><li>When using or citing the work, you should not imply endorsement by the author or the affirmer.</li></ul></div></div>",
+	"FrontCover": "../_resources/book-data/seeds2025/FrontLarge.jpg",
+	"BackCover": "",
+	"BackMatter": [
+		""
+	],
+	"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+	"DownloadHTML": "",
+	"AuthorsData": [
+		{
+			"ShortName": "Bhikkhu Sunyo",
+			"InfoImage": "../_resources/author-data/sunyo/info.jpg",
+			"ShortBio": [
+				"Bhikkhu Sunyo was born in 1986 in The Netherlands. ",
+				"Having practiced meditation since his mid-teens, he travelled to Perth, Australia in 2013 to train at Bodhinyana monastery. ",
+				"He was subsequently ordained as a bhikkhu. He leads the Pali classes at the monastery."
+			]
+		}
+	]
+}

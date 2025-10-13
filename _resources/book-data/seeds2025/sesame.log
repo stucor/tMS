@@ -1,0 +1,22 @@
+Mon Oct 13 2025 16:18:32 GMT+0100 (British Summer Time)
+Please check the following entries.
+Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
+build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
+[
+{
+	"sesame": "Bodhi 2000 p.840",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "If There is Desire Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Nidāna Saṁyutta",
+	"key": "sn-blurbs:sn12"
+},
+{
+	"sesame": "suttas",
+	"key": "super-blurbs:sutta"
+}
+]

@@ -1669,6 +1669,7 @@ sup {
 	padding: 0 3px;
 	margin: 0 -3px;
 	color: cornflowerblue;
+	background: yellow;
 	/*outline: double 0 var(--notehighlighter); */
 	/*background: var(--primarybackground);*/
 	border-radius: 1em;

@@ -252,6 +252,16 @@ function processPandoc() {
 		localJSON += `[`
 		let count = 0
 		for (let i in TOChtml) {
+			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-part') {
+				count += 1
+				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
+				let nextTOCHTML = TOChtml[i].innerHTML.replace(/(\r\n|\n|\r)/gm, "").replaceAll('\"', '\'').replace('<p>','').replace('</p>','')
+				let nextTOCID = `PART-${nextTOCText.replaceAll(' ','-')}`
+				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
+				console.log(nextTOCHTML)
+				let newElement = `<h1 id='${nextTOCID}' class='part'\>${nextTOCHTML}</h1>`
+				TOChtml[i].replaceWith(newElement)
+			} else
 			if (TOChtml[i].getAttribute('data-custom-style') == 'WW-Chapter') {
 				count += 1
 				let nextTOCText = TOChtml[i].text.replace(/(\r\n|\n|\r)/gm, "")
@@ -642,6 +652,9 @@ function buildBookIndexHTML () {
 
 	let TOCData = require(path.join(__dirname, '..', '_resources', 'book-data', bookID, 'TOC.json'))
 	for (var i in TOCData){
+		if (TOCData[i].pandocHTMLID.substring(0,5)=='PART-') {
+			html += `\t\t<li id="TOC${TOCData[i].tocno}" class= "tocpart">${TOCData[i].heading}</li>\n`
+		} else
 		if (TOCData[i].pandocHTMLID.substring(0,8)=='CHAPTER-') {
 			html += `\t\t<li id="TOC${TOCData[i].tocno}">${TOCData[i].heading}</li>\n`
 		} else

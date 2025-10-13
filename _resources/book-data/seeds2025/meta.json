@@ -1,0 +1,16 @@
+{
+			"Authors" : ["sunyo"],
+			"BookTitle" : "Seeds, Paintings and a Beam of Light",
+			"BookSubtitle" : "Similes for Dependent Arising",
+			"ShortAbstract" : "<p>Dependent Arising is one of the Buddha’s most important and central doctrines, but in recent decades it has been interpreted in a large variety of ways. This book illustrates that the early Buddhist texts support the traditional multiple-lifetime interpretation of this teaching, taking a particular interest in the factor of consciousness. Centered around three similes, it connects this factor to rebirth and explains how it relates to the other factors of Dependent Arising. It also explains that <span lang='pi'>appatiṭṭhita viññāṇa</span>, a term used in the similes, refers to the cessation of consciousness.</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "book",
+			"AddInfo"   : [["<p>Alternate Media</p>","<p>For PDF, EPUB and Kindle formats click the Download icon in the top right-hand corner of the main screen.<br>For screen readers see the <a href='./simple.html'><span data-custom-style='Hyperlink'>simplified html</span></a> version.<br>Print on demand at: <a href='https://www.lulu.com/shop/bhikkhu-sunyo/seeds-paintings-and-a-beam-of-light/paperback/product-q66nwq2.html'><span data-custom-style='Hyperlink'>lulu.com</span></a></p>"]],
+			"Copyright" : ["Originally published in 2024.","This web edition published in 2025.","311pp (in pdf format)."],
+			"CCLicense": "CC0 1.0",
+			"FrontCover": "../_resources/book-data/seeds2025/FrontLarge.jpg",
+			"BackCover": "",
+			"BackMatter": [""],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": ""
+		}

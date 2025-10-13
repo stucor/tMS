@@ -292,13 +292,13 @@ function startup () {
 			smallEngrave[0].classList.add('noshow')
 		}
 
-		let selfquoteArr = document.getElementsByClassName("selfquote");
+/* 		let selfquoteArr = document.getElementsByClassName("selfquote");
 		if (selfquoteArr) {
 			for (i = 0; i < selfquoteArr.length; i++) {
 				selfquoteArr[i].setAttribute('data-before-selfquote', `§${i+1}`); //§
 			}
 			
-		}
+		} */
 
 	});
 }
@@ -1546,7 +1546,7 @@ function setMargin() {
 			thebook.style.paddingRight = '20%';
 			marginName = "widemargin";
 		}
- 	setSelfquoteMargins();	
+ 	//setSelfquoteMargins();	
 }
 
 function doSetSerif () {
@@ -1735,7 +1735,7 @@ window.onscroll = function() {
 	
 }
 
-function setSelfquoteMargins () {
+/* function setSelfquoteMargins () {
 	var root = document.querySelector(':root');
 	if ( document.querySelector('input[name="marginRadio"]:checked').value == "narrowmargin") {
 		root.style.setProperty('--selfquoteleftmargin', '-1em');
@@ -1749,11 +1749,11 @@ function setSelfquoteMargins () {
 			root.style.setProperty('--selfquotetopmargin', '0');	
 		}
 	}
-}
+} */
 
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
-	setSelfquoteMargins();
+	//setSelfquoteMargins();
 });
 
 var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");
@@ -1941,7 +1941,7 @@ var modaldownload = document.getElementById('ModalDownload');
 var modalalert = document.getElementById('ModalAlert');
 var modallists = document.getElementById('ModalLists');
 var modalsutta = document.getElementById('ModalSutta');
-var modalselfquote = document.getElementById('ModalSelfquote');
+//var modalselfquote = document.getElementById('ModalSelfquote');
 
 
 // Get the buttons that open the modals
@@ -2121,7 +2121,7 @@ function setModalStyle (heading) {
 			modalcontent.style.top = "0";
 			modalcontent.style.padding = "0";
 			break;
-		case 'Selfquote':
+/* 		case 'Selfquote':
 			modalbody.style.height = "auto";
 			modalbody.style.maxHeight = "85vh";
 			modalbody.style.padding = "0";
@@ -2131,7 +2131,7 @@ function setModalStyle (heading) {
 			modalcontent.style.right = "0";
 			modalcontent.style.top = "0";
 			modalcontent.style.padding = "0";
-			break;
+			break; */
 		default:
 			modalbody.style.maxHeight = "75vh";
 			modalbody.style.padding = "0";
@@ -2152,7 +2152,7 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
-			hideElement(modalselfquote);
+			//hideElement(modalselfquote);
 			showElement(modaldetails);		
 			break;
 		case 'Settings':
@@ -2161,7 +2161,7 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
-			hideElement(modalselfquote);
+			//hideElement(modalselfquote);
 			showElement(modalsettings);		
 			break;
 		case 'Download':
@@ -2170,7 +2170,7 @@ function showModal (theModal) {
 			hideElement(modallists);
 			hideElement(modalalert);
 			hideElement(modalsutta);
-			hideElement(modalselfquote);
+			//hideElement(modalselfquote);
 			showElement(modaldownload);		
 			break;
 		case 'Alert':
@@ -2179,7 +2179,7 @@ function showModal (theModal) {
 			hideElement(modallists);
 			hideElement(modaldownload);
 			hideElement(modalsutta);
-			hideElement(modalselfquote);
+			//hideElement(modalselfquote);
 			showElement(modalalert);		
 			break;
 		case 'Lists':
@@ -2188,7 +2188,7 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
-			hideElement(modalselfquote);
+			//hideElement(modalselfquote);
 			showElement(modallists);
 			break;
 		case 'Sutta':
@@ -2197,10 +2197,10 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modallists);
-			hideElement(modalselfquote);		
+			//hideElement(modalselfquote);		
 			showElement(modalsutta);
 			break;
-		case 'Selfquote':
+/* 		case 'Selfquote':
 			hideElement(modaldetails);
 			hideElement(modalsettings);
 			hideElement(modaldownload);
@@ -2208,7 +2208,7 @@ function showModal (theModal) {
 			hideElement(modallists);		
 			hideElement(modalsutta);
 			showElement(modalselfquote);
-			break;
+			break; */
 		}
 	showElement(modal);
 	showElement(modalcontent);
@@ -2257,10 +2257,10 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		}
 	}
 
-	if ((e.target.classList.contains('goselfquote'))) {
+/* 	if ((e.target.classList.contains('goselfquote'))) {
 			displaySelfquote(e.target.innerHTML);
 			//savedsup = e.target;
-	}
+	} */
 
 	if (e.target.classList.contains('bookSegment')){
 		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
@@ -2773,7 +2773,7 @@ function displaySutta (linkText) {
 
 /* SelfQuote */
 
-document.getElementById("ModalSelfquote").addEventListener("click", function(e) {
+/* document.getElementById("ModalSelfquote").addEventListener("click", function(e) {
 	if (e.target.classList.contains('goselfquote')) {
 		//calledFromNotes = false
 		exitStaticModal()
@@ -2850,7 +2850,7 @@ function displaySelfquote (linktext) {
 		selfquoteArea.innerHTML = buildHTML;
 	}
 	
-}
+} */
 
 
 

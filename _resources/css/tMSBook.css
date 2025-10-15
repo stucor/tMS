@@ -229,6 +229,12 @@ a {
 	overflow-x: auto;
 	overflow-y: hidden;
 }
+.line-block-indented {
+	padding-left: calc(2em + 0.4px);
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
  
 .line-block p:has(> sup) {
 	padding-right: 1em;

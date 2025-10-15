@@ -1,4 +1,4 @@
-Mon Oct 13 2025 16:18:32 GMT+0100 (British Summer Time):
+Wed Oct 15 2025 15:47:48 GMT+0100 (British Summer Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -25,5 +25,97 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Ṭhānissaro 2018"
+  },
+  {
+    "zotref": "",
+    "bookref": "Norman 1997"
+  },
+  {
+    "zotref": "",
+    "bookref": "Norman 2008"
+  },
+  {
+    "zotref": "",
+    "bookref": "Harvey 2009"
+  },
+  {
+    "zotref": "",
+    "bookref": "Piyadassi"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "Jones 2021"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen 1997"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "CPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "CPED"
+  },
+  {
+    "zotref": "",
+    "bookref": "DOP"
+  },
+  {
+    "zotref": "",
+    "bookref": "DPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2012"
+  },
+  {
+    "zotref": "",
+    "bookref": "Brahmavamso 2002"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wijesekera 1993"
+  },
+  {
+    "zotref": "",
+    "bookref": "Duroiselle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Jayatilleke"
+  },
+  {
+    "zotref": "",
+    "bookref": "Shulman"
+  },
+  {
+    "zotref": "",
+    "bookref": "Jones 2022"
+  },
+  {
+    "zotref": "",
+    "bookref": "Sujato 2023"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen 2000"
   }
 ]

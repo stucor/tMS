@@ -258,7 +258,6 @@ function processPandoc() {
 				let nextTOCHTML = TOChtml[i].innerHTML.replace(/(\r\n|\n|\r)/gm, "").replaceAll('\"', '\'').replace('<p>','').replace('</p>','')
 				let nextTOCID = `PART-${nextTOCText.replaceAll(' ','-')}`
 				localJSON += `{\n\t"tocno": "${count}",\n\t"pandocHTMLID": "${nextTOCID}",\n\t"heading": "${nextTOCText}"},\n`
-				console.log(nextTOCHTML)
 				let newElement = `<h1 id='${nextTOCID}' class='part'\>${nextTOCHTML}</h1>`
 				TOChtml[i].replaceWith(newElement)
 			} else
@@ -319,6 +318,12 @@ function processPandoc() {
 					case 'Hyperlink':
 						let tempHTML = spans[i].innerHTML
 						spans[i].replaceWith (tempHTML)
+					break
+					case 'Emphasis':
+						spans[i].replaceWith (`<em>${spans[i].innerHTML}</em>`)
+					break
+					case 'Strong':
+						spans[i].replaceWith (`<strong>${spans[i].innerHTML}</strong>`)
 					break
 					case 'wwc-PTS-reference':
 						spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
@@ -846,6 +851,12 @@ function buildBookIndexHTML () {
 					let tempHTML = spans[i].innerHTML
 					spans[i].replaceWith (tempHTML)
 				break
+				case 'Emphasis':
+					spans[i].replaceWith (`<em>${spans[i].innerHTML}</em>`)
+				break
+				case 'Strong':
+					spans[i].replaceWith (`<strong>${spans[i].innerHTML}</strong>`)
+				break
 				case 'wwc-PTS-reference':
 					spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
 					spans[i].classList.add('ptsref')
@@ -1053,17 +1064,24 @@ function buildBookIndexHTML () {
 			// VERSES - 2 types one justified to the left, one centered around the longest line
 			//(line-block)
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block") {
-				let tempHTML = allDivs[i].innerHTML.replaceAll('\r\n', '') 
-				let newHTML = `<blockquote><div class='line-block'>${tempHTML}</div></blockquote>`
+				let tempHTML = allDivs[i].innerHTML.replaceAll('\r\n', '')
+				
+				let classText = 'line-block'
+				if (tempHTML.substr(0,12)=='<blockquote>') {
+					classText = 'line-block-indented'
+					tempHTML = tempHTML.replace('<blockquote>','').replace('</blockquote>','')
+				}
+//console.log(tempHTML + ' '+ classText)
+				let newHTML = `<blockquote><div class='${classText}'>${tempHTML}</div></blockquote>`
 				if (tempHTML.substr(0,29) == `<p><span class="list-margin">`) {
 					//find the first closed span
 					let closedSpanIndex = tempHTML.indexOf('</span>')+7
 					if (tempHTML.substr(closedSpanIndex,1) == '“') {
-						newHTML = `<blockquote><div class='line-block'>${tempHTML.slice(0,2)} class='OAstart' ${tempHTML.slice(2)}</div></blockquote>`
+						newHTML = `<blockquote><div class='${classText}'>${tempHTML.slice(0,2)} class='OAstart' ${tempHTML.slice(2)}</div></blockquote>`
 					}
 				} else 
 				if (tempHTML.substr(0,4) == `<p>“`) {
-					newHTML = `<blockquote><div class='line-block'>${tempHTML.slice(0,2)} class='OAstart' ${tempHTML.slice(2)}</div></blockquote>`
+					newHTML = `<blockquote><div class='${classText}'>${tempHTML.slice(0,2)} class='OAstart' ${tempHTML.slice(2)}</div></blockquote>`
 				}
 				allDivs[i].replaceWith(newHTML)
 			} else
@@ -1203,6 +1221,10 @@ function buildBookIndexHTML () {
 				if (tableType == `Simple`) {
 					tableClassLabel = ` class="simpletable"`
 					caption = caption.substr(8)
+				} else 
+				if (tableType == `SimpleNoRowBorders`) {
+					tableClassLabel = ` class="simpletable norowborders"`
+					caption = caption.substr(20)
 				}
 				let table = allTablesAndCaptions[Number(i)+1].innerHTML.replaceAll('<tr class>','<tr>')
 				allTablesAndCaptions[i].replaceWith(`<div class="tablewrap">\n<table${tableClassLabel}>\n<caption >${caption}</caption>${table}\n</table>\n</div>`)
@@ -1226,7 +1248,7 @@ function buildBookIndexHTML () {
 			}
 		}
 
-
+		//segments
 		let allSegments = bookRoot.querySelectorAll('p:not(.tablepara), h1, h2, h3, .tablewrap, figure')
 		let hcounter = 1
 		let figcounter =1

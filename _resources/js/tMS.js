@@ -3277,6 +3277,7 @@ listsBtn.onclick = function() {
 				html += `<input class="search" placeholder="Filter by" /></div>`
 				html += `<ul class="list reflist">`
 				for (let i = 0; i < figArr.length; i++) {
+					console.log(figArr[i].innerHTML)
 					let segment = `<span class='figureSegRef'>§${figArr[i].id.substring(4)}</span>`
 					let segRef = figArr[i].id
 					let caption = `<span class='figureCaption'>${figArr[i].getElementsByTagName("figcaption")[0].innerHTML}</span>`;

@@ -1,10 +1,14 @@
-Wed Oct 15 2025 19:02:20 GMT+0100 (British Summer Time)
+Thu Oct 16 2025 12:38:57 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
 [
 {
 	"sesame": "Bodhi 2000 p.840",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dīrgha Āgama",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -24,8 +28,36 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "sn-blurbs:sn12"
 },
 {
+	"sesame": "Nidāna Saṁyutta,",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Nidāna Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "SN 15",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "The Analysis of the Truths",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "The Discourse on Right View",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Udānavarga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Vism",
+	"key": "wp:Visuddhimagga:Ñanamoli 1956a"
+},
+{
+	"sesame": "Visuddhimagga",
+	"key": "wp:Visuddhimagga:Ñanamoli 1956a"
 },
 {
 	"sesame": "suttas",

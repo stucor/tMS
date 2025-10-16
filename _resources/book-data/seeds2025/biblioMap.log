@@ -1,4 +1,4 @@
-Wed Oct 15 2025 19:02:20 GMT+0100 (British Summer Time):
+Thu Oct 16 2025 12:38:57 GMT+0100 (British Summer Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -37,6 +37,10 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Harvey 2009"
+  },
+  {
+    "zotref": "",
+    "bookref": "Sujato 2023"
   },
   {
     "zotref": "",
@@ -117,5 +121,129 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Schmithausen 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Brahmavamso 2002"
+  },
+  {
+    "zotref": "",
+    "bookref": "Collins"
+  },
+  {
+    "zotref": "",
+    "bookref": "Norman 1997"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wayman 1971"
+  },
+  {
+    "zotref": "",
+    "bookref": "Nyanatiloka"
+  },
+  {
+    "zotref": "",
+    "bookref": "Frauwallner 1953/1973"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bernhard"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wayman 1971"
+  },
+  {
+    "zotref": "",
+    "bookref": "Collins"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1988"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Mejor"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Jurewicz"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ronkin"
+  },
+  {
+    "zotref": "",
+    "bookref": "Shulman"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gombrich 2009"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1988"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bernhard"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bucknell"
+  },
+  {
+    "zotref": "",
+    "bookref": "Frauwallner 1953/1973"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wayman 1971"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bernhard"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ronkin"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇavīra"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Brasington"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1998"
   }
 ]

@@ -1,4 +1,4 @@
-Fri Oct 17 2025 11:51:41 GMT+0100 (British Summer Time):
+Fri Oct 17 2025 15:55:41 GMT+0100 (British Summer Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -485,5 +485,21 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Olivelle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hecker"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Cintita"
+  },
+  {
+    "zotref": "",
+    "bookref": "Sujato 2023"
   }
 ]

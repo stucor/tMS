@@ -642,5 +642,37 @@
   {
     "fnNumber": "161",
     "fnHTML": "<p><span class='sesame biblioref'>Olivelle</span> p.47</p>"
+  },
+  {
+    "fnNumber": "162",
+    "fnHTML": "<p><span class='sclinktext'>SN&#8239;12.64<span class='scsegments'>:4.1–5.8</span></span></p>"
+  },
+  {
+    "fnNumber": "163",
+    "fnHTML": "<p>See <span class='sesame biblioref'>Hecker</span> p.53 and the commentary, translated by <span class='sesame'>Bodhi 2000 n.173</span> at <span class='sclinktext'>SN&#8239;12.64</span></p>"
+  },
+  {
+    "fnNumber": "164",
+    "fnHTML": "<p>§84</p>"
+  },
+  {
+    "fnNumber": "165",
+    "fnHTML": "<p>For example <span class='sesame biblioref'>Ñāṇananda 2015</span> p.120, <span class='sesame biblioref'>Cintita</span> p.61</p>"
+  },
+  {
+    "fnNumber": "166",
+    "fnHTML": "<p><span lang='pi'>Abhinibbattento abhinibbatteti</span>, ‘when [they] produce a next life, they produce’. The word <span lang='pi'>abhinibbatteti</span> has a strong connection with rebirth. For example see <span class='sclinktext'>AN&#8239;10.65<span class='scsegments'>:2.2</span></span>, “being reborn (<span lang='pi'>ab&shy;hi&shy;nib&shy;bat&shy;ti</span>) is painful”, or the definition of birth in §20, which includes <span lang='pi'>ab&shy;hi&shy;nib&shy;bat&shy;ti</span>. To capture this meaning, which is surely implied given the context of transmigration, I translate it here as ‘they produce a next life’, following the example of <span class='sesame biblioref'>Sujato 2023</span></p>"
+  },
+  {
+    "fnNumber": "167",
+    "fnHTML": "<p><span class='sclinktext'>SN&#8239;22.100</span></p>"
+  },
+  {
+    "fnNumber": "168",
+    "fnHTML": "<p><span class='sclinktext'>SN&#8239;22.99<span class='scsegments'>:2.9</span></span></p>"
+  },
+  {
+    "fnNumber": "169",
+    "fnHTML": "<p><span class='sesame'>Bodhi 2000 n.206</span> at <span class='sclinktext'>SN&#8239;22.100</span></p>"
   }
 ]

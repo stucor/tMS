@@ -1,10 +1,58 @@
-Thu Oct 16 2025 12:38:57 GMT+0100 (British Summer Time)
+Fri Oct 17 2025 11:51:41 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
 [
 {
+	"sesame": "Abhidhamma",
+	"key": "super-blurbs:abhidhamma"
+},
+{
+	"sesame": "Arthaviniścaya Sūtra",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Assalāyana Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Aṅguttara Nikāya",
+	"key": "super-blurbs:an"
+},
+{
+	"sesame": "Bhava Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000 n.4",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000 n.81",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000 p.48",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000 p.518",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Bodhi 2000 p.840",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2012 n.503",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bṛhadāraṇyaka Upaniṣad",
+	"key": "wp:Brihadaranyaka_Upanishad:OlivelleP 1998a"
+},
+{
+	"sesame": "Dhammasaṅgaṇī",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -12,16 +60,44 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Ekottarika Āgama",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Great Discourse on the Sources [of Things]",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "If There is Desire Discourse",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Itivuttaka",
+	"key": "super-blurbs:iti"
 },
 {
 	"sesame": "Longer Discourse on the Ending of Craving",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "MMK",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Madhyama Āgama",
+	"key": "super-blurbs:ma"
+},
+{
 	"sesame": "Mahānidāna Sutta",
 	"key": "dn-blurbs:dn15"
+},
+{
+	"sesame": "Mahāpadāna Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahā­sati­paṭ­ṭhā­na Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Nidāna Saṁyutta",
@@ -36,8 +112,44 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Olivelle",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Paṭisambhidāmagga",
+	"key": "super-blurbs:ps"
+},
+{
+	"sesame": "Ratana Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "SN 15",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sampasādanīya Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sangīti Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sarvāstivādins",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Satippaṭṭhāna Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saḷāyatana Vagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saṁyutta Nikāya",
+	"key": "super-blurbs:sn"
 },
 {
 	"sesame": "The Analysis of the Truths",
@@ -48,8 +160,28 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Theravādins",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "The Longer Discourse on the Simile of the Elephant’s Footprint",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Udānavarga",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Upaniṣadic",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Upaniṣads",
+	"key": "wp:Upanishads"
+},
+{
+	"sesame": "Vibhaṅga",
+	"key": "sn-blurbs:sn12.2"
 },
 {
 	"sesame": "Vism",
@@ -60,7 +192,19 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "wp:Visuddhimagga:Ñanamoli 1956a"
 },
 {
+	"sesame": "Yājñavalkya",
+	"key": "wp:Yajnavalkya"
+},
+{
 	"sesame": "suttas",
 	"key": "super-blurbs:sutta"
+},
+{
+	"sesame": "Śāriputra Abhidharma",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "‘Remembering Past Lives’ in Brahmavamso 2006 Chapter 13",
+	"key": "XXXXXXXXXXXXXXXX"
 }
 ]

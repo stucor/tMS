@@ -3239,7 +3239,7 @@ mark.current {
 	}
 	.reflistitem:hover  {
 		border:1px solid cornflowerblue !important;
-		background-color: green;
+		background: var(--listlinkhover) !important;
 		cursor:pointer;
 	}
 	#biblio-list > .reflist > .reflistitem:hover  {

@@ -1,4 +1,4 @@
-Fri Oct 17 2025 15:55:41 GMT+0100 (British Summer Time)
+Sun Oct 19 2025 11:51:50 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -24,6 +24,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Bodhi 2000 n.110",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000 n.112",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Bodhi 2000 n.173",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -45,6 +53,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Bodhi 2000 p.518",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000 p.522",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -93,6 +105,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "First Discourse on the Leash",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Gombrich 2009",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -156,6 +172,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "super-blurbs:ps"
 },
 {
+	"sesame": "Piyadassi",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Precipice Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Ratana Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -213,6 +237,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Second Discourse on Intention",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sujato 2023",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

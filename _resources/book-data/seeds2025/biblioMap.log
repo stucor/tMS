@@ -1,4 +1,4 @@
-Fri Oct 17 2025 15:55:41 GMT+0100 (British Summer Time):
+Sun Oct 19 2025 11:51:50 GMT+0100 (British Summer Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -501,5 +501,89 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Sujato 2023"
+  },
+  {
+    "zotref": "",
+    "bookref": "Piyadassi"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Nyanatiloka"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1998"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇavīra"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ṭhānissaro 2008b"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1988"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gombrich 1980"
+  },
+  {
+    "zotref": "",
+    "bookref": "Malvania"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2016"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2018"
+  },
+  {
+    "zotref": "",
+    "bookref": "Langer"
+  },
+  {
+    "zotref": "",
+    "bookref": "Choong"
+  },
+  {
+    "zotref": "",
+    "bookref": "Choong"
+  },
+  {
+    "zotref": "",
+    "bookref": "DPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1998"
+  },
+  {
+    "zotref": "",
+    "bookref": "Langer"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2003"
   }
 ]

@@ -1,8 +1,12 @@
-Sun Oct 19 2025 11:51:50 GMT+0100 (British Summer Time)
+Wed Oct 22 2025 16:02:13 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
 [
+{
+	"sesame": "A Hundred Spears",
+	"key": "XXXXXXXXXXXXXXXX"
+},
 {
 	"sesame": "Abhidhamma",
 	"key": "super-blurbs:abhidhamma"
@@ -72,6 +76,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "wp:Brihadaranyaka_Upanishad:OlivelleP 1998a"
 },
 {
+	"sesame": "Child’s Flesh Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Cūḷavedalla Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -104,7 +112,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
-	"sesame": "First Discourse on the Leash",
+	"sesame": "First Discourse on the Leash",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -116,12 +124,20 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Great Lion’s Roar Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "If There is Desire Discourse",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Itivuttaka",
 	"key": "super-blurbs:iti"
+},
+{
+	"sesame": "Longer Discourse on Advice to Rāhula",
+	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Longer Discourse on the Ending of Craving",
@@ -177,6 +193,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Precipice Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Questions of Milinda",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -236,11 +256,15 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
-	"sesame": "Second Discourse on Intention",
+	"sesame": "Seeds Discourse",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Sujato 2023",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Suttanipāta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -256,15 +280,23 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "The Longer Discourse on the Lion’s Roar",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "The Longer Discourse on the Simile of the Elephant’s Footprint",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Theravādins",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
-	"sesame": "Therīgāthā",
+	"sesame": "Therīgātha",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
-	"sesame": "The Longer Discourse on the Simile of the Elephant’s Footprint",
+	"sesame": "Therīgāthā",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

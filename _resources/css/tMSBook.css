@@ -166,20 +166,10 @@ a {
 
 
 .fleuron {
-	display: block;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	margin-left: auto;
-	margin-right: auto;
-	width: 10%;
+	opacity: 20%; 
 	user-select: none;
 }
 
-.fleuronfilter1 {
-	width: 4em;
-	opacity: 13%; 
-	filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(1519%) hue-rotate(171deg) brightness(92%) contrast(85%);
-}
 
 .smallcaps {
 	font-variant: small-caps;
@@ -369,9 +359,9 @@ figure:has(> .tMSIndex) > .tMSIndex {
 
 figure img { 
 	margin: 0.5em; 
-/*	border: 2px solid var(--figureimgborder);
+/*	border: 2px solid var(--figureimgborder);  
  	min-width: 100px; 
-	max-width: 250px;  */
+	max-width: 250px; */
 	box-sizing: border-box;
 }
 
@@ -547,7 +537,7 @@ tfoot tr td {
 .simpletable caption {
 	font-style: italic; 
 	font-variant: normal;
-	font-size: 0.8em; 
+	font-size: 0.9em; 
 	border: none;
 	caption-side: bottom;
 	margin: 0;

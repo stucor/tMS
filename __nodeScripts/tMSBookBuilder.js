@@ -1110,12 +1110,23 @@ function buildBookIndexHTML () {
 				allDivs[i].removeAttribute('data-custom-style')
 			} else
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-image") {
+				let fleurClass = ''
+				let [source, altText, width] = allDivs[i].text.replaceAll('\r\n', '').split("=");
+
+				if (altText.substring(0, 8) == 'Fleuron:') {
+					fleurClass = `class='fleuron'`
+				}
+				allDivs[i].classList.add ('epigram-img')
+				allDivs[i].innerHTML = `<img src='${source}' ${fleurClass} alt='${altText}' width=${width}%>`
+				allDivs[i].removeAttribute('data-custom-style')
+			} else 
+/* 			if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-image") {
 				let [source, altText, width] = allDivs[i].text.split("=");
 				allDivs[i].classList.add ('epigram-img')
 				allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}' width=${width.replace('\r\n', '')}%>`
 				allDivs[i].removeAttribute('data-custom-style')
 			} else 
-			//EPIGRAMS
+ */			//EPIGRAMS
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram") {
 				allDivs[i].classList.add ('epigram')
 				allDivs[i].removeAttribute('data-custom-style')

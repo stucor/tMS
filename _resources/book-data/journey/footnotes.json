@@ -1,7 +1,7 @@
 [
 {
 	"fnNumber": "1",
-	"fnHTML": "<p>See the <span class='internalLink' data-target='#three_questions_by_leo_tolstoy'>Notes</span> section at the back of this book for the full text.</p>"
+	"fnHTML": "<p>See the <span class='internalLink' data-target='#three_questions_by_leo_tolstoy'>Notes</span> section at the end of this book for the full text.</p>"
 },
 {
 	"fnNumber": "2",
@@ -9,15 +9,15 @@
 },
 {
 	"fnNumber": "3",
-	"fnHTML": "<p>Jhana Grove is the name of the Meditation Centre.</p>"
+	"fnHTML": "<p>Jhana Grove is the name of the BSWA Meditation Centre near Perth.</p>"
 },
 {
 	"fnNumber": "4",
-	"fnHTML": "<p><span lang='pi'>Samādhi</span> means stillness of mind.</p>"
+	"fnHTML": "<p><span lang='pi'>Samādhi</span> is the stillness of mind in deep meditation.</p>"
 },
 {
 	"fnNumber": "5",
-	"fnHTML": "<p><span lang='pi'>Nimitta</span> is a mental perception before jhāna.</p>"
+	"fnHTML": "<p>In this context, <span lang='pi'>nimitta</span> means the perception of bright light that normally appears before jhāna.</p>"
 },
 {
 	"fnNumber": "6",
@@ -45,7 +45,7 @@
 },
 {
 	"fnNumber": "12",
-	"fnHTML": "<p>Kamma is the Pāli spelling of karma and means deed. ‘Unfortunate kamma’ here was used to mean ‘bad luck’.</p>"
+	"fnHTML": "<p><span lang='pi'>Kamma</span> or <span lang='sa'>karma</span> means deed. ‘Unfortunate kamma’ here was used to mean ‘bad luck’.</p>"
 },
 {
 	"fnNumber": "13",
@@ -53,19 +53,19 @@
 },
 {
 	"fnNumber": "14",
-	"fnHTML": "<p>Bodhinyana Monastery is a Buddhist forest monastery in Western Australia. Home to Ajahn Brahm.</p>"
+	"fnHTML": "<p>Bodhinyana Monastery is a Buddhist forest monastery in Western Australia and the home Ajahn Brahm.</p>"
 },
 {
 	"fnNumber": "15",
-	"fnHTML": "<p>The Paṭisambhidāmagga is known in English as the Path of Analytical Discernment.</p>"
+	"fnHTML": "<p>The Paṭisambhidāmagga, known in English as the Path of Analytical Discernment, is part of the Khuddaka Nikāya, the fifth and last collection of discourses in the Theravada Canon.</p>"
 },
 {
 	"fnNumber": "16",
-	"fnHTML": "<p><span lang='pi'>Ekag&shy;gatā</span> means unification or oneness of mind.</p>"
+	"fnHTML": "<p>For instance, in the Dhammacakkappavattanasutta at <span class='sclinktext'>SN&#8239;56.11</span>.</p>"
 },
 {
 	"fnNumber": "17",
-	"fnHTML": "<p><span lang='pi'>Arūpa&shy;samā&shy;pat&shy;ti</span> are the ‘formless’ or ‘immaterial’ attainments</p>"
+	"fnHTML": "<p><span lang='pi'>Ekag&shy;gatā</span> means unification or oneness of mind.</p>"
 },
 {
 	"fnNumber": "18",
@@ -89,11 +89,11 @@
 },
 {
 	"fnNumber": "23",
-	"fnHTML": "<p>An <span lang='pi'>arahant</span> is an awakened being</p>"
+	"fnHTML": "<p>An <span lang='pi'>arahant</span> is a fully enlightened or awakened being</p>"
 },
 {
 	"fnNumber": "24",
-	"fnHTML": "<p>‘Rotten fish curry’ is curry made with fermented freshwater fish.</p>"
+	"fnHTML": "<p>‘Rotten fish curry’ is what Ajahn Brahm called a north-east curry made with fermented freshwater fish.</p>"
 },
 {
 	"fnNumber": "25",
@@ -109,26 +109,18 @@
 },
 {
 	"fnNumber": "28",
-	"fnHTML": "<p><span lang='pi'>Vedanā</span> means feeling, sensation.</p>"
+	"fnHTML": "<p><span lang='pi'>Vedanā</span> means feeling, sensation, <span lang='pi'>saññā</span> means perception, <span lang='pi'>saṅ&shy;khā&shy;ra</span> means willed activities.</p>"
 },
 {
 	"fnNumber": "29",
-	"fnHTML": "<p><span lang='pi'>Saññā</span> means sense, perception.</p>"
+	"fnHTML": "<p>The story of the first communal recitation, or Council, is given in the Chapter on the Group of Five Hundred, Pañcasatikakkhandhaka of the Vinaya Piṭaka, at Kd 21</p>"
 },
 {
 	"fnNumber": "30",
-	"fnHTML": "<p><span lang='pi'>Saṅk&shy;hāra</span> means mental formation.</p>"
-},
-{
-	"fnNumber": "31",
-	"fnHTML": "<p>The origin story of the communal recitation is given in the Khandhaka at Kd 21</p>"
-},
-{
-	"fnNumber": "32",
 	"fnHTML": "<p>A <span lang='pi'>bhik&shy;khu&shy;nī</span> is a fully ordained Buddhist nun</p>"
 },
 {
-	"fnNumber": "33",
+	"fnNumber": "31",
 	"fnHTML": "<p>For more on Dependent Cessation see the booklet <em>Dependent Liberation</em> by Ajahn Brahmali <a class='library' href='../dlbl'> on theMettāShelf</a></p>"
 }
 ]

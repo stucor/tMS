@@ -1049,7 +1049,7 @@ function setFontLevel (level) {
 		if (bookImagesArray[i].className == 'emojify') {
 			bookImagesArray[i].style.width = (parseInt(level)+parseInt(level/3))+'px';
 		} else if (bookImagesArray[i].className == 'fleuron') {
-			bookImagesArray[i].style.width = (parseInt(level)*3)+'px';
+			bookImagesArray[i].style.width = (parseInt(level)*4)+'px';
 		}
 	}
 }

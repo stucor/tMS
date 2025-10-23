@@ -1,4 +1,4 @@
-Wed Oct 22 2025 16:02:13 GMT+0100 (British Summer Time):
+Thu Oct 23 2025 15:43:42 GMT+0100 (British Summer Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -585,5 +585,53 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Bodhi 2003"
+  },
+  {
+    "zotref": "",
+    "bookref": "Nyanaponika 1981"
+  },
+  {
+    "zotref": "",
+    "bookref": "DPPN"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hecker"
+  },
+  {
+    "zotref": "",
+    "bookref": "Nyanaponika 1981"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wynne"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Purohit"
+  },
+  {
+    "zotref": "",
+    "bookref": "Lopez"
+  },
+  {
+    "zotref": "",
+    "bookref": "Norman 1991"
+  },
+  {
+    "zotref": "",
+    "bookref": "Nyanaponika 1981"
   }
 ]

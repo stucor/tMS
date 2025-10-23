@@ -9,6 +9,7 @@ node tMSBookBuilder.js journey
 node tMSBookBuilder.js milk
 node tMSBookBuilder.js niknib
 node tMSBookBuilder.js outk
+node tMSBookBuilder.js seeds2025
 node tMSBookBuilder.js sitm
 node tMSBookBuilder.js ssbl
 node tMSBookBuilder.js vasy

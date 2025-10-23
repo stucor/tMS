@@ -1557,7 +1557,7 @@ function buildBookIndexHTML () {
 				let html = ``
 				html += `<section id="biblio-list" class="infocontainer">`
 				html += `<h3>Bibliography</h3>`
-				html += `<p>The Sections (§) in the book where the Bibliographic entry is referenced are given as a links after each entry. The Note number (#) is also given if applicable</p>`
+				html += `<p>The paragraphs in the book where the Bibliographic entry has been referenced are given as a segment number (shown as ※ follwed by a number) after each Bibliographic entry. Where the reference is in a Note, the Note number (#) is also given</p>`
 				html += `<div class="reflistbuttons"><h4>Sort by:</h4>`
 				html += `<button class="sort asc" data-sort="bibAuthor">Author</button> `
 				html += `<button class="sort" data-sort="bibTitle">Title</button>`
@@ -1882,12 +1882,12 @@ function buildBookIndexHTML () {
 								if (tail == referencesData[i].id) {
 									//console.log(allsesames[j].innerHTML)
 									if(allsesames[j].closest('.tablewrap')) {
-										bibSegHTML += ` <span>${allsesames[j].closest('.tablewrap').id.replace('seg-','§')}</span> |`
+										bibSegHTML += ` <span>${allsesames[j].closest('.tablewrap').id.replace('seg-','※')}</span> |`
 									} else
 									if (allsesames[j].parentNode.tagName == 'EM') {
-										bibSegHTML += ` <span>${allsesames[j].parentNode.parentNode.id.replace('seg-','§')}</span> |`
+										bibSegHTML += ` <span>${allsesames[j].parentNode.parentNode.id.replace('seg-','※')}</span> |`
 									} else {
-										bibSegHTML += ` <span>${allsesames[j].parentNode.id.replace('seg-','§')}</span> |`
+										bibSegHTML += ` <span>${allsesames[j].parentNode.id.replace('seg-','※')}</span> |`
 									}
 									bibSegCount ++
 								}
@@ -1908,7 +1908,7 @@ function buildBookIndexHTML () {
 										let allSups = indexRoot.querySelectorAll('sup')
 										for (let l=0;l<allSups.length;l++) {
 											if (localFootnotes[j].fnNumber == allSups[l].innerText) {
-												bibSegHTML += ` <span>${allSups[l].parentNode.id.replace('seg-','§')}—#${localFootnotes[j].fnNumber}</span> |`
+												bibSegHTML += ` <span>${allSups[l].parentNode.id.replace('seg-','※')}—#${localFootnotes[j].fnNumber}</span> |`
 												bibSegCount ++
 											}
 										}

@@ -8,6 +8,16 @@ var marginName = "";
 var prevScrollpos = window.scrollY;
 
 document.getElementById(`tmsindexBtn`).onclick = function () {
+	if (this.style.color == 'green') {
+		this.style.color = 'var(--primarytext)'
+		document.getElementById('showtMSIndexCheck').checked = false;
+	} else {
+		this.style.color = 'green'
+		document.getElementById('showtMSIndexCheck').checked = true;
+	}
+			setTMSIndex ();
+//	document.getElementById('showtMSIndexCheck').click();
+
 }
 
 // generic cookie functions
@@ -127,7 +137,7 @@ function buildSettings (_callback) {
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="hyphenCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
-				<span class ="settingsheadersleft">show segments (§):</span>
+				<span class ="settingsheadersleft">show segments (※):</span>
 				<span class = "settingsheadersright"><label class="switch"><input type="checkbox" id="showtMSIndexCheck"><span class="slider round"></span></label></span>
 			</div>
 			<div class="settingsbox">
@@ -295,7 +305,7 @@ function startup () {
 /* 		let selfquoteArr = document.getElementsByClassName("selfquote");
 		if (selfquoteArr) {
 			for (i = 0; i < selfquoteArr.length; i++) {
-				selfquoteArr[i].setAttribute('data-before-selfquote', `§${i+1}`); //§
+				selfquoteArr[i].setAttribute('data-before-selfquote', `※${i+1}`); //※
 			}
 			
 		} */
@@ -1577,7 +1587,7 @@ function setTMSIndex () {
 	let paragraphArr = theBook.querySelectorAll('p, .tablewrap, figure')
 	for (let i in paragraphArr) {
 		if (paragraphArr[i].id) {
-			let injectSpan = `<span class="tMSIndex">${paragraphArr[i].id.replace('seg-', '§')}</span>`
+			let injectSpan = `<span class="tMSIndex">${paragraphArr[i].id.replace('seg-', '※')}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				paragraphArr[i].innerHTML = injectSpan + paragraphArr[i].innerHTML
 			} else {
@@ -1588,7 +1598,7 @@ function setTMSIndex () {
 	let headingsArr = theBook.querySelectorAll('h1, h2, h3')
 	for (let i in headingsArr) {
 		if ((headingsArr[i].id) && (headingsArr[i].id != '999999999') && (headingsArr[i].id != 'seg-0-1') ) {
-			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id.replace('seg-', '§')}</span>`
+			let injectSpan = `<span class="tMSIndex">${headingsArr[i].id.replace('seg-', '※')}</span>`
 			if (document.getElementById('showtMSIndexCheck').checked) {
 				headingsArr[i].innerHTML = injectSpan + headingsArr[i].innerHTML
 			} else {
@@ -1728,9 +1738,9 @@ window.onscroll = function() {
 	savePlaceInBook();
 	//populate the tMSIndex counter
 	if (savedBookElements[theTopElement].id != '999999999') {
-		segCount.innerHTML =  `${savedBookElements[theTopElement].id.replace('seg-','§')}`
+		segCount.innerHTML =  `${savedBookElements[theTopElement].id.replace('seg-','※')}`
 	} else {
-		segCount.innerHTML =  `${document.getElementById('lastsegcount').innerText.replace('/','§')}`
+		segCount.innerHTML =  `${document.getElementById('lastsegcount').innerText.replace('/','※')}`
 	}
 	
 }
@@ -2499,10 +2509,10 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 		if ((e.target.closest('.bibSeg')) && (e.target.tagName == 'SPAN')) {
 			let [seg, note] = e.target.innerText.split('—')
 			if (note) {
-				bookSeg = seg.replace('§','seg-')
+				bookSeg = seg.replace('※','seg-')
 				noteNumberToOpen = note.replace('#','')
 			} else {
-				bookSeg = seg.replace('§','seg-')
+				bookSeg = seg.replace('※','seg-')
 			}
 		}
 		if (bookSeg) {
@@ -2777,7 +2787,7 @@ function displaySutta (linkText) {
 	if (e.target.classList.contains('goselfquote')) {
 		//calledFromNotes = false
 		exitStaticModal()
-		goToTarget(`bqseg${e.target.innerText.replace('§','').replace(' in the main text','')}`)
+		goToTarget(`bqseg${e.target.innerText.replace('※','').replace(' in the main text','')}`)
 	}
 });
 
@@ -2790,7 +2800,7 @@ function displaySelfquote (linktext) {
 
 	let buildHTML = '';
 
-	if (linktext.substring(0,1) == '§') {
+	if (linktext.substring(0,1) == '※') {
 		let SQHeaderArray = [];
 		let shortCode = shortcode();
 
@@ -2824,7 +2834,7 @@ function displaySelfquote (linktext) {
 						}
 					}
 	
-					buildHTML += selfquoteArr[i].innerHTML.replaceAll(/ style=""/g, "").replaceAll(/<sup>[0-9]+<\/sup>/g, "").replaceAll(/<span class="goselfquote">(§[0-9]+)<\/span>/g, '$1' )
+					buildHTML += selfquoteArr[i].innerHTML.replaceAll(/ style=""/g, "").replaceAll(/<sup>[0-9]+<\/sup>/g, "").replaceAll(/<span class="goselfquote">(※[0-9]+)<\/span>/g, '$1' )
 	
 					document.getElementById('ModalHeaderText').innerHTML = `${linktext}`;
 				}
@@ -2947,7 +2957,7 @@ function makeShare () {
 			copyDiv.classList.add('copybox')
 			
 			//Make the Link
-			let linkText = `<p>Text from: <strong><em>${document.title.replace(`-`, `by`)}</em></strong>, starting at: <a href='${bookPath}#${starter}'> ${starter.replace('seg-','§')}:</a></p><hr>\n\n`
+			let linkText = `<p>Text from: <strong><em>${document.title.replace(`-`, `by`)}</em></strong>, starting at: <a href='${bookPath}#${starter}'> ${starter.replace('seg-','※')}:</a></p><hr>\n\n`
 	
 	
 			let copyQuote = document.createElement("blockquote")
@@ -3207,9 +3217,9 @@ function makeShare () {
 				url: navShareurl
 			});
 		} else {
-			alertStr = `<p>You have not selected any text to share.<br>You are currently reading <b>${shareFrom.replace('seg-','§')}</b> in the book.<br>You can do one of the following:</p>
+			alertStr = `<p>You have not selected any text to share.<br>You are currently reading <b>${shareFrom.replace('seg-','※')}</b> in the book.<br>You can do one of the following:</p>
 						<p style="font-family:'Courier New'">${bookPath}#${shareFrom}<br>
-						<button id="shareAtHere" data-toShare="${bookPath}#${shareFrom}">Copy the url for book to go directly to <b>${shareFrom.replace('seg-','§')}</b></button></p>
+						<button id="shareAtHere" data-toShare="${bookPath}#${shareFrom}">Copy the url for book to go directly to <b>${shareFrom.replace('seg-','※')}</b></button></p>
 						<p style="font-family:'Courier New'">${bookPath}/<br>
 						<button id="shareNoHash" data-toShare="${bookPath}">Copy the url for book without a specified position.</button></p>`
 			showAlert (`${alertStr}`)
@@ -3248,7 +3258,7 @@ listsBtn.onclick = function() {
 				html += `<ul class="list reflist">`
 				for (let i = 0; i < tabrefArr.length; i++) {
 					if ((tabrefArr[i].caption) && (tabrefArr[i].id.slice(0,5) == 'table')){ // it's a standard table rather than a table genreated in a note from an external source
-						let segment = `<span class='lotSegRef'>§${tabrefArr[i].parentNode.id.substring(4)}</span>`
+						let segment = `<span class='lotSegRef'>※${tabrefArr[i].parentNode.id.substring(4)}</span>`
 						let segRef = tabrefArr[i].parentNode.id
 						let caption = `<span class='lotCaption'>${tabrefArr[i].caption.innerHTML.replace('<br>', ' ')}</span>`;
 						html += `<li class='reflistitem' data-segref='${segRef}'>${segment}${caption}</li>`;
@@ -3278,7 +3288,7 @@ listsBtn.onclick = function() {
 				html += `<ul class="list reflist">`
 				for (let i = 0; i < figArr.length; i++) {
 					console.log(figArr[i].innerHTML)
-					let segment = `<span class='figureSegRef'>§${figArr[i].id.substring(4)}</span>`
+					let segment = `<span class='figureSegRef'>※${figArr[i].id.substring(4)}</span>`
 					let segRef = figArr[i].id
 					let caption = `<span class='figureCaption'>${figArr[i].getElementsByTagName("figcaption")[0].innerHTML}</span>`;
 					html += `<li class='reflistitem' data-segref='${segRef}'>${segment}${caption}</li>`;
@@ -3321,7 +3331,7 @@ listsBtn.onclick = function() {
 							}
 						}
 					}
-					let linktext = `<span class='textSegRef'>§${segment}${footnote}</span> ${sclinksdata[i].sclinkHTML}`
+					let linktext = `<span class='textSegRef'>※${segment}${footnote}</span> ${sclinksdata[i].sclinkHTML}`
 					html += `<li class='reflistitem' data-segref='${segRef}' ${data_fnnumber}>${linktext}</li>`;
 				}
 				html += `</ul></section>`;
@@ -3379,7 +3389,7 @@ listsBtn.onclick = function() {
 						fnHTML = fnHTML.replace(from, to)
 					}
 
-					let linkHTML = `<span class='notesSegRef'>§${segNo.substring(4)}—<span class='footnoteinlist'>#${fnNumber}</span></span> <span class='footNoteText'>${fnHTML.replaceAll('&shy;','')}</span>`
+					let linkHTML = `<span class='notesSegRef'>※${segNo.substring(4)}—<span class='footnoteinlist'>#${fnNumber}</span></span> <span class='footNoteText'>${fnHTML.replaceAll('&shy;','')}</span>`
 					html += `<li class='reflistitem' data-segref='${segNo}' data-fnnumber='${fnNumber}'>${linkHTML}</li>`
 				}
 				html += `</ul></section>` 

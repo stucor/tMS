@@ -8,6 +8,7 @@ var marginName = "";
 var prevScrollpos = window.scrollY;
 
 document.getElementById(`tmsindexBtn`).onclick = function () {
+	savePlaceInBook();
 	if (this.style.color == 'green') {
 		this.style.color = 'var(--primarytext)'
 		document.getElementById('showtMSIndexCheck').checked = false;
@@ -15,9 +16,8 @@ document.getElementById(`tmsindexBtn`).onclick = function () {
 		this.style.color = 'green'
 		document.getElementById('showtMSIndexCheck').checked = true;
 	}
-			setTMSIndex ();
-//	document.getElementById('showtMSIndexCheck').click();
-
+	setTMSIndex ();
+	getPlaceInBook()
 }
 
 // generic cookie functions
@@ -638,9 +638,11 @@ function initialiseBookSettings () {
 	switch (local_wiswobooks_tMSIndex) {
 		case 'true' :
 			document.getElementById("showtMSIndexCheck").checked = true;
+			document.getElementById("tmsindexBtn").style.color = "green"
 			break;
 		case 'false' :
 			document.getElementById("showtMSIndexCheck").checked = false;
+						document.getElementById("tmsindexBtn").style.color = "val(--primarytextcolor)"
 			break;	
 		default :
 			document.getElementById("showtMSIndexCheck").checked = false;

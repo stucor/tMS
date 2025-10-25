@@ -9,11 +9,11 @@ var prevScrollpos = window.scrollY;
 
 document.getElementById(`tmsindexBtn`).onclick = function () {
 	savePlaceInBook();
-	if (this.style.color == 'green') {
+	if (document.getElementById('showtMSIndexCheck').checked == true) {
 		this.style.color = 'var(--primarytext)'
 		document.getElementById('showtMSIndexCheck').checked = false;
 	} else {
-		this.style.color = 'green'
+		this.style.color = 'var(--segmentcolor)'
 		document.getElementById('showtMSIndexCheck').checked = true;
 	}
 	setTMSIndex ();
@@ -638,7 +638,7 @@ function initialiseBookSettings () {
 	switch (local_wiswobooks_tMSIndex) {
 		case 'true' :
 			document.getElementById("showtMSIndexCheck").checked = true;
-			document.getElementById("tmsindexBtn").style.color = "green"
+			document.getElementById("tmsindexBtn").style.color = 'var(--segmentcolor)'
 			break;
 		case 'false' :
 			document.getElementById("showtMSIndexCheck").checked = false;
@@ -1269,6 +1269,7 @@ function setTheme(){
 			r.style.setProperty('--sidenavboxshadow', '6px 0 3px -3px #BBB');
 
 			r.style.setProperty('--infoaddonbackground', '#80808008');
+			r.style.setProperty('--segmentcolor', 'green');
 
 			var engrave = document.getElementById('head-0');
 			engrave.style.color ='#bdbdbd';
@@ -1392,6 +1393,7 @@ function setTheme(){
 			r.style.setProperty('--sidenavboxshadow', '2px 0 2px 1px #595959');
 
 			r.style.setProperty('--infoaddonbackground', '#afafaf48');
+			r.style.setProperty('--segmentcolor', 'crimson');
 
 			var engrave = document.getElementById('head-0');
 			engrave.style.color ='#7c7c7c';
@@ -1518,6 +1520,7 @@ function setTheme(){
 			r.style.setProperty('--sidenavboxshadow', '3px 0 6px -3px #888');
 
 			r.style.setProperty('--infoaddonbackground', '#cea1400a');
+			r.style.setProperty('--segmentcolor', 'purple');
 
 
 			var engrave = document.getElementById('head-0');
@@ -1558,7 +1561,8 @@ function setMargin() {
 			thebook.style.paddingRight = '20%';
 			marginName = "widemargin";
 		}
- 	//setSelfquoteMargins();	
+ 	//setSelfquoteMargins();
+	setNamedSectionPosition();
 }
 
 function doSetSerif () {
@@ -1762,10 +1766,26 @@ window.onscroll = function() {
 		}
 	}
 } */
+function setNamedSectionPosition () {
+	var root = document.querySelector(':root');
+	if ( document.querySelector('input[name="marginRadio"]:checked').value == "narrowmargin") {
+		root.style.setProperty('--namedpositionleft', '0');
+		root.style.setProperty('--namedpositiontop', '1em');
+	} else {
+		if (window.innerWidth > 666) {
+			root.style.setProperty('--namedpositionleft', '-3em');
+			root.style.setProperty('--namedpositiontop', '3em');
+		} else {
+			root.style.setProperty('--namedpositionleft', '-1.5em');
+			root.style.setProperty('--namedpositiontop', '1em');	
+		}
+	}
+}
 
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
 	//setSelfquoteMargins();
+	setNamedSectionPosition();
 });
 
 var savedHeadingsElements = thebook.querySelectorAll("h1[id], h2[id], h3[id]");

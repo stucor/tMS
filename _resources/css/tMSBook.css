@@ -353,8 +353,8 @@ figure {
 }
 
 figure:has(> .tMSIndex) > .tMSIndex {
-	display:block;
-	text-align: left;
+	vertical-align: top;
+
 }
 
 figure img { 
@@ -1646,6 +1646,18 @@ sup {
 	text-align: left;
 }
 
+.figureSegRef, .notesSegRef, .lotSegRef, .textSegRef {
+	position: relative;
+	top:0.4em;
+	color: var(--segmentcolor);
+	background-color: rgba(211, 211, 211, 0.227);
+	width:fit-content;
+	height: fit-content;
+	border-radius: 20px;
+	margin: 0;
+	padding: 0 0.4em;
+	font-size: 0.8rem;
+}
 
 .figureCaption {
 	font-size: 1em;
@@ -2577,6 +2589,17 @@ mark.current {
 }
 
 /* Self Quotes */
+.named-section {
+	width:fit-content;
+	position: relative;
+	top: var(--namedpositiontop);
+	left: var(--namedpositionleft);
+	font-size: 0.8em;
+	/* color: var(--secondarytextcolor); */
+	margin:0;
+	line-height: 0;
+}
+
 
 .selfquote::before {
     content: attr(data-before-selfquote); 

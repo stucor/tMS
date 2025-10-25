@@ -83,8 +83,11 @@ root {
 	--scsegmentnumbercolor: #5278c0;
 	--ascsutta: ">>";
 	--descsutta: "<<";
-	--selfquoteleftmargin: -3em;
-	--selfquotetopmargin: 0;
+	--segmentcolor: red;
+/* 	--selfquoteleftmargin: -3em;
+	--selfquotetopmargin: 0; */
+	--namedpositiontop: 0;
+	--namedpositionleft:0;
 	--sidenavboxshadow: 6px 0 6px -3px #888;
 	--sesamebackground: #fffff8;
 }
@@ -159,7 +162,7 @@ body {
 	margin-bottom: 50%	
 }
 
-.tMSIndex {
+/* .tMSIndex {
 	position:relative;
 	color: var(--secondarytextcolor);
 	font-variant: normal;
@@ -173,25 +176,62 @@ body {
 	line-height: 1.2rem;
 	font-family: 'Source Sans Pro';
 
+} */
+.tMSIndex {
+
+	line-height: 0;
+	color: var(--segmentcolor);
+	background-color: rgba(211, 211, 211, 0.227);
+	border-radius: 20px;
+	font-variant: normal;
+	font-style: normal;
+	font-weight: normal;
+	white-space: nowrap;
+	margin: 0 0.5em 0 0;
+	padding: 0 0.4em;
+	font-size: 0.8rem;
+	font-family: 'Source Sans Pro';
+
 }
+/* .caption-centered-serif:has(.tMSIndex) > .tMSIndex {
+ 	position:relative;
+	top: -1em;
+	line-height: 0;
+}
+
+
 h1 .tMSIndex {
+	position:relative;
+	top:-2em;
+
+}
+h2 .tMSIndex {
+	position:relative;
+	top:-2em;
+} */
+
+
+/* h1 .tMSIndex {
 	display:block;
 	max-width:fit-content;
 }
 h2 .tMSIndex {
 	display:block;
 	max-width:fit-content;
-}
+} */
 
 #tmsindexBtn {
-	color: gray;
 	font-variant: small-caps;
+	color:var(--primarytextcolor)
 }
 
 #segcount, #lastsegcount{
 	font-family: 'Source Sans Pro';
-	color: var(--secondarytextcolor);
 	font-variant: normal;
+}
+
+.named-section {
+	color: var(--secondarytextcolor);
 }
 
 #goHashBtn, #shareAtHere, #shareNoHash {

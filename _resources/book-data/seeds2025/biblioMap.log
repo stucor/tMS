@@ -1,4 +1,4 @@
-Fri Oct 24 2025 10:22:54 GMT+0100 (British Summer Time):
+Sat Oct 25 2025 15:01:33 GMT+0100 (British Summer Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -701,5 +701,125 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wijesekera 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2020"
+  },
+  {
+    "zotref": "",
+    "bookref": "Patton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Langer"
+  },
+  {
+    "zotref": "",
+    "bookref": "Falk"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gombrich 2009"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Sujato 2012"
+  },
+  {
+    "zotref": "",
+    "bookref": "Falk"
+  },
+  {
+    "zotref": "",
+    "bookref": "Flood"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bausch 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olivelle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olivelle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olivelle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olivelle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wijesekera 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bausch 2018"
   }
 ]

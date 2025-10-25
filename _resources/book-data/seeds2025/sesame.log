@@ -1,4 +1,4 @@
-Fri Oct 24 2025 10:22:54 GMT+0100 (British Summer Time)
+Sat Oct 25 2025 15:01:34 GMT+0100 (British Summer Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -96,11 +96,31 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Brahmavamso 2006 p.221",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Bṛhadāraṇyaka Upaniṣad",
 	"key": "wp:Brihadaranyaka_Upanishad:OlivelleP 1998a"
 },
 {
 	"sesame": "Child’s Flesh Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Chāndogya",
+	"key": "wp:Chandogya_Upanishad:OlivelleP 1998a"
+},
+{
+	"sesame": "Chāndogya Upaniṣad",
+	"key": "wp:Chandogya_Upanishad:OlivelleP 1998a"
+},
+{
+	"sesame": "City Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Cūḷaniddesa",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -122,6 +142,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 {
 	"sesame": "Dog-Duty Ascetic Discourse",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dīgha Nikāya",
+	"key": "super-blurbs:dn"
 },
 {
 	"sesame": "Dīrgha Āgama",
@@ -160,6 +184,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "super-blurbs:iti"
 },
 {
+	"sesame": "Kevaddha Sutta",
+	"key": "dn-blurbs:dn11"
+},
+{
+	"sesame": "Kāṇva Śatapatha Brāhmaṇa",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Longer Discourse on Advice to Rāhula",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -174,6 +206,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 {
 	"sesame": "Madhyama Āgama",
 	"key": "super-blurbs:ma"
+},
+{
+	"sesame": "Mahānidāna",
+	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Mahānidāna Sutta",
@@ -220,6 +256,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Pārāyana Vagga",
+	"key": "snp-blurbs:snp-parayanavagga"
+},
+{
 	"sesame": "Questions of Milinda",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -241,6 +281,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Sarvāstivādins",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Satipaṭṭhāna Saṁyutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -288,11 +332,19 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Sujato 2023 note",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Suttanipāta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Sāleyyaka Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sīlakkhandha Vagga",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -329,6 +381,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Undisturbable Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Upaniṣad",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

@@ -222,7 +222,7 @@ h2 .tMSIndex {
 
 #tmsindexBtn {
 	font-variant: small-caps;
-	color:var(--primarytextcolor)
+	color:var(--primaryinterfacecolor)
 }
 
 #segcount, #lastsegcount{

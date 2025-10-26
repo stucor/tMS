@@ -1,4 +1,4 @@
-Sat Oct 25 2025 15:01:33 GMT+0100 (British Summer Time):
+Sun Oct 26 2025 14:25:49 GMT+0000 (Greenwich Mean Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -821,5 +821,201 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Bausch 2018"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hinüber"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gombrich 1980"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olivelle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olivelle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olivelle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Jayatilleke"
+  },
+  {
+    "zotref": "",
+    "bookref": "Werner"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gombrich 1980"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2016"
+  },
+  {
+    "zotref": "",
+    "bookref": "Oldenberg"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Cintita"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2017"
+  },
+  {
+    "zotref": "",
+    "bookref": "Choong"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2018"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "Frauwallner 1953/1973"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Langer"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1988"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wijesekera 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Kalupahana 1975"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gombrich 2009"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1988"
+  },
+  {
+    "zotref": "",
+    "bookref": "Rhys Davids"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Frauwallner 1953/1973"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Brahmavamso 2002"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wijesekera 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olivelle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1988"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wijesekera 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Shults"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2008"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Buddhadāsa"
+  },
+  {
+    "zotref": "",
+    "bookref": "Reinhard"
+  },
+  {
+    "zotref": "",
+    "bookref": "Harvey 1995"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "DPPN"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Langer"
+  },
+  {
+    "zotref": "",
+    "bookref": "Karunadasa"
   }
 ]

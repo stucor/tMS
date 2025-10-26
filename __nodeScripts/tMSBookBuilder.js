@@ -367,6 +367,12 @@ function processPandoc() {
 				}
 	
 			}
+			// sups to superscripts (No sups will be footnote within footnotes)
+			let sups = footnotesRoot.getElementsByTagName ('sup')
+			for (i in sups) {
+				let tempText = sups[i].text
+				sups[i].replaceWith (`<span class='superscript'>${tempText}</span>`)
+			}
 			// anchors
 			let anchors = footnotesRoot.getElementsByTagName ('a') 
 			for (i in anchors) {
@@ -829,6 +835,10 @@ function buildBookIndexHTML () {
 			if (suffix.includes(allSups[i].text)) {
 				let tempText = allSups[i].text
 				allSups[i].replaceWith(`<span class='superscript'>${tempText}</span>`)
+			} else 
+			if (allSups[i].text.substring(0,2) == '##'){
+				let tempText = allSups[i].text.slice(2)
+				allSups[i].replaceWith(`<span class='superscript'>${tempText}</span>`)
 			}
 		}
 
@@ -1055,8 +1065,8 @@ function buildBookIndexHTML () {
 					let blockquoteRoot = parse(allDivs[i].innerHTML);
 					let allPs = blockquoteRoot.querySelectorAll('p')
 					for (let apj = 0; apj < allPs.length; apj++ ) {
-						console.log (allPs[apj].innerHTML.substring(0,4))
-						console.log (allPs[apj].innerHTML)
+/* 						console.log (allPs[apj].innerHTML.substring(0,4))
+						console.log (allPs[apj].innerHTML) */
 						if (allPs[apj].innerHTML.charAt(0)== '“') {
 							if (apj > 0) {
 								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAbody' `)

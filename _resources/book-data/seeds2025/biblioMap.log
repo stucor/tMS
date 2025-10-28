@@ -1,4 +1,4 @@
-Mon Oct 27 2025 11:55:56 GMT+0000 (Greenwich Mean Time):
+Tue Oct 28 2025 14:57:43 GMT+0000 (Greenwich Mean Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -1017,5 +1017,209 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Karunadasa"
+  },
+  {
+    "zotref": "",
+    "bookref": "Harvey 1995"
+  },
+  {
+    "zotref": "",
+    "bookref": "Pasanno"
+  },
+  {
+    "zotref": "",
+    "bookref": "Cintita"
+  },
+  {
+    "zotref": "",
+    "bookref": "Sujato 2011a"
+  },
+  {
+    "zotref": "",
+    "bookref": "Warder 2010"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇamoli 1956"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gombrich 1980"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Brahmavamso 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1998"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gombrich 2009"
+  },
+  {
+    "zotref": "",
+    "bookref": "Choong"
+  },
+  {
+    "zotref": "",
+    "bookref": "DOP"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gonda"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Falk"
+  },
+  {
+    "zotref": "",
+    "bookref": "Reat"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bucknell"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2018"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 1974/2007"
+  },
+  {
+    "zotref": "",
+    "bookref": "Cintita"
+  },
+  {
+    "zotref": "",
+    "bookref": "Amaro"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Warder 1970"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "DOP"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vetter 1994"
+  },
+  {
+    "zotref": "",
+    "bookref": "Kalupahana 1976"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ṭhānissaro 2008a"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2012"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ṭhānissaro 2008b"
+  },
+  {
+    "zotref": "",
+    "bookref": "Amaro"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2021"
   }
 ]

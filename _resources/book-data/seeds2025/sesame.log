@@ -1,10 +1,18 @@
-Mon Oct 27 2025 11:55:56 GMT+0000 (Greenwich Mean Time)
+Tue Oct 28 2025 14:57:43 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
 [
 {
 	"sesame": "A Hundred Spears",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "AN 3.33",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "AN 7.49",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -40,11 +48,19 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Bodhi 2000 n.114",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Bodhi 2000 n.166",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Bodhi 2000 n.173",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000 n.182",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -68,6 +84,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Bodhi 2000 n.48",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Bodhi 2000 n.81",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -88,6 +108,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Bodhi 2012 at AN 3.32",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Bodhi 2012 n.503",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -96,7 +120,15 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Bodhi 2020 p.25",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Brahmavamso 2006 p.221",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Brahmavamso 2006 ‘The Nature of Citta’",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -220,6 +252,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Mahāvedalla Sutta",
+	"key": "mn-blurbs:mn43"
+},
+{
 	"sesame": "Mahā­sati­paṭ­ṭhā­na Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -241,6 +277,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Olivelle",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Paṭiccasamuppāda Vibhaṅga",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -277,6 +317,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Sangīti Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sappurisa Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -349,6 +393,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "The Analysis of the Truths",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "The Book of the Six Sense Fields in Sujato 2019",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

@@ -1413,6 +1413,7 @@ dd > p {
 */
 
 .sesame {
+	font-weight: 900;
 	text-decoration: underline solid cornflowerblue;
 	cursor:pointer;
 /* 	border-bottom: solid 1px red; */

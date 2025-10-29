@@ -1,4 +1,4 @@
-Tue Oct 28 2025 14:57:43 GMT+0000 (Greenwich Mean Time)
+Wed Oct 29 2025 13:13:17 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -20,7 +20,23 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "super-blurbs:abhidhamma"
 },
 {
+	"sesame": "Advice to Anāthapiṇḍika Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Analysis of the Elements Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Anupada Sutta",
+	"key": "mn-blurbs:mn111"
+},
+{
+	"sesame": "Anurādha Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Anāthapiṇḍika Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -164,6 +180,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Dhātu Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Discourse on Rebirth Through Will",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -184,6 +204,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Ekottarika",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Ekottarika Āgama",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -193,6 +217,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "First Discourse on the Leash",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Godhika Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -277,6 +305,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Olivelle",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Pañcattaya Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -372,6 +404,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Simile of the Snake Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Sujato 2023",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -385,6 +421,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Sāleyyaka Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sīgālovāda Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -412,6 +452,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Theravāda Abhidhamma",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Theravādins",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -422,6 +466,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 {
 	"sesame": "Therīgāthā",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Third Discourse on Intention",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Udāna",
+	"key": "super-blurbs:ud"
 },
 {
 	"sesame": "Udānavarga",
@@ -444,6 +496,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "wp:Upanishads"
 },
 {
+	"sesame": "Vakkali Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Vappa Discourse",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -458,6 +514,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 {
 	"sesame": "Visuddhimagga",
 	"key": "wp:Visuddhimagga:Ñanamoli 1956a"
+},
+{
+	"sesame": "Way to the Undisturbable Discourse",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Yamaka Sutta",
+	"key": "sn-blurbs:sn22.85"
 },
 {
 	"sesame": "Yājñavalkya",

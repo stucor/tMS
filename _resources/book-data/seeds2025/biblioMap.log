@@ -1,4 +1,4 @@
-Wed Oct 29 2025 13:13:17 GMT+0000 (Greenwich Mean Time):
+Thu Oct 30 2025 14:36:56 GMT+0000 (Greenwich Mean Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -1221,5 +1221,305 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Anālayo 2021"
+  },
+  {
+    "zotref": "",
+    "bookref": "Choong"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2023"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "CPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "Harvey 1995"
+  },
+  {
+    "zotref": "",
+    "bookref": "Somaratne"
+  },
+  {
+    "zotref": "",
+    "bookref": "Sujato 2008"
+  },
+  {
+    "zotref": "",
+    "bookref": "Dhammika 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2018"
+  },
+  {
+    "zotref": "",
+    "bookref": "Kalupahana 1976"
+  },
+  {
+    "zotref": "",
+    "bookref": "Vélez de Cea"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2023"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2000 n.174"
+  },
+  {
+    "zotref": "",
+    "bookref": "Hecker"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2023"
+  },
+  {
+    "zotref": "",
+    "bookref": "Langer"
+  },
+  {
+    "zotref": "",
+    "bookref": "Harvey 1995"
+  },
+  {
+    "zotref": "",
+    "bookref": "Langer"
+  },
+  {
+    "zotref": "",
+    "bookref": "Langer"
+  },
+  {
+    "zotref": "",
+    "bookref": "Nyanaponika 1990"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇavīra"
+  },
+  {
+    "zotref": "",
+    "bookref": "Cintita"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇavīra"
+  },
+  {
+    "zotref": "",
+    "bookref": "Cintita"
+  },
+  {
+    "zotref": "",
+    "bookref": "Amaro"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2021"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2021"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 1974/2007"
+  },
+  {
+    "zotref": "",
+    "bookref": "Kalupahana 1976"
+  },
+  {
+    "zotref": "",
+    "bookref": "Johansson"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2018"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bingenheimer"
+  },
+  {
+    "zotref": "",
+    "bookref": "Thomas 1935"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "DPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "DPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gombrich 2009"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Nyanaponika 1959"
+  },
+  {
+    "zotref": "",
+    "bookref": "Warder"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 1971"
+  },
+  {
+    "zotref": "",
+    "bookref": "Kalupahana 1976"
+  },
+  {
+    "zotref": "",
+    "bookref": "Collins"
+  },
+  {
+    "zotref": "",
+    "bookref": "Mahasi"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2021"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2022"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "",
+    "bookref": "Harvey 1995"
+  },
+  {
+    "zotref": "",
+    "bookref": "Pasanno"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ṭhānissaro 2008a"
+  },
+  {
+    "zotref": "",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2013"
+  },
+  {
+    "zotref": "",
+    "bookref": "Siderits"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "DPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "CPED"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "DPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "Norman 1996"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 1979"
+  },
+  {
+    "zotref": "",
+    "bookref": "Johansson"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "DPD"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Sujato 2023"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo 2023"
+  },
+  {
+    "zotref": "",
+    "bookref": "DOP"
+  },
+  {
+    "zotref": "",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wynne"
   }
 ]

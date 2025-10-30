@@ -1,4 +1,4 @@
-Wed Oct 29 2025 13:13:17 GMT+0000 (Greenwich Mean Time)
+Thu Oct 30 2025 14:36:56 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -76,6 +76,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Bodhi 2000 n.174",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Bodhi 2000 n.182",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -96,11 +100,19 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Bodhi 2000 n.38",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Bodhi 2000 n.4",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Bodhi 2000 n.48",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000 n.53",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -137,6 +149,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Bodhi 2020 p.25",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2020, 6. The Unconditioned: The Goal, Introduction",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -533,6 +549,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "when one dwells contemplating gratification in things that can fetter",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Ñāṇamoli 1995 n.266",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

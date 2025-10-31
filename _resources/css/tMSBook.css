@@ -1343,7 +1343,7 @@ sup {
 	cursor: pointer;
 	font-style: normal;
 	user-select: none;
-	background: rgb(222, 193, 250);
+	/* background: rgb(222, 193, 250); */
 }
 
 

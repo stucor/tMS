@@ -13,11 +13,11 @@
   },
   {
     "fnNumber": "4",
-    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.202, <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.118, <span class='sesame' data-sesame-key='zotref:Pasanno-Amaro 2009'>Pasanno</span> p.155, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.179</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 1995</span> p.202, <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.118, <span class='sesame' data-sesame-key='zotref:Pasanno-Amaro 2009'>Pasanno</span> p.155, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.179</p>"
   },
   {
     "fnNumber": "5",
-    "fnHTML": "<p>See <span class='sesame'>Bodhi 2000 p.840</span> “The five aggregates are so called because they each unite under one label a multiplicity of phenomena that share the same defining characteristic.”</p>"
+    "fnHTML": "<p>See <span data-sesame-key='bodhi-nikaya-notes:SN-AggregatesIntro-22Khandhasamyutta' class='sesame'>Bodhi 2000 p.840</span> “The five aggregates are so called because they each unite under one label a multiplicity of phenomena that share the same defining characteristic.”</p>"
   },
   {
     "fnNumber": "6",
@@ -269,7 +269,7 @@
   },
   {
     "fnNumber": "68",
-    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 2013</span> p.71, <span class='sesame' data-sesame-key='zotref:JonesDhivan 2011a'>Jones 2011</span> p.73, <span class='sesame' data-sesame-key='zotref:Amaro 2021a'>Amaro</span> p.44</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 2013</span> p.71, <span class='sesame' data-sesame-key='zotref:JonesDhivan 2011a'>Jones 2011</span> p.73, <span class='sesame' data-sesame-key='zotref:Amaro 2021a'>Amaro</span> p.44</p>"
   },
   {
     "fnNumber": "69",
@@ -361,7 +361,7 @@
   },
   {
     "fnNumber": "91",
-    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.5 (translation mine): “Before the quoted extract [of the <span class='sesame'>If There is Desire Discourse</span>] there is a passage on […] the four nutriments. These same four nutriments are also mentioned in other passages, where it is stated that they […] are the cause for the rebirth of the being which is to be reborn (<span lang='pi'>saṁbhāvesīnaṁ</span>).”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.5 (translation mine): “Before the quoted extract [of the <span data-sesame-key='sn-blurbs:sn12.64' class='sesame'>If There is Desire Discourse</span>] there is a passage on […] the four nutriments. These same four nutriments are also mentioned in other passages, where it is stated that they […] are the cause for the rebirth of the being which is to be reborn (<span lang='pi'>saṁbhāvesīnaṁ</span>).”</p>"
   },
   {
     "fnNumber": "92",
@@ -429,7 +429,7 @@
   },
   {
     "fnNumber": "108",
-    "fnHTML": "<p>As also argued by <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.263 n.5</p>"
+    "fnHTML": "<p>As also argued by <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 1995</span> p.263 n.5</p>"
   },
   {
     "fnNumber": "109",
@@ -1141,7 +1141,7 @@
   },
   {
     "fnNumber": "286",
-    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.97f</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 1995</span> p.97f</p>"
   },
   {
     "fnNumber": "287",
@@ -1149,7 +1149,7 @@
   },
   {
     "fnNumber": "288",
-    "fnHTML": "<p><span lang='pi'>Rūpupayaṁ viñ&shy;ñā&shy;ṇaṁ tiṭṭhamānaṁ tiṭṭheyya</span>, ‘consciousness would continue to exist if it is attracted to form’. <span class='sesame' data-sesame-key='zotref:Bodhi 2000a'>Bodhi 2000</span> translates: “Consciousness, while standing, might stand engaged with form.” <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.27 has: “Should consciousness, when standing, stand attached to form […]” Under <span lang='pi'>tiṭṭhati</span> <span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span> glosses the literal ‘stands’ but also ‘continues to exist’. The latter is meant here, not ‘stand’, which is too literal. <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> p.50 more accurately translates ‘may persist’. See also <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.97: “This term [<span lang='pi'>ṭhiti</span>] itself implies continuity: being ‘stationed’ means that [consciousness] ‘persists’.” <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.97 also renders this term as ‘maintenance’.</p><p>Although <span lang='pi'>viñ&shy;ñā&shy;ṇaṁ tiṭṭhamānaṁ tiṭṭheyya</span> literally is ‘<em>existing</em> consciousness would continue’, a present participle followed by a finite form of the same verb is a form of emphasis. For example, <span lang='pi'>cittaṁ bahulaṁ gacchamānaṁ gaccheyya</span>, literally ‘the straying mind may often stray’, simply means the mind may often stray. (<span class='sclinktext'>SN&#8239;35.117<span class='scsegments'>:1.2</span></span>) So I excluded the present participle <span lang='pi'>tiṭṭhamānaṁ</span>, like other translators have done in this example case and similar instances, and instead emphasize the verb with ‘continue to exist’. Further, <span lang='pi'>rūpupayaṁ</span> is a <span lang='pi'>bahubbīhi</span> compound, so the sentence literally says, “existing consciousness which has an attraction to form will continue”. Like <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> I therefore also think it is incorrect to treat <span lang='pi'>rūpa</span> as an object of <span lang='pi'>tiṭṭheyya</span>, as in “stand engaged with form” of other translators.</p>"
+    "fnHTML": "<p><span lang='pi'>Rūpupayaṁ viñ&shy;ñā&shy;ṇaṁ tiṭṭhamānaṁ tiṭṭheyya</span>, ‘consciousness would continue to exist if it is attracted to form’. <span class='sesame' data-sesame-key='zotref:Bodhi 2000a'>Bodhi 2000</span> translates: “Consciousness, while standing, might stand engaged with form.” <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.27 has: “Should consciousness, when standing, stand attached to form […]” Under <span lang='pi'>tiṭṭhati</span> <span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span> glosses the literal ‘stands’ but also ‘continues to exist’. The latter is meant here, not ‘stand’, which is too literal. <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> p.50 more accurately translates ‘may persist’. See also <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.97: “This term [<span lang='pi'>ṭhiti</span>] itself implies continuity: being ‘stationed’ means that [consciousness] ‘persists’.” <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 1995</span> p.97 also renders this term as ‘maintenance’.</p><p>Although <span lang='pi'>viñ&shy;ñā&shy;ṇaṁ tiṭṭhamānaṁ tiṭṭheyya</span> literally is ‘<em>existing</em> consciousness would continue’, a present participle followed by a finite form of the same verb is a form of emphasis. For example, <span lang='pi'>cittaṁ bahulaṁ gacchamānaṁ gaccheyya</span>, literally ‘the straying mind may often stray’, simply means the mind may often stray. (<span class='sclinktext'>SN&#8239;35.117<span class='scsegments'>:1.2</span></span>) So I excluded the present participle <span lang='pi'>tiṭṭhamānaṁ</span>, like other translators have done in this example case and similar instances, and instead emphasize the verb with ‘continue to exist’. Further, <span lang='pi'>rūpupayaṁ</span> is a <span lang='pi'>bahubbīhi</span> compound, so the sentence literally says, “existing consciousness which has an attraction to form will continue”. Like <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> I therefore also think it is incorrect to treat <span lang='pi'>rūpa</span> as an object of <span lang='pi'>tiṭṭheyya</span>, as in “stand engaged with form” of other translators.</p>"
   },
   {
     "fnNumber": "289",
@@ -1529,7 +1529,7 @@
   },
   {
     "fnNumber": "383",
-    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.98</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 1995</span> p.98</p>"
   },
   {
     "fnNumber": "384",
@@ -1601,7 +1601,7 @@
   },
   {
     "fnNumber": "401",
-    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.143, <span class='sesame' data-sesame-key='zotref:Pasanno-Amaro 2009'>Pasanno</span> p.133, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.166</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 1995</span> p.143, <span class='sesame' data-sesame-key='zotref:Pasanno-Amaro 2009'>Pasanno</span> p.133, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.166</p>"
   },
   {
     "fnNumber": "402",
@@ -1913,7 +1913,7 @@
   },
   {
     "fnNumber": "479",
-    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.98, <span class='sesame' data-sesame-key='zotref:Somaratne 1999a'>Somaratne</span> p.150, <span class='sesame' data-sesame-key='zotref:Sujato 2008a'>Sujato 2008</span> p.7, <span class='sesame' data-sesame-key='zotref:Dhammika 2015a'>Dhammika 2015</span> p.20 , <span class='sesame' data-sesame-key='zotref:Analayo 2018a'>Anālayo 2018</span> p.32</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 1995</span> p.98, <span class='sesame' data-sesame-key='zotref:Somaratne 1999a'>Somaratne</span> p.150, <span class='sesame' data-sesame-key='zotref:Sujato 2008a'>Sujato 2008</span> p.7, <span class='sesame' data-sesame-key='zotref:Dhammika 2015a'>Dhammika 2015</span> p.20 , <span class='sesame' data-sesame-key='zotref:Analayo 2018a'>Anālayo 2018</span> p.32</p>"
   },
   {
     "fnNumber": "480",
@@ -1985,7 +1985,7 @@
   },
   {
     "fnNumber": "497",
-    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.35, translation mine, referring to <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.202</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.35, translation mine, referring to <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 1995</span> p.202</p>"
   },
   {
     "fnNumber": "498",
@@ -2149,7 +2149,7 @@
   },
   {
     "fnNumber": "538",
-    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.230, <span class='sesame' data-sesame-key='zotref:Pasanno-Amaro 2009'>Pasanno</span> p.170, <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.121ff</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 1995</span> p.230, <span class='sesame' data-sesame-key='zotref:Pasanno-Amaro 2009'>Pasanno</span> p.170, <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.121ff</p>"
   },
   {
     "fnNumber": "539",

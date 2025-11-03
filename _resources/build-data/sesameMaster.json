@@ -590,5 +590,13 @@
 {
 	"sesame": "Tipiṭaka",
 	"key": "wp:Pali_Canon"
+},
+{
+	"sesame": "If There is Desire Discourse",
+	"key": "sn-blurbs:sn12.64"
+},
+{
+	"sesame": "Bodhi 2000 p.840",
+	"key": "bodhi-nikaya-notes:SN-AggregatesIntro-22Khandhasamyutta"
 }
 ]

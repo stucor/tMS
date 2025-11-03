@@ -5,15 +5,15 @@
   },
   {
     "fnNumber": "2",
-    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:'>Sunyo 2021</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Sunyo 2021a'>Sunyo 2021</span></p>"
   },
   {
     "fnNumber": "3",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Ñāṇananda 2016</span> p.71: “What the Arahants have done is to bring consciousness to such a state where it gets no footing on name-and-form. In other words, it is the state of unestablished consciousness (<span lang='pi'>appatiṭṭhita viññaṇa</span>).”</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2016a'>Ñāṇananda 2016</span> p.71: “What the Arahants have done is to bring consciousness to such a state where it gets no footing on name-and-form. In other words, it is the state of unestablished consciousness (<span lang='pi'>appatiṭṭhita viññaṇa</span>).”</p>"
   },
   {
     "fnNumber": "4",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Harvey 1995</span> p.202, <span class='sesame biblioref'>Ṭhānissaro 2008a</span> p.118, <span class='sesame biblioref'>Pasanno</span> p.155, <span class='sesame biblioref'>Cintita</span> p.179</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.202, <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.118, <span class='sesame' data-sesame-key='zotref:Pasanno-Amaro 2009'>Pasanno</span> p.155, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.179</p>"
   },
   {
     "fnNumber": "5",
@@ -29,11 +29,11 @@
   },
   {
     "fnNumber": "8",
-    "fnHTML": "<p>As <span class='sesame biblioref'>Ṭhānissaro 2018</span> p.6</p>"
+    "fnHTML": "<p>As <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2018a'>Ṭhānissaro 2018</span> p.6</p>"
   },
   {
     "fnNumber": "9",
-    "fnHTML": "<p><span class='sclinktext'>MN&#8239;49<span class='scsegments'>:25.1</span></span> <span class='ptsref'>PTS: M I 330</span>. For a discussion see <span class='sesame' data-sesame-key='zotref:'>Sunyo 2021</span></p>"
+    "fnHTML": "<p><span class='sclinktext'>MN&#8239;49<span class='scsegments'>:25.1</span></span> <span class='ptsref'>PTS: M I 330</span>. For a discussion see <span class='sesame' data-sesame-key='zotref:Sunyo 2021a'>Sunyo 2021</span></p>"
   },
   {
     "fnNumber": "10",
@@ -45,11 +45,11 @@
   },
   {
     "fnNumber": "12",
-    "fnHTML": "<p><span class='sclinktext'>SN&#8239;56.28</span> explains: “They are called ‘noble one’s truths’ (<span lang='pi'>ariya-sacca</span>), because in this world […] the Truth­finder (<span lang='pi'>tathāgata</span>) is the noble one (<span lang='pi'>ariya</span>).” <span class='sesame biblioref'>Norman 1997</span> p.16 wrote: “My own feeling is that it is very likely that ‘the truth of the noble one (the Buddha)’ is the correct translation.” See also <span class='sesame biblioref'>Norman 2008</span> and <span class='sesame biblioref'>Harvey 2009</span></p>"
+    "fnHTML": "<p><span class='sclinktext'>SN&#8239;56.28</span> explains: “They are called ‘noble one’s truths’ (<span lang='pi'>ariya-sacca</span>), because in this world […] the Truth­finder (<span lang='pi'>tathāgata</span>) is the noble one (<span lang='pi'>ariya</span>).” <span class='sesame' data-sesame-key='zotref:NormanKR 1997a'>Norman 1997</span> p.16 wrote: “My own feeling is that it is very likely that ‘the truth of the noble one (the Buddha)’ is the correct translation.” See also <span class='sesame' data-sesame-key='zotref:Norman 2008a'>Norman 2008</span> and <span class='sesame' data-sesame-key='zotref:Harvey 2009a'>Harvey 2009</span></p>"
   },
   {
     "fnNumber": "13",
-    "fnHTML": "<p><span lang='pi'>Tatra tatra</span>, ‘in various realms’. <span class='sclinktext'>MN&#8239;2<span class='scsegments'>:8.8</span></span> and <span class='sclinktext'>MN&#8239;38<span class='scsegments'>:5.11</span></span> use <span lang='pi'>tatra tatra</span> (more literally ‘in various places’) explicitly for rebirth in different realms. That this is also the intended meaning in the second truth is indicated by it being about the craving that leads to a next life. <span class='sesame biblioref'>Sujato 2023</span> translates “in various different realms”.</p>"
+    "fnHTML": "<p><span lang='pi'>Tatra tatra</span>, ‘in various realms’. <span class='sclinktext'>MN&#8239;2<span class='scsegments'>:8.8</span></span> and <span class='sclinktext'>MN&#8239;38<span class='scsegments'>:5.11</span></span> use <span lang='pi'>tatra tatra</span> (more literally ‘in various places’) explicitly for rebirth in different realms. That this is also the intended meaning in the second truth is indicated by it being about the craving that leads to a next life. <span class='sesame' data-sesame-key='zotref:Sujato 2024a'>Sujato 2023</span> translates “in various different realms”.</p>"
   },
   {
     "fnNumber": "14",
@@ -57,7 +57,7 @@
   },
   {
     "fnNumber": "15",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Piyadassi</span> p.5, <span class='sesame biblioref'>Bodhi 1984</span> p.5 n.2, <span class='sesame biblioref'>Bodhi 2015</span> p.19</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Piyadassi 1959a'>Piyadassi</span> p.5, <span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.5 n.2, <span class='sesame' data-sesame-key='zotref:Bodhi 2015b'>Bodhi 2015</span> p.19</p>"
   },
   {
     "fnNumber": "16",
@@ -65,7 +65,7 @@
   },
   {
     "fnNumber": "17",
-    "fnHTML": "<p><span lang='pi'>Paṭiccasamuppādaṁ</span>, ‘the dependent arising of things’. By this I mean the actual principles existing in nature, rather than the Buddha’s teachings <em>on</em> these principles, which I call ‘Dependent Arising’.</p><p>The term is sometimes translated as ‘dependent <em>co</em>arising’, but the prefix <span lang='pi'>saṁ</span>- in <span lang='pi'>sam&shy;up&shy;pāda</span> is simply a redundancy for the following prefix up- (=<span lang='pi'>ud</span>-). As <span class='sesame biblioref'>PED</span> says under <span lang='pi'>saṁ</span>-: “very often merely pleonastic, esp. in comb[inatio]n with other prefixes.” Therefore, under <span lang='pi'>samuppajjati</span> it simply has, “to arise, to be produced”. No other dictionary suggests ‘coarising’ either. To give some examples of the word <span lang='pi'>sam&shy;up&shy;pāda</span> in a daily-life context: <span class='sclinktext'>SN&#8239;3.25<span class='scsegments'>:2.14</span></span> mentions the arising (<span lang='pi'>samuppanne</span>) of a great peril, namely a mountain that crushes everything; <span class='sclinktext'>AN&#8239;8.54<span class='scsegments'>:6.1, 6.7, 7.1, 7.7</span></span> mentions wealth that has arisen (<span lang='pi'>samuppannānaṁ</span>); <a href='https://suttacentral.net/XXX/en/sujato#YYYhttps://suttacentral.net/XXX/en/sujato%23YYY' class='extlink'>Kp 8:1.3</a> mentions the arising (<span lang='pi'>samuppanne</span>) of a need to use stored up wealth; <span class='sclinktext'>Thag&#8239;1.30<span class='scsegments'>:1.3</span></span> mentions the arising (<span lang='pi'>samuppanno</span>) of sickness; and <span class='sclinktext'>Iti&#8239;43<span class='scsegments'>:3.1</span></span> uses ‘arisen’ (<span lang='pi'>samuppannaṁ</span>) as a synonym for ‘born’ (<span lang='pi'>jātaṁ</span>) and ‘came to be’ (<span lang='pi'>bhūtaṁ</span>). We do not speak of a coarising of sickness or wealth, nor does there seem to be a good justification, certainly not on a linguistic basis, to speak of a coarising of death, for instance. <span lang='pi'>Samupajjati</span> is simply a synonym for <span lang='pi'>upajjati</span>, including in the context of Dependent Arising. There is also no such thing as “<span lang='pi'>saṁ-nirodha</span>” (“co-cessation”) but only <span lang='pi'>nirodha</span> (cessation), which indicates “co-” is not intended in <span lang='pi'>sam&shy;up&shy;pāda</span> either. See also <span class='sesame biblioref'>Jones 2021</span> p.234: “When translating the expression <span lang='pi'>paṭicca-samuppāda</span> in the Pāli Canon, it therefore seems inappropriate to use words like ‘coarising’ or ‘co-production’.” <span class='sesame biblioref'>Schmithausen 1997</span> n.73 similarly concluded: “It is not probable that the prefix <span lang='pi'>saṁ</span>- was, from the outset, intended to convey such a heavy meaning.”</p>"
+    "fnHTML": "<p><span lang='pi'>Paṭiccasamuppādaṁ</span>, ‘the dependent arising of things’. By this I mean the actual principles existing in nature, rather than the Buddha’s teachings <em>on</em> these principles, which I call ‘Dependent Arising’.</p><p>The term is sometimes translated as ‘dependent <em>co</em>arising’, but the prefix <span lang='pi'>saṁ</span>- in <span lang='pi'>sam&shy;up&shy;pāda</span> is simply a redundancy for the following prefix up- (=<span lang='pi'>ud</span>-). As <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> says under <span lang='pi'>saṁ</span>-: “very often merely pleonastic, esp. in comb[inatio]n with other prefixes.” Therefore, under <span lang='pi'>samuppajjati</span> it simply has, “to arise, to be produced”. No other dictionary suggests ‘coarising’ either. To give some examples of the word <span lang='pi'>sam&shy;up&shy;pāda</span> in a daily-life context: <span class='sclinktext'>SN&#8239;3.25<span class='scsegments'>:2.14</span></span> mentions the arising (<span lang='pi'>samuppanne</span>) of a great peril, namely a mountain that crushes everything; <span class='sclinktext'>AN&#8239;8.54<span class='scsegments'>:6.1, 6.7, 7.1, 7.7</span></span> mentions wealth that has arisen (<span lang='pi'>samuppannānaṁ</span>); <a href='https://suttacentral.net/XXX/en/sujato#YYYhttps://suttacentral.net/XXX/en/sujato%23YYY' class='extlink'>Kp 8:1.3</a> mentions the arising (<span lang='pi'>samuppanne</span>) of a need to use stored up wealth; <span class='sclinktext'>Thag&#8239;1.30<span class='scsegments'>:1.3</span></span> mentions the arising (<span lang='pi'>samuppanno</span>) of sickness; and <span class='sclinktext'>Iti&#8239;43<span class='scsegments'>:3.1</span></span> uses ‘arisen’ (<span lang='pi'>samuppannaṁ</span>) as a synonym for ‘born’ (<span lang='pi'>jātaṁ</span>) and ‘came to be’ (<span lang='pi'>bhūtaṁ</span>). We do not speak of a coarising of sickness or wealth, nor does there seem to be a good justification, certainly not on a linguistic basis, to speak of a coarising of death, for instance. <span lang='pi'>Samupajjati</span> is simply a synonym for <span lang='pi'>upajjati</span>, including in the context of Dependent Arising. There is also no such thing as “<span lang='pi'>saṁ-nirodha</span>” (“co-cessation”) but only <span lang='pi'>nirodha</span> (cessation), which indicates “co-” is not intended in <span lang='pi'>sam&shy;up&shy;pāda</span> either. See also <span class='sesame' data-sesame-key='zotref:JonesDhivan 2021a'>Jones 2021</span> p.234: “When translating the expression <span lang='pi'>paṭicca-samuppāda</span> in the Pāli Canon, it therefore seems inappropriate to use words like ‘coarising’ or ‘co-production’.” <span class='sesame' data-sesame-key='zotref:Schmithausen 1997a'>Schmithausen 1997</span> n.73 similarly concluded: “It is not probable that the prefix <span lang='pi'>saṁ</span>- was, from the outset, intended to convey such a heavy meaning.”</p>"
   },
   {
     "fnNumber": "18",
@@ -81,11 +81,11 @@
   },
   {
     "fnNumber": "21",
-    "fnHTML": "<p>As glossed by <span class='sesame biblioref'>PED</span>, <span class='sesame biblioref'>CPD</span>, <span class='sesame biblioref'>CPED</span>, <span class='sesame biblioref'>DOP</span>, <span class='sesame biblioref'>DPD</span>. I translate it as ‘production’ primarily to illustrate the simile of the painter, which uses the same word for producing a painting. See also <span data-custom-style='internal-reference'>note 166</span></p>"
+    "fnHTML": "<p>As glossed by <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span>, <span class='sesame' data-sesame-key='zotref:Dict-CPD'>CPD</span>, <span class='sesame' data-sesame-key='zotref:Dict-CPED'>CPED</span>, <span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span>, <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span>. I translate it as ‘production’ primarily to illustrate the simile of the painter, which uses the same word for producing a painting. See also <span data-custom-style='internal-reference'>note 166</span></p>"
   },
   {
     "fnNumber": "22",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Bodhi 2012</span>, <span class='sclinktext'>AN&#8239;10.65</span></p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Bodhi 2012a'>Bodhi 2012</span>, <span class='sclinktext'>AN&#8239;10.65</span></p>"
   },
   {
     "fnNumber": "23",
@@ -105,19 +105,19 @@
   },
   {
     "fnNumber": "27",
-    "fnHTML": "<p><span lang='pi'>Imasmiṁ sati idaṁ hoti</span>, ‘There will be this (<span lang='pi'>idaṁ hoti</span>), only if there is that (<span lang='pi'>imasmiṁ sati</span>)’. The clause <span lang='pi'>imasmiṁ sati</span> forms a locative absolute. There have been discussions whether this implies that the factors of Dependent Arising happen simultaneously or whether it allows for a separation in time (e.g. <span class='sesame biblioref'>Brahmavamso 2002</span>). But this misses the fact that the locative absolute, although it can have temporal connotations, can also form a conditional. <span class='sesame biblioref'>Wijesekera 1993</span> §184 states: “the temporal notion is not the only idea expressed by the loc[ative] absolute. […] It may also signify a condition that exists or should exist for the fulfillment of the main action, which may be rendered by such expressions as ‘if, on condition, provided that’ etc.” See also <span class='sesame biblioref'>Duroiselle</span> §603 iii: “<span lang='pi'>Sati</span>, the locative singular of <span lang='pi'>santo</span> […] may also often be translated by ‘if, such being the case’.” This conditional meaning applies here. The clause <span lang='pi'>imasmiṁ sati</span> describes a general principle of dependency without any temporal implications.</p><p>By “a condition that exists or should exist” Wijesekera means the locative absolute can denote either a sufficient or a necessary condition. A necessary condition can be indicated with ‘provided that’, as Wijesekera suggests, but also with ‘only if’, as I have done. It is a subtle difference, but I think <span lang='pi'>imasmiṁ sati idaṁ hoti</span> should not be translated as “there will be this if there is that” (omitting ‘only’), because this forms a sufficient condition, and sufficiency does not apply to all the links—yet this statement is individually applied to all links, as in <span class='internalLink' data-target='#bqseg11'>§11</span>.</p><p>To give a general example first, “there will be rain <em>if</em> there are clouds” would mean it always rains whenever there are clouds. Clouds are sufficient for rain. However, “there will be rain <em>only</em> if there are clouds”, just means it cannot rain without clouds. Clouds are necessary for rain. In the context of Dependent Arising “there will be craving <em>if</em> there are sensations” would mean there will be craving whenever there are sensations. Sensations would be sufficient for craving. This is incorrect, because enlightened beings still experience sensations yet don’t have craving, and even when you’re not enlightened, you can experience sensations without craving, like in deep meditation. However, the translation “there will be craving <em>only</em> if there are sensations” instead means sensations are just a necessary condition for craving. Likewise, birth is not a sufficient condition for old age, since beings can die young. So there will be old age <em>only</em> if there is birth, not <em>if</em> there is birth. Or, if in <span class='internalLink' data-target='#bqseg83'>§83</span> we were to translate the mutual dependency between consciousness and the immaterial aspects and body as “there will be the immaterial aspects and body <em>if</em> there is consciousness [and] there will be consciousness <em>if</em> there are the immaterial aspects and body”, we would technically say that the two factors keep each other in existence, since there are two statements of sufficiency. However, “there will the immaterial aspects and body <em>only</em> if there is consciousness [and] there will be consciousness <em>only</em> if there are the immaterial aspects and body” leaves room for ignorance and willful actions to also be required. This mutual dependency is of course exactly what the simile of the bundles of reeds portrays (<span class='internalLink' data-target='#bqseg95'>§95</span>). The idea is that one bundle can stand <em>only</em> if the other stands; not that <em>if</em> one stands, the other also stands automatically.</p><p>Furthermore, if the links in Dependent Arising were translated as sufficient conditions (that is, using ‘if’ instead of ‘only if’) technically there could also be other sufficient conditions that lead to the same results. For example, willful actions could then logically have been the result of something other than ignorance—knowledge, let’s say. For it would then be possible to say: “There will be willful actions if there is ignorance, <em>and</em> there will be willful actions if there is knowledge.” With ‘only if’ this does not work (as it shouldn’t): “There will be willful actions only if there is ignorance, and there will be willful actions only if there is knowledge.” The two statements conflict, because they are necessary conditions with opposing requirements. The whole point of the sequence of dependent arising is that all links are necessary conditions. Otherwise suffering could technically have been brought about through something other than ignorance.</p><p>The underlying issue is, this difference between ‘if’ and ‘only if’ does not exist in Pāli. The locative absolute can be translated as either, depending on the context. However, the context of Dependent Arising demands the latter. It demands necessary conditions. See also <span class='sesame biblioref'>Jayatilleke</span> p.449 on this phrase: “B does not occur unless A is present and occurs <em>only</em> when A is present.” (emphasis added)</p>"
+    "fnHTML": "<p><span lang='pi'>Imasmiṁ sati idaṁ hoti</span>, ‘There will be this (<span lang='pi'>idaṁ hoti</span>), only if there is that (<span lang='pi'>imasmiṁ sati</span>)’. The clause <span lang='pi'>imasmiṁ sati</span> forms a locative absolute. There have been discussions whether this implies that the factors of Dependent Arising happen simultaneously or whether it allows for a separation in time (e.g. <span class='sesame' data-sesame-key='zotref:Brahm 2002a'>Brahmavamso 2002</span>). But this misses the fact that the locative absolute, although it can have temporal connotations, can also form a conditional. <span class='sesame' data-sesame-key='zotref:Wijesekera 1993a'>Wijesekera 1993</span> §184 states: “the temporal notion is not the only idea expressed by the loc[ative] absolute. […] It may also signify a condition that exists or should exist for the fulfillment of the main action, which may be rendered by such expressions as ‘if, on condition, provided that’ etc.” See also <span class='sesame' data-sesame-key='zotref:Duroiselle 1906-2007'>Duroiselle</span> §603 iii: “<span lang='pi'>Sati</span>, the locative singular of <span lang='pi'>santo</span> […] may also often be translated by ‘if, such being the case’.” This conditional meaning applies here. The clause <span lang='pi'>imasmiṁ sati</span> describes a general principle of dependency without any temporal implications.</p><p>By “a condition that exists or should exist” Wijesekera means the locative absolute can denote either a sufficient or a necessary condition. A necessary condition can be indicated with ‘provided that’, as Wijesekera suggests, but also with ‘only if’, as I have done. It is a subtle difference, but I think <span lang='pi'>imasmiṁ sati idaṁ hoti</span> should not be translated as “there will be this if there is that” (omitting ‘only’), because this forms a sufficient condition, and sufficiency does not apply to all the links—yet this statement is individually applied to all links, as in <span class='internalLink' data-target='#bqseg11'>§11</span>.</p><p>To give a general example first, “there will be rain <em>if</em> there are clouds” would mean it always rains whenever there are clouds. Clouds are sufficient for rain. However, “there will be rain <em>only</em> if there are clouds”, just means it cannot rain without clouds. Clouds are necessary for rain. In the context of Dependent Arising “there will be craving <em>if</em> there are sensations” would mean there will be craving whenever there are sensations. Sensations would be sufficient for craving. This is incorrect, because enlightened beings still experience sensations yet don’t have craving, and even when you’re not enlightened, you can experience sensations without craving, like in deep meditation. However, the translation “there will be craving <em>only</em> if there are sensations” instead means sensations are just a necessary condition for craving. Likewise, birth is not a sufficient condition for old age, since beings can die young. So there will be old age <em>only</em> if there is birth, not <em>if</em> there is birth. Or, if in <span class='internalLink' data-target='#bqseg83'>§83</span> we were to translate the mutual dependency between consciousness and the immaterial aspects and body as “there will be the immaterial aspects and body <em>if</em> there is consciousness [and] there will be consciousness <em>if</em> there are the immaterial aspects and body”, we would technically say that the two factors keep each other in existence, since there are two statements of sufficiency. However, “there will the immaterial aspects and body <em>only</em> if there is consciousness [and] there will be consciousness <em>only</em> if there are the immaterial aspects and body” leaves room for ignorance and willful actions to also be required. This mutual dependency is of course exactly what the simile of the bundles of reeds portrays (<span class='internalLink' data-target='#bqseg95'>§95</span>). The idea is that one bundle can stand <em>only</em> if the other stands; not that <em>if</em> one stands, the other also stands automatically.</p><p>Furthermore, if the links in Dependent Arising were translated as sufficient conditions (that is, using ‘if’ instead of ‘only if’) technically there could also be other sufficient conditions that lead to the same results. For example, willful actions could then logically have been the result of something other than ignorance—knowledge, let’s say. For it would then be possible to say: “There will be willful actions if there is ignorance, <em>and</em> there will be willful actions if there is knowledge.” With ‘only if’ this does not work (as it shouldn’t): “There will be willful actions only if there is ignorance, and there will be willful actions only if there is knowledge.” The two statements conflict, because they are necessary conditions with opposing requirements. The whole point of the sequence of dependent arising is that all links are necessary conditions. Otherwise suffering could technically have been brought about through something other than ignorance.</p><p>The underlying issue is, this difference between ‘if’ and ‘only if’ does not exist in Pāli. The locative absolute can be translated as either, depending on the context. However, the context of Dependent Arising demands the latter. It demands necessary conditions. See also <span class='sesame' data-sesame-key='zotref:JayatillekeKN 1963a'>Jayatilleke</span> p.449 on this phrase: “B does not occur unless A is present and occurs <em>only</em> when A is present.” (emphasis added)</p>"
   },
   {
     "fnNumber": "28",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Shulman</span> p.299</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Shulman 2007a'>Shulman</span> p.299</p>"
   },
   {
     "fnNumber": "29",
-    "fnHTML": "<p>More literally, ‘dependency (<span lang='pi'>paccayatā</span>) on something (<span lang='pi'>idap</span>)’. The term <span lang='pi'>idap&shy;pac&shy;cay&shy;atā</span> is sometimes translated as ‘causality’, which may work too. However, to many people ‘to cause’ means “to actively produce as a result” (Wiktionary.com s.v. ‘cause’)—think of billiard balls bouncing against one another—and in context of Dependent Arising this kind of causality does not always apply. Birth does not actively produce death, for example. It is heart attacks and car crashes that do so, arguably. Neither do sensations actively produce craving: it is ignorance that does. Also, consciousness and <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span>, which are mutually dependent, do not cause one another in an active way. They just rely on one another, as the simile of the reeds at <span class='internalLink' data-target='#bqseg95'>§95</span> illustrates, both being in a sense “actively produced” by willful actions. <span class='sesame biblioref'>Jones 2022</span> p.135 agreed: “To understand them as a causal sequence, whereby ignorance is the cause of the inherited conditioning factors (<span lang='pi'>saṅ&shy;khā&shy;rā</span>), feeling (<span lang='pi'>vedanā</span>) is the cause of craving, birth is the cause of ageing and death, and so on, leads to obscurity and contradiction. But to understand each of these conditionally-arisen phenomena as necessary and sometimes sufficient conditions for the arising of the next in the sequence allows for interpretations that are truer to the teachings.”</p><p>In everyday contexts the words <span lang='pi'>paṭicca</span> and <span lang='pi'>paccaya</span> also do not indicate what we normally call ‘causes’. It is said that the body depends on (<span lang='pi'>paṭicca</span>) food, and will die without it. (<span class='sclinktext'>SN&#8239;46.2<span class='scsegments'>:1.2</span></span>) Food is not the <em>cause</em> of the body: it is just one condition necessary for its continuance. In context of Dependent Arising itself, the <span class='sesame'>Longer Discourse on the Ending of Craving</span> mentions that fire depends on (<span lang='pi'>paṭicca</span>) fuel. (<span class='internalLink' data-target='#bqseg102'>§102</span>) Fuel by itself does not really <em>cause</em> fire either. As to <span lang='pi'>paccaya</span>, a noble disciple is said to be ‘not dependent on others’ (<span lang='pi'>aparappaccaya</span>). These and other everyday uses of the words also indicate that Dependent Arising is about dependencies, not causalities, at least not in the way the word ‘cause’ is sometimes understood.</p><p>The word <span lang='pi'>nidāna</span> is sometimes also translated as ‘cause’, particularly in the title of the <span data-sesame-key='dn-blurbs:dn15' class='sesame'>Mahānidāna Sutta</span>, then called ‘The Great Discourse on Causality’. But a common translation for the word itself is ‘source’, which I think is more accurate. See for example <span class='sesame biblioref'>Sujato 2023</span> at <span class='sclinktext'>AN&#8239;3.34</span>, <span class='sesame'>Nidāna Sutta</span>, titled ‘Sources’. As another example, discourses stemming from Sāvatthi are called <span lang='pi'>Sāvatthi-nidānaṁ</span>. In this light, the <span data-sesame-key='dn-blurbs:dn15' class='sesame'>Mahānidāna Sutta</span> should be called something like ‘The Great Discourse on the Sources [of things]’, although that definitely doesn’t sound as good. <span class='sesame biblioref'>Schmithausen 2000</span> calls it the Great Discourse on the Underlying Factors (<em>Großen Lehrrede von den zugrundeliegenden Factoren</em>). In this book I just refer to the discourse by its Pāli name.</p><p>All that said, ‘causality’ is not wrong per se. There are various ways to define the term, some of which do not differ much from dependency, if at all. Pragmatically the difference between the two may have limited relevance as well, because whether we say death <em>depends</em> on birth or death is <em>caused</em> by birth, the fundamental problem remains the same. Many of the links are also causal no matter how we interpret it. I also use the word ‘cause’ in the main text, although in the translations I stuck to ‘condition’ for <span lang='pi'>hetu</span> and ‘requirement’ for <span lang='pi'>paccaya</span>. The words have a range of meaning that does not match a single English word, so these translations are not applicable throughout the canon, but they do work in the present context.</p>"
+    "fnHTML": "<p>More literally, ‘dependency (<span lang='pi'>paccayatā</span>) on something (<span lang='pi'>idap</span>)’. The term <span lang='pi'>idap&shy;pac&shy;cay&shy;atā</span> is sometimes translated as ‘causality’, which may work too. However, to many people ‘to cause’ means “to actively produce as a result” (Wiktionary.com s.v. ‘cause’)—think of billiard balls bouncing against one another—and in context of Dependent Arising this kind of causality does not always apply. Birth does not actively produce death, for example. It is heart attacks and car crashes that do so, arguably. Neither do sensations actively produce craving: it is ignorance that does. Also, consciousness and <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span>, which are mutually dependent, do not cause one another in an active way. They just rely on one another, as the simile of the reeds at <span class='internalLink' data-target='#bqseg95'>§95</span> illustrates, both being in a sense “actively produced” by willful actions. <span class='sesame' data-sesame-key='zotref:JonesDhivan 2022a'>Jones 2022</span> p.135 agreed: “To understand them as a causal sequence, whereby ignorance is the cause of the inherited conditioning factors (<span lang='pi'>saṅ&shy;khā&shy;rā</span>), feeling (<span lang='pi'>vedanā</span>) is the cause of craving, birth is the cause of ageing and death, and so on, leads to obscurity and contradiction. But to understand each of these conditionally-arisen phenomena as necessary and sometimes sufficient conditions for the arising of the next in the sequence allows for interpretations that are truer to the teachings.”</p><p>In everyday contexts the words <span lang='pi'>paṭicca</span> and <span lang='pi'>paccaya</span> also do not indicate what we normally call ‘causes’. It is said that the body depends on (<span lang='pi'>paṭicca</span>) food, and will die without it. (<span class='sclinktext'>SN&#8239;46.2<span class='scsegments'>:1.2</span></span>) Food is not the <em>cause</em> of the body: it is just one condition necessary for its continuance. In context of Dependent Arising itself, the <span class='sesame'>Longer Discourse on the Ending of Craving</span> mentions that fire depends on (<span lang='pi'>paṭicca</span>) fuel. (<span class='internalLink' data-target='#bqseg102'>§102</span>) Fuel by itself does not really <em>cause</em> fire either. As to <span lang='pi'>paccaya</span>, a noble disciple is said to be ‘not dependent on others’ (<span lang='pi'>aparappaccaya</span>). These and other everyday uses of the words also indicate that Dependent Arising is about dependencies, not causalities, at least not in the way the word ‘cause’ is sometimes understood.</p><p>The word <span lang='pi'>nidāna</span> is sometimes also translated as ‘cause’, particularly in the title of the <span data-sesame-key='dn-blurbs:dn15' class='sesame'>Mahānidāna Sutta</span>, then called ‘The Great Discourse on Causality’. But a common translation for the word itself is ‘source’, which I think is more accurate. See for example <span class='sesame' data-sesame-key='zotref:Sujato 2024a'>Sujato 2023</span> at <span class='sclinktext'>AN&#8239;3.34</span>, <span class='sesame'>Nidāna Sutta</span>, titled ‘Sources’. As another example, discourses stemming from Sāvatthi are called <span lang='pi'>Sāvatthi-nidānaṁ</span>. In this light, the <span data-sesame-key='dn-blurbs:dn15' class='sesame'>Mahānidāna Sutta</span> should be called something like ‘The Great Discourse on the Sources [of things]’, although that definitely doesn’t sound as good. <span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> calls it the Great Discourse on the Underlying Factors (<em>Großen Lehrrede von den zugrundeliegenden Factoren</em>). In this book I just refer to the discourse by its Pāli name.</p><p>All that said, ‘causality’ is not wrong per se. There are various ways to define the term, some of which do not differ much from dependency, if at all. Pragmatically the difference between the two may have limited relevance as well, because whether we say death <em>depends</em> on birth or death is <em>caused</em> by birth, the fundamental problem remains the same. Many of the links are also causal no matter how we interpret it. I also use the word ‘cause’ in the main text, although in the translations I stuck to ‘condition’ for <span lang='pi'>hetu</span> and ‘requirement’ for <span lang='pi'>paccaya</span>. The words have a range of meaning that does not match a single English word, so these translations are not applicable throughout the canon, but they do work in the present context.</p>"
   },
   {
     "fnNumber": "30",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Brahmavamso 2002</span></p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Brahm 2002a'>Brahmavamso 2002</span></p>"
   },
   {
     "fnNumber": "31",
@@ -133,7 +133,7 @@
   },
   {
     "fnNumber": "34",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Collins</span> p.109</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Collins 1982a'>Collins</span> p.109</p>"
   },
   {
     "fnNumber": "35",
@@ -141,31 +141,31 @@
   },
   {
     "fnNumber": "36",
-    "fnHTML": "<p><span class='sesame biblioref'>Norman 1997</span> p.21</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:NormanKR 1997a'>Norman 1997</span> p.21</p>"
   },
   {
     "fnNumber": "37",
-    "fnHTML": "<p>For traditional interpretations see for example <span class='sesame biblioref'>Wayman 1971</span></p>"
+    "fnHTML": "<p>For traditional interpretations see for example <span class='sesame' data-sesame-key='zotref:Wayman 1971a'>Wayman 1971</span></p>"
   },
   {
     "fnNumber": "38",
-    "fnHTML": "<p><span data-sesame-key='wp:Visuddhimagga:Ñanamoli 1956a' class='sesame'>Vism</span> 523. See also <span class='sesame biblioref'>Nyanatiloka</span> p.7</p>"
+    "fnHTML": "<p><span data-sesame-key='wp:Visuddhimagga:Ñanamoli 1956a' class='sesame'>Vism</span> 523. See also <span class='sesame' data-sesame-key='zotref:Nyanatiloka 2008a'>Nyanatiloka</span> p.7</p>"
   },
   {
     "fnNumber": "39",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Frauwallner 1953/1973</span> p.156 &amp; 167, <span class='sesame biblioref'>Bernhard</span> p.56, <span class='sesame biblioref'>Wayman 1971</span> p.186, <span class='sesame biblioref'>Collins</span> p.108, <span class='sesame biblioref'>Vetter 1988</span> p.46, <span class='sesame biblioref'>Vetter 1994</span>, <span class='sesame biblioref'>Mejor</span> p.123, <span class='sesame biblioref'>Schmithausen 2000</span> p.45, <span class='sesame biblioref'>Jurewicz</span> p.177, <span class='sesame biblioref'>Ronkin</span> n.43 p.238, <span class='sesame biblioref'>Shulman</span> p.89 n.71, <span class='sesame biblioref'>Gombrich 2009</span> p.138</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.156 &amp; 167, <span class='sesame' data-sesame-key='zotref:Bernhard 1968a'>Bernhard</span> p.56, <span class='sesame' data-sesame-key='zotref:Wayman 1971a'>Wayman 1971</span> p.186, <span class='sesame' data-sesame-key='zotref:Collins 1982a'>Collins</span> p.108, <span class='sesame' data-sesame-key='zotref:Vetter 1988a'>Vetter 1988</span> p.46, <span class='sesame' data-sesame-key='zotref:Vetter 1994a'>Vetter 1994</span>, <span class='sesame' data-sesame-key='zotref:Mejor 1996a'>Mejor</span> p.123, <span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> p.45, <span class='sesame' data-sesame-key='zotref:Jurewicz 2000a'>Jurewicz</span> p.177, <span class='sesame' data-sesame-key='zotref:Ronkin 2011a'>Ronkin</span> n.43 p.238, <span class='sesame' data-sesame-key='zotref:Shulman 2007a'>Shulman</span> p.89 n.71, <span class='sesame' data-sesame-key='zotref:Gombrich 2009a'>Gombrich 2009</span> p.138</p>"
   },
   {
     "fnNumber": "40",
-    "fnHTML": "<p><span class='sesame biblioref'>Vetter 1988</span> p.46</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Vetter 1988a'>Vetter 1988</span> p.46</p>"
   },
   {
     "fnNumber": "41",
-    "fnHTML": "<p><span class='sesame biblioref'>Bernhard</span> p.56, translation mine</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bernhard 1968a'>Bernhard</span> p.56, translation mine</p>"
   },
   {
     "fnNumber": "42",
-    "fnHTML": "<p><a href='https://suttacentral.net/ma97' class='extlink'>MĀ 97</a>, <a href='https://suttacentral.net/t14' class='extlink'>T 14</a>, and <a href='https://suttacentral.net/t52' class='extlink'>T 52</a>. As also observed by <span class='sesame biblioref'>Vetter 1994</span></p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/ma97' class='extlink'>MĀ 97</a>, <a href='https://suttacentral.net/t14' class='extlink'>T 14</a>, and <a href='https://suttacentral.net/t52' class='extlink'>T 52</a>. As also observed by <span class='sesame' data-sesame-key='zotref:Vetter 1994a'>Vetter 1994</span></p>"
   },
   {
     "fnNumber": "43",
@@ -177,11 +177,11 @@
   },
   {
     "fnNumber": "45",
-    "fnHTML": "<p>Arguing for a late construction of the twelvefold sequence are for example <span class='sesame biblioref'>Vetter 1994</span> and <span class='sesame biblioref'>Bucknell</span>. On the other hand, <span class='sesame biblioref'>Frauwallner 1953/1973</span> p.156, although he suggests two separate sequences were later joined together, believes it was the Buddha who did so. <span class='sesame biblioref'>Wayman 1971</span> p.185 is also of this opinion.</p>"
+    "fnHTML": "<p>Arguing for a late construction of the twelvefold sequence are for example <span class='sesame' data-sesame-key='zotref:Vetter 1994a'>Vetter 1994</span> and <span class='sesame' data-sesame-key='zotref:Bucknell 1999a'>Bucknell</span>. On the other hand, <span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.156, although he suggests two separate sequences were later joined together, believes it was the Buddha who did so. <span class='sesame' data-sesame-key='zotref:Wayman 1971a'>Wayman 1971</span> p.185 is also of this opinion.</p>"
   },
   {
     "fnNumber": "46",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Bernhard</span></p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Bernhard 1968a'>Bernhard</span></p>"
   },
   {
     "fnNumber": "47",
@@ -189,7 +189,7 @@
   },
   {
     "fnNumber": "48",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Ronkin</span> n.43 p.238</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Ronkin 2011a'>Ronkin</span> n.43 p.238</p>"
   },
   {
     "fnNumber": "49",
@@ -261,15 +261,15 @@
   },
   {
     "fnNumber": "66",
-    "fnHTML": "<p><span class='sesame biblioref'>Bodhi 2000</span> p.520</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bodhi 2000a'>Bodhi 2000</span> p.520</p>"
   },
   {
     "fnNumber": "67",
-    "fnHTML": "<p>As e.g. <span class='sesame biblioref'>Ñāṇavīra</span> p.19, <span class='sesame biblioref'>Ñāṇananda 2015</span> p.56, <span class='sesame biblioref'>Brasington</span> p.67, Jones 2009 p.244. See <span class='sesame biblioref'>Bodhi 1998</span> p.172 for a further response to such ideas.</p>"
+    "fnHTML": "<p>As e.g. <span class='sesame' data-sesame-key='zotref:Ñāṇavīra 1988a'>Ñāṇavīra</span> p.19, <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.56, <span class='sesame' data-sesame-key='zotref:Brasington 2021a'>Brasington</span> p.67, <span class='sesame' data-sesame-key='zotref:JonesDhivan 2009a'>Jones 2009</span> p.244. See <span class='sesame' data-sesame-key='zotref:Bodhi 1998a'>Bodhi 1998</span> p.172 for a further response to such ideas.</p>"
   },
   {
     "fnNumber": "68",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Harvey 2013</span> p.71, <span class='sesame biblioref'>Jones 2011</span> p.73, <span class='sesame biblioref'>Amaro</span> p.44</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 2012a'>Harvey 2013</span> p.71, <span class='sesame' data-sesame-key='zotref:JonesDhivan 2011a'>Jones 2011</span> p.73, <span class='sesame' data-sesame-key='zotref:Amaro 2021a'>Amaro</span> p.44</p>"
   },
   {
     "fnNumber": "69",
@@ -289,7 +289,7 @@
   },
   {
     "fnNumber": "73",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Dhammika 2022</span> p.58</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Dhammika 2022a'>Dhammika 2022</span> p.58</p>"
   },
   {
     "fnNumber": "74",
@@ -301,15 +301,15 @@
   },
   {
     "fnNumber": "76",
-    "fnHTML": "<p><span class='sesame biblioref'>Shulman</span> n.18. One of the earliest scholars to equate <span lang='pi'>bhava</span> to existence in English scholarship was <span class='sesame biblioref'>Thomas 1933/1953</span> p.61: “It is this grasping after the things (<span lang='pi'>upādāna</span>) [which results in] passing into a new existence (<span lang='pi'>bhava</span>).”</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Shulman 2007a'>Shulman</span> n.18. One of the earliest scholars to equate <span lang='pi'>bhava</span> to existence in English scholarship was <span class='sesame' data-sesame-key='zotref:ThomasEJ 1933a'>Thomas 1933/1953</span> p.61: “It is this grasping after the things (<span lang='pi'>upādāna</span>) [which results in] passing into a new existence (<span lang='pi'>bhava</span>).”</p>"
   },
   {
     "fnNumber": "77",
-    "fnHTML": "<p><span class='sesame biblioref'>Schmithausen 2000</span> p.52</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> p.52</p>"
   },
   {
     "fnNumber": "78",
-    "fnHTML": "<p><span class='sesame'>Bodhi 2012 n.503</span> at <span class='sclinktext'>AN&#8239;3.76</span> (<span class='internalLink' data-target='#bqseg71'>§71</span>). See also <span class='sesame biblioref'>Rhys Davids</span> p.53, referring to the same text: “<span lang='pi'>Bhava</span> [here] is meant to convey the more special concrete sense both of a particular span of life and of a particular world or mode of existence wherein that span is lived.”</p>"
+    "fnHTML": "<p><span class='sesame'>Bodhi 2012 n.503</span> at <span class='sclinktext'>AN&#8239;3.76</span> (<span class='internalLink' data-target='#bqseg71'>§71</span>). See also <span class='sesame' data-sesame-key='zotref:Rhys-DavidsCAF 1937'>Rhys Davids</span> p.53, referring to the same text: “<span lang='pi'>Bhava</span> [here] is meant to convey the more special concrete sense both of a particular span of life and of a particular world or mode of existence wherein that span is lived.”</p>"
   },
   {
     "fnNumber": "79",
@@ -329,7 +329,7 @@
   },
   {
     "fnNumber": "83",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Somaratne</span> p.142 and <span data-custom-style='internal-reference'>note 479</span></p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Somaratne 1999a'>Somaratne</span> p.142 and <span data-custom-style='internal-reference'>note 479</span></p>"
   },
   {
     "fnNumber": "84",
@@ -353,7 +353,7 @@
   },
   {
     "fnNumber": "89",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Sunyo 2022</span></p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Sunyo 2022a'>Sunyo 2022</span></p>"
   },
   {
     "fnNumber": "90",
@@ -361,7 +361,7 @@
   },
   {
     "fnNumber": "91",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Langer</span> p.5 (translation mine): “Before the quoted extract [of the <span class='sesame'>If There is Desire Discourse</span>] there is a passage on […] the four nutriments. These same four nutriments are also mentioned in other passages, where it is stated that they […] are the cause for the rebirth of the being which is to be reborn (<span lang='pi'>saṁbhāvesīnaṁ</span>).”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.5 (translation mine): “Before the quoted extract [of the <span class='sesame'>If There is Desire Discourse</span>] there is a passage on […] the four nutriments. These same four nutriments are also mentioned in other passages, where it is stated that they […] are the cause for the rebirth of the being which is to be reborn (<span lang='pi'>saṁbhāvesīnaṁ</span>).”</p>"
   },
   {
     "fnNumber": "92",
@@ -385,7 +385,7 @@
   },
   {
     "fnNumber": "97",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Langer</span> (translation mine): “<span lang='pi'>Okkanti</span> [an alternative spelling of <span lang='pi'>avakkanti</span>] is a synonym for birth (<span lang='pi'>jāti</span>).” <span class='sesame biblioref'>DOP</span>, <span class='sesame biblioref'>DPD</span>, <span class='sesame biblioref'>PED</span>, and <span class='sesame biblioref'>CPD</span> all attest this. In unrelated contexts the word can mean more literally ‘entering’.</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> (translation mine): “<span lang='pi'>Okkanti</span> [an alternative spelling of <span lang='pi'>avakkanti</span>] is a synonym for birth (<span lang='pi'>jāti</span>).” <span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span>, <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span>, <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span>, and <span class='sesame' data-sesame-key='zotref:Dict-CPD'>CPD</span> all attest this. In unrelated contexts the word can mean more literally ‘entering’.</p>"
   },
   {
     "fnNumber": "98",
@@ -397,7 +397,7 @@
   },
   {
     "fnNumber": "100",
-    "fnHTML": "<p>See e.g <span class='sesame biblioref'>Langer</span> p.12, <span class='sesame biblioref'>Sujato 2008</span> p.7</p>"
+    "fnHTML": "<p>See e.g <span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.12, <span class='sesame' data-sesame-key='zotref:Sujato 2008a'>Sujato 2008</span> p.7</p>"
   },
   {
     "fnNumber": "101",
@@ -405,7 +405,7 @@
   },
   {
     "fnNumber": "102",
-    "fnHTML": "<p><span class='sesame biblioref'>Anālayo 2010</span> p.254, n.243. See further <span class='sesame biblioref'>Anālayo 2008</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Analayo 2011a'>Anālayo 2010</span> p.254, n.243. See further <span class='sesame' data-sesame-key='zotref:Analayo 2008a'>Anālayo 2008</span></p>"
   },
   {
     "fnNumber": "103",
@@ -413,11 +413,11 @@
   },
   {
     "fnNumber": "104",
-    "fnHTML": "<p><a href='https://suttacentral.net/ma151' class='extlink'>MĀ 151</a>, translation <span class='sesame biblioref'>Anālayo 2022(a)</span></p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/ma151' class='extlink'>MĀ 151</a>, translation <span class='sesame' data-sesame-key='zotref:Analayo 2022a'>Anālayo 2022(a)</span></p>"
   },
   {
     "fnNumber": "105",
-    "fnHTML": "<p><span class='sesame biblioref'>Wijesekera 1994</span> p.175</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Wijesekera 1994a'>Wijesekera 1994</span> p.175</p>"
   },
   {
     "fnNumber": "106",
@@ -425,11 +425,11 @@
   },
   {
     "fnNumber": "107",
-    "fnHTML": "<p><span class='sesame biblioref'>Vetter 1988</span> p.48. See also <span class='sesame biblioref'>Kalupahana 1976</span> p.32</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Vetter 1988a'>Vetter 1988</span> p.48. See also <span class='sesame' data-sesame-key='zotref:Kalupahana 1976a'>Kalupahana 1976</span> p.32</p>"
   },
   {
     "fnNumber": "108",
-    "fnHTML": "<p>As also argued by <span class='sesame biblioref'>Harvey 1995</span> p.263 n.5</p>"
+    "fnHTML": "<p>As also argued by <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.263 n.5</p>"
   },
   {
     "fnNumber": "109",
@@ -441,19 +441,19 @@
   },
   {
     "fnNumber": "111",
-    "fnHTML": "<p><span class='sesame biblioref'>Frauwallner 1953/1973</span> p.163</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.163</p>"
   },
   {
     "fnNumber": "112",
-    "fnHTML": "<p><span class='sesame biblioref'>Reat</span> p.15. Reat’s specific conclusions about <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> I disagree with, though.</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Reat 1987a'>Reat</span> p.15. Reat’s specific conclusions about <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> I disagree with, though.</p>"
   },
   {
     "fnNumber": "113",
-    "fnHTML": "<p><span class='sesame biblioref'>Olalde 2014</span> p.40 (translation mine): “As a substantive <span lang='pi'>bahubbīhi</span> [compound] it means ‘that which has a name and form’.” <span lang='pi'>Bahubbīhi</span> compounds are fundamentally adjectives, but like all adjectives in Pāli, they can be adopted as nouns (substantives), see <span class='sesame biblioref'>Warder 2010</span> p.62</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.40 (translation mine): “As a substantive <span lang='pi'>bahubbīhi</span> [compound] it means ‘that which has a name and form’.” <span lang='pi'>Bahubbīhi</span> compounds are fundamentally adjectives, but like all adjectives in Pāli, they can be adopted as nouns (substantives), see <span class='sesame' data-sesame-key='zotref:Warder 1991a'>Warder 2010</span> p.62</p>"
   },
   {
     "fnNumber": "114",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Hamilton</span></p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span></p>"
   },
   {
     "fnNumber": "115",
@@ -469,7 +469,7 @@
   },
   {
     "fnNumber": "118",
-    "fnHTML": "<p>JU 3.20.8, see also <span class='sesame biblioref'>Olalde 2015</span> p.10</p>"
+    "fnHTML": "<p>JU 3.20.8, see also <span class='sesame' data-sesame-key='zotref:Olalde 2015a'>Olalde 2015</span> p.10</p>"
   },
   {
     "fnNumber": "119",
@@ -485,31 +485,31 @@
   },
   {
     "fnNumber": "122",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Olalde 2015</span> p.21</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Olalde 2015a'>Olalde 2015</span> p.21</p>"
   },
   {
     "fnNumber": "123",
-    "fnHTML": "<p>BU 1.4.7, translation <span class='sesame biblioref'>Olivelle</span></p>"
+    "fnHTML": "<p>BU 1.4.7, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span></p>"
   },
   {
     "fnNumber": "124",
-    "fnHTML": "<p>TB 3.12.7, see also <span class='sesame biblioref'>Frauwallner 1953/1973</span> p.163</p>"
+    "fnHTML": "<p>TB 3.12.7, see also <span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.163</p>"
   },
   {
     "fnNumber": "125",
-    "fnHTML": "<p>Atharvaveda 10.2.12 and 12.5.6, see also <span class='sesame biblioref'>Olalde 2014</span> p.12</p>"
+    "fnHTML": "<p>Atharvaveda 10.2.12 and 12.5.6, see also <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.12</p>"
   },
   {
     "fnNumber": "126",
-    "fnHTML": "<p><span class='sesame biblioref'>Olalde 2015</span> p.8</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Olalde 2015a'>Olalde 2015</span> p.8</p>"
   },
   {
     "fnNumber": "127",
-    "fnHTML": "<p><span class='sesame biblioref'>Gonda</span> p.7</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Gonda 1970a'>Gonda</span> p.7</p>"
   },
   {
     "fnNumber": "128",
-    "fnHTML": "<p><span class='sesame biblioref'>Werner</span> p.28</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Werner 2022a'>Werner</span> p.28</p>"
   },
   {
     "fnNumber": "129",
@@ -517,47 +517,47 @@
   },
   {
     "fnNumber": "130",
-    "fnHTML": "<p><span class='sesame biblioref'>Frazer</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Frazer1890a'>Frazer</span></p>"
   },
   {
     "fnNumber": "131",
-    "fnHTML": "<p><span class='sesame biblioref'>Jurewicz</span> p.89</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Jurewicz 2000a'>Jurewicz</span> p.89</p>"
   },
   {
     "fnNumber": "132",
-    "fnHTML": "<p>BU 6.4.21, translation <span class='sesame biblioref'>Olivelle</span></p>"
+    "fnHTML": "<p>BU 6.4.21, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span></p>"
   },
   {
     "fnNumber": "133",
-    "fnHTML": "<p><span class='sesame biblioref'>Jurewicz</span> p.90</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Jurewicz 2000a'>Jurewicz</span> p.90</p>"
   },
   {
     "fnNumber": "134",
-    "fnHTML": "<p><span class='sesame biblioref'>Frauwallner 1953/1973</span> p.164</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.164</p>"
   },
   {
     "fnNumber": "135",
-    "fnHTML": "<p><span class='sesame biblioref'>Hamilton</span> p.127</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.127</p>"
   },
   {
     "fnNumber": "136",
-    "fnHTML": "<p><span class='sesame biblioref'>Olalde 2014</span> p.156</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.156</p>"
   },
   {
     "fnNumber": "137",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Wayman 1997</span> p.507</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Wayman 1997a'>Wayman 1997</span> p.507</p>"
   },
   {
     "fnNumber": "138",
-    "fnHTML": "<p>T1548.28.689a20, translation <span class='sesame biblioref'>Patton</span> “If it recognizes, designates, and makes names, then this is called name.” See also <span class='sesame'>Bodhi 2000 p.48</span></p>"
+    "fnHTML": "<p>T1548.28.689a20, translation <span class='sesame' data-sesame-key='zotref:Patton 2024a'>Patton</span> “If it recognizes, designates, and makes names, then this is called name.” See also <span class='sesame'>Bodhi 2000 p.48</span></p>"
   },
   {
     "fnNumber": "139",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Olalde 2015</span> p.2, referring to certain views: “They understand ‘name’ as ‘designation’ and neglect the fact that it <em>also</em> (or may I say <em>actually</em>) means ‘proper name;’ in this manner they understand name as ‘naming’ and assume that it always encompasses conceptualisation.”</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Olalde 2015a'>Olalde 2015</span> p.2, referring to certain views: “They understand ‘name’ as ‘designation’ and neglect the fact that it <em>also</em> (or may I say <em>actually</em>) means ‘proper name;’ in this manner they understand name as ‘naming’ and assume that it always encompasses conceptualisation.”</p>"
   },
   {
     "fnNumber": "140",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Bodhi 1984</span> p.25: “It [i.e. consciousness] also depends on the mental body [i.e. immaterial aspects], as there can be no cognition of an object without the more specialized functions performed by contact, sensation, perception, volition, attention, and the rest.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.25: “It [i.e. consciousness] also depends on the mental body [i.e. immaterial aspects], as there can be no cognition of an object without the more specialized functions performed by contact, sensation, perception, volition, attention, and the rest.”</p>"
   },
   {
     "fnNumber": "141",
@@ -569,11 +569,11 @@
   },
   {
     "fnNumber": "143",
-    "fnHTML": "<p><span class='sesame biblioref'>Gombrich 2009</span> p.136</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Gombrich 2009a'>Gombrich 2009</span> p.136</p>"
   },
   {
     "fnNumber": "144",
-    "fnHTML": "<p>For example <a href='https://suttacentral.net/sa298' class='extlink'>SĀ 298</a>. For a further discussion see <span class='sesame biblioref'>Choong</span> p.163</p>"
+    "fnHTML": "<p>For example <a href='https://suttacentral.net/sa298' class='extlink'>SĀ 298</a>. For a further discussion see <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> p.163</p>"
   },
   {
     "fnNumber": "145",
@@ -585,7 +585,7 @@
   },
   {
     "fnNumber": "147",
-    "fnHTML": "<p>T1548.28.689a20; <span class='sesame biblioref'>Frauwallner 1995</span> p.108; <a href='https://suttacentral.net/ea49.5' class='extlink'>EĀ 49.5</a>, <a href='https://suttacentral.net/ea46.8' class='extlink'>EĀ 46.8</a></p>"
+    "fnHTML": "<p>T1548.28.689a20; <span class='sesame' data-sesame-key='zotref:Frauwallner 1995a'>Frauwallner 1995</span> p.108; <a href='https://suttacentral.net/ea49.5' class='extlink'>EĀ 49.5</a>, <a href='https://suttacentral.net/ea46.8' class='extlink'>EĀ 46.8</a></p>"
   },
   {
     "fnNumber": "148",
@@ -597,7 +597,7 @@
   },
   {
     "fnNumber": "150",
-    "fnHTML": "<p>See also <span class='sesame'>Bodhi 2000 n.81</span> at <span class='sclinktext'>SN&#8239;22.56<span class='scsegments'>:3.2</span></span>, and <span class='sesame biblioref'>Hamilton</span> p.6</p>"
+    "fnHTML": "<p>See also <span class='sesame'>Bodhi 2000 n.81</span> at <span class='sclinktext'>SN&#8239;22.56<span class='scsegments'>:3.2</span></span>, and <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.6</p>"
   },
   {
     "fnNumber": "151",
@@ -609,7 +609,7 @@
   },
   {
     "fnNumber": "153",
-    "fnHTML": "<p>Rather than the standard translation ‘the eye’ I translate <span lang='pi'>cakkhu</span> as ‘the sense of sight’, and likewise for the other senses. <span class='sesame biblioref'>Olivelle</span> p.22 notes on the <span data-sesame-key='wp:Upanishads' class='sesame'>Upaniṣads</span>: “In dealing with sight and hearing, and to some extent also in the case of the other faculties, these documents clearly distinguish the power or the act of seeing and hearing from the respective external organs, the eyes and the ears. Indeed, they consistently use different Sanskrit terms for the two—<span lang='sa'>cakṣus</span> and <span lang='sa'>śrotra</span> for sight and hearing, and <span lang='sa'>akṣan</span> and <span lang='sa'>karṇa</span> for eye and ear, respectively.” I think this distinction is to some extent also present in the Pāli suttas, with the respective terms being <span lang='pi'>cakkhu</span> and <span lang='pi'>sota</span>, and <span lang='pi'>akkhi</span> and <span lang='pi'>kaṇṇa</span>. <span class='sesame biblioref'>Hamilton</span> p.18 similarly states: “One might suggest that what is referred to [in the Pāli suttas] by the terms <span lang='pi'>cakkhu, sota, ghāna</span> and so on is not primarily the sense organs eye, ear, nose, etc., but that the terms are to be interpreted figuratively as the faculties of vision, hearing, smell and so on.”</p>"
+    "fnHTML": "<p>Rather than the standard translation ‘the eye’ I translate <span lang='pi'>cakkhu</span> as ‘the sense of sight’, and likewise for the other senses. <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span> p.22 notes on the <span data-sesame-key='wp:Upanishads' class='sesame'>Upaniṣads</span>: “In dealing with sight and hearing, and to some extent also in the case of the other faculties, these documents clearly distinguish the power or the act of seeing and hearing from the respective external organs, the eyes and the ears. Indeed, they consistently use different Sanskrit terms for the two—<span lang='sa'>cakṣus</span> and <span lang='sa'>śrotra</span> for sight and hearing, and <span lang='sa'>akṣan</span> and <span lang='sa'>karṇa</span> for eye and ear, respectively.” I think this distinction is to some extent also present in the Pāli suttas, with the respective terms being <span lang='pi'>cakkhu</span> and <span lang='pi'>sota</span>, and <span lang='pi'>akkhi</span> and <span lang='pi'>kaṇṇa</span>. <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.18 similarly states: “One might suggest that what is referred to [in the Pāli suttas] by the terms <span lang='pi'>cakkhu, sota, ghāna</span> and so on is not primarily the sense organs eye, ear, nose, etc., but that the terms are to be interpreted figuratively as the faculties of vision, hearing, smell and so on.”</p>"
   },
   {
     "fnNumber": "154",
@@ -621,7 +621,7 @@
   },
   {
     "fnNumber": "156",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Frauwallner 1953/1973</span> p.158: “By [<span lang='pi'>saḷ&shy;āya&shy;ta&shy;na</span> in Dependent Arising] are meant the six inner spheres, i.e., the six sense organs.” Also <span class='sesame biblioref'>Hamilton</span> p.16: “In the <span class='sesame'>Saḷāyatana Vagga</span> of the <span data-sesame-key='super-blurbs:sn' class='sesame'>Saṁyutta Nikāya</span>, the six senses are defined as being <span lang='pi'>aj&shy;jhat&shy;taṁ</span>, personal or internal, and the six corresponding objects are defined as being <span lang='pi'>bāhiraṁ</span>, external, thus giving two ‘sets’ of six <span lang='pi'>āyatanas</span>. In the <span data-sesame-key='sn-blurbs:sn12' class='sesame'>Nidāna Saṁyutta</span>, however, which is concerned with explaining <span lang='pi'>paṭiccasamuppāda</span>, only the personal <span lang='pi'>āyatanas</span> [i.e. the sense ‘organs’] are referred to by the term <span lang='pi'>āyatana</span>.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.158: “By [<span lang='pi'>saḷ&shy;āya&shy;ta&shy;na</span> in Dependent Arising] are meant the six inner spheres, i.e., the six sense organs.” Also <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.16: “In the <span class='sesame'>Saḷāyatana Vagga</span> of the <span data-sesame-key='super-blurbs:sn' class='sesame'>Saṁyutta Nikāya</span>, the six senses are defined as being <span lang='pi'>aj&shy;jhat&shy;taṁ</span>, personal or internal, and the six corresponding objects are defined as being <span lang='pi'>bāhiraṁ</span>, external, thus giving two ‘sets’ of six <span lang='pi'>āyatanas</span>. In the <span data-sesame-key='sn-blurbs:sn12' class='sesame'>Nidāna Saṁyutta</span>, however, which is concerned with explaining <span lang='pi'>paṭiccasamuppāda</span>, only the personal <span lang='pi'>āyatanas</span> [i.e. the sense ‘organs’] are referred to by the term <span lang='pi'>āyatana</span>.”</p>"
   },
   {
     "fnNumber": "157",
@@ -633,15 +633,15 @@
   },
   {
     "fnNumber": "159",
-    "fnHTML": "<p><span class='sesame biblioref'>Hamilton</span> p.104</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.104</p>"
   },
   {
     "fnNumber": "160",
-    "fnHTML": "<p><span class='sesame biblioref'>Olalde 2014</span> p.114 (translation mine): “But first I would like to recall that <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> in the Vedic texts and <span data-sesame-key='wp:Upanishads' class='sesame'>Upaniṣads</span> can refer to both an individual, i.e. a person, as well as [things in] the entire world, with its application to individuals being actually older.”</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.114 (translation mine): “But first I would like to recall that <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> in the Vedic texts and <span data-sesame-key='wp:Upanishads' class='sesame'>Upaniṣads</span> can refer to both an individual, i.e. a person, as well as [things in] the entire world, with its application to individuals being actually older.”</p>"
   },
   {
     "fnNumber": "161",
-    "fnHTML": "<p><span class='sesame biblioref'>Olivelle</span> p.47</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span> p.47</p>"
   },
   {
     "fnNumber": "162",
@@ -649,7 +649,7 @@
   },
   {
     "fnNumber": "163",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Hecker</span> p.53 and the commentary, translated by <span class='sesame'>Bodhi 2000 n.173</span> at <span class='sclinktext'>SN&#8239;12.64</span></p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Hecker 2009a'>Hecker</span> p.53 and the commentary, translated by <span class='sesame'>Bodhi 2000 n.173</span> at <span class='sclinktext'>SN&#8239;12.64</span></p>"
   },
   {
     "fnNumber": "164",
@@ -657,11 +657,11 @@
   },
   {
     "fnNumber": "165",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Ñāṇananda 2015</span> p.120, <span class='sesame biblioref'>Cintita</span> p.61</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.120, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.61</p>"
   },
   {
     "fnNumber": "166",
-    "fnHTML": "<p><span lang='pi'>Abhinibbattento abhinibbatteti</span>, ‘when [they] produce a next life, they produce’. The word <span lang='pi'>abhinibbatteti</span> has a strong connection with rebirth. For example see <span class='sclinktext'>AN&#8239;10.65<span class='scsegments'>:2.2</span></span>, “being reborn (<span lang='pi'>ab&shy;hi&shy;nib&shy;bat&shy;ti</span>) is painful”, or the definition of birth in <span class='internalLink' data-target='#bqseg20'>§20</span>, which includes <span lang='pi'>ab&shy;hi&shy;nib&shy;bat&shy;ti</span>. To capture this meaning, which is surely implied given the context of transmigration, I translate it here as ‘they produce a next life’, following the example of <span class='sesame biblioref'>Sujato 2023</span></p>"
+    "fnHTML": "<p><span lang='pi'>Abhinibbattento abhinibbatteti</span>, ‘when [they] produce a next life, they produce’. The word <span lang='pi'>abhinibbatteti</span> has a strong connection with rebirth. For example see <span class='sclinktext'>AN&#8239;10.65<span class='scsegments'>:2.2</span></span>, “being reborn (<span lang='pi'>ab&shy;hi&shy;nib&shy;bat&shy;ti</span>) is painful”, or the definition of birth in <span class='internalLink' data-target='#bqseg20'>§20</span>, which includes <span lang='pi'>ab&shy;hi&shy;nib&shy;bat&shy;ti</span>. To capture this meaning, which is surely implied given the context of transmigration, I translate it here as ‘they produce a next life’, following the example of <span class='sesame' data-sesame-key='zotref:Sujato 2024a'>Sujato 2023</span></p>"
   },
   {
     "fnNumber": "167",
@@ -677,7 +677,7 @@
   },
   {
     "fnNumber": "170",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Piyadassi</span> p.6 <em>(ed. p.15 in PDF)</em>, <span class='sesame biblioref'>Bodhi 1984</span> p.5, <span class='sesame biblioref'>Nyanatiloka</span> p.13</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Piyadassi 1959a'>Piyadassi</span> p.6 <em>(ed. p.15 in PDF)</em>, <span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.5, <span class='sesame' data-sesame-key='zotref:Nyanatiloka 2008a'>Nyanatiloka</span> p.13</p>"
   },
   {
     "fnNumber": "171",
@@ -729,7 +729,7 @@
   },
   {
     "fnNumber": "183",
-    "fnHTML": "<p>For similar arguments see <span class='sesame biblioref'>Bodhi 1998</span> p.57, contra e.g. <span class='sesame biblioref'>Ñāṇavīra</span> p.16, <span class='sesame biblioref'>Ñāṇananda 2015</span> p.125, <span class='sesame biblioref'>Ṭhānissaro 2008b</span> p.3 <em>(ed: p.8 in PDF)</em>. Bodhi also argues: “In analyzing the teaching of <span lang='pi'>paṭiccasamuppāda</span>, the texts use the two terms <span lang='pi'>cittasaṅkhārā</span> and <span lang='pi'>manosaṅkhārā</span> as though they were interchangeable.” Sanskrit parallels to <span class='sclinktext'>SN&#8239;12.2</span> indeed use <span lang='sa'>manaḥsaṁskāra</span> instead of <span lang='sa'>cittasaṅkhāra</span> (<a href='http://suttacentral.net/sf165' class='extlink'>SF 165</a>, <a href='http://suttacentral.net/sf238' class='extlink'>SF 238</a>).</p>"
+    "fnHTML": "<p>For similar arguments see <span class='sesame' data-sesame-key='zotref:Bodhi 1998a'>Bodhi 1998</span> p.57, contra e.g. <span class='sesame' data-sesame-key='zotref:Ñāṇavīra 1988a'>Ñāṇavīra</span> p.16, <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.125, <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008b'>Ṭhānissaro 2008b</span> p.3 <em>(ed: p.8 in PDF)</em>. Bodhi also argues: “In analyzing the teaching of <span lang='pi'>paṭiccasamuppāda</span>, the texts use the two terms <span lang='pi'>cittasaṅkhārā</span> and <span lang='pi'>manosaṅkhārā</span> as though they were interchangeable.” Sanskrit parallels to <span class='sclinktext'>SN&#8239;12.2</span> indeed use <span lang='sa'>manaḥsaṁskāra</span> instead of <span lang='sa'>cittasaṅkhāra</span> (<a href='http://suttacentral.net/sf165' class='extlink'>SF 165</a>, <a href='http://suttacentral.net/sf238' class='extlink'>SF 238</a>).</p>"
   },
   {
     "fnNumber": "184",
@@ -757,7 +757,7 @@
   },
   {
     "fnNumber": "190",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Vetter 1988</span> p.50: “<span lang='pi'>Saṅkhārā</span> as a condition of ‘perception’ [<span lang='pi'>viññāṇa</span>] which is conceived as the first moment of a new existence must belong to a period before this moment. We can think of actual emotions in the former life preparing the constituent perception for a future existence and of dispositions maintained or strengthened by these emotions which, after death, cause perception to seek a new place for reincarnation. Both aspects might have been meant, but they are not clearly distinguished.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Vetter 1988a'>Vetter 1988</span> p.50: “<span lang='pi'>Saṅkhārā</span> as a condition of ‘perception’ [<span lang='pi'>viññāṇa</span>] which is conceived as the first moment of a new existence must belong to a period before this moment. We can think of actual emotions in the former life preparing the constituent perception for a future existence and of dispositions maintained or strengthened by these emotions which, after death, cause perception to seek a new place for reincarnation. Both aspects might have been meant, but they are not clearly distinguished.”</p>"
   },
   {
     "fnNumber": "191",
@@ -785,11 +785,11 @@
   },
   {
     "fnNumber": "197",
-    "fnHTML": "<p>See for example <span class='sesame biblioref'>Gombrich 1980</span> p.50</p>"
+    "fnHTML": "<p>See for example <span class='sesame' data-sesame-key='zotref:Gombrich 1996a'>Gombrich 1980</span> p.50</p>"
   },
   {
     "fnNumber": "198",
-    "fnHTML": "<p>In Jain context <span lang='pi'>āsava</span>/<span lang='sa'>āsrava</span> refers to the inflow of physical karmic particles, which in the Jain texts is compared to water flowing into a pond. (<span class='sesame biblioref'>Malvania</span> p.47, 83) The Buddha used the same terminology, possibly having adopted it directly from the Jains. For him <span lang='pi'>āsavas</span> are not physical particles but states of mind that defile (<span lang='pi'>saṅkilesikā</span>), that lead to rebirth—see <span class='sclinktext'>MN&#8239;36<span class='scsegments'>:47.1–47.7</span></span> <span class='ptsref'>PTS: M I 250</span>.</p>"
+    "fnHTML": "<p>In Jain context <span lang='pi'>āsava</span>/<span lang='sa'>āsrava</span> refers to the inflow of physical karmic particles, which in the Jain texts is compared to water flowing into a pond. (<span class='sesame' data-sesame-key='zotref:Malvania 2007a'>Malvania</span> p.47, 83) The Buddha used the same terminology, possibly having adopted it directly from the Jains. For him <span lang='pi'>āsavas</span> are not physical particles but states of mind that defile (<span lang='pi'>saṅkilesikā</span>), that lead to rebirth—see <span class='sclinktext'>MN&#8239;36<span class='scsegments'>:47.1–47.7</span></span> <span class='ptsref'>PTS: M I 250</span>.</p>"
   },
   {
     "fnNumber": "199",
@@ -837,11 +837,11 @@
   },
   {
     "fnNumber": "210",
-    "fnHTML": "<p>See <span class='sesame'>Bodhi 2000 n.110</span> at <span class='sclinktext'>SN&#8239;22.79</span>, <span class='sesame biblioref'>Hamilton</span> p.4</p>"
+    "fnHTML": "<p>See <span class='sesame'>Bodhi 2000 n.110</span> at <span class='sclinktext'>SN&#8239;22.79</span>, <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.4</p>"
   },
   {
     "fnNumber": "211",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>PED</span> under <span lang='pi'>sankhata</span>: “‘created’, brought about as effect of actions in former births”.</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> under <span lang='pi'>sankhata</span>: “‘created’, brought about as effect of actions in former births”.</p>"
   },
   {
     "fnNumber": "212",
@@ -881,15 +881,15 @@
   },
   {
     "fnNumber": "221",
-    "fnHTML": "<p>Langer p.30 says the three discourses on intention (<span class='sclinktext'>SN&#8239;12.38</span>, <span class='sclinktext'>SN&#8239;12.39</span>, <span class='sclinktext'>SN&#8239;12.40</span>) “limit themselves […] to descriptions of rebirth” (translation mine). Likewise, although I believe he misunderstands <span lang='pi'>appatiṭṭhita viññāṇa</span> to be a state of mind, <span class='sesame biblioref'>Ñāṇananda 2016</span> p.97 states: “The point at issue [in the <span class='sesame'>First Discourse on Intention</span>] is the question as to how consciousness gets a footing—how consciousness gets established at the moment of death. In fact, it is an attempt to show us the connection between two lives.” See also <span class='sesame biblioref'>Anālayo 2018</span> p.28</p>"
+    "fnHTML": "<p>Langer p.30 says the three discourses on intention (<span class='sclinktext'>SN&#8239;12.38</span>, <span class='sclinktext'>SN&#8239;12.39</span>, <span class='sclinktext'>SN&#8239;12.40</span>) “limit themselves […] to descriptions of rebirth” (translation mine). Likewise, although I believe he misunderstands <span lang='pi'>appatiṭṭhita viññāṇa</span> to be a state of mind, <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2016a'>Ñāṇananda 2016</span> p.97 states: “The point at issue [in the <span class='sesame'>First Discourse on Intention</span>] is the question as to how consciousness gets a footing—how consciousness gets established at the moment of death. In fact, it is an attempt to show us the connection between two lives.” See also <span class='sesame' data-sesame-key='zotref:Analayo 2018a'>Anālayo 2018</span> p.28</p>"
   },
   {
     "fnNumber": "222",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Langer</span> p.32 (translation mine): “In [<span class='sclinktext'>SN&#8239;12.38</span>, <span class='sclinktext'>SN&#8239;12.39</span>, <span class='sclinktext'>SN&#8239;12.40</span>] <span lang='pi'>viruḷhi</span> [means] ‘a new growth’, like a part taken from the mother plant grows again somewhere else. With that, <span lang='pi'>viruḷhi</span> marks the beginning of a new existence.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.32 (translation mine): “In [<span class='sclinktext'>SN&#8239;12.38</span>, <span class='sclinktext'>SN&#8239;12.39</span>, <span class='sclinktext'>SN&#8239;12.40</span>] <span lang='pi'>viruḷhi</span> [means] ‘a new growth’, like a part taken from the mother plant grows again somewhere else. With that, <span lang='pi'>viruḷhi</span> marks the beginning of a new existence.”</p>"
   },
   {
     "fnNumber": "223",
-    "fnHTML": "<p><a href='https://suttacentral.net/sa359' class='extlink'>SĀ 359</a>, translation mine. Compare <a href='https://suttacentral.net/sa360' class='extlink'>SĀ 360</a> in <span class='sesame biblioref'>Choong</span> p.170</p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/sa359' class='extlink'>SĀ 359</a>, translation mine. Compare <a href='https://suttacentral.net/sa360' class='extlink'>SĀ 360</a> in <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> p.170</p>"
   },
   {
     "fnNumber": "224",
@@ -897,7 +897,7 @@
   },
   {
     "fnNumber": "225",
-    "fnHTML": "<p><a href='https://suttacentral.net/sa360' class='extlink'>SĀ 360</a>: 入名色故, 有未來世生. <span class='sesame biblioref'>Choong</span> p.170 translates: “Because of the entry [i.e. conception] of name-and-material form, there are, in the future, birth, ageing-sickness-and-death […]”</p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/sa360' class='extlink'>SĀ 360</a>: 入名色故, 有未來世生. <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> p.170 translates: “Because of the entry [i.e. conception] of name-and-material form, there are, in the future, birth, ageing-sickness-and-death […]”</p>"
   },
   {
     "fnNumber": "226",
@@ -913,7 +913,7 @@
   },
   {
     "fnNumber": "229",
-    "fnHTML": "<p>See <span class='sesame biblioref'>DPD</span> under <span lang='pi'>upaga</span>: “passing on to (used of consciousness’s linking at death with a new existence)”. See also <span class='sesame biblioref'>Bodhi 1998</span> p.161</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span> under <span lang='pi'>upaga</span>: “passing on to (used of consciousness’s linking at death with a new existence)”. See also <span class='sesame' data-sesame-key='zotref:Bodhi 1998a'>Bodhi 1998</span> p.161</p>"
   },
   {
     "fnNumber": "230",
@@ -925,7 +925,7 @@
   },
   {
     "fnNumber": "232",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Langer</span> p.28</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.28</p>"
   },
   {
     "fnNumber": "233",
@@ -933,7 +933,7 @@
   },
   {
     "fnNumber": "234",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Bodhi 2003</span> p.30</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Bodhi 2007a'>Bodhi 2003</span> p.30</p>"
   },
   {
     "fnNumber": "235",
@@ -945,7 +945,7 @@
   },
   {
     "fnNumber": "237",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Nyanaponika 1981</span> for a translation of the commentary to this sutta. Also see <span class='sesame'>Bodhi 2000 n.166</span> at <span class='sclinktext'>SN&#8239;12.63</span></p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Nyanaponika 1981a'>Nyanaponika 1981</span> for a translation of the commentary to this sutta. Also see <span class='sesame'>Bodhi 2000 n.166</span> at <span class='sclinktext'>SN&#8239;12.63</span></p>"
   },
   {
     "fnNumber": "238",
@@ -965,7 +965,7 @@
   },
   {
     "fnNumber": "242",
-    "fnHTML": "<p><span lang='pi'>Ādicca</span> (‘Sun’) was a name for the clan of the Buddha, possibly an honorific. See <span class='sclinktext'>Snp&#8239;3.1<span class='scsegments'>:19.1–19.2</span></span> and <span class='sesame biblioref'>DPPN</span> under ‘<span lang='pi'>Ādicca</span>’.</p>"
+    "fnHTML": "<p><span lang='pi'>Ādicca</span> (‘Sun’) was a name for the clan of the Buddha, possibly an honorific. See <span class='sclinktext'>Snp&#8239;3.1<span class='scsegments'>:19.1–19.2</span></span> and <span class='sesame' data-sesame-key='zotref:Dict-DPPN'>DPPN</span> under ‘<span lang='pi'>Ādicca</span>’.</p>"
   },
   {
     "fnNumber": "243",
@@ -973,7 +973,7 @@
   },
   {
     "fnNumber": "244",
-    "fnHTML": "<p><span class='sesame biblioref'>Hamilton</span> p.98</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.98</p>"
   },
   {
     "fnNumber": "245",
@@ -985,11 +985,11 @@
   },
   {
     "fnNumber": "247",
-    "fnHTML": "<p><span class='sesame biblioref'>Hecker</span> p.50</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Hecker 2009a'>Hecker</span> p.50</p>"
   },
   {
     "fnNumber": "248",
-    "fnHTML": "<p><span class='sesame biblioref'>Nyanaponika 1981</span> p.9. See also <span class='sesame biblioref'>PED</span> s.v. <span lang='pi'>viññāṇa</span>: “As one of the four <span lang='pi'>āhāras viññāṇa</span> is considered as the material, food or cause, through which comes rebirth. As such it is likened to seed in the field of action (<span lang='pi'>kamma</span>), and as entering (a body) at rebirth the phrase <span lang='pi'>viñ&shy;ñā&shy;ṇas&shy;sa avakkanti</span> is used.”</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Nyanaponika 1981a'>Nyanaponika 1981</span> p.9. See also <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> s.v. <span lang='pi'>viññāṇa</span>: “As one of the four <span lang='pi'>āhāras viññāṇa</span> is considered as the material, food or cause, through which comes rebirth. As such it is likened to seed in the field of action (<span lang='pi'>kamma</span>), and as entering (a body) at rebirth the phrase <span lang='pi'>viñ&shy;ñā&shy;ṇas&shy;sa avakkanti</span> is used.”</p>"
   },
   {
     "fnNumber": "249",
@@ -1009,7 +1009,7 @@
   },
   {
     "fnNumber": "253",
-    "fnHTML": "<p><span class='sclinktext'>MN&#8239;140<span class='scsegments'>:8.1–8.6</span></span> <span class='ptsref'>PTS: M III 239</span>. See also <span class='sesame biblioref'>Wynne</span> p.31: “There are also a number of lists in which ‘space’ and/or ‘consciousness’ are added to this basic set of four elements […] in most places they occur in teachings where they form the objects of a detailed contemplation of the human person.”</p>"
+    "fnHTML": "<p><span class='sclinktext'>MN&#8239;140<span class='scsegments'>:8.1–8.6</span></span> <span class='ptsref'>PTS: M III 239</span>. See also <span class='sesame' data-sesame-key='zotref:WynneA 2007a'>Wynne</span> p.31: “There are also a number of lists in which ‘space’ and/or ‘consciousness’ are added to this basic set of four elements […] in most places they occur in teachings where they form the objects of a detailed contemplation of the human person.”</p>"
   },
   {
     "fnNumber": "254",
@@ -1017,7 +1017,7 @@
   },
   {
     "fnNumber": "255",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Hamilton</span> p.5 and <span class='sesame'>Bodhi 2000 n.339</span> at <span class='sclinktext'>SN&#8239;18.9</span>: “To the four primary elements of the form aggregate the suttas sometimes add the space element.”</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.5 and <span class='sesame'>Bodhi 2000 n.339</span> at <span class='sclinktext'>SN&#8239;18.9</span>: “To the four primary elements of the form aggregate the suttas sometimes add the space element.”</p>"
   },
   {
     "fnNumber": "256",
@@ -1037,11 +1037,11 @@
   },
   {
     "fnNumber": "260",
-    "fnHTML": "<p>TU 2.2.1, translation <span class='sesame biblioref'>Purohit</span></p>"
+    "fnHTML": "<p>TU 2.2.1, translation <span class='sesame' data-sesame-key='zotref:Purohit-Yeats 1952a'>Purohit</span></p>"
   },
   {
     "fnNumber": "261",
-    "fnHTML": "<p><span class='sesame biblioref'>Lopez</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Lopez 1997a'>Lopez</span></p>"
   },
   {
     "fnNumber": "262",
@@ -1049,7 +1049,7 @@
   },
   {
     "fnNumber": "263",
-    "fnHTML": "<p><span class='sesame biblioref'>Norman 1991</span> p.194</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:NormanKR 1992a'>Norman 1991</span> p.194</p>"
   },
   {
     "fnNumber": "264",
@@ -1057,7 +1057,7 @@
   },
   {
     "fnNumber": "265",
-    "fnHTML": "<p>See for example <span class='sesame biblioref'>Nyanaponika 1981</span></p>"
+    "fnHTML": "<p>See for example <span class='sesame' data-sesame-key='zotref:Nyanaponika 1981a'>Nyanaponika 1981</span></p>"
   },
   {
     "fnNumber": "266",
@@ -1097,7 +1097,7 @@
   },
   {
     "fnNumber": "275",
-    "fnHTML": "<p><span lang='pi'>Santipada</span>, ‘place of peace’. In contexts such as this, <span lang='pi'>pada</span> is commonly translated as ‘state’. But related to the English ‘pedal’, it literally means ‘foot’ or ‘step’ and by extent can mean ‘path’ (where one walks) or ‘place’ (where one stands). For example, <span lang='pi'>janapada</span>, ‘country’, is literally ‘people’s place’. <span class='sesame biblioref'>Monier-Williams</span> lists ‘a plot of ground’ as one meaning of the Sanskrit <span lang='sa'>pada</span>, and refers to <span lang='sa'>padajñā</span> in RV 1.62.2, which seems to refer to knowing (<span lang='sa'>jñā</span>) the places (<span lang='sa'>pada</span>) where to find cattle. I am not aware of any instance in the Nikāyas where <span lang='pi'>pada</span> unambiguously means ‘state’, so, following <span class='sesame biblioref'>Norman 1997</span> p.13, I translate ‘the sorrowless place’, ‘the peaceful place’, and so on.</p>"
+    "fnHTML": "<p><span lang='pi'>Santipada</span>, ‘place of peace’. In contexts such as this, <span lang='pi'>pada</span> is commonly translated as ‘state’. But related to the English ‘pedal’, it literally means ‘foot’ or ‘step’ and by extent can mean ‘path’ (where one walks) or ‘place’ (where one stands). For example, <span lang='pi'>janapada</span>, ‘country’, is literally ‘people’s place’. <span class='sesame' data-sesame-key='zotref:Dict-Monier-Williams'>Monier-Williams</span> lists ‘a plot of ground’ as one meaning of the Sanskrit <span lang='sa'>pada</span>, and refers to <span lang='sa'>padajñā</span> in RV 1.62.2, which seems to refer to knowing (<span lang='sa'>jñā</span>) the places (<span lang='sa'>pada</span>) where to find cattle. I am not aware of any instance in the Nikāyas where <span lang='pi'>pada</span> unambiguously means ‘state’, so, following <span class='sesame' data-sesame-key='zotref:NormanKR 1997a'>Norman 1997</span> p.13, I translate ‘the sorrowless place’, ‘the peaceful place’, and so on.</p>"
   },
   {
     "fnNumber": "276",
@@ -1113,7 +1113,7 @@
   },
   {
     "fnNumber": "279",
-    "fnHTML": "<p>I follow <span lang='pi'>tadappatiṭṭhitaṁ viñ&shy;ñā&shy;ṇaṁ avirūḷhaṁ anabhisaṅkhārañ-ca vi&shy;mut&shy;taṁ</span>, instead of alternative manuscripts which have <span lang='pi'>anabhisaṅkhacca</span>. Both <span lang='pi'>anabhisaṅkhāraṁ</span> (not willing) and <span lang='pi'>vi&shy;mut&shy;taṁ</span> (liberated) could be taken as adjectives of <span lang='pi'>viñ&shy;ñā&shy;ṇaṁ</span>. However:</p><p>(1) Consciousness as one of the <span lang='pi'>khan&shy;dhas</span> is just aware of things, it does not do things nor stop doing things at enlightenment, so ‘not willing’ would likely not be said of it.</p><p>(2) The before is about how consciousness comes to cease when “its foundation is destroyed”, not about liberating it.</p><p>(3) Although <span lang='pi'>viññāṇa</span> can be a near synonym for the mind (<span lang='pi'>citta</span>), the two words are still used in different senses, and elsewhere in the Nikāyas it is always either the mind or the person that is said to be liberated, never <span lang='pi'>viññāṇa</span>.</p><p>(4) <span class='sclinktext'>SN&#8239;22.45</span> &amp; <span class='sclinktext'>SN&#8239;22.46</span> share their closing paragraph with this sutta, and there it is nmistakably the mind that is liberated.</p><p>For these reasons I think the mind is intended in this sutta as well. I take <span lang='pi'>ca</span> (and) to indicate there to be two separate sentences: <span lang='pi'>Tadappatiṭṭhitaṁ viñ&shy;ñā&shy;ṇaṁ avirūḷhaṁ. Anabhisaṅkhārañ-ca vi&shy;mut&shy;taṁ</span>. Seeing the first part as a full sentence is supported by <span class='sclinktext'>SN&#8239;12.38<span class='scsegments'>:3.3</span></span>, <span class='sclinktext'>SN&#8239;12.38<span class='scsegments'>:3.3</span></span> &amp; <span class='sclinktext'>SN&#8239;12.40<span class='scsegments'>:3.3</span></span>, where <span lang='pi'>tadappatiṭṭhite viññāṇe avirūḷhe</span> is an absolute, hence a separately functioning clause; and seeing the second as a separate sentence makes it match the other two-word sentences that follow. The translation thus becomes: “Not planted, consciousness will not sprout. And not creating, ‘it’ is liberated.” The ‘it’ refers to the mind, like in the common phrase <span lang='pi'>vimuttasmiṁ ‘vimuttam’iti ñāṇaṁ hoti</span>, “when liberated, there is the knowledge ‘it [the mind] is liberated’.” Previous translators similarly separated <span lang='pi'>viñ&shy;ñā&shy;ṇaṁ</span> from <span lang='pi'>vi&shy;mut&shy;taṁ</span> in the <span class='sesame'>Seeds Discourse</span> (see <span data-custom-style='internal-reference'>note 504</span>). <span class='sesame biblioref'>Nyanaponika 1990</span> has “<span data-custom-style='wwc-german'>ist man befreit</span>”, meaning “<em>one</em> is liberated”. But <span lang='pi'>vi&shy;mut&shy;taṁ</span> being neuter, ‘the mind’ is preferable over ‘one’, which would require the masculine.</p><p>The Chinese parallel at <a href='https://suttacentral.net/sa39' class='extlink'>SĀ 39</a> also supports the separation of consciousness and liberation, as it disjoints the two with a set of phrases not found in the Pāli. <span class='sesame biblioref'>Anālayo 2014</span> translated: “The basis being abandoned, that consciousness is not established anywhere and does not grow further and increase. Because of not growing, there is no creating of formations. Not creating formations, one is steady. Being steady, one is contented. Being contented, one is released.” So again the Chinese, as in <span data-custom-style='internal-reference'>note 277</span> and <span data-custom-style='internal-reference'>note 278</span>, seems more on point than the Pāli.</p>"
+    "fnHTML": "<p>I follow <span lang='pi'>tadappatiṭṭhitaṁ viñ&shy;ñā&shy;ṇaṁ avirūḷhaṁ anabhisaṅkhārañ-ca vi&shy;mut&shy;taṁ</span>, instead of alternative manuscripts which have <span lang='pi'>anabhisaṅkhacca</span>. Both <span lang='pi'>anabhisaṅkhāraṁ</span> (not willing) and <span lang='pi'>vi&shy;mut&shy;taṁ</span> (liberated) could be taken as adjectives of <span lang='pi'>viñ&shy;ñā&shy;ṇaṁ</span>. However:</p><p>(1) Consciousness as one of the <span lang='pi'>khan&shy;dhas</span> is just aware of things, it does not do things nor stop doing things at enlightenment, so ‘not willing’ would likely not be said of it.</p><p>(2) The before is about how consciousness comes to cease when “its foundation is destroyed”, not about liberating it.</p><p>(3) Although <span lang='pi'>viññāṇa</span> can be a near synonym for the mind (<span lang='pi'>citta</span>), the two words are still used in different senses, and elsewhere in the Nikāyas it is always either the mind or the person that is said to be liberated, never <span lang='pi'>viññāṇa</span>.</p><p>(4) <span class='sclinktext'>SN&#8239;22.45</span> &amp; <span class='sclinktext'>SN&#8239;22.46</span> share their closing paragraph with this sutta, and there it is nmistakably the mind that is liberated.</p><p>For these reasons I think the mind is intended in this sutta as well. I take <span lang='pi'>ca</span> (and) to indicate there to be two separate sentences: <span lang='pi'>Tadappatiṭṭhitaṁ viñ&shy;ñā&shy;ṇaṁ avirūḷhaṁ. Anabhisaṅkhārañ-ca vi&shy;mut&shy;taṁ</span>. Seeing the first part as a full sentence is supported by <span class='sclinktext'>SN&#8239;12.38<span class='scsegments'>:3.3</span></span>, <span class='sclinktext'>SN&#8239;12.38<span class='scsegments'>:3.3</span></span> &amp; <span class='sclinktext'>SN&#8239;12.40<span class='scsegments'>:3.3</span></span>, where <span lang='pi'>tadappatiṭṭhite viññāṇe avirūḷhe</span> is an absolute, hence a separately functioning clause; and seeing the second as a separate sentence makes it match the other two-word sentences that follow. The translation thus becomes: “Not planted, consciousness will not sprout. And not creating, ‘it’ is liberated.” The ‘it’ refers to the mind, like in the common phrase <span lang='pi'>vimuttasmiṁ ‘vimuttam’iti ñāṇaṁ hoti</span>, “when liberated, there is the knowledge ‘it [the mind] is liberated’.” Previous translators similarly separated <span lang='pi'>viñ&shy;ñā&shy;ṇaṁ</span> from <span lang='pi'>vi&shy;mut&shy;taṁ</span> in the <span class='sesame'>Seeds Discourse</span> (see <span data-custom-style='internal-reference'>note 504</span>). <span class='sesame' data-sesame-key='zotref:Nyanaponika 1990a'>Nyanaponika 1990</span> has “<span data-custom-style='wwc-german'>ist man befreit</span>”, meaning “<em>one</em> is liberated”. But <span lang='pi'>vi&shy;mut&shy;taṁ</span> being neuter, ‘the mind’ is preferable over ‘one’, which would require the masculine.</p><p>The Chinese parallel at <a href='https://suttacentral.net/sa39' class='extlink'>SĀ 39</a> also supports the separation of consciousness and liberation, as it disjoints the two with a set of phrases not found in the Pāli. <span class='sesame' data-sesame-key='zotref:Analayo 2014a'>Anālayo 2014</span> translated: “The basis being abandoned, that consciousness is not established anywhere and does not grow further and increase. Because of not growing, there is no creating of formations. Not creating formations, one is steady. Being steady, one is contented. Being contented, one is released.” So again the Chinese, as in <span data-custom-style='internal-reference'>note 277</span> and <span data-custom-style='internal-reference'>note 278</span>, seems more on point than the Pāli.</p>"
   },
   {
     "fnNumber": "280",
@@ -1141,7 +1141,7 @@
   },
   {
     "fnNumber": "286",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Harvey 1995</span> p.97f</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.97f</p>"
   },
   {
     "fnNumber": "287",
@@ -1149,7 +1149,7 @@
   },
   {
     "fnNumber": "288",
-    "fnHTML": "<p><span lang='pi'>Rūpupayaṁ viñ&shy;ñā&shy;ṇaṁ tiṭṭhamānaṁ tiṭṭheyya</span>, ‘consciousness would continue to exist if it is attracted to form’. <span class='sesame biblioref'>Bodhi 2000</span> translates: “Consciousness, while standing, might stand engaged with form.” <span class='sesame biblioref'>Ṭhānissaro 2008a</span> p.27 has: “Should consciousness, when standing, stand attached to form […]” Under <span lang='pi'>tiṭṭhati</span> <span class='sesame biblioref'>DOP</span> glosses the literal ‘stands’ but also ‘continues to exist’. The latter is meant here, not ‘stand’, which is too literal. <span class='sesame biblioref'>Choong</span> p.50 more accurately translates ‘may persist’. See also <span class='sesame biblioref'>Hamilton</span> p.97: “This term [<span lang='pi'>ṭhiti</span>] itself implies continuity: being ‘stationed’ means that [consciousness] ‘persists’.” <span class='sesame biblioref'>Harvey 1995</span> p.97 also renders this term as ‘maintenance’.</p><p>Although <span lang='pi'>viñ&shy;ñā&shy;ṇaṁ tiṭṭhamānaṁ tiṭṭheyya</span> literally is ‘<em>existing</em> consciousness would continue’, a present participle followed by a finite form of the same verb is a form of emphasis. For example, <span lang='pi'>cittaṁ bahulaṁ gacchamānaṁ gaccheyya</span>, literally ‘the straying mind may often stray’, simply means the mind may often stray. (<span class='sclinktext'>SN&#8239;35.117<span class='scsegments'>:1.2</span></span>) So I excluded the present participle <span lang='pi'>tiṭṭhamānaṁ</span>, like other translators have done in this example case and similar instances, and instead emphasize the verb with ‘continue to exist’. Further, <span lang='pi'>rūpupayaṁ</span> is a <span lang='pi'>bahubbīhi</span> compound, so the sentence literally says, “existing consciousness which has an attraction to form will continue”. Like <span class='sesame biblioref'>Choong</span> I therefore also think it is incorrect to treat <span lang='pi'>rūpa</span> as an object of <span lang='pi'>tiṭṭheyya</span>, as in “stand engaged with form” of other translators.</p>"
+    "fnHTML": "<p><span lang='pi'>Rūpupayaṁ viñ&shy;ñā&shy;ṇaṁ tiṭṭhamānaṁ tiṭṭheyya</span>, ‘consciousness would continue to exist if it is attracted to form’. <span class='sesame' data-sesame-key='zotref:Bodhi 2000a'>Bodhi 2000</span> translates: “Consciousness, while standing, might stand engaged with form.” <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.27 has: “Should consciousness, when standing, stand attached to form […]” Under <span lang='pi'>tiṭṭhati</span> <span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span> glosses the literal ‘stands’ but also ‘continues to exist’. The latter is meant here, not ‘stand’, which is too literal. <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> p.50 more accurately translates ‘may persist’. See also <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.97: “This term [<span lang='pi'>ṭhiti</span>] itself implies continuity: being ‘stationed’ means that [consciousness] ‘persists’.” <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.97 also renders this term as ‘maintenance’.</p><p>Although <span lang='pi'>viñ&shy;ñā&shy;ṇaṁ tiṭṭhamānaṁ tiṭṭheyya</span> literally is ‘<em>existing</em> consciousness would continue’, a present participle followed by a finite form of the same verb is a form of emphasis. For example, <span lang='pi'>cittaṁ bahulaṁ gacchamānaṁ gaccheyya</span>, literally ‘the straying mind may often stray’, simply means the mind may often stray. (<span class='sclinktext'>SN&#8239;35.117<span class='scsegments'>:1.2</span></span>) So I excluded the present participle <span lang='pi'>tiṭṭhamānaṁ</span>, like other translators have done in this example case and similar instances, and instead emphasize the verb with ‘continue to exist’. Further, <span lang='pi'>rūpupayaṁ</span> is a <span lang='pi'>bahubbīhi</span> compound, so the sentence literally says, “existing consciousness which has an attraction to form will continue”. Like <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> I therefore also think it is incorrect to treat <span lang='pi'>rūpa</span> as an object of <span lang='pi'>tiṭṭheyya</span>, as in “stand engaged with form” of other translators.</p>"
   },
   {
     "fnNumber": "289",
@@ -1165,7 +1165,7 @@
   },
   {
     "fnNumber": "292",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Sunyo 2017</span></p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Sunyo 2017a'>Sunyo 2017</span></p>"
   },
   {
     "fnNumber": "293",
@@ -1173,7 +1173,7 @@
   },
   {
     "fnNumber": "294",
-    "fnHTML": "<p><span lang='pi'>Saṁyojaniyesu, bhik&shy;kha&shy;ve, dham&shy;me&shy;su assādānupassino viha&shy;ra&shy;to</span>, ‘for those who live focusing on the gratification of things that can chain them’. <span class='sesame biblioref'>Bodhi 2000</span> translates the phrase here as “<span class='sesame'><em>when</em> one dwells contemplating gratification in things that can fetter</span>”, but in his later translation of the <span data-sesame-key='super-blurbs:an' class='sesame'>Aṅguttara Nikāya</span> he translates -<span lang='pi'>anupassino viha&shy;ra&shy;to</span> as “<em>for one who</em> dwells contemplating”. (<span class='sesame biblioref'>Bodhi 2012</span>, <span class='sclinktext'>AN&#8239;5.30</span>) <span lang='pi'>Assādānupassino viha&shy;ra&shy;to</span> is a genitive absolute of “whom it concerns” (cf. <span class='sesame biblioref'>Wijesekera 1993</span> §159), so is best translated with “<em>for those who</em>”, like <span class='sesame biblioref'>Olalde 2014</span> p.84, “für denjenigen”. The point is that for those who live dwelling on these things, there will be rebirth, but for those who do not, there won’t be. There are no temporal implications of “when” here.</p>"
+    "fnHTML": "<p><span lang='pi'>Saṁyojaniyesu, bhik&shy;kha&shy;ve, dham&shy;me&shy;su assādānupassino viha&shy;ra&shy;to</span>, ‘for those who live focusing on the gratification of things that can chain them’. <span class='sesame' data-sesame-key='zotref:Bodhi 2000a'>Bodhi 2000</span> translates the phrase here as “<span class='sesame'><em>when</em> one dwells contemplating gratification in things that can fetter</span>”, but in his later translation of the <span data-sesame-key='super-blurbs:an' class='sesame'>Aṅguttara Nikāya</span> he translates -<span lang='pi'>anupassino viha&shy;ra&shy;to</span> as “<em>for one who</em> dwells contemplating”. (<span class='sesame' data-sesame-key='zotref:Bodhi 2012a'>Bodhi 2012</span>, <span class='sclinktext'>AN&#8239;5.30</span>) <span lang='pi'>Assādānupassino viha&shy;ra&shy;to</span> is a genitive absolute of “whom it concerns” (cf. <span class='sesame' data-sesame-key='zotref:Wijesekera 1993a'>Wijesekera 1993</span> §159), so is best translated with “<em>for those who</em>”, like <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.84, “für denjenigen”. The point is that for those who live dwelling on these things, there will be rebirth, but for those who do not, there won’t be. There are no temporal implications of “when” here.</p>"
   },
   {
     "fnNumber": "295",
@@ -1189,7 +1189,7 @@
   },
   {
     "fnNumber": "298",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Wijesekera 1994</span> p.106</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Wijesekera 1994a'>Wijesekera 1994</span> p.106</p>"
   },
   {
     "fnNumber": "299",
@@ -1205,23 +1205,23 @@
   },
   {
     "fnNumber": "302",
-    "fnHTML": "<p><a href='https://suttacentral.net/ma97' class='extlink'>MĀ 97</a>, translation <span class='sesame biblioref'>Anālayo 2020</span>(a), emphasis added</p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/ma97' class='extlink'>MĀ 97</a>, translation <span class='sesame' data-sesame-key='zotref:Analayo 2020a'>Anālayo 2020</span>(a), emphasis added</p>"
   },
   {
     "fnNumber": "303",
-    "fnHTML": "<p><a href='https://suttacentral.net/da13' class='extlink'>DĀ 13</a>, translation <span class='sesame biblioref'>Patton</span></p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/da13' class='extlink'>DĀ 13</a>, translation <span class='sesame' data-sesame-key='zotref:Patton 2024a'>Patton</span></p>"
   },
   {
     "fnNumber": "304",
-    "fnHTML": "<p>Contra <span class='sesame biblioref'>Ñāṇananda 2015</span> p.65, p.36. <span class='sesame biblioref'>PED</span> states that translating <span lang='pi'>itthatta</span> as ‘thusness’ is incorrect. The word instead refers to existence, literally ‘a state (-<span lang='pi'>tta</span>) here (<span lang='pi'>ittha</span>)’. See for example <span class='sclinktext'>AN&#8239;2.36<span class='scsegments'>:2.4, 3.5, 4.7</span></span>: <span lang='pi'>so tato cuto […] āgantā itthattaṁ</span>, “passing on from there […] he comes to ‘life here’”.</p>"
+    "fnHTML": "<p>Contra <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.65, p.36. <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> states that translating <span lang='pi'>itthatta</span> as ‘thusness’ is incorrect. The word instead refers to existence, literally ‘a state (-<span lang='pi'>tta</span>) here (<span lang='pi'>ittha</span>)’. See for example <span class='sclinktext'>AN&#8239;2.36<span class='scsegments'>:2.4, 3.5, 4.7</span></span>: <span lang='pi'>so tato cuto […] āgantā itthattaṁ</span>, “passing on from there […] he comes to ‘life here’”.</p>"
   },
   {
     "fnNumber": "305",
-    "fnHTML": "<p>For example, in <span class='sclinktext'>DN&#8239;24<span class='scsegments'>:2.17.5</span></span> <span class='ptsref'>PTS: D III 29</span> <span lang='pi'>itthatta</span> refers to a state of existence in the realm of Brahmā. See also <span class='sesame biblioref'>Bodhi 2015</span> p.168</p>"
+    "fnHTML": "<p>For example, in <span class='sclinktext'>DN&#8239;24<span class='scsegments'>:2.17.5</span></span> <span class='ptsref'>PTS: D III 29</span> <span lang='pi'>itthatta</span> refers to a state of existence in the realm of Brahmā. See also <span class='sesame' data-sesame-key='zotref:Bodhi 2015b'>Bodhi 2015</span> p.168</p>"
   },
   {
     "fnNumber": "306",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Bodhi 1984</span> p.29</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.29</p>"
   },
   {
     "fnNumber": "307",
@@ -1233,7 +1233,7 @@
   },
   {
     "fnNumber": "309",
-    "fnHTML": "<p><span class='sesame biblioref'>Vetter 1994</span> p.151</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Vetter 1994a'>Vetter 1994</span> p.151</p>"
   },
   {
     "fnNumber": "310",
@@ -1241,7 +1241,7 @@
   },
   {
     "fnNumber": "311",
-    "fnHTML": "<p>As argued by <span class='sesame biblioref'>Olalde 2014</span> p.102</p>"
+    "fnHTML": "<p>As argued by <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.102</p>"
   },
   {
     "fnNumber": "312",
@@ -1249,7 +1249,7 @@
   },
   {
     "fnNumber": "313",
-    "fnHTML": "<p><span class='sesame biblioref'>Bodhi 1984</span> p.30</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.30</p>"
   },
   {
     "fnNumber": "314",
@@ -1257,7 +1257,7 @@
   },
   {
     "fnNumber": "315",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Ñāṇananda 2015</span> p.33: “What is meant by the Buddha’s statement is that name-and-form together with consciousness is the rallying point for all concepts of birth, decay, death and rebirth. All pathways for verbal expression, terminology and designation converge on name-and-form together with consciousness. The range of wisdom extends only up to the relationship between these two. And it is between these two that there is a whirling round so that one may point out a this-ness.”</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.33: “What is meant by the Buddha’s statement is that name-and-form together with consciousness is the rallying point for all concepts of birth, decay, death and rebirth. All pathways for verbal expression, terminology and designation converge on name-and-form together with consciousness. The range of wisdom extends only up to the relationship between these two. And it is between these two that there is a whirling round so that one may point out a this-ness.”</p>"
   },
   {
     "fnNumber": "316",
@@ -1273,15 +1273,15 @@
   },
   {
     "fnNumber": "319",
-    "fnHTML": "<p><span class='sesame biblioref'>Hamilton</span> p.129</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.129</p>"
   },
   {
     "fnNumber": "320",
-    "fnHTML": "<p><span class='sesame biblioref'>Bodhi 1984</span> p.25</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.25</p>"
   },
   {
     "fnNumber": "321",
-    "fnHTML": "<p><span class='sesame biblioref'>Langer</span> p.25, translation mine</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.25, translation mine</p>"
   },
   {
     "fnNumber": "322",
@@ -1297,35 +1297,35 @@
   },
   {
     "fnNumber": "325",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Falk</span> p.40, <span class='sesame biblioref'>Hamilton</span> p.123, <span class='sesame biblioref'>Gombrich 2009</span> p.120, <span class='sesame biblioref'>Olalde 2014</span> p.38ff.</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Falk 1943a'>Falk</span> p.40, <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.123, <span class='sesame' data-sesame-key='zotref:Gombrich 2009a'>Gombrich 2009</span> p.120, <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.38ff.</p>"
   },
   {
     "fnNumber": "326",
-    "fnHTML": "<p><span class='sesame biblioref'>Sujato 2012</span> Section 3.2—Insight 2.3: Im­perm­anence of the Mind</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Sujato 2012a'>Sujato 2012</span> Section 3.2—Insight 2.3: Im­perm­anence of the Mind</p>"
   },
   {
     "fnNumber": "327",
-    "fnHTML": "<p><span class='sesame biblioref'>Falk</span> p.40</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Falk 1943a'>Falk</span> p.40</p>"
   },
   {
     "fnNumber": "328",
-    "fnHTML": "<p>See for example <span class='sesame biblioref'>Flood</span> p.274: “The Brahmanical tradition was not a monolithic entity.” Or <span class='sesame biblioref'>Bausch 2015</span> p.1: “There was never a unitary Vedic tradition against which Buddhism reacted. Vedic religiosity was a dynamic aggregate, alive with regional variation.” See also <span class='sesame biblioref'>Olivelle</span> pp.8–11. In <span class='sclinktext'>DN&#8239;13</span> different brahmin traditions are said to teach different paths to Brahma(n).</p>"
+    "fnHTML": "<p>See for example <span class='sesame' data-sesame-key='zotref:Flood 2003a'>Flood</span> p.274: “The Brahmanical tradition was not a monolithic entity.” Or <span class='sesame' data-sesame-key='zotref:Bausch 2015a'>Bausch 2015</span> p.1: “There was never a unitary Vedic tradition against which Buddhism reacted. Vedic religiosity was a dynamic aggregate, alive with regional variation.” See also <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span> pp.8–11. In <span class='sclinktext'>DN&#8239;13</span> different brahmin traditions are said to teach different paths to Brahma(n).</p>"
   },
   {
     "fnNumber": "329",
-    "fnHTML": "<p>MuṇU 3.2.8, translation <span class='sesame biblioref'>Olivelle</span></p>"
+    "fnHTML": "<p>MuṇU 3.2.8, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span></p>"
   },
   {
     "fnNumber": "330",
-    "fnHTML": "<p>PrU 6.5, translation <span class='sesame biblioref'>Olivelle</span></p>"
+    "fnHTML": "<p>PrU 6.5, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span></p>"
   },
   {
     "fnNumber": "331",
-    "fnHTML": "<p>CU 6.10, translation <span class='sesame biblioref'>Olivelle</span></p>"
+    "fnHTML": "<p>CU 6.10, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span></p>"
   },
   {
     "fnNumber": "332",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Olalde 2014</span> p.39 (translation mine): “[On the basis of CU 6.10 (<span class='internalLink' data-target='#bqseg89'>§89</span>)] it seems most likely to me that <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> in MuṇU 3.2.8 and PrU 6.5 (<span class='internalLink' data-target='#bqseg87'>§87</span> and <span class='internalLink' data-target='#bqseg88'>§88</span>) refers specifically to a person, who until the depicted point in time existed as an individual with his (proper) name and visible form.” See also <span class='sesame biblioref'>Olalde 2015</span> p.14</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.39 (translation mine): “[On the basis of CU 6.10 (<span class='internalLink' data-target='#bqseg89'>§89</span>)] it seems most likely to me that <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> in MuṇU 3.2.8 and PrU 6.5 (<span class='internalLink' data-target='#bqseg87'>§87</span> and <span class='internalLink' data-target='#bqseg88'>§88</span>) refers specifically to a person, who until the depicted point in time existed as an individual with his (proper) name and visible form.” See also <span class='sesame' data-sesame-key='zotref:Olalde 2015a'>Olalde 2015</span> p.14</p>"
   },
   {
     "fnNumber": "333",
@@ -1333,7 +1333,7 @@
   },
   {
     "fnNumber": "334",
-    "fnHTML": "<p><span class='sclinktext'>MN&#8239;22<span class='scsegments'>:25.5–25.6</span></span> <span class='ptsref'>PTS: M I 138</span>. See also <span class='sesame biblioref'>Wijesekera 1994</span> p.261</p>"
+    "fnHTML": "<p><span class='sclinktext'>MN&#8239;22<span class='scsegments'>:25.5–25.6</span></span> <span class='ptsref'>PTS: M I 138</span>. See also <span class='sesame' data-sesame-key='zotref:Wijesekera 1994a'>Wijesekera 1994</span> p.261</p>"
   },
   {
     "fnNumber": "335",
@@ -1341,7 +1341,7 @@
   },
   {
     "fnNumber": "336",
-    "fnHTML": "<p><span class='sesame biblioref'>Bausch 2018</span> p.39</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bausch 2018a'>Bausch 2018</span> p.39</p>"
   },
   {
     "fnNumber": "337",
@@ -1349,11 +1349,11 @@
   },
   {
     "fnNumber": "338",
-    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:'>Sunyo 2021</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Sunyo 2021a'>Sunyo 2021</span></p>"
   },
   {
     "fnNumber": "339",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Hinüber</span> p.28f</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Hinüber 1996a'>Hinüber</span> p.28f</p>"
   },
   {
     "fnNumber": "340",
@@ -1361,11 +1361,11 @@
   },
   {
     "fnNumber": "341",
-    "fnHTML": "<p>See for example <span class='sesame biblioref'>Hamilton</span> p.12</p>"
+    "fnHTML": "<p>See for example <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.12</p>"
   },
   {
     "fnNumber": "342",
-    "fnHTML": "<p><span class='sesame biblioref'>Gombrich 1980</span> p.45</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Gombrich 1996a'>Gombrich 1980</span> p.45</p>"
   },
   {
     "fnNumber": "343",
@@ -1373,27 +1373,27 @@
   },
   {
     "fnNumber": "344",
-    "fnHTML": "<p>BU 3.7.3–7, translation <span class='sesame biblioref'>Olivelle</span>: “This self of yours who is present within but is different from the earth, whom the earth does not know, […] who is present within but is different from the waters […] the fire […] the wind, whom the wind does not know, […] he is the inner controller, the immortal.”</p>"
+    "fnHTML": "<p>BU 3.7.3–7, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span>: “This self of yours who is present within but is different from the earth, whom the earth does not know, […] who is present within but is different from the waters […] the fire […] the wind, whom the wind does not know, […] he is the inner controller, the immortal.”</p>"
   },
   {
     "fnNumber": "345",
-    "fnHTML": "<p>TU 2.8, translation <span class='sesame biblioref'>Olivelle</span>: “For when a man finds within that invisible (<span lang='sa'>nadṛśya</span>), incorporeal, indistinct, and supportless essence, the fearless state on which to rest, then he becomes free from fear.” The word has the same verbal root as <span lang='pi'>ani&shy;das&shy;sana</span> of the <span data-sesame-key='dn-blurbs:dn11' class='sesame'>Kevaddha Sutta</span></p>"
+    "fnHTML": "<p>TU 2.8, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span>: “For when a man finds within that invisible (<span lang='sa'>nadṛśya</span>), incorporeal, indistinct, and supportless essence, the fearless state on which to rest, then he becomes free from fear.” The word has the same verbal root as <span lang='pi'>ani&shy;das&shy;sana</span> of the <span data-sesame-key='dn-blurbs:dn11' class='sesame'>Kevaddha Sutta</span></p>"
   },
   {
     "fnNumber": "346",
-    "fnHTML": "<p>CU 3.13.7–14.2, translation <span class='sesame biblioref'>Olivelle</span>. See also ‘inner light’ in <span class='internalLink' data-target='#bqseg94'>§94</span></p>"
+    "fnHTML": "<p>CU 3.13.7–14.2, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span>. See also ‘inner light’ in <span class='internalLink' data-target='#bqseg94'>§94</span></p>"
   },
   {
     "fnNumber": "347",
-    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:'>Sunyo 2021</span></p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Sunyo 2021a'>Sunyo 2021</span></p>"
   },
   {
     "fnNumber": "348",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Jayatilleke</span> §42: “There is no reason to believe that Yājñavalkya’s theories are based on any kind of mystical experience.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:JayatillekeKN 1963a'>Jayatilleke</span> §42: “There is no reason to believe that Yājñavalkya’s theories are based on any kind of mystical experience.”</p>"
   },
   {
     "fnNumber": "349",
-    "fnHTML": "<p><span class='sesame biblioref'>Werner</span> p.26</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Werner 2022a'>Werner</span> p.26</p>"
   },
   {
     "fnNumber": "350",
@@ -1401,15 +1401,15 @@
   },
   {
     "fnNumber": "351",
-    "fnHTML": "<p><span class='sesame biblioref'>Gombrich 1980</span> p.45</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Gombrich 1996a'>Gombrich 1980</span> p.45</p>"
   },
   {
     "fnNumber": "352",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Ñāṇananda 2016</span> p.27: “There is a consciousness that is freed from name and form.” Also <span class='sesame biblioref'>Oldenberg</span> p.87, who says the “Brahmanic thinking […] is also basically valid for the Buddhistic”, both resulting in “the blissful merging with infinity” when name and form are abandoned.</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2016a'>Ñāṇananda 2016</span> p.27: “There is a consciousness that is freed from name and form.” Also <span class='sesame' data-sesame-key='zotref:Oldenberg 1997a'>Oldenberg</span> p.87, who says the “Brahmanic thinking […] is also basically valid for the Buddhistic”, both resulting in “the blissful merging with infinity” when name and form are abandoned.</p>"
   },
   {
     "fnNumber": "353",
-    "fnHTML": "<p>As argued for example by <span class='sesame biblioref'>Ñāṇananda 2015</span> p.60: “In some discourses, like the <span data-sesame-key='dn-blurbs:dn15' class='sesame'>Mahānidāna Sutta</span>, there is a discussion about a descent of consciousness into a mother’s womb. […] The point […] is that the constant interrelation that exists between consciousness and name-and-form is present even during one’s life in the mother’s womb.” Also see <span class='sesame biblioref'>Cintita</span> p.227</p>"
+    "fnHTML": "<p>As argued for example by <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.60: “In some discourses, like the <span data-sesame-key='dn-blurbs:dn15' class='sesame'>Mahānidāna Sutta</span>, there is a discussion about a descent of consciousness into a mother’s womb. […] The point […] is that the constant interrelation that exists between consciousness and name-and-form is present even during one’s life in the mother’s womb.” Also see <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.227</p>"
   },
   {
     "fnNumber": "354",
@@ -1425,11 +1425,11 @@
   },
   {
     "fnNumber": "357",
-    "fnHTML": "<p><span class='sclinktext'>MN&#8239;111<span class='scsegments'>:6.1</span></span> <span class='ptsref'>PTS: M III 25</span>, as noted by <span class='sesame biblioref'>Anālayo 2017</span> p.120</p>"
+    "fnHTML": "<p><span class='sclinktext'>MN&#8239;111<span class='scsegments'>:6.1</span></span> <span class='ptsref'>PTS: M III 25</span>, as noted by <span class='sesame' data-sesame-key='zotref:Analayo 2017a'>Anālayo 2017</span> p.120</p>"
   },
   {
     "fnNumber": "358",
-    "fnHTML": "<p>For example at <a href='https://suttacentral.net/sa284' class='extlink'>SĀ 284</a>, as pointed out by <span class='sesame biblioref'>Choong</span> p.174</p>"
+    "fnHTML": "<p>For example at <a href='https://suttacentral.net/sa284' class='extlink'>SĀ 284</a>, as pointed out by <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> p.174</p>"
   },
   {
     "fnNumber": "359",
@@ -1437,7 +1437,7 @@
   },
   {
     "fnNumber": "360",
-    "fnHTML": "<p><span class='sesame biblioref'>Anālayo 2018</span> p.27</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Analayo 2018a'>Anālayo 2018</span> p.27</p>"
   },
   {
     "fnNumber": "361",
@@ -1449,39 +1449,39 @@
   },
   {
     "fnNumber": "363",
-    "fnHTML": "<p><span class='sesame biblioref'>PED</span> under <span lang='pi'>viññāṇa</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> under <span lang='pi'>viññāṇa</span></p>"
   },
   {
     "fnNumber": "364",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Frauwallner 1953/1973</span> p.162, <span class='sesame biblioref'>Hamilton</span> p.101, <span class='sesame biblioref'>Langer</span> p.9, <span class='sesame biblioref'>Vetter 1988</span> p.49, <span class='sesame biblioref'>Wijesekera 1994</span> p.111</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.162, <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.101, <span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.9, <span class='sesame' data-sesame-key='zotref:Vetter 1988a'>Vetter 1988</span> p.49, <span class='sesame' data-sesame-key='zotref:Wijesekera 1994a'>Wijesekera 1994</span> p.111</p>"
   },
   {
     "fnNumber": "365",
-    "fnHTML": "<p><span class='sesame biblioref'>Kalupahana 1975</span> p.119</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Kalupahana 1975a'>Kalupahana 1975</span> p.119</p>"
   },
   {
     "fnNumber": "366",
-    "fnHTML": "<p>As argued by <span class='sesame biblioref'>Hamilton</span> p.85</p>"
+    "fnHTML": "<p>As argued by <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.85</p>"
   },
   {
     "fnNumber": "367",
-    "fnHTML": "<p><span class='sesame biblioref'>Gombrich 2009</span> p.60</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Gombrich 2009a'>Gombrich 2009</span> p.60</p>"
   },
   {
     "fnNumber": "368",
-    "fnHTML": "<p><span class='sesame biblioref'>Vetter 1988</span> p.36 notes: “The word ‘consciousness’ which is often employed here, is rather inconvenient when one has to interpret <span lang='pi'>viññāṇa</span> as a link in the twelvefold chain of dependent origination, where it seems to point to the first moment of life in the mother’s womb.” <span class='sesame biblioref'>Rhys Davids</span> p.55 comments upon her translation of <span class='sclinktext'>AN&#8239;3.76</span> (<span class='internalLink' data-target='#bqseg71'>§71</span>) that ‘consciousness’ is not an adequate translation in this context: “I have rendered by ‘man [surviving]’ the word <span lang='pi'>viññāṇa</span>, literally ‘awareness’, and rightly so rendered it. [Here] <span lang='pi'>viññāṇa</span> clearly means the man who has survived death.”</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Vetter 1988a'>Vetter 1988</span> p.36 notes: “The word ‘consciousness’ which is often employed here, is rather inconvenient when one has to interpret <span lang='pi'>viññāṇa</span> as a link in the twelvefold chain of dependent origination, where it seems to point to the first moment of life in the mother’s womb.” <span class='sesame' data-sesame-key='zotref:Rhys-DavidsCAF 1937'>Rhys Davids</span> p.55 comments upon her translation of <span class='sclinktext'>AN&#8239;3.76</span> (<span class='internalLink' data-target='#bqseg71'>§71</span>) that ‘consciousness’ is not an adequate translation in this context: “I have rendered by ‘man [surviving]’ the word <span lang='pi'>viññāṇa</span>, literally ‘awareness’, and rightly so rendered it. [Here] <span lang='pi'>viññāṇa</span> clearly means the man who has survived death.”</p>"
   },
   {
     "fnNumber": "369",
-    "fnHTML": "<p><span class='sesame biblioref'>Schmithausen 2000</span> p.57, translation mine</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> p.57, translation mine</p>"
   },
   {
     "fnNumber": "370",
-    "fnHTML": "<p><span class='sesame biblioref'>Frauwallner 1953/1973</span> p.162, emphasis added</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.162, emphasis added</p>"
   },
   {
     "fnNumber": "371",
-    "fnHTML": "<p><span class='sesame biblioref'>Hamilton</span> p.101</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.101</p>"
   },
   {
     "fnNumber": "372",
@@ -1489,7 +1489,7 @@
   },
   {
     "fnNumber": "373",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Brahmavamso 2002</span></p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Brahm 2002a'>Brahmavamso 2002</span></p>"
   },
   {
     "fnNumber": "374",
@@ -1497,11 +1497,11 @@
   },
   {
     "fnNumber": "375",
-    "fnHTML": "<p><span class='sesame biblioref'>Wijesekera 1994</span> p.111</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Wijesekera 1994a'>Wijesekera 1994</span> p.111</p>"
   },
   {
     "fnNumber": "376",
-    "fnHTML": "<p>BU 4.3.7, translation <span class='sesame biblioref'>Olivelle</span></p>"
+    "fnHTML": "<p>BU 4.3.7, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span></p>"
   },
   {
     "fnNumber": "377",
@@ -1509,15 +1509,15 @@
   },
   {
     "fnNumber": "378",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Vetter 1988</span> p.48–50. For similar explanations see <span class='sesame biblioref'>Bodhi 1984</span> p.24, <span class='sesame biblioref'>Wijesekera 1994</span> p.168–172, <span class='sesame biblioref'>Shults</span> p.110</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Vetter 1988a'>Vetter 1988</span> p.48–50. For similar explanations see <span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.24, <span class='sesame' data-sesame-key='zotref:Wijesekera 1994a'>Wijesekera 1994</span> p.168–172, <span class='sesame' data-sesame-key='zotref:Shults 2014a'>Shults</span> p.110</p>"
   },
   {
     "fnNumber": "379",
-    "fnHTML": "<p><span class='sclinktext'>DN&#8239;28<span class='scsegments'>:7.13</span></span> <span class='ptsref'>PTS: D III 105</span>. See also <span class='sesame biblioref'>Anālayo 2008</span> p.97</p>"
+    "fnHTML": "<p><span class='sclinktext'>DN&#8239;28<span class='scsegments'>:7.13</span></span> <span class='ptsref'>PTS: D III 105</span>. See also <span class='sesame' data-sesame-key='zotref:Analayo 2008a'>Anālayo 2008</span> p.97</p>"
   },
   {
     "fnNumber": "380",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Hamilton</span> p.97</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.97</p>"
   },
   {
     "fnNumber": "381",
@@ -1525,19 +1525,19 @@
   },
   {
     "fnNumber": "382",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Buddhadāsa</span> p.14, <span class='sesame biblioref'>Reinhard</span> p.9</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Buddhadasa 2020a'>Buddhadāsa</span> p.14, <span class='sesame' data-sesame-key='zotref:Reinhard 2018a'>Reinhard</span> p.9</p>"
   },
   {
     "fnNumber": "383",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Harvey 1995</span> p.98</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.98</p>"
   },
   {
     "fnNumber": "384",
-    "fnHTML": "<p><span class='sesame biblioref'>PED</span> s.v. <span lang='pi'>viññāṇa</span>, emphasis added.</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> s.v. <span lang='pi'>viññāṇa</span>, emphasis added.</p>"
   },
   {
     "fnNumber": "385",
-    "fnHTML": "<p><span class='sesame biblioref'>Olalde 2014</span> p.156. See also p.73ff.</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.156. See also p.73ff.</p>"
   },
   {
     "fnNumber": "386",
@@ -1545,7 +1545,7 @@
   },
   {
     "fnNumber": "387",
-    "fnHTML": "<p><span class='sesame biblioref'>DPPN</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Dict-DPPN'>DPPN</span></p>"
   },
   {
     "fnNumber": "388",
@@ -1553,7 +1553,7 @@
   },
   {
     "fnNumber": "389",
-    "fnHTML": "<p><span lang='pi'>‘Idaṁ saccan’ti maññati</span>, ‘imagining they know the truth’. This is a typical example of Pāli using quotation in a more abstract sense than English. The quoted words are not literal thoughts, and therefore do not have to be translated as a literal quote. <span lang='pi'>Idaṁ</span> is a pronoun without explicit referent, meaning it does not refer to any specific noun, including <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> (contra e.g. <span class='sesame biblioref'>Ñāṇananda 2015</span> p.132). See the prose preceding these verses in the discourse, where <span lang='pi'>idaṁ</span> also does not refer to anything specific: “What the world […] considers to be the truth (‘<span lang='pi'>idaṁ saccan’ti upanijjhāyitaṁ</span>), the noble ones […] understand to be false. […] What the world […] considers to be false (<span lang='pi'>‘idaṁ musā’ti upanijjhāyitaṁ</span>), the noble ones […] understand to be the truth.” There is no mention of <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> at this point. Furthermore, if <span lang='pi'>idaṁ</span> <em>were</em> to refer to <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> here, then the noble ones also understand it to be true. This does not fit Ñāṇananda’s ideas, who took <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> to be an intrinsically deluded cognition, “a product of imagination”. Instead, these are more general statements about what is taken to be true and false, not referring to anything specific.</p><p>The same idea applies to the common phrase <span lang='pi'>idam’eva saccaṁ</span>, for example in <span lang='pi'>sassato loko, idam’eva saccaṁ</span>, ‘the world is eternal, just this is the truth’— e.g. <span class='sclinktext'>DN&#8239;9<span class='scsegments'>:25.3</span></span> <span class='ptsref'>PTS: D I 187</span>. <span lang='pi'>Idaṁ</span> is neuter, while <span lang='pi'>loko</span> is masculine, so the former does not refer to the latter. Put differently, ‘the world’ is not considered to be ‘the truth’: it is the entire statement ‘the world is eternal’ which is taken as truth. Likewise, in the discourse at hand, <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> is not the thing that is considered to be the truth. It is its <em>selfhood</em> which is mistakenly taken as truth, as the commentary also notes, not <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> itself. The world imagining (<span lang='pi'>maññati</span>) things to be true refers back to the earlier line on them imagining <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> to have a self (<span lang='pi'>atta-māniṁ</span>). It also corresponds with the next line: “for whatever they imagine it is [i.e. a self], it is different from that [i.e. without a self].” (See also the passage quoted at <span data-custom-style='internal-reference'>note 422</span>: “The Buddha has said to not identify with the attainment of the first <span lang='pi'>jhāna</span>. For whatever you imagine it is, it is different from that.”)</p>"
+    "fnHTML": "<p><span lang='pi'>‘Idaṁ saccan’ti maññati</span>, ‘imagining they know the truth’. This is a typical example of Pāli using quotation in a more abstract sense than English. The quoted words are not literal thoughts, and therefore do not have to be translated as a literal quote. <span lang='pi'>Idaṁ</span> is a pronoun without explicit referent, meaning it does not refer to any specific noun, including <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> (contra e.g. <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.132). See the prose preceding these verses in the discourse, where <span lang='pi'>idaṁ</span> also does not refer to anything specific: “What the world […] considers to be the truth (‘<span lang='pi'>idaṁ saccan’ti upanijjhāyitaṁ</span>), the noble ones […] understand to be false. […] What the world […] considers to be false (<span lang='pi'>‘idaṁ musā’ti upanijjhāyitaṁ</span>), the noble ones […] understand to be the truth.” There is no mention of <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> at this point. Furthermore, if <span lang='pi'>idaṁ</span> <em>were</em> to refer to <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> here, then the noble ones also understand it to be true. This does not fit Ñāṇananda’s ideas, who took <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> to be an intrinsically deluded cognition, “a product of imagination”. Instead, these are more general statements about what is taken to be true and false, not referring to anything specific.</p><p>The same idea applies to the common phrase <span lang='pi'>idam’eva saccaṁ</span>, for example in <span lang='pi'>sassato loko, idam’eva saccaṁ</span>, ‘the world is eternal, just this is the truth’— e.g. <span class='sclinktext'>DN&#8239;9<span class='scsegments'>:25.3</span></span> <span class='ptsref'>PTS: D I 187</span>. <span lang='pi'>Idaṁ</span> is neuter, while <span lang='pi'>loko</span> is masculine, so the former does not refer to the latter. Put differently, ‘the world’ is not considered to be ‘the truth’: it is the entire statement ‘the world is eternal’ which is taken as truth. Likewise, in the discourse at hand, <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> is not the thing that is considered to be the truth. It is its <em>selfhood</em> which is mistakenly taken as truth, as the commentary also notes, not <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> itself. The world imagining (<span lang='pi'>maññati</span>) things to be true refers back to the earlier line on them imagining <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> to have a self (<span lang='pi'>atta-māniṁ</span>). It also corresponds with the next line: “for whatever they imagine it is [i.e. a self], it is different from that [i.e. without a self].” (See also the passage quoted at <span data-custom-style='internal-reference'>note 422</span>: “The Buddha has said to not identify with the attainment of the first <span lang='pi'>jhāna</span>. For whatever you imagine it is, it is different from that.”)</p>"
   },
   {
     "fnNumber": "390",
@@ -1589,47 +1589,47 @@
   },
   {
     "fnNumber": "398",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Bodhi 2000</span> p.48: “Consciousness can operate only in dependence on a physical body (<span lang='pi'>rūpa</span>) and in conjunction with its constellation of concomitants (<span lang='pi'>nāma</span>); conversely, only when consciousness is present can a compound of material elements function as a sentient body and the mental concomitants participate in cognition.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Bodhi 2000a'>Bodhi 2000</span> p.48: “Consciousness can operate only in dependence on a physical body (<span lang='pi'>rūpa</span>) and in conjunction with its constellation of concomitants (<span lang='pi'>nāma</span>); conversely, only when consciousness is present can a compound of material elements function as a sentient body and the mental concomitants participate in cognition.”</p>"
   },
   {
     "fnNumber": "399",
-    "fnHTML": "<p><span class='sesame biblioref'>Langer</span> p.27, translation mine</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.27, translation mine</p>"
   },
   {
     "fnNumber": "400",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Karunadasa</span> p.33: “It is on the reciprocal interplay between consciousness and mentality-materiality that the whole <span lang='pi'>saṁsāric</span> process of birth and death revolves. In this sense their mutual dependence constitutes the irreducible ground of <span lang='pi'>saṁsāric</span> experience.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Karunadasa 1975a'>Karunadasa</span> p.33: “It is on the reciprocal interplay between consciousness and mentality-materiality that the whole <span lang='pi'>saṁsāric</span> process of birth and death revolves. In this sense their mutual dependence constitutes the irreducible ground of <span lang='pi'>saṁsāric</span> experience.”</p>"
   },
   {
     "fnNumber": "401",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Harvey 1995</span> p.143, <span class='sesame biblioref'>Pasanno</span> p.133, <span class='sesame biblioref'>Cintita</span> p.166</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.143, <span class='sesame' data-sesame-key='zotref:Pasanno-Amaro 2009'>Pasanno</span> p.133, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.166</p>"
   },
   {
     "fnNumber": "402",
-    "fnHTML": "<p><span class='sesame biblioref'>Sujato 2011a</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Sujato 2011a'>Sujato 2011a</span></p>"
   },
   {
     "fnNumber": "403",
-    "fnHTML": "<p><span class='sesame'>Bodhi 2020 p.25</span>. See also <span class='sesame biblioref'>Warder 2010</span> p.5</p>"
+    "fnHTML": "<p><span class='sesame'>Bodhi 2020 p.25</span>. See also <span class='sesame' data-sesame-key='zotref:Warder 1991a'>Warder 2010</span> p.5</p>"
   },
   {
     "fnNumber": "404",
-    "fnHTML": "<p>See <span class='sesame'>Bodhi 2000 n.114</span> at <span class='sclinktext'>SN&#8239;22.79</span>: “Usually in the suttas <span lang='pi'>viññaṇa</span> is presented simply as the basic awareness of an object through one of the sense bases, i.e., as bare ‘consciousness of’ rather than as a discriminative capacity.” See also <span class='sesame biblioref'>Hamilton</span> p.53, 92</p>"
+    "fnHTML": "<p>See <span class='sesame'>Bodhi 2000 n.114</span> at <span class='sclinktext'>SN&#8239;22.79</span>: “Usually in the suttas <span lang='pi'>viññaṇa</span> is presented simply as the basic awareness of an object through one of the sense bases, i.e., as bare ‘consciousness of’ rather than as a discriminative capacity.” See also <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.53, 92</p>"
   },
   {
     "fnNumber": "405",
-    "fnHTML": "<p><span class='sesame biblioref'>Ñāṇamoli 1956</span> n.48 p.606. See also <span class='sesame biblioref'>Gombrich 1980</span> p.43</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Ñanamoli 1956a'>Ñāṇamoli 1956</span> n.48 p.606. See also <span class='sesame' data-sesame-key='zotref:Gombrich 1996a'>Gombrich 1980</span> p.43</p>"
   },
   {
     "fnNumber": "406",
-    "fnHTML": "<p><span class='sesame biblioref'>Schmithausen 2000</span> p.74, translation mine, emphasis in the original</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> p.74, translation mine, emphasis in the original</p>"
   },
   {
     "fnNumber": "407",
-    "fnHTML": "<p><span class='sesame biblioref'>Brahmavamso 1994</span>, which uses the simile with reference to feelings instead of consciousness, but the idea is the same.</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Brahm 1994a'>Brahmavamso 1994</span>, which uses the simile with reference to feelings instead of consciousness, but the idea is the same.</p>"
   },
   {
     "fnNumber": "408",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Bodhi 1998</span> p.168: “We might instead hold that the <span lang='pi'>vedanā</span> link should be understood as the result of past <span lang='pi'>kamma</span> only in the more general sense that the capacity for experiencing feeling is a consequence of obtaining a sentient organism through the force of past <span lang='pi'>kamma</span>. […] That is, it is past <span lang='pi'>kamma</span>, accompanied by ignorance and craving, that brought into being the present sentient organism equipped with its six sense bases through which feeling is experienced.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Bodhi 1998a'>Bodhi 1998</span> p.168: “We might instead hold that the <span lang='pi'>vedanā</span> link should be understood as the result of past <span lang='pi'>kamma</span> only in the more general sense that the capacity for experiencing feeling is a consequence of obtaining a sentient organism through the force of past <span lang='pi'>kamma</span>. […] That is, it is past <span lang='pi'>kamma</span>, accompanied by ignorance and craving, that brought into being the present sentient organism equipped with its six sense bases through which feeling is experienced.”</p>"
   },
   {
     "fnNumber": "409",
@@ -1641,7 +1641,7 @@
   },
   {
     "fnNumber": "411",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Hamilton</span> p.89</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.89</p>"
   },
   {
     "fnNumber": "412",
@@ -1661,7 +1661,7 @@
   },
   {
     "fnNumber": "416",
-    "fnHTML": "<p>On the same passage see also <span class='sesame biblioref'>Gombrich 2009</span> p.120</p>"
+    "fnHTML": "<p>On the same passage see also <span class='sesame' data-sesame-key='zotref:Gombrich 2009a'>Gombrich 2009</span> p.120</p>"
   },
   {
     "fnNumber": "417",
@@ -1701,7 +1701,7 @@
   },
   {
     "fnNumber": "426",
-    "fnHTML": "<p><span lang='pi'>Savijñānakaḥ kāyo</span> (<a href='http://suttacentral.net/sf161' class='extlink'>SF 161</a>) and 識身 (<a href='https://suttacentral.net/sa294' class='extlink'>SĀ 294</a>). See <span class='sesame biblioref'>Choong</span> p.185</p>"
+    "fnHTML": "<p><span lang='pi'>Savijñānakaḥ kāyo</span> (<a href='http://suttacentral.net/sf161' class='extlink'>SF 161</a>) and 識身 (<a href='https://suttacentral.net/sa294' class='extlink'>SĀ 294</a>). See <span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> p.185</p>"
   },
   {
     "fnNumber": "427",
@@ -1709,7 +1709,7 @@
   },
   {
     "fnNumber": "428",
-    "fnHTML": "<p><span class='sesame biblioref'>DOP</span> under <span lang='pi'>nimitta</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span> under <span lang='pi'>nimitta</span></p>"
   },
   {
     "fnNumber": "429",
@@ -1717,11 +1717,11 @@
   },
   {
     "fnNumber": "430",
-    "fnHTML": "<p><span class='sesame biblioref'>Schmithausen 2000</span> p.66 n.103, translation mine</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> p.66 n.103, translation mine</p>"
   },
   {
     "fnNumber": "431",
-    "fnHTML": "<p><span class='sesame biblioref'>Gonda</span> p.8</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Gonda 1970a'>Gonda</span> p.8</p>"
   },
   {
     "fnNumber": "432",
@@ -1729,19 +1729,19 @@
   },
   {
     "fnNumber": "433",
-    "fnHTML": "<p><span class='sesame biblioref'>Hamilton</span> p.127–135</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.127–135</p>"
   },
   {
     "fnNumber": "434",
-    "fnHTML": "<p><span class='sesame biblioref'>Falk</span> p.56 n.1</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Falk 1943a'>Falk</span> p.56 n.1</p>"
   },
   {
     "fnNumber": "435",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Reat</span>, <span class='sesame biblioref'>Bucknell</span> p.324, <span class='sesame biblioref'>Anālayo 2018</span> p.25</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Reat 1987a'>Reat</span>, <span class='sesame' data-sesame-key='zotref:Bucknell 1999a'>Bucknell</span> p.324, <span class='sesame' data-sesame-key='zotref:Analayo 2018a'>Anālayo 2018</span> p.25</p>"
   },
   {
     "fnNumber": "436",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Ñāṇananda 1974/2007</span> p.31, <span class='sesame biblioref'>Cintita</span> p.152, <span class='sesame biblioref'>Amaro</span> p.116. The first two both quote the Discourse on the Foolish and Wise in support, but only the part on the fools, omitting the statement on the wise also experiencing <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span>.</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Ñāṇananda 1974a'>Ñāṇananda 1974/2007</span> p.31, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.152, <span class='sesame' data-sesame-key='zotref:Amaro 2021a'>Amaro</span> p.116. The first two both quote the Discourse on the Foolish and Wise in support, but only the part on the fools, omitting the statement on the wise also experiencing <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span>.</p>"
   },
   {
     "fnNumber": "437",
@@ -1749,7 +1749,7 @@
   },
   {
     "fnNumber": "438",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Hamilton</span> p.135</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.135</p>"
   },
   {
     "fnNumber": "439",
@@ -1761,11 +1761,11 @@
   },
   {
     "fnNumber": "441",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Hamilton</span> p.132 and <span class='sesame biblioref'>Olalde 2014</span> p.103</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.132 and <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.103</p>"
   },
   {
     "fnNumber": "442",
-    "fnHTML": "<p><span class='sesame biblioref'>Schmithausen 2000</span> pp.69–74, translation mine</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> pp.69–74, translation mine</p>"
   },
   {
     "fnNumber": "443",
@@ -1777,15 +1777,15 @@
   },
   {
     "fnNumber": "445",
-    "fnHTML": "<p><span class='sesame biblioref'>Olalde 2014</span> p.69, “<span data-custom-style='wwc-german'>äußerst unklar</span>”; <span class='sesame biblioref'>Vetter 1994</span> p.147, “<span data-custom-style='wwc-german'>wenig Sinn</span>”. <span class='sesame biblioref'>Schmithausen 2000</span> p.58 also calls it “difficult” (<span data-custom-style='wwc-german'>schwieriger</span>).</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.69, “<span data-custom-style='wwc-german'>äußerst unklar</span>”; <span class='sesame' data-sesame-key='zotref:Vetter 1994a'>Vetter 1994</span> p.147, “<span data-custom-style='wwc-german'>wenig Sinn</span>”. <span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> p.58 also calls it “difficult” (<span data-custom-style='wwc-german'>schwieriger</span>).</p>"
   },
   {
     "fnNumber": "446",
-    "fnHTML": "<p><span class='sesame biblioref'>Bodhi 1984</span> p.20</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.20</p>"
   },
   {
     "fnNumber": "447",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Bodhi 1984</span> p.107</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.107</p>"
   },
   {
     "fnNumber": "448",
@@ -1797,7 +1797,7 @@
   },
   {
     "fnNumber": "450",
-    "fnHTML": "<p><span class='sesame biblioref'>Bodhi 1984</span> p.21</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.21</p>"
   },
   {
     "fnNumber": "451",
@@ -1805,15 +1805,15 @@
   },
   {
     "fnNumber": "452",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Warder 1970</span> p.108, <span class='sesame biblioref'>Vetter 1994</span> p.148, <span class='sesame biblioref'>Olalde 2014</span> p.110, <span class='sesame biblioref'>Schmithausen 2000</span> p.58</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Warder 1970a'>Warder 1970</span> p.108, <span class='sesame' data-sesame-key='zotref:Vetter 1994a'>Vetter 1994</span> p.148, <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.110, <span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> p.58</p>"
   },
   {
     "fnNumber": "453",
-    "fnHTML": "<p><span class='sesame biblioref'>Bodhi 1984</span> p.20</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.20</p>"
   },
   {
     "fnNumber": "454",
-    "fnHTML": "<p><span class='sclinktext'>Snp&#8239;5.7<span class='scsegments'>:6.4</span></span>. See also <span class='sesame biblioref'>DOP</span> s.v. <span lang='pi'>nāmakāya</span>: ‘the group of non-material aspects (of an individual)’.</p>"
+    "fnHTML": "<p><span class='sclinktext'>Snp&#8239;5.7<span class='scsegments'>:6.4</span></span>. See also <span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span> s.v. <span lang='pi'>nāmakāya</span>: ‘the group of non-material aspects (of an individual)’.</p>"
   },
   {
     "fnNumber": "455",
@@ -1821,15 +1821,15 @@
   },
   {
     "fnNumber": "456",
-    "fnHTML": "<p><span class='sesame biblioref'>Hamilton</span> p.134</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Hamilton 1996a'>Hamilton</span> p.134</p>"
   },
   {
     "fnNumber": "457",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Olalde 2014</span> p.114ff</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.114ff</p>"
   },
   {
     "fnNumber": "458",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Olalde 2014</span> p.103 (translation mine): “Authors who interpret the interdependency between <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> and <span lang='pi'>viññāṇa</span> in the sense of a dependency of cognition and its objects […] base their argumentation mainly on that part of the <span data-sesame-key='dn-blurbs:dn15' class='sesame'>Mahānidāna Sutta</span> which does not actually explain this relationship, but instead that between <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> and contact (<span lang='pi'>phassa</span>).”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.103 (translation mine): “Authors who interpret the interdependency between <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> and <span lang='pi'>viññāṇa</span> in the sense of a dependency of cognition and its objects […] base their argumentation mainly on that part of the <span data-sesame-key='dn-blurbs:dn15' class='sesame'>Mahānidāna Sutta</span> which does not actually explain this relationship, but instead that between <span lang='pi'>nā&shy;ma&shy;rū&shy;pa</span> and contact (<span lang='pi'>phassa</span>).”</p>"
   },
   {
     "fnNumber": "459",
@@ -1837,7 +1837,7 @@
   },
   {
     "fnNumber": "460",
-    "fnHTML": "<p><span class='sesame biblioref'>Vetter 1994</span> p.147</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Vetter 1994a'>Vetter 1994</span> p.147</p>"
   },
   {
     "fnNumber": "461",
@@ -1853,7 +1853,7 @@
   },
   {
     "fnNumber": "464",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Kalupahana 1976</span> p.158: “There is no transcendent reality or Being or ‘self’ that is given as the object of such direct perception.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Kalupahana 1976a'>Kalupahana 1976</span> p.158: “There is no transcendent reality or Being or ‘self’ that is given as the object of such direct perception.”</p>"
   },
   {
     "fnNumber": "465",
@@ -1861,7 +1861,7 @@
   },
   {
     "fnNumber": "466",
-    "fnHTML": "<p>See also <span class='sesame'>The Book of the Six Sense Fields in Sujato 2019</span>: “the idea of the ‘all’ […] suggests that the scope of the six senses includes all that is experienced”. Contra e.g. <span class='sesame biblioref'>Ṭhānissaro 2008a</span> p.119</p>"
+    "fnHTML": "<p>See also <span class='sesame'>The Book of the Six Sense Fields in Sujato 2019</span>: “the idea of the ‘all’ […] suggests that the scope of the six senses includes all that is experienced”. Contra e.g. <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.119</p>"
   },
   {
     "fnNumber": "467",
@@ -1869,7 +1869,7 @@
   },
   {
     "fnNumber": "468",
-    "fnHTML": "<p><span lang='pi'>Natthaññaṁ kiñci</span> (<span lang='pi'>na atthi aññaṁ kiñci</span>) ‘does something else no longer exists’ was translated by <span class='sesame biblioref'>Bodhi 2012</span> as ‘is there nothing else’. In most other cases <span lang='pi'>na kiñci</span> can be translated as ‘nothing’ without affecting the meaning, but in this context the more literal translation ‘no longer something’ is required. The mistake is more apparent in Bodhi’s translation of the third statement, <span lang='pi'>atthi ca natthi ca aññaṁ kiñci</span>, as ‘is there both something else and nothing else’. The phrase ‘something/nothing else’ occurs twice in the translation, while the Pāli has <span lang='pi'>aññaṁ kiñci</span> only once. The verb phrases <span lang='pi'>atthi</span> and <span lang='pi'>natthi</span> therefore both apply to the same <span lang='pi'>aññaṁ kiñci</span> (‘something else’). They both assume there to be something else beyond the six senses; neither assumes there is <em>nothing</em> beyond them. The assumption that there is <em>nothing</em> beyond the six senses would also effectively state that the six senses are all there is, so it would be inappropriate for Sāriputta to say it elaborates (or proliferates) beyond them, as he does later in the discourse.</p>"
+    "fnHTML": "<p><span lang='pi'>Natthaññaṁ kiñci</span> (<span lang='pi'>na atthi aññaṁ kiñci</span>) ‘does something else no longer exists’ was translated by <span class='sesame' data-sesame-key='zotref:Bodhi 2012a'>Bodhi 2012</span> as ‘is there nothing else’. In most other cases <span lang='pi'>na kiñci</span> can be translated as ‘nothing’ without affecting the meaning, but in this context the more literal translation ‘no longer something’ is required. The mistake is more apparent in Bodhi’s translation of the third statement, <span lang='pi'>atthi ca natthi ca aññaṁ kiñci</span>, as ‘is there both something else and nothing else’. The phrase ‘something/nothing else’ occurs twice in the translation, while the Pāli has <span lang='pi'>aññaṁ kiñci</span> only once. The verb phrases <span lang='pi'>atthi</span> and <span lang='pi'>natthi</span> therefore both apply to the same <span lang='pi'>aññaṁ kiñci</span> (‘something else’). They both assume there to be something else beyond the six senses; neither assumes there is <em>nothing</em> beyond them. The assumption that there is <em>nothing</em> beyond the six senses would also effectively state that the six senses are all there is, so it would be inappropriate for Sāriputta to say it elaborates (or proliferates) beyond them, as he does later in the discourse.</p>"
   },
   {
     "fnNumber": "469",
@@ -1885,7 +1885,7 @@
   },
   {
     "fnNumber": "472",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Ṭhānissaro 2008b</span> p.6, <span class='sesame biblioref'>Amaro</span> p.25, <span class='sesame biblioref'>Anālayo 2021</span> p.104</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008b'>Ṭhānissaro 2008b</span> p.6, <span class='sesame' data-sesame-key='zotref:Amaro 2021a'>Amaro</span> p.25, <span class='sesame' data-sesame-key='zotref:Analayo 2021a'>Anālayo 2021</span> p.104</p>"
   },
   {
     "fnNumber": "473",
@@ -1901,7 +1901,7 @@
   },
   {
     "fnNumber": "476",
-    "fnHTML": "<p><span class='sesame biblioref'>Choong</span> p.172</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Choong 2000a'>Choong</span> p.172</p>"
   },
   {
     "fnNumber": "477",
@@ -1909,11 +1909,11 @@
   },
   {
     "fnNumber": "478",
-    "fnHTML": "<p>For example at SN-A 2.372 (on <span class='sclinktext'>SN&#8239;35.87</span>). In discussing <span class='sclinktext'>Ud&#8239;1.10</span>, <span class='sesame biblioref'>Anālayo 2023</span> Chapter I.4 instead thinks ‘here’ (<span lang='pi'>idha</span>) and ‘beyond’ (<span lang='pi'>huraṁ</span>) refer to the senses and their objects, with ‘in between the two’ being “their interaction”, but this is not supported by other texts. <span class='internalLink' data-target='#bqseg116'>§116</span> clearly talks about rebirth, for example, and <span class='internalLink' data-target='#bqseg134'>§134</span> uses the same terminology with reference to physical places. <span class='sesame biblioref'>PED</span> and <span class='sesame biblioref'>CPD</span> accordingly gloss under <span lang='pi'>huraṁ</span>, “another world”.</p>"
+    "fnHTML": "<p>For example at SN-A 2.372 (on <span class='sclinktext'>SN&#8239;35.87</span>). In discussing <span class='sclinktext'>Ud&#8239;1.10</span>, <span class='sesame' data-sesame-key='zotref:Analayo 2023a'>Anālayo 2023</span> Chapter I.4 instead thinks ‘here’ (<span lang='pi'>idha</span>) and ‘beyond’ (<span lang='pi'>huraṁ</span>) refer to the senses and their objects, with ‘in between the two’ being “their interaction”, but this is not supported by other texts. <span class='internalLink' data-target='#bqseg116'>§116</span> clearly talks about rebirth, for example, and <span class='internalLink' data-target='#bqseg134'>§134</span> uses the same terminology with reference to physical places. <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> and <span class='sesame' data-sesame-key='zotref:Dict-CPD'>CPD</span> accordingly gloss under <span lang='pi'>huraṁ</span>, “another world”.</p>"
   },
   {
     "fnNumber": "479",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Harvey 1995</span> p.98, <span class='sesame biblioref'>Somaratne</span> p.150, <span class='sesame biblioref'>Sujato 2008</span> p.7, <span class='sesame biblioref'>Dhammika 2015</span> p.20 , <span class='sesame biblioref'>Anālayo 2018</span> p.32</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.98, <span class='sesame' data-sesame-key='zotref:Somaratne 1999a'>Somaratne</span> p.150, <span class='sesame' data-sesame-key='zotref:Sujato 2008a'>Sujato 2008</span> p.7, <span class='sesame' data-sesame-key='zotref:Dhammika 2015a'>Dhammika 2015</span> p.20 , <span class='sesame' data-sesame-key='zotref:Analayo 2018a'>Anālayo 2018</span> p.32</p>"
   },
   {
     "fnNumber": "480",
@@ -1941,7 +1941,7 @@
   },
   {
     "fnNumber": "486",
-    "fnHTML": "<p><span class='sesame biblioref'>Kalupahana 1976</span> p.52. See also <span class='sesame biblioref'>Vélez de Cea</span> p.136</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Kalupahana 1976a'>Kalupahana 1976</span> p.52. See also <span class='sesame' data-sesame-key='zotref:Vélez 2004a'>Vélez de Cea</span> p.136</p>"
   },
   {
     "fnNumber": "487",
@@ -1965,11 +1965,11 @@
   },
   {
     "fnNumber": "492",
-    "fnHTML": "<p><span class='sesame biblioref'>Anālayo 2023</span> Chapter I.10</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Analayo 2023a'>Anālayo 2023</span> Chapter I.10</p>"
   },
   {
     "fnNumber": "493",
-    "fnHTML": "<p><span class='sesame biblioref'>Bodhi 2000 n.174</span> at <span class='sclinktext'>SN&#8239;12.64</span></p>"
+    "fnHTML": "<p><span class='sesame'>Bodhi 2000 n.174</span> at <span class='sclinktext'>SN&#8239;12.64</span></p>"
   },
   {
     "fnNumber": "494",
@@ -1977,15 +1977,15 @@
   },
   {
     "fnNumber": "495",
-    "fnHTML": "<p><span class='sesame biblioref'>Hecker</span> p.53</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Hecker 2009a'>Hecker</span> p.53</p>"
   },
   {
     "fnNumber": "496",
-    "fnHTML": "<p><span class='sesame biblioref'>Anālayo 2023</span> Chapter I.10 states that the <span class='sesame'>First Discourse on Intention</span> and other discourses in both Pāli and Chinese “confirm that the notion of an unestablished consciousness expresses an arahant’s successful gaining of freedom from the prospect of future rebirth. At times, the same expression serves to describe the actual passing away of an arahant.” <span lang='pi'>Appatiṭṭhita viññāṇa</span>, he concludes, means “consciousness will not become established in another birth”.</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Analayo 2023a'>Anālayo 2023</span> Chapter I.10 states that the <span class='sesame'>First Discourse on Intention</span> and other discourses in both Pāli and Chinese “confirm that the notion of an unestablished consciousness expresses an arahant’s successful gaining of freedom from the prospect of future rebirth. At times, the same expression serves to describe the actual passing away of an arahant.” <span lang='pi'>Appatiṭṭhita viññāṇa</span>, he concludes, means “consciousness will not become established in another birth”.</p>"
   },
   {
     "fnNumber": "497",
-    "fnHTML": "<p><span class='sesame biblioref'>Langer</span> p.35, translation mine, referring to <span class='sesame biblioref'>Harvey 1995</span> p.202</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.35, translation mine, referring to <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.202</p>"
   },
   {
     "fnNumber": "498",
@@ -2005,15 +2005,15 @@
   },
   {
     "fnNumber": "502",
-    "fnHTML": "<p><span class='sesame biblioref'>Langer</span> p.34, translation mine</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.34, translation mine</p>"
   },
   {
     "fnNumber": "503",
-    "fnHTML": "<p><span class='sesame biblioref'>Langer</span> p.34, translation mine</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Langer 2001a'>Langer</span> p.34, translation mine</p>"
   },
   {
     "fnNumber": "504",
-    "fnHTML": "<p>Instead of “<em>consciousness</em> is liberated” <span class='sesame biblioref'>Nyanaponika 1990</span> has “<span data-custom-style='wwc-german'>ist man befreit</span>” (one is liberated), Alfan “<span data-custom-style='wwc-italian'>si è liberi</span>” (one is liberated), and Baron “<span data-custom-style='wwc-spanish'>sólo liberación</span>” (there is just liberation). See also <span data-custom-style='internal-reference'>note 279</span></p>"
+    "fnHTML": "<p>Instead of “<em>consciousness</em> is liberated” <span class='sesame' data-sesame-key='zotref:Nyanaponika 1990a'>Nyanaponika 1990</span> has “<span data-custom-style='wwc-german'>ist man befreit</span>” (one is liberated), Alfan “<span data-custom-style='wwc-italian'>si è liberi</span>” (one is liberated), and Baron “<span data-custom-style='wwc-spanish'>sólo liberación</span>” (there is just liberation). See also <span data-custom-style='internal-reference'>note 279</span></p>"
   },
   {
     "fnNumber": "505",
@@ -2041,7 +2041,7 @@
   },
   {
     "fnNumber": "511",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Ñāṇavīra</span> p.84, <span class='sesame biblioref'>Cintita</span> p.31</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Ñāṇavīra 1988a'>Ñāṇavīra</span> p.84, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.31</p>"
   },
   {
     "fnNumber": "512",
@@ -2049,11 +2049,11 @@
   },
   {
     "fnNumber": "513",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Ñāṇavīra</span> p.89, <span class='sesame biblioref'>Cintita</span> p.130, <span class='sesame biblioref'>Amaro</span> p.37</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Ñāṇavīra 1988a'>Ñāṇavīra</span> p.89, <span class='sesame' data-sesame-key='zotref:Cintita 2021a'>Cintita</span> p.130, <span class='sesame' data-sesame-key='zotref:Amaro 2021a'>Amaro</span> p.37</p>"
   },
   {
     "fnNumber": "514",
-    "fnHTML": "<p><span class='sesame biblioref'>Anālayo 2021</span> p.109</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Analayo 2021a'>Anālayo 2021</span> p.109</p>"
   },
   {
     "fnNumber": "515",
@@ -2061,7 +2061,7 @@
   },
   {
     "fnNumber": "516",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Anālayo 2021</span> p.109: “The relationship between the senses and their objects, which represent the basic duality of ordinary experience in the early discourses, remains the same after the attainment of full awakening”.</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Analayo 2021a'>Anālayo 2021</span> p.109: “The relationship between the senses and their objects, which represent the basic duality of ordinary experience in the early discourses, remains the same after the attainment of full awakening”.</p>"
   },
   {
     "fnNumber": "517",
@@ -2069,7 +2069,7 @@
   },
   {
     "fnNumber": "518",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Ñāṇananda 2015</span> p.218: “The magical illusion created by consciousness […]”, further detailed in <span class='sesame biblioref'>Ñāṇananda 1974/2007</span></p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.218: “The magical illusion created by consciousness […]”, further detailed in <span class='sesame' data-sesame-key='zotref:Ñāṇananda 1974a'>Ñāṇananda 1974/2007</span></p>"
   },
   {
     "fnNumber": "519",
@@ -2077,7 +2077,7 @@
   },
   {
     "fnNumber": "520",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Kalupahana 1976</span> p.84. Contra e.g. <span class='sesame biblioref'>Johansson</span> p.61</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Kalupahana 1976a'>Kalupahana 1976</span> p.84. Contra e.g. <span class='sesame' data-sesame-key='zotref:Johansson 1969a'>Johansson</span> p.61</p>"
   },
   {
     "fnNumber": "521",
@@ -2089,19 +2089,19 @@
   },
   {
     "fnNumber": "523",
-    "fnHTML": "<p><a href='https://suttacentral.net/sa1265' class='extlink'>SĀ 1265</a>, translation by <span class='sesame biblioref'>Anālayo 2015</span> p.243, parallel to <span class='sclinktext'>SN&#8239;22.87</span></p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/sa1265' class='extlink'>SĀ 1265</a>, translation by <span class='sesame' data-sesame-key='zotref:Analayo 2015a'>Anālayo 2015</span> p.243, parallel to <span class='sclinktext'>SN&#8239;22.87</span></p>"
   },
   {
     "fnNumber": "524",
-    "fnHTML": "<p><a href='https://suttacentral.net/ea26.10' class='extlink'>EĀ 26.10</a>. Also translated by <span class='sesame biblioref'>Anālayo 2015</span> p.253</p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/ea26.10' class='extlink'>EĀ 26.10</a>. Also translated by <span class='sesame' data-sesame-key='zotref:Analayo 2015a'>Anālayo 2015</span> p.253</p>"
   },
   {
     "fnNumber": "525",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Anālayo 2018</span> p.27: “The parallel versions agree in referring to what could have been reborn as his ‘consciousness’.”</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Analayo 2018a'>Anālayo 2018</span> p.27: “The parallel versions agree in referring to what could have been reborn as his ‘consciousness’.”</p>"
   },
   {
     "fnNumber": "526",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Anālayo 2015</span> p.247</p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Analayo 2015a'>Anālayo 2015</span> p.247</p>"
   },
   {
     "fnNumber": "527",
@@ -2117,11 +2117,11 @@
   },
   {
     "fnNumber": "530",
-    "fnHTML": "<p><a href='https://suttacentral.net/sa-2.30' class='extlink'>SĀ<span class='superscript'>2</span> 30</a>, also translated by <span class='sesame biblioref'>Bingenheimer</span> p.141</p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/sa-2.30' class='extlink'>SĀ<span class='superscript'>2</span> 30</a>, also translated by <span class='sesame' data-sesame-key='zotref:Bingenheimer 2011a'>Bingenheimer</span> p.141</p>"
   },
   {
     "fnNumber": "531",
-    "fnHTML": "<p><span class='sesame biblioref'>Thomas 1935</span> argues the first part of the compound <span lang='pi'>tathāgata</span> is likely <span lang='pi'>tatha</span> (‘truth’), not <span lang='pi'>tathā</span> (‘thus’). <span class='sesame biblioref'>PED</span> includes for <span lang='pi'>tathāgata</span> “he who has won through to the truth” and <span class='sesame biblioref'>DPD</span> “arrived at the truth”.</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:ThomasEJ 1936a'>Thomas 1935</span> argues the first part of the compound <span lang='pi'>tathāgata</span> is likely <span lang='pi'>tatha</span> (‘truth’), not <span lang='pi'>tathā</span> (‘thus’). <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> includes for <span lang='pi'>tathāgata</span> “he who has won through to the truth” and <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span> “arrived at the truth”.</p>"
   },
   {
     "fnNumber": "532",
@@ -2129,19 +2129,19 @@
   },
   {
     "fnNumber": "533",
-    "fnHTML": "<p><span lang='pi'>‘Diṭṭhevāhaṁ, bhik&shy;kha&shy;ve, dhamme tathāgataṁ ananuvijjo’ti vadāmi</span>, ‘even while alive there is no truth­finder to be found, I tell you’. The most literal meaning of <span lang='pi'>ananuvijja</span> is ‘not found’, but the verb <span lang='pi'>vijjati</span>, as <span class='sesame biblioref'>DPD</span> and <span class='sesame biblioref'>Gombrich 2009</span> p.139 say, can also mean ‘exists’. To “not find” a truth­finder therefore means the truth­finder doesn’t actually exist. I use the expression ‘there is no … to be found’ to include both meanings of the verb. For a similar idea see <span class='sclinktext'>AN&#8239;5.167<span class='scsegments'>:9.8–9.10</span></span>: “If I know that there is no such quality in me, I tell him: ‘It doesn’t exist; this quality isn’t found in me.’”</p>"
+    "fnHTML": "<p><span lang='pi'>‘Diṭṭhevāhaṁ, bhik&shy;kha&shy;ve, dhamme tathāgataṁ ananuvijjo’ti vadāmi</span>, ‘even while alive there is no truth­finder to be found, I tell you’. The most literal meaning of <span lang='pi'>ananuvijja</span> is ‘not found’, but the verb <span lang='pi'>vijjati</span>, as <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span> and <span class='sesame' data-sesame-key='zotref:Gombrich 2009a'>Gombrich 2009</span> p.139 say, can also mean ‘exists’. To “not find” a truth­finder therefore means the truth­finder doesn’t actually exist. I use the expression ‘there is no … to be found’ to include both meanings of the verb. For a similar idea see <span class='sclinktext'>AN&#8239;5.167<span class='scsegments'>:9.8–9.10</span></span>: “If I know that there is no such quality in me, I tell him: ‘It doesn’t exist; this quality isn’t found in me.’”</p>"
   },
   {
     "fnNumber": "534",
-    "fnHTML": "<p><span class='sesame'>Ñāṇamoli 1995 n.266</span> at <span class='sclinktext'>MN&#8239;22<span class='scsegments'>:36.4</span></span>. See also <span class='sesame biblioref'>Bodhi 1984</span> p.49: “The bhikkhu knows that ‘Tathāgata’ is just a convenient term for referring to a conglomerate process of impermanent, empty phenomena which are suffering in the deepest sense.”</p>"
+    "fnHTML": "<p><span class='sesame'>Ñāṇamoli 1995 n.266</span> at <span class='sclinktext'>MN&#8239;22<span class='scsegments'>:36.4</span></span>. See also <span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.49: “The bhikkhu knows that ‘Tathāgata’ is just a convenient term for referring to a conglomerate process of impermanent, empty phenomena which are suffering in the deepest sense.”</p>"
   },
   {
     "fnNumber": "535",
-    "fnHTML": "<p>See for example <span class='sesame biblioref'>Nyanaponika 1959</span> p.12, <span class='sesame biblioref'>Warder</span> 1970 p.123, <span class='sesame biblioref'>Ñāṇananda 1971</span> p.116, <span class='sesame biblioref'>Kalupahana 1976</span> p.84, <span class='sesame biblioref'>Collins</span> p.132, <span class='sesame biblioref'>Mahasi</span> p.121, <span class='sesame biblioref'>Bodhi 1984</span> p.49, <span class='sesame biblioref'>Anālayo 2021</span> p.107, <span class='sesame biblioref'>Anālayo 2022</span> p.1412</p>"
+    "fnHTML": "<p>See for example <span class='sesame' data-sesame-key='zotref:Nyanaponika 1959a'>Nyanaponika 1959</span> p.12, <span class='sesame' data-sesame-key='zotref:Warder 1970a'>Warder 1970</span> p.123, <span class='sesame' data-sesame-key='zotref:Ñāṇananda 1971a'>Ñāṇananda 1971</span> p.116, <span class='sesame' data-sesame-key='zotref:Kalupahana 1976a'>Kalupahana 1976</span> p.84, <span class='sesame' data-sesame-key='zotref:Collins 1982a'>Collins</span> p.132, <span class='sesame' data-sesame-key='zotref:Mahāsi 1982a'>Mahasi</span> p.121, <span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.49, <span class='sesame' data-sesame-key='zotref:Analayo 2021a'>Anālayo 2021</span> p.107, <span class='sesame' data-sesame-key='zotref:Analayo 2022b'>Anālayo 2022</span> p.1412</p>"
   },
   {
     "fnNumber": "536",
-    "fnHTML": "<p><span class='sesame biblioref'>Bodhi 1984</span> p.49</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bodhi 1984a'>Bodhi 1984</span> p.49</p>"
   },
   {
     "fnNumber": "537",
@@ -2149,7 +2149,7 @@
   },
   {
     "fnNumber": "538",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Harvey 1995</span> p.230, <span class='sesame biblioref'>Pasanno</span> p.170, <span class='sesame biblioref'>Ṭhānissaro 2008a</span> p.121ff</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Harvey 1990a'>Harvey 1995</span> p.230, <span class='sesame' data-sesame-key='zotref:Pasanno-Amaro 2009'>Pasanno</span> p.170, <span class='sesame' data-sesame-key='zotref:Ṭhānissaro 2008a'>Ṭhānissaro 2008a</span> p.121ff</p>"
   },
   {
     "fnNumber": "539",
@@ -2161,7 +2161,7 @@
   },
   {
     "fnNumber": "541",
-    "fnHTML": "<p>See also <span class='sesame'>Bodhi 2000 n.38</span> at <span class='sclinktext'>SN&#8239;1.20<span class='scsegments'>:25.1</span></span>: “[These lines] seem to be describing the arahant after his <span lang='pi'>pari&shy;nib&shy;bāna</span>.” <span class='sesame biblioref'>Olalde 2014</span> p.119 (translation mine): “That the person in question cannot be found anywhere (seemingly after his death) refers to the fact he reached final nibbāna.”</p>"
+    "fnHTML": "<p>See also <span class='sesame'>Bodhi 2000 n.38</span> at <span class='sclinktext'>SN&#8239;1.20<span class='scsegments'>:25.1</span></span>: “[These lines] seem to be describing the arahant after his <span lang='pi'>pari&shy;nib&shy;bāna</span>.” <span class='sesame' data-sesame-key='zotref:Olalde 2014a'>Olalde 2014</span> p.119 (translation mine): “That the person in question cannot be found anywhere (seemingly after his death) refers to the fact he reached final nibbāna.”</p>"
   },
   {
     "fnNumber": "542",
@@ -2173,7 +2173,7 @@
   },
   {
     "fnNumber": "544",
-    "fnHTML": "<p><a href='https://suttacentral.net/ma62' class='extlink'>MĀ 62</a>, translation <span class='sesame biblioref'>Anālayo 2013</span>, brackets in the original</p>"
+    "fnHTML": "<p><a href='https://suttacentral.net/ma62' class='extlink'>MĀ 62</a>, translation <span class='sesame' data-sesame-key='zotref:Analayo 2013a'>Anālayo 2013</span>, brackets in the original</p>"
   },
   {
     "fnNumber": "545",
@@ -2193,7 +2193,7 @@
   },
   {
     "fnNumber": "549",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Siderits</span> Section 4.1. Compare <span class='sclinktext'>SN&#8239;44.7</span></p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Siderits 2007a'>Siderits</span> Section 4.1. Compare <span class='sclinktext'>SN&#8239;44.7</span></p>"
   },
   {
     "fnNumber": "550",
@@ -2217,7 +2217,7 @@
   },
   {
     "fnNumber": "555",
-    "fnHTML": "<p><span lang='pi'>Sañ&shy;ñā&shy;veday&shy;ita&shy;nirodha</span>, ‘the cessation of awareness and what is experienced’, more well-known as ‘the cessation of perception and feeling’. In this state there is the complete cessation of both awareness (<span lang='pi'>saññā</span>) and the object that is experienced (<span lang='pi'>vedayita</span>). <span lang='pi'>Saññā</span> has a range of meanings, and one of these is awareness or consciousness in general (<span class='sesame biblioref'>PED</span>, <span class='sesame biblioref'>DPD</span>). <span lang='pi'>Vedayita</span> is a past participle meaning ‘felt’ or ‘experienced’ (<span class='sesame biblioref'>CPED</span>, <span class='sesame biblioref'>PED</span>, <span class='sesame biblioref'>DPD</span>). While commonly translated as ‘feeling’ in <span lang='pi'>saññāvedayitanirodha</span>, it refers not to the <em>act</em> of feeling but to that which is felt or experienced.</p>"
+    "fnHTML": "<p><span lang='pi'>Sañ&shy;ñā&shy;veday&shy;ita&shy;nirodha</span>, ‘the cessation of awareness and what is experienced’, more well-known as ‘the cessation of perception and feeling’. In this state there is the complete cessation of both awareness (<span lang='pi'>saññā</span>) and the object that is experienced (<span lang='pi'>vedayita</span>). <span lang='pi'>Saññā</span> has a range of meanings, and one of these is awareness or consciousness in general (<span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span>, <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span>). <span lang='pi'>Vedayita</span> is a past participle meaning ‘felt’ or ‘experienced’ (<span class='sesame' data-sesame-key='zotref:Dict-CPED'>CPED</span>, <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span>, <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span>). While commonly translated as ‘feeling’ in <span lang='pi'>saññāvedayitanirodha</span>, it refers not to the <em>act</em> of feeling but to that which is felt or experienced.</p>"
   },
   {
     "fnNumber": "556",
@@ -2229,15 +2229,15 @@
   },
   {
     "fnNumber": "558",
-    "fnHTML": "<p>See also <span class='sesame biblioref'>Norman 1996</span></p>"
+    "fnHTML": "<p>See also <span class='sesame' data-sesame-key='zotref:Norman 1996a'>Norman 1996</span></p>"
   },
   {
     "fnNumber": "559",
-    "fnHTML": "<p><span class='sesame'>Bodhi 2020, 6. The Unconditioned: The Goal, Introduction</span> and <span class='sesame biblioref'>Bodhi 1979</span></p>"
+    "fnHTML": "<p><span class='sesame'>Bodhi 2020, 6. The Unconditioned: The Goal, Introduction</span> and <span class='sesame' data-sesame-key='zotref:Bodhi-Audio 1979a'>Bodhi 1979</span></p>"
   },
   {
     "fnNumber": "560",
-    "fnHTML": "<p>For example <span class='sesame biblioref'>Johansson</span> p.51ff</p>"
+    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Johansson 1969a'>Johansson</span> p.51ff</p>"
   },
   {
     "fnNumber": "561",
@@ -2245,7 +2245,7 @@
   },
   {
     "fnNumber": "562",
-    "fnHTML": "<p><span class='sesame biblioref'>PED</span> and <span class='sesame biblioref'>DPD</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> and <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span></p>"
   },
   {
     "fnNumber": "563",
@@ -2257,7 +2257,7 @@
   },
   {
     "fnNumber": "565",
-    "fnHTML": "<p><span lang='pi'>Veditabbe</span> here means ‘should be understood’, as <span class='sesame biblioref'>Bodhi 2000</span> and <span class='sesame biblioref'>Sujato 2023</span>, not ‘should be experienced’ as <span class='sesame biblioref'>Anālayo 2023</span> Chapter II.3. The cessation of the six senses includes the cessation of all feelings/experiences (<span lang='pi'>vedanā</span>) and therefore is not something that is experienced. It can, however, be understood. The commentary also understands <span lang='pi'>veditabbe</span> as <span lang='pi'>jānitabba</span>, ‘to be understood’. This use of <span lang='pi'>veditabba</span> is common in the discourses.</p>"
+    "fnHTML": "<p><span lang='pi'>Veditabbe</span> here means ‘should be understood’, as <span class='sesame' data-sesame-key='zotref:Bodhi 2000a'>Bodhi 2000</span> and <span class='sesame' data-sesame-key='zotref:Sujato 2024a'>Sujato 2023</span>, not ‘should be experienced’ as <span class='sesame' data-sesame-key='zotref:Analayo 2023a'>Anālayo 2023</span> Chapter II.3. The cessation of the six senses includes the cessation of all feelings/experiences (<span lang='pi'>vedanā</span>) and therefore is not something that is experienced. It can, however, be understood. The commentary also understands <span lang='pi'>veditabbe</span> as <span lang='pi'>jānitabba</span>, ‘to be understood’. This use of <span lang='pi'>veditabba</span> is common in the discourses.</p>"
   },
   {
     "fnNumber": "566",
@@ -2277,7 +2277,7 @@
   },
   {
     "fnNumber": "570",
-    "fnHTML": "<p><span class='sesame biblioref'>DOP</span> and <span class='sesame biblioref'>PED</span></p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span> and <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span></p>"
   },
   {
     "fnNumber": "571",
@@ -2293,7 +2293,7 @@
   },
   {
     "fnNumber": "574",
-    "fnHTML": "<p>Contra e.g. <span class='sesame biblioref'>Ñāṇananda 2015</span> p.376. For the Buddha experiencing the formless states see for example <span class='sclinktext'>SN&#8239;6.15</span></p>"
+    "fnHTML": "<p>Contra e.g. <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.376. For the Buddha experiencing the formless states see for example <span class='sclinktext'>SN&#8239;6.15</span></p>"
   },
   {
     "fnNumber": "575",
@@ -2301,7 +2301,7 @@
   },
   {
     "fnNumber": "576",
-    "fnHTML": "<p>See <span class='sesame biblioref'>Wynne</span> p.100</p>"
+    "fnHTML": "<p>See <span class='sesame' data-sesame-key='zotref:WynneA 2007a'>Wynne</span> p.100</p>"
   },
   {
     "fnNumber": "577",

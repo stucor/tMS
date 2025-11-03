@@ -1,6 +1,506 @@
 [
   {
-    "zotref": "",
+    "zotref": "Amaro 2021a",
+    "bookref": "Amaro"
+  },
+  {
+    "zotref": "Analayo 2008a",
+    "bookref": "Anālayo 2008"
+  },
+  {
+    "zotref": "Analayo 2011a",
+    "bookref": "Anālayo 2010"
+  },
+  {
+    "zotref": "Analayo 2013a",
+    "bookref": "Anālayo 2013"
+  },
+  {
+    "zotref": "Analayo 2014a",
+    "bookref": "Anālayo 2014"
+  },
+  {
+    "zotref": "Analayo 2015a",
+    "bookref": "Anālayo 2015"
+  },
+  {
+    "zotref": "Analayo 2017a",
+    "bookref": "Anālayo 2017"
+  },
+  {
+    "zotref": "Analayo 2018a",
+    "bookref": "Anālayo 2018"
+  },
+  {
+    "zotref": "Analayo 2020a",
+    "bookref": "Anālayo 2020"
+  },
+  {
+    "zotref": "Analayo 2021a",
+    "bookref": "Anālayo 2021"
+  },
+  {
+    "zotref": "Analayo 2022b",
+    "bookref": "Anālayo 2022"
+  },
+  {
+    "zotref": "Analayo 2022a",
+    "bookref": "Anālayo 2022(a)"
+  },
+  {
+    "zotref": "Analayo 2023a",
+    "bookref": "Anālayo 2023"
+  },
+  {
+    "zotref": "Bausch 2015a",
+    "bookref": "Bausch 2015"
+  },
+  {
+    "zotref": "Bausch 2018a",
+    "bookref": "Bausch 2018"
+  },
+  {
+    "zotref": "Bernhard 1968a",
+    "bookref": "Bernhard"
+  },
+  {
+    "zotref": "Bingenheimer 2011a",
+    "bookref": "Bingenheimer"
+  },
+  {
+    "zotref": "Bodhi-Audio 1979a",
+    "bookref": "Bodhi 1979"
+  },
+  {
+    "zotref": "Bodhi 1984a",
+    "bookref": "Bodhi 1984"
+  },
+  {
+    "zotref": "Bodhi 1998a",
+    "bookref": "Bodhi 1998"
+  },
+  {
+    "zotref": "Bodhi 2000a",
+    "bookref": "Bodhi 2000"
+  },
+  {
+    "zotref": "Bodhi 2007a",
+    "bookref": "Bodhi 2003"
+  },
+  {
+    "zotref": "Bodhi 2012a",
+    "bookref": "Bodhi 2012"
+  },
+  {
+    "zotref": "Bodhi 2015b",
+    "bookref": "Bodhi 2015"
+  },
+  {
+    "zotref": "Brahm 1994a",
+    "bookref": "Brahmavamso 1994"
+  },
+  {
+    "zotref": "Brahm 2002a",
+    "bookref": "Brahmavamso 2002"
+  },
+  {
+    "zotref": "Brasington 2021a",
+    "bookref": "Brasington"
+  },
+  {
+    "zotref": "Bucknell 1999a",
+    "bookref": "Bucknell"
+  },
+  {
+    "zotref": "Buddhadasa 2020a",
+    "bookref": "Buddhadāsa"
+  },
+  {
+    "zotref": "Dict-CPD",
+    "bookref": "CPD"
+  },
+  {
+    "zotref": "Dict-CPED",
+    "bookref": "CPED"
+  },
+  {
+    "zotref": "Choong 2000a",
+    "bookref": "Choong"
+  },
+  {
+    "zotref": "Cintita 2021a",
+    "bookref": "Cintita"
+  },
+  {
+    "zotref": "Collins 1982a",
+    "bookref": "Collins"
+  },
+  {
+    "zotref": "Dict-DOP",
+    "bookref": "DOP"
+  },
+  {
+    "zotref": "Dict-DPD",
+    "bookref": "DPD"
+  },
+  {
+    "zotref": "Dict-DPPN",
+    "bookref": "DPPN"
+  },
+  {
+    "zotref": "Dhammika 2015a",
+    "bookref": "Dhammika 2015"
+  },
+  {
+    "zotref": "Dhammika 2022a",
+    "bookref": "Dhammika 2022"
+  },
+  {
+    "zotref": "Duroiselle 1906-2007",
+    "bookref": "Duroiselle"
+  },
+  {
+    "zotref": "Falk 1943a",
+    "bookref": "Falk"
+  },
+  {
+    "zotref": "Flood 2003a",
+    "bookref": "Flood"
+  },
+  {
+    "zotref": "Frauwallner 1973a",
+    "bookref": "Frauwallner 1953/1973"
+  },
+  {
+    "zotref": "Frauwallner 1995a",
+    "bookref": "Frauwallner 1995"
+  },
+  {
+    "zotref": "Frazer1890a",
+    "bookref": "Frazer"
+  },
+  {
+    "zotref": "Gombrich 1996a",
+    "bookref": "Gombrich 1980"
+  },
+  {
+    "zotref": "Gombrich 2009a",
+    "bookref": "Gombrich 2009"
+  },
+  {
+    "zotref": "Gonda 1970a",
+    "bookref": "Gonda"
+  },
+  {
+    "zotref": "Hamilton 1996a",
+    "bookref": "Hamilton"
+  },
+  {
+    "zotref": "Harvey 1990a",
+    "bookref": "Harvey 1995"
+  },
+  {
+    "zotref": "Harvey 2009a",
+    "bookref": "Harvey 2009"
+  },
+  {
+    "zotref": "Harvey 2012a",
+    "bookref": "Harvey 2013"
+  },
+  {
+    "zotref": "Hecker 2009a",
+    "bookref": "Hecker"
+  },
+  {
+    "zotref": "Hinüber 1996a",
+    "bookref": "Hinüber"
+  },
+  {
+    "zotref": "JayatillekeKN 1963a",
+    "bookref": "Jayatilleke"
+  },
+  {
+    "zotref": "Johansson 1969a",
+    "bookref": "Johansson"
+  },
+    {
+    "zotref": "JonesDhivan 2009a",
+    "bookref": "Jones 2009"
+  },
+  {
+    "zotref": "JonesDhivan 2011a",
+    "bookref": "Jones 2011"
+  },
+  {
+    "zotref": "JonesDhivan 2021a",
+    "bookref": "Jones 2021"
+  },
+  {
+    "zotref": "JonesDhivan 2022a",
+    "bookref": "Jones 2022"
+  },
+  {
+    "zotref": "Jurewicz 2000a",
+    "bookref": "Jurewicz"
+  },
+  {
+    "zotref": "Kalupahana 1975a",
+    "bookref": "Kalupahana 1975"
+  },
+  {
+    "zotref": "Kalupahana 1976a",
+    "bookref": "Kalupahana 1976"
+  },
+  {
+    "zotref": "Karunadasa 1975a",
+    "bookref": "Karunadasa"
+  },
+  {
+    "zotref": "Langer 2001a",
+    "bookref": "Langer"
+  },
+  {
+    "zotref": "Lopez 1997a",
+    "bookref": "Lopez"
+  },
+  {
+    "zotref": "Mahāsi 1982a",
+    "bookref": "Mahasi"
+  },
+  {
+    "zotref": "Malvania 2007a",
+    "bookref": "Malvania"
+  },
+  {
+    "zotref": "Mejor 1996a",
+    "bookref": "Mejor"
+  },
+  {
+    "zotref": "Dict-Monier-Williams",
+    "bookref": "Monier-Williams"
+  },
+  {
+    "zotref": "NormanKR 1992a",
+    "bookref": "Norman 1991"
+  },
+  {
+    "zotref": "Norman 1996a",
+    "bookref": "Norman 1996"
+  },
+  {
+    "zotref": "NormanKR 1997a",
+    "bookref": "Norman 1997"
+  },
+  {
+    "zotref": "Norman 2008a",
+    "bookref": "Norman 2008"
+  },
+  {
+    "zotref": "Nyanaponika 1959a",
+    "bookref": "Nyanaponika 1959"
+  },
+  {
+    "zotref": "Nyanaponika 1981a",
+    "bookref": "Nyanaponika 1981"
+  },
+  {
+    "zotref": "Nyanaponika 1990a",
+    "bookref": "Nyanaponika 1990"
+  },
+  {
+    "zotref": "Nyanatiloka 2008a",
+    "bookref": "Nyanatiloka"
+  },
+  {
+    "zotref": "Olalde 2014a",
+    "bookref": "Olalde 2014"
+  },
+  {
+    "zotref": "Olalde 2015a",
+    "bookref": "Olalde 2015"
+  },
+  {
+    "zotref": "Oldenberg 1997a",
+    "bookref": "Oldenberg"
+  },
+  {
+    "zotref": "OlivelleP 1998a",
+    "bookref": "Olivelle"
+  },
+  {
+    "zotref": "Dict-PED",
+    "bookref": "PED"
+  },
+  {
+    "zotref": "Pasanno-Amaro 2009",
+    "bookref": "Pasanno"
+  },
+  {
+    "zotref": "Patton 2024a",
+    "bookref": "Patton"
+  },
+  {
+    "zotref": "Piyadassi 1959a",
+    "bookref": "Piyadassi"
+  },
+  {
+    "zotref": "Purohit-Yeats 1952a",
+    "bookref": "Purohit"
+  },
+  {
+    "zotref": "Reat 1987a",
+    "bookref": "Reat"
+  },
+  {
+    "zotref": "Reinhard 2018a",
+    "bookref": "Reinhard"
+  },
+  {
+    "zotref": "Rhys-DavidsCAF 1937",
+    "bookref": "Rhys Davids"
+  },
+  {
+    "zotref": "Ronkin 2011a",
+    "bookref": "Ronkin"
+  },
+  {
+    "zotref": "Schmithausen 1997a",
+    "bookref": "Schmithausen 1997"
+  },
+  {
+    "zotref": "Schmithausen 2000a",
+    "bookref": "Schmithausen 2000"
+  },
+  {
+    "zotref": "Shulman 2007a",
+    "bookref": "Shulman"
+  },
+  {
+    "zotref": "Shults 2014a",
+    "bookref": "Shults"
+  },
+  {
+    "zotref": "Siderits 2007a",
+    "bookref": "Siderits"
+  },
+  {
+    "zotref": "Somaratne 1999a",
+    "bookref": "Somaratne"
+  },
+  {
+    "zotref": "Sujato 2008a",
+    "bookref": "Sujato 2008"
+  },
+  {
+    "zotref": "Sujato 2011a",
+    "bookref": "Sujato 2011a"
+  },
+  {
+    "zotref": "Sujato 2012a",
+    "bookref": "Sujato 2012"
+  },
+  {
+    "zotref": "Sujato 2024a",
+    "bookref": "Sujato 2023"
+  },
+  {
+    "zotref": "Sunyo 2017a",
+    "bookref": "Sunyo 2017"
+  },
+  {
+    "zotref": "Sunyo 2021a",
     "bookref": "Sunyo 2021"
+  },
+  {
+    "zotref": "Sunyo 2022a",
+    "bookref": "Sunyo 2022"
+  },
+  {
+    "zotref": "ThomasEJ 1933a",
+    "bookref": "Thomas 1933/1953"
+  },
+  {
+    "zotref": "ThomasEJ 1936a",
+    "bookref": "Thomas 1935"
+  },
+  {
+    "zotref": "Vetter 1988a",
+    "bookref": "Vetter 1988"
+  },
+  {
+    "zotref": "Vetter 1994a",
+    "bookref": "Vetter 1994"
+  },
+  {
+    "zotref": "Vélez 2004a",
+    "bookref": "Vélez de Cea"
+  },
+  {
+    "zotref": "Warder 1970a",
+    "bookref": "Warder 1970"
+  },
+  {
+    "zotref": "Warder 1991a",
+    "bookref": "Warder 2010"
+  },
+  {
+    "zotref": "Wayman 1971a",
+    "bookref": "Wayman 1971"
+  },
+  {
+    "zotref": "Wayman 1997a",
+    "bookref": "Wayman 1997"
+  },
+  {
+    "zotref": "Werner 2022a",
+    "bookref": "Werner"
+  },
+  {
+    "zotref": "Wijesekera 1993a",
+    "bookref": "Wijesekera 1993"
+  },
+  {
+    "zotref": "Wijesekera 1994a",
+    "bookref": "Wijesekera 1994"
+  },
+  {
+    "zotref": "WynneA 2007a",
+    "bookref": "Wynne"
+  },
+  {
+    "zotref": "Ñanamoli 1956a",
+    "bookref": "Ñāṇamoli 1956"
+  },
+  {
+    "zotref": "Ñāṇananda 1971a",
+    "bookref": "Ñāṇananda 1971"
+  },
+  {
+    "zotref": "Ñāṇananda 1974a",
+    "bookref": "Ñāṇananda 1974/2007"
+  },
+  {
+    "zotref": "Ñāṇananda 2015a",
+    "bookref": "Ñāṇananda 2015"
+  },
+  {
+    "zotref": "Ñāṇananda 2016a",
+    "bookref": "Ñāṇananda 2016"
+  },
+  {
+    "zotref": "Ñāṇavīra 1988a",
+    "bookref": "Ñāṇavīra"
+  },
+  {
+    "zotref": "Ṭhānissaro 2008a",
+    "bookref": "Ṭhānissaro 2008a"
+  },
+  {
+    "zotref": "Ṭhānissaro 2008b",
+    "bookref": "Ṭhānissaro 2008b"
+  },
+  {
+    "zotref": "Ṭhānissaro 2018a",
+    "bookref": "Ṭhānissaro 2018"
   }
 ]

@@ -1492,18 +1492,23 @@ sup {
 	font-weight: 600;
 }
 
-.blink {
-	animation: blinker 500ms linear infinite;
+.blink::before {
+	display:block;
+	position:relative;
+	top:-0.2em;
+	text-align: center;
+	color:rgb(10, 69, 10);
+	background-color: rgba(226, 255, 226, 0.467);
+	width:100%;
+	content:attr(data-before) ;
+	animation: blinker 500ms linear 1;
+	font-variant: small-caps;
 }
-
 @keyframes blinker {
 	50% {
-	background-color: rgba(30, 168, 53, 0.282);
-	opacity: 80%;
+		color: var(--primarybackground);
+	}
 }
-}
-
-
 
 .fifty-fifty-grid {
 	display: grid;

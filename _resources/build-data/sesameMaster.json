@@ -598,5 +598,13 @@
 {
 	"sesame": "Bodhi 2000 p.840",
 	"key": "bodhi-nikaya-notes:SN-AggregatesIntro-22Khandhasamyutta"
+},
+{
+	"sesame": "Bodhi 2012, AN 10.65",
+	"key": "bodhi-nikaya:an10.65"
+},
+{
+	"sesame": "Longer Discourse on the Ending of Craving",
+	"key": "mn-blurbs:mn28"
 }
 ]

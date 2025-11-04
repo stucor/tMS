@@ -1239,7 +1239,7 @@ function setTheme(){
 
 			r.style.setProperty('--TOCprogress', '#ffffcf28');//'#d6630f09');  //'#d6630f08'); '#f0f2fd80');
 			r.style.setProperty('--primarytextcolor', '#13036c');
-			r.style.setProperty('--secondarytextcolor', '#8f3e00'); //'#5a5a81');//'#577096');
+			r.style.setProperty('--secondarytextcolor', '#772b02ff'); //'#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
 
 			r.style.setProperty('--primaryinterfacecolor', '#000');
@@ -1252,8 +1252,8 @@ function setTheme(){
 			r.style.setProperty('--primarycolor', '#217cbe');//'#06036ea0');
 			r.style.setProperty('--listlinkhover', '#217cbe1F');//'#d5dcfd60');
 			r.style.setProperty('--bdtexthighlighter', '#ffffcf28');//'#fc88320B');//'#e0f4fbb0');//'#eef0fb');
-			r.style.setProperty('--bdtexthighlightborder', '#8f3e0060');//'#fc8832C0');
-			r.style.setProperty('--sesamebackground', '#fffff8');
+			r.style.setProperty('--bdtexthighlightborder', '#8f3e001a');//'#fc8832C0');
+			r.style.setProperty('--sesamebackground', '#fffffd');
 
 			r.style.setProperty('--tableborder', '#c0c0c0');
 			r.style.setProperty('--tablecaption', '#ffffff50');
@@ -1748,8 +1748,20 @@ window.onscroll = function() {
 	} else {
 		segCount.innerHTML =  `${document.getElementById('lastsegcount').innerText.replace('/','※')}`
 	}
-	
 }
+
+function resetBlinkers() {
+	let allBlinkers = document.getElementsByClassName('blink') 
+	for (let i=0; i<allBlinkers.length; i++) {
+		allBlinkers[i].classList.remove ('blink')
+	}
+}
+
+window.addEventListener("wheel", resetBlinkers);
+window.addEventListener("touchmove", resetBlinkers);
+window.addEventListener("mousedown", resetBlinkers);
+
+
 
 /* function setSelfquoteMargins () {
 	var root = document.querySelector(':root');
@@ -2362,6 +2374,11 @@ function exitStaticModal () {
 	hideElement(modalcontent);
 }
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    exitStaticModal();
+  }
+})
 
 closebtn.addEventListener('click',exitStaticModal);
 
@@ -2494,11 +2511,15 @@ function decodeBookSegment (anchortext) {
 }
 
 function blink (element) {
-	element.classList.add ('blink')
-	function removeBlink () {
-		element.classList.remove ('blink')
+	let segmentID =``
+	if (element.classList.contains('opensesame')){
+		segmentID = element.parentElement.id
+	} else {
+		segmentID = element.id
 	}
-	setTimeout (removeBlink, 600)
+		let [idName, idNumber] = segmentID.split('-')
+	element.setAttribute('data-before', `🡇🡇🡇 Segment ${idNumber} 🡇🡇🡇`) 
+	element.classList.add ('blink')
 }
 
 document.getElementById("ModalLists").addEventListener("click", function(e) {
@@ -2539,11 +2560,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 		}
 		if (bookSeg) {
 			closebtn.click();
-			if (e.target.closest('#lot-list') || e.target.closest('#figures-list')) {
-				goToTarget(bookSeg, undefined, 'start');
-			} else {
-				goToTarget(bookSeg, undefined, 'center')
-			}
+			goToTarget(bookSeg, undefined, 'center')
 			if (noteNumberToOpen) {
 				let allSups = document.querySelectorAll ('sup')
 				for (let j in allSups) {
@@ -2554,7 +2571,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 						goToTarget(allSups[j], 'ELEMENT', 'center')
 						setTimeout(() => {
 							blink(allSups[j].nextElementSibling)
-						  }, 200); 
+						  }, 400); 
 						break
 					}
 				}
@@ -2568,7 +2585,6 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 });
 
 function toggleSesame (el) {
-
 	if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame') || el.nextElementSibling.classList.contains('opensesameref'))) {
 		el.nextElementSibling.remove();
 		el.classList.remove('closebutton');
@@ -2580,8 +2596,6 @@ function toggleSesame (el) {
 /* 				console.log(`0::${sesameKeyArr[0]}`) // type
 				console.log(`1::${sesameKeyArr[1]}`) // key
 				console.log(`2::${sesameKeyArr[2]}`) // a zotero reference that appears in the biblio for the book */
-
-
 				function decodeZotref (zotref) {
 					let zotBiblioEntries = document.querySelectorAll('.bibText')
 					let bibReference = ``
@@ -2593,7 +2607,6 @@ function toggleSesame (el) {
 					}
 					return `<hr style='width:50%; margin:1em auto;'><div class=zotRefInaSesame><p class='title'>Bibliography Entry:</p>${bibReference}</div>`
 				}
-
 				let biblio = `` 
 				if (sesameKeyArr[0].includes('-blurbs')) {
 					let fetchPath = `../_resources/sesame-data/blurbs/scblurbs.json`
@@ -2679,9 +2692,12 @@ function toggleSesame (el) {
 						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 					});
 				} else
-				if (sesameKeyArr[0] == `bodhi-nikaya-notes`) {
-					let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}/${sesameKeyArr[1]}.json`
-
+				if ((sesameKeyArr[0] == `bodhi-nikaya-notes`)||(sesameKeyArr[0] == `bodhi-nikaya`)) {
+					let nikDir = ''
+					if (sesameKeyArr[0] == `bodhi-nikaya`) {
+						nikDir = `/${sesameKeyArr[1].slice(0,2).toUpperCase()}`
+					}
+					let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}${nikDir}/${sesameKeyArr[1]}.json`
 					function populateSesame(quoteData) {
 						let subSectionSpacer = ''
 						if (quoteData.SubSection) {
@@ -2698,7 +2714,6 @@ function toggleSesame (el) {
 						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
 						el.classList.add('closebutton')
 					}
-
 					fetch(fetchPath)
 						.then(response => response.json())
 						.then (data => populateSesame(data))
@@ -2706,9 +2721,36 @@ function toggleSesame (el) {
 							console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 						}
 					);
-
 				} else 
-				if (sesameKeyArr[0] == `DPPN`) {
+/* 				if (sesameKeyArr[0] == `bodhi-nikaya`) {
+					let nikName = sesameKeyArr[1].slice(0,2).toUpperCase()
+					console.log(nikName)
+					let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}/${nikName}/${sesameKeyArr[1]}.json`
+					function populateSesame(quoteData) {
+						let subSectionSpacer = ''
+						if (quoteData.SubSection) {
+							subSectionSpacer = '<br>'
+						}
+						let author = ''
+						if (quoteData.Author) {
+							author = `by ${quoteData.Author}`
+						}
+						let quoteHTML = ''
+						quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}</h3>`
+						quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
+						quoteHTML += `${decodeZotref(quoteData.ZotRef)}`
+						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
+						el.classList.add('closebutton')
+					}
+					fetch(fetchPath)
+						.then(response => response.json())
+						.then (data => populateSesame(data))
+						.catch(error => {
+							console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+						}
+					);
+				} else 
+ */				if (sesameKeyArr[0] == `DPPN`) {
 					let fetchPath = `../_resources/sesame-data/dictionaries/complex/en/pli2en_dppn.json`
 
 					function populateSesame (quoteData) {
@@ -3309,7 +3351,6 @@ listsBtn.onclick = function() {
 				html += `<input class="search" placeholder="Filter by" /></div>`
 				html += `<ul class="list reflist">`
 				for (let i = 0; i < figArr.length; i++) {
-					console.log(figArr[i].innerHTML)
 					let segment = `<span class='figureSegRef'>※${figArr[i].id.substring(4)}</span>`
 					let segRef = figArr[i].id
 					let caption = `<span class='figureCaption'>${figArr[i].getElementsByTagName("figcaption")[0].innerHTML}</span>`;

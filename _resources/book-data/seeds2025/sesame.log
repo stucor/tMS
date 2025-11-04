@@ -1,4 +1,4 @@
-Mon Nov 03 2025 13:01:24 GMT+0000 (Greenwich Mean Time)
+Tue Nov 04 2025 15:27:42 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -144,6 +144,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Bodhi 2012, AN 10.65",
+	"key": "bodhi-nikaya:an10.65"
+},
+{
 	"sesame": "Bodhi 2017 p.523",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -273,7 +277,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Longer Discourse on the Ending of Craving",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn28"
 },
 {
 	"sesame": "MMK",
@@ -313,10 +317,6 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Nidāna Saṁyutta,",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Nidāna Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

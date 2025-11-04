@@ -389,6 +389,7 @@ function processPandoc() {
 					case 'SN ':
 					case 'DN ':
 					case 'Ud ':
+					case 'Kp ':
 						let tempTop =  anchors[i].text.slice(0, 2)
 						let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
 						let tempText = tempTop + '&#8239;' + tempTail

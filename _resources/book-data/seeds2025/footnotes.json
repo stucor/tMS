@@ -81,7 +81,7 @@
   },
   {
     "fnNumber": "21",
-    "fnHTML": "<p>As glossed by <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span>, <span class='sesame' data-sesame-key='zotref:Dict-CPD'>CPD</span>, <span class='sesame' data-sesame-key='zotref:Dict-CPED'>CPED</span>, <span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span>, <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span>. I translate it as ‘production’ primarily to illustrate the simile of the painter, which uses the same word for producing a painting. See also <span data-custom-style='internal-reference'>note 166</span></p>"
+    "fnHTML": "<p>As glossed by <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span>, <span class='sesame' data-sesame-key='zotref:Dict-CPD'>CPD</span>, <span class='sesame' data-sesame-key='zotref:Dict-CPED'>CPED</span>, <span class='sesame' data-sesame-key='zotref:Dict-DOP'>DOP</span>, <span class='sesame' data-sesame-key='zotref:Dict-DPD'>DPD</span>. I translate it as ‘production’ primarily to illustrate the simile of the painter, which uses the same word for producing a painting. See also <span class='internalLink' data-target='#note116'>note 166</span></p>"
   },
   {
     "fnNumber": "22",
@@ -461,7 +461,7 @@
   },
   {
     "fnNumber": "116",
-    "fnHTML": "<p><span class='sclinktext'>SN&#8239;1.76<span class='scsegments'>:3.1</span></span>; <span class='sclinktext'>SN&#8239;22.95<span class='scsegments'>:11.1–11.4</span></span></p>"
+    "fnHTML": "<p><span id='testat116' class='anchor'></span></p><p><span class='sclinktext'>SN&#8239;1.76<span class='scsegments'>:3.1</span></span>; <span class='sclinktext'>SN&#8239;22.95<span class='scsegments'>:11.1–11.4</span></span></p>"
   },
   {
     "fnNumber": "117",
@@ -477,7 +477,7 @@
   },
   {
     "fnNumber": "120",
-    "fnHTML": "<p>In the current age this translation is more pragmatic than ‘name’. Other possible translations are ‘mind’ and ‘mentality’, agreeing with the commentaries that <span lang='pi'>nāma</span> is purely mental (<span lang='pi'>ce&shy;ta&shy;si&shy;ka</span>). But in my view, sensations, perceptions, and sense impressions exist for all six senses, not just the mind. However, compare <span class='sclinktext'>SN&#8239;1.61</span>, <span class='sclinktext'>SN&#8239;1.62</span>, where <span lang='pi'>nāma</span> and <span lang='pi'>citta</span> appear to be used synonymously.</p>"
+    "fnHTML": "<p><span id='testat120' class='anchor'></span></p><p>In the current age this translation is more pragmatic than ‘name’. Other possible translations are ‘mind’ and ‘mentality’, agreeing with the commentaries that <span lang='pi'>nāma</span> is purely mental (<span lang='pi'>ce&shy;ta&shy;si&shy;ka</span>). But in my view, sensations, perceptions, and sense impressions exist for all six senses, not just the mind. However, compare <span class='sclinktext'>SN&#8239;1.61</span>, <span class='sclinktext'>SN&#8239;1.62</span>, where <span lang='pi'>nāma</span> and <span lang='pi'>citta</span> appear to be used synonymously.</p>"
   },
   {
     "fnNumber": "121",
@@ -489,7 +489,7 @@
   },
   {
     "fnNumber": "123",
-    "fnHTML": "<p>BU 1.4.7, translation <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span></p>"
+    "fnHTML": "<p>BU 1.4.7, <span class='internalLink' data-target='fnNumber:120'>translation</span> <span class='sesame' data-sesame-key='zotref:OlivelleP 1998a'>Olivelle</span></p>"
   },
   {
     "fnNumber": "124",

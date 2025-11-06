@@ -313,7 +313,12 @@ function processPandoc() {
 				let dataCustomStyle = spans[i].getAttribute('data-custom-style')
 				switch(dataCustomStyle) {
 					case 'Footnote Characters':
-						spans[i].remove()
+						if (spans[i].innerHTML == '') { 
+							spans[i].remove()
+						} else {
+							let tempHTML = spans[i].innerHTML // there is (most likely) a bookmark at the begining 
+							spans[i].replaceWith (tempHTML)
+						}
 					break
 					case 'Hyperlink':
 						let tempHTML = spans[i].innerHTML
@@ -365,7 +370,6 @@ function processPandoc() {
 					break
 					default:
 				}
-	
 			}
 			// sups to superscripts (No sups will be footnote within footnotes)
 			let sups = footnotesRoot.getElementsByTagName ('sup')
@@ -434,9 +438,7 @@ function processPandoc() {
 				if (outFNLi[i].id.substring(0,2) == 'fn' ) {
 					let thisFootnoteRoot = parse(outFNLi[i].innerHTML)
 					let thisFootnoteHTML = ``
-
 					let thisFootnoteDivs = thisFootnoteRoot.querySelectorAll('div')
-
 					for (let j in thisFootnoteDivs) {
 						if (thisFootnoteDivs[j].getAttribute('data-custom-style')== 'WW-footnote-blockquote') {
 							thisFootnoteDivs[j].innerHTML = thisFootnoteDivs[j].innerHTML.replaceAll('<p>','<blockquote>')
@@ -449,26 +451,9 @@ function processPandoc() {
 						.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
 						.replaceAll('<em>,</em>',',')  // clean up unexpected italics
 						.replaceAll(' | ','<br>')
-
 					}
 
 					localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML.replaceAll('\r\n', '').replaceAll('<p> ', '<p>')}"\n}`
-
-/* 					thisFootnoteParas = thisFootnoteRoot.querySelectorAll('p')
-		
-					for (let j in thisFootnoteParas) {
-						thisFootnoteHTML += thisFootnoteParas[j].outerHTML.replaceAll('\"','\'')
-						.replaceAll('<em><u>,</u></em>',',') // clean up unexpected italics
-						.replaceAll('<em>,</em>',',')  // clean up unexpected italics
-						.replaceAll(' | ','<br>')
-						.replaceAll('<p> ', '<p>')
-					}
-					localJSON += `{\n\t"fnNumber": "${Number(i)+1}",\n\t"fnHTML": "${thisFootnoteHTML.replaceAll('\r\n', '')}"\n}` */
-
-
-
-
-
 					if (i == outFNLi.length -1) {
 						localJSON += '\n'
 					} else {
@@ -1360,6 +1345,95 @@ function buildBookIndexHTML () {
 
 		let indexRoot = parse(html)
 
+		function createTargetsInFootnotes () {
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX HERE
+
+			let localFootnotes = ``;
+			try {
+				const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'footnotes.json', 'utf8');
+				localFootnotes = JSON.parse(data);
+			} catch (err) {
+				console.error(err);
+			}
+
+
+			let allILs = indexRoot.querySelectorAll('.internalLink')
+
+			// Any internalLinks in the main text refering to footnotes
+			for (i in allILs) {
+				for (let j in localFootnotes) {
+					let currentfnNumber = localFootnotes[j].fnNumber
+					let currentfnHTMLRoot = parse(localFootnotes[j].fnHTML)
+					let allSpans = currentfnHTMLRoot.querySelectorAll('span')
+
+					for (j in allSpans) {
+						if ((allSpans[j].classNames == 'anchor') && (allILs[i].getAttribute('data-target').substring(1) == allSpans[j].id)) {
+							allILs[i].setAttribute('data-target', `fnNumber:${currentfnNumber}`)
+						}
+					}
+				}
+			}
+
+
+			// Any internalLinks in the Notes refering to footnotes
+			//create an array of notenumbers with a bookmark
+			let footnoteAnchorArr = []
+
+			for (i in localFootnotes) {
+				let currentfnNumber = localFootnotes[i].fnNumber
+				let currentfnHTMLRoot = parse(localFootnotes[i].fnHTML)	
+				allAnchors = currentfnHTMLRoot.querySelectorAll('.anchor')
+				for (j in allAnchors) {
+					obj = new Object()
+					obj.fnNumber = currentfnNumber
+					obj.target = allAnchors[j].id
+					footnoteAnchorArr.push(obj)
+				}
+			}
+
+			console.log(footnoteAnchorArr) 
+			let newFootNotesJson = []
+
+			for (i in localFootnotes) {
+				let obj = new Object();
+				obj.fnNumber = localFootnotes[i].fnNumber
+
+				let currentfnNumber = localFootnotes[i].fnNumber
+				let currentfnHTMLRoot = parse(localFootnotes[i].fnHTML)	
+
+				allLinks = currentfnHTMLRoot.querySelectorAll('.internalLink')
+				for (j in allLinks) {
+					for (k in footnoteAnchorArr) {
+						if (`#${footnoteAnchorArr[k].target}` == allLinks[j].getAttribute('data-target')){
+							allLinks[j].setAttribute('data-target',`fnNumber:${footnoteAnchorArr[k].fnNumber}`)
+						}
+					}
+				}
+
+				obj.fnHTML = currentfnHTMLRoot.innerHTML.replaceAll('\"', '\'')
+				newFootNotesJson.push(obj)
+
+			}
+
+
+			let ammededFootnotes = JSON.stringify(newFootNotesJson, null, 2)
+			fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), ammededFootnotes, 'utf8')
+
+
+/* 			
+			let allSegs = indexRoot.querySelectorAll('[id^="seg-"]')
+			for (i in allSegs) {
+				if (allSegs[i].id) {
+					console.log(allSegs[i].id)
+				}
+			} 
+*/
+
+
+		}
+
+
+
 		function addDataSesameKeys () {
 			// set the data-sesame-key zotref: in the book
 			let allSesameRefs = indexRoot.querySelectorAll ('.sesame.biblioref')
@@ -1585,7 +1659,6 @@ function buildBookIndexHTML () {
 
 		} */
 
-
 		function buildReferences () {
 			let localFootnotes =``
 			if (fs.existsSync('../_resources/book-data/'+bookID+'/'+'footnotes.json')) {
@@ -1759,16 +1832,12 @@ function buildBookIndexHTML () {
 
 					for (k in creators) {
 						let creatorAfter = `, `
-
 						if (k == creators.length-2) {
 							creatorAfter = ` & `
 						}
-
 						if (k == creators.length-1) {
 							creatorAfter = ``
 						}
-
-
 						if (creators[k].type == 'translator') {
 							html += `${creators[k].name} <em>(tr.)</em>`
 						} else
@@ -1777,12 +1846,8 @@ function buildBookIndexHTML () {
 						} else {
 							html += creators[k].name
 						}
-
 						html += creatorAfter
-
 					}
-
-
 					html+= `</span>`
 
 
@@ -1984,7 +2049,6 @@ function buildBookIndexHTML () {
 			console.log (`✅ Bibliography Added from /book-data/${bookID}/biblio.json`)
 			return populateReferences(bookBiblioData);
 		}
-	
 
 		function addNavBarForLists () {
 			// make a navigation bar for the Lists modal
@@ -2039,6 +2103,7 @@ function buildBookIndexHTML () {
 
 		}
 
+		createTargetsInFootnotes()
 		addDataSesameKeys()
 		buildSCLinksJSON()
 		//shyphenFootnotes()

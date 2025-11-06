@@ -2579,9 +2579,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 				blink (document.getElementById(bookSeg))
 			}
 		}
-
 	}
-
 });
 
 function toggleSesame (el) {

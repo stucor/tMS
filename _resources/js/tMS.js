@@ -1759,25 +1759,8 @@ function resetBlinkers() {
 
 window.addEventListener("wheel", resetBlinkers);
 window.addEventListener("touchmove", resetBlinkers);
-window.addEventListener("mousedown", resetBlinkers);
+window.addEventListener("keydown", resetBlinkers);
 
-
-
-/* function setSelfquoteMargins () {
-	var root = document.querySelector(':root');
-	if ( document.querySelector('input[name="marginRadio"]:checked').value == "narrowmargin") {
-		root.style.setProperty('--selfquoteleftmargin', '-1em');
-		root.style.setProperty('--selfquotetopmargin', '-1em');
-	} else {
-		if (window.innerWidth > 666) {
-			root.style.setProperty('--selfquoteleftmargin', '-5em');
-			root.style.setProperty('--selfquotetopmargin', '0');
-		} else {
-			root.style.setProperty('--selfquoteleftmargin', '-3.5em');
-			root.style.setProperty('--selfquotetopmargin', '0');	
-		}
-	}
-} */
 function setNamedSectionPosition () {
 	var root = document.querySelector(':root');
 	if ( document.querySelector('input[name="marginRadio"]:checked').value == "narrowmargin") {
@@ -1796,7 +1779,6 @@ function setNamedSectionPosition () {
 
 window.addEventListener('resize', function () {
 	scrollToNavTarget();
-	//setSelfquoteMargins();
 	setNamedSectionPosition();
 });
 
@@ -1813,7 +1795,6 @@ function fillProgressBar() {
 			break;
 		}
 	}
-	//var currentTOC = currentTOCTarget.replace('head-', 'TOC');
 	var currentTOC = 'TOC' + currentTOCTarget
 	if (currentTOC !== '') {
 		for (var i = 0; i < savedTOCElements.length; i++) {
@@ -2301,20 +2282,32 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		}
 	}
 
-/* 	if ((e.target.classList.contains('goselfquote'))) {
-			displaySelfquote(e.target.innerHTML);
-			//savedsup = e.target;
-	} */
-
 	if (e.target.classList.contains('bookSegment')){
 		var [bookSeg, mark_paragraph] = decodeBookSegment(e.target.innerText);
 		goToTarget(bookSeg);
 	}
 	
 	if (e.target.classList.contains('internalLink')) {
-		var whereTo = e.target.getAttribute('data-target').substring(1);
-		goToTarget(whereTo, undefined, 'center' );
-		blink (document.getElementById(whereTo).parentElement)
+		if (e.target.getAttribute('data-target').substring(0,9) == 'fnNumber:') {
+			let noteNumberToOpen = e.target.getAttribute('data-target').substring(9)
+				let allSups = document.querySelectorAll ('sup')
+				for (let j in allSups) {
+					if (allSups[j].innerText == noteNumberToOpen) {
+						if (!allSups[j].classList.contains('closebutton')) {
+ 							allSups[j].click()
+						}
+						goToTarget(allSups[j], 'ELEMENT', 'center')
+						setTimeout(() => {
+							blink(allSups[j].nextElementSibling)
+						  }, 400); 
+						break
+					}
+				}			
+		} else {
+			var whereTo = e.target.getAttribute('data-target').substring(1);
+			goToTarget(whereTo, undefined, 'center' );
+			blink (document.getElementById(whereTo).parentElement)
+		}
 	}
 
 	if (e.target.classList.contains('sesame')) {
@@ -2512,7 +2505,7 @@ function decodeBookSegment (anchortext) {
 
 function blink (element) {
 	let segmentID =``
-	if (element.classList.contains('opensesame')){
+	if ((element.classList.contains('opensesame')) || (element.classList.contains('chapnum'))){
 		segmentID = element.parentElement.id
 	} else {
 		segmentID = element.id
@@ -2720,35 +2713,7 @@ function toggleSesame (el) {
 						}
 					);
 				} else 
-/* 				if (sesameKeyArr[0] == `bodhi-nikaya`) {
-					let nikName = sesameKeyArr[1].slice(0,2).toUpperCase()
-					console.log(nikName)
-					let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}/${nikName}/${sesameKeyArr[1]}.json`
-					function populateSesame(quoteData) {
-						let subSectionSpacer = ''
-						if (quoteData.SubSection) {
-							subSectionSpacer = '<br>'
-						}
-						let author = ''
-						if (quoteData.Author) {
-							author = `by ${quoteData.Author}`
-						}
-						let quoteHTML = ''
-						quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}</h3>`
-						quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
-						quoteHTML += `${decodeZotref(quoteData.ZotRef)}`
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
-						el.classList.add('closebutton')
-					}
-					fetch(fetchPath)
-						.then(response => response.json())
-						.then (data => populateSesame(data))
-						.catch(error => {
-							console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
-						}
-					);
-				} else 
- */				if (sesameKeyArr[0] == `DPPN`) {
+				if (sesameKeyArr[0] == `DPPN`) {
 					let fetchPath = `../_resources/sesame-data/dictionaries/complex/en/pli2en_dppn.json`
 
 					function populateSesame (quoteData) {
@@ -2841,89 +2806,6 @@ function displaySutta (linkText) {
 	}
 	document.getElementById('ModalHeaderText').innerHTML = `${slug}${verses}`;
 }
-
-
-/* SelfQuote */
-
-/* document.getElementById("ModalSelfquote").addEventListener("click", function(e) {
-	if (e.target.classList.contains('goselfquote')) {
-		//calledFromNotes = false
-		exitStaticModal()
-		goToTarget(`bqseg${e.target.innerText.replace('※','').replace(' in the main text','')}`)
-	}
-});
-
-function displaySelfquote (linktext) {
-	setModalStyle('Selfquote');
-	showModal('Selfquote');
-	modalbody.scrollTop = 0;
-	stopBookScroll ();
-	let selfquoteArea = document.getElementById("selfquotearea");
-
-	let buildHTML = '';
-
-	if (linktext.substring(0,1) == '※') {
-		let SQHeaderArray = [];
-		let shortCode = shortcode();
-
-		function buildText (headerData) {
-			SQHeaderArray = headerData;
-			buildHTML += `<div style="margin-top: 0; font-variant: small-caps; text-align: right"><span class="goselfquote">${linktext} in the main text</span></div>`
-			let selfquoteArr = document.getElementsByClassName("selfquote");
-			for (i = 0; i < selfquoteArr.length; i++) {
-				if ( linktext.substring(1) == selfquoteArr[i].id.replace("bqseg", "")) {
-					let modalHeader = 'Section'
-					let supHTML = '';
-					
-					for (let j=0; j<SQHeaderArray.length; j++) {
-						if (linktext.slice(1) == SQHeaderArray[j].section) {
-							buildHTML += `<h4>${SQHeaderArray[j].modalHead}`
-							buildHTML += `<br>${SQHeaderArray[j].bodyHead}`
-							modalHeader = SQHeaderArray[j].modalHead
-							supHTML = SQHeaderArray[j].supHTML
-						}
-					}
-	
-					let bookNoteNumber = selfquoteArr[i].innerHTML.substring(selfquoteArr[i].innerHTML.lastIndexOf('<sup>')+5,selfquoteArr[i].innerHTML.lastIndexOf('</sup>'))
-					if (supHTML != '' ) {
-						buildHTML += `<br>${supHTML}</h4>`
-					} else {
-						let allBookNotes = document.getElementsByClassName("booknotesNumber");
-						for (let k=0; k < allBookNotes.length; k++) {
-							if (allBookNotes[k].innerText == bookNoteNumber) {
-								buildHTML += `<br>${allBookNotes[k].nextElementSibling.innerHTML}</h4>`
-							}
-						}
-					}
-	
-					buildHTML += selfquoteArr[i].innerHTML.replaceAll(/ style=""/g, "").replaceAll(/<sup>[0-9]+<\/sup>/g, "").replaceAll(/<span class="goselfquote">(※[0-9]+)<\/span>/g, '$1' )
-	
-					document.getElementById('ModalHeaderText').innerHTML = `${linktext}`;
-				}
-			}
-			selfquoteArea.innerHTML = buildHTML;
-		}
-
-		fetch(`../_resources/book-data/${shortCode}/selfquoteHeaders.json`)
-			.then(response => response.json())
-			.then (data => buildText(data))
-			.catch(error => {
-				console.log(`${error}ERROR: Can't fetch ../_resources/book-data/${shortCode}/selfquoteHeaders.json`);
-			}
-		);
-
-
-	} else { // it's (currently) a Figure
-		let figureID = linktext.replace(/&nbsp;/, '').replace(' ','').toLowerCase().replace('ure', '')
-		buildHTML = `<div style="text-align: center">`
-		buildHTML += document.getElementById(figureID).innerHTML
-		buildHTML += `</div>`
-		document.getElementById('ModalHeaderText').innerHTML = `Figure ${figureID.slice(3)}`;
-		selfquoteArea.innerHTML = buildHTML;
-	}
-	
-} */
-
 
 
 // Share Functions

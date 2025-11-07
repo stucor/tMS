@@ -1492,6 +1492,18 @@ sup {
 	font-weight: 600;
 }
 
+/* .blink::before {
+	display:block;
+	position:relative;
+	top:-0.2em;
+	text-align: center;
+	color:rgb(10, 69, 10);
+	background-color: rgba(226, 255, 226, 0.467);
+	width:100%;
+	content:attr(data-before) ;
+	animation: blinker 500ms linear 1;
+	font-variant: small-caps;
+} */
 .blink::before {
 	display:block;
 	position:relative;
@@ -1503,6 +1515,9 @@ sup {
 	content:attr(data-before) ;
 	animation: blinker 500ms linear 1;
 	font-variant: small-caps;
+}
+.chapnum.blink::before {
+	font-size: 0.8em;
 }
 @keyframes blinker {
 	50% {

@@ -380,6 +380,12 @@ function processPandoc() {
 			// anchors
 			let anchors = footnotesRoot.getElementsByTagName ('a') 
 			for (i in anchors) {
+				// maintain bookmarks
+				let anchRoot = parse (anchors[i].innerHTML)
+				let anchor = anchRoot.querySelector('.anchor')
+				let anchorHTML = ''
+				if (anchor) {anchorHTML = anchor.outerHTML}
+
 				let istMSBook = anchors[i].text.slice(0,16) == `wiswo.org/books/`
 				if (istMSBook) {
 					let tMSShortcode = anchors[i].text.slice(16)
@@ -397,7 +403,7 @@ function processPandoc() {
 						let tempTop =  anchors[i].text.slice(0, 2)
 						let tempTail = anchors[i].text.slice(3,anchors[i].text.length)
 						let tempText = tempTop + '&#8239;' + tempTail
-						anchors[i].replaceWith(`<span class='sclinktext'>${formatSCLinktext(tempText)}</span>`)
+						anchors[i].replaceWith(`${anchorHTML}<span class='sclinktext'>${formatSCLinktext(tempText)}</span>`)
 					break
 					case 'Dhp':
 					case 'Snp':
@@ -405,14 +411,14 @@ function processPandoc() {
 						let temp2Top =  anchors[i].text.slice(0, 3)
 						let temp2Tail = anchors[i].text.slice(4,anchors[i].text.length)
 						let temp2Text = temp2Top + '&#8239;' + temp2Tail
-						anchors[i].replaceWith(`<span class='sclinktext'>${formatSCLinktext(temp2Text)}</span>`)
+						anchors[i].replaceWith(`${anchorHTML}<span class='sclinktext'>${formatSCLinktext(temp2Text)}</span>`)
 					break
 					case 'Tha':
 					case 'Thi':
 						let temp3Top =  anchors[i].text.slice(0, 4)
 						let temp3Tail = anchors[i].text.slice(5,anchors[i].text.length)
 						let temp3Text = temp3Top + '&#8239;' + temp3Tail
-						anchors[i].replaceWith(`<span class='sclinktext'>${formatSCLinktext(temp3Text)}</span>`)
+						anchors[i].replaceWith(`${anchorHTML}<span class='sclinktext'>${formatSCLinktext(temp3Text)}</span>`)
 					break
 					case 'Ja ':
 					case 'Kd ':
@@ -798,19 +804,25 @@ function buildBookIndexHTML () {
 		let headingArr = bookRoot.querySelectorAll ('h1, h2, h3')
 		for (let i in headingArr) {
 			if (headingArr[i].tagName == 'H1') {
-				let [top, tail] = headingArr[i].innerHTML.split(': ')
-				if (tail) {
-					headingArr[i].set_content(`<span class="chapnum">${top.toLowerCase()}:</span><br>${tail}`)
-				} else {
-					let [number, heading] = headingArr[i].innerHTML.split('. ')
-					if (heading) {
-						if (number.length < 3 ) { //it's a chapter (1-99)
-							headingArr[i].set_content(`<span class="chapnum">${chapterPrefix} ${number}</span><br>${heading}`)
-						} else { // it's something like an appendix
-							headingArr[i].set_content(`<span class="chapnum">${number.toLowerCase()}</span><br>${heading}`)
-						}
+
+
+				let headRoot = parse (headingArr[i].innerHTML)
+				let anchor = headRoot.querySelector('.anchor')
+				let anchorHTML = ''
+				if (anchor) {
+					anchorHTML = anchor.outerHTML
+					headingArr[i].innerHTML = headingArr[i].innerHTML.replace(anchorHTML, '')
+				}
+
+				let [number, heading] = headingArr[i].innerHTML.split('. ')
+				if (heading) {
+					if (number.length < 3 ) { //it's a chapter (1-99)
+						headingArr[i].set_content(`<span class="chapnum">${anchorHTML}${chapterPrefix} ${number}</span><br>${heading}`)
+					} else { // it's something like an appendix
+						headingArr[i].set_content(`<span class="chapnum">${anchorHTML}${number.toLowerCase()}</span><br>${heading}`)
 					}
 				}
+
 			}
 			headingArr[i].setAttribute('id',`head-${TOCData[i].tocno}`)
 		}
@@ -976,35 +988,16 @@ function buildBookIndexHTML () {
 			} else
 			// FIGURE (with images)
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-figure") {
-
-				//allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}' width='${width.replace('\r\n', '')}%'>`
-
-/* 				let figureRoot = parse (allDivs[i].innerHTML)
-				console.log(allDivs[i].innerHTML)
-
-				let allFigRootSpans = figureRoot.querySelectorAll('span')
-				let figRootSpanHTML =``
-
-				for (let j in allFigRootSpans) {
-					if (allFigRootSpans[j].getAttribute('data-custom-style') == "wwc-figure-image") {
-						let [fileLoc, alt, imageWidth, bordered] = allFigRootSpans[j].innerText.split('=')
-						if (bordered == 'border') {
-							bordered = `style = 'border: 1px solid var(--figureimgborder)'`
-						} else {
-							bordered = ''
-						}
-						figRootSpanHTML += `<a data-fslightbox href="${fileLoc}"><img ${bordered} src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>\n`
-					} else { // it's a caption
-						figRootSpanHTML += `<figcaption>${allFigRootSpans[j].innerText}</figcaption>`
-					}
-				}
-				allDivs[i].innerHTML = figRootSpanHTML
-				allDivs[i].tagName = 'figure'
-				allDivs[i].setAttribute('id',`fig${figureID}`)
-				figureID ++
-				allDivs[i].removeAttribute('data-custom-style') */
-
 				let figArr = allDivs[i].innerHTML.replaceAll('\r\n', '').replaceAll('<p>','').replaceAll('</p>','').split('<br>')
+
+				// maintain the anchor if there is one
+				let firstFigArrRoot = parse(figArr[0])
+				let anchor = firstFigArrRoot.querySelector('.anchor')
+				let anchorHTML = ''
+				if (anchor) {
+					anchorHTML = anchor.outerHTML
+					figArr[0] = figArr[0].replace(anchorHTML, '') //remove the anchor
+				}
 				let figureHTML = '';
 				for (let j=0; j<figArr.length; j++) {
 					if (j < figArr.length-1) {
@@ -1014,7 +1007,7 @@ function buildBookIndexHTML () {
 						} else {
 							bordered = ''
 						}
-						figureHTML += `<a data-fslightbox href="${fileLoc}"><img ${bordered} src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>\n`
+						figureHTML += `${anchorHTML}<a data-fslightbox href="${fileLoc}"><img ${bordered} src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>\n`
 					} else {
 						figureHTML+= `<figcaption>${figArr[j]}</figcaption>`						
 					}
@@ -1256,6 +1249,13 @@ function buildBookIndexHTML () {
 
 		for (let i in allTablesAndCaptions) {
 			if (allTablesAndCaptions[i].getAttribute('data-custom-style') == 'WW-table-caption') {
+				// maintain the anchor if there is one
+				let captionRoot = parse(allTablesAndCaptions[i].innerHTML)
+				let anchor = captionRoot.querySelector('.anchor')
+				let anchorHTML = ''
+				if (anchor) {
+					anchorHTML = anchor.outerHTML
+				}
 				let caption = allTablesAndCaptions[i].text.replaceAll(`\r\n`,``)
 				var tableType = caption.substring(caption.indexOf("{") + 1, caption.indexOf("}"));
 				let tableClassLabel = ``
@@ -1268,7 +1268,7 @@ function buildBookIndexHTML () {
 					caption = caption.substr(20)
 				}
 				let table = allTablesAndCaptions[Number(i)+1].innerHTML.replaceAll('<tr class>','<tr>')
-				allTablesAndCaptions[i].replaceWith(`<div class="tablewrap">\n<table${tableClassLabel}>\n<caption >${caption}</caption>${table}\n</table>\n</div>`)
+				allTablesAndCaptions[i].replaceWith(`<div class="tablewrap">${anchorHTML}\n<table${tableClassLabel}>\n<caption >${caption}</caption>${table}\n</table>\n</div>`)
 				allTablesAndCaptions[Number(i)+1].remove()
 			}
 		}
@@ -1346,93 +1346,59 @@ function buildBookIndexHTML () {
 		let indexRoot = parse(html)
 
 		function createTargetsInFootnotes () {
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX HERE
-
 			let localFootnotes = ``;
 			try {
 				const data = fs.readFileSync('../_resources/book-data/'+bookID+'/'+'footnotes.json', 'utf8');
 				localFootnotes = JSON.parse(data);
 			} catch (err) {
-				console.error(err);
+				console.log(`No footnotes.json found in createTargetsInFootnotes`);
 			}
 
+			if (localFootnotes) {
+				// First create an array of notenumbers with a bookmark
+				let footnoteAnchorArr = []
+				for (i in localFootnotes) {
+					let currentfnNumber = localFootnotes[i].fnNumber
+					let currentfnHTMLRoot = parse(localFootnotes[i].fnHTML)	
+					allAnchors = currentfnHTMLRoot.querySelectorAll('.anchor')
+					for (j in allAnchors) {
+						obj = new Object()
+						obj.fnNumber = currentfnNumber
+						obj.target = allAnchors[j].id
+						footnoteAnchorArr.push(obj)
+					}
+				}
+				// Now set any internalLinks in the footnotes that refer to other footnotes
+				let newFootNotesJson = []
+				for (i in localFootnotes) {
+					let obj = new Object();
+					obj.fnNumber = localFootnotes[i].fnNumber
+					let currentfnHTMLRoot = parse(localFootnotes[i].fnHTML)	
 
-			let allILs = indexRoot.querySelectorAll('.internalLink')
-
-			// Any internalLinks in the main text refering to footnotes
-			for (i in allILs) {
-				for (let j in localFootnotes) {
-					let currentfnNumber = localFootnotes[j].fnNumber
-					let currentfnHTMLRoot = parse(localFootnotes[j].fnHTML)
-					let allSpans = currentfnHTMLRoot.querySelectorAll('span')
-
-					for (j in allSpans) {
-						if ((allSpans[j].classNames == 'anchor') && (allILs[i].getAttribute('data-target').substring(1) == allSpans[j].id)) {
-							allILs[i].setAttribute('data-target', `fnNumber:${currentfnNumber}`)
+					allLinks = currentfnHTMLRoot.querySelectorAll('.internalLink')
+					for (j in allLinks) {
+						for (k in footnoteAnchorArr) {
+							if (`#${footnoteAnchorArr[k].target}` == allLinks[j].getAttribute('data-target')){
+								allLinks[j].setAttribute('data-target',`fnNumber:${footnoteAnchorArr[k].fnNumber}`)
+							}
+						}
+					}
+					obj.fnHTML = currentfnHTMLRoot.innerHTML.replaceAll('\"', '\'')
+					newFootNotesJson.push(obj)
+				}
+				let ammededFootnotes = JSON.stringify(newFootNotesJson, null, 2)
+				fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), ammededFootnotes, 'utf8')
+				// Any internalLinks in the main text refering to footnotes
+				let allBookLinks = indexRoot.querySelectorAll('.internalLink')
+				for (i in allBookLinks) {
+					for (j in footnoteAnchorArr) {
+						if (`#${footnoteAnchorArr[j].target}` == allBookLinks[i].getAttribute('data-target')){
+							allBookLinks[i].setAttribute('data-target',`fnNumber:${footnoteAnchorArr[j].fnNumber}`)
 						}
 					}
 				}
 			}
-
-
-			// Any internalLinks in the Notes refering to footnotes
-			//create an array of notenumbers with a bookmark
-			let footnoteAnchorArr = []
-
-			for (i in localFootnotes) {
-				let currentfnNumber = localFootnotes[i].fnNumber
-				let currentfnHTMLRoot = parse(localFootnotes[i].fnHTML)	
-				allAnchors = currentfnHTMLRoot.querySelectorAll('.anchor')
-				for (j in allAnchors) {
-					obj = new Object()
-					obj.fnNumber = currentfnNumber
-					obj.target = allAnchors[j].id
-					footnoteAnchorArr.push(obj)
-				}
-			}
-
-			console.log(footnoteAnchorArr) 
-			let newFootNotesJson = []
-
-			for (i in localFootnotes) {
-				let obj = new Object();
-				obj.fnNumber = localFootnotes[i].fnNumber
-
-				let currentfnNumber = localFootnotes[i].fnNumber
-				let currentfnHTMLRoot = parse(localFootnotes[i].fnHTML)	
-
-				allLinks = currentfnHTMLRoot.querySelectorAll('.internalLink')
-				for (j in allLinks) {
-					for (k in footnoteAnchorArr) {
-						if (`#${footnoteAnchorArr[k].target}` == allLinks[j].getAttribute('data-target')){
-							allLinks[j].setAttribute('data-target',`fnNumber:${footnoteAnchorArr[k].fnNumber}`)
-						}
-					}
-				}
-
-				obj.fnHTML = currentfnHTMLRoot.innerHTML.replaceAll('\"', '\'')
-				newFootNotesJson.push(obj)
-
-			}
-
-
-			let ammededFootnotes = JSON.stringify(newFootNotesJson, null, 2)
-			fs.writeFileSync(('../_resources/book-data/'+bookID+'/'+'footnotes.json'), ammededFootnotes, 'utf8')
-
-
-/* 			
-			let allSegs = indexRoot.querySelectorAll('[id^="seg-"]')
-			for (i in allSegs) {
-				if (allSegs[i].id) {
-					console.log(allSegs[i].id)
-				}
-			} 
-*/
-
-
 		}
-
-
 
 		function addDataSesameKeys () {
 			// set the data-sesame-key zotref: in the book

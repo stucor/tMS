@@ -1,0 +1,16 @@
+{
+			"Authors" : ["brahm"],
+			"BookTitle" : "Ten Teachings",
+			"BookSubtitle" : "Volume I",
+			"ShortAbstract" : "<p>Ajahn Brahm gives ten teachings. This collection of teachings by Ajahn Brahm has been compiled from a variety of sources over the internet and collected together to form an series of anthologies.</p>",
+			"Abstract" : "<p>None</p>",
+			"ItemType" : "document",
+			"AddInfo"   : [],
+			"Copyright" : ["Originally published in 2025.","This edition published in 2025."],
+			"CCLicense": "BY-NC-ND 4.0",
+			"FrontCover": "../_resources/book-data/ten1/FrontLarge.jpg",
+			"BackCover": "",
+			"BackMatter": [""],
+			"DownloadsAvailable": "pdf=yes,epub=yes,azw3=yes",
+			"DownloadHTML": ""
+		}

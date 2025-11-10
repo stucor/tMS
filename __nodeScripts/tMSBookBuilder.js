@@ -986,32 +986,32 @@ function buildBookIndexHTML () {
 					allDivs[i].removeAttribute('data-custom-style')
 					allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll('<p>', '').replaceAll('</p>', '')
 			} else
+
+
+
+
 			// FIGURE (with images)
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-figure") {
-				let figArr = allDivs[i].innerHTML.replaceAll('\r\n', '').replaceAll('<p>','').replaceAll('</p>','').split('<br>')
-
-				// maintain the anchor if there is one
-				let firstFigArrRoot = parse(figArr[0])
-				let anchor = firstFigArrRoot.querySelector('.anchor')
-				let anchorHTML = ''
-				if (anchor) {
-					anchorHTML = anchor.outerHTML
-					figArr[0] = figArr[0].replace(anchorHTML, '') //remove the anchor
-				}
 				let figureHTML = '';
-				for (let j=0; j<figArr.length; j++) {
-					if (j < figArr.length-1) {
-						let [fileLoc, alt, imageWidth, bordered] = figArr[j].split('=')
-						if (bordered == 'border') {
-							bordered = `style = 'border: 1px solid var(--figureimgborder)'`
-						} else {
-							bordered = ''
-						}
-						figureHTML += `${anchorHTML}<a data-fslightbox href="${fileLoc}"><img ${bordered} src="${fileLoc}" alt="${alt}" width="${imageWidth}%"></a>\n`
+				let thisFigRoot = parse(allDivs[i].innerHTML)
+				// Maintain anchor (if there is one)
+				let anchor = thisFigRoot.querySelector('.anchor')
+				let anchorHTML = ''
+				if (anchor) {anchorHTML = anchor.outerHTML}
+				let imgArr = thisFigRoot.getElementsByTagName('img')
+				for (j in imgArr) {
+					let currentImgSrc = imgArr[j].outerHTML.replace(/style=.*" / ,'').replace('<img src=\"', '').replace('\" >', '')
+					let currentImgAlt = imgArr[j].outerHTML.replace(/src=".*alt="/ ,'').replace('<img ', '').replace('\" >', '')
+					let [imageWidth, bordered, alt] = currentImgAlt.split('|')
+					if (bordered == 'border') {
+						bordered = `style = 'border: 1px solid var(--figureimgborder)'`
 					} else {
-						figureHTML+= `<figcaption>${figArr[j]}</figcaption>`						
+						bordered = ''
 					}
-				}
+					figureHTML += `${anchorHTML}<a data-fslightbox href="${currentImgSrc}"><img ${bordered} src="${currentImgSrc}" alt="${alt}" width="${imageWidth}%"></a>\n`
+				}					
+				let figCaption = thisFigRoot.querySelector('p').innerText.replace(/[\r\n]+/gm, " ")
+				figureHTML+= `<figcaption>${figCaption}</figcaption>`
 				allDivs[i].innerHTML = figureHTML
 				allDivs[i].tagName = 'figure'
 				allDivs[i].setAttribute('id',`fig${figureID}`)
@@ -2148,7 +2148,8 @@ function buildBook () {
 	let docxPath = `../_resources/book-data/${bookID}/${bookID}.docx`
 	let pandocHtmlPath = `../_resources/book-data/${bookID}/pandoc.html`
 	console. log(`Running pandoc on ${bookID}.docx ...`)
-	exec(`pandoc --from docx+styles ${docxPath} -s --toc -o ${pandocHtmlPath} --wrap=none --metadata title="Pre-processed Wiswo Book"`, 
+	exec(`pandoc --from docx+styles ${docxPath} -s --toc -o ${pandocHtmlPath} --wrap=none --metadata title="Pre-processed Wiswo Book" --extract-media=../${bookID}`, 
+	//exec(`pandoc --from docx+styles ${docxPath} -s --toc -o ${pandocHtmlPath} --wrap=none --metadata title="Pre-processed Wiswo Book"`, 
 		(error, stdout, stderr) => { 
 		  if (error) { 
 			console.error(`Error: ${error.message}`)

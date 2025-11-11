@@ -168,8 +168,13 @@ a {
 .fleuron {
 	opacity: 20%; 
 	user-select: none;
+	margin-top: 5em;
+	margin-bottom: -5em
 }
-
+div:has(> .fleuron) {
+	font-size: 2em;
+	text-align: center;
+}
 
 .smallcaps {
 	font-variant: small-caps;

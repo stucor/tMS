@@ -1002,6 +1002,9 @@ function buildBookIndexHTML () {
 				for (j in imgArr) {
 					let currentImgSrc = imgArr[j].outerHTML.replace(/style=.*" / ,'').replace('<img src=\"', '').replace('\" >', '')
 					let currentImgAlt = imgArr[j].outerHTML.replace(/src=".*alt="/ ,'').replace('<img ', '').replace('\" >', '')
+					if (currentImgAlt.substring(0,5) == 'src="') {
+						console.log(`❌ No Alt Text for image for ${currentImgSrc}`)
+					}
 					let [imageWidth, bordered, alt] = currentImgAlt.split('|')
 					if (bordered == 'border') {
 						bordered = `style = 'border: 1px solid var(--figureimgborder)'`
@@ -1020,8 +1023,23 @@ function buildBookIndexHTML () {
 			} else
 			// SPACE
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
-				let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
-				allDivs[i].replaceWith(`<hr style='border:0; margin-top: 0; height:${spaceWidth}em'>`)
+				let spaceRoot = parse (allDivs[i].innerHTML.replace(/[\r\n]+/gm, " "))
+				let imgArr = spaceRoot.getElementsByTagName('img')
+				if (imgArr[0]) {
+					//console.log(imgArr[0].outerHTML)
+					let currentImgSrc = imgArr[0].outerHTML.replace(/style=.*" / ,'').replace('<img src=\"', '').replace('\" >', '')
+					let currentImgAlt = imgArr[0].outerHTML.replace(/src=".*alt="/ ,'').replace('<img ', '').replace('\" >', '')
+					if (currentImgAlt.substring(0,5) == 'src="') {
+						console.log(`❌ No Alt Text for image for ${currentImgSrc}`)
+					}
+					allDivs[i].replaceWith(`<div><img src='${currentImgSrc}' class='fleuron' alt='${currentImgAlt}'></div>`) 
+				}
+				else {
+					let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
+					allDivs[i].replaceWith(`<hr style='border:0; margin-top: 0; height:${spaceWidth}em'>`)
+				}
+				
+
 			} else 
 			// PARAGRAPHS
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
@@ -1136,9 +1154,12 @@ function buildBookIndexHTML () {
 				let fleurClass = ''
 				let [source, altText, width] = allDivs[i].text.replaceAll('\r\n', '').split("=");
 
-				if (altText.substring(0, 8) == 'Fleuron:') {
+/* 				if (altText.substring(0, 8) == 'Fleuron:') {
 					fleurClass = `class='fleuron'`
-				}
+
+					************** need to remove all fleurClass **********
+
+				} */
 				allDivs[i].classList.add ('epigram-img')
 				allDivs[i].innerHTML = `<img src='${source}' ${fleurClass} alt='${altText}' width=${width}%>`
 				allDivs[i].removeAttribute('data-custom-style')

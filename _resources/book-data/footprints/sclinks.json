@@ -160,10 +160,6 @@
     "location": "fn-51"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;6.8</span>",
-    "location": "fn-52"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;5.78<span class='scsegments'>:3.1–3.9</span></span>",
     "location": "fn-58"
   },
@@ -280,10 +276,6 @@
     "location": "fn-90"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;188</span>",
-    "location": "fn-91"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>DN&#8239;16<span class='scsegments'>:5.11.10</span></span>",
     "location": "fn-93"
   },
@@ -312,15 +304,7 @@
     "location": "fn-107"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;4.7</span>",
-    "location": "fn-108"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;45<span class='scsegments'>:3.1–4.34</span></span>",
-    "location": "fn-109"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;4.8</span>",
     "location": "fn-109"
   },
   {
@@ -392,10 +376,6 @@
     "location": "fn-122"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Snp&#8239;2.2</span>",
-    "location": "fn-123"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;7.52<span class='scsegments'>:8.2</span></span>",
     "location": "fn-124"
   },
@@ -418,10 +398,6 @@
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;35<span class='scsegments'>:24.3–24.4</span></span>",
     "location": "fn-128"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;6.2</span>",
-    "location": "fn-129"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;40<span class='scsegments'>:2.1–2.7</span></span>",
@@ -536,10 +512,6 @@
     "location": "fn-163"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;2.10</span>",
-    "location": "fn-164"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;142<span class='scsegments'>:3.3–3.4</span></span>",
     "location": "fn-165"
   },
@@ -577,10 +549,6 @@
   },
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;62</span>",
-    "location": "fn-177"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Snp&#8239;2.11</span>",
     "location": "fn-177"
   },
   {
@@ -732,10 +700,6 @@
     "location": "fn-222"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;1.1</span>",
-    "location": "fn-224"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>Ud&#8239;1.2</span>",
     "location": "fn-224"
   },
@@ -785,10 +749,6 @@
   },
   {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;1.188</span>",
-    "location": "fn-234"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Thag&#8239;15.1</span>",
     "location": "fn-234"
   },
   {
@@ -852,10 +812,6 @@
     "location": "fn-247"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Thag&#8239;12.2</span>",
-    "location": "fn-247"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;1.258-267</span>",
     "location": "fn-248"
   },
@@ -905,10 +861,6 @@
   },
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;126<span class='scsegments'>:11.1–11.14</span></span>",
-    "location": "fn-263"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;64</span>",
     "location": "fn-263"
   },
   {
@@ -1060,14 +1012,6 @@
     "location": "fn-292"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;383-423</span>",
-    "location": "fn-293"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Snp&#8239;1.7</span>",
-    "location": "fn-294"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>DN&#8239;31</span>",
     "location": "fn-295"
   },
@@ -1156,10 +1100,6 @@
     "location": "fn-316"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;142</span>",
-    "location": "fn-316"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>Snp&#8239;3.11<span class='scsegments'>:32.1–34.4</span></span>",
     "location": "fn-317"
   },
@@ -1186,10 +1126,6 @@
   {
     "sclinkHTML": "<span class='sclinktext'>SN&#8239;21.8</span>",
     "location": "fn-323"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;49</span>",
-    "location": "fn-325"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>SN&#8239;7.12</span>",
@@ -1480,10 +1416,6 @@
     "location": "fn-379"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;1.6</span>",
-    "location": "fn-379"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>Ud&#8239;5.6<span class='scsegments'>:14.1–16.6</span></span>",
     "location": "fn-381"
   },
@@ -1560,10 +1492,6 @@
     "location": "fn-398"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;157</span>",
-    "location": "fn-398"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>SN&#8239;4.7<span class='scsegments'>:1.2–1.3</span></span>",
     "location": "fn-400"
   },
@@ -1622,14 +1550,6 @@
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;128<span class='scsegments'>:19.5–19.8</span></span>",
     "location": "fn-415"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;8.7</span>",
-    "location": "fn-417"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Thag&#8239;16.1</span>",
-    "location": "fn-417"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;86</span>",
@@ -1726,14 +1646,6 @@
   {
     "sclinkHTML": "<span class='sclinktext'>Snp&#8239;5.1<span class='scsegments'>:31.1–42.4</span></span>",
     "location": "fn-442"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;1.10</span>",
-    "location": "fn-443"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;5.6</span>",
-    "location": "fn-445"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>Thig&#8239;5.9<span class='scsegments'>:4.1–4.4</span></span>",
@@ -2288,10 +2200,6 @@
     "location": "fn-580"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;332</span>",
-    "location": "fn-581"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>Snp&#8239;2.4<span class='scsegments'>:6.1–6.4</span></span>",
     "location": "fn-581"
   },
@@ -2334,10 +2242,6 @@
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;61<span class='scsegments'>:7.10</span></span>",
     "location": "fn-587"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;146</span>",
-    "location": "fn-588"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>DN&#8239;31<span class='scsegments'>:7.0–8.3</span></span>",
@@ -2390,10 +2294,6 @@
   {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;5.175<span class='scsegments'>:1.5, 2.5</span></span>",
     "location": "fn-599"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Snp&#8239;2.4</span>",
-    "location": "fn-600"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>DN&#8239;11</span>",
@@ -2544,10 +2444,6 @@
     "location": "fn-633"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;204</span>",
-    "location": "fn-633"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>DN&#8239;33<span class='scsegments'>:2.1.65, 2.1.68</span></span>",
     "location": "fn-633"
   },
@@ -2600,10 +2496,6 @@
     "location": "fn-642"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;395</span>",
-    "location": "fn-643"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;89<span class='scsegments'>:12.1–12.15</span></span>",
     "location": "fn-644"
   },
@@ -2644,15 +2536,7 @@
     "location": "fn-655"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;4.5</span>",
-    "location": "fn-656"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;4.65</span>",
-    "location": "fn-657"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;256</span>",
     "location": "fn-657"
   },
   {
@@ -2669,10 +2553,6 @@
   },
   {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;9.26</span>",
-    "location": "fn-661"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;1.5</span>",
     "location": "fn-661"
   },
   {
@@ -2824,10 +2704,6 @@
     "location": "fn-713"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Thag&#8239;21.1</span>",
-    "location": "fn-713"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;8.23</span>",
     "location": "fn-714"
   },
@@ -2880,14 +2756,6 @@
     "location": "fn-725"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>Thag&#8239;5.7</span>",
-    "location": "fn-726"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;1.9</span>",
-    "location": "fn-728"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>Thig&#8239;12.1<span class='scsegments'>:5.1–8.4</span></span>",
     "location": "fn-729"
   },
@@ -2922,10 +2790,6 @@
   {
     "sclinkHTML": "<span class='sclinktext'>SN&#8239;22.89<span class='scsegments'>:1.2</span></span>",
     "location": "fn-742"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;4.5</span>",
-    "location": "fn-744"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>SN&#8239;22.81</span>",
@@ -3013,10 +2877,6 @@
   },
   {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;3.64<span class='scsegments'>:3.1</span></span>",
-    "location": "fn-772"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;4.4</span>",
     "location": "fn-772"
   },
   {

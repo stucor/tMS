@@ -986,10 +986,6 @@ function buildBookIndexHTML () {
 					allDivs[i].removeAttribute('data-custom-style')
 					allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll('<p>', '').replaceAll('</p>', '')
 			} else
-
-
-
-
 			// FIGURE (with images)
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-figure") {
 				let figureHTML = '';
@@ -1021,25 +1017,28 @@ function buildBookIndexHTML () {
 				figureID ++
 				allDivs[i].removeAttribute('data-custom-style')
 			} else
-			// SPACE
+			// SPACE (includes fleurons)
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-space") {
 				let spaceRoot = parse (allDivs[i].innerHTML.replace(/[\r\n]+/gm, " "))
 				let imgArr = spaceRoot.getElementsByTagName('img')
 				if (imgArr[0]) {
-					//console.log(imgArr[0].outerHTML)
 					let currentImgSrc = imgArr[0].outerHTML.replace(/style=.*" / ,'').replace('<img src=\"', '').replace('\" >', '')
 					let currentImgAlt = imgArr[0].outerHTML.replace(/src=".*alt="/ ,'').replace('<img ', '').replace('\" >', '')
 					if (currentImgAlt.substring(0,5) == 'src="') {
 						console.log(`❌ No Alt Text for image for ${currentImgSrc}`)
 					}
-					allDivs[i].replaceWith(`<div><img src='${currentImgSrc}' class='fleuron' alt='${currentImgAlt}'></div>`) 
+					//optional opacity allowed in Alt Text of Fleurons
+					let [opacity, alt] = currentImgAlt.split('|')
+					if (!alt && opacity) {
+						alt = opacity
+						opacity = 100
+					}
+					allDivs[i].replaceWith(`<div><img style='opacity:${opacity}%;' src='${currentImgSrc}' class='fleuron' alt='${alt}'></div>`) 
 				}
 				else {
 					let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
 					allDivs[i].replaceWith(`<hr style='border:0; margin-top: 0; height:${spaceWidth}em'>`)
 				}
-				
-
 			} else 
 			// PARAGRAPHS
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){

@@ -1251,9 +1251,9 @@ function setTheme(){
 			r.style.setProperty('--sliderbackground', '#fc88320B');//'#c9d5fc');
 			r.style.setProperty('--primarycolor', '#217cbe');//'#06036ea0');
 			r.style.setProperty('--listlinkhover', '#217cbe1F');//'#d5dcfd60');
-			r.style.setProperty('--bdtexthighlighter', '#ffffcf28');//'#fc88320B');//'#e0f4fbb0');//'#eef0fb');
-			r.style.setProperty('--bdtexthighlightborder', '#8f3e001a');//'#fc8832C0');
-			r.style.setProperty('--sesamebackground', '#fffffd');
+			r.style.setProperty('--bdtexthighlighter', '#fff1e6a4');//'#fc88320B');//'#e0f4fbb0');//'#eef0fb');
+			r.style.setProperty('--bdtexthighlightborder', '#9745068f');//'#fc8832C0');
+			r.style.setProperty('--sesamebackground', '#fff1e6a4');
 
 			r.style.setProperty('--tableborder', '#c0c0c0');
 			r.style.setProperty('--tablecaption', '#ffffff50');

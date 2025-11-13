@@ -1042,11 +1042,43 @@ function buildBookIndexHTML () {
 			} else 
 			// PARAGRAPHS
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
-				let tempHTML = allDivs[i].innerHTML
+				let paraRoot = parse (allDivs[i].innerHTML.replace(/[\r\n]+/gm, " "))
+				let imgArr = paraRoot.getElementsByTagName('img')
+				for(let j in imgArr) {
+					let currentImgSrc = imgArr[j].outerHTML.replace(/style=.*" / ,'').replace('<img src=\"', '').replace('\" >', '')
+					let currentImgAlt = imgArr[j].outerHTML.replace(/src=".*alt="/ ,'').replace('<img ', '').replace('\" >', '')
+					if (currentImgAlt.substring(0,5) == 'src="') {
+						console.log(`❌ No Alt Text for image for ${currentImgSrc}`)
+					}
+					let imgHTML = `<img src='${currentImgSrc}' style='`
+					//console.log(currentImgSrc)
+					//console.log(currentImgAlt)
+					let altArr = currentImgAlt.split('|')
+					for (let k in altArr) {
+						//console.log(altArr[k])
+						let [key, value] = altArr[k].split(':')
+						if (key=='position') {
+							if (value == 'center')
+							imgHTML += `display:block; margin: 0 auto; `
+						} else
+						if (key == 'size') {
+							imgHTML += `width:${value}%; `
+						}
+					}
+					imgHTML += `'>`
+					//console.log(imgHTML)
+					imgArr[j].replaceWith(`${imgHTML}`)
+				}
+
+				let tempHTML = paraRoot.innerHTML
 				for(let j=0; j < emojis.length; j++) {
 					tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}" alt="${emojis[j].filename.replace('.png', '')} emoji">`)
 				}
 				allDivs[i].replaceWith(tempHTML)
+
+
+
+
 			} else
 			// BLOCKQUOTES
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-blockquote") {

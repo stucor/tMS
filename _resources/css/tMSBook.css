@@ -776,7 +776,7 @@ table.borderlessTable {
 }
 
 /***** CENTERED TEXT *****/
-.content p.caption-centered-sans {
+.content p.centered-sans {
 	font-family: 'Source Sans Pro';
 	font-variant: small-caps;
 	hyphens: none;
@@ -785,7 +785,7 @@ table.borderlessTable {
 	font-size: 1.2em;
 	text-indent: 0;
 }
-.content p.caption-centered-serif {
+.content p.centered-serif {
 	font-family: 'Source Serif Pro';
 	font-style: italic;
 	hyphens: none;

@@ -1041,42 +1041,61 @@ function buildBookIndexHTML () {
 				}
 			} else 
 			// PARAGRAPHS
-			if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph"){
+			if (allDivs[i].getAttribute('data-custom-style') == "WW-paragraph") {
 				let paraRoot = parse (allDivs[i].innerHTML.replace(/[\r\n]+/gm, " "))
 				let imgArr = paraRoot.getElementsByTagName('img')
-				for(let j in imgArr) {
-					let currentImgSrc = imgArr[j].outerHTML.replace(/style=.*" / ,'').replace('<img src=\"', '').replace('\" >', '')
-					let currentImgAlt = imgArr[j].outerHTML.replace(/src=".*alt="/ ,'').replace('<img ', '').replace('\" >', '')
-					if (currentImgAlt.substring(0,5) == 'src="') {
-						console.log(`❌ No Alt Text for image for ${currentImgSrc}`)
-					}
-					let imgHTML = `<img src='${currentImgSrc}' style='`
-					//console.log(currentImgSrc)
-					//console.log(currentImgAlt)
-					let altArr = currentImgAlt.split('|')
-					for (let k in altArr) {
-						//console.log(altArr[k])
-						let [key, value] = altArr[k].split(':')
-						if (key=='position') {
-							if (value == 'center')
-							imgHTML += `display:block; margin: 0 auto; `
-						} else
-						if (key == 'size') {
-							imgHTML += `width:${value}%; `
+				let newHTML = ''
+				if (imgArr[0]) {
+					for(let j in imgArr) {
+						let currentImgSrc = imgArr[j].outerHTML.replace(/style=.*" / ,'').replace('<img src=\"', '').replace('\" >', '')
+						let currentImgAlt = imgArr[j].outerHTML.replace(/src=".*alt="/ ,'').replace('<img ', '').replace('\" >', '')
+						if (currentImgAlt.substring(0,5) == 'src="') {
+							console.log(`❌ No Alt Text for image for ${currentImgSrc}`)
 						}
+						let imgHTML = `<a data-fslightbox href="${currentImgSrc}"><img src='${currentImgSrc}' `
+						let altArr = currentImgAlt.split('|')
+						for (let k in altArr) {
+							let [key, value] = altArr[k].split(':')
+							switch (key) {
+								case ('alt'):
+									imgHTML += `alt='${value}' `
+									break;
+								case 'position':
+									if (value == 'center') {
+										imgHTML += `style='display:block; margin: 2em auto; `
+									} else 
+									if (value == 'center-down') {
+										imgHTML += `style='display:block; margin: 10em auto -10em auto; `
+									} else
+									if (value == 'left') {
+										imgHTML += `style='display:inline; margin: 0; `
+									}
+									break
+								case ('size'):
+									imgHTML += `width:${value}%; `
+									break
+								case ('border'):
+									if (value == 'yes') {
+										imgHTML += `border: thin solid var(--imgborder)'> </a>`
+									} else {
+										imgHTML += `'> </a>`
+									}
+									break
+								default: 
+									console.log(`❌ Alt Text for image for ${currentImgSrc} malformed in key—${key}. Valid keys are: 'alt', 'position', 'size', 'border'`)
+							}
+						}
+						newHTML += imgHTML
 					}
-					imgHTML += `'>`
-					//console.log(imgHTML)
-					imgArr[j].replaceWith(`${imgHTML}`)
+					newHTML = `<div>${newHTML}</div>`
+					allDivs[i].replaceWith(newHTML)
+				} else {
+					let tempHTML = paraRoot.innerHTML
+					for(let j=0; j < emojis.length; j++) {
+						tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}" alt="${emojis[j].filename.replace('.png', '')} emoji">`)
+					}
+					allDivs[i].replaceWith(tempHTML)
 				}
-
-				let tempHTML = paraRoot.innerHTML
-				for(let j=0; j < emojis.length; j++) {
-					tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}" alt="${emojis[j].filename.replace('.png', '')} emoji">`)
-				}
-				allDivs[i].replaceWith(tempHTML)
-
-
 
 
 			} else
@@ -1120,17 +1139,17 @@ function buildBookIndexHTML () {
 				}
 			} else
 			// CAPTIONS -- Used in conjuction with IMAGE TABLE
-			if (allDivs[i].getAttribute('data-custom-style') == "WW-caption-centered-sans"){
+			if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-sans"){
 				let tempHTML = allDivs[i].innerHTML
 				for(let j=0; j < emojis.length; j++) {
 					tempHTML = tempHTML.replaceAll(`${emojis[j].emoji}`, `<img class="emojify" src="./img/emojis/${emojis[j].filename}" alt="${emojis[j].filename.replace('png', '')}: emoji">`)
 				}
-				let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-sans'` + tempHTML.slice(4)
+				let newHTML = tempHTML.slice(0,4) + ` class='centered-sans'` + tempHTML.slice(4)
 				allDivs[i].replaceWith(newHTML)
 			} else
-			if (allDivs[i].getAttribute('data-custom-style') == "WW-caption-centered-serif"){
+			if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-serif"){
 				let tempHTML = allDivs[i].innerHTML
-				let newHTML = tempHTML.slice(0,4) + ` class='caption-centered-serif'` + tempHTML.slice(4)
+				let newHTML = tempHTML.slice(0,4) + ` class='centered-serif'` + tempHTML.slice(4)
 				allDivs[i].replaceWith(newHTML)
 			} else
 			// VERSES - 2 types one justified to the left, one centered around the longest line

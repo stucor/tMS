@@ -58,6 +58,7 @@ root {
 	--primarybackground:#fff;
 
 	--imgbackground: #1e3454;
+	--imgborder: grey;
 
 	--secondarycolor: #5c0909;
 	--secondarytextcolor: blue;

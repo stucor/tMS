@@ -1244,6 +1244,7 @@ function setTheme(){
 
 			r.style.setProperty('--primaryinterfacecolor', '#000');
 			r.style.setProperty('--imgbackground', '#00000000');
+			r.style.setProperty('--imgborder', 'grey');
 
 			r.style.setProperty('--pickedtext', '#1c222b');
 			r.style.setProperty('--buttontext', '#000');
@@ -1367,6 +1368,7 @@ function setTheme(){
 
 			r.style.setProperty('--primaryinterfacecolor', '#d7d7d7');
 			r.style.setProperty('--imgbackground', '#667b9e8f');
+			r.style.setProperty('--imgborder', 'grey');
 
 			r.style.setProperty('--TOCprogress', '#475f7a');
 			r.style.setProperty('--pickedtext', '#cfcfcf');
@@ -1495,6 +1497,7 @@ function setTheme(){
 
 			r.style.setProperty('--primaryinterfacecolor', '#00008b');
 			r.style.setProperty('--imgbackground', '#00000000');
+			r.style.setProperty('--imgborder', 'grey');			
 
 			r.style.setProperty('--pickedtext', '#5c0909');
 			r.style.setProperty('--buttontext', '#382500');

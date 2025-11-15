@@ -1238,7 +1238,7 @@ function setTheme(){
 			}
 
 			r.style.setProperty('--TOCprogress', '#ffffcf28');//'#d6630f09');  //'#d6630f08'); '#f0f2fd80');
-			r.style.setProperty('--primarytextcolor', '#13036c');
+			r.style.setProperty('--primarytextcolor', '#0a013cff');
 			r.style.setProperty('--secondarytextcolor', '#772b02ff'); //'#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
 
@@ -1395,7 +1395,7 @@ function setTheme(){
 			r.style.setProperty('--sidenavboxshadow', '2px 0 2px 1px #595959');
 
 			r.style.setProperty('--infoaddonbackground', '#afafaf48');
-			r.style.setProperty('--segmentcolor', 'crimson');
+			r.style.setProperty('--segmentcolor', 'green');
 
 			var engrave = document.getElementById('head-0');
 			engrave.style.color ='#7c7c7c';
@@ -1523,7 +1523,7 @@ function setTheme(){
 			r.style.setProperty('--sidenavboxshadow', '3px 0 6px -3px #888');
 
 			r.style.setProperty('--infoaddonbackground', '#cea1400a');
-			r.style.setProperty('--segmentcolor', 'purple');
+			r.style.setProperty('--segmentcolor', 'green');
 
 
 			var engrave = document.getElementById('head-0');

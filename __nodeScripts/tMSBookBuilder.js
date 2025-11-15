@@ -1049,9 +1049,7 @@ function buildBookIndexHTML () {
 					for(let j in imgArr) {
 						let currentImgSrc = imgArr[j].outerHTML.replace(/style=.*" / ,'').replace('<img src=\"', '').replace('\" >', '')
 						let currentImgAlt = imgArr[j].outerHTML.replace(/src=".*alt="/ ,'').replace('<img ', '').replace('\" >', '')
-						if (currentImgAlt.substring(0,5) == 'src="') {
-							console.log(`❌ No Alt Text for image for ${currentImgSrc}`)
-						}
+						if (currentImgAlt.substring(0,5) == 'src="') {console.log(`❌ No Alt Text for image for ${currentImgSrc}`)}
 						let imgHTML = `<a data-fslightbox href="${currentImgSrc}"><img src='${currentImgSrc}' `
 						let altArr = currentImgAlt.split('|')
 						for (let k in altArr) {

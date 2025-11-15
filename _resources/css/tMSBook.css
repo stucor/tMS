@@ -649,7 +649,7 @@ table.borderlessTable {
 }
 
 /***** CENTERED IMAGE *****/
-.content div.centered-img {
+/* .content div.centered-img {
 	display: plex;
 	justify-content: center;
 	align-items:center;
@@ -661,7 +661,7 @@ table.borderlessTable {
 }
 .centered-img-border > img {
 	border: 1px solid #80808080;
-}
+} */
 
 /* SPACE */
 

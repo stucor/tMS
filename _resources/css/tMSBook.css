@@ -1674,6 +1674,7 @@ sup {
 .figureSegRef, .notesSegRef, .lotSegRef, .textSegRef {
 	position: relative;
 	top:0.4em;
+	font-weight: bold;
 	color: var(--segmentcolor);
 	background-color: rgba(211, 211, 211, 0.227);
 	width:fit-content;
@@ -1682,6 +1683,7 @@ sup {
 	margin: 0;
 	padding: 0 0.4em;
 	font-size: 0.8rem;
+	min-width: 10rem;
 }
 
 .figureCaption {
@@ -1708,7 +1710,7 @@ sup {
 	border-radius: 10px;
 	line-height: 0;
 	padding-top: 0.2em;
-	margin-right: 1.8em;
+	margin-right: 0.8em;
 }
 
 .sort.asc, .sort.desc {

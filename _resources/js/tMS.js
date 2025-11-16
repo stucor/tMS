@@ -2610,9 +2610,12 @@ function toggleSesame (el) {
 						}
 						for (let i in quoteData) {
 							if (quoteData[i].suttaRef == sesameKeyArr[1]) {
+
 								let linkHTML = ``
 								if (quoteData[i].type == 'leaf') {
 									let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
+									console.log(linkTextArr[0] +'::'+linkTextArr[1] +'::'+ linkTextArr[2])
+
 									switch (linkTextArr[0]) {
 										case "dn":
 										case "an":
@@ -2621,6 +2624,7 @@ function toggleSesame (el) {
 											linkTextArr[0] = linkTextArr[0].toUpperCase()
 											break
 										case "snp":
+										case "kp":
 											if (linkTextArr[2]) { // its a vagga
 												linkTextArr[0] = ``
 											} else {
@@ -2686,10 +2690,15 @@ function toggleSesame (el) {
 						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 					});
 				} else
-				if ((sesameKeyArr[0] == `bodhi-nikaya-notes`)||(sesameKeyArr[0] == `bodhi-nikaya`)) {
+				if ((sesameKeyArr[0] == `bodhi-nikaya-notes`)||
+					(sesameKeyArr[0] == `bodhi-nikaya`) ||
+					(sesameKeyArr[0] == `bodhi-nikaya-commentary`)||
+					(sesameKeyArr[0] == `bodhi-books`)) {
 					let nikDir = ''
 					if (sesameKeyArr[0] == `bodhi-nikaya`) {
 						nikDir = `/${sesameKeyArr[1].slice(0,2).toUpperCase()}`
+					} else {
+						console.log(sesameKeyArr[1])
 					}
 					let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}${nikDir}/${sesameKeyArr[1]}.json`
 					function populateSesame(quoteData) {

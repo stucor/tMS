@@ -1,19 +1,19 @@
-Wed Nov 12 2025 11:07:54 GMT+0000 (Greenwich Mean Time)
+Sun Nov 16 2025 13:52:52 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
 [
 {
 	"sesame": "A Hundred Spears",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn56.35"
 },
 {
 	"sesame": "AN 3.33",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya:an3.33"
 },
 {
 	"sesame": "AN 7.49",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya:an7.49"
 },
 {
 	"sesame": "Abhidhamma",
@@ -21,11 +21,11 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Advice to Anāthapiṇḍika Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn143"
 },
 {
 	"sesame": "Analysis of the Elements Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn140"
 },
 {
 	"sesame": "Anupada Sutta",
@@ -33,19 +33,19 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Anurādha Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn22.86"
 },
 {
 	"sesame": "Anāthapiṇḍika Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "ud-blurbs:ud8.1"
 },
 {
 	"sesame": "Arthaviniścaya Sūtra",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Arthaviniscaya_Sutra"
 },
 {
 	"sesame": "Assalāyana Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn93"
 },
 {
 	"sesame": "Aṅguttara Nikāya",
@@ -53,83 +53,83 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Bhava Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "an-blurbs:an3.76"
 },
 {
 	"sesame": "Bodhi 2000 n.110",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-22-110"
 },
 {
 	"sesame": "Bodhi 2000 n.112",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-22-112"
 },
 {
 	"sesame": "Bodhi 2000 n.114",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-22-114"
 },
 {
 	"sesame": "Bodhi 2000 n.166",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-12-166"
 },
 {
 	"sesame": "Bodhi 2000 n.173",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-12-173"
 },
 {
 	"sesame": "Bodhi 2000 n.174",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-12-174"
 },
 {
 	"sesame": "Bodhi 2000 n.182",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-2-182"
 },
 {
 	"sesame": "Bodhi 2000 n.206",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-22-206"
 },
 {
 	"sesame": "Bodhi 2000 n.24",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-12-24"
 },
 {
 	"sesame": "Bodhi 2000 n.25",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-12-25"
 },
 {
 	"sesame": "Bodhi 2000 n.339",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-18-339"
 },
 {
 	"sesame": "Bodhi 2000 n.38",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-1-38"
 },
 {
 	"sesame": "Bodhi 2000 n.4",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-12-4"
 },
 {
 	"sesame": "Bodhi 2000 n.48",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-12-48"
 },
 {
 	"sesame": "Bodhi 2000 n.53",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-35-53"
 },
 {
 	"sesame": "Bodhi 2000 n.81",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-22-81"
 },
 {
 	"sesame": "Bodhi 2000 p.48",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-GenIntro-Namarupa"
 },
 {
 	"sesame": "Bodhi 2000 p.518",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-CausationIntro-12Nidanasamyutta"
 },
 {
 	"sesame": "Bodhi 2000 p.522",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-CausationIntro-12Nidanasamyutta"
 },
 {
 	"sesame": "Bodhi 2000 p.840",
@@ -137,11 +137,11 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Bodhi 2012 at AN 3.32",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya:an3.32"
 },
 {
 	"sesame": "Bodhi 2012 n.503",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:AN-503"
 },
 {
 	"sesame": "Bodhi 2012, AN 10.65",
@@ -149,23 +149,23 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Bodhi 2017 p.523",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-commentary:PjII-209"
 },
 {
 	"sesame": "Bodhi 2020 p.25",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-books:RBDP-0BriefOverviewGrammar-Prefixes"
 },
 {
 	"sesame": "Bodhi 2020, 6. The Unconditioned: The Goal, Introduction",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-books:RBDP-6TheUnconditioned-Intro"
 },
 {
 	"sesame": "Brahmavamso 2006 p.221",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "brahm-books:mbb-24-009"
 },
 {
 	"sesame": "Brahmavamso 2006 ‘The Nature of Citta’",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "brahm-books:mbb-17-017"
 },
 {
 	"sesame": "Bṛhadāraṇyaka Upaniṣad",
@@ -173,7 +173,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Child’s Flesh Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn12.63"
 },
 {
 	"sesame": "Chāndogya",
@@ -185,35 +185,35 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "City Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn12.65"
 },
 {
 	"sesame": "Cūḷaniddesa",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:cnd"
 },
 {
 	"sesame": "Cūḷavedalla Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn44"
 },
 {
 	"sesame": "Dhammasaṅgaṇī",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:ds"
 },
 {
 	"sesame": "Dhātu Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "iti-blurbs:iti51"
 },
 {
 	"sesame": "Discourse on Rebirth Through Will",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn120"
 },
 {
 	"sesame": "Discourse on the Foolish and Wise",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn129"
 },
 {
 	"sesame": "Dog-Duty Ascetic Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn57"
 },
 {
 	"sesame": "Dīgha Nikāya",
@@ -221,39 +221,27 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Dīrgha Āgama",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:da"
 },
 {
 	"sesame": "Ekottarika",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:ea"
 },
 {
 	"sesame": "Ekottarika Āgama",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:ea"
 },
 {
 	"sesame": "First Discourse on Intention",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn12.38"
 },
 {
 	"sesame": "First Discourse on the Leash",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn22.99"
 },
 {
 	"sesame": "Godhika Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Gombrich 2009",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Great Discourse on the Sources [of Things]",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Great Lion’s Roar Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn4.23"
 },
 {
 	"sesame": "If There is Desire Discourse",
@@ -269,11 +257,11 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Kāṇva Śatapatha Brāhmaṇa",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Shatapatha_Brahmana"
 },
 {
 	"sesame": "Longer Discourse on Advice to Rāhula",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn62"
 },
 {
 	"sesame": "Longer Discourse on the Ending of Craving",
@@ -281,7 +269,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "MMK",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Mūlamadhyamakakārikā"
 },
 {
 	"sesame": "Madhyama Āgama",
@@ -289,7 +277,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Mahānidāna",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn15"
 },
 {
 	"sesame": "Mahānidāna Sutta",
@@ -297,7 +285,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Mahāpadāna Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn14"
 },
 {
 	"sesame": "Mahāvedalla Sutta",
@@ -305,7 +293,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Mahā­sati­paṭ­ṭhā­na Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn22"
 },
 {
 	"sesame": "Majjhima Nikāya",
@@ -317,31 +305,19 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Nidāna Saṁyutta,",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Olivelle",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:sn12"
 },
 {
 	"sesame": "Pañcattaya Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Paṭiccasamuppāda Vibhaṅga",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn102"
 },
 {
 	"sesame": "Paṭisambhidāmagga",
 	"key": "super-blurbs:ps"
 },
 {
-	"sesame": "Piyadassi",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
 	"sesame": "Precipice Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn56.42"
 },
 {
 	"sesame": "Pārāyana Vagga",
@@ -349,27 +325,27 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Questions of Milinda",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:mil"
 },
 {
 	"sesame": "Ratana Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "kp-blurbs:kp6"
 },
 {
 	"sesame": "SN 15",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn15"
 },
 {
 	"sesame": "Sampasādanīya Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn28"
 },
 {
 	"sesame": "Sangīti Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn33"
 },
 {
 	"sesame": "Sappurisa Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn113"
 },
 {
 	"sesame": "Sarvāstivādins",
@@ -457,6 +433,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "The Discourse on Right View",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "The Great Lion’s Roar Discourse",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

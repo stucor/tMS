@@ -14,6 +14,13 @@
     "type": "branch"
   },
   {
+    "suttaRef": "an3.76",
+    "rootTitle": "Paṭhamabhavasutta",
+    "transTitle": "Continued Existence (1st) ",
+    "blurb": "How consciousness, karma, and craving create and sustain future lives.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "an5.23",
     "rootTitle": "Upakkilesasutta",
     "transTitle": "Corruptions ",
@@ -39,6 +46,13 @@
     "rootTitle": "Cūḷaniddesa",
     "transTitle": "Shorter Exposition ",
     "blurb": "The Cūḷaniddesa or “Shorter Exposition” is really one half of a book together with the Mahāniddesa or “Great Exposition”. They offer commentaries on certain portions of the Sutta Nipāta, and lack counterparts in the northern canons. The Cūḷaniddesa comments on the “Way to the Beyond” and the “Rhinoceros Horn Sutta”.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "da",
+    "rootTitle": "Dīrghāgama",
+    "transTitle": "Long Discourses Compilation ",
+    "blurb": "The version of the Long Discourses found in the Chinese canon is known as the Dīrghāgama (Chang ahan jing, 長阿含經), and is believed to stem from the Dharmaguptaka school. It consists of 22 fascicles that were translated by Buddhayaśas (佛陀耶舍) and Zhu Fonian (竺佛念) in CE 412–13. Its four chapters focus respectively on the life of the Buddha, teaching and practice, refutation of non-Buddhists, and cosmology. It contains 30 sūtras in contrast to the 34 suttas of the Theravādin Dīgha Nikāya. In the Taishō edition of the Chinese canon, it is the very first text, located at T vol. 1, 1a.",
     "type": "branch"
   },
   {
@@ -77,6 +91,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "dn14",
+    "rootTitle": "Mahāpadānasutta",
+    "transTitle": "The Great Discourse on Traces Left Behind ",
+    "blurb": "The Buddha teaches about the six Buddhas of the past, and tells a lengthy account of one of those, Vipassī.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "dn15",
     "rootTitle": "Mahānidānasutta",
     "transTitle": "The Great Discourse on Causation ",
@@ -95,6 +116,13 @@
     "rootTitle": "Sāmaññaphalasutta",
     "transTitle": "The Fruits of the Ascetic Life ",
     "blurb": "The newly crowned King Ajātasattu is disturbed by the violent means by which he achieved the crown. He visits the Buddha to find peace of mind, and asks him about the benefits of spiritual practice. This is one of the greatest literary and spiritual texts of early Buddhism.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "dn22",
+    "rootTitle": "Mahāsatipaṭṭhānasutta",
+    "transTitle": "The Longer Discourse on Mindfulness Meditation ",
+    "blurb": "The Buddha details the seventh factor of the noble eightfold path, mindfulness meditation. This discourse is essentially identical to MN 10, with the addition of an extended section on the four noble truths derived from MN 141.",
     "type": "leaf"
   },
   {
@@ -119,11 +147,32 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "ds",
+    "rootTitle": "Dhammasaṅgaṇī",
+    "transTitle": "Compendium of Phenomena ",
+    "blurb": "The Dhammasaṅgaṇī (Compendium of Phenomena) is built on the idea of a <i lang='pi' translate='no'>mātikā</i>, a lists of contents or matrix. A <i lang='pi' translate='no'>mātikā</i> acts as a simple instance of a template that is applied and transformed in ever more complex forms throughout the work. The Dhammasaṅgaṇī <i lang='pi' translate='no'>mātikās</i> list sets of phenomena (<i lang='pi' translate='no'>dhammas</i>). Most of these are doctrinal terms familiar from the suttas, although some are specialized Abhidhamma terms. The Dhammasaṅgaṇī starts with three <i lang='pi' translate='no'>mātikās</i>. The first classifies <i lang='pi' translate='no'>dhammas</i> into 22 sets of three (<i lang='pi' translate='no'>tika</i>), and the next two use sets of two (<i lang='pi' translate='no'>duka</i>), 100 pairs for Abhidhamma terms, and 42 for Sutta terms. The first of the triple sets is the momentous group: wholesome, unwholesome, and undetermined. This serves as a framework for classifying all the various phenomena. While it seems simple enough, even this detail was controversial, as some schools rejected the existence of the undetermined, or morally neutral, category.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "ea",
+    "rootTitle": "Ekottarikāgama (1st)",
+    "transTitle": "Numbered Discourses Compilation (1st) ",
+    "blurb": "The main version of the Numbered or Incremental Discourses found in the Chinese canon is known as the Ekottarikāgama (Zengyi ahan jing, 增一阿含經), and has been tentatively ascribed to the Mahāsaṅghika school. It was translated by Gautama Saṅghadeva (瞿曇僧伽提婆), who also translated the Madhyamāgama, in CE 397. Consisting of 51 fascicles, it is organized into 52 chapters, containing a total of 451 sutras. Like the Pali Aṅguttara, it is arranged by numbered sets from one to eleven. However, despite the structural similarity, the contents diverge widely from the Pali. It contains relatively fewer parallels than the other āgama collections. In the Taishō edition of the Chinese canon, it is text number 125, located at T vol. 2, 549a.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "iti",
     "rootTitle": "Itivuttaka",
     "transTitle": "So It Was Said ",
     "blurb": "112 short discourses in mixed prose and verse, arranged in the Aṅguttara style of ascending numbered sets, from one to four. Alone among Buddhist texts, its survival is attributed not to the Saṅgha, but to a laywoman named Khujjuttarā. According to the Pali commentaries, she was a maid to the Queen of Kosambi, and memorized these teachings from the Buddha, earning her the title of the most learned of the laywomen disciples.",
     "type": "branch"
+  },
+  {
+    "suttaRef": "iti51",
+    "rootTitle": "Dhātusutta",
+    "transTitle": "Elements ",
+    "blurb": "Three properties: form, formlessness, cessation.",
+    "type": "leaf"
   },
   {
     "suttaRef": "ja",
@@ -145,6 +194,13 @@
     "transTitle": "Minor Collection ",
     "blurb": "The word <i lang='pi' translate='no'>khuddaka</i> means “lesser” or “minor”, and it seems that this category originally served to collect certain short collections, mostly verse, that were not conveniently assigned to one of the main <i lang='pi' translate='no'>nikāyas</i>. Over time, however, the collection grew, so that the Khuddaka in the Pali canon today is the largest of the <i lang='pi' translate='no'>nikāyas</i>. It includes some of the most popular texts in Theravāda Buddhism, such as the Dhammapada, the Sutta Nipāta, and the Jātakas. There is no closely parallel collection in the other canons, but many of the early texts have parallels in various places.",
     "type": "branch"
+  },
+  {
+    "suttaRef": "kp6",
+    "rootTitle": "Ratanasutta",
+    "transTitle": "Gems ",
+    "blurb": "The many treasures to be found in the Triple Gem.",
+    "type": "leaf"
   },
   {
     "suttaRef": "ma",
@@ -189,6 +245,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn102",
+    "rootTitle": "Pañcattayasutta",
+    "transTitle": "The Five and Three ",
+    "blurb": "A middle length version of the more famous Brahmajāla Sutta (DN1), this surveys a range of speculative views and dismisses them all.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn111",
     "rootTitle": "Anupadasutta",
     "transTitle": "One by One ",
@@ -217,6 +280,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn129",
+    "rootTitle": "Bālapaṇḍitasutta",
+    "transTitle": "The Foolish and the Astute ",
+    "blurb": "A fool suffers both in this life and the next, while the astute benefits in both respects.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn13",
     "rootTitle": "Mahādukkhakkhandhasutta",
     "transTitle": "The Longer Discourse on the Mass of Suffering ",
@@ -228,6 +298,13 @@
     "rootTitle": "Cūḷakammavibhaṅgasutta",
     "transTitle": "The Shorter Analysis of Deeds ",
     "blurb": "The Buddha explains to a brahmin how your deeds in past lives affect you in this life.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn140",
+    "rootTitle": "Dhātuvibhaṅgasutta",
+    "transTitle": "The Analysis of the Elements ",
+    "blurb": "While staying overnight in a potter’s workshop, the Buddha has a chance encounter with a monk who does not recognize him. They have a long and profound discussion based on the four elements. This is one of the most insightful and moving discourses in the canon.",
     "type": "leaf"
   },
   {
@@ -273,6 +350,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn44",
+    "rootTitle": "Cūḷavedallasutta",
+    "transTitle": "The Shorter Classification ",
+    "blurb": "The layman Visākha asks the nun Dhammadinnā about various difficult matters, including some of the highest meditation attainments. The Buddha fully endorses her answers.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn49",
     "rootTitle": "Brahmanimantanikasutta",
     "transTitle": "On the Invitation of Divinity ",
@@ -280,10 +364,31 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn57",
+    "rootTitle": "Kukkuravatikasutta",
+    "transTitle": "The Ascetic Who Behaved Like a Dog ",
+    "blurb": "Some ascetics in ancient India undertook extreme practices, such as a vow to behave like an ox or a dog. The Buddha meets two such individuals, and is reluctantly pressed to reveal the kammic outcomes of such practice.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn62",
+    "rootTitle": "Mahārāhulovādasutta",
+    "transTitle": "The Longer Advice to Rāhula ",
+    "blurb": "The Buddha tells Rāhula to meditate on not-self, which he immediately puts into practice. Seeing him, Venerable Sāriputta advises him to develop breath meditation, but the Buddha suggests a wide range of different practices first.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn66",
     "rootTitle": "Laṭukikopamasutta",
     "transTitle": "The Simile of the Quail ",
     "blurb": "Again raising the rule regarding eating, but this time as a reflection of gratitude for the Buddha in eliminating things that cause complexity and stress. The Buddha emphasizes how attachment even to little things can be dangerous.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn93",
+    "rootTitle": "Assalāyanasutta",
+    "transTitle": "With Assalāyana ",
+    "blurb": "A precocious brahmin student is encouraged against his wishes to challenge the Buddha on the question of caste. His reluctance turns out to be justified.",
     "type": "leaf"
   },
   {
@@ -357,11 +462,39 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "sn12.38",
+    "rootTitle": "Cetanāsutta",
+    "transTitle": "Intention ",
+    "blurb": "Intentions or choices are the force that propels consciousness from one life to the next.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn12.63",
+    "rootTitle": "Puttamaṁsasutta",
+    "transTitle": "A Child’s Flesh ",
+    "blurb": "The Buddha defines the four kinds of “food” or “nutriment”, which include edible food, contact, intention, and consciousness. He illustrates them with a series of powerful and horrifying similes.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "sn12.64",
     "rootTitle": "Atthirāgasutta",
     "transTitle": "If There Is Desire ",
     "blurb": "The Buddha defines the four kinds of “food” or “nutriment”, which include edible food, contact, intention, and consciousness, showing how they lead to suffering according to dependent origination. ",
     "type": "leaf"
+  },
+  {
+    "suttaRef": "sn12.65",
+    "rootTitle": "Nagarasutta",
+    "transTitle": "The City ",
+    "blurb": "The Buddha tells the story of how his awakening came about through investigation into dependent origination. He compares it to a man discovering and ancient city, lost and overgrown with weeds.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn15",
+    "rootTitle": "Anamataggasaṁyutta",
+    "transTitle": "Linked Discourses on the Unknowable Beginning ",
+    "blurb": "The “Linked Discourses on the Unknowable Beginning” contains 20 discourses that speak of how the ultimate origin of the process of transmigration (<i lang='pi' translate='no'>saṁsāra</i>) is unknowable. This theme is a direct counter to the hubris of the creation myths found in most religions, which confidently recount events which are in fact permanently hidden from view. The Buddha emphasized that transmigration has been ongoing for a fathomless period of time, illustrating it with a series of powerful similes.",
+    "type": "branch"
   },
   {
     "suttaRef": "sn22.59",
@@ -375,6 +508,20 @@
     "rootTitle": "Yamakasutta",
     "transTitle": "With Yamaka ",
     "blurb": "Venerable Yamaka had the wrong view that one whose defilements have ended is annihilated at death. The monks ask Sāriputta to help, and he asks Yamaka whether a realized one in this very life may be identified as one of the aggregates, or apart from them. Convinced, Yamaka lets go of his view and sees the Dhamma.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn22.86",
+    "rootTitle": "Anurādhasutta",
+    "transTitle": "With Anurādha ",
+    "blurb": "Venerable Anurādha is questioned by a number of ascetics, and ends up by saying that a realized one is described in terms other than “still existing after death” and so on. The wanderers say he’s a fool, so he checks with the Buddha, who says that a realized one is not even apprehended in this life, so how can he be described after death?",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn22.99",
+    "rootTitle": "Gaddulabaddhasutta",
+    "transTitle": "A Leash ",
+    "blurb": "Transmigration has no knowable beginning; even the oceans, mountains, and this great earth will perish. But like a dog on a leash running around a post, beings remain attached to the aggregates.",
     "type": "leaf"
   },
   {
@@ -406,11 +553,32 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "sn4.23",
+    "rootTitle": "Godhikasutta",
+    "transTitle": "With Godhika ",
+    "blurb": "Venerable Godhika finds himself repeatedly falling away from his meditation attainments due to severe illness. Eventually he considers suicide, and Māra tries to get the Buddha to deter him. But the Buddha says Godhika has already attained awakening and has died blamelessly.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "sn43",
     "rootTitle": "Asaṅkhatasaṁyutta",
     "transTitle": "Linked Discourses on the Unconditioned ",
     "blurb": "The “Linked Discourses on the Unconditioned” contains 44 discourses on the theme of the unconditioned, i.e. <i lang='pi' translate='no'>nibbāna</i> or “extinguishment”. They focus on the various practices that lead to the unconditioned. This chapter includes an extensive range of terms and idioms describing the final goal of Buddhist practice.",
     "type": "branch"
+  },
+  {
+    "suttaRef": "sn56.35",
+    "rootTitle": "Sattisatasutta",
+    "transTitle": "A Hundred Spears ",
+    "blurb": "Even more than if you’re being tortured with spikes, you should make an effort to understand the four noble truths.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn56.42",
+    "rootTitle": "Papātasutta",
+    "transTitle": "A Cliff ",
+    "blurb": "The Buddha takes the mendicants to a steep precipice, and points out that those who do not understand the four noble truths fall into a still deeper precipice.",
+    "type": "leaf"
   },
   {
     "suttaRef": "sn6.4",
@@ -467,6 +635,13 @@
     "transTitle": "The Chapter with the Pāṭali Villagers",
     "blurb": "The final chapter deals with the Buddha’s final passing away and the crisis of faith that this created. It begins with series of solemn declarations on Nibbana and ends with the spectacular passing of the monk Dabba. ",
     "type": "branch"
+  },
+  {
+    "suttaRef": "ud8.1",
+    "rootTitle": "Paṭhamanibbānapaṭisaṁyuttasutta",
+    "transTitle": "About Extinguishment (1st) ",
+    "blurb": "The nature of extinguishment.",
+    "type": "leaf"
   },
   {
     "suttaRef": "vinaya",

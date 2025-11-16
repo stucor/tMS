@@ -966,7 +966,7 @@ dd > p {
 
 span.sesame {
 	/* border-bottom: dotted thin rgba(100, 148, 237, 0.474); */
-	border-bottom: solid thin red;
+	border-bottom: solid thick rgba(141, 16, 16, 0.719);
 	cursor:pointer;
 	/* background:rgba(255, 224, 252, 0.274); */
 }

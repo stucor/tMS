@@ -14,10 +14,24 @@
     "type": "branch"
   },
   {
+    "suttaRef": "an3.23",
+    "rootTitle": "Saṅkhārasutta",
+    "transTitle": "Choices ",
+    "blurb": "Hurtful or pleasing choices lead to hurtful or pleasing experiences in future lives.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "an3.76",
     "rootTitle": "Paṭhamabhavasutta",
     "transTitle": "Continued Existence (1st) ",
     "blurb": "How consciousness, karma, and craving create and sustain future lives.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "an4.195",
+    "rootTitle": "Vappasutta",
+    "transTitle": "With Vappa ",
+    "blurb": "A discussion with a Jain on whether someone with purified understanding can experience the results of bad karma in the next life.",
     "type": "leaf"
   },
   {
@@ -77,6 +91,13 @@
     "type": "branch"
   },
   {
+    "suttaRef": "dn-silakkhandhavagga",
+    "rootTitle": "Sīlakkhandhavagga",
+    "transTitle": "The Chapter on the Entire Spectrum of Ethics ",
+    "blurb": "The Chapter Containing the Section on Ethics (Sīlakkhandhavagga) is a chapter of 13 discourses. Each of these contains a long passage on the Gradual Training in ethics, meditation, and wisdom. The chapter is named after the first of these sections. The two other known versions of the Dīrghāgama (in Chinese and Sanskrit) also contain a similar chapter. Despite the monastic nature of the central teaching, most of these discourses are presented in dialog with lay people, with a strong emphasis on the relation between the Buddha’s teachings and other contemporary movements.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "dn1",
     "rootTitle": "Brahmajālasutta",
     "transTitle": "The Divine Net ",
@@ -126,6 +147,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "dn28",
+    "rootTitle": "Sampasādanīyasutta",
+    "transTitle": "Inspiring Confidence ",
+    "blurb": "Shortly before he passes away, Venerable Sāriputta visits the Buddha and utters a moving eulogy of his great teacher.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "dn29",
     "rootTitle": "Pāsādikasutta",
     "transTitle": "An Impressive Discourse ",
@@ -140,10 +168,24 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "dn31",
+    "rootTitle": "Siṅgālasutta",
+    "transTitle": "Advice to Sigālaka ",
+    "blurb": "The Buddha encounters a young man who honors his dead father by performing rituals. The Buddha recasts the meaningless rites in terms of virtuous conduct. This is the most detailed discourse on ethics for lay people.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "dn33",
     "rootTitle": "Saṅgītisutta",
     "transTitle": "Reciting in Concert ",
     "blurb": "The Buddha encourages Venerable Sāriputta to teach the mendicants, and he offers an extended listing of Buddhist doctrines arranged in numerical sequence.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "dn8",
+    "rootTitle": "Mahāsīhanādasutta",
+    "transTitle": "The Longer Discourse on the Lion’s Roar ",
+    "blurb": "The Buddha is challenged by a naked ascetic on the topic of spiritual austerities. He points out that it is quite possible to perform all kinds of austere practices without having any inner purity of mind.",
     "type": "leaf"
   },
   {
@@ -252,10 +294,24 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn106",
+    "rootTitle": "Āneñjasappāyasutta",
+    "transTitle": "Conducive to the Imperturbable ",
+    "blurb": "Beginning with profound meditation absorption, the Buddha goes on to deeper and deeper levels, showing how insight on this basis leads to the detaching of consciousness from any form of rebirth.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn111",
     "rootTitle": "Anupadasutta",
     "transTitle": "One by One ",
     "blurb": "The Buddha describes in technical detail the process of insight of Venerable Sāriputta. Many ideas and terms in this text anticipate the Abhidhamma.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn113",
+    "rootTitle": "Sappurisasutta",
+    "transTitle": "A True Person ",
+    "blurb": "The Buddha explains that a truly good person does not disparage others or feel superior because of their attainment.",
     "type": "leaf"
   },
   {
@@ -308,6 +364,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn141",
+    "rootTitle": "Saccavibhaṅgasutta",
+    "transTitle": "The Analysis of the Truths ",
+    "blurb": "Expanding on the Buddha’s first sermon, Venerable Sāriputta gives a detailed explanation of the four noble truths.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn143",
     "rootTitle": "Anāthapiṇḍikovādasutta",
     "transTitle": "Advice to Anāthapiṇḍika ",
@@ -329,6 +392,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn22",
+    "rootTitle": "Alagaddūpamasutta",
+    "transTitle": "The Simile of the Snake ",
+    "blurb": "One of the monks denies that prohibited conduct is really a problem. The monks and then the Buddha subject him to an impressive dressing down. The Buddha compares someone who understands only the letter of the teachings to someone who grabs a snake by the tail, and also invokes the famous simile of the raft.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn28",
     "rootTitle": "Mahāhatthipadopamasutta",
     "transTitle": "The Longer Simile of the Elephant’s Footprint ",
@@ -340,6 +410,13 @@
     "rootTitle": "Mahātaṇhāsaṅkhayasutta",
     "transTitle": "The Longer Discourse on the Ending of Craving ",
     "blurb": "To counter the wrong view that a self-identical consciousness transmigrates from one life to the next, the Buddha teaches dependent origination, showing that consciousness invariably arises dependent on conditions.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "mn41",
+    "rootTitle": "Sāleyyakasutta",
+    "transTitle": "The People of Sālā ",
+    "blurb": "The Buddha explains to a group of brahmins the conduct leading to rebirth in higher or lower states, including detailed explanations of the ten core practices which lay people should undertake, and which also form the basis for liberation.",
     "type": "leaf"
   },
   {
@@ -385,6 +462,13 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "mn9",
+    "rootTitle": "Sammādiṭṭhisutta",
+    "transTitle": "Right View ",
+    "blurb": "Venerable Sāriputta gives a detailed explanation of right view, the first factor of the noble eightfold path. At the prompting of the other mendicants, he approaches the topic from a wide range of perspectives.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "mn93",
     "rootTitle": "Assalāyanasutta",
     "transTitle": "With Assalāyana ",
@@ -413,6 +497,20 @@
     "type": "branch"
   },
   {
+    "suttaRef": "sa",
+    "rootTitle": "Saṁyuktāgama (1st)",
+    "transTitle": "Linked Discourses Compilation (1st) ",
+    "blurb": "The main version of the Linked Discourses found in the Chinese canon is known as the Saṁyuktāgama (Za ahan jing, 雜阿含經), and is believed to stem from a branch of the Sarvāstivādin school. It was translated by Guṇabhadra (求那跋陀) and Baoyun (寶雲) in CE 435–436 at Waguan Monastery (瓦官寺,) Yangdu (楊都). Like the Pali Saṁyutta Nikāya, it contains over a thousand short suttas organized by topic. The texts, however, became disordered during the transmission in China, and an extraneous passage from a later life of Ashoka was mistakenly included. In the 20th century a series of scholars reconstructed the original sequence. The text as originally found is found in the Taishō edition of the Chinese canon as sutra number 99 at T vol. 2, 1a.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "sab",
+    "rootTitle": "Śāripūtrābhidharma",
+    "transTitle": "Sāriputta’s Systematic Treatise ",
+    "blurb": "The Śāriputrābhidharmaśāstra (Shelifu Apitan Lun, 舍利弗阿毘曇論) is the only extant work of the Dharmaguptaka Abhidhamma, and was translated in thirty facsicles by Dharmayaśas and Dharmagupta in CE 408 at Ch'ang An (長安). It shares some content with the Vibhaṅga and Dharmaskandha, and other details with other texts. It seems this book may contain the entire Abhidhamma system of the Dharmaguptakas. In the Taishō edition of the Chinese canon, it is text number 1548, located at T vol. 28, 525a.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "san-lo-mvu",
     "rootTitle": "Mahāvastu",
     "transTitle": "The Great Story ",
@@ -424,6 +522,13 @@
     "rootTitle": "Saṁyuttanikāya",
     "transTitle": "Linked Discourses Collection ",
     "blurb": "The “Linked” or “Connected” Discourses (Saṁyutta Nikāya, abbreviated SN) is a collection of over a thousand short discourses in the Pali canon. The word “linked” refers to the fact that the texts are collected and organized by topic. In most cases the organizing principle is a particular theme of Dhamma, for example, the five aggregates, dependent origination, the noble eightfold path, mindfulness meditation, or the four noble truths. This collection contains the most extensive range of texts on these core themes. In other cases chapters are organized according to the person or kind of person who speaks. This collection has a full parallel in the Saṁyuktāgama (SA) of the Sarvāstivāda school in Chinese translation. In addition, there are two partial collections in Chinese (SA-2 and SA-3) as well as a number of miscellaneous or fragmentary texts in Chinese, Sanskrit, and Tibetan. Much of the organizational structure of SN is shared with SA, suggesting that this structure preceded the split between these two collections.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "sn-salayatanavaggasamyutta",
+    "rootTitle": "Saḷāyatanavaggasaṁyutta",
+    "transTitle": "The Group of Linked Discourses Beginning With the Six Sense Fields ",
+    "blurb": "The “Book of the Six Sense Fields” is the fourth of the five books of the Linked Discourses. It is named after the first and longest <i lang='pi' translate='no'>saṁyutta</i>, which deals with the core Buddhist teaching of the six sense fields. The second <i lang='pi' translate='no'>saṁyutta</i> on Feelings also deals with a major doctrinal topic. The remaining eight <i lang='pi' translate='no'>saṁyuttas</i> deal with miscellaneous secondary themes, some organized by subject, others by person.",
     "type": "branch"
   },
   {
@@ -469,6 +574,20 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "sn12.39",
+    "rootTitle": "Dutiyacetanāsutta",
+    "transTitle": "Intention (2nd) ",
+    "blurb": "Intentions or choices are the force that propels consciousness from one life to the next.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn12.40",
+    "rootTitle": "Tatiyacetanāsutta",
+    "transTitle": "Intention (3rd) ",
+    "blurb": "Intentions or choices are the force that propels consciousness from one life to the next.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "sn12.63",
     "rootTitle": "Puttamaṁsasutta",
     "transTitle": "A Child’s Flesh ",
@@ -497,6 +616,20 @@
     "type": "branch"
   },
   {
+    "suttaRef": "sn22.100",
+    "rootTitle": "Dutiyagaddulabaddhasutta",
+    "transTitle": "A Leash (2nd) ",
+    "blurb": "A dog leashed to a post will always remain close to that post. In the same way, beings remain close to aggregates in this endless cycle of transmigration. The Buddha refers to a well-known painting called “Conduct”, and says the mind is even more diverse than that; and indeed, the animal realm is the most diverse of them all, and it is produced by the mind.",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn22.54",
+    "rootTitle": "Bījasutta",
+    "transTitle": "Seeds of Plants ",
+    "blurb": "Consciousness is like a seed that is planted in the soil of the other four aggregates and watered with craving.",
+    "type": "leaf"
+  },
+  {
     "suttaRef": "sn22.59",
     "rootTitle": "Anattalakkhaṇasutta",
     "transTitle": "The Characteristic of Not-Self ",
@@ -515,6 +648,13 @@
     "rootTitle": "Anurādhasutta",
     "transTitle": "With Anurādha ",
     "blurb": "Venerable Anurādha is questioned by a number of ascetics, and ends up by saying that a realized one is described in terms other than “still existing after death” and so on. The wanderers say he’s a fool, so he checks with the Buddha, who says that a realized one is not even apprehended in this life, so how can he be described after death?",
+    "type": "leaf"
+  },
+  {
+    "suttaRef": "sn22.87",
+    "rootTitle": "Vakkalisutta",
+    "transTitle": "With Vakkali ",
+    "blurb": "Venerable Vakkali is ill, and asks the Buddha to visit him. The Buddha does so, but says there is no point in seeing his physical body, as one who sees the Dhamma sees him. Later, Vakkali is taken to the Black Rock on Isigili, where he declares that he has no attachment to the aggregates, and takes his own life. The Buddha says that he had attained final extinguishment.",
     "type": "leaf"
   },
   {
@@ -564,6 +704,13 @@
     "rootTitle": "Asaṅkhatasaṁyutta",
     "transTitle": "Linked Discourses on the Unconditioned ",
     "blurb": "The “Linked Discourses on the Unconditioned” contains 44 discourses on the theme of the unconditioned, i.e. <i lang='pi' translate='no'>nibbāna</i> or “extinguishment”. They focus on the various practices that lead to the unconditioned. This chapter includes an extensive range of terms and idioms describing the final goal of Buddhist practice.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "sn47",
+    "rootTitle": "Satipaṭṭhānasaṁyutta",
+    "transTitle": "Linked Discourses on Mindfulness Meditation ",
+    "blurb": "The “Linked Discourses on Mindfulness Meditation” contains 104 discourses on the four kinds of mindfulness meditation (<i lang='pi' translate='no'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on Mindfulness Meditation” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find mindfulness closely connected to absorption, as it is the factor of the path that leads directly to “right immersion”. Insight is mentioned only rarely. The root meaning of the term mindfulness (<i lang='pi' translate='no'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on mindfulness meditation; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of mindfulness (<i lang='pi' translate='no'>sati</i>) is “situational awareness” (<i lang='pi' translate='no'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.",
     "type": "branch"
   },
   {
@@ -623,6 +770,13 @@
     "type": "branch"
   },
   {
+    "suttaRef": "thig",
+    "rootTitle": "Therīgāthā",
+    "transTitle": "Verses of the Senior Nuns ",
+    "blurb": "The “Verses of the Senior Nuns” is a collection of about 524 verses attributed to 73 of the senior nuns alive in the Buddha’s time, or in a few cases, a little later. These verses celebrate the bliss of freedom and the life of meditation, full of proud and joyous proclamations of their spiritual attainments and their gratitude to other nuns as guides and teachers. The Therīgāthā is one of the oldest spiritual texts recording only women’s voices. It is a pair with the Theragāthā, the “Verses of the Senior Monks”. Together these collections constitute one of the oldest and largest collections of contemplative literature. Based on style and content, these collections belong to the early discourses. They are referred to on occasion in the northern canons, but no parallel collections have survived.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "ud",
     "rootTitle": "Udāna",
     "transTitle": "Heartfelt Sayings ",
@@ -642,6 +796,13 @@
     "transTitle": "About Extinguishment (1st) ",
     "blurb": "The nature of extinguishment.",
     "type": "leaf"
+  },
+  {
+    "suttaRef": "uv",
+    "rootTitle": "Udānavarga",
+    "transTitle": "Handbook of Heartfelt Sayings ",
+    "blurb": "The Udānavarga or “Collection of Inspired Sayings” is a Sarvāstivādin Dhammapada-style text. At 1044 verses, it is over twice as long as the Pali Dhammapada, and the longest of all the Dhammapadas. The manuscript was among the Sanskrit texts discovered at Turfan. The SuttaCentral text is sourced from the Titus edition prepared by Gippert and Kupfer, and based on the edition by Bernhard (1965). There are Chinese and Tibetan translations of this text.",
+    "type": "branch"
   },
   {
     "suttaRef": "vinaya",

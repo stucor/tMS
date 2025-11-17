@@ -965,8 +965,8 @@ dd > p {
 */
 
 span.sesame {
-	/* border-bottom: dotted thin rgba(100, 148, 237, 0.474); */
-	border-bottom: solid thick rgba(141, 16, 16, 0.719);
+	/* border-bottom: dotted thin rgba(100, 148, 237, 0.842); */
+	border-bottom: solid 2px rgba(141, 16, 16, 0.719);
 	cursor:pointer;
 	/* background:rgba(255, 224, 252, 0.274); */
 }
@@ -1004,10 +1004,11 @@ span.opensesame {
 	top:-0.05em;
 	color: cornflowerblue;
 	font-style: normal;
-	padding: 0 0.2em 0 0.8em;
+	padding: 0 0.2em 0 0.2em;
 	content: '\22A0'; 
+	cursor: pointer;
 	background-color: var(--sesamebackground); 
-	border-bottom: 2px solid var(--sesamebackground);
+	/* border-bottom: 2px solid var(--sesamebackground); */
 }
 
 span[class^="sesame closebutton"]  {
@@ -2617,11 +2618,12 @@ mark.current {
 
 /* Self Quotes */
 .named-section {
+	color: var(--secondarytextcolor);
 	width:fit-content;
 	position: relative;
 	top: var(--namedpositiontop);
 	left: var(--namedpositionleft);
-	font-size: 0.8em;
+	font-size: 0.9em;
 	/* color: var(--secondarytextcolor); */
 	margin:0;
 	line-height: 0;

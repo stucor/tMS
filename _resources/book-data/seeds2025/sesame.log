@@ -1,4 +1,4 @@
-Sun Nov 16 2025 13:52:52 GMT+0000 (Greenwich Mean Time)
+Mon Nov 17 2025 14:31:57 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -349,23 +349,23 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Sarvāstivādins",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Sarvastivada"
 },
 {
 	"sesame": "Satipaṭṭhāna Saṁyutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn47"
 },
 {
 	"sesame": "Satippaṭṭhāna Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn10"
 },
 {
 	"sesame": "Saḷāyatana Vagga",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn-salayatanavaggasamyutta"
 },
 {
 	"sesame": "Saṁyukta Āgama",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:sa"
 },
 {
 	"sesame": "Saṁyutta Nikāya",
@@ -373,99 +373,83 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Saṅkhāra Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "an-blurbs:an3.23"
 },
 {
 	"sesame": "Saṅkhāra-upapatti Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Second",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn120"
 },
 {
 	"sesame": "Second Discourse on Intention",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn12.39"
 },
 {
 	"sesame": "Second Discourse on the Leash",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn22.100"
 },
 {
 	"sesame": "Seeds Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn22.54"
 },
 {
 	"sesame": "Simile of the Snake Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Sujato 2023",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Sujato 2023 note",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn22"
 },
 {
 	"sesame": "Suttanipāta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:snp"
 },
 {
 	"sesame": "Sāleyyaka Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn41"
 },
 {
 	"sesame": "Sīgālovāda Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn31"
 },
 {
 	"sesame": "Sīlakkhandha Vagga",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn-silakkhandhavagga"
 },
 {
 	"sesame": "The Analysis of the Truths",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn141"
 },
 {
 	"sesame": "The Book of the Six Sense Fields in Sujato 2019",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sujato-nikaya-notes:sn-guide-5TheBookoftheSixSenseFields"
 },
 {
 	"sesame": "The Discourse on Right View",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn9"
 },
 {
 	"sesame": "The Great Lion’s Roar Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "dn-blurbs:dn8"
 },
 {
 	"sesame": "The Longer Discourse on the Lion’s Roar",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn12"
 },
 {
 	"sesame": "The Longer Discourse on the Simile of the Elephant’s Footprint",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn28"
 },
 {
 	"sesame": "Theravāda Abhidhamma",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:abhidhamma"
 },
 {
 	"sesame": "Theravādins",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Therīgātha",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Theravada"
 },
 {
 	"sesame": "Therīgāthā",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:thig"
 },
 {
 	"sesame": "Third Discourse on Intention",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn12.40"
 },
 {
 	"sesame": "Udāna",
@@ -473,19 +457,15 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Udānavarga",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Undisturbable Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:uv"
 },
 {
 	"sesame": "Upaniṣad",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Upanishads"
 },
 {
 	"sesame": "Upaniṣadic",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "wp:Upanishads"
 },
 {
 	"sesame": "Upaniṣads",
@@ -493,11 +473,11 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Vakkali Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn22.87"
 },
 {
 	"sesame": "Vappa Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "an-blurbs:an4.195"
 },
 {
 	"sesame": "Vibhaṅga",
@@ -513,7 +493,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Way to the Undisturbable Discourse",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "mn-blurbs:mn106"
 },
 {
 	"sesame": "Yamaka Sutta",
@@ -529,18 +509,18 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "when one dwells contemplating gratification in things that can fetter",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya:sn12.52"
 },
 {
 	"sesame": "Ñāṇamoli 1995 n.266",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:MN-266"
 },
 {
 	"sesame": "Śāriputra Abhidharma",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "super-blurbs:sab"
 },
 {
 	"sesame": "‘Remembering Past Lives’ in Brahmavamso 2006 Chapter 13",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "brahm-books:mbb-23-001"
 }
 ]

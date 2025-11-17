@@ -2610,12 +2610,10 @@ function toggleSesame (el) {
 						}
 						for (let i in quoteData) {
 							if (quoteData[i].suttaRef == sesameKeyArr[1]) {
-
 								let linkHTML = ``
 								if (quoteData[i].type == 'leaf') {
 									let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
-									console.log(linkTextArr[0] +'::'+linkTextArr[1] +'::'+ linkTextArr[2])
-
+									//console.log(linkTextArr[0] +'::'+linkTextArr[1] +'::'+ linkTextArr[2])
 									switch (linkTextArr[0]) {
 										case "dn":
 										case "an":
@@ -2693,7 +2691,8 @@ function toggleSesame (el) {
 				if ((sesameKeyArr[0] == `bodhi-nikaya-notes`)||
 					(sesameKeyArr[0] == `bodhi-nikaya`) ||
 					(sesameKeyArr[0] == `bodhi-nikaya-commentary`)||
-					(sesameKeyArr[0] == `bodhi-books`)) {
+					(sesameKeyArr[0] == `bodhi-books`)||
+					(sesameKeyArr[0] == `sujato-nikaya-notes`)) {
 					let nikDir = ''
 					if (sesameKeyArr[0] == `bodhi-nikaya`) {
 						nikDir = `/${sesameKeyArr[1].slice(0,2).toUpperCase()}`

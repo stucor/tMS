@@ -231,10 +231,6 @@ h2 .tMSIndex {
 	font-variant: normal;
 }
 
-.named-section {
-	color: var(--secondarytextcolor);
-}
-
 #goHashBtn, #shareAtHere, #shareNoHash {
 	margin: 1em 0;
 	font-weight: 400;
@@ -296,6 +292,9 @@ h2 .tMSIndex {
 
 img .bordered {
 	border: 1px solid grey
+}
+.copybox .named-section{
+	position:static;
 }
 /* .sesame[data-sesame-key^="zot"] {
 	background:lightcyan

@@ -1011,12 +1011,12 @@ span.opensesame {
 	/* border-bottom: 2px solid var(--sesamebackground); */
 }
 
+
 span[class^="sesame closebutton"]  {
 	text-decoration: none;
  	color:var(--secondarytextcolor);
 	background-color: var(--sesamebackground); 
 }
-
 
 .opensesame h3 {
 	font-variant:small-caps; 
@@ -1027,6 +1027,26 @@ span[class^="sesame closebutton"]  {
 	font-weight: 600;
 }
 
+.closeblocksesame::before{
+	position:relative;
+	float:right;
+	top: -0.5em;
+	right: -1em;
+	content: '\22A0';
+	font-size: larger;
+	cursor: pointer;
+	color: var(--primarytextcolor)
+}
+.closeinlinesesame::before{
+	margin-left: 1em;
+	padding:0 0.3em 0 0.5em;
+	content: '\22A0';
+	cursor: pointer;
+	color: var(--primarytextcolor);
+	background: #d4c5ab20;
+	border: thin dotted #d4c5ab;
+	border-right:none;
+}
 .opensesame blockquote {
 	border-left: none;
 	padding-left: 1em;
@@ -1199,6 +1219,7 @@ dd > ol > li {
 	background: #d4c5ab20;
 	border: thin dotted #d4c5ab;
 	border-right: none;
+	border-left: none;
 	display: inline;
 	font-size: unset;
 }

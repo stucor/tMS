@@ -302,14 +302,6 @@ function startup () {
 			smallEngrave[0].classList.add('noshow')
 		}
 
-/* 		let selfquoteArr = document.getElementsByClassName("selfquote");
-		if (selfquoteArr) {
-			for (i = 0; i < selfquoteArr.length; i++) {
-				selfquoteArr[i].setAttribute('data-before-selfquote', `※${i+1}`); //※
-			}
-			
-		} */
-
 	});
 }
 
@@ -1564,7 +1556,6 @@ function setMargin() {
 			thebook.style.paddingRight = '20%';
 			marginName = "widemargin";
 		}
- 	//setSelfquoteMargins();
 	setNamedSectionPosition();
 }
 
@@ -1752,17 +1743,6 @@ window.onscroll = function() {
 		segCount.innerHTML =  `${document.getElementById('lastsegcount').innerText.replace('/','※')}`
 	}
 }
-
-function resetBlinkers() {
-	let allBlinkers = document.getElementsByClassName('blink') 
-	for (let i=0; i<allBlinkers.length; i++) {
-		allBlinkers[i].classList.remove ('blink')
-	}
-}
-
-window.addEventListener("wheel", resetBlinkers);
-window.addEventListener("touchmove", resetBlinkers);
-window.addEventListener("keydown", resetBlinkers);
 
 function setNamedSectionPosition () {
 	var root = document.querySelector(':root');
@@ -1969,7 +1949,7 @@ var modaldownload = document.getElementById('ModalDownload');
 var modalalert = document.getElementById('ModalAlert');
 var modallists = document.getElementById('ModalLists');
 var modalsutta = document.getElementById('ModalSutta');
-//var modalselfquote = document.getElementById('ModalSelfquote');
+
 
 
 // Get the buttons that open the modals
@@ -2090,7 +2070,6 @@ function setModalTheme (theme) {
 
 // Set styles for modals
 function setModalStyle (heading) {
-	
 	modalheadertext.innerHTML = heading.toUpperCase();
 	switch (heading) {
 		case 'Alert':
@@ -2149,17 +2128,6 @@ function setModalStyle (heading) {
 			modalcontent.style.top = "0";
 			modalcontent.style.padding = "0";
 			break;
-/* 		case 'Selfquote':
-			modalbody.style.height = "auto";
-			modalbody.style.maxHeight = "85vh";
-			modalbody.style.padding = "0";
-			modalcontent.style.width = "95%";
-			modalcontent.style.maxWidth = "65em";
-			modalcontent.style.position ="relative";
-			modalcontent.style.right = "0";
-			modalcontent.style.top = "0";
-			modalcontent.style.padding = "0";
-			break; */
 		default:
 			modalbody.style.maxHeight = "75vh";
 			modalbody.style.padding = "0";
@@ -2180,7 +2148,6 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
-			//hideElement(modalselfquote);
 			showElement(modaldetails);		
 			break;
 		case 'Settings':
@@ -2189,7 +2156,6 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
-			//hideElement(modalselfquote);
 			showElement(modalsettings);		
 			break;
 		case 'Download':
@@ -2198,7 +2164,6 @@ function showModal (theModal) {
 			hideElement(modallists);
 			hideElement(modalalert);
 			hideElement(modalsutta);
-			//hideElement(modalselfquote);
 			showElement(modaldownload);		
 			break;
 		case 'Alert':
@@ -2207,7 +2172,6 @@ function showModal (theModal) {
 			hideElement(modallists);
 			hideElement(modaldownload);
 			hideElement(modalsutta);
-			//hideElement(modalselfquote);
 			showElement(modalalert);		
 			break;
 		case 'Lists':
@@ -2216,7 +2180,6 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modalsutta);
-			//hideElement(modalselfquote);
 			showElement(modallists);
 			break;
 		case 'Sutta':
@@ -2225,18 +2188,8 @@ function showModal (theModal) {
 			hideElement(modaldownload);
 			hideElement(modalalert);
 			hideElement(modallists);
-			//hideElement(modalselfquote);		
 			showElement(modalsutta);
 			break;
-/* 		case 'Selfquote':
-			hideElement(modaldetails);
-			hideElement(modalsettings);
-			hideElement(modaldownload);
-			hideElement(modalalert);
-			hideElement(modallists);		
-			hideElement(modalsutta);
-			showElement(modalselfquote);
-			break; */
 		}
 	showElement(modal);
 	showElement(modalcontent);
@@ -2247,7 +2200,7 @@ function showModal (theModal) {
 // use event delagation on the book to show notes or move to internal links
 document.getElementById("thebook").addEventListener("click", function(e) {
 
-	if(e.target && (/* e.target.nodeName == "SUP" || */ e.target.className == "suttaref" || e.target.className == "TOCref")) { 
+	if(e.target && (e.target.className == "suttaref" || e.target.className == "TOCref")) { 
 		if (e.target.className == "suttaref" || e.target.className == "TOCref") {
 			var toctarget ='';
 			if (e.target.className == "TOCref") {
@@ -2258,14 +2211,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 			}
 			goToTarget(toctarget);
 			if (true) {e.preventDefault();}
-		} else {	
-/* 			savedsup = e.target;
-			setModalStyle ("Notes");
-			showModal("Notes");
-			//highlightnote(e.target.innerHTML); 
-			stopBookScroll ();
-			if (true) {e.preventDefault();} */
-		}	
+		}
 	}
 
 	if (e.target.classList.contains('sclinktext') || e.target.classList.contains('scsegments')) {
@@ -2314,13 +2260,20 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	}
 
 	if (e.target.classList.contains('sesame')) {
-		showSpinner();
-		toggleSesame (e.target)
-	} else if (e.target.parentNode.classList.contains('sesame')) {
-		showSpinner();
-		toggleSesame (e.target.parentNode)
+		if (e.target.nextElementSibling != null) {
+			if (!e.target.nextElementSibling.classList.contains('opensesame')) {
+				openSesame (e.target)
+			} else {
+				blink(e.target.nextElementSibling)
+			}
+		} else {
+			openSesame (e.target)
+		}
+	} 
+	
+	if ((e.target.classList.contains('closeblocksesame')) || (e.target.classList.contains('closeinlinesesame'))) {
+		e.target.remove()
 	}
-
 });
 
 
@@ -2506,16 +2459,22 @@ function decodeBookSegment (anchortext) {
 	return [str, unmarked_paragraph]
 }
 
-function blink (element) {
-	let segmentID =``
-	if ((element.classList.contains('opensesame')) || (element.classList.contains('chapnum'))){
-		segmentID = element.parentElement.id
-	} else {
-		segmentID = element.id
+
+function blink(target, time=450) {
+	if (!target.style.opacity) {
+		target.style.opacity = 1;
 	}
-		let [idName, idNumber] = segmentID.split('-')
-	element.setAttribute('data-before', `🡇🡇🡇 Segment ${idNumber} 🡇🡇🡇`) 
-	element.classList.add ('blink')
+	target.style.opacity = 0;
+
+	setTimeout (function() {
+		target.style.opacity = 1;
+	}, time/3);
+	setTimeout (function() {
+		target.style.opacity = 0;
+	}, time/2);
+	setTimeout (function() {
+		target.style.opacity = 1;
+	}, time);
 }
 
 document.getElementById("ModalLists").addEventListener("click", function(e) {
@@ -2578,230 +2537,215 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 	}
 });
 
-function toggleSesame (el) {
-	if ((el.nextElementSibling) && (el.nextElementSibling.classList.contains('opensesame') || el.nextElementSibling.classList.contains('opensesameref'))) {
-		el.nextElementSibling.remove();
-		el.classList.remove('closebutton');
-		hideSpinner()
-	} else {
-		 function openSesame () {
-			async function decodeSesameKey (sesameKey) {
-				let sesameKeyArr = sesameKey.split(':')
-/* 				console.log(`0::${sesameKeyArr[0]}`) // type
-				console.log(`1::${sesameKeyArr[1]}`) // key
-				console.log(`2::${sesameKeyArr[2]}`) // a zotero reference that appears in the biblio for the book */
-				function decodeZotref (zotref) {
-					let zotBiblioEntries = document.querySelectorAll('.bibText')
-					let bibReference = ``
-					for (let i in zotBiblioEntries) {
-						if (zotBiblioEntries[i].getAttribute('data-zotref') == zotref) {
-							bibReference = zotBiblioEntries[i].innerHTML
-							break
-						}
-					}
-					return `<hr style='width:50%; margin:1em auto;'><div class=zotRefInaSesame><p class='title'>Bibliography Entry:</p>${bibReference}</div>`
-				}
-				let biblio = `` 
-				if (sesameKeyArr[0].includes('-blurbs')) {
-					let fetchPath = `../_resources/sesame-data/blurbs/scblurbs.json`
-					function populateSesame (quoteData) {
-						function capitalizeFirstLetter(val) {
-							return String(val).charAt(0).toUpperCase() + String(val).slice(1);
-						}
-						for (let i in quoteData) {
-							if (quoteData[i].suttaRef == sesameKeyArr[1]) {
-								let linkHTML = ``
-								if (quoteData[i].type == 'leaf') {
-									let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
-									//console.log(linkTextArr[0] +'::'+linkTextArr[1] +'::'+ linkTextArr[2])
-									switch (linkTextArr[0]) {
-										case "dn":
-										case "an":
-										case "sn":
-										case "mn":
-											linkTextArr[0] = linkTextArr[0].toUpperCase()
-											break
-										case "snp":
-										case "kp":
-											if (linkTextArr[2]) { // its a vagga
-												linkTextArr[0] = ``
-											} else {
-											linkTextArr[0] = capitalizeFirstLetter(linkTextArr[0]);
-											}
-											break
-										case "ja" :
-											linkTextArr[0] = ``
-											break
-									}
-									if (linkTextArr[0]) {
-										let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
-										linkHTML= `<span class='sclinktext'>${linkText}</span>`
-									}
-								}
-								let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
-								let quoteHTML =`${scRefHTML}<br><h3>${quoteData[i].rootTitle}<br>${quoteData[i].transTitle}<br>${linkHTML}</h3><hr><p>${quoteData[i].blurb}</p>`
-								el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
-								el.classList.add('closebutton')
-							}
-						}
-					}
-					await fetch(fetchPath)
-					.then(response => response.json())
-					.then (data => populateSesame(data))
-					.catch(error => {
-						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
-					});
-				} else 
-				if (sesameKeyArr[0] == 'wp') {
-					if (sesameKeyArr[2]) {
-						biblio = decodeZotref(sesameKeyArr[2])
-					}
-					let fetchPath = `../_resources/sesame-data/wikipedia/${sesameKeyArr[1]}.json`
-					function populateSesame (quoteData) {
-						let sourceHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameKeyArr[1].replace('-', '#')}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span>`
-						let localHTML = `<h3>${quoteData.Page}<br>${quoteData.Title}</h3>${quoteData.Text}`
-						let quoteHTML =`${sourceHTML}<br>${localHTML}`
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}${biblio}</div>`);
-						el.classList.add('closebutton') 
-					}
-					await fetch(fetchPath)
-					.then(response => response.json())
-					.then (data => populateSesame(data))
-					.catch(error => {
-						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
-					});
 
-				} else
-				if (sesameKeyArr[0] == 'wiswo') {
-					let fetchPath = `../_resources/sesame-data/wiswo/${sesameKeyArr[1]}.json`
-					function populateSesame (entryData) {
-						if (entryData.citationKey) {biblio = decodeZotref(entryData.citationKey)}
-						let sourceHTML = `source: <span class='extlink'><a href = '${entryData.siteURL}'>${entryData.site}</a></span>`
-						let entryHTML =`<h3>${entryData.termRoot} (${entryData.abbr})<br>${entryData.termEng}<br>${entryData.type}</h3><p>${entryData.textTitle}</p>${sourceHTML}<hr>${entryData.text}<br><div class="tight-right-cite">${entryData.textAuthor}<br>${entryData.textDate}</div>${biblio}`
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${entryHTML}</div>`);
-						el.classList.add('closebutton') 
-					}
-					await fetch(fetchPath)
-					.then(response => response.json())
-					.then (data => populateSesame(data))
-					.catch(error => {
-						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
-					});
-				} else
-				if ((sesameKeyArr[0] == `bodhi-nikaya-notes`)||
-					(sesameKeyArr[0] == `bodhi-nikaya`) ||
-					(sesameKeyArr[0] == `bodhi-nikaya-commentary`)||
-					(sesameKeyArr[0] == `bodhi-books`)||
-					(sesameKeyArr[0] == `sujato-nikaya-notes`)) {
-					let nikDir = ''
-					if (sesameKeyArr[0] == `bodhi-nikaya`) {
-						nikDir = `/${sesameKeyArr[1].slice(0,2).toUpperCase()}`
-					} else {
-						console.log(sesameKeyArr[1])
-					}
-					let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}${nikDir}/${sesameKeyArr[1]}.json`
-					function populateSesame(quoteData) {
-						let subSectionSpacer = ''
-						if (quoteData.SubSection) {
-							subSectionSpacer = '<br>'
-						}
-						let author = ''
-						if (quoteData.Author) {
-							author = `by ${quoteData.Author}`
-						}
-						let quoteHTML = ''
-						quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}</h3>`
-						quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
-						quoteHTML += `${decodeZotref(quoteData.ZotRef)}`
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}</div>`);
-						el.classList.add('closebutton')
-					}
-					fetch(fetchPath)
-						.then(response => response.json())
-						.then (data => populateSesame(data))
-						.catch(error => {
-							console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
-						}
-					);
-				} else 
-				if (sesameKeyArr[0] == `DPPN`) {
-					let fetchPath = `../_resources/sesame-data/dictionaries/complex/en/pli2en_dppn.json`
 
-					function populateSesame (quoteData) {
-						let localHTML = ``
-						for (let i in quoteData) {
-							if (quoteData[i].word == sesameKeyArr[1]) {
-								localHTML = quoteData[i].text
-								localHTML = localHTML.slice(0, localHTML.lastIndexOf('</dt>')+5) + '<hr>' + localHTML.slice(localHTML.lastIndexOf('</dt>')+5, localHTML.length)
-
-								break;
-							}
-						}
- 						let sourceHTML = `<a class="extlink" href="https://suttacentral.net/">source: DPPD—<img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral Edition</a>`
-						let quoteHTML =`${sourceHTML}<br>${localHTML}`
-						el.insertAdjacentHTML("afterend", `<div class=opensesame>${quoteHTML}<br>${biblio}</div>`);
-						el.classList.add('closebutton') 
-					}
-
-					await fetch(fetchPath)
-					.then(response => response.json())
-					.then (data => populateSesame(data))
-					.catch(error => {
-						console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
-					});
-				} else 
-				if (sesameKeyArr[0] == `zotref`) {
-					let zotBiblioEntries = document.querySelectorAll('.bibText')
-					let bibReference = ``
-					for (let i in zotBiblioEntries) {
-						if (zotBiblioEntries[i].getAttribute('data-zotref') == sesameKeyArr[1]) {
-							bibReference = zotBiblioEntries[i].innerHTML
-							let tempEl = document.createElement('div')
-							tempEl.innerHTML = zotBiblioEntries[i].innerHTML
-							bibseq = tempEl.getElementsByClassName('bibSeg')
-							bibReference = bibReference.replace(bibseq[0].outerHTML,'')
-							//console.log(`${bibseq[0].outerHTML}\n\n`)
-							//console.log(bibReference)
-							break
-						}
-					}
-					el.insertAdjacentHTML("afterend", `<span class=opensesame>${bibReference}</span>`);
-					el.classList.add('closebutton')
+function openSesame (el) {
+	showSpinner()
+	async function decodeSesameKey (sesameKey) {
+		let sesameKeyArr = sesameKey.split(':')
+	/* 	console.log(`0::${sesameKeyArr[0]}`) // type
+		console.log(`1::${sesameKeyArr[1]}`) // key
+		console.log(`2::${sesameKeyArr[2]}`) // a zotero reference that appears in the biblio for the book */
+		function decodeZotref (zotref) {
+			let zotBiblioEntries = document.querySelectorAll('.bibText')
+			let bibReference = ``
+			for (let i in zotBiblioEntries) {
+				if (zotBiblioEntries[i].getAttribute('data-zotref') == zotref) {
+					bibReference = zotBiblioEntries[i].innerHTML
+					break
 				}
 			}
-
-			async function populateFootnote () {
-				let fetchPath = `../_resources/book-data/${shortcode()}/footnotes.json`
-				function populateSesame (noteData) {
-					for (let i in noteData) {
-						if (noteData[i].fnNumber == el.innerText) {
-							let localHTML = noteData[i].fnHTML
-							el.insertAdjacentHTML("afterend", `<div class=opensesame><span style='font-variant: small-caps'>note: #${el.innerText}</span> ${localHTML}</div>`);
-							el.classList.add('closebutton')
-							break
+			return `<hr style='width:50%; margin:1em auto;'><div class=zotRefInaSesame><p class='title'>Bibliography Entry:</p>${bibReference}</div>`
+		}
+		let biblio = `` 
+		if (sesameKeyArr[0].includes('-blurbs')) {
+			let fetchPath = `../_resources/sesame-data/blurbs/scblurbs.json`
+			function populateSesame (quoteData) {
+				function capitalizeFirstLetter(val) {
+					return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+				}
+				for (let i in quoteData) {
+					if (quoteData[i].suttaRef == sesameKeyArr[1]) {
+						let linkHTML = ``
+						if (quoteData[i].type == 'leaf') {
+							let linkTextArr = sesameKeyArr[1].match(/[a-z]+|[^a-z]+/gi);
+							//console.log(linkTextArr[0] +'::'+linkTextArr[1] +'::'+ linkTextArr[2])
+							switch (linkTextArr[0]) {
+								case "dn":
+								case "an":
+								case "sn":
+								case "mn":
+									linkTextArr[0] = linkTextArr[0].toUpperCase()
+									break
+								case "snp":
+								case "kp":
+									if (linkTextArr[2]) { // its a vagga
+										linkTextArr[0] = ``
+									} else {
+									linkTextArr[0] = capitalizeFirstLetter(linkTextArr[0]);
+									}
+									break
+								case "ja" :
+									linkTextArr[0] = ``
+									break
+							}
+							if (linkTextArr[0]) {
+								let linkText = `${linkTextArr[0]} ${linkTextArr[1]}`
+								linkHTML= `<span class='sclinktext'>${linkText}</span>`
+							}
 						}
+						let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
+						let quoteHTML =`${scRefHTML}<br><h3>${quoteData[i].rootTitle}<br>${quoteData[i].transTitle}<br>${linkHTML}</h3><hr><p>${quoteData[i].blurb}</p>`
+						el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${quoteHTML}</div>`);
 					}
 				}
+			}
+			await fetch(fetchPath)
+			.then(response => response.json())
+			.then (data => populateSesame(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+			});
+		} else 
+		if (sesameKeyArr[0] == 'wp') {
+			if (sesameKeyArr[2]) {
+				biblio = decodeZotref(sesameKeyArr[2])
+			}
+			let fetchPath = `../_resources/sesame-data/wikipedia/${sesameKeyArr[1]}.json`
+			function populateSesame (quoteData) {
+				let sourceHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameKeyArr[1].replace('-', '#')}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span>`
+				let localHTML = `<h3>${quoteData.Page}<br>${quoteData.Title}</h3>${quoteData.Text}`
+				let quoteHTML =`${sourceHTML}<br>${localHTML}`
+				el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${quoteHTML}${biblio}</div>`);
+			}
+			await fetch(fetchPath)
+			.then(response => response.json())
+			.then (data => populateSesame(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+			});
 
-				await fetch(fetchPath)
+		} else
+		if (sesameKeyArr[0] == 'wiswo') {
+			let fetchPath = `../_resources/sesame-data/wiswo/${sesameKeyArr[1]}.json`
+			function populateSesame (entryData) {
+				if (entryData.citationKey) {biblio = decodeZotref(entryData.citationKey)}
+				let sourceHTML = `source: <span class='extlink'><a href = '${entryData.siteURL}'>${entryData.site}</a></span>`
+				let entryHTML =`<h3>${entryData.termRoot} (${entryData.abbr})<br>${entryData.termEng}<br>${entryData.type}</h3><p>${entryData.textTitle}</p>${sourceHTML}<hr>${entryData.text}<br><div class="tight-right-cite">${entryData.textAuthor}<br>${entryData.textDate}</div>${biblio}`
+				el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${entryHTML}</div>`);
+			}
+			await fetch(fetchPath)
+			.then(response => response.json())
+			.then (data => populateSesame(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+			});
+		} else
+		if ((sesameKeyArr[0] == `bodhi-nikaya-notes`)||
+			(sesameKeyArr[0] == `bodhi-nikaya`) ||
+			(sesameKeyArr[0] == `bodhi-nikaya-commentary`)||
+			(sesameKeyArr[0] == `bodhi-books`)||
+			(sesameKeyArr[0] == `sujato-nikaya-notes`)) {
+			let nikDir = ''
+			if (sesameKeyArr[0] == `bodhi-nikaya`) {
+				nikDir = `/${sesameKeyArr[1].slice(0,2).toUpperCase()}`
+			} else {
+				console.log(sesameKeyArr[1])
+			}
+			let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}${nikDir}/${sesameKeyArr[1]}.json`
+			function populateSesame(quoteData) {
+				let subSectionSpacer = ''
+				if (quoteData.SubSection) {
+					subSectionSpacer = '<br>'
+				}
+				let author = ''
+				if (quoteData.Author) {
+					author = `by ${quoteData.Author}`
+				}
+				let quoteHTML = ''
+				quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}</h3>`
+				quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
+				quoteHTML += `${decodeZotref(quoteData.ZotRef)}`
+				el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${quoteHTML}</div>`);
+			}
+			fetch(fetchPath)
 				.then(response => response.json())
 				.then (data => populateSesame(data))
 				.catch(error => {
 					console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
-				});
+				}
+			);
+		} else 
+		if (sesameKeyArr[0] == `DPPN`) {
+			let fetchPath = `../_resources/sesame-data/dictionaries/complex/en/pli2en_dppn.json`
+
+			function populateSesame (quoteData) {
+				let localHTML = ``
+				for (let i in quoteData) {
+					if (quoteData[i].word == sesameKeyArr[1]) {
+						localHTML = quoteData[i].text
+						localHTML = localHTML.slice(0, localHTML.lastIndexOf('</dt>')+5) + '<hr>' + localHTML.slice(localHTML.lastIndexOf('</dt>')+5, localHTML.length)
+
+						break;
+					}
+				}
+				let sourceHTML = `<a class="extlink" href="https://suttacentral.net/">source: DPPD—<img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral Edition</a>`
+				let quoteHTML =`${sourceHTML}<br>${localHTML}`
+				el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${quoteHTML}<br>${biblio}</div>`);
 			}
 
-			if (el.nodeName == 'SUP') {
-				populateFootnote()
-			} else {
-				decodeSesameKey(el.getAttribute('data-sesame-key'))
+			await fetch(fetchPath)
+			.then(response => response.json())
+			.then (data => populateSesame(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+			});
+		} else 
+		if (sesameKeyArr[0] == `zotref`) {
+			let zotBiblioEntries = document.querySelectorAll('.bibText')
+			let bibReference = ``
+			for (let i in zotBiblioEntries) {
+				if (zotBiblioEntries[i].getAttribute('data-zotref') == sesameKeyArr[1]) {
+					bibReference = zotBiblioEntries[i].innerHTML
+					let tempEl = document.createElement('div')
+					tempEl.innerHTML = zotBiblioEntries[i].innerHTML
+					bibseq = tempEl.getElementsByClassName('bibSeg')
+					bibReference = bibReference.replace(bibseq[0].outerHTML,'')
+					//console.log(`${bibseq[0].outerHTML}\n\n`)
+					//console.log(bibReference)
+					break
+				}
+			}
+			el.insertAdjacentHTML("afterend", `<span class='opensesame closeinlinesesame'>${bibReference}</span>`);
+		}
+	}
+
+	async function populateFootnote () {
+		let fetchPath = `../_resources/book-data/${shortcode()}/footnotes.json`
+		function populateSesame (noteData) {
+			for (let i in noteData) {
+				if (noteData[i].fnNumber == el.innerText) {
+					let localHTML = noteData[i].fnHTML
+					el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'><span style='font-variant: small-caps'>note: #${el.innerText}</span> ${localHTML}</div>`);
+					break
+				}
 			}
 		}
-		openSesame()
-		hideSpinner()
-	}
-}
 
+		await fetch(fetchPath)
+		.then(response => response.json())
+		.then (data => populateSesame(data))
+		.catch(error => {
+			console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+		});
+	}
+	if (el.nodeName == 'SUP') {
+		populateFootnote()
+	} else {
+		decodeSesameKey(el.getAttribute('data-sesame-key'))
+	}
+	hideSpinner()
+}
 
 function displaySutta (linkText) {
 	setModalStyle('Sutta');

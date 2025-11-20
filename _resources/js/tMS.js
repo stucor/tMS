@@ -1231,7 +1231,7 @@ function setTheme(){
 
 			r.style.setProperty('--TOCprogress', '#ffffcf28');//'#d6630f09');  //'#d6630f08'); '#f0f2fd80');
 			r.style.setProperty('--primarytextcolor', '#0a013cff');
-			r.style.setProperty('--secondarytextcolor', '#772b02ff'); //'#5a5a81');//'#577096');
+			r.style.setProperty('--secondarytextcolor', '#521e02ff');//'#772b02ff'); //'#5a5a81');//'#577096');
 			r.style.setProperty('--primarybackground', '#fff');
 
 			r.style.setProperty('--primaryinterfacecolor', '#000');
@@ -1246,7 +1246,7 @@ function setTheme(){
 			r.style.setProperty('--listlinkhover', '#217cbe1F');//'#d5dcfd60');
 			r.style.setProperty('--bdtexthighlighter', '#fff1e6a4');//'#fc88320B');//'#e0f4fbb0');//'#eef0fb');
 			r.style.setProperty('--bdtexthighlightborder', '#9745068f');//'#fc8832C0');
-			r.style.setProperty('--sesamebackground', '#fff1e6a4');
+			r.style.setProperty('--sesamebackground', '#fffbf883')//'#fcf4efa4');
 
 			r.style.setProperty('--tableborder', '#c0c0c0');
 			r.style.setProperty('--tablecaption', '#ffffff50');
@@ -2242,13 +2242,11 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				let allSups = document.querySelectorAll ('sup')
 				for (let j in allSups) {
 					if (allSups[j].innerText == noteNumberToOpen) {
-						if (!allSups[j].classList.contains('closebutton')) {
- 							allSups[j].click()
-						}
+						allSups[j].click()
 						goToTarget(allSups[j], 'ELEMENT', 'center')
 						setTimeout(() => {
 							blink(allSups[j].nextElementSibling)
-						  }, 400); 
+						}, 400);
 						break
 					}
 				}			
@@ -2270,9 +2268,9 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 			openSesame (e.target)
 		}
 	} 
-	
-	if ((e.target.classList.contains('closeblocksesame')) || (e.target.classList.contains('closeinlinesesame'))) {
-		e.target.remove()
+
+	if (e.target.classList.contains('Xclose')) {
+		e.target.parentElement.remove()
 	}
 });
 
@@ -2520,9 +2518,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 				let allSups = document.querySelectorAll ('sup')
 				for (let j in allSups) {
 					if (allSups[j].innerText == noteNumberToOpen) {
-						if (!allSups[j].classList.contains('closebutton')) {
- 							allSups[j].click()
-						}
+ 						allSups[j].click()
 						goToTarget(allSups[j], 'ELEMENT', 'center')
 						setTimeout(() => {
 							blink(allSups[j].nextElementSibling)
@@ -2596,7 +2592,7 @@ function openSesame (el) {
 						}
 						let scRefHTML = `<a class="extlink" href="https://suttacentral.net/${sesameKeyArr[1]}">source: <img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral</a>`
 						let quoteHTML =`${scRefHTML}<br><h3>${quoteData[i].rootTitle}<br>${quoteData[i].transTitle}<br>${linkHTML}</h3><hr><p>${quoteData[i].blurb}</p>`
-						el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${quoteHTML}</div>`);
+						el.insertAdjacentHTML("afterend", `<div class='opensesame'><span class='Xclose'>☒</span>${quoteHTML}</div>`);
 					}
 				}
 			}
@@ -2616,7 +2612,7 @@ function openSesame (el) {
 				let sourceHTML = `<span class='extlink'><a alt='wikipedia page' href = 'https://en.wikipedia.org/wiki/${sesameKeyArr[1].replace('-', '#')}'>source: <img class='icon' src='../_resources/images/icons/Wikipedia-logo-v2.svg'> Wikipedia</a></span>`
 				let localHTML = `<h3>${quoteData.Page}<br>${quoteData.Title}</h3>${quoteData.Text}`
 				let quoteHTML =`${sourceHTML}<br>${localHTML}`
-				el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${quoteHTML}${biblio}</div>`);
+				el.insertAdjacentHTML("afterend", `<div class='opensesame'><span class='Xclose'>☒</span>${quoteHTML}${biblio}</div>`);
 			}
 			await fetch(fetchPath)
 			.then(response => response.json())
@@ -2632,7 +2628,7 @@ function openSesame (el) {
 				if (entryData.citationKey) {biblio = decodeZotref(entryData.citationKey)}
 				let sourceHTML = `source: <span class='extlink'><a href = '${entryData.siteURL}'>${entryData.site}</a></span>`
 				let entryHTML =`<h3>${entryData.termRoot} (${entryData.abbr})<br>${entryData.termEng}<br>${entryData.type}</h3><p>${entryData.textTitle}</p>${sourceHTML}<hr>${entryData.text}<br><div class="tight-right-cite">${entryData.textAuthor}<br>${entryData.textDate}</div>${biblio}`
-				el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${entryHTML}</div>`);
+				el.insertAdjacentHTML("afterend", `<div class='opensesame'><span class='Xclose'>☒</span>${entryHTML}</div>`);
 			}
 			await fetch(fetchPath)
 			.then(response => response.json())
@@ -2666,7 +2662,7 @@ function openSesame (el) {
 				quoteHTML += `<h3>${quoteData.Document}<br>${quoteData.Section}${subSectionSpacer}${quoteData.SubSection}<br>${quoteData.Title}<br>${author}</h3>`
 				quoteHTML += quoteData.Quote.replaceAll(/<sup>[0-9]+<\/sup>/gi, '');
 				quoteHTML += `${decodeZotref(quoteData.ZotRef)}`
-				el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${quoteHTML}</div>`);
+				el.insertAdjacentHTML("afterend", `<div class='opensesame'><span class='Xclose'>☒</span>${quoteHTML}</div>`);
 			}
 			fetch(fetchPath)
 				.then(response => response.json())
@@ -2691,7 +2687,7 @@ function openSesame (el) {
 				}
 				let sourceHTML = `<a class="extlink" href="https://suttacentral.net/">source: DPPD—<img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral Edition</a>`
 				let quoteHTML =`${sourceHTML}<br>${localHTML}`
-				el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'>${quoteHTML}<br>${biblio}</div>`);
+				el.insertAdjacentHTML("afterend", `<div class='opensesame'><span class='Xclose'>☒</span>${quoteHTML}<br>${biblio}</div>`);
 			}
 
 			await fetch(fetchPath)
@@ -2716,7 +2712,7 @@ function openSesame (el) {
 					break
 				}
 			}
-			el.insertAdjacentHTML("afterend", `<span class='opensesame closeinlinesesame'>${bibReference}</span>`);
+			el.insertAdjacentHTML("afterend", `<span class='opensesame'><span class='Xclose'>☒</span>${bibReference}</span>`);
 		}
 	}
 
@@ -2726,7 +2722,7 @@ function openSesame (el) {
 			for (let i in noteData) {
 				if (noteData[i].fnNumber == el.innerText) {
 					let localHTML = noteData[i].fnHTML
-					el.insertAdjacentHTML("afterend", `<div class='opensesame closeblocksesame'><span style='font-variant: small-caps'>note: #${el.innerText}</span> ${localHTML}</div>`);
+					el.insertAdjacentHTML("afterend", `<div class='opensesame'><span class='Xclose'>☒</span><span style='font-variant: small-caps; font-weight:600'>note: #${el.innerText}</span> ${localHTML}</div>`);
 					break
 				}
 			}
@@ -2866,7 +2862,13 @@ function makeShare () {
 			   }
 			//let originalHTML = copyQuote.innerHTML
 
-			//Add the Notes
+			//remove any open footnote sesames
+			let allOpenSesames = copyQuote.querySelectorAll ('.opensesame')
+			for (let i=0; i<allOpenSesames.length; i++) {
+				allOpenSesames[i].remove()
+			}
+
+			//Create footnotes at end
 			function addnotes () {
 				let notesStr =``
 				let allSups = copyQuote.querySelectorAll('sup')
@@ -2877,10 +2879,6 @@ function makeShare () {
 					let supNo = allSups[i].innerText
 					let tempText = ` [${allSups[i].innerText}]`
 					allSups[i].innerText = tempText
-					if (allSups[i].classList.contains('closebutton')) {
-						allSups[i].nextElementSibling.remove()
-						allSups[i].classList.remove('closebutton')
-					}
  					for (let j=0; j<footnotesData.length; j++) {
 						if (supNo == footnotesData[j].fnNumber) {
 							let newfnHTML = footnotesData[j].fnHTML.replaceAll(`<p>`,``)
@@ -2889,7 +2887,7 @@ function makeShare () {
 						}
 					} 
 				}
-				copyQuote.innerHTML += notesStr
+				copyQuote.innerHTML += notesStr				
 			}
 		
 			addnotes();
@@ -2933,10 +2931,6 @@ function makeShare () {
 									miniBiblio.push(miniBiblioEntry)
 								}
 							}
-							if ((allSesames[i].nextElementSibling) && (allSesames[i].nextElementSibling.classList.contains('opensesame'))) {
-								allSesames[i].nextElementSibling.remove()
-							}
-							allSesames[i].classList.remove('closebutton')
 						}
 					}
 				}
@@ -3061,7 +3055,7 @@ function makeShare () {
 					allHrs[i].remove()
 				}
 			} 
-	
+
 			copyQuote.innerHTML = copyQuote.innerHTML.replaceAll(`class="" `, '')
 												 .replaceAll(`class=""`, '')
 												 .replaceAll(`class="OAstart"`, '' )

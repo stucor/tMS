@@ -806,12 +806,6 @@ table.borderlessTable {
 	margin-left: 2em;
 }
 
-
-
-/* .content div.bob-text + div.bob-text {
-	margin-top: -2.6em;
-} */
-
 .content div.quote {
     font-style: italic;
 	text-align: center;
@@ -868,71 +862,7 @@ table.borderlessTable {
 	font-family: var(--fontfamily);
 	background-color: var(--primarybackground);
 	color: var(--primarytextcolor);
-
 }
-
-/* .booknote {
-	scroll-margin-block-start: 2em;
-	margin: 1em 10%;
-	padding:0.5em 2em 0.5em 0;
-	border-radius: 1em;
-	display: grid;
-  	grid-template-columns: 10% 90%;	
-	align-items:first baseline;
-}
-
-
-.booknote ol, .booknote ul {
-	padding:0 1em; 
-	margin: 1em 2em;
-}
-
-.booknote ol {
-	list-style: paren-decimal;
-}
-
-.booknote ol li::marker {
-	font-variant: small-caps;
-	font-family: 'Source Sans Pro';
-}
-
-.booknote li {
-	margin-bottom: .5em;
-	text-align: left;
-	padding-left: 0.5em;
-	text-align: var(--textalign);
-}	
-
-.booknote ul li::marker {
-	content: '·';
-}
-
-.booknote ol + p {
-	text-indent: 0;
-}
-
-.booknote p {
-	margin:0;
-}
-.booknote p + p{
-	text-indent: 1em;
-} */
-
-
-/* .booknotesNumber {
-	font-size: 0.8em;
-    font-weight: 600;
-	text-align: right;
-	padding-right: 1em;
-	color:cornflowerblue;
-	cursor: pointer;
-}
-
-.booknotesNumber::after {
-	content:':';
-} */
-
-
 
 .extlink {
 	color:cornflowerblue;
@@ -965,8 +895,8 @@ dd > p {
 */
 
 span.sesame {
-	/* border-bottom: dotted thin rgba(100, 148, 237, 0.842); */
-	border-bottom: solid 2px rgba(141, 16, 16, 0.719);
+	border-bottom: dotted thin rgb(100, 148, 237);
+	/* border-bottom: solid 2px rgba(141, 16, 16, 0.719); */
 	cursor:pointer;
 	/* background:rgba(255, 224, 252, 0.274); */
 }
@@ -980,14 +910,24 @@ div.opensesame {
 	padding: 1em 2em; 
 	text-indent:0;
 	color:var(--secondarytextcolor);
-	box-shadow: 2px 2px 3px 1px var(--bdtexthighlightborder);
+	box-shadow: 0 0 2px 1px var(--bdtexthighlightborder);
 	white-space: normal;
 	font-weight: normal;
 	font-size: 0.9em;
  	background-color: var(--sesamebackground); 
-	border-radius: 1em;
+	border-radius: 0em;
 	font-style: normal;
 	text-align: var(--textalign);
+}
+
+div.opensesame > span.Xclose {
+	position:relative;
+	float:right;
+	top: -0.7em;
+	right: -1em;
+	font-size: 1.3em;
+	cursor: pointer;
+	color: var(--primarytextcolor)
 }
 
 span.opensesame {
@@ -995,27 +935,20 @@ span.opensesame {
 	color:var(--secondarytextcolor);
 	white-space: normal;
 	font-weight: normal;
- 	background-color: var(--sesamebackground); 
 	box-sizing: border-box;
 }
-
-.closebutton::after{
-	position: relative;
-	top:-0.05em;
-	color: cornflowerblue;
-	font-style: normal;
-	padding: 0 0.2em 0 0.2em;
-	content: '\22A0'; 
+span.opensesame > span.Xclose {
+	margin-left: 1em;
+	padding:0 0.3em 0 0.5em;
 	cursor: pointer;
-	background-color: var(--sesamebackground); 
-	/* border-bottom: 2px solid var(--sesamebackground); */
+	color: var(--primarytextcolor);
+	background: #d4c5ab20;
+	border: thin dotted #d4c5ab;
+	border-right:none;
 }
 
-
-span[class^="sesame closebutton"]  {
-	text-decoration: none;
- 	color:var(--secondarytextcolor);
-	background-color: var(--sesamebackground); 
+.Xclose:hover {
+	font-weight: bold;
 }
 
 .opensesame h3 {
@@ -1027,7 +960,7 @@ span[class^="sesame closebutton"]  {
 	font-weight: 600;
 }
 
-.closeblocksesame::before{
+/* .closeblocksesame::before{
 	position:relative;
 	float:right;
 	top: -0.5em;
@@ -1036,8 +969,8 @@ span[class^="sesame closebutton"]  {
 	font-size: larger;
 	cursor: pointer;
 	color: var(--primarytextcolor)
-}
-.closeinlinesesame::before{
+} */
+/* .closeinlinesesame::before{
 	margin-left: 1em;
 	padding:0 0.3em 0 0.5em;
 	content: '\22A0';
@@ -1046,7 +979,7 @@ span[class^="sesame closebutton"]  {
 	background: #d4c5ab20;
 	border: thin dotted #d4c5ab;
 	border-right:none;
-}
+} */
 .opensesame blockquote {
 	border-left: none;
 	padding-left: 1em;

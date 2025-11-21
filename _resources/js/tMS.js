@@ -2219,8 +2219,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		if ((e.target.classList.contains('scsegments')) && (e.target.parentNode.classList.contains('sclinktext')) ) {
 			linkNode = e.target.parentNode;
 		}
-		displaySutta(linkNode.innerText);
-		//savedsup = linkNode;
+		displaySutta(linkNode.innerText, linkNode);
 		if (true) {e.preventDefault();}
 	}
 
@@ -2237,7 +2236,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	}
 	
 	if (e.target.classList.contains('internalLink')) {
-		if (e.target.getAttribute('data-target').substring(0,9) == 'fnNumber:') {
+		if (e.target.getAttribute('data-target').substring(0,9) == 'fnNumber:') { // it's a footnote (go to it and open it)
 			let noteNumberToOpen = e.target.getAttribute('data-target').substring(9)
 				let allSups = document.querySelectorAll ('sup')
 				for (let j in allSups) {
@@ -2251,9 +2250,30 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 					}
 				}			
 		} else {
-			var whereTo = e.target.getAttribute('data-target').substring(1);
-			goToTarget(whereTo, undefined, 'center' );
-			blink (document.getElementById(whereTo).parentElement)
+			let whereTo = e.target.getAttribute('data-target').substring(1);
+			goToTarget(whereTo, 'ID', 'center' );
+			let segNo =``
+			if (document.getElementById(whereTo).closest('h1')) {
+				segNo = document.getElementById(whereTo).parentElement.parentElement.id // it's a heading
+			} else {
+				segNo = document.getElementById(whereTo).parentElement.id // it's a blockquote, figure or table(wrap)
+			}
+
+			if (document.getElementById(segNo).parentElement.id == 'thebook') { // heading, figure or table
+				blink (document.getElementById(segNo))
+			} else { // it's in a blockquote - blink the whole blockquote
+				let parentTag = document.getElementById(segNo).parentElement.tagName
+				let numberPart = Number(segNo.split('-')[1])
+				let toBlinkArr =[]
+				let n=0
+				do {
+					toBlinkArr.push('seg-'+(numberPart+n))
+					n++
+				} while (document.getElementById('seg-'+(numberPart+n)).parentElement.tagName == parentTag)
+				for (i in toBlinkArr) {
+					blink (document.getElementById(toBlinkArr[i]))
+				}
+			}
 		}
 	}
 
@@ -2316,6 +2336,10 @@ modalalert.addEventListener("click", function(e) {
 
 
 function exitStaticModal () {
+	if(lastShownSutta) {
+		blink(lastShownSutta)
+		lastShownSutta= ''
+	}
 	startBookScroll();
 	hideElement(modal);
 	hideElement(modalcontent);
@@ -2323,7 +2347,9 @@ function exitStaticModal () {
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
-    exitStaticModal();
+	if (!modal.classList.contains('hide')) {
+		exitStaticModal();
+	}
   }
 })
 
@@ -2466,12 +2492,16 @@ function blink(target, time=450) {
 
 	setTimeout (function() {
 		target.style.opacity = 1;
+		target.style.color = 'black'
+		target.style.background = '#c92f003a'	
 	}, time/3);
 	setTimeout (function() {
 		target.style.opacity = 0;
 	}, time/2);
 	setTimeout (function() {
 		target.style.opacity = 1;
+		target.style.color = target.parentElement.style.color
+		target.style.background = target.parentElement.style.background
 	}, time);
 }
 
@@ -2743,7 +2773,9 @@ function openSesame (el) {
 	hideSpinner()
 }
 
-function displaySutta (linkText) {
+let lastShownSutta = ''
+function displaySutta (linkText, returnToElem) {
+	lastShownSutta = returnToElem
 	setModalStyle('Sutta');
 	showModal('Sutta');
 	modalbody.scrollTop = 0;

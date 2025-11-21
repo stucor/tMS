@@ -1,4 +1,4 @@
-Wed Nov 19 2025 15:41:53 GMT+0000 (Greenwich Mean Time)
+Fri Nov 21 2025 12:13:29 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -265,7 +265,7 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 },
 {
 	"sesame": "Longer Discourse on the Ending of Craving",
-	"key": "mn-blurbs:mn28"
+	"key": "mn-blurbs:mn38"
 },
 {
 	"sesame": "MMK",

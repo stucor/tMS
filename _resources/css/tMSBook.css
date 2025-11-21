@@ -131,12 +131,6 @@ a {
 	text-decoration: none;
 }
 
-/* .noteinnotes, .noteinnotereturn {
-	color:cornflowerblue;
-	cursor: pointer;
-	font-variant: small-caps;
-} */
-
 .bookSegment, .internalLink {
 	color:cornflowerblue;
 	text-decoration: none;
@@ -960,26 +954,6 @@ span.opensesame > span.Xclose {
 	font-weight: 600;
 }
 
-/* .closeblocksesame::before{
-	position:relative;
-	float:right;
-	top: -0.5em;
-	right: -1em;
-	content: '\22A0';
-	font-size: larger;
-	cursor: pointer;
-	color: var(--primarytextcolor)
-} */
-/* .closeinlinesesame::before{
-	margin-left: 1em;
-	padding:0 0.3em 0 0.5em;
-	content: '\22A0';
-	cursor: pointer;
-	color: var(--primarytextcolor);
-	background: #d4c5ab20;
-	border: thin dotted #d4c5ab;
-	border-right:none;
-} */
 .opensesame blockquote {
 	border-left: none;
 	padding-left: 1em;
@@ -1114,6 +1088,7 @@ dd > ol > li {
 
 
 .bibSeg > span {
+	font-family: 'Source Sans Pro';
 	color: cornflowerblue;
 	cursor: pointer;
 }
@@ -1302,7 +1277,7 @@ sup {
 	color: cornflowerblue;
 	cursor: pointer;
 	font-style: normal;
-	user-select: none;
+	/* user-select: none; */
 	/* background: rgb(222, 193, 250); */
 }
 

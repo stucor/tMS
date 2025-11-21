@@ -215,7 +215,7 @@ header h4 {
   color: cornflowerblue;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 1em;
+  /* border-radius: 1em; */
 	padding: 0 3px;
 	margin: 0 -3px;
   overflow: hidden;
@@ -246,8 +246,10 @@ header h4 {
 }
 
 p:has(> .sc-mark), p:has(> span.verse-line > .sc-mark) {
-  background-color: var(--bdtexthighlighter);
-  box-shadow: 1px 1px 3px 1px var(--bdtexthighlightborder);
+  background-color: var(--sesamebackground);
+  box-shadow: 0 0 2px 1px var(--bdtexthighlightborder);
+/*   background-color: var(--bdtexthighlighter);
+  box-shadow: 1px 1px 3px 1px var(--bdtexthighlightborder); */
   padding: 0.5em;
   margin: 0.5em -0.5em !important;
   border-radius: 0.1em;

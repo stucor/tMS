@@ -153,7 +153,7 @@
   },
   {
     "fnNumber": "39",
-    "fnHTML": "<p>For example <span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.156 &amp; 167, <span class='sesame' data-sesame-key='zotref:Bernhard 1968a'>Bernhard</span> p.56, <span class='sesame' data-sesame-key='zotref:Wayman 1971a'>Wayman 1971</span> p.186, <span class='sesame' data-sesame-key='zotref:Collins 1982a'>Collins</span> p.108, <span class='sesame' data-sesame-key='zotref:Vetter 1988a'>Vetter 1988</span> p.46, <span class='sesame' data-sesame-key='zotref:Vetter 1994a'>Vetter 1994</span>, <span class='sesame' data-sesame-key='zotref:Mejor 1996a'>Mejor</span> p.123, <span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> p.45, <span class='sesame' data-sesame-key='zotref:Jurewicz 2000a'>Jurewicz</span> p.177, <span class='sesame' data-sesame-key='zotref:Ronkin 2011a'>Ronkin</span> n.43 p.238, <span class='sesame' data-sesame-key='zotref:Shulman 2007a'>Shulman</span> p.89 n.71, <span class='sesame' data-sesame-key='zotref:Gombrich 2009a'>Gombrich 2009</span> p.138</p>"
+    "fnHTML": "<p>For example<br><span class='sesame' data-sesame-key='zotref:Frauwallner 1973a'>Frauwallner 1953/1973</span> p.156 &amp; 167,<br><span class='sesame' data-sesame-key='zotref:Bernhard 1968a'>Bernhard</span> p.56,<br><span class='sesame' data-sesame-key='zotref:Wayman 1971a'>Wayman 1971</span> p.186,<br><span class='sesame' data-sesame-key='zotref:Collins 1982a'>Collins</span> p.108,<br><span class='sesame' data-sesame-key='zotref:Vetter 1988a'>Vetter 1988</span> p.46,<br><span class='sesame' data-sesame-key='zotref:Vetter 1994a'>Vetter 1994</span>,<br><span class='sesame' data-sesame-key='zotref:Mejor 1996a'>Mejor</span> p.123,<br><span class='sesame' data-sesame-key='zotref:Schmithausen 2000a'>Schmithausen 2000</span> p.45,<br><span class='sesame' data-sesame-key='zotref:Jurewicz 2000a'>Jurewicz</span> p.177,<br><span class='sesame' data-sesame-key='zotref:Ronkin 2011a'>Ronkin</span> n.43 p.238,<br><span class='sesame' data-sesame-key='zotref:Shulman 2007a'>Shulman</span> p.89 n.71,<br><span class='sesame' data-sesame-key='zotref:Gombrich 2009a'>Gombrich 2009</span> p.138</p>"
   },
   {
     "fnNumber": "40",
@@ -249,7 +249,7 @@
   },
   {
     "fnNumber": "63",
-    "fnHTML": "<p>For example in <span class='sclinktext'>SN&#8239;15.1–SN 15.20</span></p>"
+    "fnHTML": "<p>For example in <span data-sesame-key='sn-blurbs:sn15' class='sesame'>SN 15.1–SN 15.20</span></p>"
   },
   {
     "fnNumber": "64",
@@ -261,11 +261,11 @@
   },
   {
     "fnNumber": "66",
-    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Bodhi 2000a'>Bodhi 2000</span> p.520</p>"
+    "fnHTML": "<p><span data-sesame-key='bodhi-nikaya-notes:SN-CausationIntro-12Nidanasamyutta' class='sesame'>Bodhi 2000 p.520</span></p>"
   },
   {
     "fnNumber": "67",
-    "fnHTML": "<p>As e.g. <span class='sesame' data-sesame-key='zotref:Ñāṇavīra 1988a'>Ñāṇavīra</span> p.19, <span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.56, <span class='sesame' data-sesame-key='zotref:Brasington 2021a'>Brasington</span> p.67, <span class='sesame' data-sesame-key='zotref:JonesDhivan 2009a'>Jones 2009</span> p.244. See <span class='sesame' data-sesame-key='zotref:Bodhi 1998a'>Bodhi 1998</span> p.172 for a further response to such ideas.</p>"
+    "fnHTML": "<p>As e.g.<br><span class='sesame' data-sesame-key='zotref:Ñāṇavīra 1988a'>Ñāṇavīra</span> p.19,<br><span class='sesame' data-sesame-key='zotref:Ñāṇananda 2015a'>Ñāṇananda 2015</span> p.56,<br><span class='sesame' data-sesame-key='zotref:Brasington 2021a'>Brasington</span> p.67,<br><span class='sesame' data-sesame-key='zotref:JonesDhivan 2009a'>Jones 2009</span> p.244.<br>See <span class='sesame' data-sesame-key='zotref:Bodhi 1998a'>Bodhi 1998</span> p.172 for a further response to such ideas.</p>"
   },
   {
     "fnNumber": "68",

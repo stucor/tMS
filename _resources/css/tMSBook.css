@@ -357,9 +357,8 @@ figure:has(> .tMSIndex) > .tMSIndex {
 
 figure img { 
 	margin: 0.5em; 
-/*	border: 2px solid var(--figureimgborder);  
  	min-width: 100px; 
-	max-width: 250px; */
+	max-width: 250px;
 	box-sizing: border-box;
 }
 
@@ -904,7 +903,7 @@ div.opensesame {
 	padding: 1em 2em; 
 	text-indent:0;
 	color:var(--secondarytextcolor);
-	box-shadow: 0 0 2px 1px var(--bdtexthighlightborder);
+	box-shadow: inset 0 0 2px 1px var(--bdtexthighlightborder);
 	white-space: normal;
 	font-weight: normal;
 	font-size: 0.9em;
@@ -912,6 +911,7 @@ div.opensesame {
 	border-radius: 0em;
 	font-style: normal;
 	text-align: var(--textalign);
+	
 }
 
 div.opensesame > span.Xclose {

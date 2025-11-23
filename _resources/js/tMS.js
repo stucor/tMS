@@ -828,6 +828,7 @@ function savePlaceInBook () {
 	lsTETEname = 'ms' + shortcode() + 'TETE';
 	localStorage.setItem(lsTEname, String(theTopElement));
 	localStorage.setItem(lsTETEname, String(theTopElementTopEdge));
+	//console.log(`${theTopElement}`)
 	//alert(lsTEname + '::' +theTopElement);
 }
 
@@ -1689,7 +1690,6 @@ document.getElementById("TOC").addEventListener("click", function(e) {
 
 segCount = document.getElementById('segcount')
 window.onscroll = function() {
-	
 	var currentScrollPos = window.scrollY;
 	if (forceMobileUI) {
 		if (sidebarIsOpen == false){
@@ -1704,7 +1704,6 @@ window.onscroll = function() {
 		}
 	} else {
 		theTopBar.style.top = "0";
-		
 	}
 
 	let dataprogArr = document.querySelectorAll("[data-progress]")
@@ -2492,7 +2491,7 @@ function blink(target, time=450) {
 
 	setTimeout (function() {
 		target.style.opacity = 1;
-		target.style.color = 'black'
+		target.style.color = 'limegreen'
 		target.style.background = '#c92f003a'	
 	}, time/3);
 	setTimeout (function() {
@@ -2566,7 +2565,7 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 
 
 function openSesame (el) {
-	showSpinner()
+
 	async function decodeSesameKey (sesameKey) {
 		let sesameKeyArr = sesameKey.split(':')
 	/* 	console.log(`0::${sesameKeyArr[0]}`) // type
@@ -2737,8 +2736,6 @@ function openSesame (el) {
 					tempEl.innerHTML = zotBiblioEntries[i].innerHTML
 					bibseq = tempEl.getElementsByClassName('bibSeg')
 					bibReference = bibReference.replace(bibseq[0].outerHTML,'')
-					//console.log(`${bibseq[0].outerHTML}\n\n`)
-					//console.log(bibReference)
 					break
 				}
 			}
@@ -2765,13 +2762,15 @@ function openSesame (el) {
 			console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
 		});
 	}
+	showSpinner()
 	if (el.nodeName == 'SUP') {
 		populateFootnote()
 	} else {
 		decodeSesameKey(el.getAttribute('data-sesame-key'))
 	}
-	hideSpinner()
+	hideSpinner()	
 }
+
 
 let lastShownSutta = ''
 function displaySutta (linkText, returnToElem) {

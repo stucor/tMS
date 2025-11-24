@@ -2670,13 +2670,12 @@ function openSesame (el) {
 			(sesameKeyArr[0] == `bodhi-nikaya`) ||
 			(sesameKeyArr[0] == `bodhi-nikaya-commentary`)||
 			(sesameKeyArr[0] == `bodhi-books`)||
+			(sesameKeyArr[0] == `brahm-books`)||
 			(sesameKeyArr[0] == `sujato-nikaya-notes`)) {
 			let nikDir = ''
 			if (sesameKeyArr[0] == `bodhi-nikaya`) {
 				nikDir = `/${sesameKeyArr[1].slice(0,2).toUpperCase()}`
-			} else {
-				console.log(sesameKeyArr[1])
-			}
+			} 
 			let fetchPath = `../_resources/sesame-data/${sesameKeyArr[0]}${nikDir}/${sesameKeyArr[1]}.json`
 			function populateSesame(quoteData) {
 				let subSectionSpacer = ''

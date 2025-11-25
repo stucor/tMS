@@ -1,4 +1,4 @@
-Mon Nov 24 2025 16:08:17 GMT+0000 (Greenwich Mean Time)
+Tue Nov 25 2025 12:13:26 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -46,6 +46,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 {
 	"sesame": "Assalāyana Sutta",
 	"key": "mn-blurbs:mn93"
+},
+{
+	"sesame": "Atharva Veda",
+	"key": "wp:Atharvaveda:Ram 2013a"
 },
 {
 	"sesame": "Aṅguttara Nikāya",
@@ -422,6 +426,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 {
 	"sesame": "Sīlakkhandha Vagga",
 	"key": "dn-blurbs:dn-silakkhandhavagga"
+},
+{
+	"sesame": "The Analysis of the Six Sense Spheres",
+	"key": "mn-blurbs:mn137"
 },
 {
 	"sesame": "The Analysis of the Truths",

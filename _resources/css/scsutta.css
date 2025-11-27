@@ -246,8 +246,8 @@ header h4 {
 }
 
 p:has(> .sc-mark), p:has(> span.verse-line > .sc-mark) {
-  background-color: var(--sesamebackground);
-  box-shadow: 0 0 2px 1px var(--bdtexthighlightborder);
+  background-color:  var(--sesamebackground); 
+  box-shadow: 0 0 2px 0px var(--bdtexthighlightborder);
 /*   background-color: var(--bdtexthighlighter);
   box-shadow: 1px 1px 3px 1px var(--bdtexthighlightborder); */
   padding: 0.5em;
@@ -264,7 +264,10 @@ p:has(> span.verse-line > .sc-mark) {
 
 .sc-mark {
 /*   background-color: var(--bdtexthighlighter); */
-  border-bottom: dotted var(--bdtexthighlightborder) 1px;
+  border-bottom: 1px dotted var(--bdtexthighlightborder);
+  background: rgba(250, 250, 210, 0.438);
+/*   background: rgba(255, 255, 255, 0.2); */
+  
 }
 
 

@@ -903,7 +903,7 @@ div.opensesame {
 	padding: 1em 2em; 
 	text-indent:0;
 	color:var(--secondarytextcolor);
-	box-shadow: inset 0 0 2px 1px var(--bdtexthighlightborder);
+	box-shadow: inset 0 0 2px 0px var(--bdtexthighlightborder);
 	white-space: normal;
 	font-weight: normal;
 	font-size: 0.9em;
@@ -941,7 +941,7 @@ span.opensesame > span.Xclose {
 	border-right:none;
 }
 
-.Xclose:hover {
+.opensesame .Xclose:hover {
 	font-weight: bold;
 }
 
@@ -1025,7 +1025,10 @@ span.opensesame > span.Xclose {
 	filter:hue-rotate(0deg);
 }
 
-
+.opensesame hr {
+	border:0;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+}
 
 
 

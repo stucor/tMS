@@ -2240,7 +2240,8 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				let allSups = document.querySelectorAll ('sup')
 				for (let j in allSups) {
 					if (allSups[j].innerText == noteNumberToOpen) {
-						allSups[j].click()
+						/* allSups[j].click() */
+						openSesame(allSups[j])
 						goToTarget(allSups[j], 'ELEMENT', 'center')
 						setTimeout(() => {
 							blink(allSups[j].nextElementSibling)
@@ -2281,7 +2282,8 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 			if (!e.target.nextElementSibling.classList.contains('opensesame')) {
 				openSesame (e.target)
 			} else {
-				blink(e.target.nextElementSibling)
+				e.target.nextElementSibling.remove()
+				blink(e.target)
 			}
 		} else {
 			openSesame (e.target)
@@ -2289,7 +2291,9 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	} 
 
 	if (e.target.classList.contains('Xclose')) {
+		blink(e.target.parentElement.previousElementSibling)
 		e.target.parentElement.remove()
+		
 	}
 });
 
@@ -2547,7 +2551,8 @@ document.getElementById("ModalLists").addEventListener("click", function(e) {
 				let allSups = document.querySelectorAll ('sup')
 				for (let j in allSups) {
 					if (allSups[j].innerText == noteNumberToOpen) {
- 						allSups[j].click()
+ 						/* allSups[j].click() */
+						openSesame(allSups[j])
 						goToTarget(allSups[j], 'ELEMENT', 'center')
 						setTimeout(() => {
 							blink(allSups[j].nextElementSibling)
@@ -2763,7 +2768,13 @@ function openSesame (el) {
 	}
 	showSpinner()
 	if (el.nodeName == 'SUP') {
-		populateFootnote()
+		if (el.nextElementSibling !== null) {
+			if (el.nextElementSibling.classList != 'opensesame') {
+				populateFootnote()
+			}
+		} else {
+			populateFootnote()
+		}
 	} else {
 		decodeSesameKey(el.getAttribute('data-sesame-key'))
 	}

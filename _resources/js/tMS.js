@@ -2280,7 +2280,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 	if (e.target.classList.contains('sesame')) {
 		if (e.target.nextElementSibling != null) {
 			if (!e.target.nextElementSibling.classList.contains('opensesame')) {
-				openSesame (e.target)
+				openSesame(e.target)
 			} else {
 				e.target.nextElementSibling.remove()
 				blink(e.target)
@@ -2707,20 +2707,41 @@ function openSesame (el) {
 		} else 
 		if (sesameKeyArr[0] == `DPPN`) {
 			let fetchPath = `../_resources/sesame-data/dictionaries/complex/en/pli2en_dppn.json`
-
 			function populateSesame (quoteData) {
 				let localHTML = ``
 				for (let i in quoteData) {
 					if (quoteData[i].word == sesameKeyArr[1]) {
 						localHTML = quoteData[i].text
 						localHTML = localHTML.slice(0, localHTML.lastIndexOf('</dt>')+5) + '<hr>' + localHTML.slice(localHTML.lastIndexOf('</dt>')+5, localHTML.length)
-
 						break;
 					}
 				}
-				let sourceHTML = `<a class="extlink" href="https://suttacentral.net/">source: DPPD—<img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral Edition</a>`
+				let sourceHTML = `<a class="extlink" href="https://suttacentral.net/">source: DPPN—<img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral Edition</a>`
 				let quoteHTML =`${sourceHTML}<br>${localHTML}`
-				el.insertAdjacentHTML("afterend", `<div class='opensesame'><span class='Xclose'>☒</span>${quoteHTML}<br>${biblio}</div>`);
+				el.insertAdjacentHTML("afterend", `<div class='opensesame'><span class='Xclose'>☒</span>${quoteHTML}<hr>~ Also available: <a class='extlink' href= 'https://www.palikanon.com/english/pali_names/dic_idx.html'>DPPN—Pali Kanon edition</a></div>`);
+			}
+
+			await fetch(fetchPath)
+			.then(response => response.json())
+			.then (data => populateSesame(data))
+			.catch(error => {
+				console.log(`${error}ERROR: Can't fetch ${fetchPath}`);
+			});
+		} else
+		if (sesameKeyArr[0] == `PED`) {
+			let fetchPath = `../_resources/sesame-data/dictionaries/complex/en/pli2en_pts.json`
+			function populateSesame (quoteData) {
+				let localHTML = ``
+				for (let i in quoteData) {
+					if (quoteData[i].word == sesameKeyArr[1]) {
+						localHTML = quoteData[i].text
+						localHTML = localHTML.slice(0, localHTML.lastIndexOf('</dt>')+5) + '<hr>' + localHTML.slice(localHTML.lastIndexOf('</dt>')+5, localHTML.length)
+						break;
+					}
+				}
+				let sourceHTML = `<a class="extlink" href="https://suttacentral.net/">source: PED—<img src='../_resources/images/icons/sc-icon.png' style='width:1em; position:relative; top:0.2em;' alt="SuttaCentral Logo">SuttaCentral Edition</a>`
+				let quoteHTML =`${sourceHTML}<br>${localHTML}`
+				el.insertAdjacentHTML("afterend", `<div class='opensesame'><span class='Xclose'>☒</span>${quoteHTML}<hr>~ Also available: <a class='extlink' href= 'https://dsal.uchicago.edu/dictionaries/pali/'>PED at Digital Dictionaries of South Asia</a></div>`);
 			}
 
 			await fetch(fetchPath)

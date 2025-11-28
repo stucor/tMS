@@ -1035,5 +1035,21 @@
 {
 	"sesame": "The Analysis of the Six Sense Spheres",
 	"key": "mn-blurbs:mn137"
-}
+},
+  {
+    "sesame": "DPPN under ‘Ādicca’",
+    "key": "DPPN:ādicca"
+  },
+  {
+    "sesame": "DPPN for Koṭṭhita",
+    "key": "DPPN:mahākoṭṭhita"
+  },
+  {
+    "sesame": "DPPN for Sāriputta",
+    "key": "DPPN:sāriputta"
+  },
+  {
+    "sesame": "PED s.v. viññāṇa",
+    "key": "PED:viññāṇa"
+  }
 ]

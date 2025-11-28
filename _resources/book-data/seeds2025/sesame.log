@@ -1,4 +1,4 @@
-Thu Nov 27 2025 13:06:44 GMT+0000 (Greenwich Mean Time)
+Fri Nov 28 2025 12:14:23 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -204,6 +204,18 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "mn-blurbs:mn44"
 },
 {
+	"sesame": "DPPN for Koṭṭhita",
+	"key": "DPPN:mahākoṭṭhita"
+},
+{
+	"sesame": "DPPN for Sāriputta",
+	"key": "DPPN:sāriputta"
+},
+{
+	"sesame": "DPPN under ‘Ādicca’",
+	"key": "DPPN:ādicca"
+},
+{
 	"sesame": "Dhammasaṅgaṇī",
 	"key": "super-blurbs:ds"
 },
@@ -318,6 +330,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 {
 	"sesame": "Nidāna Saṁyutta,",
 	"key": "super-blurbs:sn12"
+},
+{
+	"sesame": "PED s.v. viññāṇa",
+	"key": "PED:viññāṇa"
 },
 {
 	"sesame": "Pañcattaya Sutta",

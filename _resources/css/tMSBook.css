@@ -364,7 +364,7 @@ figure img {
 
 figcaption { 
 	font-style: italic; 
-	font-size: 0.8em; 
+	font-size: 0.9em; 
 	max-width: 70%;
 	margin: 0 15%
 }
@@ -534,7 +534,7 @@ tfoot tr td {
 .simpletable caption {
 	font-style: italic; 
 	font-variant: normal;
-	font-size: 0.9em; 
+	/* font-size: 0.9em; */ 
 	border: none;
 	caption-side: bottom;
 	margin: 0;
@@ -906,7 +906,7 @@ div.opensesame {
 	box-shadow: inset 0 0 2px 0px var(--bdtexthighlightborder);
 	white-space: normal;
 	font-weight: normal;
-	font-size: 0.9em;
+	/* font-size: 0.95em; */
  	background-color: var(--sesamebackground); 
 	border-radius: 0em;
 	font-style: normal;

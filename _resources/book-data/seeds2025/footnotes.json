@@ -965,7 +965,7 @@
   },
   {
     "fnNumber": "242",
-    "fnHTML": "<p><span lang='pi'>Ādicca</span> (‘Sun’) was a name for the clan of the Buddha, possibly an honorific. See <span class='sclinktext'>Snp&#8239;3.1<span class='scsegments'>:19.1–19.2</span></span> and <span class='sesame' data-sesame-key='zotref:Dict-DPPN'>DPPN</span> under ‘<span lang='pi'>Ādicca</span>’.</p>"
+    "fnHTML": "<p><span lang='pi'>Ādicca</span> (‘Sun’) was a name for the clan of the Buddha, possibly an honorific. See <span class='sclinktext'>Snp&#8239;3.1<span class='scsegments'>:19.1–19.2</span></span> and <span data-sesame-key='DPPN:ādicca' class='sesame'>DPPN under ‘Ādicca’</span>.</p>"
   },
   {
     "fnNumber": "243",
@@ -989,7 +989,7 @@
   },
   {
     "fnNumber": "248",
-    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Nyanaponika 1981a'>Nyanaponika 1981</span> p.9. See also <span class='sesame' data-sesame-key='zotref:Dict-PED'>PED</span> s.v. <span lang='pi'>viññāṇa</span>: “As one of the four <span lang='pi'>āhāras viññāṇa</span> is considered as the material, food or cause, through which comes rebirth. As such it is likened to seed in the field of action (<span lang='pi'>kamma</span>), and as entering (a body) at rebirth the phrase <span lang='pi'>viñ&shy;ñā&shy;ṇas&shy;sa avakkanti</span> is used.”</p>"
+    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Nyanaponika 1981a'>Nyanaponika 1981</span> p.9. See also <span data-sesame-key='PED:viññāṇa' class='sesame'>PED s.v. viññāṇa</span>: “As one of the four <span lang='pi'>āhāras viññāṇa</span> is considered as the material, food or cause, through which comes rebirth. As such it is likened to seed in the field of action (<span lang='pi'>kamma</span>), and as entering (a body) at rebirth the phrase <span lang='pi'>viñ&shy;ñā&shy;ṇas&shy;sa avakkanti</span> is used.”</p>"
   },
   {
     "fnNumber": "249",
@@ -1545,7 +1545,7 @@
   },
   {
     "fnNumber": "387",
-    "fnHTML": "<p><span class='sesame' data-sesame-key='zotref:Dict-DPPN'>DPPN</span></p>"
+    "fnHTML": "<p><span data-sesame-key='DPPN:mahākoṭṭhita' class='sesame'>DPPN for Koṭṭhita</span>, <span data-sesame-key='DPPN:sāriputta' class='sesame'>DPPN for Sāriputta</span></p>"
   },
   {
     "fnNumber": "388",

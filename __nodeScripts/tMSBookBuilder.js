@@ -980,12 +980,6 @@ function buildBookIndexHTML () {
 					allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll('<p>', '').replaceAll('</p>', '')
 				}
 			} else 
-			// Named Sections
-			if (allDivs[i].getAttribute('data-custom-style') == "WW-named-section") {
-					allDivs[i].classList.add(`named-section`)
-					allDivs[i].removeAttribute('data-custom-style')
-					allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll('<p>', '').replaceAll('</p>', '')
-			} else
 			// FIGURE (with images)
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-figure") {
 				let figureHTML = '';
@@ -1094,39 +1088,42 @@ function buildBookIndexHTML () {
 					}
 					allDivs[i].replaceWith(tempHTML)
 				}
-
-
 			} else
 			// BLOCKQUOTES
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-blockquote") {
 				allDivs[i].tagName = "blockquote"
 				allDivs[i].removeAttribute('data-custom-style')
-
+				//console.log(allDivs[i-1].getAttribute('data-custom-style'))
 				if ((allDivs[i-1].getAttribute('data-custom-style') == "WW-paragraph") || 
-					(allDivs[i-1].getAttribute('data-custom-style') == "tight-right-cite") ||
-					(allDivs[i-1].getAttribute('data-custom-style') == "WW-line-block"))  {
+					(allDivs[i-1].getAttribute('data-custom-style') == "WW-tight-right-cite") ||
+					(allDivs[i-1].getAttribute('data-custom-style') == "WW-line-block") ||
+					(allDivs[i-1].getAttribute('data-custom-style') == "WW-named-section") ||
+					(allDivs[i-1].classList.contains('tight-right-cite')) ||
+					(allDivs[i-1].classList.contains('line-block')) ||
+					(allDivs[i-1].classList.contains('named-section'))
+				){
 				//OAstart class
 					let newHTML = ''
 					let blockquoteRoot = parse(allDivs[i].innerHTML);
 					let allPs = blockquoteRoot.querySelectorAll('p')
 					for (let apj = 0; apj < allPs.length; apj++ ) {
-/* 						console.log (allPs[apj].innerHTML.substring(0,4))
-						console.log (allPs[apj].innerHTML) */
-						if (allPs[apj].innerHTML.charAt(0)== '“') {
+						console.log (allPs[apj].innerHTML.substring(0,54))
+						/* console.log (allPs[apj].innerHTML) */
+						if (allPs[apj].innerText.charAt(0)== '“') {
 							if (apj > 0) {
 								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAbody' `)
 							} else {
 								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart' `)
 							}
 						} else 
-						if (allPs[apj].innerHTML.charAt(0)== '‘') {
+						if (allPs[apj].innerText.charAt(0)== '‘') {
 							if (apj > 0) {
 								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAbody-little' `)
 							} else {
 								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart-little' `)
 							}
 						} else	
-						if (allPs[apj].innerHTML.substring(0,4)== '&lt;') { // if the first character is a < then knock the text back a little bit - see ※755 of seeds2025 for an example
+						if (allPs[apj].innerText.substring(0,4)== '&lt;') { // if the first character is a < then knock the text back a little bit - see ※755 of seeds2025 for an example
 								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart-top' `).replace('&lt;','')
 						} else	
 						{
@@ -1135,6 +1132,12 @@ function buildBookIndexHTML () {
 					}
 					allDivs[i].innerHTML = newHTML
 				}
+			} else
+			// Named Sections
+			if (allDivs[i].getAttribute('data-custom-style') == "WW-named-section") {
+					allDivs[i].classList.add(`named-section`)
+					allDivs[i].removeAttribute('data-custom-style')
+					allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll('<p>', '').replaceAll('</p>', '')
 			} else
 			// CAPTIONS -- Used in conjuction with IMAGE TABLE
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-sans"){
@@ -1154,13 +1157,12 @@ function buildBookIndexHTML () {
 			//(line-block)
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-line-block") {
 				let tempHTML = allDivs[i].innerHTML.replaceAll('\r\n', '')
-				
 				let classText = 'line-block'
 				if (tempHTML.substr(0,12)=='<blockquote>') {
 					classText = 'line-block-indented'
 					tempHTML = tempHTML.replace('<blockquote>','').replace('</blockquote>','')
 				}
-//console.log(tempHTML + ' '+ classText)
+				//console.log(tempHTML + ' '+ classText)
 				let newHTML = `<blockquote><div class='${classText}'>${tempHTML}</div></blockquote>`
 				if (tempHTML.substr(0,29) == `<p><span class="list-margin">`) {
 					//find the first closed span

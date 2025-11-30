@@ -1072,7 +1072,8 @@ dd > ol > li {
 
 .bibAuthor {
 	margin-bottom: 0;
-	font-size: 0.8em;
+	font-variant: small-caps;
+	/* font-size: 0.8em; */
 }
 .bibzotref {
 	color: rgba(128, 128, 128, 0.6);
@@ -1093,7 +1094,13 @@ dd > ol > li {
 .bibSeg > span {
 	font-family: 'Source Sans Pro';
 	color: cornflowerblue;
+	padding: 0 2px;
+	border-radius: 10px;;
 	cursor: pointer;
+	border: 1px solid rgba(255, 255, 255, 0);
+}
+.bibSeg > span:hover {
+	border: 1px solid cornflowerblue;
 }
 .zotRefInaSesame {
 	text-align: left;
@@ -1312,7 +1319,7 @@ sup {
 
 .infocontainer > h3 {
 	padding: 0 1em;
-	background: #00000020;
+	background: #00000010;
 	margin-top:0;
 	text-align: left;
 }
@@ -1606,16 +1613,14 @@ sup {
 
 .figureSegRef, .notesSegRef, .lotSegRef, .textSegRef {
 	position: relative;
-	top:0.4em;
-	font-weight: bold;
+	top:0.2em;
 	color: var(--segmentcolor);
-	background-color: rgba(211, 211, 211, 0.227);
 	width:fit-content;
-	height: fit-content;
-	border-radius: 20px;
+	/* height: fit-content; */
+/* 	border-radius: 20px; */
 	margin: 0;
 	padding: 0 0.4em;
-	font-size: 0.8rem;
+	/* font-size: 0.9rem; */
 	min-width: 10rem;
 }
 
@@ -3207,7 +3212,7 @@ mark.current {
 	.extlink:hover:after {
 		filter:hue-rotate(0deg);
 	}
-	.reflistbuttons > button:hover {
+	.reflistbuttons > button:hover, #listsTabNav > button:hover{
 		border: 3px solid var(--primarycolor);
 		box-shadow: 0 0 5px 1px var(--primarycolor);
 	}

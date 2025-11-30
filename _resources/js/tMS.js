@@ -2495,8 +2495,8 @@ function blink(target, time=450) {
 
 	setTimeout (function() {
 		target.style.opacity = 1;
-		target.style.color = 'limegreen'
-		target.style.background = '#c92f003a'	
+		target.style.color = 'green'
+		target.style.background = '#c92f0010'	
 	}, time/3);
 	setTimeout (function() {
 		target.style.opacity = 0;

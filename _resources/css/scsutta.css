@@ -263,10 +263,11 @@ p:has(> span.verse-line > .sc-mark) {
 } */
 
 .sc-mark {
-/*   background-color: var(--bdtexthighlighter); */
-  border-bottom: 1px dotted var(--bdtexthighlightborder);
+/* background-color: var(--bdtexthighlighter); */
+/* border-bottom: 1px dotted var(--bdtexthighlightborder); */
+  border-bottom: 2px solid #eaff328a;
   background: rgba(250, 250, 210, 0.438);
-/*   background: rgba(255, 255, 255, 0.2); */
+/* background: rgba(255, 255, 255, 0.2); */
   
 }
 

@@ -1260,10 +1260,6 @@
     "location": "fn-310"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>DN&#8239;15<span class='scsegments'>:22.6</span></span>",
-    "location": "fn-316"
-  },
-  {
     "sclinkHTML": "<span class='sclinktext'>DN&#8239;14<span class='scsegments'>:2.18.40–2.18.43</span></span>",
     "location": "fn-317"
   },
@@ -1286,10 +1282,6 @@
   {
     "sclinkHTML": "<span class='sclinktext'>SN&#8239;22.82<span class='scsegments'>:7.10</span></span>",
     "location": "fn-317"
-  },
-  {
-    "sclinkHTML": "<span class='sclinktext'>DN&#8239;15<span class='scsegments'>:22.2</span></span>",
-    "location": "fn-318"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>DN&#8239;10<span class='scsegments'>:2.22.1</span></span>",
@@ -1516,7 +1508,7 @@
     "location": "fn-361"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>DN&#8239;2<span class='scsegments'>:83.4 D I 76</span></span>",
+    "sclinkHTML": "<span class='sclinktext'>DN&#8239;2<span class='scsegments'>:83.4</span></span>",
     "location": "fn-361"
   },
   {

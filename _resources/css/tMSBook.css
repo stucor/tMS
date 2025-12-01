@@ -1,3 +1,4 @@
+/* mel%dog386~FKD */
 *:lang(pi) {
 	font-style: italic;
 }
@@ -900,7 +901,7 @@ span.sesame {
 
 div.opensesame {
 	margin: 0.5em 0em 1em 0em;
-	padding: 1em 2em; 
+	padding: 1em 1em; 
 	text-indent:0;
 	color:var(--secondarytextcolor);
 	box-shadow: inset 0 0 2px 0px var(--bdtexthighlightborder);
@@ -918,7 +919,7 @@ div.opensesame > span.Xclose {
 	position:relative;
 	float:right;
 	top: -0.7em;
-	right: -1em;
+	right: -0.4em;
 	font-size: 1.3em;
 	cursor: pointer;
 	color: var(--primarytextcolor)
@@ -964,6 +965,7 @@ span.opensesame > span.Xclose {
 }
 
 .opensesame p {
+	margin-top: 0.5em;
 	text-indent: unset;
 }
 

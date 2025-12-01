@@ -1051,5 +1051,9 @@
   {
     "sesame": "PED s.v. viññāṇa",
     "key": "PED:viññāṇa"
+  },
+  {
+    "sesame": "PED under viññāṇa",
+    "key": "PED:viññāṇa"
   }
 ]

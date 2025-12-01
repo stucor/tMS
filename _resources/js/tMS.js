@@ -2277,6 +2277,7 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 		}
 	}
 
+
 	if (e.target.classList.contains('sesame')) {
 		if (e.target.nextElementSibling != null) {
 			if (!e.target.nextElementSibling.classList.contains('opensesame')) {

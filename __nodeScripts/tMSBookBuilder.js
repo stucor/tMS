@@ -1107,7 +1107,7 @@ function buildBookIndexHTML () {
 					let blockquoteRoot = parse(allDivs[i].innerHTML);
 					let allPs = blockquoteRoot.querySelectorAll('p')
 					for (let apj = 0; apj < allPs.length; apj++ ) {
-						console.log (allPs[apj].innerHTML.substring(0,54))
+						//console.log (allPs[apj].innerHTML.substring(0,54))
 						/* console.log (allPs[apj].innerHTML) */
 						if (allPs[apj].innerText.charAt(0)== '“') {
 							if (apj > 0) {

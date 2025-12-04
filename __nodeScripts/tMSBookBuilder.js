@@ -380,6 +380,7 @@ function processPandoc() {
 			// anchors
 			let anchors = footnotesRoot.getElementsByTagName ('a') 
 			for (i in anchors) {
+				
 				// maintain bookmarks
 				let anchRoot = parse (anchors[i].innerHTML)
 				let anchor = anchRoot.querySelector('.anchor')
@@ -434,7 +435,9 @@ function processPandoc() {
 							let temp4Text = anchors[i].text
 							anchors[i].replaceWith(`<span class="internalLink" data-target="${target}">${temp4Text}</span>`)
 						} else {
-							anchors[i].classList.add('extlink')
+							if (!(anchors[i].getAttribute('href').slice(0,3) == '../')) {
+								anchors[i].classList.add('extlink')							
+							}
 						}
 					}
 				}
@@ -961,7 +964,9 @@ function buildBookIndexHTML () {
 						let temp4Text = anchors[i].text
 						anchors[i].replaceWith(`<span class="internalLink" data-target="${target}">${temp4Text}</span>`) 
 					} else {
-						anchors[i].classList.add('extlink')
+						if (!(anchors[i].getAttribute('href').slice(0,3) == '../')) {
+							anchors[i].classList.add('extlink')							
+						}
 					}
 			}
 		} 
@@ -1001,7 +1006,8 @@ function buildBookIndexHTML () {
 					} else {
 						bordered = ''
 					}
-					figureHTML += `${anchorHTML}<a data-fslightbox href="${currentImgSrc}"><img ${bordered} src="${currentImgSrc}" alt="${alt}" width="${imageWidth}%"></a>\n`
+					figureHTML += `${anchorHTML}<img ${bordered} src="${currentImgSrc}" alt="${alt}" width="${imageWidth}%">\n`
+					//figureHTML += `${anchorHTML}<a data-fslightbox href="${currentImgSrc}"><img ${bordered} src="${currentImgSrc}" alt="${alt}" width="${imageWidth}%"></a>\n`
 				}					
 				let figCaption = thisFigRoot.querySelector('p').innerText.replace(/[\r\n]+/gm, " ")
 				figureHTML+= `<figcaption>${figCaption}</figcaption>`

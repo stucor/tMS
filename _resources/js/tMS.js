@@ -2268,6 +2268,9 @@ document.getElementById("thebook").addEventListener("click", function(e) {
 				let n=0
 				do {
 					toBlinkArr.push('seg-'+(numberPart+n))
+					if (document.getElementById('seg-'+(numberPart+n)).nextElementSibling == null) {
+						break
+					}
 					n++
 				} while (document.getElementById('seg-'+(numberPart+n)).parentElement.tagName == parentTag)
 				for (i in toBlinkArr) {

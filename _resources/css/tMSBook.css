@@ -358,8 +358,8 @@ figure:has(> .tMSIndex) > .tMSIndex {
 
 figure img { 
 	margin: 0.5em; 
- 	min-width: 100px; 
-	max-width: 250px;
+/*  	min-width: 100px; 
+	max-width: 250px; */
 	box-sizing: border-box;
 }
 
@@ -3113,9 +3113,9 @@ mark.current {
 		margin: 2em 0;
 	}
 	figure {
-		margin: 0.5em 10%;
-		min-width: 80%;
-		max-width: 80%;
+		margin: 0.5em 0;
+/* 		min-width: 80%;
+		max-width: 80%; */
 	}
 	figure img { 
 		margin: 0.5em 0;

@@ -812,6 +812,13 @@
     "type": "branch"
   },
   {
+    "suttaRef": "vb",
+    "rootTitle": "Vibhaṅga",
+    "transTitle": "Book of Analysis ",
+    "blurb": "The Vibhaṅga (Book of Analysis) consists of 18 chapters arranged by topic. The list of topics is closely related to the Saṁyutta Nikāya—aggregates, senses, dependent origination, etc. Most of the chapters have a threefold structure. (1) Analysis according to the suttas: this quotes a key passage from the suttas on the relvant topic and offers a modest analysis. (2) Analysis according to the Abhidhamma: applies the sets of synonyms and terms as developed in the Dhammasaṅgaṇī. (3) Catechism: tests the students knowledge with systematic questioning. A few sections, such as Vb 18 Dhammahadaya, do not fit this system. They may have originated as independent treatises.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "vinaya",
     "rootTitle": "Vinayapiṭaka",
     "transTitle": "Basket of Monastic Law ",

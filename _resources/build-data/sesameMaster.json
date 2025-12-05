@@ -433,7 +433,7 @@
   },
   {
     "sesame": "Vibhaṅga",
-    "key": "sn-blurbs:sn12.2"
+    "key": "-blurbs:vb"
   },
   {
     "sesame": "Vibhaṅga Sutta",
@@ -1055,5 +1055,9 @@
   {
     "sesame": "PED under viññāṇa",
     "key": "PED:viññāṇa"
+  },
+  {
+    "sesame": "PED:huraṁ",
+    "key": "PED:huraṁ"
   }
 ]

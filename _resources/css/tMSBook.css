@@ -999,6 +999,14 @@ span.opensesame > span.Xclose {
 .opensesame dt:last-of-type {
 	margin-bottom: 1em;
 }
+.opensesame .grammar {
+	font-style: italic;
+	display: block;
+}
+.opensesame .eti {
+	font-size:smaller;
+	font-family: 'Source Sans Pro';
+}
 
 .opensesame dfn {
 	font-weight: 600;

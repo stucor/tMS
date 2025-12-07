@@ -1,4 +1,4 @@
-Fri Dec 05 2025 15:56:03 GMT+0000 (Greenwich Mean Time)
+Sun Dec 07 2025 13:44:11 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds2025
@@ -340,8 +340,20 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for seeds
 	"key": "PED:viññāṇa"
 },
 {
+	"sesame": "PED:dhātu",
+	"key": "PED:dhātu"
+},
+{
 	"sesame": "PED:huraṁ",
 	"key": "PED:huraṁ"
+},
+{
+	"sesame": "PED:tathāgata",
+	"key": "PED:tathāgata"
+},
+{
+	"sesame": "PED:āyatana",
+	"key": "PED:āyatana"
 },
 {
 	"sesame": "Pañcattaya Sutta",

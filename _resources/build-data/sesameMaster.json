@@ -1059,5 +1059,17 @@
   {
     "sesame": "PED:huraṁ",
     "key": "PED:huraṁ"
+  },
+  {
+    "sesame": "PED:tathāgata",
+    "key": "PED:tathāgata"
+  },
+  {
+    "sesame": "PED:āyatana",
+    "key": "PED:āyatana"
+  },
+  {
+    "sesame": "PED:dhātu",
+    "key": "PED:dhātu"
   }
 ]

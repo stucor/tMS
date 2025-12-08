@@ -1,0 +1,146 @@
+Mon Dec 08 2025 12:47:46 GMT+0000 (Greenwich Mean Time)
+Please check the following entries.
+Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
+build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahistoryofmindfulness2025
+[
+{
+	"sesame": "Abhidhamma",
+	"key": "super-blurbs:abhidhamma"
+},
+{
+	"sesame": "Abhidhamma Vibhaṅga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Abhidhammas",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Anāthapiṇḍika",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Aśokan",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Brahmajāla",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dhammacakka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dhamma­cakkap­pavattana Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dharmaguptaka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dharmaskandha",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Ekottara",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Jātakas",
+	"key": "super-blurbs:ja"
+},
+{
+	"sesame": "Kasi-Bhāradvadja",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Kāyagatāsmṛti Sūtra",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Madhyama Āgama",
+	"key": "super-blurbs:ma"
+},
+{
+	"sesame": "Mahā Kassapa",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahāmangala",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahāyāna",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Majjhima Nikāya",
+	"key": "super-blurbs:mn"
+},
+{
+	"sesame": "Nikāyas",
+	"key": "super-blurbs:sutta"
+},
+{
+	"sesame": "Nāgārjuna",
+	"key": "wp:Nagarjuna"
+},
+{
+	"sesame": "Parinibbāna",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Puggalavāda",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saccavibhaṅga Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sarvāstivāda",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Satipaṭṭhāna Sutta",
+	"key": "mn-blurbs:mn10"
+},
+{
+	"sesame": "Saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sigalovada",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Theravāda",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Tāvatiṁsa",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Vibhaṅga",
+	"key": "-blurbs:vb"
+},
+{
+	"sesame": "Vinaya",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Āgama",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Āgamas",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Śāriputrābhidharma",
+	"key": "XXXXXXXXXXXXXXXX"
+}
+]

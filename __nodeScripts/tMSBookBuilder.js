@@ -330,11 +330,14 @@ function processPandoc() {
 					case 'Strong':
 						spans[i].replaceWith (`<strong>${spans[i].innerHTML}</strong>`)
 					break
+					case 'wwc-superscript':
+						spans[i].classList.add('superscript')
+						spans[i].removeAttribute ('data-custom-style')
+					break
 					case 'wwc-PTS-reference':
 						spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
 						spans[i].classList.add('ptsref')
 						spans[i].removeAttribute ('data-custom-style')
-						
 					break
 					case 'wwc-sesame-zot-reference':
 						spans[i].classList.add('sesame')
@@ -868,6 +871,10 @@ function buildBookIndexHTML () {
 				case 'Strong':
 					spans[i].replaceWith (`<strong>${spans[i].innerHTML}</strong>`)
 				break
+				case 'wwc-superscript':
+					spans[i].classList.add('superscript')
+					spans[i].removeAttribute ('data-custom-style')
+				break				
 				case 'wwc-PTS-reference':
 					spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
 					spans[i].classList.add('ptsref')
@@ -1145,7 +1152,7 @@ function buildBookIndexHTML () {
 					allDivs[i].removeAttribute('data-custom-style')
 					allDivs[i].innerHTML = allDivs[i].innerHTML.replaceAll('<p>', '').replaceAll('</p>', '')
 			} else
-			// CAPTIONS -- Used in conjuction with IMAGE TABLE
+			// Captions 
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-centered-sans"){
 				let tempHTML = allDivs[i].innerHTML
 				for(let j=0; j < emojis.length; j++) {
@@ -1220,13 +1227,7 @@ function buildBookIndexHTML () {
 				allDivs[i].innerHTML = `<img src='${source}' ${fleurClass} alt='${altText}' width=${width}%>`
 				allDivs[i].removeAttribute('data-custom-style')
 			} else 
-/* 			if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram-image") {
-				let [source, altText, width] = allDivs[i].text.split("=");
-				allDivs[i].classList.add ('epigram-img')
-				allDivs[i].innerHTML = `<img src='${source.replace('\r\n', '')}' alt='${altText.replace('\r\n', '')}' width=${width.replace('\r\n', '')}%>`
-				allDivs[i].removeAttribute('data-custom-style')
-			} else 
- */			//EPIGRAMS
+			//EPIGRAMS
 			if (allDivs[i].getAttribute('data-custom-style') == "WW-epigram") {
 				allDivs[i].classList.add ('epigram')
 				allDivs[i].removeAttribute('data-custom-style')
@@ -1282,12 +1283,12 @@ function buildBookIndexHTML () {
 		} 
 
 		// Lists remove any 'start at number #'
-		let allOls = bookRoot.querySelectorAll(`ol`)
+/* 		let allOls = bookRoot.querySelectorAll(`ol`)
 		for (let i in allOls) {
 			if (allOls[i].getAttribute('start')) {
 				allOls[i].removeAttribute('start')
 			}
-		}
+		} */
 
 		// table rows
 		let allTableRows = bookRoot.querySelectorAll('tr') 

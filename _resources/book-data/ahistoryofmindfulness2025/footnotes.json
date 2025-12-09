@@ -69,7 +69,7 @@
   },
   {
     "fnNumber": "18",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The other great school of early Mahāyāna, the Mādhyamaka, takes as its textual basis Nāgārjuna’s Mūlamādhyamakakārikā, which is based on the Kaccāyana Sutta of the Saṁyutta. Thus the two main schools of the Mahāyāna share the Saṁyutta as a fundamental scripture.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The other great school of early Mahāyāna, the <span class='sesame'>Mādhyamaka</span>, takes as its textual basis <span class='sesame'>Nāgārjuna’s</span> <span class='sesame'>Mūlamādhyamakakārikā</span>, which is based on the <span class='sesame'>Kaccāyana Sutta</span> of the <span class='sesame'>Saṁyutta</span>. Thus the two main schools of the Mahāyāna share the <span class='sesame'>Saṁyutta</span> as a fundamental scripture.</p>"
   },
   {
     "fnNumber": "19",
@@ -89,10 +89,102 @@
   },
   {
     "fnNumber": "23",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sāmmitīyanikāyaśāstra (San-mi-ti pu lun), T № 1649, p. 463b11, 465b10, 463b 9–12. See Thiện <span class='sesame biblioref'>Châu</span>, pp. 23–24.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame'>Sāmmitīyanikāyaśāstra</span> (San-mi-ti pu lun), T № 1649, p. 463b11, 465b10, 463b 9–12. See Thiện <span class='sesame biblioref'>Châu</span>, pp. 23–24.</p>"
   },
   {
     "fnNumber": "24",
     "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Norman 1979</span>, pp. 279–287.</p>"
+  },
+  {
+    "fnNumber": "25",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> This line of reasoning suggested itself independently to both Bucknell and myself.</p>"
+  },
+  {
+    "fnNumber": "26",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> There is some suggestion that the Request of Brahmā may have been the first discourse in the <span class='sesame'>Sagāthāvagga</span>, based on Bucknell’s reconstruction, following the <span class='sesame'>Yogacārabhūmiśāstra</span>, of the <span class='sesame'>Sagāthāvagga</span> along the lines of the Eight Assemblies; however the argument is too complex to go into here. The Request of Brahmā is, surprisingly, missing from the <span class='sesame'>Sarvāstivāda</span> <span class='sesame'>Saṁyukta</span>, although it is found in the <span class='sesame'>Ekottara</span> and (Sanskrit) <span class='sesame'>Dīrgha Āgamas</span>, and probably elsewhere, appearing immediately before the <span class='sesame'>Dhamma­cakkap­pavattana Sutta</span>, just as in the <span class='sesame'>Vinaya</span>.</p>"
+  },
+  {
+    "fnNumber": "27",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The following account is based on the Chinese (T № 1451) and Rockhill’s paraphrase of the Tibetan.</p>"
+  },
+  {
+    "fnNumber": "28",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Before Ānanda begins his recitation, there is a slightly odd episode where Mahā Kassapa said to all the monks: ‘There will be monks who are weak in faculties and of scattered mind. They will not be able to learn and memorize the sutta-vinaya-abhidhamma. Therefore it will be fitting for us in the morning to compile the ‘Brief Verses Saṁyutta’, (略伽他事相應 (= <em>saṅkhitta-gāthā-saṁyutta</em>?), T24, № 1451, p. 406a22–23), in the afternoon it will be fitting to compile the sutta-vinaya-abhidhamma.’ It is not clear what this is referring to; the Sagāthāvagga is referred to just below, in its proper place in the Saṁyutta, so it seems unlikely this is what is meant. Perhaps it refers to some of the verse collections of the Khuddaka.</p>"
+  },
+  {
+    "fnNumber": "29",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Text omits ‘Vagga’; note that 緣起 can stand for either <em>paṭicca-samuppāda</em> or <em>nidāna</em>.</p>"
+  },
+  {
+    "fnNumber": "30",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> T24, № 1451, p. 407b20–c2.</p>"
+  },
+  {
+    "fnNumber": "31",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> SN 45.35/SA 796–797/SA 799.</p>"
+  },
+  {
+    "fnNumber": "32",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Explained at AN 4.29 as freedom from covetousness and ill-will, right mindfulness, and right samādhi. Also found at T № 1536.7.</p>"
+  },
+  {
+    "fnNumber": "33",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> T24, № 1451, p. 408b6–11. Translation from <span class='sesame biblioref'>Rockhill</span> pg. 160. The details given by Rockhill have been corrected following <span class='sesame biblioref'>Watanabe</span> pg. 44, and from the Chinese. A few of the Chinese terms, especially in the latter part of the passage, are unclear.</p>"
+  },
+  {
+    "fnNumber": "34",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Bodhi 2000</span>, <span class='sesame'>CDB, pg. 532 (21. Bhikkhusaṁyutta)</span>.</p>"
+  },
+  {
+    "fnNumber": "35",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Bucknell</span>, unpublished essay.</p>"
+  },
+  {
+    "fnNumber": "36",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Bodhi 2000</span> <span class='sesame'>CDB, pg. 27</span>.</p>"
+  },
+  {
+    "fnNumber": "37",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Bodhi 2000</span> <span class='sesame'>CDB, pg. 30</span>.</p>"
+  },
+  {
+    "fnNumber": "38",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> SN 48.43.</p>"
+  },
+  {
+    "fnNumber": "39",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> More details are listed in an appendix to the PTS Pali edition of the Vibhaṅga, pg. 437.</p>"
+  },
+  {
+    "fnNumber": "40",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Lamotte was evidently unaware of this problem when he remarked: ‘As they [the Āgamas] were closed much later [than the Nikāyas], they make room for works of comparatively recent date; hence the Saṁyutta contains long extracts from the Aśokarājavadāna.’ (LAMOTTE (1976), pg. 155.) More detailed examination gives no reason to conclude that the Āgamas were, generally speaking, closed earlier or later than the Nikāyas; each case needs to be treated individually.</p>"
+  },
+  {
+    "fnNumber": "41",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> T № 676. I use KEENAN, which is based on the Chinese. The Tibetan is utilized in the French translation by Étienne Lamotte, <em>Saṁdhinirmocana Sūtra: L’explication des Mysteres</em> (Paris: Adrien Maisonneuve, 1935), and the English translation by John Powers, <em>Wisdom of Buddha: The Saṁdhinirmocana Sūtra</em> (Berkely, CA, Dharma Publishing. 1995).</p>"
+  },
+  {
+    "fnNumber": "42",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The Pali <em>padhāna</em> (‘effort’) is often misread in Sanskrit as <em>pahāna</em> (‘abandoning’).</p>"
+  },
+  {
+    "fnNumber": "43",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> KEENAN, pp. 22–23.</p>"
+  },
+  {
+    "fnNumber": "44",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> KEENAN, pg. 35.</p>"
+  },
+  {
+    "fnNumber": "45",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> KEENAN, pp. 46–47.</p>"
+  },
+  {
+    "fnNumber": "46",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> KEENAN, pg. 23.</p>"
+  },
+  {
+    "fnNumber": "47",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> KEENAN, pg. 97.</p>"
   }
 ]

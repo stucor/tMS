@@ -1,4 +1,4 @@
-Mon Dec 08 2025 16:31:53 GMT+0000 (Greenwich Mean Time):
+Tue Dec 09 2025 14:59:29 GMT+0000 (Greenwich Mean Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -45,5 +45,29 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Norman 1979"
+  },
+  {
+    "zotref": "",
+    "bookref": "Rockhill"
+  },
+  {
+    "zotref": "",
+    "bookref": "Watanabe"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bucknell"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2000"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi 2000"
   }
 ]

@@ -573,6 +573,7 @@ tfoot tr td {
 .simpletable > tbody > tr:nth-child(2) > th {
 	padding-top: 1em
 } 
+
 .norowborders tr {
 	box-shadow: none;
 }
@@ -1297,7 +1298,7 @@ sup {
 	cursor: pointer;
 	font-style: normal;
 	/* user-select: none; */
-	/* background: rgb(222, 193, 250); */
+	background: rgb(231, 255, 17);
 }
 
 

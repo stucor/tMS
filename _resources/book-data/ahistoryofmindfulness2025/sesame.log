@@ -1,4 +1,4 @@
-Mon Dec 08 2025 16:31:53 GMT+0000 (Greenwich Mean Time)
+Tue Dec 09 2025 14:59:29 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahistoryofmindfulness2025
@@ -16,8 +16,20 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Abhidharma",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Anattalakkhaṇa",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Anattalakkhaṇa Sutta",
 	"key": "sn-blurbs:sn22.59"
+},
+{
+	"sesame": "Anuruddha-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Anāthapiṇḍika",
@@ -56,8 +68,40 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Aṭṭhasālinī",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bala-saṁyukta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bala-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bhikkhu-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bhikkhunī-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bhāra Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Brahmajala Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Brahmajāla",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Brahmajāla Sutta",
+	"key": "dn-blurbs:dn1"
 },
 {
 	"sesame": "Brahmanical",
@@ -68,11 +112,39 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "wp:Brahmā_(Buddhism)"
 },
 {
+	"sesame": "Buddha Vagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Buddhabhāsita",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "CDB, pg. 27",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "CDB, pg. 30",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "CDB, pg. 532 (21. Bhikkhusaṁyutta)",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Catuṣpariṣat Sūtra",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Devasarman",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Dhammacakka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Dhamma­cakkap­pavattana",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -92,6 +164,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Dīgha Nikāya",
+	"key": "super-blurbs:dn"
+},
+{
 	"sesame": "Dīghas",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -104,6 +180,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "super-blurbs:da"
 },
 {
+	"sesame": "Dīrgha Āgamas",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Ekottara",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -112,11 +192,35 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Indriya-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Jātakas",
 	"key": "super-blurbs:ja"
 },
 {
+	"sesame": "Kaccāyana Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Kasi-Bhāradvadja",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Kathāvatthu",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Khandha Vagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Khandha, Saḷāyatana",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Khandha-saṁyutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -132,7 +236,23 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "super-blurbs:ma"
 },
 {
+	"sesame": "Magadhan",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Magga Vagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Magga Vaggas",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Mahā Kassapa",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mahā Vagga",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -168,11 +288,39 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Moggaliputtatissa",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mādhyamaka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Mūlamādhyamakakārikā",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Mūlasarvāstivāda",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Netti",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Niddesa",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Nidāna",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Nidāna Vagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Nidāna-saṁyutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -184,11 +332,23 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "wp:Nagarjuna"
 },
 {
+	"sesame": "Nāgārjuna’s",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Opamma-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Parinibbāna",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "Paṭi­sambhi­dāmagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Peṭakopadesa",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -200,6 +360,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Puggalavādins",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Pārāyana",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -208,11 +372,31 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Sacca-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saccasaṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Saccavibhaṅga Sutta",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Sagāthāvagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sagāthāvaggas",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Sangha",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sarvastivada",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -224,11 +408,23 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Sarvāstivādins",
+	"key": "wp:Sarvastivada"
+},
+{
 	"sesame": "Satipaṭṭhāna Sutta",
 	"key": "mn-blurbs:mn10"
 },
 {
+	"sesame": "Saḷāyatana-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Saṁyukta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saṁyukta Vastu",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -238,6 +434,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 {
 	"sesame": "Saṁyutta",
 	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Saṁyutta Nikāya",
+	"key": "super-blurbs:sn"
 },
 {
 	"sesame": "Saṁyuttas",
@@ -268,6 +468,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Sāmmitīyanikāyaśāstra",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Sāvakabhāsita",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Theravāda",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -280,7 +488,15 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "wp:Theravada"
 },
 {
+	"sesame": "Tipitaka",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Tāvatiṁsa",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Vaggas",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -316,6 +532,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "-blurbs:vb"
 },
 {
+	"sesame": "Vib­haṅga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Vijñānakāya",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "Vinaya",
 	"key": "XXXXXXXXXXXXXXXX"
 },
@@ -336,11 +560,43 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "dependent-origination-and-noble-truths-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "five-aggregate-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "six-sense-media-and-eighteen-elements-saṁyutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
 	"sesame": "vagga",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "vaggas",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "­Dharma­skandha",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "­Śāriputrā­bhidharma",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Ādittapariyaya Sutta",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Ādittapariyāya",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -357,6 +613,14 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 },
 {
 	"sesame": "Ājīvakas",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Āyatana-dhātu Vagga",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Śrāvaka Vagga",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

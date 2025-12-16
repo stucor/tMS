@@ -389,12 +389,26 @@ figcaption {
 	opacity:90%;
 	font-weight: 100;
 }
- .ptsref::before {
+
+.inlineref {
+	display:inline;
+	font-size: smaller;
+	word-spacing: -0.05em;
+	white-space: nowrap;
+	color: var(--secondarytextcolor);
+}
+p:has(> .inlineref)  {
+ text-indent: 2em;
+}
+
+
+
+/*  .ptsref::before {
 	content: "\[";
 }
 .ptsref::after {
 	content: "\]";
-} 
+}  */
 
 .citeBQ {
 	text-align:right;
@@ -574,6 +588,19 @@ tfoot tr td {
 	padding-top: 1em
 } 
 
+.lineundercell tr {
+	box-shadow: none;
+}
+
+.lineundercell td {
+	padding: 0.3em 0.5em 0.2em 0.5em;
+	box-shadow: 0px 0.5px 0px 0px var(--primarytextcolor);
+}
+
+.lineundercell th {
+	padding: 0.3em 0.5em;
+
+}
 .norowborders tr {
 	box-shadow: none;
 }

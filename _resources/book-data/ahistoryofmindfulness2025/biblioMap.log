@@ -1,10 +1,26 @@
-Tue Dec 09 2025 14:59:29 GMT+0000 (Greenwich Mean Time):
+Tue Dec 16 2025 15:18:38 GMT+0000 (Greenwich Mean Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
   {
     "zotref": "",
     "bookref": "TEMPORARY ENTRY"
+  },
+  {
+    "zotref": "",
+    "bookref": "The Long Discourses of the Buddha"
+  },
+  {
+    "zotref": "",
+    "bookref": "What the Buddha Taught"
+  },
+  {
+    "zotref": "",
+    "bookref": "Path to Deliverance"
+  },
+  {
+    "zotref": "",
+    "bookref": "The Heart of Buddhist Meditation"
   },
   {
     "zotref": "",

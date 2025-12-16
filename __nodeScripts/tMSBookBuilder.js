@@ -335,8 +335,13 @@ function processPandoc() {
 						spans[i].removeAttribute ('data-custom-style')
 					break
 					case 'wwc-PTS-reference':
-						spans[i].innerHTML=`PTS: ${spans[i].innerHTML}`
+						spans[i].innerHTML=`[PTS: ${spans[i].innerHTML}]`
 						spans[i].classList.add('ptsref')
+						spans[i].removeAttribute ('data-custom-style')
+					break
+					case 'wwc-inline-reference':
+						spans[i].innerHTML=`[${spans[i].innerHTML}]`
+						spans[i].classList.add('inlineref')
 						spans[i].removeAttribute ('data-custom-style')
 					break
 					case 'wwc-sesame-zot-reference':
@@ -880,6 +885,11 @@ function buildBookIndexHTML () {
 					spans[i].classList.add('ptsref')
 					spans[i].removeAttribute ('data-custom-style')
 				break
+				case 'wwc-inline-reference':
+					spans[i].innerHTML=`[${spans[i].innerHTML}]`
+					spans[i].classList.add('inlineref')
+					spans[i].removeAttribute ('data-custom-style')
+				break
 				case 'wwc-list-margin':
 					spans[i].classList.add('list-margin')
 					spans[i].removeAttribute ('data-custom-style')
@@ -1343,6 +1353,10 @@ function buildBookIndexHTML () {
 				} else 
 				if (tableType == `SimpleNoRowBorders`) {
 					tableClassLabel = ` class="simpletable norowborders"`
+					caption = caption.substr(20)
+				} else 
+				if (tableType == `SimpleLineUnderCell`) {
+					tableClassLabel = ` class="simpletable lineundercell"`
 					caption = caption.substr(20)
 				}
 				let table = allTablesAndCaptions[Number(i)+1].innerHTML.replaceAll('<tr class>','<tr>')

@@ -1054,7 +1054,13 @@ function buildBookIndexHTML () {
 				}
 				else {
 					let spaceWidth = allDivs[i].text.replaceAll('\r\n', '')
-					allDivs[i].replaceWith(`<hr style='border:0; margin-top: 0; height:${spaceWidth}em'>`)
+					if (spaceWidth == '***') {
+						allDivs[i].replaceWith(`<div style='margin: 2em 0;letter-spacing:1em; text-align:center'>***</div>`)
+					} else {
+						allDivs[i].replaceWith(`<hr style='border:0; margin-top: 0; height:${spaceWidth}em'>`)
+					}
+
+					
 				}
 			} else 
 			// PARAGRAPHS
@@ -1351,13 +1357,21 @@ function buildBookIndexHTML () {
 					tableClassLabel = ` class="simpletable"`
 					caption = caption.substr(8)
 				} else 
+				if (tableType == `SimpleWrap`) {
+					tableClassLabel = ` class="simpletable wrap"`
+					caption = caption.substr(12)
+				} else 
 				if (tableType == `SimpleNoRowBorders`) {
 					tableClassLabel = ` class="simpletable norowborders"`
 					caption = caption.substr(20)
 				} else 
 				if (tableType == `SimpleLineUnderCell`) {
 					tableClassLabel = ` class="simpletable lineundercell"`
-					caption = caption.substr(20)
+					caption = caption.substr(21)
+				} else
+				if (tableType == `SimpleWrapLineUnderCell`) {
+					tableClassLabel = ` class="simpletable wrap lineundercell"`
+					caption = caption.substr(25)
 				}
 				let table = allTablesAndCaptions[Number(i)+1].innerHTML.replaceAll('<tr class>','<tr>')
 				allTablesAndCaptions[i].replaceWith(`<div class="tablewrap">${anchorHTML}\n<table${tableClassLabel}>\n<caption >${caption}</caption>${table}\n</table>\n</div>`)

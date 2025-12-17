@@ -229,15 +229,15 @@ div:has(> .fleuron) {
 	padding-right: 1em;
 }
 
-.line-block::-webkit-scrollbar {
+.line-block::-webkit-scrollbar, .line-block-center::-webkit-scrollbar {
 	height: 3px;
 }  
-.line-block::-webkit-scrollbar-track {
+.line-block::-webkit-scrollbar-track, .line-block-center::-webkit-scrollbar-track {
 	background-color: var(--primarybackground); 
 	border-radius: 8px; 
 	border: 1px solid #d3d3d378;
  }
-.line-block::-webkit-scrollbar-thumb {
+.line-block::-webkit-scrollbar-thumb, .line-block-center::-webkit-scrollbar-thumb {
 	 background-color: var(--listlinkhover);
 	 border-radius: 8px;
 	 cursor:grab;
@@ -560,7 +560,7 @@ tfoot tr td {
 	border: none;
 	background: none;
 	vertical-align: top;
-	padding: 0.5em 0.5em 0.5em 0.5;
+	padding: 0.5em;
 }
 .simpletable td {
 	width:0.1%;
@@ -588,6 +588,11 @@ tfoot tr td {
 	padding-top: 1em
 } 
 
+.wrap td, .wrap th {
+	white-space: wrap;
+	min-width: 15em;
+}
+
 .lineundercell tr {
 	box-shadow: none;
 }
@@ -597,9 +602,9 @@ tfoot tr td {
 	box-shadow: 0px 0.5px 0px 0px var(--primarytextcolor);
 }
 
+
 .lineundercell th {
 	padding: 0.3em 0.5em;
-
 }
 .norowborders tr {
 	box-shadow: none;

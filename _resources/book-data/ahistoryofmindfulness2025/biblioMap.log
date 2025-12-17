@@ -1,4 +1,4 @@
-Tue Dec 16 2025 15:18:38 GMT+0000 (Greenwich Mean Time):
+Wed Dec 17 2025 15:53:26 GMT+0000 (Greenwich Mean Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -21,6 +21,46 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "The Heart of Buddhist Meditation"
+  },
+  {
+    "zotref": "",
+    "bookref": "The Two Leading Principles of Buddhist Meditation"
+  },
+  {
+    "zotref": "",
+    "bookref": "A Yogacāra Interpretation of Emptiness"
+  },
+  {
+    "zotref": "",
+    "bookref": "Later Mādhyamakas"
+  },
+  {
+    "zotref": "",
+    "bookref": "Yogic Direct Awareness"
+  },
+  {
+    "zotref": "",
+    "bookref": "Fa Tsang’s Brief Commentary"
+  },
+  {
+    "zotref": "",
+    "bookref": "Buddhist Devotional Meditation"
+  },
+  {
+    "zotref": "",
+    "bookref": "Letter to a Friend"
+  },
+  {
+    "zotref": "",
+    "bookref": "Saundarānanda Kāvya"
+  },
+  {
+    "zotref": "",
+    "bookref": "Śikṣāsamuccaya, Kārikās"
+  },
+  {
+    "zotref": "",
+    "bookref": "Śikṣāsamuccaya"
   },
   {
     "zotref": "",

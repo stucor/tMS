@@ -186,5 +186,1881 @@
   {
     "fnNumber": "47",
     "fnHTML": "<p><span data-custom-style='footnote reference'></span> KEENAN, pg. 97.</p>"
+  },
+  {
+    "fnNumber": "48",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Nine aṅgas occur in the Mahāsaṅghika Vinaya (T № 1425, p. 227b), in the Saṅgīti Sūtra (T № 12, p. 227b), in the Itivuttaka (T № 765, p. 684a and 697c), in the Dharmasaṅgīti Sūtra (T № 761, p. 612a), in the Saddharmapuṇḍarika Sūtra (T № 262, p. 7c (though this seems to be a different set)), in the Dharmasaṅgraha (T № 764, p. 661a), and in the Daśavihāravibhāsa (T № 1521, p. 19b). My thanks to Venerable Anālayo for this information.</p>"
+  },
+  {
+    "fnNumber": "49",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> LAMOTTE (1976), pg. 144.</p>"
+  },
+  {
+    "fnNumber": "50",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Some references in LAMOTTE (1976), pp. 161, 162.</p>"
+  },
+  {
+    "fnNumber": "51",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> DN 27/DA 5/T № 10/MA 154/EA 40.1/Skt. In this and subsequent references I do not give the details of the Sanskrit texts. They may be found at the relevant tables on suttacentral.net. I omit them because they are long and detailed, and only relevant to a minority of scholars, who can easily find them through SuttaCentral anyway.</p>"
+  },
+  {
+    "fnNumber": "52",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> DN 26/DA 6/MA 70.</p>"
+  },
+  {
+    "fnNumber": "53",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BOIN-WEBB, pg. 179.</p>"
+  },
+  {
+    "fnNumber": "54",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Śrāvakabhūmi, pg. 230.</p>"
+  },
+  {
+    "fnNumber": "55",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> MN 83.21/MA 67/EA 1/EA 50.4/T № 152.87/T № 211, DN 19.61/DA 3/T № 8/Skt.</p>"
+  },
+  {
+    "fnNumber": "56",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> DN 14.1.17/DA 1/T № 2/T № 3/T № 4/EA 48.4/Skt.</p>"
+  },
+  {
+    "fnNumber": "57",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> AN 4.127/MA 32*/EA 25.3*.</p>"
+  },
+  {
+    "fnNumber": "58",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> MN 123.3.</p>"
+  },
+  {
+    "fnNumber": "59",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> MA 32.</p>"
+  },
+  {
+    "fnNumber": "60",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> MN 43/MA 211, MN 44/MA 44; the versions differ in some questions and details, but there is no obvious sectarian divergence.</p>"
+  },
+  {
+    "fnNumber": "61",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Immediately preceding the two Vedallas is a group of three discourses that occur together and in the same sequence in both Majjhimas: MN 77/MA 207 Mahāsakaludāyin; MN 79/MA 208 Cūḷsakaludāyin; and MN 80/MA 209 Vekhanassa. (MN 78/MA 179 Samaṇamaṇḍikā, falling as it does between the ‘Mahā’ and ‘Cūḷa’ Sakaludāyin Suttas, is obviously a later interpolation.) This group of three and the two Vedalla Suttas were probably pre-existing groups that were brought into the Majjhima.</p>"
+  },
+  {
+    "fnNumber": "62",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BOIN-WEBB, pg. 180.</p>"
+  },
+  {
+    "fnNumber": "63",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> GNOLI, Pt. 1, pg. xix.</p>"
+  },
+  {
+    "fnNumber": "64",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BOIN-WEBB, pg. 180.</p>"
+  },
+  {
+    "fnNumber": "65",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BOIN-WEBB, pg. 179.</p>"
+  },
+  {
+    "fnNumber": "66",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Discussed in MATSUMURA.</p>"
+  },
+  {
+    "fnNumber": "67",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BEAL (1985), pg. 386–7; translation corrected following LAMOTTE, pg. 177.</p>"
+  },
+  {
+    "fnNumber": "68",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BEAL (1985), pg. 140.</p>"
+  },
+  {
+    "fnNumber": "69",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> MN 122.20/MA 191.</p>"
+  },
+  {
+    "fnNumber": "70",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Pg. 957.</p>"
+  },
+  {
+    "fnNumber": "71",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> There are some variant readings. I do not have the various Pali editions available, so my thanks go to Venerable Anālayo for the following readings. The PTS has: <em>suttaṁ geyyaṁ veyyākaraṇassa hetu</em>; Burmese and Sinhalese have: <em>suttaṁ geyyaṁ veyyākaraṇaṁ tassa hetu</em>; the Siamese has: <em>suttageyyaveyyākaraṇassa sotuṁ</em>. The PTS version would thus seem to have only two aṅgas, whose explanation the disciple wants from the Tathāgata (cp. the translation by Horner: ‘…for the sake of an exposition of the discourses that are in prose and in prose and verse’). But the grammar is odd; this phrase would seem rather to have formed by contraction from the Burmese/Sinhalese reading (= <em>suttaṁ geyyaṁ veyyākaraṇ’ assa hetu</em>). The Chinese version reads 正經．歌詠．記說故. This does indicate that its original read <em>hetuḥ</em>, not <em>sotuṁ</em> as proposed by the Siamese edition. <em>Sotuṁ</em> (‘for the hearing of…’) is more straightforward; grammatically the compound formation in the Siamese edition is also more straightforward, leading me to suspect the Thai editors have normalized a difficult reading. The Chinese does not give a hint to the grammatical problems of this passage. In any case, the Chinese and most of the Pali versions have three aṅgas, and the apparent presence of two aṅgas in the PTS seems easily explicable.</p>"
+  },
+  {
+    "fnNumber": "72",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> 'See the timeline in ÑĀṆAMOLI’S Introduction to <em>The Path of Purification</em>, p. xi, which refers to the Aṅguttara Commentary, i.92<em>f</em>.</p>"
+  },
+  {
+    "fnNumber": "73",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> 'WALDSCHMIDT (1950, 1951) 40.62; WALDSCHMIDT (1968).</p>"
+  },
+  {
+    "fnNumber": "74",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Śrāvakabhūmi, pg. 154, 232.</p>"
+  },
+  {
+    "fnNumber": "75",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Śrāvakabhūmi, pg. 154, 184, 220, 226.</p>"
+  },
+  {
+    "fnNumber": "76",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "77",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "78",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "79",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "80",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "81",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "82",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "83",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "84",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "85",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "86",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "87",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "88",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "89",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "90",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "91",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "92",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "93",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "94",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "95",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "96",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "97",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "98",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "99",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "100",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "101",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "102",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "103",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "104",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "105",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "106",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "107",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "108",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "109",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "110",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "111",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "112",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "113",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "114",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "115",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "116",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "117",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "118",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "119",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "120",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "121",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "122",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "123",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "124",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "125",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "126",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "127",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "128",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "129",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "130",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "131",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "132",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "133",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "134",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "135",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "136",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "137",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "138",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "139",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "140",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "141",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "142",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "143",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "144",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "145",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "146",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "147",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "148",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "149",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "150",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "151",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "152",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "153",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "154",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "155",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "156",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "157",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "158",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "159",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "160",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "161",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "162",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "163",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "164",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "165",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "166",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "167",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "168",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "169",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "170",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "171",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "172",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "173",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "174",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "175",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "176",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "177",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "178",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "179",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "180",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "181",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "182",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "183",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "184",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "185",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "186",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "187",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "188",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "189",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "190",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "191",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "192",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "193",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "194",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "195",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "196",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "197",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "198",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "199",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "200",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "201",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "202",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "203",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "204",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "205",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "206",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "207",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "208",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "209",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "210",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "211",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "212",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "213",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "214",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "215",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "216",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "217",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "218",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "219",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "220",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "221",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "222",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "223",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "224",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "225",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "226",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "227",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "228",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "229",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "230",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "231",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "232",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "233",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "234",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "235",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "236",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "237",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "238",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "239",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "240",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "241",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "242",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "243",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "244",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "245",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "246",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "247",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "248",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "249",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "250",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "251",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "252",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "253",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "254",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "255",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "256",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "257",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "258",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "259",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "260",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "261",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "262",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "263",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "264",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "265",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "266",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "267",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "268",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "269",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "270",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "271",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "272",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "273",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "274",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "275",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "276",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "277",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "278",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "279",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "280",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "281",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "282",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "283",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "284",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "285",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "286",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "287",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "288",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "289",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "290",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "291",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "292",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "293",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "294",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "295",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "296",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "297",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "298",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "299",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "300",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "301",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "302",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "303",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "304",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "305",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "306",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "307",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "308",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "309",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "310",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "311",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "312",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "313",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "314",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "315",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "316",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "317",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "318",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "319",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "320",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "321",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "322",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "323",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "324",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "325",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "326",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "327",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "328",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "329",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "330",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "331",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "332",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "333",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "334",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "335",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "336",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "337",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "338",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "339",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "340",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "341",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "342",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "343",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "344",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "345",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "346",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "347",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "348",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "349",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "350",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "351",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "352",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "353",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "354",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "355",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "356",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "357",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "358",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "359",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "360",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "361",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "362",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "363",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "364",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "365",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "366",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "367",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "368",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "369",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "370",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "371",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "372",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "373",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "374",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "375",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "376",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "377",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "378",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "379",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "380",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "381",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "382",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "383",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "384",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "385",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "386",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "387",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "388",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "389",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "390",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "391",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "392",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "393",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "394",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "395",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "396",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "397",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "398",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "399",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "400",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "401",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "402",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "403",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "404",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "405",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "406",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "407",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "408",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "409",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "410",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "411",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "412",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "413",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "414",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "415",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "416",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "417",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "418",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "419",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "420",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "421",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "422",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "423",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "424",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "425",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "426",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "427",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "428",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "429",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "430",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "431",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "432",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "433",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "434",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "435",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "436",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "437",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "438",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "439",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "440",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "441",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "442",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "443",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "444",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "445",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "446",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "447",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "448",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "449",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "450",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "451",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "452",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "453",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "454",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "455",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "456",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "457",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "458",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "459",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "460",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "461",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "462",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "463",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "464",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "465",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "466",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "467",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "468",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "469",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "470",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "471",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "472",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "473",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "474",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "475",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "476",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "477",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "478",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "479",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "480",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "481",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "482",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "483",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "484",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "485",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "486",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "487",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "488",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "489",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "490",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "491",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "492",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "493",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "494",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "495",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "496",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "497",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "498",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "499",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "500",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "501",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "502",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "503",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "504",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "505",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "506",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "507",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "508",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "509",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "510",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "511",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "512",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "513",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "514",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "515",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
+  },
+  {
+    "fnNumber": "516",
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span></p>"
   }
 ]

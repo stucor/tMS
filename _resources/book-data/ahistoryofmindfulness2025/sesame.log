@@ -1,74 +1,18 @@
-Sat Dec 20 2025 13:05:13 GMT+0000 (Greenwich Mean Time)
+Sun Dec 21 2025 14:20:25 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahistoryofmindfulness2025
 [
 {
-	"sesame": "CDB, pg. 27",
+	"sesame": "Bodhi 2000 CDB, pg. 27",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
-	"sesame": "CDB, pg. 30",
+	"sesame": "Bodhi 2000 CDB, pg. 30",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
-	"sesame": "CDB, pg. 532 (21. Bhikkhusaṁyutta)",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Dhamma­cakkap­pavattana Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Dīrgha Āgamas",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Ekottara",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Kaccāyana Sutta",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Mādhyamaka",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Mūlamādhyamakakārikā",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Nāgārjuna’s",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Sagāthāvagga",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Sarvāstivāda",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Saṁyukta",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Saṁyutta",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Sāmmitīyanikāyaśāstra",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Vinaya",
-	"key": "XXXXXXXXXXXXXXXX"
-},
-{
-	"sesame": "Yogacārabhūmiśāstra",
+	"sesame": "Temp Sesame",
 	"key": "XXXXXXXXXXXXXXXX"
 }
 ]

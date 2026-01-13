@@ -1985,6 +1985,7 @@ function buildBookIndexHTML () {
 
 					// date
 					if (referencesData[i].hasOwnProperty('issued')) {
+						//console.log(referencesData[i].id)
 						html += ` ${referencesData[i]["issued"]["date-parts"][0][0]} `;
 					}
 	

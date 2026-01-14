@@ -1,4 +1,4 @@
-Tue Jan 13 2026 14:01:08 GMT+0000 (Greenwich Mean Time):
+Wed Jan 14 2026 13:10:29 GMT+0000 (Greenwich Mean Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
@@ -145,5 +145,13 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Keenan"
+  },
+  {
+    "zotref": "",
+    "bookref": "Lamotte (1976)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Lamotte (1976)"
   }
 ]

@@ -1,4 +1,4 @@
-Wed Jan 14 2026 13:10:29 GMT+0000 (Greenwich Mean Time)
+Thu Jan 15 2026 14:07:38 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahistoryofmindfulness2025
@@ -9,6 +9,22 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 },
 {
 	"sesame": "Bodhi 2000 CDB, pg. 30",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "SN 24",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "SN 43",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "SN 49",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "SN 55",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

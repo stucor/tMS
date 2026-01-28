@@ -1071,5 +1071,9 @@
   {
     "sesame": "PED:dhātu",
     "key": "PED:dhātu"
+  },
+  {
+    "sesame": "Bodhi 2000 CDB, pg. 27",
+    "key": "bodhi-nikaya-notes:SN-GenIntro-TheGroundplanOfTheSamyuttaNikaya"
   }
 ]

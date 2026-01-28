@@ -1,14 +1,22 @@
-Mon Jan 26 2026 14:39:27 GMT+0000 (Greenwich Mean Time)
+Tue Jan 27 2026 14:00:21 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahistoryofmindfulness2025
 [
 {
 	"sesame": "Bodhi 2000 CDB, pg. 27",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-GenIntro-TheGroundplanOfTheSamyuttaNikaya"
 },
 {
 	"sesame": "Bodhi 2000 CDB, pg. 30",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "Bodhi 2000, CDB, pg. 532 (21. Bhikkhusaṁyutta)",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "CDB, note 1, pg. 1397",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {

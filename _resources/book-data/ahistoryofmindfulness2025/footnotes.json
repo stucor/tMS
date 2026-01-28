@@ -37,7 +37,7 @@
   },
   {
     "fnNumber": "10",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;26<span class='scsegments'>:21.6–21.7</span></span>/<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>/T № 765.4/Pali Vinaya 1.7. Taking <span lang='pi'>tesaṁ</span> as supplying the implied ‘their’ of the second line (cp. <span class='sclinktext'>DN&#8239;18<span class='scsegments'>:27.11–18.27.12</span></span>/<a href='https://suttacentral.net/da4' class='extlink'>DA 4</a>/T № 9) and <span lang='pi'>pamuñcantu</span> as a poetic variant of <span lang='pi'>adhimuñcantu</span> (cp. Sn 1146, 1149, <span class='sclinktext'>AN&#8239;1.14</span>/<a href='https://suttacentral.net/ea4.1' class='extlink'>EA 4.1</a>–10). However, one Sanskrit version has <span lang='sa'>pramodanur</span>, and would translate as ‘May those who wish to hear rejoice in faith’. Another has <span lang='sa'>praṇudantu kakṣāḥ</span>, ‘dispel opinions’.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;26<span class='scsegments'>:21.6–21.7</span></span>/<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>/T № 765.4/<a href='https://suttacentral.net/pli-tv-kd1/en/brahmali#5.12.2' class='extlink'>Pali Vinaya 1.7</a>. Taking <span lang='pi'>tesaṁ</span> as supplying the implied ‘their’ of the second line (cp. <span class='sclinktext'>DN&#8239;18<span class='scsegments'>:27.11–18.27.12</span></span>/<a href='https://suttacentral.net/da4' class='extlink'>DA 4</a>/T № 9) and <span lang='pi'>pamuñcantu</span> as a poetic variant of <span lang='pi'>adhimuñcantu</span> (cp. <span class='sclinktext'>Snp&#8239;5.19<span class='scsegments'>:9.1–9.4</span></span> [1146], <span class='sclinktext'>Snp&#8239;5.1912.1–12.4</span> [1149], <span class='sclinktext'>AN&#8239;1.14</span>/<a href='https://suttacentral.net/ea4.1' class='extlink'>EA 4.1</a>–10). However, one Sanskrit version has <span lang='sa'>pramodanur</span>, and would translate as ‘May those who wish to hear rejoice in faith’. Another has <span lang='sa'>praṇudantu kakṣāḥ</span>, ‘dispel opinions’.</p>"
   },
   {
     "fnNumber": "11",
@@ -133,7 +133,7 @@
   },
   {
     "fnNumber": "34",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Bodhi 2000</span>, CDB, pg. 532 (21. Bhikkhusaṁyutta).</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame'>Bodhi 2000, CDB, pg. 532 (21. Bhikkhusaṁyutta)</span>.</p>"
   },
   {
     "fnNumber": "35",
@@ -141,7 +141,7 @@
   },
   {
     "fnNumber": "36",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame'>Bodhi 2000 CDB, pg. 27</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span data-sesame-key='bodhi-nikaya-notes:SN-GenIntro-TheGroundplanOfTheSamyuttaNikaya' class='sesame'>Bodhi 2000 CDB, pg. 27</span>.</p>"
   },
   {
     "fnNumber": "37",
@@ -617,7 +617,7 @@
   },
   {
     "fnNumber": "155",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>AN&#8239;10.60</span>, Iti 80, 81, Dhp 7, 8.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>AN&#8239;10.60</span>, <span class='sclinktext'>Iti&#8239;85</span>, <span class='sclinktext'>Dhp&#8239;8</span>.</p>"
   },
   {
     "fnNumber": "156",
@@ -1061,7 +1061,7 @@
   },
   {
     "fnNumber": "266",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Dhp 253.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>Dhp&#8239;253</span>.</p>"
   },
   {
     "fnNumber": "267",
@@ -1081,7 +1081,7 @@
   },
   {
     "fnNumber": "271",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Dhp 7, 8.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>Dhp&#8239;7</span>, <span class='sclinktext'>Dhp&#8239;8</span>.</p>"
   },
   {
     "fnNumber": "272",
@@ -1101,7 +1101,7 @@
   },
   {
     "fnNumber": "276",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Iti 3.36. This includes the unusual phrase ‘<em>ajjhattaṁ parimukhaṁ</em>’.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>Iti&#8239;85<span class='scsegments'>:2.3</span></span>. This includes the unusual phrase ‘<em>ajjhattaṁ parimukhaṁ</em>’.</p>"
   },
   {
     "fnNumber": "277",
@@ -1485,11 +1485,11 @@
   },
   {
     "fnNumber": "372",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Ud 4.1.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>Ud&#8239;4.1</span>.</p>"
   },
   {
     "fnNumber": "373",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Iti 3.36.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>Iti&#8239;85</span>.</p>"
   },
   {
     "fnNumber": "374",
@@ -1981,7 +1981,7 @@
   },
   {
     "fnNumber": "496",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See CDB, note 1, pg. 1397.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See <span class='sesame'>CDB, note 1, pg. 1397</span>.</p>"
   },
   {
     "fnNumber": "497",

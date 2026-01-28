@@ -628,6 +628,14 @@
     "location": "fn-10"
   },
   {
+    "sclinkHTML": "<span class='sclinktext'>Snp&#8239;5.19<span class='scsegments'>:9.1–9.4</span></span>",
+    "location": "fn-10"
+  },
+  {
+    "sclinkHTML": "<span class='sclinktext'>Snp&#8239;5.1912.1–12.4</span>",
+    "location": "fn-10"
+  },
+  {
     "sclinkHTML": "<span class='sclinktext'>AN&#8239;1.14</span>",
     "location": "fn-10"
   },
@@ -948,6 +956,14 @@
     "location": "fn-155"
   },
   {
+    "sclinkHTML": "<span class='sclinktext'>Iti&#8239;85</span>",
+    "location": "fn-155"
+  },
+  {
+    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;8</span>",
+    "location": "fn-155"
+  },
+  {
     "sclinkHTML": "<span class='sclinktext'>DN&#8239;2<span class='scsegments'>:65.2</span></span>",
     "location": "fn-158"
   },
@@ -1184,6 +1200,18 @@
     "location": "fn-262"
   },
   {
+    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;253</span>",
+    "location": "fn-266"
+  },
+  {
+    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;7</span>",
+    "location": "fn-271"
+  },
+  {
+    "sclinkHTML": "<span class='sclinktext'>Dhp&#8239;8</span>",
+    "location": "fn-271"
+  },
+  {
     "sclinkHTML": "<span class='sclinktext'>SN&#8239;22.39</span>",
     "location": "fn-272"
   },
@@ -1218,6 +1246,10 @@
   {
     "sclinkHTML": "<span class='sclinktext'>SN&#8239;47.2</span>",
     "location": "fn-275"
+  },
+  {
+    "sclinkHTML": "<span class='sclinktext'>Iti&#8239;85<span class='scsegments'>:2.3</span></span>",
+    "location": "fn-276"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;77<span class='scsegments'>:23.2–23.4</span></span>",
@@ -1598,6 +1630,14 @@
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;62</span>",
     "location": "fn-371"
+  },
+  {
+    "sclinkHTML": "<span class='sclinktext'>Ud&#8239;4.1</span>",
+    "location": "fn-372"
+  },
+  {
+    "sclinkHTML": "<span class='sclinktext'>Iti&#8239;85</span>",
+    "location": "fn-373"
   },
   {
     "sclinkHTML": "<span class='sclinktext'>MN&#8239;119</span>",

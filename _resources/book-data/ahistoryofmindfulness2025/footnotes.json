@@ -37,7 +37,7 @@
   },
   {
     "fnNumber": "10",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;26<span class='scsegments'>:21.6–21.7</span></span>/<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>/T № 765.4/<a href='https://suttacentral.net/pli-tv-kd1/en/brahmali#5.12.2' class='extlink'>Pali Vinaya 1.7</a>. Taking <span lang='pi'>tesaṁ</span> as supplying the implied ‘their’ of the second line (cp. <span class='sclinktext'>DN&#8239;18<span class='scsegments'>:27.11–18.27.12</span></span>/<a href='https://suttacentral.net/da4' class='extlink'>DA 4</a>/T № 9) and <span lang='pi'>pamuñcantu</span> as a poetic variant of <span lang='pi'>adhimuñcantu</span> (cp. <span class='sclinktext'>Snp&#8239;5.19<span class='scsegments'>:9.1–9.4</span></span> [1146], <span class='sclinktext'>Snp&#8239;5.1912.1–12.4</span> [1149], <span class='sclinktext'>AN&#8239;1.14</span>/<a href='https://suttacentral.net/ea4.1' class='extlink'>EA 4.1</a>–10). However, one Sanskrit version has <span lang='sa'>pramodanur</span>, and would translate as ‘May those who wish to hear rejoice in faith’. Another has <span lang='sa'>praṇudantu kakṣāḥ</span>, ‘dispel opinions’.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;26<span class='scsegments'>:21.6–21.7</span></span>/<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>/T № 765.4/<a href='https://suttacentral.net/pli-tv-kd1/en/brahmali#5.12.2' class='extlink'>Pali Vinaya 1.7</a>. Taking <span lang='pi'>tesaṁ</span> as supplying the implied ‘their’ of the second line (cp. <span class='sclinktext'>DN&#8239;18<span class='scsegments'>:27.11–18.27.12</span></span>/<a href='https://suttacentral.net/da4' class='extlink'>DA 4</a>/T № 9) and <span lang='pi'>pamuñcantu</span> as a poetic variant of <span lang='pi'>adhimuñcantu</span> (cp. <span class='sclinktext'>Snp&#8239;5.19<span class='scsegments'>:16.3</span></span> [1146], <span class='sclinktext'>Snp&#8239;5.19<span class='scsegments'>:19.4</span></span> [1149], <span class='sclinktext'>AN&#8239;1.14</span>/<a href='https://suttacentral.net/ea4.1' class='extlink'>EA 4.1</a>–10). However, one Sanskrit version has <span lang='sa'>pramodanur</span>, and would translate as ‘May those who wish to hear rejoice in faith’. Another has <span lang='sa'>praṇudantu kakṣāḥ</span>, ‘dispel opinions’.</p>"
   },
   {
     "fnNumber": "11",
@@ -209,11 +209,11 @@
   },
   {
     "fnNumber": "53",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BOIN-WEBB, pg. 179.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Boin-Webb</span>, pg. 179.</p>"
   },
   {
     "fnNumber": "54",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Śrāvakabhūmi, pg. 230.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Śrāvakabhūmi</span>, pg. 230.</p>"
   },
   {
     "fnNumber": "55",
@@ -245,31 +245,31 @@
   },
   {
     "fnNumber": "62",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BOIN-WEBB, pg. 180.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Boin-Webb</span>, pg. 180.</p>"
   },
   {
     "fnNumber": "63",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> GNOLI, Pt. 1, pg. xix.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Gnoli</span>, Pt. 1, pg. xix.</p>"
   },
   {
     "fnNumber": "64",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BOIN-WEBB, pg. 180.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Boin-Webb</span>, pg. 180.</p>"
   },
   {
     "fnNumber": "65",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BOIN-WEBB, pg. 179.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Boin-Webb</span>, pg. 179.</p>"
   },
   {
     "fnNumber": "66",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Discussed in MATSUMURA.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Discussed in <span class='sesame biblioref'>Matsumura</span>.</p>"
   },
   {
     "fnNumber": "67",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BEAL (1985), pg. 386–7; translation corrected following LAMOTTE, pg. 177.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Beal (1985)</span>, pg. 386–7; translation corrected following <span class='sesame' data-sesame-key='zotref:'>Lamotte</span>, pg. 177.</p>"
   },
   {
     "fnNumber": "68",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BEAL (1985), pg. 140.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Beal (1985)</span>, pg. 140.</p>"
   },
   {
     "fnNumber": "69",
@@ -281,31 +281,31 @@
   },
   {
     "fnNumber": "71",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> There are some variant readings. I do not have the various Pali editions available, so my thanks go to Venerable Anālayo for the following readings. The PTS has: <em>suttaṁ geyyaṁ veyyākaraṇassa hetu</em>; Burmese and Sinhalese have: <em>suttaṁ geyyaṁ veyyākaraṇaṁ tassa hetu</em>; the Siamese has: <em>suttageyyaveyyākaraṇassa sotuṁ</em>. The PTS version would thus seem to have only two aṅgas, whose explanation the disciple wants from the Tathāgata (cp. the translation by Horner: ‘…for the sake of an exposition of the discourses that are in prose and in prose and verse’). But the grammar is odd; this phrase would seem rather to have formed by contraction from the Burmese/Sinhalese reading (= <em>suttaṁ geyyaṁ veyyākaraṇ’ assa hetu</em>). The Chinese version reads 正經．歌詠．記說故. This does indicate that its original read <em>hetuḥ</em>, not <em>sotuṁ</em> as proposed by the Siamese edition. <em>Sotuṁ</em> (‘for the hearing of…’) is more straightforward; grammatically the compound formation in the Siamese edition is also more straightforward, leading me to suspect the Thai editors have normalized a difficult reading. The Chinese does not give a hint to the grammatical problems of this passage. In any case, the Chinese and most of the Pali versions have three aṅgas, and the apparent presence of two aṅgas in the PTS seems easily explicable.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> There are some variant readings. I do not have the various Pali editions available, so my thanks go to Venerable Anālayo for the following readings. The PTS has: <span lang='pi'>suttaṁ geyyaṁ veyyākaraṇassa hetu</span>; Burmese and Sinhalese have: <span lang='pi'>suttaṁ geyyaṁ vey&shy;yāka&shy;ra&shy;ṇaṁ tassa hetu</span>; the Siamese has: <span lang='pi'>suttageyyaveyyākaraṇassa sotuṁ</span>. The PTS version would thus seem to have only two aṅgas, whose explanation the disciple wants from the Tathāgata (cp. the translation by Horner: ‘…for the sake of an exposition of the discourses that are in prose and in prose and verse’). But the grammar is odd; this phrase would seem rather to have formed by contraction from the Burmese/Sinhalese reading (= <span lang='pi'>suttaṁ geyyaṁ veyyākaraṇ’ assa hetu</span>). The Chinese version reads 正經．歌詠．記說故. This does indicate that its original read <span lang='pi'>hetuḥ</span>, not <span lang='pi'>sotuṁ</span> as proposed by the Siamese edition. <span lang='pi'>Sotuṁ</span> (‘for the hearing of…’) is more straightforward; grammatically the compound formation in the Siamese edition is also more straightforward, leading me to suspect the Thai editors have normalized a difficult reading. The Chinese does not give a hint to the grammatical problems of this passage. In any case, the Chinese and most of the Pali versions have three aṅgas, and the apparent presence of two aṅgas in the PTS seems easily explicable.</p>"
   },
   {
     "fnNumber": "72",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> 'See the timeline in ÑĀṆAMOLI’S Introduction to <em>The Path of Purification</em>, p. xi, which refers to the Aṅguttara Commentary, i.92<em>f</em>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> 'See the timeline in <span class='sesame biblioref'>Ñāṇamoli’s</span> Introduction to <em>The Path of Purification</em>, p. xi, which refers to the Aṅguttara Commentary, i.92<em>f</em>.</p>"
   },
   {
     "fnNumber": "73",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> 'WALDSCHMIDT (1950, 1951) 40.62; WALDSCHMIDT (1968).</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> '<span class='sesame biblioref'>Waldschmidt (1950, 1951)</span> 40.62; <span class='sesame biblioref'>Waldschmidt (1968)</span>.</p>"
   },
   {
     "fnNumber": "74",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Śrāvakabhūmi, pg. 154, 232.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Śrāvakabhūmi</span>, pg. 154, 232.</p>"
   },
   {
     "fnNumber": "75",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Śrāvakabhūmi, pg. 154, 184, 220, 226.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Śrāvakabhūmi</span>, pg. 154, 184, 220, 226.</p>"
   },
   {
     "fnNumber": "76",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <em>Neyyattha</em> and <em>nītattha</em>; Śrāvakabhūmi pg. 228; Abhidharmasamuccaya pg. 179, but see DE JONG’S comment, pg. 295.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span lang='pi'>Neyyattha</span> and <span lang='pi'>nītattha</span>; <span class='sesame biblioref'>Śrāvakabhūmi</span> pg. 228; <span class='sesame biblioref'>Abhidharmasamuccaya</span> pg. 179, but see <span class='sesame biblioref'>De Jong’s</span> comment, pg. 295.</p>"
   },
   {
     "fnNumber": "77",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Peṭakopadesa 1.7. In the final sentence I accept Ñāṇamoli’s suggested amendment to <em>ālokapañcakaṁ</em>, referring to the series of five terms in the Dhamma­cakkap­pavattana Sutta describing the Buddha’s realization of the noble truths.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Peṭakopadesa 1.7. In the final sentence I accept Ñāṇamoli’s suggested amendment to <span lang='pi'>ālokapañcakaṁ</span>, referring to the series of five terms in the Dhamma­cakkap­pavattana Sutta describing the Buddha’s realization of the noble truths.</p>"
   },
   {
     "fnNumber": "78",
@@ -329,11 +329,11 @@
   },
   {
     "fnNumber": "83",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> ÑĀṆAMOLI (1964), pg. 133.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Ñāṇamoli (1964)</span>, pg. 133.</p>"
   },
   {
     "fnNumber": "84",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> There are some variations, however. According to Lamotte, the Saddharmapuṇḍarīka Sūtra has: <em>sūtra</em>, <em>gāthā</em>, <em>itivuttaka</em>, <em>jātaka</em>, <em>abbhūtadhamma</em>, <em>nidāna</em>, <em>aupamya</em>, <em>geya</em>, <em>upadeśa</em>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> There are some variations, however. According to Lamotte, the Saddharmapuṇḍarīka Sūtra has: <span lang='pi'>sūtra, gāthā, itivuttaka, jātaka, abbhūtadhamma, nidāna, aupamya, geya, upadeśa</span>.</p>"
   },
   {
     "fnNumber": "85",
@@ -345,11 +345,11 @@
   },
   {
     "fnNumber": "87",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> In Pali usually spelled <em>veyyākaraṇa</em> or <em>byākaraṇa</em>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> In Pali usually spelled <span lang='pi'>veyyākaraṇa</span> or <span lang='pi'>byākaraṇa</span>.</p>"
   },
   {
     "fnNumber": "88",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>DN&#8239;11<span class='scsegments'>:85.7</span></span>/<a href='https://suttacentral.net/da24' class='extlink'>DA 24</a>/P 5595, <span class='sclinktext'>SN&#8239;12.12</span>/<a href='https://suttacentral.net/sa372' class='extlink'>SA 372</a>, <span class='sclinktext'>SN&#8239;12.32</span>/<a href='https://suttacentral.net/ma23' class='extlink'>MA 23</a>/<a href='https://suttacentral.net/sa345' class='extlink'>SA 345</a>/Skt, <span class='sclinktext'>SN&#8239;12.70</span>/ <a href='https://suttacentral.net/sa347' class='extlink'>SA 347</a>, <span class='sclinktext'>SN&#8239;35.116</span>/<a href='https://suttacentral.net/sa234' class='extlink'>SA 234</a>, <span class='sclinktext'>SN&#8239;35.204</span>/<a href='https://suttacentral.net/sa1175' class='extlink'>SA 1175</a>, <span class='sclinktext'>SN&#8239;41.1</span>/<a href='https://suttacentral.net/sa572' class='extlink'>SA 572</a>, <span class='sclinktext'>MN&#8239;32</span>/<a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>/EA 37.3/ T № 154.16, <span class='sclinktext'>MN&#8239;44</span>/<a href='https://suttacentral.net/ma210' class='extlink'>MA 210</a>, <span class='sclinktext'>MN&#8239;56<span class='scsegments'>:6.3</span></span>/<a href='https://suttacentral.net/ma133' class='extlink'>MA 133</a>/Skt, <span class='sclinktext'>MN&#8239;133<span class='scsegments'>:21.2</span></span>/<a href='https://suttacentral.net/ma165' class='extlink'>MA 165</a>, <span class='sclinktext'>AN&#8239;3.21</span>, <span class='sclinktext'>AN&#8239;6.61</span>/ <a href='https://suttacentral.net/sa1164' class='extlink'>SA 1164</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>DN&#8239;11<span class='scsegments'>:85.7</span></span>/<a href='https://suttacentral.net/da24' class='extlink'>DA 24</a>/P 5595, <span class='sclinktext'>SN&#8239;12.12</span>/<a href='https://suttacentral.net/sa372' class='extlink'>SA 372</a>, <span class='sclinktext'>SN&#8239;12.32</span>/<a href='https://suttacentral.net/ma23' class='extlink'>MA 23</a>/<a href='https://suttacentral.net/sa345' class='extlink'>SA 345</a>/Skt, <span class='sclinktext'>SN&#8239;12.70</span>/ <a href='https://suttacentral.net/sa347' class='extlink'>SA 347</a>, <span class='sclinktext'>SN&#8239;35.116</span>/<a href='https://suttacentral.net/sa234' class='extlink'>SA 234</a>, <span class='sclinktext'>SN&#8239;35.204</span>/<a href='https://suttacentral.net/sa1175' class='extlink'>SA 1175</a>, <span class='sclinktext'>SN&#8239;41.1</span>/<a href='https://suttacentral.net/sa572' class='extlink'>SA 572</a>, <span class='sclinktext'>MN&#8239;32</span>/<a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>/<a href='https://suttacentral.net/ea37.3' class='extlink'>EA 37.3</a>/ T № 154.16, <span class='sclinktext'>MN&#8239;44</span>/<a href='https://suttacentral.net/ma210' class='extlink'>MA 210</a>, <span class='sclinktext'>MN&#8239;56<span class='scsegments'>:6.3</span></span>/<a href='https://suttacentral.net/ma133' class='extlink'>MA 133</a>/Skt, <span class='sclinktext'>MN&#8239;133<span class='scsegments'>:21.2</span></span>/<a href='https://suttacentral.net/ma165' class='extlink'>MA 165</a>, <span class='sclinktext'>AN&#8239;3.21</span>, <span class='sclinktext'>AN&#8239;6.61</span>/ <a href='https://suttacentral.net/sa1164' class='extlink'>SA 1164</a>.</p>"
   },
   {
     "fnNumber": "89",
@@ -369,11 +369,11 @@
   },
   {
     "fnNumber": "93",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> DUTT, pg. 225.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Dutt</span>, pg. 225.</p>"
   },
   {
     "fnNumber": "94",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BOIN-WEBB, pg. 179 (adapted following DE JONG’S note, pg. 295); the Śrāvakabhūmi pg. 228 is similar, lacking only the final phrase.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Boin-Webb</span>, pg. 179 (adapted following <span class='sesame biblioref'>De Jong’s</span> note, pg. 295); the <span class='sesame biblioref'>Śrāvakabhūmi</span> pg. 228 is similar, lacking only the final phrase.</p>"
   },
   {
     "fnNumber": "95",
@@ -385,11 +385,11 @@
   },
   {
     "fnNumber": "97",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See DIETZ e.g. pg. 26 ‘<em>kumbhopame vyākaraṇe</em>’ (= <span class='sclinktext'>SN&#8239;12.51</span>/<a href='https://suttacentral.net/sa292' class='extlink'>SA 292</a>/Skt; the Pali title is ‘<em>parivīmaṁsana</em>’; pg. 33 ‘<em>phalguṇavavāde vyākaraṇe</em>’ (= <span class='sclinktext'>SN&#8239;12.12</span>/<a href='https://suttacentral.net/sa372' class='extlink'>SA 372</a>; the Pali title is ‘<em>moḷiyaphagguna</em>’); pg. 52 ‘<em>pataleyavyakarane</em>’ (= <span class='sclinktext'>SN&#8239;22.81</span>/<a href='https://suttacentral.net/sa57' class='extlink'>SA 57</a>).</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See <span class='sesame biblioref'>Dietz</span> e.g. pg. 26 ‘<span lang='sa'>kumbhopame vyākaraṇe</span>’ (= <span class='sclinktext'>SN&#8239;12.51</span>/<a href='https://suttacentral.net/sa292' class='extlink'>SA 292</a>/Skt; the Pali title is ‘<span lang='pi'>parivīmaṁsana</span>’; pg. 33 ‘<span lang='sa'>phalguṇavavāde vyākaraṇe</span>’ (= <span class='sclinktext'>SN&#8239;12.12</span>/<a href='https://suttacentral.net/sa372' class='extlink'>SA 372</a>; the Pali title is ‘<span lang='pi'>moḷiyaphagguna</span>’); pg. 52 ‘<span lang='sa'>pataleyavyakarane</span>’ (= <span class='sclinktext'>SN&#8239;22.81</span>/<a href='https://suttacentral.net/sa57' class='extlink'>SA 57</a>).</p>"
   },
   {
     "fnNumber": "98",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> PRZYLYSKI, pp. 45, 334; cp. ROCKHILL, pg. 160.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Przylyski</span>, pp. 45, 334; cp. <span class='sesame biblioref'>Rockhill</span>, pg. 160.</p>"
   },
   {
     "fnNumber": "99",
@@ -405,7 +405,7 @@
   },
   {
     "fnNumber": "102",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ea4.2' class='extlink'>EA 4.2</a>. See ANĀLAYO (unpublished essay on M 32), MINH CHÂU, pp. 251–257.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ea4.2' class='extlink'>EA 4.2</a>. See <span class='sesame biblioref'>Anālayo (unpublished essay on M 32)</span>, <span class='sesame biblioref'>Minh Châu</span>, pp. 251–257.</p>"
   },
   {
     "fnNumber": "103",
@@ -433,7 +433,7 @@
   },
   {
     "fnNumber": "109",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> T24, p. 35 a3 &amp; 57 a26–7; YIN Shun (1971), pp. 720–725. In the Chinese, the second nipāta is mistakenly called the ‘Sixty-three-Nipāta’.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> T24, p. 35 a3 &amp; 57 a26–7; <span class='sesame biblioref'>Yin Shun (1971)</span>, pp. 720–725. In the Chinese, the second nipāta is mistakenly called the ‘Sixty-three-Nipāta’.</p>"
   },
   {
     "fnNumber": "110",
@@ -441,7 +441,7 @@
   },
   {
     "fnNumber": "111",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> HEIRMANN, pg. 27.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Heirmann</span>, pg. 27.</p>"
   },
   {
     "fnNumber": "112",
@@ -457,7 +457,7 @@
   },
   {
     "fnNumber": "115",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> GETHIN, 1992.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Gethin</span>, 1992.</p>"
   },
   {
     "fnNumber": "116",
@@ -473,7 +473,7 @@
   },
   {
     "fnNumber": "119",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BUCKNELL, unpublished essay.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Bucknell</span>, unpublished essay.</p>"
   },
   {
     "fnNumber": "120",
@@ -481,7 +481,7 @@
   },
   {
     "fnNumber": "121",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Most of this is in the widely available <em>Life of the Buddha</em> by Bhikkhu Ñāṇamoli.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Most of this is in the widely available <em>Life of the Buddha</em> by Bhikkhu <span class='sesame biblioref'>Ñāṇamoli (1992)</span>.</p>"
   },
   {
     "fnNumber": "122",
@@ -497,7 +497,7 @@
   },
   {
     "fnNumber": "125",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> According to BUCKNELL, unpublished essay.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> According to <span class='sesame biblioref'>Bucknell</span>, unpublished essay.</p>"
   },
   {
     "fnNumber": "126",
@@ -505,31 +505,31 @@
   },
   {
     "fnNumber": "127",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> WALDSCHMIDT (1950–1951), 19.7–10.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Waldschmidt (1950–1951)</span>, 19.7–10.</p>"
   },
   {
     "fnNumber": "128",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> WALDSCHMIDT (1968).</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Waldschmidt (1968)</span>.</p>"
   },
   {
     "fnNumber": "129",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The Sanskrit traditions, including the Mahāyāna and the Sarvāstivāda, usually add <em>dhammatā</em> (the ‘way of things’) to <em>sutta</em> and <em>vinaya</em>, although there is one Chinese Sutta that just has the two. Remarkably, the Theravādin Netti also has <em>dhammatā</em>. See LAMOTTE, 1983–4, pg.4.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The Sanskrit traditions, including the Mahāyāna and the Sarvāstivāda, usually add <span lang='sa'>dhammatā</span> (the ‘way of things’) to <em>sutta</em> and <em>vinaya</em>, although there is one Chinese Sutta that just has the two. Remarkably, the Theravādin Netti also has <span lang='pi'>dhammatā</span>. See <span class='sesame biblioref'>Lamotte, 1983–4</span>, pg.4.</p>"
   },
   {
     "fnNumber": "130",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> WALDSCHMIDT (1950–1951), 24.2.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Waldschmidt (1950–1951)</span>, 24.2.</p>"
   },
   {
     "fnNumber": "131",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> WALDSCHMIDT (1950–1951), 40.62.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Waldschmidt (1950–1951)</span>, 40.62.</p>"
   },
   {
     "fnNumber": "132",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> ROCKHILL, pg. 132, 140.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Rockhill</span>, pg. 132, 140.</p>"
   },
   {
     "fnNumber": "133",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> COUSINS (1983), pg. 3.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Cousins (1983)</span>, pg. 3.</p>"
   },
   {
     "fnNumber": "134",
@@ -561,7 +561,7 @@
   },
   {
     "fnNumber": "141",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> NYANAPONIKA, pg. 11.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Nyanaponika</span>, pg. 11.</p>"
   },
   {
     "fnNumber": "142",
@@ -585,11 +585,11 @@
   },
   {
     "fnNumber": "147",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> VON HINÜBER, pg. 37.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Von Hinüber</span>, pg. 37.</p>"
   },
   {
     "fnNumber": "148",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> ANĀLAYO, pg. 16.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Anālayo</span>, pg. 16.</p>"
   },
   {
     "fnNumber": "149",
@@ -597,7 +597,7 @@
   },
   {
     "fnNumber": "150",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> ANĀLAYO, pg. 121.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Anālayo</span>, pg. 121.</p>"
   },
   {
     "fnNumber": "151",
@@ -605,7 +605,7 @@
   },
   {
     "fnNumber": "152",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> GETHIN, pg. 59. Gethin cites SCHMITHAUSEN (1976) pp. 241–66 and BRONKHORST (1985) pp. 309–12.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Gethin</span>, pg. 59. Gethin cites <span class='sesame biblioref'>Schmithausen (1976)</span> pp. 241–66 and <span class='sesame biblioref'>Bronkhorst (1985)</span> pp. 309–12.</p>"
   },
   {
     "fnNumber": "153",
@@ -621,7 +621,7 @@
   },
   {
     "fnNumber": "156",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> FRAUWALLNER (1995), pg 43<em>ff</em>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Frauwallner (1995)</span>, pg 43<em>ff</em>.</p>"
   },
   {
     "fnNumber": "157",
@@ -645,7 +645,7 @@
   },
   {
     "fnNumber": "162",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> MEISIG, pg. 273.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Meisig</span>, pg. 273.</p>"
   },
   {
     "fnNumber": "163",
@@ -677,11 +677,11 @@
   },
   {
     "fnNumber": "170",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> CRANGLE, pg. 71.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Crangle</span>, pg. 71.</p>"
   },
   {
     "fnNumber": "171",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> CRANGLE, pg. 74.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Crangle</span>, pg. 74.</p>"
   },
   {
     "fnNumber": "172",
@@ -689,7 +689,7 @@
   },
   {
     "fnNumber": "173",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> CRANGLE, pg. 198.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Crangle</span>, pg. 198.</p>"
   },
   {
     "fnNumber": "174",
@@ -697,7 +697,7 @@
   },
   {
     "fnNumber": "175",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See ‘A Pali Reference to Brahmaṇa-Caraṇas’, included in WIJESEKERA.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See ‘A Pali Reference to Brahmaṇa-Caraṇas’, included in <span class='sesame biblioref'>Wijesekera</span>.</p>"
   },
   {
     "fnNumber": "176",
@@ -773,7 +773,7 @@
   },
   {
     "fnNumber": "194",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The Sarvāstivādin version (<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>) mentions only faith, energy, and wisdom here, but includes mindfulness just below. The Sanghabhedavastu (GNOLI pg. 97) and the Lalitavistara (239.2) mention all five spiritual faculties.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The Sarvāstivādin version (<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>) mentions only faith, energy, and wisdom here, but includes mindfulness just below. The Sanghabhedavastu (<span class='sesame biblioref'>Gnoli</span> pg. 97) and the Lalitavistara (239.2) mention all five spiritual faculties.</p>"
   },
   {
     "fnNumber": "195",
@@ -789,7 +789,7 @@
   },
   {
     "fnNumber": "198",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Compare the following verses. Muṇḍaka Upaniṣad 3.2.8: <em>Yathā nadyas syandamānās samudre/Astam gacchanti nāmarūpe vihāya</em> (Just as rivers flowing into the ocean/Go to their end, having dropped name &amp; form); <em>Tathā vidvān nāmarūpād vimuktaḥ/Parāt-param puruṣam upaiti divyam.</em> (Thus the realized [sage], freed from name &amp; form/Beyond the beyond is that Man he enters, divine). Sutta Nipāta 1080: <em>Acci yathā vātavegena khittaṁ/Atthaṁ paleti na upeti saṅkhaṁ.</em> (Just as a flame tossed by a strong wind/Goes to the end, and does not enter reckoning); <em>Evaṁ muni nāmakāyā vimutto/Atthaṁ paleti na upeti saṅkhaṁ.</em> (Thus the sage, freed from the name-group [i.e. mental factors]/Goes to the end, and does not enter reckoning).</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Compare the following verses.</p><p>Muṇḍaka Upaniṣad 3.2.8: <span lang='sa'>Yathā nadyas syandamānās samudre/Astam gacchanti nāmarūpe vihāya</span> (Just as rivers flowing into the ocean/Go to their end, having dropped name &amp; form); <span lang='sa'>Tathā vidvān nāmarūpād vimuktaḥ/Parāt-param puruṣam upaiti divyam</span><em>.</em> (Thus the realized [sage], freed from name &amp; form/Beyond the beyond is that Man he enters, divine).</p><p>Sutta Nipāta 1080 (<span class='sclinktext'>Snp&#8239;5.7<span class='scsegments'>:6.1–6.5</span></span>): <span lang='pi'>Acci yathā vātavegena khittaṁ/Atthaṁ paleti na upeti saṅkhaṁ</span><em>.</em> (Just as a flame tossed by a strong wind/Goes to the end, and does not enter reckoning); <span lang='pi'>Evaṁ muni nāmakāyā vimutto/Atthaṁ paleti na upeti saṅkhaṁ</span><em>.</em> (Thus the sage, freed from the name-group [i.e. mental factors]/Goes to the end, and does not enter reckoning).</p>"
   },
   {
     "fnNumber": "199",
@@ -797,19 +797,19 @@
   },
   {
     "fnNumber": "200",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sn 1026.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sn 1026 (<span class='sclinktext'>Snp&#8239;5.1<span class='scsegments'>:51.1–51.4</span></span>).</p>"
   },
   {
     "fnNumber": "201",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sn 1009.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sn 1009 (<span class='sclinktext'>Snp&#8239;5.1<span class='scsegments'>:34.3</span></span>).</p>"
   },
   {
     "fnNumber": "202",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sn 1107.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sn 1107 (<span class='sclinktext'>Snp&#8239;5.14<span class='scsegments'>:3.1</span></span>).</p>"
   },
   {
     "fnNumber": "203",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sn 1070, Sn 1113<em>ff.</em> The sphere of nothingness is described in Sn 1070 as a ‘support’ (<em>ārammaṇa</em>) for crossing over. This may be compared with the Mahābhārata passage quoted above that describes the unconcentrated mind as ‘without support’. The Jhāna Saṁyutta also speaks of developing ‘skill in the support’.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sn 1070 (<span class='sclinktext'>Snp&#8239;5.7<span class='scsegments'>:2.3</span></span>), Sn 1113<em>ff</em> (<span class='sclinktext'>Snp&#8239;5.15</span>)<em>.</em> The sphere of nothingness is described in Sn 1070 as a ‘support’ (<em>ārammaṇa</em>) for crossing over. This may be compared with the Mahābhārata passage quoted above that describes the unconcentrated mind as ‘without support’. The Jhāna Saṁyutta also speaks of developing ‘skill in the support’.</p>"
   },
   {
     "fnNumber": "204",
@@ -825,7 +825,7 @@
   },
   {
     "fnNumber": "207",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>SN&#8239;2.7<span class='scsegments'>:2.3</span></span>, <span class='sclinktext'>AN&#8239;9.42<span class='scsegments'>:2.3</span></span>. This phrase was somewhat misleadingly rendered by Bhikkhu BODHI in CDB as ‘discovered jhāna’. Perhaps the accusative here could be read as instrumental (‘awakened by means of jhāna’).</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>SN&#8239;2.7<span class='scsegments'>:2.3</span></span>, <span class='sclinktext'>AN&#8239;9.42<span class='scsegments'>:2.3</span></span>. This phrase was somewhat misleadingly rendered by Bhikkhu <span class='sesame biblioref'>Bodhi</span> in CDB as ‘discovered jhāna’. Perhaps the accusative here could be read as instrumental (‘awakened by means of jhāna’).</p>"
   },
   {
     "fnNumber": "208",
@@ -837,7 +837,7 @@
   },
   {
     "fnNumber": "210",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> MBh 12.188.15. BRONKHORST (2000) pg. 71 notes that here, as well as in the Yoga Sūtra and in some Buddhist works, <em>vitakka</em> and <em>vicāra</em> ‘are apparently looked upon as special faculties in the first jhāna, not as mere thought remaining from ordinary consciousness’.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> MBh 12.188.15. <span class='sesame biblioref'>Bronkhorst (2000)</span> pg. 71 notes that here, as well as in the Yoga Sūtra and in some Buddhist works, <span lang='pi'>vitakka</span> and <span lang='pi'>vicāra</span> ‘are apparently looked upon as special faculties in the first jhāna, not as mere thought remaining from ordinary consciousness’.</p>"
   },
   {
     "fnNumber": "211",
@@ -849,7 +849,7 @@
   },
   {
     "fnNumber": "213",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> YS 1.17. The word ‘form’, <em>rūpa</em>, does not occur in all texts.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> YS 1.17. The word ‘form’, <span lang='pi'>rūpa</span>, does not occur in all texts.</p>"
   },
   {
     "fnNumber": "214",
@@ -865,7 +865,7 @@
   },
   {
     "fnNumber": "217",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> BRONKHORST (2000), pp. 72<em>ff.</em></p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Bronkhorst (2000)</span>, pp. 72<em>ff.</em></p>"
   },
   {
     "fnNumber": "218",
@@ -885,7 +885,7 @@
   },
   {
     "fnNumber": "222",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> CRANGLE pp. 117–119 discusses the similarity between Buddhist <em>sati</em> and yogic <em>dhāraṇa</em>, and their role as support for jhāna.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Crangle</span> pp. 117–119 discusses the similarity between Buddhist <span lang='pi'>sati</span> and yogic <span lang='sa'>dhāraṇa</span>, and their role as support for jhāna.</p>"
   },
   {
     "fnNumber": "223",
@@ -893,7 +893,7 @@
   },
   {
     "fnNumber": "224",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> GNOLI, pg. 103.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame biblioref'>Gnoli</span>, pg. 103.</p>"
   },
   {
     "fnNumber": "225",
@@ -921,7 +921,7 @@
   },
   {
     "fnNumber": "231",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <em>Sukkajjhāna</em>. Compare the commentarial notion of <em>sukkavipassanā</em>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span lang='pi'>Sukkajjhāna</span>. Compare the commentarial notion of <span lang='pi'>sukkavipassanā</span>.</p>"
   },
   {
     "fnNumber": "232",

@@ -1,10 +1,14 @@
-Tue Jan 27 2026 14:00:20 GMT+0000 (Greenwich Mean Time):
+Tue Feb 03 2026 09:47:11 GMT+0000 (Greenwich Mean Time):
 There are additional maps to add to biblioMap.json
 Please add the folowing to the file and run the script again
 [
   {
     "zotref": "",
     "bookref": "TEMPORARY ENTRY"
+  },
+  {
+    "zotref": "",
+    "bookref": "Śrāvakabhūmi"
   },
   {
     "zotref": "",
@@ -149,5 +153,241 @@ Please add the folowing to the file and run the script again
   {
     "zotref": "",
     "bookref": "Lamotte (1976)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Boin-Webb"
+  },
+  {
+    "zotref": "",
+    "bookref": "Śrāvakabhūmi"
+  },
+  {
+    "zotref": "",
+    "bookref": "Boin-Webb"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gnoli"
+  },
+  {
+    "zotref": "",
+    "bookref": "Boin-Webb"
+  },
+  {
+    "zotref": "",
+    "bookref": "Boin-Webb"
+  },
+  {
+    "zotref": "",
+    "bookref": "Matsumura"
+  },
+  {
+    "zotref": "",
+    "bookref": "Beal (1985)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Beal (1985)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇamoli’s"
+  },
+  {
+    "zotref": "",
+    "bookref": "Waldschmidt (1950, 1951)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Waldschmidt (1968)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Śrāvakabhūmi"
+  },
+  {
+    "zotref": "",
+    "bookref": "Śrāvakabhūmi"
+  },
+  {
+    "zotref": "",
+    "bookref": "Śrāvakabhūmi"
+  },
+  {
+    "zotref": "",
+    "bookref": "Abhidharmasamuccaya"
+  },
+  {
+    "zotref": "",
+    "bookref": "De Jong’s"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇamoli (1964)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Dutt"
+  },
+  {
+    "zotref": "",
+    "bookref": "Boin-Webb"
+  },
+  {
+    "zotref": "",
+    "bookref": "De Jong’s"
+  },
+  {
+    "zotref": "",
+    "bookref": "Śrāvakabhūmi"
+  },
+  {
+    "zotref": "",
+    "bookref": "Dietz"
+  },
+  {
+    "zotref": "",
+    "bookref": "Przylyski"
+  },
+  {
+    "zotref": "",
+    "bookref": "Rockhill"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo (unpublished essay on M 32)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Minh Châu"
+  },
+  {
+    "zotref": "",
+    "bookref": "Yin Shun (1971)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Heirmann"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gethin"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bucknell"
+  },
+  {
+    "zotref": "",
+    "bookref": "Ñāṇamoli (1992)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bucknell"
+  },
+  {
+    "zotref": "",
+    "bookref": "Waldschmidt (1950–1951)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Waldschmidt (1968)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Lamotte, 1983–4"
+  },
+  {
+    "zotref": "",
+    "bookref": "Waldschmidt (1950–1951)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Waldschmidt (1950–1951)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Rockhill"
+  },
+  {
+    "zotref": "",
+    "bookref": "Cousins (1983)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Nyanaponika"
+  },
+  {
+    "zotref": "",
+    "bookref": "Von Hinüber"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo"
+  },
+  {
+    "zotref": "",
+    "bookref": "Anālayo"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gethin"
+  },
+  {
+    "zotref": "",
+    "bookref": "Schmithausen (1976)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bronkhorst (1985)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Frauwallner (1995)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Meisig"
+  },
+  {
+    "zotref": "",
+    "bookref": "Crangle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Crangle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Crangle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Wijesekera"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gnoli"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bodhi"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bronkhorst (2000)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Bronkhorst (2000)"
+  },
+  {
+    "zotref": "",
+    "bookref": "Crangle"
+  },
+  {
+    "zotref": "",
+    "bookref": "Gnoli"
   }
 ]

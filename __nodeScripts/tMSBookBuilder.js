@@ -1654,6 +1654,9 @@ function buildBookIndexHTML () {
 				let obj = new Object();
 				obj.sclinkHTML = `${bookSCLinks[i].outerHTML}`
 				obj.location = `${bookSCLinks[i].closest('p').id}`
+				if (!obj.location) {
+					obj.location = `${bookSCLinks[i].closest('div.tablewrap').id}`
+				}
 				SCLinks.push(obj)
 			}
 

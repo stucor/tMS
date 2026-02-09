@@ -1,4 +1,4 @@
-Tue Feb 03 2026 09:47:12 GMT+0000 (Greenwich Mean Time)
+Mon Feb 09 2026 15:42:21 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahistoryofmindfulness2025
@@ -17,6 +17,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 },
 {
 	"sesame": "CDB, note 1, pg. 1397",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "MLDB, pg. 1188, note 135",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
@@ -61,6 +65,10 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahist
 },
 {
 	"sesame": "Temp Sesame",
+	"key": "XXXXXXXXXXXXXXXX"
+},
+{
+	"sesame": "note 1177 in the revised 2001 edition of MLDB",
 	"key": "XXXXXXXXXXXXXXXX"
 }
 ]

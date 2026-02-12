@@ -9,7 +9,7 @@
   },
   {
     "fnNumber": "3",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Warder</span>, pg. 86.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:Warder 1970a'>Warder</span>, pg. 86.</p>"
   },
   {
     "fnNumber": "4",
@@ -17,7 +17,7 @@
   },
   {
     "fnNumber": "5",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See <span class='sesame' data-sesame-key='zotref:FrauwallnerE 1956a'>Frauwallner (1956)</span>; recently corrected by <span class='sesame' data-sesame-key='zotref:'>Willis</span>. Also see <span class='sesame' data-sesame-key='zotref:'>Wynne</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See <span class='sesame' data-sesame-key='zotref:FrauwallnerE 1956a'>Frauwallner (1956)</span>; recently corrected by <span class='sesame' data-sesame-key='zotref:WillisM 2001a'>Willis</span>. Also see <span class='sesame' data-sesame-key='zotref:WynneA 2003a'>Wynne</span>.</p>"
   },
   {
     "fnNumber": "6",
@@ -37,15 +37,15 @@
   },
   {
     "fnNumber": "10",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;26<span class='scsegments'>:21.6–21.7</span></span>/<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>/T № 765.4/<a href='https://suttacentral.net/pli-tv-kd1/en/brahmali#5.12.2' class='extlink'>Pali Vinaya 1.7</a>. Taking <span lang='pi'>tesaṁ</span> as supplying the implied ‘their’ of the second line (cp. <span class='sclinktext'>DN&#8239;18<span class='scsegments'>:27.11–18.27.12</span></span>/<a href='https://suttacentral.net/da4' class='extlink'>DA 4</a>/T № 9) and <span lang='pi'>pamuñcantu</span> as a poetic variant of <span lang='pi'>adhimuñcantu</span> (cp. <span class='sclinktext'>Snp&#8239;5.19<span class='scsegments'>:16.3</span></span> [1146], <span class='sclinktext'>Snp&#8239;5.19<span class='scsegments'>:19.4</span></span> [1149], <span class='sclinktext'>AN&#8239;1.14</span>/<a href='https://suttacentral.net/ea4.1' class='extlink'>EA 4.1</a>–10). However, one Sanskrit version has <span lang='sa'>pramodanur</span>, and would translate as ‘May those who wish to hear rejoice in faith’. Another has <span lang='sa'>praṇudantu kakṣāḥ</span>, ‘dispel opinions’.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;26<span class='scsegments'>:21.6–21.7</span></span>/<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>/T № 765.4/<a href='https://suttacentral.net/pli-tv-kd1/en/brahmali#5.12.2' class='extlink'>Pali Vinaya 1.7</a>. Taking <span lang='pi'>tesaṁ</span> as supplying the implied ‘their’ of the second line (cp. <span class='sclinktext'>DN&#8239;18<span class='scsegments'>:27.11–18.27.12</span></span>/<a href='https://suttacentral.net/da4' class='extlink'>DA 4</a>/T № 9) and <span lang='pi'>pamuñcantu</span> as a poetic variant of <span lang='pi'>adhimuñcantu</span> (cp. <span class='sclinktext'>Snp&#8239;5.19<span class='scsegments'>:16.3</span></span> [1146], <span class='sclinktext'>Snp&#8239;5.19<span class='scsegments'>:19.4</span></span> [1149], <span class='sclinktext'>AN&#8239;1.14</span>/<a href='https://suttacentral.net/ea4.1' class='extlink'>EA 4.1</a>–10). However, one Sanskrit version has <span lang='sa'>pramodanur</span>, and would translate as ‘May those who wish to hear rejoice in faith’. Another has <span lang='sa'>praṇudantu kakṣāḥ</span>, ‘dispel opinions’.</p>"
   },
   {
     "fnNumber": "11",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See <span class='sesame' data-sesame-key='zotref:'>Smith</span>. There is an ‘18’ version at Paṭi­sambhi­dāmagga 2.6.1. Although this is now in the Khuddaka Nikāya, it is a quasi-Abhidhamma text, so we could say that the Dhamma­cakkap­pavattana Sutta occurs in all three Piṭakas.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See <span class='sesame' data-sesame-key='zotref:SmithNJ 2001a'>Smith</span>. There is an ‘18’ version at Paṭi­sambhi­dāmagga 2.6.1. Although this is now in the Khuddaka Nikāya, it is a quasi-Abhidhamma text, so we could say that the Dhamma­cakkap­pavattana Sutta occurs in all three Piṭakas.</p>"
   },
   {
     "fnNumber": "12",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Rāhula</span>, pg. 8.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:RahulaT 1978'>Rāhula</span>, pg. 8.</p>"
   },
   {
     "fnNumber": "13",
@@ -57,7 +57,7 @@
   },
   {
     "fnNumber": "15",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Schopen 1997</span>, pg. 24.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:SchopenG 1997a'>Schopen (1997)</span>, pg. 24.</p>"
   },
   {
     "fnNumber": "16",
@@ -65,7 +65,7 @@
   },
   {
     "fnNumber": "17",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;81</span>/<a href='https://suttacentral.net/ma63' class='extlink'>MA 63</a> Ghaṭikāra and <span class='sclinktext'>MN&#8239;83</span>/<a href='https://suttacentral.net/ma67' class='extlink'>MA 67</a> Makhādeva.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;81</span>/<a href='https://suttacentral.net/ma63' class='extlink'>MA 63</a> Ghaṭikāra and <span class='sclinktext'>MN&#8239;83</span>/<a href='https://suttacentral.net/ma67' class='extlink'>MA 67</a> Makhādeva.</p>"
   },
   {
     "fnNumber": "18",
@@ -77,11 +77,11 @@
   },
   {
     "fnNumber": "20",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Translated to English as <em>The Book of Analysis</em> by Ashin <span class='sesame' data-sesame-key='zotref:'>Thiṭṭila</span>, Pali Text Society, 1969.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Translated to English as <em>The Book of Analysis</em> by Ashin <span class='sesame' data-sesame-key='zotref:ThittilaU 1969a'>Thiṭṭila</span>, Pali Text Society, 1969.</p>"
   },
   {
     "fnNumber": "21",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Tin</span>, pg. 4, 38.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:PeMaungTin1920a'>Tin</span>, pg. 4, 38.</p>"
   },
   {
     "fnNumber": "22",
@@ -89,7 +89,7 @@
   },
   {
     "fnNumber": "23",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sāmmitīyanikāyaśāstra (San-mi-ti pu lun), T № 1649, p. 463b11, 465b10, 463b 9–12. See <span class='sesame' data-sesame-key='zotref:'>Thiện Châu</span>, pp. 23–24.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Sāmmitīyanikāyaśāstra (San-mi-ti pu lun), T № 1649, p. 463b11, 465b10, 463b 9–12. See <span class='sesame' data-sesame-key='zotref:ThiệnChâu 1999a'>Thiện Châu</span>, pp. 23–24.</p>"
   },
   {
     "fnNumber": "24",
@@ -129,7 +129,7 @@
   },
   {
     "fnNumber": "33",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> T24, № 1451, p. 408b6–11. Translation from <span class='sesame' data-sesame-key='zotref:'>Rockhill</span> pg. 160. The details given by Rockhill have been corrected following <span class='sesame' data-sesame-key='zotref:'>Watanabe</span> pg. 44, and from the Chinese. A few of the Chinese terms, especially in the latter part of the passage, are unclear.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> T24, № 1451, p. 408b6–11. Translation from <span class='sesame' data-sesame-key='zotref:RockhillW 1884a'>Rockhill</span> pg. 160. The details given by Rockhill have been corrected following <span class='sesame' data-sesame-key='zotref:WatanabeF 1983a'>Watanabe</span> pg. 44, and from the Chinese. A few of the Chinese terms, especially in the latter part of the passage, are unclear.</p>"
   },
   {
     "fnNumber": "34",
@@ -201,11 +201,11 @@
   },
   {
     "fnNumber": "51",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;27</span>/<a href='https://suttacentral.net/da5' class='extlink'>DA 5</a>/T № 10/<a href='https://suttacentral.net/ma154' class='extlink'>MA 154</a>/<a href='https://suttacentral.net/ea40.1' class='extlink'>EA 40.1</a>/Skt. In this and subsequent references I do not give the details of the Sanskrit texts. They may be found at the relevant tables on suttacentral.net. I omit them because they are long and detailed, and only relevant to a minority of scholars, who can easily find them through SuttaCentral anyway.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;27</span>/<a href='https://suttacentral.net/da5' class='extlink'>DA 5</a>/T № 10/<a href='https://suttacentral.net/ma154' class='extlink'>MA 154</a>/<a href='https://suttacentral.net/ea40.1' class='extlink'>EA 40.1</a>/Skt. In this and subsequent references I do not give the details of the Sanskrit texts. They may be found at the relevant tables on suttacentral.net. I omit them because they are long and detailed, and only relevant to a minority of scholars, who can easily find them through SuttaCentral anyway.</p>"
   },
   {
     "fnNumber": "52",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;26</span>/<a href='https://suttacentral.net/da6' class='extlink'>DA 6</a>/<a href='https://suttacentral.net/ma70' class='extlink'>MA 70</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;26</span>/<a href='https://suttacentral.net/da6' class='extlink'>DA 6</a>/<a href='https://suttacentral.net/ma70' class='extlink'>MA 70</a>.</p>"
   },
   {
     "fnNumber": "53",
@@ -213,11 +213,11 @@
   },
   {
     "fnNumber": "54",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Śrāvakabhūmi</span>, pg. 230.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:asaṅgaSSG 1998a'>Śrāvakabhūmi</span>, pg. 230.</p>"
   },
   {
     "fnNumber": "55",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;83<span class='scsegments'>:21.7</span></span>/<a href='https://suttacentral.net/ma67' class='extlink'>MA 67</a>/<a href='https://suttacentral.net/ea1' class='extlink'>EA 1</a>/<a href='https://suttacentral.net/ea50.4' class='extlink'>EA 50.4</a>/T № 152.87/T № 211, <span class='sclinktext'>DN&#8239;19<span class='scsegments'>:61.4</span></span>/<a href='https://suttacentral.net/da3' class='extlink'>DA 3</a>/T № 8/Skt.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;83<span class='scsegments'>:21.7</span></span>/<a href='https://suttacentral.net/ma67' class='extlink'>MA 67</a>/<a href='https://suttacentral.net/ea1' class='extlink'>EA 1</a>/<a href='https://suttacentral.net/ea50.4' class='extlink'>EA 50.4</a>/T № 152.87/T № 211, <span class='sclinktext'>DN&#8239;19<span class='scsegments'>:61.4</span></span>/<a href='https://suttacentral.net/da3' class='extlink'>DA 3</a>/T № 8/Skt.</p>"
   },
   {
     "fnNumber": "56",
@@ -225,7 +225,7 @@
   },
   {
     "fnNumber": "57",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;4.127</span>/<a href='https://suttacentral.net/ma32' class='extlink'>MA 32</a>*/<a href='https://suttacentral.net/ea25.3' class='extlink'>EA 25.3</a>*.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;4.127</span>/<a href='https://suttacentral.net/ma32' class='extlink'>MA 32</a>*/<a href='https://suttacentral.net/ea25.3' class='extlink'>EA 25.3</a>*.</p>"
   },
   {
     "fnNumber": "58",
@@ -233,15 +233,15 @@
   },
   {
     "fnNumber": "59",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma32' class='extlink'>MA 32</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma32' class='extlink'>MA 32</a>.</p>"
   },
   {
     "fnNumber": "60",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;43</span>/<a href='https://suttacentral.net/ma211' class='extlink'>MA 211</a>, <span class='sclinktext'>MN&#8239;44</span>/<a href='https://suttacentral.net/ma44' class='extlink'>MA 44</a>; the versions differ in some questions and details, but there is no obvious sectarian divergence.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;43</span>/<a href='https://suttacentral.net/ma211' class='extlink'>MA 211</a>, <span class='sclinktext'>MN&#8239;44</span>/<a href='https://suttacentral.net/ma44' class='extlink'>MA 44</a>; the versions differ in some questions and details, but there is no obvious sectarian divergence.</p>"
   },
   {
     "fnNumber": "61",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Immediately preceding the two Vedallas is a group of three discourses that occur together and in the same sequence in both Majjhimas: <span class='sclinktext'>MN&#8239;77</span>/<a href='https://suttacentral.net/ma207' class='extlink'>MA 207</a> Mahāsakaludāyin; <span class='sclinktext'>MN&#8239;79</span>/<a href='https://suttacentral.net/ma208' class='extlink'>MA 208</a> Cūḷsakaludāyin; and <span class='sclinktext'>MN&#8239;80</span>/<a href='https://suttacentral.net/ma209' class='extlink'>MA 209</a> Vekhanassa. (<span class='sclinktext'>MN&#8239;78</span>/<a href='https://suttacentral.net/ma179' class='extlink'>MA 179</a> Samaṇamaṇḍikā, falling as it does between the ‘Mahā’ and ‘Cūḷa’ Sakaludāyin Suttas, is obviously a later interpolation.) This group of three and the two Vedalla Suttas were probably pre-existing groups that were brought into the Majjhima.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Immediately preceding the two Vedallas is a group of three discourses that occur together and in the same sequence in both Majjhimas: <span class='sclinktext'>MN&#8239;77</span>/<a href='https://suttacentral.net/ma207' class='extlink'>MA 207</a> Mahāsakaludāyin; <span class='sclinktext'>MN&#8239;79</span>/<a href='https://suttacentral.net/ma208' class='extlink'>MA 208</a> Cūḷsakaludāyin; and <span class='sclinktext'>MN&#8239;80</span>/<a href='https://suttacentral.net/ma209' class='extlink'>MA 209</a> Vekhanassa. (<span class='sclinktext'>MN&#8239;78</span>/<a href='https://suttacentral.net/ma179' class='extlink'>MA 179</a> Samaṇamaṇḍikā, falling as it does between the ‘Mahā’ and ‘Cūḷa’ Sakaludāyin Suttas, is obviously a later interpolation.) This group of three and the two Vedalla Suttas were probably pre-existing groups that were brought into the Majjhima.</p>"
   },
   {
     "fnNumber": "62",
@@ -273,7 +273,7 @@
   },
   {
     "fnNumber": "69",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;122<span class='scsegments'>:20.1</span></span>/<a href='https://suttacentral.net/ma191' class='extlink'>MA 191</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;122<span class='scsegments'>:20.1</span></span>/<a href='https://suttacentral.net/ma191' class='extlink'>MA 191</a>.</p>"
   },
   {
     "fnNumber": "70",
@@ -285,27 +285,27 @@
   },
   {
     "fnNumber": "72",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> 'See the timeline in <span class='sesame' data-sesame-key='zotref:'>Ñāṇamoli’s</span> Introduction to <em>The Path of Purification</em>, p. xi, which refers to the Aṅguttara Commentary, i.92<em>f</em>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> 'See the timeline in Ñāṇamoli’s Introduction to <em>The Path of Purification</em>, [<span class='sesame' data-sesame-key='zotref:Ñāṇamoli 1956a'>Ñāṇamoli (1956)</span>] p. xi, which refers to the Aṅguttara Commentary, i.92<em>f</em>.</p>"
   },
   {
     "fnNumber": "73",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> '<span class='sesame' data-sesame-key='zotref:'>Waldschmidt (1950, 1951)</span> 40.62; <span class='sesame' data-sesame-key='zotref:'>Waldschmidt (1968)</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> '<span class='sesame' data-sesame-key='zotref:WaldschmidtE 1951a'>Waldschmidt (1950–1951)</span> 40.62; <span class='sesame' data-sesame-key='zotref:WaldschmidtE 1968a'>Waldschmidt (1968)</span>.</p>"
   },
   {
     "fnNumber": "74",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Śrāvakabhūmi</span>, pg. 154, 232.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:asaṅgaSSG 1998a'>Śrāvakabhūmi</span>, pg. 154, 232.</p>"
   },
   {
     "fnNumber": "75",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Śrāvakabhūmi</span>, pg. 154, 184, 220, 226.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:asaṅgaSSG 1998a'>Śrāvakabhūmi</span>, pg. 154, 184, 220, 226.</p>"
   },
   {
     "fnNumber": "76",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span lang='pi'>Neyyattha</span> and <span lang='pi'>nītattha</span>; <span class='sesame' data-sesame-key='zotref:'>Śrāvakabhūmi</span> pg. 228; <span class='sesame' data-sesame-key='zotref:BoinWebb-Rahula 2001a'>Abhidharmasamuccaya</span> pg. 179, but see De Jong’s comment, pg. 295.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span lang='pi'>Neyyattha</span> and <span lang='pi'>nītattha</span>; <span class='sesame' data-sesame-key='zotref:asaṅgaSSG 1998a'>Śrāvakabhūmi</span> pg. 228; <span class='sesame' data-sesame-key='zotref:BoinWebb-Rahula 2001a'>Abhidharmasamuccaya</span> pg. 179, but see De Jong’s comment, pg. 295.</p>"
   },
   {
     "fnNumber": "77",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Peṭakopadesa 1.7. In the final sentence I accept Ñāṇamoli’s suggested amendment to <span lang='pi'>ālokapañcakaṁ</span>, referring to the series of five terms in the Dhamma­cakkap­pavattana Sutta describing the Buddha’s realization of the noble truths.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Peṭakopadesa 1.7. [<span class='sesame' data-sesame-key='zotref:Ñāṇamoli  1964a'>Ñāṇamoli (1964)</span>] In the final sentence I accept Ñāṇamoli’s suggested amendment to <span lang='pi'>ālokapañcakaṁ</span>, referring to the series of five terms in the Dhamma­cakkap­pavattana Sutta describing the Buddha’s realization of the noble truths.</p>"
   },
   {
     "fnNumber": "78",
@@ -329,7 +329,7 @@
   },
   {
     "fnNumber": "83",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Ñāṇamoli (1964)</span>, pg. 133.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:Ñāṇamoli  1964a'>Ñāṇamoli (1964)</span>, pg. 133.</p>"
   },
   {
     "fnNumber": "84",
@@ -349,11 +349,11 @@
   },
   {
     "fnNumber": "88",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>DN&#8239;11<span class='scsegments'>:85.7</span></span>/<a href='https://suttacentral.net/da24' class='extlink'>DA 24</a>/P 5595, <span class='sclinktext'>SN&#8239;12.12</span>/<a href='https://suttacentral.net/sa372' class='extlink'>SA 372</a>, <span class='sclinktext'>SN&#8239;12.32</span>/<a href='https://suttacentral.net/ma23' class='extlink'>MA 23</a>/<a href='https://suttacentral.net/sa345' class='extlink'>SA 345</a>/Skt, <span class='sclinktext'>SN&#8239;12.70</span>/ <a href='https://suttacentral.net/sa347' class='extlink'>SA 347</a>, <span class='sclinktext'>SN&#8239;35.116</span>/<a href='https://suttacentral.net/sa234' class='extlink'>SA 234</a>, <span class='sclinktext'>SN&#8239;35.204</span>/<a href='https://suttacentral.net/sa1175' class='extlink'>SA 1175</a>, <span class='sclinktext'>SN&#8239;41.1</span>/<a href='https://suttacentral.net/sa572' class='extlink'>SA 572</a>, <span class='sclinktext'>MN&#8239;32</span>/<a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>/<a href='https://suttacentral.net/ea37.3' class='extlink'>EA 37.3</a>/ T № 154.16, <span class='sclinktext'>MN&#8239;44</span>/<a href='https://suttacentral.net/ma210' class='extlink'>MA 210</a>, <span class='sclinktext'>MN&#8239;56<span class='scsegments'>:6.3</span></span>/<a href='https://suttacentral.net/ma133' class='extlink'>MA 133</a>/Skt, <span class='sclinktext'>MN&#8239;133<span class='scsegments'>:21.2</span></span>/<a href='https://suttacentral.net/ma165' class='extlink'>MA 165</a>, <span class='sclinktext'>AN&#8239;3.21</span>, <span class='sclinktext'>AN&#8239;6.61</span>/ <a href='https://suttacentral.net/sa1164' class='extlink'>SA 1164</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>DN&#8239;11<span class='scsegments'>:85.7</span></span>/<a href='https://suttacentral.net/da24' class='extlink'>DA 24</a>/P 5595, <span class='sclinktext'>SN&#8239;12.12</span>/<a href='https://suttacentral.net/sa372' class='extlink'>SA 372</a>, <span class='sclinktext'>SN&#8239;12.32</span>/<a href='https://suttacentral.net/ma23' class='extlink'>MA 23</a>/<a href='https://suttacentral.net/sa345' class='extlink'>SA 345</a>/Skt, <span class='sclinktext'>SN&#8239;12.70</span>/ <a href='https://suttacentral.net/sa347' class='extlink'>SA 347</a>, <span class='sclinktext'>SN&#8239;35.116</span>/<a href='https://suttacentral.net/sa234' class='extlink'>SA 234</a>, <span class='sclinktext'>SN&#8239;35.204</span>/<a href='https://suttacentral.net/sa1175' class='extlink'>SA 1175</a>, <span class='sclinktext'>SN&#8239;41.1</span>/<a href='https://suttacentral.net/sa572' class='extlink'>SA 572</a>, <span class='sclinktext'>MN&#8239;32</span>/<a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>/<a href='https://suttacentral.net/ea37.3' class='extlink'>EA 37.3</a>/ T № 154.16, <span class='sclinktext'>MN&#8239;44</span>/<a href='https://suttacentral.net/ma210' class='extlink'>MA 210</a>, <span class='sclinktext'>MN&#8239;56<span class='scsegments'>:6.3</span></span>/<a href='https://suttacentral.net/ma133' class='extlink'>MA 133</a>/Skt, <span class='sclinktext'>MN&#8239;133<span class='scsegments'>:21.2</span></span>/<a href='https://suttacentral.net/ma165' class='extlink'>MA 165</a>, <span class='sclinktext'>AN&#8239;3.21</span>, <span class='sclinktext'>AN&#8239;6.61</span>/ <a href='https://suttacentral.net/sa1164' class='extlink'>SA 1164</a>.</p>"
   },
   {
     "fnNumber": "89",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;9<span class='scsegments'>:29.2</span></span>/<a href='https://suttacentral.net/da28' class='extlink'>DA 28</a>, <span class='sclinktext'>DN&#8239;29<span class='scsegments'>:32.4</span></span>/<a href='https://suttacentral.net/da17' class='extlink'>DA 17</a>, <span class='sclinktext'>MN&#8239;63<span class='scsegments'>:9.1–9.8</span></span>/<a href='https://suttacentral.net/ma221' class='extlink'>MA 221</a>/T № 94, <span class='sclinktext'>SN&#8239;16.12</span>/<a href='https://suttacentral.net/sa905' class='extlink'>SA 905</a>/<a href='https://suttacentral.net/sa121' class='extlink'>SA 121</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;9<span class='scsegments'>:29.2</span></span>/<a href='https://suttacentral.net/da28' class='extlink'>DA 28</a>, <span class='sclinktext'>DN&#8239;29<span class='scsegments'>:32.4</span></span>/<a href='https://suttacentral.net/da17' class='extlink'>DA 17</a>, <span class='sclinktext'>MN&#8239;63<span class='scsegments'>:9.1–9.8</span></span>/<a href='https://suttacentral.net/ma221' class='extlink'>MA 221</a>/T № 94, <span class='sclinktext'>SN&#8239;16.12</span>/<a href='https://suttacentral.net/sa905' class='extlink'>SA 905</a>/<a href='https://suttacentral.net/sa121' class='extlink'>SA 121</a>.</p>"
   },
   {
     "fnNumber": "90",
@@ -361,7 +361,7 @@
   },
   {
     "fnNumber": "91",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>DN&#8239;18<span class='scsegments'>:4.6</span></span>/<a href='https://suttacentral.net/da4' class='extlink'>DA 4</a>/T № 9, <span class='sclinktext'>AN&#8239;5.93</span>, <span class='sclinktext'>AN&#8239;6.62</span>/<a href='https://suttacentral.net/ma112' class='extlink'>MA 112</a>/T № 58.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>DN&#8239;18<span class='scsegments'>:4.6</span></span>/<a href='https://suttacentral.net/da4' class='extlink'>DA 4</a>/T № 9, <span class='sclinktext'>AN&#8239;5.93</span>, <span class='sclinktext'>AN&#8239;6.62</span>/<a href='https://suttacentral.net/ma112' class='extlink'>MA 112</a>/T № 58.</p>"
   },
   {
     "fnNumber": "92",
@@ -373,7 +373,7 @@
   },
   {
     "fnNumber": "94",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:BoinWebb-Rahula 2001a'>Boin-Webb</span>, pg. 179 (adapted following De Jong’s note, pg. 295); the <span class='sesame' data-sesame-key='zotref:'>Śrāvakabhūmi</span> pg. 228 is similar, lacking only the final phrase.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:BoinWebb-Rahula 2001a'>Boin-Webb</span>, pg. 179 (adapted following De Jong’s note, pg. 295); the <span class='sesame' data-sesame-key='zotref:asaṅgaSSG 1998a'>Śrāvakabhūmi</span> pg. 228 is similar, lacking only the final phrase.</p>"
   },
   {
     "fnNumber": "95",
@@ -389,11 +389,11 @@
   },
   {
     "fnNumber": "98",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:PrzyluskiJ 1926a'>Przylyski 1926</span>, pp. 45, 334; cp. <span class='sesame' data-sesame-key='zotref:'>Rockhill</span>, pg. 160.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:PrzyluskiJ 1926a'>Przylyski 1926</span>, pp. 45, 334; cp. <span class='sesame' data-sesame-key='zotref:RockhillW 1884a'>Rockhill</span>, pg. 160.</p>"
   },
   {
     "fnNumber": "99",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;32</span>/<a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>/<a href='https://suttacentral.net/ea37.3' class='extlink'>EA 37.3</a>/T № 154.6. The Theravāda attributes this to Moggallāna, but all three Chinese versions more plausibly praise Moggallāna for his psychic powers.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;32</span>/<a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>/<a href='https://suttacentral.net/ea37.3' class='extlink'>EA 37.3</a>/T № 154.6. The Theravāda attributes this to Moggallāna, but all three Chinese versions more plausibly praise Moggallāna for his psychic powers.</p>"
   },
   {
     "fnNumber": "100",
@@ -433,7 +433,7 @@
   },
   {
     "fnNumber": "109",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> T24, p. 35 a3 &amp; 57 a26–7; <span class='sesame' data-sesame-key='zotref:'>Yin Shun (1971)</span>, pp. 720–725. In the Chinese, the second nipāta is mistakenly called the ‘Sixty-three-Nipāta’.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> T24, p. 35 a3 &amp; 57 a26–7; <span class='sesame' data-sesame-key='zotref:Yinshun 1971a'>Yin Shun (1971)</span>, pp. 720–725. In the Chinese, the second nipāta is mistakenly called the ‘Sixty-three-Nipāta’.</p>"
   },
   {
     "fnNumber": "110",
@@ -481,15 +481,15 @@
   },
   {
     "fnNumber": "121",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Most of this is in the widely available <em>Life of the Buddha</em> by Bhikkhu <span class='sesame' data-sesame-key='zotref:'>Ñāṇamoli (1992)</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Most of this is in the widely available <em>Life of the Buddha</em> by Bhikkhu <span class='sesame' data-sesame-key='zotref:Ñāṇamoli 1992a'>Ñāṇamoli (1992)</span>.</p>"
   },
   {
     "fnNumber": "122",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;28<span class='scsegments'>:2.1–6.9</span></span>/<a href='https://suttacentral.net/ma30' class='extlink'>MA 30</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;28<span class='scsegments'>:2.1–6.9</span></span>/<a href='https://suttacentral.net/ma30' class='extlink'>MA 30</a>.</p>"
   },
   {
     "fnNumber": "123",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;141</span>/<a href='https://suttacentral.net/ma31' class='extlink'>MA 31</a>/T № 32/<a href='https://suttacentral.net/ea27.1' class='extlink'>EA 27.1</a>/T № 1435.60.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;141</span>/<a href='https://suttacentral.net/ma31' class='extlink'>MA 31</a>/T № 32/<a href='https://suttacentral.net/ea27.1' class='extlink'>EA 27.1</a>/T № 1435.60.</p>"
   },
   {
     "fnNumber": "124",
@@ -505,11 +505,11 @@
   },
   {
     "fnNumber": "127",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Waldschmidt (1950–1951)</span>, 19.7–10.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:WaldschmidtE 1951a'>Waldschmidt (1950–1951)</span>, 19.7–10.</p>"
   },
   {
     "fnNumber": "128",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Waldschmidt (1968)</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:WaldschmidtE 1968a'>Waldschmidt (1968)</span>.</p>"
   },
   {
     "fnNumber": "129",
@@ -517,15 +517,15 @@
   },
   {
     "fnNumber": "130",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Waldschmidt (1950–1951)</span>, 24.2.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:WaldschmidtE 1951a'>Waldschmidt (1950–1951)</span>, 24.2.</p>"
   },
   {
     "fnNumber": "131",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Waldschmidt (1950–1951)</span>, 40.62.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:WaldschmidtE 1951a'>Waldschmidt (1950–1951)</span>, 40.62.</p>"
   },
   {
     "fnNumber": "132",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Rockhill</span>, pg. 132, 140.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:RockhillW 1884a'>Rockhill</span>, pg. 132, 140.</p>"
   },
   {
     "fnNumber": "133",
@@ -585,7 +585,7 @@
   },
   {
     "fnNumber": "147",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Von Hinüber</span>, pg. 37.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:Hinüber 1996a'>Von Hinüber</span>, pg. 37.</p>"
   },
   {
     "fnNumber": "148",
@@ -605,7 +605,7 @@
   },
   {
     "fnNumber": "152",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:GethinRML 1992a'>Gethin (1992a)</span>, pg. 59. Gethin cites <span class='sesame' data-sesame-key='zotref:'>Schmithausen (1976)</span> pp. 241–66 and <span class='sesame' data-sesame-key='zotref:BronkhorstJ 1985a'>Bronkhorst (1985)</span> pp. 309–12.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:GethinRML 1992a'>Gethin (1992a)</span>, pg. 59. Gethin cites <span class='sesame' data-sesame-key='zotref:SchmithausenL 1976a'>Schmithausen (1976)</span> pp. 241–66 and <span class='sesame' data-sesame-key='zotref:BronkhorstJ 1985a'>Bronkhorst (1985)</span> pp. 309–12.</p>"
   },
   {
     "fnNumber": "153",
@@ -637,11 +637,11 @@
   },
   {
     "fnNumber": "160",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma144' class='extlink'>MA 144</a> = <span class='sclinktext'>MN&#8239;107</span> Gaṇakamoggallāna Sutta.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma144' class='extlink'>MA 144</a> = <span class='sclinktext'>MN&#8239;107</span> Gaṇakamoggallāna Sutta.</p>"
   },
   {
     "fnNumber": "161",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;125</span>/<a href='https://suttacentral.net/ma198' class='extlink'>MA 198</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;125</span>/<a href='https://suttacentral.net/ma198' class='extlink'>MA 198</a>.</p>"
   },
   {
     "fnNumber": "162",
@@ -649,7 +649,7 @@
   },
   {
     "fnNumber": "163",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;10.62</span>/<a href='https://suttacentral.net/ma51' class='extlink'>MA 51</a>, <a href='https://suttacentral.net/ma52' class='extlink'>MA 52</a>, <a href='https://suttacentral.net/ma53' class='extlink'>MA 53</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;10.62</span>/<a href='https://suttacentral.net/ma51' class='extlink'>MA 51</a>, <a href='https://suttacentral.net/ma52' class='extlink'>MA 52</a>, <a href='https://suttacentral.net/ma53' class='extlink'>MA 53</a>.</p>"
   },
   {
     "fnNumber": "164",
@@ -697,7 +697,7 @@
   },
   {
     "fnNumber": "175",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See ‘A Pali Reference to Brahmaṇa-Caraṇas’, included in <span class='sesame' data-sesame-key='zotref:'>Wijesekera</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See ‘A Pali Reference to Brahmaṇa-Caraṇas’, included in <span class='sesame' data-sesame-key='zotref:Wijesekera 1956a'>Wijesekera</span>.</p>"
   },
   {
     "fnNumber": "176",
@@ -757,7 +757,7 @@
   },
   {
     "fnNumber": "190",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;26</span>/<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;26</span>/<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>.</p>"
   },
   {
     "fnNumber": "191",
@@ -773,7 +773,7 @@
   },
   {
     "fnNumber": "194",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The Sarvāstivādin version (<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>) mentions only faith, energy, and wisdom here, but includes mindfulness just below. The Sanghabhedavastu (<span class='sesame' data-sesame-key='zotref:GnoliR 1977a'>Gnoli</span> pg. 97) and the Lalitavistara (239.2) mention all five spiritual faculties.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The Sarvāstivādin version (<a href='https://suttacentral.net/ma204' class='extlink'>MA 204</a>) mentions only faith, energy, and wisdom here, but includes mindfulness just below. The Sanghabhedavastu (<span class='sesame' data-sesame-key='zotref:GnoliR 1977a'>Gnoli</span> pg. 97) and the Lalitavistara (239.2) mention all five spiritual faculties.</p>"
   },
   {
     "fnNumber": "195",
@@ -821,7 +821,7 @@
   },
   {
     "fnNumber": "206",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>MN&#8239;83</span>/<a href='https://suttacentral.net/ma67' class='extlink'>MA 67</a>/<a href='https://suttacentral.net/ea1' class='extlink'>EA 1</a>/<a href='https://suttacentral.net/ea50.4' class='extlink'>EA 50.4</a>/T № 152.87/T № 211 Makhādeva; <span class='sclinktext'>DN&#8239;19</span> Mahāgovinda also has the divine abidings, but not <a href='https://suttacentral.net/da3' class='extlink'>DA 3</a>, T № 8, pp. 207c–210b, and Mv 3.197–224.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>MN&#8239;83</span>/<a href='https://suttacentral.net/ma67' class='extlink'>MA 67</a>/<a href='https://suttacentral.net/ea1' class='extlink'>EA 1</a>/<a href='https://suttacentral.net/ea50.4' class='extlink'>EA 50.4</a>/T № 152.87/T № 211 Makhādeva; <span class='sclinktext'>DN&#8239;19</span> Mahāgovinda also has the divine abidings, but not <a href='https://suttacentral.net/da3' class='extlink'>DA 3</a>, T № 8, pp. 207c–210b, and Mv 3.197–224.</p>"
   },
   {
     "fnNumber": "207",
@@ -953,7 +953,7 @@
   },
   {
     "fnNumber": "239",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;44<span class='scsegments'>:11.4</span></span>/<a href='https://suttacentral.net/ma210' class='extlink'>MA 210</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;44<span class='scsegments'>:11.4</span></span>/<a href='https://suttacentral.net/ma210' class='extlink'>MA 210</a>.</p>"
   },
   {
     "fnNumber": "240",
@@ -977,7 +977,7 @@
   },
   {
     "fnNumber": "245",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;10<span class='scsegments'>:2.1.1–2.18.8</span></span>/<a href='https://suttacentral.net/da42' class='extlink'>DA 42</a>. <span class='sesame' data-sesame-key='zotref:'>Walshe</span>’s translation is faulty. He has: ‘This comes to him through concentration’. It should read: ‘This is, for him, what pertains to concentration’.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;10<span class='scsegments'>:2.1.1–2.18.8</span></span>/<a href='https://suttacentral.net/da42' class='extlink'>DA 42</a>. <span class='sesame' data-sesame-key='zotref:Walshe 1995a'>Walshe</span>’s translation is faulty. He has: ‘This comes to him through concentration’. It should read: ‘This is, for him, what pertains to concentration’.</p>"
   },
   {
     "fnNumber": "246",
@@ -989,7 +989,7 @@
   },
   {
     "fnNumber": "248",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma189' class='extlink'>MA 189</a>, etc.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma189' class='extlink'>MA 189</a>, etc.</p>"
   },
   {
     "fnNumber": "249",
@@ -1013,7 +1013,7 @@
   },
   {
     "fnNumber": "254",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Waldschmidt (1950, 1951)</span> 10.8.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:WaldschmidtE 1951a'>Waldschmidt (1950–1951)</span> 10.8.</p>"
   },
   {
     "fnNumber": "255",
@@ -1093,7 +1093,7 @@
   },
   {
     "fnNumber": "274",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See Vsm trans. (<span class='sesame' data-sesame-key='zotref:'>Ñāṇamoli</span>), pg. 168 note 47.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See Vsm trans. <span class='sesame' data-sesame-key='zotref:Ñāṇamoli 1956a'>Ñāṇamoli (1956)</span>, pg. 168 note 47.</p>"
   },
   {
     "fnNumber": "275",
@@ -1181,7 +1181,7 @@
   },
   {
     "fnNumber": "296",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Wijesekera</span>, pg. 282.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:Wijesekera 1956a'>Wijesekera</span>, pg. 282.</p>"
   },
   {
     "fnNumber": "297",
@@ -1193,11 +1193,11 @@
   },
   {
     "fnNumber": "299",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;1</span>/<a href='https://suttacentral.net/ma106' class='extlink'>MA 106</a>/T № 56.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;1</span>/<a href='https://suttacentral.net/ma106' class='extlink'>MA 106</a>/T № 56.</p>"
   },
   {
     "fnNumber": "300",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;23<span class='scsegments'>:19.1–19.22</span></span>/<a href='https://suttacentral.net/da7' class='extlink'>DA 7</a>/<a href='https://suttacentral.net/ma71' class='extlink'>MA 71</a>/ T № 45.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;23<span class='scsegments'>:19.1–19.22</span></span>/<a href='https://suttacentral.net/da7' class='extlink'>DA 7</a>/<a href='https://suttacentral.net/ma71' class='extlink'>MA 71</a>/ T № 45.</p>"
   },
   {
     "fnNumber": "301",
@@ -1257,7 +1257,7 @@
   },
   {
     "fnNumber": "315",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Cp. <span class='sclinktext'>MN&#8239;32</span>/<a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>, <span class='sclinktext'>MN&#8239;123</span>/<a href='https://suttacentral.net/ma78' class='extlink'>MA 78</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Cp. <span class='sclinktext'>MN&#8239;32</span>/<a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>, <span class='sclinktext'>MN&#8239;123</span>/<a href='https://suttacentral.net/ma78' class='extlink'>MA 78</a>.</p>"
   },
   {
     "fnNumber": "316",
@@ -1321,7 +1321,7 @@
   },
   {
     "fnNumber": "331",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma98' class='extlink'>MA 98</a>; cp. <span class='sclinktext'>SN&#8239;51.20</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma98' class='extlink'>MA 98</a>; cp. <span class='sclinktext'>SN&#8239;51.20</span>.</p>"
   },
   {
     "fnNumber": "332",
@@ -1357,11 +1357,11 @@
   },
   {
     "fnNumber": "340",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;15<span class='scsegments'>:20.1–20.10</span></span>/<a href='https://suttacentral.net/da13' class='extlink'>DA 13</a>/T № 14/<a href='https://suttacentral.net/ma97' class='extlink'>MA 97</a>/T № 52/Skt.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;15<span class='scsegments'>:20.1–20.10</span></span>/<a href='https://suttacentral.net/da13' class='extlink'>DA 13</a>/T № 14/<a href='https://suttacentral.net/ma97' class='extlink'>MA 97</a>/T № 52/Skt.</p>"
   },
   {
     "fnNumber": "341",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> A similar vacillation between <span lang='pi'>citta</span> and <span lang='pi'>viññāṇa</span> occurs in other contexts where samatha and vipassanā overlap, e.g. <span class='sclinktext'>MN&#8239;138</span>/<a href='https://suttacentral.net/ma164' class='extlink'>MA 164</a> Uddesavibhaṅga.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> A similar vacillation between <span lang='pi'>citta</span> and <span lang='pi'>viññāṇa</span> occurs in other contexts where samatha and vipassanā overlap, e.g. <span class='sclinktext'>MN&#8239;138</span>/<a href='https://suttacentral.net/ma164' class='extlink'>MA 164</a> Uddesavibhaṅga.</p>"
   },
   {
     "fnNumber": "342",
@@ -1397,7 +1397,7 @@
   },
   {
     "fnNumber": "350",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;78</span>/<a href='https://suttacentral.net/ma179' class='extlink'>MA 179</a> Samaṇamaṇḍikā.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;78</span>/<a href='https://suttacentral.net/ma179' class='extlink'>MA 179</a> Samaṇamaṇḍikā.</p>"
   },
   {
     "fnNumber": "351",
@@ -1465,7 +1465,7 @@
   },
   {
     "fnNumber": "367",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Compare Sutta passages that describe the internal space element as the spaces where food is eaten, digested, and passed out. <span class='sclinktext'>MN&#8239;140<span class='scsegments'>:18.3–18.6</span></span>/<a href='https://suttacentral.net/ma162' class='extlink'>MA 162</a>; <span class='sclinktext'>MN&#8239;62<span class='scsegments'>:12.1–12.6</span></span>/<a href='https://suttacentral.net/ea17.1' class='extlink'>EA 17.1</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Compare Sutta passages that describe the internal space element as the spaces where food is eaten, digested, and passed out. <span class='sclinktext'>MN&#8239;140<span class='scsegments'>:18.3–18.6</span></span>/<a href='https://suttacentral.net/ma162' class='extlink'>MA 162</a>; <span class='sclinktext'>MN&#8239;62<span class='scsegments'>:12.1–12.6</span></span>/<a href='https://suttacentral.net/ea17.1' class='extlink'>EA 17.1</a>.</p>"
   },
   {
     "fnNumber": "368",
@@ -1473,7 +1473,7 @@
   },
   {
     "fnNumber": "369",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;28<span class='scsegments'>:6.3–6.8</span></span>/<a href='https://suttacentral.net/ma30' class='extlink'>MA 30</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;28<span class='scsegments'>:6.3–6.8</span></span>/<a href='https://suttacentral.net/ma30' class='extlink'>MA 30</a>.</p>"
   },
   {
     "fnNumber": "370",
@@ -1509,7 +1509,7 @@
   },
   {
     "fnNumber": "378",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma98' class='extlink'>MA 98</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma98' class='extlink'>MA 98</a>.</p>"
   },
   {
     "fnNumber": "379",
@@ -1517,7 +1517,7 @@
   },
   {
     "fnNumber": "380",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;119</span>/<a href='https://suttacentral.net/ma81' class='extlink'>MA 81</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;119</span>/<a href='https://suttacentral.net/ma81' class='extlink'>MA 81</a>.</p>"
   },
   {
     "fnNumber": "381",
@@ -1557,11 +1557,11 @@
   },
   {
     "fnNumber": "390",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Schopen 2004</span>, pp. 395ff.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:SchopenG 2004a'>Schopen (2004)</span>, pp. 395ff.</p>"
   },
   {
     "fnNumber": "391",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Schopen 2004</span>, pg. 283, note 59. This note, unfortunately disconnected from Schopen’s main discussion of the matter, gives a couple of further references.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:SchopenG 2004a'>Schopen (2004)</span>, pg. 283, note 59. This note, unfortunately disconnected from Schopen’s main discussion of the matter, gives a couple of further references.</p>"
   },
   {
     "fnNumber": "392",
@@ -1601,7 +1601,7 @@
   },
   {
     "fnNumber": "401",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The headquarters of the Theravāda must have been in Sri Lanka from quite early, for an inscription at Nagarjunikonda in Southern India refers to a monastery belonging to the ‘Theravādin teachers of Sri Lanka’. <span class='sesame' data-sesame-key='zotref:'>Schopen 1997</span>, pg. 5.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The headquarters of the Theravāda must have been in Sri Lanka from quite early, for an inscription at Nagarjunikonda in Southern India refers to a monastery belonging to the ‘Theravādin teachers of Sri Lanka’. <span class='sesame' data-sesame-key='zotref:SchopenG 1997a'>Schopen (1997)</span>, pg. 5.</p>"
   },
   {
     "fnNumber": "402",
@@ -1609,7 +1609,7 @@
   },
   {
     "fnNumber": "403",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;30</span>/<a href='https://suttacentral.net/ma59' class='extlink'>MA 59</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;30</span>/<a href='https://suttacentral.net/ma59' class='extlink'>MA 59</a>.</p>"
   },
   {
     "fnNumber": "404",
@@ -1621,15 +1621,15 @@
   },
   {
     "fnNumber": "406",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;148</span>/<a href='https://suttacentral.net/ma86' class='extlink'>MA 86</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;148</span>/<a href='https://suttacentral.net/ma86' class='extlink'>MA 86</a>.</p>"
   },
   {
     "fnNumber": "407",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Watanabe</span>, pg. 54.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:WatanabeF 1983a'>Watanabe</span>, pg. 54.</p>"
   },
   {
     "fnNumber": "408",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;28</span><span data-custom-style='Footnote Text Char'>/</span><a href='https://suttacentral.net/ma30' class='extlink'>MA 30</a><span data-custom-style='Footnote Text Char'>. The following information is from Bhikkhu Anālayo (unpublished</span> <span data-custom-style='Footnote Text Char'>essay).</span></p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;28</span><span data-custom-style='Footnote Text Char'>/</span><a href='https://suttacentral.net/ma30' class='extlink'>MA 30</a><span data-custom-style='Footnote Text Char'>. The following information is from Bhikkhu Anālayo (unpublished</span> <span data-custom-style='Footnote Text Char'>essay).</span></p>"
   },
   {
     "fnNumber": "409",
@@ -1697,7 +1697,7 @@
   },
   {
     "fnNumber": "425",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <a href='https://suttacentral.net/ma184' class='extlink'>MA 184</a>.</p>"
   },
   {
     "fnNumber": "426",
@@ -1709,15 +1709,15 @@
   },
   {
     "fnNumber": "428",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;31</span>/<a href='https://suttacentral.net/ma185' class='extlink'>MA 185</a> Cūḷagosiṅga; <span class='sclinktext'>MN&#8239;25</span>/ <a href='https://suttacentral.net/ma178' class='extlink'>MA 178</a> Nivāpa; <span class='sclinktext'>MN&#8239;99</span>/<a href='https://suttacentral.net/ma152' class='extlink'>MA 152</a> Subha.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;31</span>/<a href='https://suttacentral.net/ma185' class='extlink'>MA 185</a> Cūḷagosiṅga; <span class='sclinktext'>MN&#8239;25</span>/ <a href='https://suttacentral.net/ma178' class='extlink'>MA 178</a> Nivāpa; <span class='sclinktext'>MN&#8239;99</span>/<a href='https://suttacentral.net/ma152' class='extlink'>MA 152</a> Subha.</p>"
   },
   {
     "fnNumber": "429",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;82</span>/ <a href='https://suttacentral.net/ma132' class='extlink'>MA 132</a> Raṭṭhapāla.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;82</span>/ <a href='https://suttacentral.net/ma132' class='extlink'>MA 132</a> Raṭṭhapāla.</p>"
   },
   {
     "fnNumber": "430",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;75</span>/<a href='https://suttacentral.net/ma153' class='extlink'>MA 153</a> Māgandiya, <span class='sclinktext'>MN&#8239;99</span>/<a href='https://suttacentral.net/ma152' class='extlink'>MA 152</a> Subha.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;75</span>/<a href='https://suttacentral.net/ma153' class='extlink'>MA 153</a> Māgandiya, <span class='sclinktext'>MN&#8239;99</span>/<a href='https://suttacentral.net/ma152' class='extlink'>MA 152</a> Subha.</p>"
   },
   {
     "fnNumber": "431",
@@ -1785,7 +1785,7 @@
   },
   {
     "fnNumber": "447",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The discourse and commentary, together with extracts from the sub-commentary, have been published in translation by <span class='sesame' data-sesame-key='zotref:'>Soma</span> Thera under the title <em>The Way of Mindfulness</em>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The discourse and commentary, together with extracts from the sub-commentary, have been published in translation by <span class='sesame' data-sesame-key='zotref:Soma 1941a'>Soma</span> Thera under the title <em>The Way of Mindfulness</em>.</p>"
   },
   {
     "fnNumber": "448",
@@ -1865,7 +1865,7 @@
   },
   {
     "fnNumber": "467",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The commentary to the Arthaviniścaya, however, evidently takes him seriously enough to offer an explanation: although ānāpānasati is accompanied by equanimity, the meditator turns back the awareness that has air as its object and experiences rapture and bliss. This does not interrupt the practice, since the purpose of the practice is not given up, or since he can regain his object quickly. (See <span class='sesame' data-sesame-key='zotref:'>Samtani</span>, pg. 102.)</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> The commentary to the Arthaviniścaya, however, evidently takes him seriously enough to offer an explanation: although ānāpānasati is accompanied by equanimity, the meditator turns back the awareness that has air as its object and experiences rapture and bliss. This does not interrupt the practice, since the purpose of the practice is not given up, or since he can regain his object quickly. (See <span class='sesame' data-sesame-key='zotref:SamtaniNH 1971a'>Samtani</span>, pg. 102.)</p>"
   },
   {
     "fnNumber": "468",
@@ -1889,15 +1889,15 @@
   },
   {
     "fnNumber": "473",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Samtani</span>, pg. 48.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:SamtaniNH 1971a'>Samtani</span>, pg. 48.</p>"
   },
   {
     "fnNumber": "474",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Samtani</span>, pg. 52.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:SamtaniNH 1971a'>Samtani</span>, pg. 52.</p>"
   },
   {
     "fnNumber": "475",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Samtani</span>, pp. 96–97.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:SamtaniNH 1971a'>Samtani</span>, pp. 96–97.</p>"
   },
   {
     "fnNumber": "476",
@@ -1949,11 +1949,11 @@
   },
   {
     "fnNumber": "488",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;125</span>/<a href='https://suttacentral.net/ma198' class='extlink'>MA 198</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;125</span>/<a href='https://suttacentral.net/ma198' class='extlink'>MA 198</a>.</p>"
   },
   {
     "fnNumber": "489",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>MN&#8239;123<span class='scsegments'>:3.1</span></span>/<a href='https://suttacentral.net/ma32' class='extlink'>MA 32</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>MN&#8239;123<span class='scsegments'>:3.1</span></span>/<a href='https://suttacentral.net/ma32' class='extlink'>MA 32</a>.</p>"
   },
   {
     "fnNumber": "490",
@@ -1993,7 +1993,7 @@
   },
   {
     "fnNumber": "499",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:'>Wayman</span>, pp.97–98.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:WaymanA 1961a'>Wayman</span>, pp.97–98.</p>"
   },
   {
     "fnNumber": "500",

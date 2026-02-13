@@ -4,6 +4,10 @@
     "location": "seg-3"
   },
   {
+    "sclinkHTML": "<span class=\"sclinktext\">MN&#8239;28<span class='scsegments'>:2.1–2.2</span></span>",
+    "location": "seg-30"
+  },
+  {
     "sclinkHTML": "<span class=\"sclinktext\">MN&#8239;141</span>",
     "location": "seg-165"
   },

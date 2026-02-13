@@ -1,9 +1,14 @@
 /* mel%dog386~FKD */
+em {
+	color:rgb(185, 1, 56);
+}
 *:lang(pi) {
 	font-style: italic;
+	color:green;
 }
 *:lang(sa) {
 	font-style: italic;
+	color: orange;
 }
 *:lang(la) {
 	font-style: italic;

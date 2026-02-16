@@ -35,6 +35,7 @@ function showBD(linktext) {
 
   function getMultiSuttaJSONFileName (suttaNumber) { //suttanumber(slug), file, slug
     const multiSuttaArr = [
+      ['an1.14','an1.11-20',''],
       ['an1.43','an1.41-50',''],
       ['an1.44','an1.41-50',''],
       ['an1.170','an1.170-187',''],

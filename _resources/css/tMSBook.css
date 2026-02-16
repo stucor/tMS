@@ -8,7 +8,7 @@ em {
 }
 *:lang(sa) {
 	font-style: italic;
-	color: orange;
+	color: rgb(197, 129, 2);
 }
 *:lang(la) {
 	font-style: italic;
@@ -206,6 +206,10 @@ div:has(> .fleuron) {
 	font-style: italic; 
 	margin-top: 0;
 	font-size: smaller;
+}
+
+.line-block-center p:has(> sup) {
+	padding-right: 1em;
 }
 
 .content div.tight-right-cite {
@@ -1335,7 +1339,7 @@ sup {
 	cursor: pointer;
 	font-style: normal;
 	/* user-select: none; */
-	/*background: rgb(231, 255, 17);*/
+	background: rgb(231, 255, 17);
 }
 
 

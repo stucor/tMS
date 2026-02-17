@@ -1,4 +1,4 @@
-Mon Feb 16 2026 14:24:39 GMT+0000 (Greenwich Mean Time)
+Tue Feb 17 2026 12:59:46 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahom2012
@@ -9,11 +9,11 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahom2
 },
 {
 	"sesame": "Bodhi 2000 CDB, pg. 30",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-GenIntro-TheSamyuttaNikayaAndTheSamyuktagama"
 },
 {
 	"sesame": "Bodhi 2000, CDB, pg. 532 (21. Bhikkhusaṁyutta)",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:SN-CausationIntro-21Bhikkhusaṃyutta"
 },
 {
 	"sesame": "CDB, note 1, pg. 1397",

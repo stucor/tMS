@@ -1075,5 +1075,13 @@
   {
     "sesame": "Bodhi 2000 CDB, pg. 27",
     "key": "bodhi-nikaya-notes:SN-GenIntro-TheGroundplanOfTheSamyuttaNikaya"
-  }
+  },
+  {
+    "sesame": "Bodhi 2000, CDB, pg. 532 (21. Bhikkhusaṁyutta)",
+    "key": "bodhi-nikaya-notes:SN-CausationIntro-21Bhikkhusaṃyutta"
+  },
+  {
+    "sesame": "Bodhi 2000 CDB, pg. 30",
+    "key": "bodhi-nikaya-notes:SN-GenIntro-TheSamyuttaNikayaAndTheSamyuktagama"
+  }  
 ]

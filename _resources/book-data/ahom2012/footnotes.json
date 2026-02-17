@@ -133,11 +133,11 @@
   },
   {
     "fnNumber": "34",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame'>Bodhi 2000, CDB, pg. 532 (21. Bhikkhusaṁyutta)</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span data-sesame-key='bodhi-nikaya-notes:SN-CausationIntro-21Bhikkhusaṃyutta' class='sesame'>Bodhi 2000, CDB, pg. 532 (21. Bhikkhusaṁyutta)</span>.</p>"
   },
   {
     "fnNumber": "35",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:BucknellRS 2007a'>Bucknell</span>, unpublished essay.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame' data-sesame-key='zotref:BucknellRS 2007a'>Bucknell</span>.</p>"
   },
   {
     "fnNumber": "36",
@@ -145,7 +145,7 @@
   },
   {
     "fnNumber": "37",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame'>Bodhi 2000 CDB, pg. 30</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span data-sesame-key='bodhi-nikaya-notes:SN-GenIntro-TheSamyuttaNikayaAndTheSamyuktagama' class='sesame'>Bodhi 2000 CDB, pg. 30</span>.</p>"
   },
   {
     "fnNumber": "38",

@@ -564,16 +564,23 @@ tfoot tr td {
 	margin: 0;
 	background-color: var(--primarybackground);
 }
+.simpletable caption::before,
+.simpletable caption::after {
+	content: '~'
+}
 .simpletable > tbody  th, .simpletable > tbody  tr, .simpletable > tbody td {
 	text-align: left;
 	border: none;
 	background: none;
 	vertical-align: top;
-	padding: 0.5em;
+	padding: 0;
 }
 .simpletable td {
 	width:0.1%;
 	white-space: nowrap;
+}
+.simpletable td > p{
+	padding: 0.5em;
 }
 .simpletable tr > th {
 	width:0.1%;
@@ -592,7 +599,7 @@ tfoot tr td {
 .simpletable > tbody > tr:nth-child(1) {
 	box-shadow: 0px 0.5px 0px 0px var(--primarytextcolor);
 } 
-.simpletable > tbody > tr:nth-child(2) > td, 
+/* .simpletable > tbody > tr:nth-child(2) > td,  */
 .simpletable > tbody > tr:nth-child(2) > th {
 	padding-top: 1em
 } 

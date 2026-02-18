@@ -623,6 +623,13 @@
     "type": "branch"
   },
   {
+    "suttaRef": "sn18",
+    "rootTitle": "Rāhulasaṁyutta",
+    "transTitle": "Linked Discourses with Rāhula ",
+    "blurb": "The “Linked Discourses with Rāhula” contains 22 discourses with the Buddha interrogating his son Rāhula on fundamental doctrines such as the aggregates or sense fields.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "sn22.100",
     "rootTitle": "Dutiyagaddulabaddhasutta",
     "transTitle": "A Leash (2nd) ",
@@ -672,6 +679,34 @@
     "type": "leaf"
   },
   {
+    "suttaRef": "sn24",
+    "rootTitle": "Diṭṭhisaṁyutta",
+    "transTitle": "Linked Discourses on Views ",
+    "blurb": "The “Linked Discourses on Views” contains 96 discourses on views, methodically analyzed through the lens of the aggregates. A wide variety of views is assessed, most of which are familiar from elsewhere in the canon, although the first one is unique.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "sn25",
+    "rootTitle": "Okkantasaṁyutta",
+    "transTitle": "Linked Discourses on Stepping Into ",
+    "blurb": "The “Linked Discourses on Arrival” is the first of three similar sections, each of which takes a set of ten doctrinal items (shared also with SN 18 Rāhula) and presents it according to a set pattern. The current chapter focuses on the distinction between those who accept the teachings by either faith or intellectual understanding, and those who have realized them for themselves.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "sn26",
+    "rootTitle": "Uppādasaṁyutta",
+    "transTitle": "Linked Discourses on Arising ",
+    "blurb": "The “Linked Discourses on Arising” is the second of three similar sections, each of which takes a set of ten doctrinal items and presents it according to a set pattern. The current chapter focuses on the fact that anyone who has these things will suffer.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "sn27",
+    "rootTitle": "Kilesasaṁyutta",
+    "transTitle": "Linked Discourses on Corruptions ",
+    "blurb": "The “Linked Discourses on Corruptions” is the third of three similar sections, each of which takes a set of ten doctrinal items and presents it according to a set pattern. The current chapter focuses on the fact that desire for these things is a corruption of the mind.",
+    "type": "branch"
+  },
+  {
     "suttaRef": "sn35",
     "rootTitle": "Saḷāyatanasaṁyutta",
     "transTitle": "Linked Discourses on the Six Sense Fields ",
@@ -718,6 +753,20 @@
     "rootTitle": "Satipaṭṭhānasaṁyutta",
     "transTitle": "Linked Discourses on Mindfulness Meditation ",
     "blurb": "The “Linked Discourses on Mindfulness Meditation” contains 104 discourses on the four kinds of mindfulness meditation (<i lang='pi' translate='no'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on Mindfulness Meditation” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find mindfulness closely connected to absorption, as it is the factor of the path that leads directly to “right immersion”. Insight is mentioned only rarely. The root meaning of the term mindfulness (<i lang='pi' translate='no'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on mindfulness meditation; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of mindfulness (<i lang='pi' translate='no'>sati</i>) is “situational awareness” (<i lang='pi' translate='no'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "sn49",
+    "rootTitle": "Sammappadhānasaṁyutta",
+    "transTitle": "Linked Discourses on the Right Efforts ",
+    "blurb": "The “Linked Discourses on the Right Efforts” contains 54 discourses, which are, however, a mere instantiation of the standard repetition series as applied to the four right efforts. There are many discourses on right effort throughout the Pali <i lang='pi' translate='no'>nikāyas</i>, but for some reason the redactors did not collect them here.",
+    "type": "branch"
+  },
+  {
+    "suttaRef": "sn55",
+    "rootTitle": "Sotāpattisaṁyutta",
+    "transTitle": "Linked Discourses on Stream-Entry ",
+    "blurb": "The “Linked Discourses on Stream-Entry” contains 74 discourses on the topic of stream-entry, or more precisely, two sets of four qualities, one of which distinguishes a person as a stream-enterer, and one which help lead to stream-entry. The primary qualities of the first set are faith and ethical conduct. For the second, it is hearing the teaching and practicing accordingly. Note that these sets do not exhaust the qualities of a stream-enterer, many others of which are described elsewhere, but serve to emphasis the crucial role especially of faith.",
     "type": "branch"
   },
   {

@@ -1,4 +1,4 @@
-Tue Feb 17 2026 12:59:46 GMT+0000 (Greenwich Mean Time)
+Wed Feb 18 2026 12:02:33 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahom2012
@@ -20,48 +20,52 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahom2
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
+	"sesame": "Khuddaka Nikāya",
+	"key": "super-blurbs:kn"
+},
+{
 	"sesame": "MLDB, pg. 1188, note 135",
 	"key": "XXXXXXXXXXXXXXXX"
 },
 {
 	"sesame": "SN 18",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn18"
 },
 {
 	"sesame": "SN 24",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn24"
 },
 {
 	"sesame": "SN 25",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn25"
 },
 {
 	"sesame": "SN 26",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn26"
 },
 {
 	"sesame": "SN 27",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn27"
 },
 {
 	"sesame": "SN 35",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn35"
 },
 {
 	"sesame": "SN 43",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn43"
 },
 {
 	"sesame": "SN 47",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn47"
 },
 {
 	"sesame": "SN 49",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn49"
 },
 {
 	"sesame": "SN 55",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "sn-blurbs:sn55"
 },
 {
 	"sesame": "note 1177 in the revised 2001 edition of MLDB",

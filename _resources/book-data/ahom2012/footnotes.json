@@ -153,7 +153,7 @@
   },
   {
     "fnNumber": "39",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> More details are listed in an appendix to the PTS Pali edition of the Vibhaṅga, pg. 437.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> More details are listed in an appendix to the <span class='sesame' data-sesame-key='zotref:Rhys-DavidsCAF 1904a'>PTS Pali edition of the Vibhaṅga</span>, pg. 437.</p>"
   },
   {
     "fnNumber": "40",
@@ -1297,7 +1297,7 @@
   },
   {
     "fnNumber": "325",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> This discourse exists in the Sarvāstivāda, but in another saṁyutta, and was therefore not in our concordance. The previous, almost identical, text in <span class='sesame'>SN 47</span> is absent from the Sarvāstivāda.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> This discourse exists in the Sarvāstivāda, but in another saṁyutta, and was therefore not in our concordance. The previous, almost identical, text in <span data-sesame-key='sn-blurbs:sn47' class='sesame'>SN 47</span> is absent from the Sarvāstivāda.</p>"
   },
   {
     "fnNumber": "326",
@@ -1593,7 +1593,7 @@
   },
   {
     "fnNumber": "399",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sesame'>SN 18</span>, <span class='sesame'>SN 25</span>, <span class='sesame'>SN 26</span>, <span class='sesame'>SN 27</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span data-sesame-key='sn-blurbs:sn18' class='sesame'>SN 18</span>, <span data-sesame-key='sn-blurbs:sn25' class='sesame'>SN 25</span>, <span data-sesame-key='sn-blurbs:sn26' class='sesame'>SN 26</span>, <span data-sesame-key='sn-blurbs:sn27' class='sesame'>SN 27</span>.</p>"
   },
   {
     "fnNumber": "400",

@@ -1083,5 +1083,45 @@
   {
     "sesame": "Bodhi 2000 CDB, pg. 30",
     "key": "bodhi-nikaya-notes:SN-GenIntro-TheSamyuttaNikayaAndTheSamyuktagama"
+  },
+  {
+    "sesame": "SN 18",
+    "key": "sn-blurbs:sn18"
+  },
+  {
+    "sesame": "SN 24",
+    "key": "sn-blurbs:sn24"
+  },
+  {
+    "sesame": "SN 25",
+    "key": "sn-blurbs:sn25"
+  },
+  {
+    "sesame": "SN 26",
+    "key": "sn-blurbs:sn26"
+  },
+  {
+    "sesame": "SN 27",
+    "key": "sn-blurbs:sn27"
+  },
+  {
+    "sesame": "SN 35",
+    "key": "sn-blurbs:sn35"
+  },
+  {
+    "sesame": "SN 43",
+    "key": "sn-blurbs:sn43"
+  },
+  {
+    "sesame": "SN 47",
+    "key": "sn-blurbs:sn47"
+  },
+  {
+    "sesame": "SN 49",
+    "key": "sn-blurbs:sn49"
+  },
+  {
+    "sesame": "SN 55",
+    "key": "sn-blurbs:sn55"
   }  
 ]

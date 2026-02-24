@@ -2459,9 +2459,11 @@ function isElementPartiallyInViewport(el)
 }
 
 function doOutAppHREF (href) {
+
 		if (navigator.onLine) {
 			showSpinner();
-			window.location.href = href;
+			window.open(href)
+			//window.location.href = href;
 		} else {
 			showAlert('<p><br>You need to be online to go to: <br>' + href + '<br><br></p>');
 		}

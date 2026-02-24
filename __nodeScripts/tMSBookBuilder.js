@@ -444,7 +444,7 @@ function processPandoc() {
 							anchors[i].replaceWith(`<span class="internalLink" data-target="${target}">${temp4Text}</span>`)
 						} else {
 							if (!(anchors[i].getAttribute('href').slice(0,3) == '../')) {
-								anchors[i].classList.add('extlink')							
+								anchors[i].classList.add('extlink')						
 							}
 						}
 					}

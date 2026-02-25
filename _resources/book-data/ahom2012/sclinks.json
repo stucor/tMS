@@ -288,7 +288,7 @@
     "location": "seg-290"
   },
   {
-    "sclinkHTML": "<span class=\"sclinktext\">DN&#8239;13.2</span>",
+    "sclinkHTML": "<span class=\"sclinktext\">DN&#8239;13<span class='scsegments'>:2.2</span></span>",
     "location": "seg-290"
   },
   {

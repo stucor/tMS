@@ -476,6 +476,10 @@
     "location": "seg-417"
   },
   {
+    "sclinkHTML": "<span class=\"sclinktext\">SN&#8239;47.18<span class='scsegments'>:1.3</span></span>",
+    "location": "seg-427"
+  },
+  {
     "sclinkHTML": "<span class=\"sclinktext\">MN&#8239;36</span>",
     "location": "seg-567"
   },

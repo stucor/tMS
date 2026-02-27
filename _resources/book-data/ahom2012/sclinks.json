@@ -912,11 +912,11 @@
     "location": "fn-139"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>SN&#8239;46.53</span>",
+    "sclinkHTML": "<span class='sclinktext'>SN&#8239;46.53<span class='scsegments'>:15.4</span></span>",
     "location": "fn-140"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>AN&#8239;10.54</span>",
+    "sclinkHTML": "<span class='sclinktext'>AN&#8239;10.54<span class='scsegments'>:5.2</span></span>",
     "location": "fn-142"
   },
   {
@@ -924,7 +924,7 @@
     "location": "fn-143"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>AN&#8239;9.4</span>",
+    "sclinkHTML": "<span class='sclinktext'>AN&#8239;9.4<span class='scsegments'>:4.6–7.1</span></span>",
     "location": "fn-144"
   },
   {
@@ -948,11 +948,11 @@
     "location": "fn-146"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>AN&#8239;5.28</span>",
+    "sclinkHTML": "<span class='sclinktext'>AN&#8239;5.28<span class='scsegments'>:6.1–6.3</span></span>",
     "location": "fn-151"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>AN&#8239;10.60</span>",
+    "sclinkHTML": "<span class='sclinktext'>AN&#8239;10.60<span class='scsegments'>:6.4</span></span>",
     "location": "fn-153"
   },
   {
@@ -960,7 +960,7 @@
     "location": "fn-154"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>AN&#8239;10.60</span>",
+    "sclinkHTML": "<span class='sclinktext'>AN&#8239;10.60<span class='scsegments'>:6.4</span></span>",
     "location": "fn-155"
   },
   {

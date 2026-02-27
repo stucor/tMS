@@ -557,7 +557,7 @@
   },
   {
     "fnNumber": "140",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>SN&#8239;46.53</span></p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>SN&#8239;46.53<span class='scsegments'>:15.4</span></span></p>"
   },
   {
     "fnNumber": "141",
@@ -565,7 +565,7 @@
   },
   {
     "fnNumber": "142",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Inserted passage from <span class='sclinktext'>AN&#8239;10.54</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Inserted passage from <span class='sclinktext'>AN&#8239;10.54<span class='scsegments'>:5.2</span></span>.</p>"
   },
   {
     "fnNumber": "143",
@@ -573,7 +573,7 @@
   },
   {
     "fnNumber": "144",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;9.4</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;9.4<span class='scsegments'>:4.6–7.1</span></span>.</p>"
   },
   {
     "fnNumber": "145",
@@ -601,7 +601,7 @@
   },
   {
     "fnNumber": "151",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;5.28</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;5.28<span class='scsegments'>:6.1–6.3</span></span>.</p>"
   },
   {
     "fnNumber": "152",
@@ -609,7 +609,7 @@
   },
   {
     "fnNumber": "153",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;10.60</span>/Tibetan (Peking edition, Otani reprint, Tokyo 1956) 754.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;10.60<span class='scsegments'>:6.4</span></span>/Tibetan (Peking edition, Otani reprint, Tokyo 1956) 754.</p>"
   },
   {
     "fnNumber": "154",
@@ -617,7 +617,7 @@
   },
   {
     "fnNumber": "155",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>AN&#8239;10.60</span>, <span class='sclinktext'>Iti&#8239;85</span>, <span class='sclinktext'>Dhp&#8239;8</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> E.g. <span class='sclinktext'>AN&#8239;10.60<span class='scsegments'>:6.4</span></span>, <span class='sclinktext'>Iti&#8239;85</span>, <span class='sclinktext'>Dhp&#8239;8</span>.</p>"
   },
   {
     "fnNumber": "156",

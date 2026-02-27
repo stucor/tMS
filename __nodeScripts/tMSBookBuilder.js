@@ -1149,7 +1149,11 @@ function buildBookIndexHTML () {
 							if (apj > 0) {
 								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAbody-little' `)
 							} else {
-								newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart-little' `)
+								if (allPs[apj].innerText.charAt(1)== 'A') {
+									newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart-tiny' `)
+								} else {
+									newHTML += allPs[apj].outerHTML = allPs[apj].outerHTML.replace(`<p`, `<p class='OAstart-little' `)
+								}
 							}
 						} else	
 						if (allPs[apj].innerText.substring(0,4)== '&lt;') { // if the first character is a < then knock the text back a little bit - see ※755 of seeds2025 for an example

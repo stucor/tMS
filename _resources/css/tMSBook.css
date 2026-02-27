@@ -667,6 +667,8 @@ table.borderlessTable {
 	vertical-align: super;
 	font-size: smaller;
 	line-height: 0;
+	color:rgb(161, 2, 2);
+	background:rgb(255, 219, 215);
 }
 
 

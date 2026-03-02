@@ -697,7 +697,7 @@
   },
   {
     "fnNumber": "175",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See ‘A Pali Reference to Brahmaṇa-Caraṇas’, included in <span class='sesame' data-sesame-key='zotref:Wijesekera 1956a'>Wijesekera</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> See <span class='sesame' data-sesame-key='zotref:Wijesekera 1956a'>Wijesekera</span>.</p>"
   },
   {
     "fnNumber": "176",
@@ -725,7 +725,7 @@
   },
   {
     "fnNumber": "182",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> SU 2.8. Cp. Sn 1034<em>f.</em></p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> SU 2.8. Cp. <span class='sclinktext'>Snp&#8239;5.2<span class='scsegments'>:3.1–4.5</span></span> [1034<em>f</em>].</p>"
   },
   {
     "fnNumber": "183",

@@ -1104,7 +1104,7 @@
     "location": "fn-208"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>DN&#8239;1</span>",
+    "sclinkHTML": "<span class='sclinktext'>DN&#8239;1<span class='scsegments'>:3.21.6</span></span>",
     "location": "fn-214"
   },
   {
@@ -1116,11 +1116,11 @@
     "location": "fn-223"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>MN&#8239;12.47.1–47.4</span>",
+    "sclinkHTML": "<span class='sclinktext'>MN&#8239;12<span class='scsegments'>:47.1–47.4</span></span>",
     "location": "fn-225"
   },
   {
-    "sclinkHTML": "<span class='sclinktext'>MN&#8239;85<span class='scsegments'>:10.1</span></span>",
+    "sclinkHTML": "<span class='sclinktext'>MN&#8239;85<span class='scsegments'>:10.1–10.2</span></span>",
     "location": "fn-226"
   },
   {

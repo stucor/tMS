@@ -853,7 +853,7 @@
   },
   {
     "fnNumber": "214",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;1</span>/<a href='https://suttacentral.net/da19' class='extlink'>DA 19</a>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>DN&#8239;1<span class='scsegments'>:3.21.6</span></span>/<a href='https://suttacentral.net/da19' class='extlink'>DA 19</a>.</p>"
   },
   {
     "fnNumber": "215",
@@ -897,11 +897,11 @@
   },
   {
     "fnNumber": "225",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;12.47.1–47.4</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;12<span class='scsegments'>:47.1–47.4</span></span>.</p>"
   },
   {
     "fnNumber": "226",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;85<span class='scsegments'>:10.1</span></span>/DA<span class='superscript'>2</span> 21/T № 1421.10.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>MN&#8239;85<span class='scsegments'>:10.1–10.2</span></span>/DA<span class='superscript'>2</span> 21/T № 1421.10.</p>"
   },
   {
     "fnNumber": "227",

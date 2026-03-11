@@ -1351,6 +1351,9 @@ sup {
 	background: rgba(231, 255, 17, 0.692);
 }
 
+[data-custom-style^='www-alert']{
+	background:red
+}
 
 /* START Book Cover and Author Details */
 

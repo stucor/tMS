@@ -1085,6 +1085,10 @@
     "key": "bodhi-nikaya-notes:SN-GenIntro-TheSamyuttaNikayaAndTheSamyuktagama"
   },
   {
+    "sesame": "note 1177 in the revised 2001 edition of MLDB",
+    "key": "bodhi-nikaya-notes:MN-1177"
+  },
+  {
     "sesame": "SN 18",
     "key": "sn-blurbs:sn18"
   },

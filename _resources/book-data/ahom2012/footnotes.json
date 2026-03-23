@@ -1025,7 +1025,7 @@
   },
   {
     "fnNumber": "257",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;10.176</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>AN&#8239;10.176<span class='scsegments'>:34.2</span></span>.</p>"
   },
   {
     "fnNumber": "258",
@@ -1033,11 +1033,11 @@
   },
   {
     "fnNumber": "259",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>SN&#8239;42.8</span>/<a href='https://suttacentral.net/sa916' class='extlink'>SA 916</a>/SA<span class='superscript'>2</span> 131, <span class='sclinktext'>AN&#8239;10.219</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>SN&#8239;42.8<span class='scsegments'>:12.1, 13.1</span></span>/<a href='https://suttacentral.net/sa916' class='extlink'>SA 916</a>/SA<span class='superscript'>2</span> 131, <span class='sclinktext'>AN&#8239;10.219</span>.</p>"
   },
   {
     "fnNumber": "260",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Bhikkhu Bodhi has changed his rendering here from ‘connected with the body’ to ‘connected with sensual desire’. According to his <span class='sesame'>note 1177 in the revised 2001 edition of MLDB</span>, the PTS edition has <span lang='pi'>kāyū&shy;pa&shy;saṁ&shy;hi&shy;taṁ</span> (connected with the body), abbreviates the next two, then has <span lang='pi'>dhammūpasaṁhitaṁ</span>. The Burmese editions, supported by a 1937 Sinhalese edition, have <span lang='pi'>kā&shy;mū&shy;pa&shy;saṁ&shy;hi&shy;taṁ</span>. He also cites the Chinese translation in support. The Sanskrit version quoted just below, however, supports <span lang='pi'>kāyū&shy;pa&shy;saṁ&shy;hi&shy;taṁ</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> Bhikkhu Bodhi has changed his rendering here from ‘connected with the body’ to ‘connected with sensual desire’. According to his <span data-sesame-key='bodhi-nikaya-notes:MN-1177' class='sesame'>note 1177 in the revised 2001 edition of MLDB</span>, the PTS edition has <span lang='pi'>kāyū&shy;pa&shy;saṁ&shy;hi&shy;taṁ</span> (connected with the body), abbreviates the next two, then has <span lang='pi'>dhammūpasaṁhitaṁ</span>. The Burmese editions, supported by a 1937 Sinhalese edition, have <span lang='pi'>kā&shy;mū&shy;pa&shy;saṁ&shy;hi&shy;taṁ</span>. He also cites the Chinese translation in support. The Sanskrit version quoted just below, however, supports <span lang='pi'>kāyū&shy;pa&shy;saṁ&shy;hi&shy;taṁ</span>.</p>"
   },
   {
     "fnNumber": "261",
@@ -1045,7 +1045,7 @@
   },
   {
     "fnNumber": "262",
-    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>SN&#8239;54.10</span>/<a href='https://suttacentral.net/sa813' class='extlink'>SA 813</a>, <span class='sclinktext'>SN&#8239;54.13</span>/<a href='https://suttacentral.net/sa810' class='extlink'>SA 810</a>, <span class='sclinktext'>MN&#8239;118.23.1–28.1</span>.</p>"
+    "fnHTML": "<p><span data-custom-style='footnote reference'></span> <span class='sclinktext'>SN&#8239;54.10</span>/<a href='https://suttacentral.net/sa813' class='extlink'>SA 813</a>, <span class='sclinktext'>SN&#8239;54.13</span>/<a href='https://suttacentral.net/sa810' class='extlink'>SA 810</a>, <span class='sclinktext'>MN&#8239;118<span class='scsegments'>:23.1–28.1</span></span>.</p>"
   },
   {
     "fnNumber": "263",

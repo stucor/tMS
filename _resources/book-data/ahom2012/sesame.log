@@ -1,4 +1,4 @@
-Wed Mar 11 2026 14:55:10 GMT+0000 (Greenwich Mean Time)
+Mon Mar 23 2026 11:28:57 GMT+0000 (Greenwich Mean Time)
 Please check the following entries.
 Any entries with a key of 'XXXXXXXXXXXXXXXX' should be created in
 build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahom2012
@@ -69,6 +69,6 @@ build-data/sesameMaster.json and tMSBookBuilder.js should be run again for ahom2
 },
 {
 	"sesame": "note 1177 in the revised 2001 edition of MLDB",
-	"key": "XXXXXXXXXXXXXXXX"
+	"key": "bodhi-nikaya-notes:MN-1177"
 }
 ]

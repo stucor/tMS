@@ -447,6 +447,13 @@ p:has(> .inlineref)  {
 	font-family: 'Source Sans Pro';
 }
 
+.content ol + blockquote{
+	box-shadow: none;
+	margin: -0.5em 1em 1em 1.5em;
+}
+
+
+
 .content li {
 	margin-bottom: .5em;
 	text-align: left;
@@ -3102,7 +3109,7 @@ mark.current {
 		grid-template-columns: 0 100% 0;
 	}
 
-	.content ul, .content ol {
+	.content ul {
 		margin: 1em;
 	}
 

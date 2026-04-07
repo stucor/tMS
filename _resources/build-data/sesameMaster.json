@@ -1127,5 +1127,13 @@
   {
     "sesame": "SN 55",
     "key": "sn-blurbs:sn55"
-  }  
+  },
+  {
+    "sesame": "MLDB, Pg. 1188, note 135",
+    "key": "bodhi-nikaya-notes:MN-135"
+  },
+  {
+    "sesame": "CDB note: 212",
+    "key": "bodhi-nikaya-notes:SN-3-212"
+  }
 ]
